@@ -18,11 +18,10 @@ namespace FightingFeather
         private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
-       private SQLiteConnection sqliteConnection;
+       
         private const string DatabaseFileName = "dofox.db";
         private string databasePath;
-        private SQLiteCommand sqliteCommand;
-        private SQLiteDataAdapter sqliteDataAdapter;
+        
         private DataTable dataTable;
 
         public Main()
@@ -759,6 +758,49 @@ namespace FightingFeather
         private void button_SaveAndClear_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            // Clear existing rows in the DataGridView
+            GridPlasada_Entries.Rows.Clear();
+
+            // Refresh the grid with the updated data
+            RefreshGrid();
+        }
+
+        private void button_Export_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_CreateNewPlasada_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Ernings_Click(object sender, EventArgs e)
+        {
+            userControl_Earnings1.Size = new Size(1055, 518);
+            userControl_Earnings1.Visible = true;
+            userControl_Earnings1.BringToFront();
+        
+
+            // Change the color of the labels and button
+            label_Ernings.ForeColor = clickedColor;
+            label_Entries.ForeColor = defaultColor;
+            label_Receipt.ForeColor = defaultColor;
+            button_Home.ForeColor = clickedColor;
+        }
+
+        private void label_Receipt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Entries_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -638,5 +638,127 @@ namespace FightingFeather
             }
         }
 
+        private void button_New_Click(object sender, EventArgs e)
+        {
+            EntryForm entryForm = new EntryForm(this, databasePath); // Pass 'this' to refer to the Main form
+
+            // Hide the Save button in the EntryForm
+            entryForm.ToggleUpdateButtonVisibility(false);
+
+            entryForm.ShowDialog();
+
+        }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            // Check if there is a selected row
+            if (GridPlasada_Entries.SelectedRows.Count > 0)
+            {
+                // Get the data of the selected row
+                int selectedIndex = GridPlasada_Entries.SelectedRows[0].Index;
+                int fightId = Convert.ToInt32(GridPlasada_Entries.Rows[selectedIndex].Cells["FIGHT"].Value);
+                string meronName = GridPlasada_Entries.Rows[selectedIndex].Cells["MERON"].Value.ToString();
+                int meronBet;
+                if (!int.TryParse(GridPlasada_Entries.Rows[selectedIndex].Cells["BET_M"].Value.ToString(), out meronBet))
+                {
+                    MessageBox.Show("Invalid value for Meron Bet.");
+                    return;
+                }
+
+                string walaName = GridPlasada_Entries.Rows[selectedIndex].Cells["WALA"].Value.ToString();
+                int walaBet;
+                if (!int.TryParse(GridPlasada_Entries.Rows[selectedIndex].Cells["BET_W"].Value.ToString(), out walaBet))
+                {
+                    MessageBox.Show("Invalid value for Wala Bet.");
+                    return;
+                }
+
+                int pago; // Retrieve PAGO value from the selected row
+                if (!int.TryParse(GridPlasada_Entries.Rows[selectedIndex].Cells["PAGO"].Value.ToString(), out pago))
+                {
+                    MessageBox.Show("Invalid value for PAGO.");
+                    return;
+                }
+
+                string winner = GridPlasada_Entries.Rows[selectedIndex].Cells["WINNER"].Value.ToString();
+                string rate = GridPlasada_Entries.Rows[selectedIndex].Cells["RATE"].Value.ToString();
+
+                // Declare the rateamount variable outside the if block
+                int rateamount = 0;
+
+                // Check if the "RATE AMOUNT" cell is not null and not empty
+                if (GridPlasada_Entries.Rows[selectedIndex].Cells["RATE_AMOUNT"].Value != null &&
+                    !string.IsNullOrEmpty(GridPlasada_Entries.Rows[selectedIndex].Cells["RATE_AMOUNT"].Value.ToString()))
+                {
+                    // Parse RATE EARNINGS
+                    if (!int.TryParse(GridPlasada_Entries.Rows[selectedIndex].Cells["RATE_AMOUNT"].Value.ToString(), out rateamount))
+                    {
+                        // If parsing fails, you can either set rateamount to 0 or handle it differently
+                        // Here, we set it to 0 and proceed with updating
+                        rateamount = 0;
+                    }
+                }
+
+                // Create an instance of the EntryForm and load data for editing
+                EntryForm entryForm = new EntryForm(this, databasePath);
+                entryForm.LoadDataForEditing(fightId, meronName, meronBet, walaName, walaBet, pago, winner, rate, rateamount);
+
+                // Hide the Save button in the EntryForm
+                entryForm.ToggleSaveButtonVisibility(false);
+
+                entryForm.ShowDialog();
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to update.");
+            }
+        }
+
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            // Check if there is a selected row
+            if (GridPlasada_Entries.SelectedRows.Count > 0)
+            {
+                // Get the index of the selected row
+                int selectedIndex = GridPlasada_Entries.SelectedRows[0].Index;
+
+                // Get the value of the "FIGHT" column from the selected row
+                int fightId = Convert.ToInt32(GridPlasada_Entries.Rows[selectedIndex].Cells["FIGHT"].Value);
+
+                // Delete the row from the database
+                using (var connection = new SQLiteConnection($"Data Source={databasePath}"))
+                {
+                    connection.Open();
+                    string deleteQuery = "DELETE FROM PLASADA WHERE FIGHT = @FightId";
+                    using (var command = new SQLiteCommand(deleteQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@FightId", fightId);
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                // Remove the row from the DataGridView
+                GridPlasada_Entries.Rows.RemoveAt(selectedIndex);
+
+                ResetAutoIncrement();
+                UpdateFightIDs();
+                RefreshGrid();
+
+                MessageBox.Show("Successfully deleted.");
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+
+        private void button_SaveAndClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

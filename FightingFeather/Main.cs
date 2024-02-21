@@ -182,7 +182,6 @@ namespace FightingFeather
             CalculateParehasValues();
             SaveDataGridViewToJson();
 
-
         }
         public void PopulateGridRow(SQLiteDataReader reader, SQLiteConnection connection)
         {

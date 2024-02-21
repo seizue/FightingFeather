@@ -22,8 +22,9 @@ namespace FightingFeather
        
         private const string DatabaseFileName = "dofox.db";
         private string databasePath;
-        
         private DataTable dataTable;
+
+        private UserControl_Earnings userControl_Earnings;
 
         public Main()
         {
@@ -39,7 +40,7 @@ namespace FightingFeather
             InitializeDatabase();
             UpdateFightIDs();
             RefreshGrid();
-
+        
             // Subscribe to the CellFormatting event
             GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
 
@@ -51,8 +52,6 @@ namespace FightingFeather
 
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
-
-       
         }
 
         private void InitializeDatabase()
@@ -181,8 +180,8 @@ namespace FightingFeather
             // Calculate the PAREHAS values after populating the DataGridView
             CalculateParehasValues();
             SaveDataGridViewToJson();
-
         }
+
         public void PopulateGridRow(SQLiteDataReader reader, SQLiteConnection connection)
         {
             // Handle DBNull for nullable fields
@@ -297,9 +296,6 @@ namespace FightingFeather
             // Check if the value can be parsed as a number
             return double.TryParse(value.ToString(), out _);
         }
-
-
-
 
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

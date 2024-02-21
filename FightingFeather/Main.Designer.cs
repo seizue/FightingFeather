@@ -56,9 +56,7 @@
             this.Panel_MainBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,24 +74,26 @@
             this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
+            this.button_CashBreakDown = new System.Windows.Forms.Button();
+            this.button_Plasada = new System.Windows.Forms.Button();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.button_Dashboard = new System.Windows.Forms.Button();
+            this.button_Inventory = new System.Windows.Forms.Button();
+            this.button_Home = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
             this.button_New = new System.Windows.Forms.Button();
             this.button_SaveAndClear = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
-            this.button_CashBreakDown = new System.Windows.Forms.Button();
-            this.button_Plasada = new System.Windows.Forms.Button();
-            this.button_Dashboard = new System.Windows.Forms.Button();
-            this.button_Inventory = new System.Windows.Forms.Button();
-            this.button_Home = new System.Windows.Forms.Button();
-            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).BeginInit();
             this.metroPanel_Border.SuspendLayout();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel19
@@ -445,67 +445,13 @@
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel9.VerticalScrollbarSize = 10;
             // 
-            // metroPanel2
+            // userControl_Earnings1
             // 
-            this.metroPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroPanel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(185, 2);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(3, 674);
-            this.metroPanel2.TabIndex = 231;
-            this.metroPanel2.UseCustomBackColor = true;
-            this.metroPanel2.UseStyleColors = true;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel_Border
-            // 
-            this.metroPanel_Border.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel_Border.BackColor = System.Drawing.Color.Transparent;
-            this.metroPanel_Border.Controls.Add(this.metroPanel11);
-            this.metroPanel_Border.Controls.Add(this.button_CashBreakDown);
-            this.metroPanel_Border.Controls.Add(this.button_Plasada);
-            this.metroPanel_Border.ForeColor = System.Drawing.Color.White;
-            this.metroPanel_Border.HorizontalScrollbarBarColor = true;
-            this.metroPanel_Border.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel_Border.HorizontalScrollbarSize = 10;
-            this.metroPanel_Border.Location = new System.Drawing.Point(0, 20);
-            this.metroPanel_Border.Name = "metroPanel_Border";
-            this.metroPanel_Border.Size = new System.Drawing.Size(1276, 37);
-            this.metroPanel_Border.TabIndex = 229;
-            this.metroPanel_Border.VerticalScrollbarBarColor = true;
-            this.metroPanel_Border.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel_Border.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BackColor = System.Drawing.Color.White;
-            this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.Controls.Add(this.button_Dashboard);
-            this.metroPanel1.Controls.Add(this.metroPanel7);
-            this.metroPanel1.Controls.Add(this.metroPanel5);
-            this.metroPanel1.Controls.Add(this.metroPanel4);
-            this.metroPanel1.Controls.Add(this.button_Inventory);
-            this.metroPanel1.Controls.Add(this.button_Home);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(20, 60);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(163, 599);
-            this.metroPanel1.TabIndex = 230;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.UseStyleColors = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Earnings1.Name = "userControl_Earnings1";
+            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_Earnings1.TabIndex = 4;
             // 
             // GridPlasada_Entries
             // 
@@ -725,6 +671,167 @@
             this.WINNERS_EARN.Name = "WINNERS_EARN";
             this.WINNERS_EARN.Width = 107;
             // 
+            // metroPanel2
+            // 
+            this.metroPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.metroPanel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(185, 2);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(3, 674);
+            this.metroPanel2.TabIndex = 231;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.UseStyleColors = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel_Border
+            // 
+            this.metroPanel_Border.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel_Border.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel_Border.Controls.Add(this.metroPanel11);
+            this.metroPanel_Border.Controls.Add(this.button_CashBreakDown);
+            this.metroPanel_Border.Controls.Add(this.button_Plasada);
+            this.metroPanel_Border.ForeColor = System.Drawing.Color.White;
+            this.metroPanel_Border.HorizontalScrollbarBarColor = true;
+            this.metroPanel_Border.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel_Border.HorizontalScrollbarSize = 10;
+            this.metroPanel_Border.Location = new System.Drawing.Point(0, 20);
+            this.metroPanel_Border.Name = "metroPanel_Border";
+            this.metroPanel_Border.Size = new System.Drawing.Size(1276, 37);
+            this.metroPanel_Border.TabIndex = 229;
+            this.metroPanel_Border.VerticalScrollbarBarColor = true;
+            this.metroPanel_Border.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel_Border.VerticalScrollbarSize = 10;
+            // 
+            // button_CashBreakDown
+            // 
+            this.button_CashBreakDown.BackColor = System.Drawing.Color.Transparent;
+            this.button_CashBreakDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_CashBreakDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_CashBreakDown.FlatAppearance.BorderSize = 0;
+            this.button_CashBreakDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_CashBreakDown.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CashBreakDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_CashBreakDown.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
+            this.button_CashBreakDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_CashBreakDown.Location = new System.Drawing.Point(323, 5);
+            this.button_CashBreakDown.Name = "button_CashBreakDown";
+            this.button_CashBreakDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_CashBreakDown.Size = new System.Drawing.Size(147, 29);
+            this.button_CashBreakDown.TabIndex = 206;
+            this.button_CashBreakDown.Text = "CASH BREAKDOWN";
+            this.button_CashBreakDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_CashBreakDown.UseVisualStyleBackColor = false;
+            // 
+            // button_Plasada
+            // 
+            this.button_Plasada.BackColor = System.Drawing.Color.Transparent;
+            this.button_Plasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Plasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Plasada.FlatAppearance.BorderSize = 0;
+            this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.align_center_24px;
+            this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Plasada.Location = new System.Drawing.Point(193, 5);
+            this.button_Plasada.Name = "button_Plasada";
+            this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Plasada.Size = new System.Drawing.Size(103, 29);
+            this.button_Plasada.TabIndex = 205;
+            this.button_Plasada.Text = "PLASADA";
+            this.button_Plasada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Plasada.UseVisualStyleBackColor = false;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BackColor = System.Drawing.Color.White;
+            this.metroPanel1.Controls.Add(this.metroPanel3);
+            this.metroPanel1.Controls.Add(this.button_Dashboard);
+            this.metroPanel1.Controls.Add(this.metroPanel7);
+            this.metroPanel1.Controls.Add(this.metroPanel5);
+            this.metroPanel1.Controls.Add(this.metroPanel4);
+            this.metroPanel1.Controls.Add(this.button_Inventory);
+            this.metroPanel1.Controls.Add(this.button_Home);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(20, 60);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(163, 599);
+            this.metroPanel1.TabIndex = 230;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseStyleColors = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // button_Dashboard
+            // 
+            this.button_Dashboard.BackColor = System.Drawing.Color.Transparent;
+            this.button_Dashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Dashboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Dashboard.FlatAppearance.BorderSize = 0;
+            this.button_Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Dashboard.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Dashboard.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
+            this.button_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Dashboard.Location = new System.Drawing.Point(6, 135);
+            this.button_Dashboard.Name = "button_Dashboard";
+            this.button_Dashboard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Dashboard.Size = new System.Drawing.Size(140, 29);
+            this.button_Dashboard.TabIndex = 204;
+            this.button_Dashboard.Text = "             SHORTCUT";
+            this.button_Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Dashboard.UseVisualStyleBackColor = false;
+            // 
+            // button_Inventory
+            // 
+            this.button_Inventory.BackColor = System.Drawing.Color.Transparent;
+            this.button_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Inventory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Inventory.FlatAppearance.BorderSize = 0;
+            this.button_Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Inventory.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Inventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Inventory.Image = global::FightingFeather.Properties.Resources.handcart_24px;
+            this.button_Inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Inventory.Location = new System.Drawing.Point(5, 240);
+            this.button_Inventory.Name = "button_Inventory";
+            this.button_Inventory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Inventory.Size = new System.Drawing.Size(140, 29);
+            this.button_Inventory.TabIndex = 206;
+            this.button_Inventory.Text = "INVENTORY";
+            this.button_Inventory.UseVisualStyleBackColor = true;
+            // 
+            // button_Home
+            // 
+            this.button_Home.BackColor = System.Drawing.Color.Transparent;
+            this.button_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Home.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Home.FlatAppearance.BorderSize = 0;
+            this.button_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Home.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Home.Image = global::FightingFeather.Properties.Resources.birdhouse_24px;
+            this.button_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Home.Location = new System.Drawing.Point(6, 187);
+            this.button_Home.Name = "button_Home";
+            this.button_Home.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Home.Size = new System.Drawing.Size(140, 29);
+            this.button_Home.TabIndex = 205;
+            this.button_Home.Text = "                    HOME";
+            this.button_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Home.UseVisualStyleBackColor = true;
+            // 
             // button_Delete
             // 
             this.button_Delete.BackColor = System.Drawing.Color.Transparent;
@@ -847,114 +954,6 @@
             this.button_Export.UseVisualStyleBackColor = false;
             this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
             // 
-            // button_CashBreakDown
-            // 
-            this.button_CashBreakDown.BackColor = System.Drawing.Color.Transparent;
-            this.button_CashBreakDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_CashBreakDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_CashBreakDown.FlatAppearance.BorderSize = 0;
-            this.button_CashBreakDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_CashBreakDown.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CashBreakDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_CashBreakDown.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
-            this.button_CashBreakDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_CashBreakDown.Location = new System.Drawing.Point(323, 5);
-            this.button_CashBreakDown.Name = "button_CashBreakDown";
-            this.button_CashBreakDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_CashBreakDown.Size = new System.Drawing.Size(147, 29);
-            this.button_CashBreakDown.TabIndex = 206;
-            this.button_CashBreakDown.Text = "CASH BREAKDOWN";
-            this.button_CashBreakDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_CashBreakDown.UseVisualStyleBackColor = false;
-            // 
-            // button_Plasada
-            // 
-            this.button_Plasada.BackColor = System.Drawing.Color.Transparent;
-            this.button_Plasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Plasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Plasada.FlatAppearance.BorderSize = 0;
-            this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.align_center_24px;
-            this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Plasada.Location = new System.Drawing.Point(193, 5);
-            this.button_Plasada.Name = "button_Plasada";
-            this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Plasada.Size = new System.Drawing.Size(103, 29);
-            this.button_Plasada.TabIndex = 205;
-            this.button_Plasada.Text = "PLASADA";
-            this.button_Plasada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Plasada.UseVisualStyleBackColor = false;
-            // 
-            // button_Dashboard
-            // 
-            this.button_Dashboard.BackColor = System.Drawing.Color.Transparent;
-            this.button_Dashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Dashboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Dashboard.FlatAppearance.BorderSize = 0;
-            this.button_Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Dashboard.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Dashboard.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
-            this.button_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Dashboard.Location = new System.Drawing.Point(6, 135);
-            this.button_Dashboard.Name = "button_Dashboard";
-            this.button_Dashboard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Dashboard.Size = new System.Drawing.Size(140, 29);
-            this.button_Dashboard.TabIndex = 204;
-            this.button_Dashboard.Text = "             SHORTCUT";
-            this.button_Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Dashboard.UseVisualStyleBackColor = false;
-            // 
-            // button_Inventory
-            // 
-            this.button_Inventory.BackColor = System.Drawing.Color.Transparent;
-            this.button_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Inventory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Inventory.FlatAppearance.BorderSize = 0;
-            this.button_Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Inventory.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Inventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Inventory.Image = global::FightingFeather.Properties.Resources.handcart_24px;
-            this.button_Inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Inventory.Location = new System.Drawing.Point(5, 240);
-            this.button_Inventory.Name = "button_Inventory";
-            this.button_Inventory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Inventory.Size = new System.Drawing.Size(140, 29);
-            this.button_Inventory.TabIndex = 206;
-            this.button_Inventory.Text = "INVENTORY";
-            this.button_Inventory.UseVisualStyleBackColor = true;
-            // 
-            // button_Home
-            // 
-            this.button_Home.BackColor = System.Drawing.Color.Transparent;
-            this.button_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Home.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Home.FlatAppearance.BorderSize = 0;
-            this.button_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Home.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Home.Image = global::FightingFeather.Properties.Resources.birdhouse_24px;
-            this.button_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Home.Location = new System.Drawing.Point(6, 187);
-            this.button_Home.Name = "button_Home";
-            this.button_Home.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Home.Size = new System.Drawing.Size(140, 29);
-            this.button_Home.TabIndex = 205;
-            this.button_Home.Text = "                    HOME";
-            this.button_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Home.UseVisualStyleBackColor = true;
-            // 
-            // userControl_Earnings1
-            // 
-            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Earnings1.Name = "userControl_Earnings1";
-            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_Earnings1.TabIndex = 4;
-            this.userControl_Earnings1.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -986,9 +985,9 @@
             this.Panel_MainBG.ResumeLayout(false);
             this.Panel_PlasadaEER.ResumeLayout(false);
             this.metroPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).EndInit();
             this.metroPanel_Border.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

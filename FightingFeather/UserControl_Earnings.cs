@@ -7,84 +7,92 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.IO;
-using System.Data.SQLite;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace FightingFeather
 {
     public partial class UserControl_Earnings : UserControl
     {
-        private const string DatabaseFileName = "dofox.db";
-        private string databasePath;
-
         public UserControl_Earnings()
         {
             InitializeComponent();
 
-            // Set the database path
-            string currentDirectory = Directory.GetCurrentDirectory();
-            databasePath = Path.Combine(currentDirectory, DatabaseFileName);
-
             // Subscribe to the CellFormatting event
             GridPlasada_Earnings.CellFormatting += GridPlasada_Earnings_CellFormatting;
+            GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
 
-          
+            LoadJsonData();
         }
 
-        private void RefreshGrid()
+        private void LoadJsonData()
         {
-            using (var connection = new SQLiteConnection($"Data Source={databasePath}"))
+            string jsonFilePath = Path.Combine("JSON", "receipt.json");
+
+            if (File.Exists(jsonFilePath))
             {
-                connection.Open();
-                string selectQuery = "SELECT FIGHT, WINNER, MERON, WALA, PAREHAS, [BET (M)], [BET (W)], LOGRO, FEE, [TOTAL PLASADA], [RATE EARNINGS], [WINNERS EARN] FROM PLASADA";
-
-                using (var command = new SQLiteCommand(selectQuery, connection))
-                using (var reader = command.ExecuteReader())
+                try
                 {
-                    if (reader.HasRows)
+                    string jsonText = File.ReadAllText(jsonFilePath);
+                    JArray jsonArray = JArray.Parse(jsonText);
+
+                    // Assuming jsonArray contains an array of objects
+                    foreach (JObject obj in jsonArray)
                     {
-                        GridPlasada_Earnings.Rows.Clear();
+                        // Create a new row
+                        DataGridViewRow row = new DataGridViewRow();
 
-                        while (reader.Read())
-                        {
-                            string winnerName = string.Empty;
-                            int winnerBet = 0;
-                            string winnerChoice = reader["WINNER"].ToString();
+                        // Add cells based on the columns you want to display
+                        DataGridViewTextBoxCell cell1 = new DataGridViewTextBoxCell();
+                        cell1.Value = obj["FIGHT"]; // Replace "ColumnName1" with the actual name
+                        row.Cells.Add(cell1);
 
-                            switch (winnerChoice)
-                            {
-                                case "M":
-                                    winnerName = reader["MERON"].ToString();
-                                    winnerBet = Convert.ToInt32(reader["BET (M)"]);
-                                    break;
-                                case "W":
-                                    winnerName = reader["WALA"].ToString();
-                                    winnerBet = Convert.ToInt32(reader["BET (W)"]);
-                                    break;
-                                case "Cancel":
-                                case "None":
-                                    winnerName = winnerChoice;
-                                    winnerBet = 0;
-                                    break;
-                            }
+                        DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
+                        cell2.Value = obj["WINNER"]; 
+                        row.Cells.Add(cell2);
 
-                            DataGridViewRow row = new DataGridViewRow();
-                            row.CreateCells(GridPlasada_Earnings,
-                                reader["FIGHT"], winnerName, winnerBet, reader["PAREHAS"], reader["LOGRO"], reader["FEE"],
-                                reader["TOTAL PLASADA"], reader["RATE EARNINGS"], reader["WINNERS EARN"]);
+                        DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
+                        cell3.Value = obj["BET"];
+                        row.Cells.Add(cell3);
 
-                            // Set the background color based on the winner choice only for specific columns
-                            Color cellColor = winnerChoice == "M" ? Color.FromArgb(239, 253, 244) : winnerChoice == "W" ? Color.FromArgb(255, 243, 245) : Color.White;
+                        DataGridViewTextBoxCell cell4 = new DataGridViewTextBoxCell();
+                        cell4.Value = obj["PAREHAS"]; 
+                        row.Cells.Add(cell4);
 
-                            // Set background color for specific columns (winner name, winner bet, and winner earn)
-                            row.Cells[1].Style.BackColor = cellColor; // Winner name column
-                            row.Cells[8].Style.BackColor = cellColor; // Winner earn column
+                        DataGridViewTextBoxCell cell5 = new DataGridViewTextBoxCell();
+                        cell5.Value = obj["LOGRO"]; // Replace "ColumnName2" with the actual name
+                        row.Cells.Add(cell5);
 
-                            GridPlasada_Earnings.Rows.Add(row);
-                        }
+                        DataGridViewTextBoxCell cell6 = new DataGridViewTextBoxCell();
+                        cell6.Value = obj["FEE"]; // Replace "ColumnName2" with the actual name
+                        row.Cells.Add(cell6);
+
+                        DataGridViewTextBoxCell cell7 = new DataGridViewTextBoxCell();
+                        cell7.Value = obj["TOTAL PLASADA"]; // Replace "ColumnName2" with the actual name
+                        row.Cells.Add(cell7);
+
+                        DataGridViewTextBoxCell cell8 = new DataGridViewTextBoxCell();
+                        cell8.Value = obj["RATE EARNINGS"]; // Replace "ColumnName2" with the actual name
+                        row.Cells.Add(cell8);
+
+                        DataGridViewTextBoxCell cell9 = new DataGridViewTextBoxCell();
+                        cell9.Value = obj["WINNERS EARNING"]; // Replace "ColumnName2" with the actual name
+                        row.Cells.Add(cell9);
+
+
+                        // Add the row to the DataGridView
+                        GridPlasada_Earnings.Rows.Add(row);
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading JSON data: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("JSON file not found.");
             }
         }
 
@@ -117,6 +125,7 @@ namespace FightingFeather
             }
 
         }
+
 
         private void GridPlasada_Earnings_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {

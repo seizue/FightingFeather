@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
-
+using System.Data.SqlClient;
+using Newtonsoft.Json;
 
 namespace FightingFeather
 {
@@ -51,6 +52,7 @@ namespace FightingFeather
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
 
+       
         }
 
         private void InitializeDatabase()
@@ -169,67 +171,125 @@ namespace FightingFeather
 
                             while (reader.Read())
                             {
-                                // Handle DBNull for nullable fields
-                                int initialBetDiff = Convert.IsDBNull(reader["INITIAL BET DIFF"]) ? 0 : Convert.ToInt32(reader["INITIAL BET DIFF"]);
-                                int pago = Convert.IsDBNull(reader["PAGO"]) ? 0 : Convert.ToInt32(reader["PAGO"]);
-                                int rateAmount = Convert.IsDBNull(reader["RATE AMOUNT"]) ? 0 : Convert.ToInt32(reader["RATE AMOUNT"]);
-
-                                // Call CalculateFee to get the fee value
-                                decimal fee = CalculateFee(Convert.ToDecimal(reader["BET (M)"]), Convert.ToDecimal(reader["BET (W)"]), reader["WINNER"].ToString(), pago);
-
-                                // Determine if fee is 0, then adjust totalPlasada accordingly
-                                decimal totalPlasada = fee != 0 ? fee + 300 : 0;
-
-                                // Calculate LOGRO
-                                int logro = initialBetDiff - (pago + rateAmount);
-
-                                // Update the LOGRO column in the database
-                                string updateLogroQuery = "UPDATE PLASADA SET LOGRO = @Logro WHERE FIGHT = @FightId";
-                                using (var updateCommand = new SQLiteCommand(updateLogroQuery, connection))
-                                {
-                                    updateCommand.Parameters.AddWithValue("@Logro", logro);
-                                    updateCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
-                                    updateCommand.ExecuteNonQuery();
-                                }
-
-                                int betW = Convert.ToInt32(reader["BET (W)"]);
-
-                                // Calculate the PAREHAS value based on the formula
-                                int parehas = betW + pago;
-
-                                // Update the PAREHAS column in the database
-                                string updateParehasQuery = "UPDATE PLASADA SET PAREHAS = @Parehas WHERE FIGHT = @FightId";
-                                using (var updateCommand = new SQLiteCommand(updateParehasQuery, connection))
-                                {
-                                    updateCommand.Parameters.AddWithValue("@Parehas", parehas);
-                                    updateCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
-                                    updateCommand.ExecuteNonQuery();
-                                }
-
-                                // Save calculated values back to the database
-                                string updateValuesQuery = "UPDATE PLASADA SET FEE = @Fee, [TOTAL PLASADA] = @TotalPlasada WHERE FIGHT = @FightId";
-                                using (var updateValuesCommand = new SQLiteCommand(updateValuesQuery, connection))
-                                {
-                                    updateValuesCommand.Parameters.AddWithValue("@Fee", fee);
-                                    updateValuesCommand.Parameters.AddWithValue("@TotalPlasada", totalPlasada);
-                                    updateValuesCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
-                                    updateValuesCommand.ExecuteNonQuery();
-                                }
-
-                                DataGridViewRow row = new DataGridViewRow();
-                                row.CreateCells(GridPlasada_Entries,
-                                    reader["FIGHT"], reader["MERON"], reader["WALA"], reader["BET (M)"], reader["BET (W)"],
-                                    reader["INITIAL BET DIFF"], reader["PAREHAS"], pago, reader["WINNER"],
-                                    reader["RATE AMOUNT"], reader["RATE"], logro, fee,
-                                    totalPlasada, reader["RATE EARNINGS"], reader["WINNERS EARN"]);
-                                GridPlasada_Entries.Rows.Add(row);
+                                PopulateGridRow(reader, connection);
                             }
                         }
                     }
                 }
+            }
 
-                // Calculate the PAREHAS values after populating the DataGridView
-                CalculateParehasValues();
+            // Calculate the PAREHAS values after populating the DataGridView
+            CalculateParehasValues();
+            SaveDataGridViewToJson();
+
+
+        }
+        public void PopulateGridRow(SQLiteDataReader reader, SQLiteConnection connection)
+        {
+            // Handle DBNull for nullable fields
+            int initialBetDiff = Convert.IsDBNull(reader["INITIAL BET DIFF"]) ? 0 : Convert.ToInt32(reader["INITIAL BET DIFF"]);
+            int pago = Convert.IsDBNull(reader["PAGO"]) ? 0 : Convert.ToInt32(reader["PAGO"]);
+            int rateAmount = Convert.IsDBNull(reader["RATE AMOUNT"]) ? 0 : Convert.ToInt32(reader["RATE AMOUNT"]);
+
+            // Call CalculateFee to get the fee value
+            decimal fee = CalculateFee(Convert.ToDecimal(reader["BET (M)"]), Convert.ToDecimal(reader["BET (W)"]), reader["WINNER"].ToString(), pago);
+
+            // Determine if fee is 0, then adjust totalPlasada accordingly
+            decimal totalPlasada = fee != 0 ? fee + 300 : 0;
+
+            // Calculate LOGRO
+            int logro = initialBetDiff - (pago + rateAmount);
+
+            // Update the LOGRO column in the database
+            string updateLogroQuery = "UPDATE PLASADA SET LOGRO = @Logro WHERE FIGHT = @FightId";
+            using (var updateCommand = new SQLiteCommand(updateLogroQuery, connection))
+            {
+                updateCommand.Parameters.AddWithValue("@Logro", logro);
+                updateCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
+                updateCommand.ExecuteNonQuery();
+            }
+
+            int betW = Convert.ToInt32(reader["BET (W)"]);
+
+            // Calculate the PAREHAS value based on the formula
+            int parehas = betW + pago;
+
+            // Update the PAREHAS column in the database
+            string updateParehasQuery = "UPDATE PLASADA SET PAREHAS = @Parehas WHERE FIGHT = @FightId";
+            using (var updateCommand = new SQLiteCommand(updateParehasQuery, connection))
+            {
+                updateCommand.Parameters.AddWithValue("@Parehas", parehas);
+                updateCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
+                updateCommand.ExecuteNonQuery();
+            }
+
+            // Save calculated values back to the database
+            string updateValuesQuery = "UPDATE PLASADA SET FEE = @Fee, [TOTAL PLASADA] = @TotalPlasada WHERE FIGHT = @FightId";
+            using (var updateValuesCommand = new SQLiteCommand(updateValuesQuery, connection))
+            {
+                updateValuesCommand.Parameters.AddWithValue("@Fee", fee);
+                updateValuesCommand.Parameters.AddWithValue("@TotalPlasada", totalPlasada);
+                updateValuesCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
+                updateValuesCommand.ExecuteNonQuery();
+            }
+
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(GridPlasada_Entries,
+                reader["FIGHT"], reader["MERON"], reader["WALA"], reader["BET (M)"], reader["BET (W)"],
+                reader["INITIAL BET DIFF"], reader["PAREHAS"], pago, reader["WINNER"],
+                reader["RATE AMOUNT"], reader["RATE"], logro, fee,
+                totalPlasada, reader["RATE EARNINGS"], reader["WINNERS EARN"]);
+            GridPlasada_Entries.Rows.Add(row);
+        }
+
+
+
+        public void SaveDataGridViewToJson()
+        {
+            // Create a list to store the data
+            List<Dictionary<string, object>> data = new List<Dictionary<string, object>>();
+
+            // Iterate through the rows of the DataGridView
+            for (int i = 0; i < GridPlasada_Entries.Rows.Count - 1; i++)
+            {
+                DataGridViewRow row = GridPlasada_Entries.Rows[i];
+                // Create a dictionary to store the data of each row
+                Dictionary<string, object> rowData = new Dictionary<string, object>();
+
+                // Iterate through the cells of the current row
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    // Add cell value to the dictionary
+                    rowData[cell.OwningColumn.HeaderText] = cell.Value;
+                }
+
+                // Add row data to the list
+                data.Add(rowData);
+            }
+
+
+            // Convert the data to JSON
+            string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+            // Specify the path to the JSON folder and the file name
+            string jsonFolderPath = Path.Combine(Application.StartupPath, "JSON");
+            string jsonFilePath = Path.Combine(jsonFolderPath, "receipt.json");
+
+            try
+            {
+                // Create the JSON folder if it doesn't exist
+                if (!Directory.Exists(jsonFolderPath))
+                {
+                    Directory.CreateDirectory(jsonFolderPath);
+                }
+
+                // Write the JSON data to the file
+                File.WriteAllText(jsonFilePath, jsonData);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data to JSON file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -238,6 +298,9 @@ namespace FightingFeather
             // Check if the value can be parsed as a number
             return double.TryParse(value.ToString(), out _);
         }
+
+
+
 
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

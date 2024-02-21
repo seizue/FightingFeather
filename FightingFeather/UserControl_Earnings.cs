@@ -28,13 +28,15 @@ namespace FightingFeather
 
         private void LoadJsonData()
         {
-            string jsonFilePath = Path.Combine("JSON", "receipt.json");
-
+            string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "receipt.json");
+            Console.WriteLine("Attempting to load JSON file from path: " + jsonFilePath);
+        
             if (File.Exists(jsonFilePath))
             {
+                string jsonText = File.ReadAllText(jsonFilePath);
+
                 try
-                {
-                    string jsonText = File.ReadAllText(jsonFilePath);
+                {                 
                     JArray jsonArray = JArray.Parse(jsonText);
 
                     // Assuming jsonArray contains an array of objects
@@ -49,11 +51,57 @@ namespace FightingFeather
                         row.Cells.Add(cell1);
 
                         DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
-                        cell2.Value = obj["WINNER"]; 
+                        // Determine the value for column MERON or WALA based on the value of column WINNER
+                        switch (obj["WINNER"].ToString())
+                        {
+                            case "M":
+                                cell2.Value = obj["MERON"];
+                                cell2.Style.BackColor = Color.FromArgb(239, 253, 244);
+                                break;
+                            case "W":
+                                cell2.Value = obj["WALA"];
+                                cell2.Style.BackColor = Color.FromArgb(255, 243, 245);
+                                break;
+                            default:
+                                cell2.Value = ""; // Handle other cases if needed
+                                break;
+                        }
                         row.Cells.Add(cell2);
 
                         DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
-                        cell3.Value = obj["BET"];
+                        // Determine the value for column BET based on the value of column WINNER
+                        switch (obj["WINNER"].ToString())
+                        {
+                            case "M":
+                                if (obj["BET (M)"] != null)
+                                {
+                                    cell3.Value = obj["BET (M)"];
+                                }
+                                else
+                                {
+                                    // Handle case where "BET (M)" key is missing or null
+                                    cell3.Value = 0; // or any default value you want to set
+                                }
+                                break;
+                            case "W":
+                                if (obj["BET (W)"] != null)
+                                {
+                                    cell3.Value = obj["BET (W)"];
+                                }
+                                else
+                                {
+                                    // Handle case where "BET (W)" key is missing or null
+                                    cell3.Value = 0; // or any default value you want to set
+                                }
+                                break;
+                            case "Cancel":
+                            case "None":
+                                cell3.Value = 0; // or any default value you want to set
+                                break;
+                            default:
+                                cell3.Value = ""; // Handle other cases if needed
+                                break;
+                        }
                         row.Cells.Add(cell3);
 
                         DataGridViewTextBoxCell cell4 = new DataGridViewTextBoxCell();
@@ -61,23 +109,36 @@ namespace FightingFeather
                         row.Cells.Add(cell4);
 
                         DataGridViewTextBoxCell cell5 = new DataGridViewTextBoxCell();
-                        cell5.Value = obj["LOGRO"]; // Replace "ColumnName2" with the actual name
+                        cell5.Value = obj["LOGRO"]; 
                         row.Cells.Add(cell5);
 
                         DataGridViewTextBoxCell cell6 = new DataGridViewTextBoxCell();
-                        cell6.Value = obj["FEE"]; // Replace "ColumnName2" with the actual name
+                        cell6.Value = obj["FEE"];
                         row.Cells.Add(cell6);
 
                         DataGridViewTextBoxCell cell7 = new DataGridViewTextBoxCell();
-                        cell7.Value = obj["TOTAL PLASADA"]; // Replace "ColumnName2" with the actual name
+                        cell7.Value = obj["TOTAL PLASADA"];
                         row.Cells.Add(cell7);
 
                         DataGridViewTextBoxCell cell8 = new DataGridViewTextBoxCell();
-                        cell8.Value = obj["RATE EARNINGS"]; // Replace "ColumnName2" with the actual name
+                        cell8.Value = obj["RATE EARNINGS"];
                         row.Cells.Add(cell8);
 
                         DataGridViewTextBoxCell cell9 = new DataGridViewTextBoxCell();
-                        cell9.Value = obj["WINNERS EARNING"]; // Replace "ColumnName2" with the actual name
+                        cell9.Value = obj["WINNERS EARNING"];
+
+                        switch (obj["WINNER"].ToString())
+                        {
+                            case "M":                            
+                                cell9.Style.BackColor = Color.FromArgb(239, 253, 244);
+                                break;
+                            case "W":                            
+                                cell9.Style.BackColor = Color.FromArgb(255, 243, 245);
+                                break;
+                            default:
+                                cell9.Value = ""; // Handle other cases if needed
+                                break;
+                        }
                         row.Cells.Add(cell9);
 
 
@@ -87,12 +148,13 @@ namespace FightingFeather
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading JSON data: " + ex.Message);
+                    MessageBox.Show("Error loading JSON data: " + ex.Message + "\nStack Trace: " + ex.StackTrace);
                 }
+
             }
             else
             {
-                MessageBox.Show("JSON file not found.");
+               
             }
         }
 
@@ -123,7 +185,6 @@ namespace FightingFeather
                 // Set the foreground color for "WINNERS EARN" cells
                 e.CellStyle.ForeColor = Color.Maroon;
             }
-
         }
 
 

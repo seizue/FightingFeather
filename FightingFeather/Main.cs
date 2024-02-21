@@ -24,8 +24,6 @@ namespace FightingFeather
         private string databasePath;
         private DataTable dataTable;
 
-        private UserControl_Earnings userControl_Earnings;
-
         public Main()
         {
             InitializeComponent();
@@ -858,7 +856,16 @@ namespace FightingFeather
 
         private void label_Entries_Click(object sender, EventArgs e)
         {
-           
+            userControl_Earnings1.Size = new Size(0, 0);
+            userControl_Earnings1.Visible = false;
+            userControl_Earnings1.SendToBack();
+
+
+            // Change the color of the labels and button
+            label_Ernings.ForeColor = defaultColor;
+            label_Entries.ForeColor = clickedColor;
+            label_Receipt.ForeColor = defaultColor;
+            button_Home.ForeColor = clickedColor;
         }
     }
 }

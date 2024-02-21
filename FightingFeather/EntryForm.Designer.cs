@@ -190,7 +190,7 @@
             this.metroPanel15.HorizontalScrollbarBarColor = true;
             this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(0, 480);
+            this.metroPanel15.Location = new System.Drawing.Point(0, 491);
             this.metroPanel15.Name = "metroPanel15";
             this.metroPanel15.Size = new System.Drawing.Size(282, 4);
             this.metroPanel15.TabIndex = 241;
@@ -487,7 +487,7 @@
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(306, 19);
+            this.metroPanel4.Location = new System.Drawing.Point(306, 51);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(1, 482);
             this.metroPanel4.TabIndex = 213;
@@ -510,8 +510,7 @@
             // 
             // metroPanel10
             // 
-            this.metroPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel10.BackColor = System.Drawing.Color.White;
             this.metroPanel10.Controls.Add(this.metroPanel13);
             this.metroPanel10.Controls.Add(this.metroPanel14);
@@ -525,9 +524,9 @@
             this.metroPanel10.HorizontalScrollbarBarColor = true;
             this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel10.HorizontalScrollbarSize = 10;
-            this.metroPanel10.Location = new System.Drawing.Point(16, 196);
+            this.metroPanel10.Location = new System.Drawing.Point(16, 228);
             this.metroPanel10.Name = "metroPanel10";
-            this.metroPanel10.Size = new System.Drawing.Size(278, 306);
+            this.metroPanel10.Size = new System.Drawing.Size(278, 317);
             this.metroPanel10.TabIndex = 211;
             this.metroPanel10.UseCustomBackColor = true;
             this.metroPanel10.UseStyleColors = true;
@@ -543,7 +542,7 @@
             this.metroPanel13.HorizontalScrollbarBarColor = true;
             this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel13.HorizontalScrollbarSize = 10;
-            this.metroPanel13.Location = new System.Drawing.Point(0, 302);
+            this.metroPanel13.Location = new System.Drawing.Point(0, 313);
             this.metroPanel13.Name = "metroPanel13";
             this.metroPanel13.Size = new System.Drawing.Size(278, 4);
             this.metroPanel13.TabIndex = 232;
@@ -718,8 +717,7 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel1.BackColor = System.Drawing.Color.White;
             this.metroPanel1.Controls.Add(this.metroPanel7);
             this.metroPanel1.Controls.Add(this.label11);
@@ -739,9 +737,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(318, 17);
+            this.metroPanel1.Location = new System.Drawing.Point(318, 49);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(282, 484);
+            this.metroPanel1.Size = new System.Drawing.Size(282, 495);
             this.metroPanel1.TabIndex = 212;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.UseStyleColors = true;
@@ -769,8 +767,7 @@
             // 
             // metroPanel8
             // 
-            this.metroPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel8.BackColor = System.Drawing.Color.White;
             this.metroPanel8.Controls.Add(this.metroPanel16);
             this.metroPanel8.Controls.Add(this.label4);
@@ -782,9 +779,9 @@
             this.metroPanel8.HorizontalScrollbarBarColor = true;
             this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel8.HorizontalScrollbarSize = 10;
-            this.metroPanel8.Location = new System.Drawing.Point(16, 17);
+            this.metroPanel8.Location = new System.Drawing.Point(16, 49);
             this.metroPanel8.Name = "metroPanel8";
-            this.metroPanel8.Size = new System.Drawing.Size(280, 485);
+            this.metroPanel8.Size = new System.Drawing.Size(280, 496);
             this.metroPanel8.TabIndex = 210;
             this.metroPanel8.UseCustomBackColor = true;
             this.metroPanel8.UseStyleColors = true;
@@ -814,11 +811,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 518);
+            this.ClientSize = new System.Drawing.Size(616, 561);
             this.Controls.Add(this.metroPanel4);
             this.Controls.Add(this.metroPanel10);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroPanel8);
+            this.MaximizeBox = false;
             this.Name = "EntryForm";
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.metroPanel12.ResumeLayout(false);

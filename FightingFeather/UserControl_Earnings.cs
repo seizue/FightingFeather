@@ -24,6 +24,11 @@ namespace FightingFeather
             GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
 
             LoadJsonData();
+
+            foreach (DataGridViewRow row in GridPlasada_Earnings.Rows)
+            {
+                row.Height = 28;
+            }
         }
 
         private void LoadJsonData()
@@ -126,19 +131,6 @@ namespace FightingFeather
 
                         DataGridViewTextBoxCell cell9 = new DataGridViewTextBoxCell();
                         cell9.Value = obj["WINNERS EARNING"];
-
-                        switch (obj["WINNER"].ToString())
-                        {
-                            case "M":                            
-                                cell9.Style.BackColor = Color.FromArgb(239, 253, 244);
-                                break;
-                            case "W":                            
-                                cell9.Style.BackColor = Color.FromArgb(255, 243, 245);
-                                break;
-                            default:
-                                cell9.Value = ""; // Handle other cases if needed
-                                break;
-                        }
                         row.Cells.Add(cell9);
 
 
@@ -158,11 +150,30 @@ namespace FightingFeather
             }
         }
 
+
+
+
+
+
         private void GridPlasada_Earnings_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.Value != null && e.Value.ToString() == "0")
             {
                 e.Value = "-";
+            }
+
+            // Check if the current cell contains text
+            if (e.Value != null && e.Value.GetType() == typeof(string))
+            {
+                string originalText = (string)e.Value;
+                if (!string.IsNullOrEmpty(originalText))
+                {
+                    // Convert the first letter to uppercase and the rest to lowercase
+                    string formattedText = char.ToUpper(originalText[0]) + originalText.Substring(1).ToLower();
+                    e.Value = formattedText;
+                    // Set the cell style to display the text with the modified formatting
+                    e.FormattingApplied = true;
+                }
             }
 
             // Check if the cell belongs to the "PAREHAS" column and if it's not a header cell
@@ -179,12 +190,12 @@ namespace FightingFeather
                 e.CellStyle.ForeColor = Color.FromArgb(153, 105, 28);
             }
 
-            // Change the foreground color for the WINNERS EARN" column
             if (e.ColumnIndex >= 0 && GridPlasada_Earnings.Columns[e.ColumnIndex].Name == "WINNERS_EARN" && e.RowIndex >= 0)
             {
-                // Set the foreground color for "WINNERS EARN" cells
+                // Set the foreground color for "WINNERS EARNING" cells
                 e.CellStyle.ForeColor = Color.Maroon;
             }
+
         }
 
 

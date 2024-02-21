@@ -11,6 +11,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Data.SqlClient;
 using Newtonsoft.Json;
+using MetroFramework.Controls;
 
 namespace FightingFeather
 {
@@ -37,8 +38,8 @@ namespace FightingFeather
 
             InitializeDatabase();
             UpdateFightIDs();
-            RefreshGrid();
-        
+            RefreshGrid();     
+
             // Subscribe to the CellFormatting event
             GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
 
@@ -50,6 +51,12 @@ namespace FightingFeather
 
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
+
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                row.Height = 28;
+            }
+
         }
 
         private void InitializeDatabase()
@@ -298,6 +305,7 @@ namespace FightingFeather
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+        
             // Check if the current cell contains text
             if (e.Value != null && e.Value.GetType() == typeof(string))
             {

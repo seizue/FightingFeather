@@ -319,6 +319,10 @@ namespace FightingFeather
                     e.FormattingApplied = true;
                 }
             }
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                row.Height = 28;
+            }
 
             // Check if the cell value is 0 and if it's not a header cell
             if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -771,6 +775,7 @@ namespace FightingFeather
 
                 entryForm.ShowDialog();
 
+                GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
 
 
             }
@@ -811,6 +816,7 @@ namespace FightingFeather
                 RefreshGrid();
 
                 MessageBox.Show("Successfully deleted.");
+                GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
 
             }
             else

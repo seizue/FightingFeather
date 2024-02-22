@@ -22,6 +22,7 @@ namespace FightingFeather
             // Subscribe to the CellFormatting event
             GridPlasada_Earnings.CellFormatting += GridPlasada_Earnings_CellFormatting;
             GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
+            GridPlasada_Earnings.SelectionChanged += GridPlasada_Earnings_SelectionChanged;
 
             LoadJsonData();
 
@@ -52,7 +53,7 @@ namespace FightingFeather
 
                         // Add cells based on the columns you want to display
                         DataGridViewTextBoxCell cell1 = new DataGridViewTextBoxCell();
-                        cell1.Value = obj["FIGHT"]; // Replace "ColumnName1" with the actual name
+                        cell1.Value = obj["FIGHT"]; 
                         row.Cells.Add(cell1);
 
                         DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
@@ -62,10 +63,12 @@ namespace FightingFeather
                             case "M":
                                 cell2.Value = obj["MERON"];
                                 cell2.Style.BackColor = Color.FromArgb(239, 253, 244);
+                               
                                 break;
                             case "W":
                                 cell2.Value = obj["WALA"];
                                 cell2.Style.BackColor = Color.FromArgb(255, 243, 245);
+                             
                                 break;
                             default:
                                 cell2.Value = ""; // Handle other cases if needed
@@ -73,6 +76,7 @@ namespace FightingFeather
                         }
                         row.Cells.Add(cell2);
 
+  
                         DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
                         // Determine the value for column BET based on the value of column WINNER
                         switch (obj["WINNER"].ToString())
@@ -80,50 +84,66 @@ namespace FightingFeather
                             case "M":
                                 if (obj["BET (M)"] != null)
                                 {
-                                    cell3.Value = obj["BET (M)"];
+                                    cell3.Value = obj["PAREHAS"];
+                                   
                                 }
                                 else
                                 {
-                                    // Handle case where "BET (M)" key is missing or null
                                     cell3.Value = 0; // or any default value you want to set
+                                  
                                 }
                                 break;
                             case "W":
                                 if (obj["BET (W)"] != null)
                                 {
                                     cell3.Value = obj["BET (W)"];
+                                   
                                 }
                                 else
                                 {
-                                    // Handle case where "BET (W)" key is missing or null
                                     cell3.Value = 0; // or any default value you want to set
+                                   
                                 }
                                 break;
                             case "Cancel":
                             case "None":
                                 cell3.Value = 0; // or any default value you want to set
+                               
                                 break;
                             default:
                                 cell3.Value = ""; // Handle other cases if needed
+                           
                                 break;
                         }
                         row.Cells.Add(cell3);
-
+            
+                      
                         DataGridViewTextBoxCell cell4 = new DataGridViewTextBoxCell();
-                        cell4.Value = obj["PAREHAS"]; 
+                        cell4.Value = obj["LOGRO"]; 
                         row.Cells.Add(cell4);
 
                         DataGridViewTextBoxCell cell5 = new DataGridViewTextBoxCell();
-                        cell5.Value = obj["LOGRO"]; 
+                        cell5.Value = obj["FEE"];
                         row.Cells.Add(cell5);
 
                         DataGridViewTextBoxCell cell6 = new DataGridViewTextBoxCell();
-                        cell6.Value = obj["FEE"];
+                        cell6.Value = obj["TOTAL PLASADA"];
                         row.Cells.Add(cell6);
 
                         DataGridViewTextBoxCell cell7 = new DataGridViewTextBoxCell();
-                        cell7.Value = obj["TOTAL PLASADA"];
+                        object rateValue = obj["RATE"];
+
+                        if (rateValue == null || string.IsNullOrWhiteSpace(rateValue.ToString()))
+                        {
+                            cell7.Value = "None";
+                        }
+                        else
+                        {
+                            cell7.Value = rateValue;
+                        }
+
                         row.Cells.Add(cell7);
+
 
                         DataGridViewTextBoxCell cell8 = new DataGridViewTextBoxCell();
                         cell8.Value = obj["RATE EARNINGS"];
@@ -136,6 +156,7 @@ namespace FightingFeather
 
                         // Add the row to the DataGridView
                         GridPlasada_Earnings.Rows.Add(row);
+
                     }
                 }
                 catch (Exception ex)
@@ -162,19 +183,6 @@ namespace FightingFeather
                 e.Value = "-";
             }
 
-            // Check if the current cell contains text
-            if (e.Value != null && e.Value.GetType() == typeof(string))
-            {
-                string originalText = (string)e.Value;
-                if (!string.IsNullOrEmpty(originalText))
-                {
-                    // Convert the first letter to uppercase and the rest to lowercase
-                    string formattedText = char.ToUpper(originalText[0]) + originalText.Substring(1).ToLower();
-                    e.Value = formattedText;
-                    // Set the cell style to display the text with the modified formatting
-                    e.FormattingApplied = true;
-                }
-            }
 
             // Check if the cell belongs to the "PAREHAS" column and if it's not a header cell
             if (e.ColumnIndex >= 0 && GridPlasada_Earnings.Columns[e.ColumnIndex].Name == "PAREHAS" && e.RowIndex >= 0)
@@ -195,7 +203,6 @@ namespace FightingFeather
                 // Set the foreground color for "WINNERS EARNING" cells
                 e.CellStyle.ForeColor = Color.Maroon;
             }
-
         }
 
 
@@ -222,5 +229,78 @@ namespace FightingFeather
                 e.Handled = true;
             }
         }
+
+
+        private void GridPlasada_Earnings_SelectionChanged(object sender, EventArgs e)
+        {
+            // Ensure that at least one row is selected
+            if (GridPlasada_Earnings.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = GridPlasada_Earnings.SelectedRows[0];
+
+                // Populate the textBox_FIGHT with the value from the "FIGHT" column
+                textBox_FIGHT.Text = selectedRow.Cells["FIGHT"].Value.ToString();
+
+                // Populate the textBox_NAME with the value from the "WINNER" column
+                textBox_NAME.Text = selectedRow.Cells["WINNER"].Value.ToString();
+
+                // Populate the textBox_BETPA with the value from the "BET" column
+                textBox_BETPA.Text = selectedRow.Cells["BET"].Value.ToString();
+
+                // Populate the textBox_FEE with the value from the "FEE" column
+                textBox_FEE.Text = selectedRow.Cells["FEE"].Value.ToString();
+
+                // Populate the textBox_CITYTAX with a constant value of 300
+                textBox_CITYTAX.Text = "300";
+
+                // Populate the label_RATE with the value from the "RATE" column
+                label_RATE.Text = selectedRow.Cells["RATE"].Value.ToString();
+
+                // Populate the textBox_RATE_EARN with the value from the "RATE_EARNINGS" column
+                textBox_RATE_EARN.Text = selectedRow.Cells["RATE_EARNINGS"].Value.ToString();
+
+                // Calculate subtotal1 by subtracting the fee from the bet
+                if (decimal.TryParse(selectedRow.Cells["BET"].Value.ToString(), out decimal bet) &&
+                    decimal.TryParse(selectedRow.Cells["FEE"].Value.ToString(), out decimal fee))
+                {
+                    decimal subtotal1 = bet - fee;
+                    textBox_SUBTOTAL1.Text = subtotal1.ToString();
+
+                    // Calculate subtotal2 by subtracting 300 from subtotal1
+                    decimal defaultTax = 300;
+                    decimal subtotal2 = subtotal1 - defaultTax;
+                    textBox_SUBTOTAL2.Text = subtotal2.ToString();
+
+                    // Calculate subtotal3 by adding textBox_RATE_EARN to it
+                    if (decimal.TryParse(textBox_RATE_EARN.Text, out decimal rateEarn))
+                    {
+                        decimal subtotal3 = subtotal2 + rateEarn;
+                        textBox_SUBTOTAL3.Text = subtotal3.ToString();
+
+                        // Display subtotal3 in textBox_TOTAL
+                        textBox_TOTAL.Text = subtotal3.ToString();
+                    }
+                    else
+                    {
+                        // Handle parsing errors or null values if necessary
+                        textBox_SUBTOTAL3.Text = "Error"; // Or any appropriate default value
+                        textBox_TOTAL.Text = "Error"; // Or any appropriate default value
+                    }
+                }
+                else
+                {
+                    // Handle parsing errors or null values if necessary
+                    textBox_SUBTOTAL1.Text = "Error"; // Or any appropriate default value
+                    textBox_SUBTOTAL2.Text = "Error"; // Or any appropriate default value
+                    textBox_SUBTOTAL3.Text = "Error"; // Or any appropriate default value
+                    textBox_TOTAL.Text = "Error"; // Or any appropriate default value
+                }
+            }
+
+
+        }
     }
+
 }
+

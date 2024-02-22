@@ -28,30 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.GridPlasada_Earnings = new MetroFramework.Controls.MetroGrid();
-            this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAREHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOGRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FEE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.textBox_SUBTOTAL2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_SUBTOTAL3 = new System.Windows.Forms.TextBox();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox_TOTAL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,20 +50,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_RATE = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_710 = new System.Windows.Forms.TextBox();
-            this.textBox_34 = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox_810 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox_RATE_EARN = new System.Windows.Forms.TextBox();
             this.textBox_CITYTAX = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox_FEE = new System.Windows.Forms.TextBox();
@@ -88,10 +71,21 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
+            this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOGRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FEE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.Panel_PlasadaEER.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).BeginInit();
             this.metroPanel4.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_PlasadaEER
@@ -120,13 +114,13 @@
             // GridPlasada_Earnings
             // 
             this.GridPlasada_Earnings.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Earnings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Earnings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.GridPlasada_Earnings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -135,33 +129,33 @@
             this.GridPlasada_Earnings.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Earnings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Earnings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Earnings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Earnings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GridPlasada_Earnings.ColumnHeadersHeight = 48;
             this.GridPlasada_Earnings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIGHT,
             this.WINNER,
             this.BET,
-            this.PAREHAS,
             this.LOGRO,
             this.FEE,
             this.TOTAL_PLASADA,
+            this.RATE,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Earnings.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Earnings.DefaultCellStyle = dataGridViewCellStyle12;
             this.GridPlasada_Earnings.EnableHeadersVisualStyles = false;
             this.GridPlasada_Earnings.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Earnings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -169,126 +163,55 @@
             this.GridPlasada_Earnings.MultiSelect = false;
             this.GridPlasada_Earnings.Name = "GridPlasada_Earnings";
             this.GridPlasada_Earnings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Earnings.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Earnings.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.GridPlasada_Earnings.RowHeadersVisible = false;
             this.GridPlasada_Earnings.RowHeadersWidth = 43;
             this.GridPlasada_Earnings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Earnings.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.GridPlasada_Earnings.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.GridPlasada_Earnings.RowTemplate.Height = 23;
             this.GridPlasada_Earnings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Earnings.Size = new System.Drawing.Size(668, 517);
+            this.GridPlasada_Earnings.Size = new System.Drawing.Size(694, 517);
             this.GridPlasada_Earnings.TabIndex = 239;
             this.GridPlasada_Earnings.UseCustomBackColor = true;
             this.GridPlasada_Earnings.UseCustomForeColor = true;
             this.GridPlasada_Earnings.UseStyleColors = true;
-            // 
-            // FIGHT
-            // 
-            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FIGHT.FillWeight = 91.15936F;
-            this.FIGHT.Frozen = true;
-            this.FIGHT.HeaderText = "FIGHT";
-            this.FIGHT.Name = "FIGHT";
-            this.FIGHT.Width = 76;
-            // 
-            // WINNER
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle3;
-            this.WINNER.FillWeight = 91.15936F;
-            this.WINNER.HeaderText = "WINNER";
-            this.WINNER.Name = "WINNER";
-            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // BET
-            // 
-            this.BET.HeaderText = "BET";
-            this.BET.Name = "BET";
-            // 
-            // PAREHAS
-            // 
-            this.PAREHAS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PAREHAS.DividerWidth = 2;
-            this.PAREHAS.FillWeight = 91.15936F;
-            this.PAREHAS.HeaderText = "PAREHAS";
-            this.PAREHAS.Name = "PAREHAS";
-            this.PAREHAS.Width = 76;
-            // 
-            // LOGRO
-            // 
-            this.LOGRO.FillWeight = 91.15936F;
-            this.LOGRO.HeaderText = "LOGRO";
-            this.LOGRO.Name = "LOGRO";
-            // 
-            // FEE
-            // 
-            this.FEE.FillWeight = 91.15936F;
-            this.FEE.HeaderText = "FEE";
-            this.FEE.Name = "FEE";
-            // 
-            // TOTAL_PLASADA
-            // 
-            this.TOTAL_PLASADA.FillWeight = 91.15936F;
-            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
-            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
-            // 
-            // RATE_EARNINGS
-            // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle4;
-            this.RATE_EARNINGS.FillWeight = 63.81155F;
-            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
-            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
-            // 
-            // WINNERS_EARN
-            // 
-            this.WINNERS_EARN.FillWeight = 70F;
-            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
-            this.WINNERS_EARN.Name = "WINNERS_EARN";
             // 
             // metroPanel4
             // 
             this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel4.BackColor = System.Drawing.Color.White;
+            this.metroPanel4.Controls.Add(this.panel6);
+            this.metroPanel4.Controls.Add(this.textBox_TOTAL);
+            this.metroPanel4.Controls.Add(this.label12);
+            this.metroPanel4.Controls.Add(this.panel3);
             this.metroPanel4.Controls.Add(this.textBox_SUBTOTAL2);
             this.metroPanel4.Controls.Add(this.label11);
             this.metroPanel4.Controls.Add(this.label13);
             this.metroPanel4.Controls.Add(this.textBox_SUBTOTAL3);
-            this.metroPanel4.Controls.Add(this.panel10);
             this.metroPanel4.Controls.Add(this.label6);
             this.metroPanel4.Controls.Add(this.textBox_SUBTOTAL1);
             this.metroPanel4.Controls.Add(this.panel9);
             this.metroPanel4.Controls.Add(this.panel4);
             this.metroPanel4.Controls.Add(this.panel2);
             this.metroPanel4.Controls.Add(this.panel20);
-            this.metroPanel4.Controls.Add(this.label10);
-            this.metroPanel4.Controls.Add(this.label9);
-            this.metroPanel4.Controls.Add(this.label8);
+            this.metroPanel4.Controls.Add(this.label_RATE);
             this.metroPanel4.Controls.Add(this.label7);
             this.metroPanel4.Controls.Add(this.label5);
             this.metroPanel4.Controls.Add(this.label4);
             this.metroPanel4.Controls.Add(this.label3);
             this.metroPanel4.Controls.Add(this.label1);
-            this.metroPanel4.Controls.Add(this.textBox_710);
-            this.metroPanel4.Controls.Add(this.textBox_34);
-            this.metroPanel4.Controls.Add(this.panel8);
-            this.metroPanel4.Controls.Add(this.textBox_810);
+            this.metroPanel4.Controls.Add(this.textBox_RATE_EARN);
             this.metroPanel4.Controls.Add(this.panel7);
-            this.metroPanel4.Controls.Add(this.panel6);
             this.metroPanel4.Controls.Add(this.textBox_CITYTAX);
             this.metroPanel4.Controls.Add(this.panel5);
             this.metroPanel4.Controls.Add(this.textBox_FEE);
@@ -302,9 +225,9 @@
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(672, 0);
+            this.metroPanel4.Location = new System.Drawing.Point(695, 0);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(388, 523);
+            this.metroPanel4.Size = new System.Drawing.Size(365, 523);
             this.metroPanel4.TabIndex = 237;
             this.metroPanel4.UseCustomBackColor = true;
             this.metroPanel4.UseStyleColors = true;
@@ -318,7 +241,7 @@
             this.textBox_SUBTOTAL2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_SUBTOTAL2.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_SUBTOTAL2.ForeColor = System.Drawing.Color.Black;
-            this.textBox_SUBTOTAL2.Location = new System.Drawing.Point(196, 231);
+            this.textBox_SUBTOTAL2.Location = new System.Drawing.Point(184, 231);
             this.textBox_SUBTOTAL2.Multiline = true;
             this.textBox_SUBTOTAL2.Name = "textBox_SUBTOTAL2";
             this.textBox_SUBTOTAL2.Size = new System.Drawing.Size(159, 17);
@@ -331,7 +254,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(39, 232);
+            this.label11.Location = new System.Drawing.Point(27, 232);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 281;
@@ -342,7 +265,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(39, 358);
+            this.label13.Location = new System.Drawing.Point(27, 302);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 293;
@@ -354,7 +277,7 @@
             this.textBox_SUBTOTAL3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_SUBTOTAL3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_SUBTOTAL3.ForeColor = System.Drawing.Color.Black;
-            this.textBox_SUBTOTAL3.Location = new System.Drawing.Point(196, 357);
+            this.textBox_SUBTOTAL3.Location = new System.Drawing.Point(184, 301);
             this.textBox_SUBTOTAL3.Multiline = true;
             this.textBox_SUBTOTAL3.Name = "textBox_SUBTOTAL3";
             this.textBox_SUBTOTAL3.Size = new System.Drawing.Size(159, 17);
@@ -362,25 +285,12 @@
             this.textBox_SUBTOTAL3.Text = "TEST";
             this.textBox_SUBTOTAL3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // panel10
-            // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.panel10.Controls.Add(this.label12);
-            this.panel10.Controls.Add(this.textBox_TOTAL);
-            this.panel10.Location = new System.Drawing.Point(4, 389);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(383, 48);
-            this.panel10.TabIndex = 291;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Maroon;
-            this.label12.Location = new System.Drawing.Point(35, 12);
+            this.label12.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label12.Location = new System.Drawing.Point(27, 343);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(43, 18);
             this.label12.TabIndex = 281;
@@ -388,11 +298,11 @@
             // 
             // textBox_TOTAL
             // 
-            this.textBox_TOTAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.textBox_TOTAL.BackColor = System.Drawing.Color.White;
             this.textBox_TOTAL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_TOTAL.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_TOTAL.ForeColor = System.Drawing.Color.Maroon;
-            this.textBox_TOTAL.Location = new System.Drawing.Point(192, 12);
+            this.textBox_TOTAL.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.textBox_TOTAL.Location = new System.Drawing.Point(184, 344);
             this.textBox_TOTAL.Multiline = true;
             this.textBox_TOTAL.Name = "textBox_TOTAL";
             this.textBox_TOTAL.Size = new System.Drawing.Size(159, 17);
@@ -405,7 +315,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(39, 166);
+            this.label6.Location = new System.Drawing.Point(27, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 290;
@@ -417,7 +327,7 @@
             this.textBox_SUBTOTAL1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_SUBTOTAL1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_SUBTOTAL1.ForeColor = System.Drawing.Color.Black;
-            this.textBox_SUBTOTAL1.Location = new System.Drawing.Point(196, 163);
+            this.textBox_SUBTOTAL1.Location = new System.Drawing.Point(184, 163);
             this.textBox_SUBTOTAL1.Multiline = true;
             this.textBox_SUBTOTAL1.Name = "textBox_SUBTOTAL1";
             this.textBox_SUBTOTAL1.Size = new System.Drawing.Size(159, 17);
@@ -431,7 +341,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel9.Location = new System.Drawing.Point(4, 437);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(384, 5);
+            this.panel9.Size = new System.Drawing.Size(361, 5);
             this.panel9.TabIndex = 286;
             // 
             // panel4
@@ -440,13 +350,13 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(4, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(384, 5);
+            this.panel4.Size = new System.Drawing.Size(361, 5);
             this.panel4.TabIndex = 285;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Location = new System.Drawing.Point(45, 46);
+            this.panel2.Location = new System.Drawing.Point(30, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(310, 1);
             this.panel2.TabIndex = 283;
@@ -454,50 +364,28 @@
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel20.Location = new System.Drawing.Point(45, 348);
+            this.panel20.Location = new System.Drawing.Point(30, 286);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(310, 1);
             this.panel20.TabIndex = 280;
             // 
-            // label10
+            // label_RATE
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(43, 322);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 14);
-            this.label10.TabIndex = 278;
-            this.label10.Text = "7/10";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(43, 293);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 14);
-            this.label9.TabIndex = 277;
-            this.label9.Text = "3/4";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(43, 264);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 14);
-            this.label8.TabIndex = 276;
-            this.label8.Text = "8/10";
+            this.label_RATE.AutoSize = true;
+            this.label_RATE.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RATE.ForeColor = System.Drawing.Color.DimGray;
+            this.label_RATE.Location = new System.Drawing.Point(31, 264);
+            this.label_RATE.Name = "label_RATE";
+            this.label_RATE.Size = new System.Drawing.Size(32, 14);
+            this.label_RATE.TabIndex = 276;
+            this.label_RATE.Text = "None";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(39, 200);
+            this.label7.Location = new System.Drawing.Point(27, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 275;
@@ -508,7 +396,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(39, 135);
+            this.label5.Location = new System.Drawing.Point(27, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 273;
@@ -519,7 +407,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(39, 109);
+            this.label4.Location = new System.Drawing.Point(27, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 272;
@@ -530,7 +418,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(39, 82);
+            this.label3.Location = new System.Drawing.Point(27, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 271;
@@ -541,81 +429,31 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(39, 55);
+            this.label1.Location = new System.Drawing.Point(27, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 270;
             this.label1.Text = "FIGHT";
             // 
-            // textBox_710
+            // textBox_RATE_EARN
             // 
-            this.textBox_710.BackColor = System.Drawing.Color.White;
-            this.textBox_710.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_710.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_710.Location = new System.Drawing.Point(196, 319);
-            this.textBox_710.Multiline = true;
-            this.textBox_710.Name = "textBox_710";
-            this.textBox_710.Size = new System.Drawing.Size(159, 17);
-            this.textBox_710.TabIndex = 266;
-            this.textBox_710.Text = "TEST";
-            this.textBox_710.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox_34
-            // 
-            this.textBox_34.BackColor = System.Drawing.Color.White;
-            this.textBox_34.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_34.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_34.Location = new System.Drawing.Point(196, 292);
-            this.textBox_34.Multiline = true;
-            this.textBox_34.Name = "textBox_34";
-            this.textBox_34.Size = new System.Drawing.Size(159, 17);
-            this.textBox_34.TabIndex = 264;
-            this.textBox_34.Text = "TEST";
-            this.textBox_34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel8.Location = new System.Drawing.Point(45, 255);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(310, 1);
-            this.panel8.TabIndex = 263;
-            // 
-            // textBox_810
-            // 
-            this.textBox_810.BackColor = System.Drawing.Color.White;
-            this.textBox_810.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_810.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_810.Location = new System.Drawing.Point(196, 263);
-            this.textBox_810.Multiline = true;
-            this.textBox_810.Name = "textBox_810";
-            this.textBox_810.Size = new System.Drawing.Size(159, 17);
-            this.textBox_810.TabIndex = 262;
-            this.textBox_810.Text = "TEST";
-            this.textBox_810.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Location = new System.Drawing.Point(45, 223);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(310, 1);
-            this.panel7.TabIndex = 261;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel6.Location = new System.Drawing.Point(45, 191);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(310, 1);
-            this.panel6.TabIndex = 259;
+            this.textBox_RATE_EARN.BackColor = System.Drawing.Color.White;
+            this.textBox_RATE_EARN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_RATE_EARN.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_RATE_EARN.Location = new System.Drawing.Point(184, 263);
+            this.textBox_RATE_EARN.Multiline = true;
+            this.textBox_RATE_EARN.Name = "textBox_RATE_EARN";
+            this.textBox_RATE_EARN.Size = new System.Drawing.Size(159, 17);
+            this.textBox_RATE_EARN.TabIndex = 262;
+            this.textBox_RATE_EARN.Text = "TEST";
+            this.textBox_RATE_EARN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox_CITYTAX
             // 
             this.textBox_CITYTAX.BackColor = System.Drawing.Color.White;
             this.textBox_CITYTAX.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_CITYTAX.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_CITYTAX.Location = new System.Drawing.Point(196, 199);
+            this.textBox_CITYTAX.Location = new System.Drawing.Point(184, 199);
             this.textBox_CITYTAX.Multiline = true;
             this.textBox_CITYTAX.Name = "textBox_CITYTAX";
             this.textBox_CITYTAX.Size = new System.Drawing.Size(159, 17);
@@ -626,7 +464,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Location = new System.Drawing.Point(45, 158);
+            this.panel5.Location = new System.Drawing.Point(30, 157);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(310, 1);
             this.panel5.TabIndex = 257;
@@ -636,7 +474,7 @@
             this.textBox_FEE.BackColor = System.Drawing.Color.White;
             this.textBox_FEE.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_FEE.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_FEE.Location = new System.Drawing.Point(196, 134);
+            this.textBox_FEE.Location = new System.Drawing.Point(184, 134);
             this.textBox_FEE.Multiline = true;
             this.textBox_FEE.Name = "textBox_FEE";
             this.textBox_FEE.Size = new System.Drawing.Size(159, 17);
@@ -649,7 +487,7 @@
             this.textBox_BETPA.BackColor = System.Drawing.Color.White;
             this.textBox_BETPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_BETPA.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_BETPA.Location = new System.Drawing.Point(196, 108);
+            this.textBox_BETPA.Location = new System.Drawing.Point(184, 108);
             this.textBox_BETPA.Multiline = true;
             this.textBox_BETPA.Name = "textBox_BETPA";
             this.textBox_BETPA.Size = new System.Drawing.Size(159, 17);
@@ -662,7 +500,7 @@
             this.textBox_NAME.BackColor = System.Drawing.Color.White;
             this.textBox_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_NAME.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NAME.Location = new System.Drawing.Point(196, 81);
+            this.textBox_NAME.Location = new System.Drawing.Point(184, 81);
             this.textBox_NAME.Multiline = true;
             this.textBox_NAME.Name = "textBox_NAME";
             this.textBox_NAME.Size = new System.Drawing.Size(159, 17);
@@ -675,7 +513,7 @@
             this.textBox_FIGHT.BackColor = System.Drawing.Color.White;
             this.textBox_FIGHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_FIGHT.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_FIGHT.Location = new System.Drawing.Point(196, 54);
+            this.textBox_FIGHT.Location = new System.Drawing.Point(184, 54);
             this.textBox_FIGHT.Multiline = true;
             this.textBox_FIGHT.Name = "textBox_FIGHT";
             this.textBox_FIGHT.Size = new System.Drawing.Size(159, 17);
@@ -700,7 +538,7 @@
             this.metroTile1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTile1.Location = new System.Drawing.Point(4, 442);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(384, 77);
+            this.metroTile1.Size = new System.Drawing.Size(361, 77);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroTile1.TabIndex = 247;
             this.metroTile1.Text = "PRINT RECEIPT";
@@ -717,7 +555,7 @@
             this.metroPanel9.HorizontalScrollbarSize = 10;
             this.metroPanel9.Location = new System.Drawing.Point(4, 519);
             this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(384, 4);
+            this.metroPanel9.Size = new System.Drawing.Size(361, 4);
             this.metroPanel9.TabIndex = 246;
             this.metroPanel9.UseCustomBackColor = true;
             this.metroPanel9.UseStyleColors = true;
@@ -806,6 +644,94 @@
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel7.VerticalScrollbarSize = 10;
             // 
+            // FIGHT
+            // 
+            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FIGHT.FillWeight = 91.15936F;
+            this.FIGHT.Frozen = true;
+            this.FIGHT.HeaderText = "FIGHT";
+            this.FIGHT.Name = "FIGHT";
+            this.FIGHT.Width = 76;
+            // 
+            // WINNER
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle10;
+            this.WINNER.FillWeight = 91.15936F;
+            this.WINNER.HeaderText = "WINNER";
+            this.WINNER.Name = "WINNER";
+            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // BET
+            // 
+            this.BET.HeaderText = "BET";
+            this.BET.Name = "BET";
+            // 
+            // LOGRO
+            // 
+            this.LOGRO.FillWeight = 91.15936F;
+            this.LOGRO.HeaderText = "LOGRO";
+            this.LOGRO.Name = "LOGRO";
+            // 
+            // FEE
+            // 
+            this.FEE.FillWeight = 91.15936F;
+            this.FEE.HeaderText = "FEE";
+            this.FEE.Name = "FEE";
+            // 
+            // TOTAL_PLASADA
+            // 
+            this.TOTAL_PLASADA.FillWeight = 91.15936F;
+            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
+            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
+            // 
+            // RATE
+            // 
+            this.RATE.HeaderText = "RATE";
+            this.RATE.Name = "RATE";
+            // 
+            // RATE_EARNINGS
+            // 
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle11;
+            this.RATE_EARNINGS.FillWeight = 63.81155F;
+            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
+            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
+            // 
+            // WINNERS_EARN
+            // 
+            this.WINNERS_EARN.FillWeight = 70F;
+            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
+            this.WINNERS_EARN.Name = "WINNERS_EARN";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Location = new System.Drawing.Point(33, 324);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(310, 1);
+            this.panel3.TabIndex = 294;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Location = new System.Drawing.Point(30, 222);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(310, 1);
+            this.panel7.TabIndex = 261;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Location = new System.Drawing.Point(30, 377);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(310, 1);
+            this.panel6.TabIndex = 295;
+            // 
             // UserControl_Earnings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,8 +743,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).EndInit();
             this.metroPanel4.ResumeLayout(false);
             this.metroPanel4.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -829,15 +753,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private MetroFramework.Controls.MetroGrid GridPlasada_Earnings;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WINNER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BET;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAREHAS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOGRO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FEE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroPanel metroPanel4;
         private System.Windows.Forms.Label label11;
@@ -846,19 +761,13 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_RATE;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_34;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox_810;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox textBox_RATE_EARN;
         private System.Windows.Forms.TextBox textBox_CITYTAX;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox_FEE;
@@ -871,11 +780,21 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_SUBTOTAL1;
-        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox_TOTAL;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox_SUBTOTAL3;
-        private System.Windows.Forms.TextBox textBox_710;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WINNER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BET;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOGRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FEE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
     }
 }

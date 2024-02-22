@@ -467,12 +467,12 @@ namespace FightingFeather
                     string winner = row.Cells["WINNER"].Value.ToString();
 
                     // Determine the color based on the winner formula and if the value is greater than 0
-                    if (winner == "M" && (column.Name == "MERON" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0) || (column.Name == "RATE_EARNINGS" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
+                    if (winner == "M" && (column.Name == "MERON" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
                     {
                         // Set the color for MERON, WINNERS_EARN, and RATE_EARNINGS when winner is "M" and the value is greater than 0
                         row.Cells[column.Name].Style.BackColor = Color.FromArgb(239, 253, 244);
                     }
-                    else if (winner == "W" && (column.Name == "WALA" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0) || (column.Name == "RATE_EARNINGS" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
+                    else if (winner == "W" && (column.Name == "WALA" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
                     {
                         // Set the color for WALA, WINNERS_EARN, and RATE_EARNINGS when winner is "W" and the value is greater than 0
                         row.Cells[column.Name].Style.BackColor = Color.FromArgb(255, 243, 245);
@@ -814,9 +814,10 @@ namespace FightingFeather
                 ResetAutoIncrement();
                 UpdateFightIDs();
                 RefreshGrid();
+                GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
 
                 MessageBox.Show("Successfully deleted.");
-                GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
+              
 
             }
             else

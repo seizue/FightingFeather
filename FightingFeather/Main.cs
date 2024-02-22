@@ -48,10 +48,10 @@ namespace FightingFeather
 
             //Subscribe to the CellPainting event
             GridPlasada_Entries.CellPainting += GridPlasada_Entries_CellPainting;
-
+         
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
-
+               
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
                 row.Height = 28;
@@ -453,7 +453,7 @@ namespace FightingFeather
             if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN" && e.RowIndex >= 0)
             {
                 // Set the font color for cells in the "WINNERS EARNING" column
-                e.CellStyle.ForeColor = Color.FromArgb(150, 21, 40);
+                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
             }
 
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
@@ -461,7 +461,7 @@ namespace FightingFeather
                 DataGridViewColumn column = GridPlasada_Entries.Columns[e.ColumnIndex];
                 DataGridViewRow row = GridPlasada_Entries.Rows[e.RowIndex];
 
-                // Check for MERON, WALA, WINNERS_EARN, and RATE_EARNINGS columns
+                // Check for MERON, WALA, WINNERS_EARN columns
                 if ((column.Name == "MERON" || column.Name == "WALA" || column.Name == "WINNERS_EARN" || column.Name == "RATE_EARNINGS") && column.Name != "WINNER" && row.Cells["WINNER"].Value != null)
                 {
                     string winner = row.Cells["WINNER"].Value.ToString();
@@ -469,12 +469,12 @@ namespace FightingFeather
                     // Determine the color based on the winner formula and if the value is greater than 0
                     if (winner == "M" && (column.Name == "MERON" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
                     {
-                        // Set the color for MERON, WINNERS_EARN, and RATE_EARNINGS when winner is "M" and the value is greater than 0
+                        // Set the color for MERON, WINNERS_EARN when winner is "M" and the value is greater than 0
                         row.Cells[column.Name].Style.BackColor = Color.FromArgb(239, 253, 244);
                     }
                     else if (winner == "W" && (column.Name == "WALA" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
                     {
-                        // Set the color for WALA, WINNERS_EARN, and RATE_EARNINGS when winner is "W" and the value is greater than 0
+                        // Set the color for WALA, WINNERS_EARN when winner is "W" and the value is greater than 0
                         row.Cells[column.Name].Style.BackColor = Color.FromArgb(255, 243, 245);
                     }
                 }
@@ -882,5 +882,6 @@ namespace FightingFeather
             label_Receipt.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
         }
+
     }
 }

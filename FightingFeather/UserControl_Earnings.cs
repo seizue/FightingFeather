@@ -48,6 +48,22 @@ namespace FightingFeather
                     // Assuming jsonArray contains an array of objects
                     foreach (JObject obj in jsonArray)
                     {
+
+                        // Convert WALA to uppercase
+                        if (obj.ContainsKey("WALA"))
+                        {
+                            string walaValue = obj["WALA"].ToString();
+                            obj["WALA"] = char.ToUpper(walaValue[0]) + walaValue.Substring(1);
+                        }
+
+                        // Convert MERON to uppercase
+                        if (obj.ContainsKey("MERON"))
+                        {
+                            string meronValue = obj["MERON"].ToString();
+                            obj["MERON"] = char.ToUpper(meronValue[0]) + meronValue.Substring(1);
+                        }
+
+
                         // Create a new row
                         DataGridViewRow row = new DataGridViewRow();
 
@@ -157,6 +173,7 @@ namespace FightingFeather
                         // Add the row to the DataGridView
                         GridPlasada_Earnings.Rows.Add(row);
 
+                   
                     }
                 }
                 catch (Exception ex)

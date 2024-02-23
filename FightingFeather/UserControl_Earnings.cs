@@ -279,49 +279,55 @@ namespace FightingFeather
 
                 // Populate the textBox_RATE_EARN with the value from the "RATE_EARNINGS" column
                 object rateEarningsValue = selectedRow.Cells["RATE_EARNINGS"].Value;
-                if (rateEarningsValue != null && rateEarningsValue.ToString() != "0")
+                if (rateEarningsValue != null)
                 {
-                    textBox_RATE_EARN.Text = rateEarningsValue.ToString();
-                }
-                else
-                {
-                    textBox_RATE_EARN.Text = "-";
-                }
-
-
-                // Calculate subtotal1 by subtracting the fee from the bet
-                if (decimal.TryParse(selectedRow.Cells["BET"].Value.ToString(), out decimal bet) &&
-                    decimal.TryParse(selectedRow.Cells["FEE"].Value.ToString(), out decimal fee))
-                {
-                    decimal subtotal1 = bet - fee;
-                    textBox_SUBTOTAL1.Text = subtotal1.ToString();
-
-                    // Calculate subtotal2 by subtracting 300 from subtotal1
-                    decimal defaultTax = 300;
-                    decimal subtotal2 = subtotal1 - defaultTax;
-                    textBox_SUBTOTAL2.Text = subtotal2.ToString();
-
-                    // Calculate subtotal3 by adding textBox_RATE_EARN to it
-                    if (decimal.TryParse(textBox_RATE_EARN.Text, out decimal rateEarn))
+                    string rateEarningsText = rateEarningsValue.ToString();
+                    if (rateEarningsText != "0")
                     {
-                        decimal total = subtotal2 + rateEarn;
-                        textBox_TOTAL.Text = total.ToString();
-
-                     
+                        textBox_RATE_EARN.Text = rateEarningsText;
                     }
                     else
                     {
-                      
-                        textBox_TOTAL.Text = "Error"; // Or any appropriate default value
+                        textBox_RATE_EARN.Text = "-";
+                    }
+                    // Now, we store the actual value without any conversion or representation
+                    if (decimal.TryParse(rateEarningsText, out decimal rateEarnValue))
+                    {
+                        // Continue with calculations using rateEarnValue
+                        // Parse bet and fee from the selected row cells
+                        if (decimal.TryParse(selectedRow.Cells["BET"].Value?.ToString(), out decimal bet) &&
+                            decimal.TryParse(selectedRow.Cells["FEE"].Value?.ToString(), out decimal fee))
+                        {
+                            // Calculate subtotal1 by subtracting the fee from the bet
+                            decimal subtotal1 = bet - fee;
+                            textBox_SUBTOTAL1.Text = subtotal1.ToString();
+
+                            // Calculate subtotal2 by subtracting 300 from subtotal1
+                            decimal defaultTax = 300;
+                            decimal subtotal2 = subtotal1 - defaultTax;
+                            textBox_SUBTOTAL2.Text = subtotal2.ToString();
+
+                            // Calculate subtotal3 by adding rateEarnValue to it
+                            decimal total = subtotal2 + rateEarnValue;
+                            textBox_TOTAL.Text = total.ToString();
+                        }
+                        else
+                        {
+                            textBox_TOTAL.Text = "Error: Invalid bet or fee"; // Or any appropriate default value
+                        }
+                    }
+                    else
+                    {
+                        textBox_TOTAL.Text = "Error: Invalid rate earnings"; // Or any appropriate default value
                     }
                 }
                 else
                 {
-                    // Handle parsing errors or null values if necessary
-                    textBox_SUBTOTAL1.Text = "Error"; // Or any appropriate default value
-                    textBox_SUBTOTAL2.Text = "Error"; // Or any appropriate default value
-                    textBox_TOTAL.Text = "Error"; // Or any appropriate default value
+                    textBox_TOTAL.Text = "Error: Rate earnings is null"; // Or any appropriate default value
                 }
+
+
+
             }
 
         }

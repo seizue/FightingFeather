@@ -38,7 +38,14 @@ namespace FightingFeather
 
             InitializeDatabase();
             UpdateFightIDs();
-            RefreshGrid();     
+            RefreshGrid();
+
+
+            CalculateAndDisplayFightTotal();
+            CalculateAndDisplayDrawCancelTotal();
+            CalculateAndDisplayFeeTotal();
+            CalculateAndDisplayTotalPlasada();
+            CalculateAndDisplayWinnerEarnTotal();
 
             // Subscribe to the CellFormatting event
             GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
@@ -177,6 +184,7 @@ namespace FightingFeather
                             {
                                 PopulateGridRow(reader, connection);
                             }
+                        
                         }
                     }
                 }
@@ -301,6 +309,129 @@ namespace FightingFeather
             // Check if the value can be parsed as a number
             return double.TryParse(value.ToString(), out _);
         }
+
+        public void CalculateAndDisplayFightTotal()
+        {
+            int totalFights = GridPlasada_Entries.Rows.Count;
+
+            // Create a new row to display the totalFights at the end
+            DataGridViewRow totalRow = new DataGridViewRow();
+            totalRow.CreateCells(GridPlasada_Entries);
+            totalRow.Cells[0].Value = "";
+         
+
+            // Add the total row to the DataGridView
+            GridPlasada_Entries.Rows.Add(totalRow);
+        }
+
+        public void CalculateAndDisplayDrawCancelTotal()
+        {
+            int totalDraws = 0;
+            int totalCancels = 0;
+
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells["WINNER"].Value != null)
+                {
+                    string winnerValue = row.Cells["WINNER"].Value.ToString();
+                    if (winnerValue.Equals("DRAW", StringComparison.OrdinalIgnoreCase))
+                    {
+                        totalDraws++;
+                    }
+                    else if (winnerValue.Equals("CANCEL", StringComparison.OrdinalIgnoreCase))
+                    {
+                        totalCancels++;
+                    }
+                }
+            }
+
+            // Find the row labeled "Total Fights:"
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
+                {
+                    row.Cells[1].Value = $"Draws: {totalDraws}"; // Add label for total draws
+                    row.Cells[2].Value = $"Cancels: {totalCancels}"; // Add label for total cancels
+                    break;
+                }
+            }
+        }
+
+        public void CalculateAndDisplayFeeTotal()
+        {
+            decimal totalFee = 0;
+
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells["FEE"].Value != null && decimal.TryParse(row.Cells["FEE"].Value.ToString(), out decimal fee))
+                {
+                    totalFee += fee;
+                }
+            }
+
+            // Find the row labeled "Total Fights:"
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
+                {
+                    // Assuming the "FEE" column is at index 5, display the total fee in the next column
+                    row.Cells[11].Value = $"";
+                    row.Cells[12].Value = $"{totalFee}";
+                    break;
+                }
+            }
+        }
+
+
+        public void CalculateAndDisplayTotalPlasada()
+        {
+            decimal totalPlasada = 0;
+
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells["TOTAL_PLASADA"].Value != null && decimal.TryParse(row.Cells["TOTAL_PLASADA"].Value.ToString(), out decimal plasada))
+                {
+                    totalPlasada += plasada;
+                }
+            }
+
+            // Find the row labeled "Total Fights:"
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
+                {
+                    // Assuming the "TOTAL PLASADA" column is at index 6, display the total plasada in the next column
+                    row.Cells[13].Value = $"{totalPlasada}";
+                    break;
+                }
+            }
+        }
+
+        public void CalculateAndDisplayWinnerEarnTotal()
+        {
+            decimal totalWinnerEarn = 0;
+
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells["WINNERS_EARN"].Value != null && decimal.TryParse(row.Cells["WINNERS_EARN"].Value.ToString(), out decimal winnerEarn))
+                {
+                    totalWinnerEarn += winnerEarn;
+                }
+            }
+
+            // Find the row labeled "Total Fights:"
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
+                {
+                    // Assuming the "WINNER_EARN" column is at index 7, display the total winner earn in the next column
+                    row.Cells[15].Value = $"{totalWinnerEarn}";
+                    break;
+                }
+            }
+        }
+
+
 
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -838,6 +969,12 @@ namespace FightingFeather
 
             // Refresh the grid with the updated data
             RefreshGrid();
+
+            CalculateAndDisplayFightTotal();
+            CalculateAndDisplayDrawCancelTotal();
+            CalculateAndDisplayFeeTotal();
+            CalculateAndDisplayTotalPlasada();
+            CalculateAndDisplayWinnerEarnTotal();
         }
 
         private void button_Export_Click(object sender, EventArgs e)

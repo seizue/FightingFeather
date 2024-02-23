@@ -30,6 +30,8 @@ namespace FightingFeather
             {
                 row.Height = 28;
             }
+
+
         }
 
         private void LoadJsonData()
@@ -71,6 +73,7 @@ namespace FightingFeather
                         DataGridViewTextBoxCell cell1 = new DataGridViewTextBoxCell();
                         cell1.Value = obj["FIGHT"]; 
                         row.Cells.Add(cell1);
+                      
 
                         DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
                         // Determine the value for column MERON or WALA based on the value of column WINNER
@@ -231,7 +234,7 @@ namespace FightingFeather
 
                 // Define the custom color for the divider
                 Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
+                
                 // Draw the divider line
                 using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
                 {

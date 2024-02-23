@@ -44,7 +44,7 @@
             this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
-            this.label_Receipt = new System.Windows.Forms.Label();
+            this.label_CashBreakDown = new System.Windows.Forms.Label();
             this.label_Ernings = new System.Windows.Forms.Label();
             this.label_Entries = new System.Windows.Forms.Label();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
@@ -88,6 +88,7 @@
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
             this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
+            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -159,7 +160,7 @@
             this.metroPanel17.HorizontalScrollbarBarColor = true;
             this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel17.HorizontalScrollbarSize = 10;
-            this.metroPanel17.Location = new System.Drawing.Point(728, 98);
+            this.metroPanel17.Location = new System.Drawing.Point(743, 98);
             this.metroPanel17.Name = "metroPanel17";
             this.metroPanel17.Size = new System.Drawing.Size(1, 29);
             this.metroPanel17.TabIndex = 247;
@@ -176,7 +177,7 @@
             this.metroPanel16.HorizontalScrollbarBarColor = true;
             this.metroPanel16.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel16.HorizontalScrollbarSize = 10;
-            this.metroPanel16.Location = new System.Drawing.Point(679, 98);
+            this.metroPanel16.Location = new System.Drawing.Point(694, 98);
             this.metroPanel16.Name = "metroPanel16";
             this.metroPanel16.Size = new System.Drawing.Size(1, 29);
             this.metroPanel16.TabIndex = 246;
@@ -193,7 +194,7 @@
             this.metroPanel15.HorizontalScrollbarBarColor = true;
             this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(622, 98);
+            this.metroPanel15.Location = new System.Drawing.Point(637, 98);
             this.metroPanel15.Name = "metroPanel15";
             this.metroPanel15.Size = new System.Drawing.Size(2, 29);
             this.metroPanel15.TabIndex = 245;
@@ -210,7 +211,7 @@
             this.metroPanel14.HorizontalScrollbarBarColor = true;
             this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel14.HorizontalScrollbarSize = 10;
-            this.metroPanel14.Location = new System.Drawing.Point(427, 103);
+            this.metroPanel14.Location = new System.Drawing.Point(425, 103);
             this.metroPanel14.Name = "metroPanel14";
             this.metroPanel14.Size = new System.Drawing.Size(1, 29);
             this.metroPanel14.TabIndex = 240;
@@ -227,7 +228,7 @@
             this.metroPanel13.HorizontalScrollbarBarColor = true;
             this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel13.HorizontalScrollbarSize = 10;
-            this.metroPanel13.Location = new System.Drawing.Point(334, 103);
+            this.metroPanel13.Location = new System.Drawing.Point(330, 103);
             this.metroPanel13.Name = "metroPanel13";
             this.metroPanel13.Size = new System.Drawing.Size(1, 29);
             this.metroPanel13.TabIndex = 239;
@@ -237,24 +238,24 @@
             this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel13.VerticalScrollbarSize = 10;
             // 
-            // label_Receipt
+            // label_CashBreakDown
             // 
-            this.label_Receipt.AutoSize = true;
-            this.label_Receipt.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.label_Receipt.Location = new System.Drawing.Point(453, 109);
-            this.label_Receipt.Name = "label_Receipt";
-            this.label_Receipt.Size = new System.Drawing.Size(49, 16);
-            this.label_Receipt.TabIndex = 238;
-            this.label_Receipt.Text = "RECEIPT";
-            this.label_Receipt.Click += new System.EventHandler(this.label_Receipt_Click);
+            this.label_CashBreakDown.AutoSize = true;
+            this.label_CashBreakDown.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CashBreakDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.label_CashBreakDown.Location = new System.Drawing.Point(445, 109);
+            this.label_CashBreakDown.Name = "label_CashBreakDown";
+            this.label_CashBreakDown.Size = new System.Drawing.Size(101, 16);
+            this.label_CashBreakDown.TabIndex = 238;
+            this.label_CashBreakDown.Text = "CASH BREAKDOWN";
+            this.label_CashBreakDown.Click += new System.EventHandler(this.label_CashBreakDown_Click);
             // 
             // label_Ernings
             // 
             this.label_Ernings.AutoSize = true;
             this.label_Ernings.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Ernings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.label_Ernings.Location = new System.Drawing.Point(355, 109);
+            this.label_Ernings.Location = new System.Drawing.Point(349, 109);
             this.label_Ernings.Name = "label_Ernings";
             this.label_Ernings.Size = new System.Drawing.Size(58, 16);
             this.label_Ernings.TabIndex = 237;
@@ -266,7 +267,7 @@
             this.label_Entries.AutoSize = true;
             this.label_Entries.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Entries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.label_Entries.Location = new System.Drawing.Point(265, 109);
+            this.label_Entries.Location = new System.Drawing.Point(261, 109);
             this.label_Entries.Name = "label_Entries";
             this.label_Entries.Size = new System.Drawing.Size(49, 16);
             this.label_Entries.TabIndex = 236;
@@ -430,6 +431,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel9.BackColor = System.Drawing.Color.White;
+            this.metroPanel9.Controls.Add(this.userControl_CashBreakDown1);
             this.metroPanel9.Controls.Add(this.userControl_Earnings1);
             this.metroPanel9.Controls.Add(this.GridPlasada_Entries);
             this.metroPanel9.HorizontalScrollbarBarColor = true;
@@ -830,7 +832,7 @@
             this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Delete.Image = global::FightingFeather.Properties.Resources.waste_24px;
             this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Delete.Location = new System.Drawing.Point(736, 98);
+            this.button_Delete.Location = new System.Drawing.Point(751, 98);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Delete.Size = new System.Drawing.Size(36, 29);
@@ -850,7 +852,7 @@
             this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Update.Image = global::FightingFeather.Properties.Resources.renew_24px;
             this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Update.Location = new System.Drawing.Point(685, 98);
+            this.button_Update.Location = new System.Drawing.Point(700, 98);
             this.button_Update.Name = "button_Update";
             this.button_Update.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Update.Size = new System.Drawing.Size(36, 29);
@@ -870,7 +872,7 @@
             this.button_New.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_New.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
             this.button_New.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_New.Location = new System.Drawing.Point(637, 98);
+            this.button_New.Location = new System.Drawing.Point(652, 98);
             this.button_New.Name = "button_New";
             this.button_New.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_New.Size = new System.Drawing.Size(36, 29);
@@ -889,7 +891,7 @@
             this.button_SaveAndClear.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SaveAndClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_SaveAndClear.Image = global::FightingFeather.Properties.Resources.smart_home_checked_30px;
-            this.button_SaveAndClear.Location = new System.Drawing.Point(572, 93);
+            this.button_SaveAndClear.Location = new System.Drawing.Point(587, 93);
             this.button_SaveAndClear.Name = "button_SaveAndClear";
             this.button_SaveAndClear.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_SaveAndClear.Size = new System.Drawing.Size(36, 34);
@@ -950,6 +952,14 @@
             this.userControl_Earnings1.TabIndex = 4;
             this.userControl_Earnings1.Visible = false;
             // 
+            // userControl_CashBreakDown1
+            // 
+            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
+            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_CashBreakDown1.TabIndex = 5;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -967,7 +977,7 @@
             this.Controls.Add(this.button_SaveAndClear);
             this.Controls.Add(this.metroPanel14);
             this.Controls.Add(this.metroPanel13);
-            this.Controls.Add(this.label_Receipt);
+            this.Controls.Add(this.label_CashBreakDown);
             this.Controls.Add(this.label_Ernings);
             this.Controls.Add(this.label_Entries);
             this.Controls.Add(this.metroPanel12);
@@ -1002,7 +1012,7 @@
         private System.Windows.Forms.Button button_SaveAndClear;
         private MetroFramework.Controls.MetroPanel metroPanel14;
         private MetroFramework.Controls.MetroPanel metroPanel13;
-        private System.Windows.Forms.Label label_Receipt;
+        private System.Windows.Forms.Label label_CashBreakDown;
         private System.Windows.Forms.Label label_Ernings;
         private System.Windows.Forms.Label label_Entries;
         private MetroFramework.Controls.MetroPanel metroPanel12;
@@ -1042,6 +1052,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
         private UserControl_Earnings userControl_Earnings1;
+        private UserControl_CashBreakDown userControl_CashBreakDown1;
     }
 }
 

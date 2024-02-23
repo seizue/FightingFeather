@@ -58,7 +58,11 @@ namespace FightingFeather
          
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
-               
+
+            // Subscribe to the RowPrePaint event
+            GridPlasada_Entries.RowPrePaint += GridPlasada_Entries_RowPrePaint;
+
+
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
                 row.Height = 28;
@@ -455,6 +459,8 @@ namespace FightingFeather
                 row.Height = 28;
             }
 
+
+
             // Check if the cell value is 0 and if it's not a header cell
             if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -584,7 +590,7 @@ namespace FightingFeather
             if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN" && e.RowIndex >= 0)
             {
                 // Set the font color for cells in the "WINNERS EARNING" column
-                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
+                e.CellStyle.ForeColor = Color.FromArgb(149, 32, 37);
             }
 
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
@@ -598,14 +604,14 @@ namespace FightingFeather
                     string winner = row.Cells["WINNER"].Value.ToString();
 
                     // Determine the color based on the winner formula and if the value is greater than 0
-                    if (winner == "M" && (column.Name == "MERON" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
+                    if (winner == "M" && (column.Name == "MERON"))
                     {
-                        // Set the color for MERON, WINNERS_EARN when winner is "M" and the value is greater than 0
+                        // Set the color for MERON
                         row.Cells[column.Name].Style.BackColor = Color.FromArgb(239, 253, 244);
                     }
-                    else if (winner == "W" && (column.Name == "WALA" || (column.Name == "WINNERS_EARN" && Convert.ToDecimal(row.Cells[column.Name].Value) > 0)))
+                    else if (winner == "W" && (column.Name == "WALA"))
                     {
-                        // Set the color for WALA, WINNERS_EARN when winner is "W" and the value is greater than 0
+                        // Set the color for WALA
                         row.Cells[column.Name].Style.BackColor = Color.FromArgb(255, 243, 245);
                     }
                 }
@@ -731,6 +737,16 @@ namespace FightingFeather
                     GridPlasada_Entries.Rows[e.RowIndex].Cells["RATE_EARNINGS"].Value = 0;
                     GridPlasada_Entries.Rows[e.RowIndex].Cells["WINNERS_EARN"].Value = 0;
                 }
+            }
+        }
+
+        private void GridPlasada_Entries_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Check if the current row is the last row
+            if (e.RowIndex == GridPlasada_Entries.Rows.Count - 1)
+            {
+                // Set the desired background color for the last row
+                GridPlasada_Entries.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 236, 242); // Change this to the desired color
             }
         }
 
@@ -997,28 +1013,35 @@ namespace FightingFeather
             // Change the color of the labels and button
             label_Ernings.ForeColor = clickedColor;
             label_Entries.ForeColor = defaultColor;
-            label_Receipt.ForeColor = defaultColor;
+            label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
         }
 
-        private void label_Receipt_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void label_Entries_Click(object sender, EventArgs e)
         {
             userControl_Earnings1.Size = new Size(0, 0);
             userControl_Earnings1.Visible = false;
             userControl_Earnings1.SendToBack();
-
+            userControl_CashBreakDown1.SendToBack();
 
             // Change the color of the labels and button
             label_Ernings.ForeColor = defaultColor;
             label_Entries.ForeColor = clickedColor;
-            label_Receipt.ForeColor = defaultColor;
+            label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
         }
 
+        private void label_CashBreakDown_Click(object sender, EventArgs e)
+        {
+            userControl_CashBreakDown1.Visible = true;
+            userControl_CashBreakDown1.BringToFront();
+            userControl_Earnings1.SendToBack();
+
+            label_CashBreakDown.ForeColor = clickedColor;
+            label_Ernings.ForeColor= defaultColor;
+            label_Entries.ForeColor= defaultColor;
+        }
     }
 }

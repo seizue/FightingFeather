@@ -26,7 +26,7 @@ namespace FightingFeather
 
             // Populate the ComboBox with options
             comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
-            comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "None" });
+            comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
 
             // Attach event handlers to calculate bet difference when bet values change
             textBox_MeronBet.TextChanged += CalculateBetDifference;

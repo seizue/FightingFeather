@@ -154,7 +154,7 @@ namespace FightingFeather
 
                         if (rateValue == null || string.IsNullOrWhiteSpace(rateValue.ToString()))
                         {
-                            cell7.Value = "None";
+                            cell7.Value = "-";
                         }
                         else
                         {
@@ -274,11 +274,20 @@ namespace FightingFeather
                 // Populate the textBox_CITYTAX with a constant value of 300
                 textBox_CITYTAX.Text = "300";
 
-                // Populate the label_RATE with the value from the "RATE" column
+                // Populate the label_RATE with the value from the "RATE" column 
                 label_RATE.Text = selectedRow.Cells["RATE"].Value.ToString();
 
                 // Populate the textBox_RATE_EARN with the value from the "RATE_EARNINGS" column
-                textBox_RATE_EARN.Text = selectedRow.Cells["RATE_EARNINGS"].Value.ToString();
+                object rateEarningsValue = selectedRow.Cells["RATE_EARNINGS"].Value;
+                if (rateEarningsValue != null && rateEarningsValue.ToString() != "0")
+                {
+                    textBox_RATE_EARN.Text = rateEarningsValue.ToString();
+                }
+                else
+                {
+                    textBox_RATE_EARN.Text = "-";
+                }
+
 
                 // Calculate subtotal1 by subtracting the fee from the bet
                 if (decimal.TryParse(selectedRow.Cells["BET"].Value.ToString(), out decimal bet) &&
@@ -295,16 +304,14 @@ namespace FightingFeather
                     // Calculate subtotal3 by adding textBox_RATE_EARN to it
                     if (decimal.TryParse(textBox_RATE_EARN.Text, out decimal rateEarn))
                     {
-                        decimal subtotal3 = subtotal2 + rateEarn;
-                        textBox_SUBTOTAL3.Text = subtotal3.ToString();
+                        decimal total = subtotal2 + rateEarn;
+                        textBox_TOTAL.Text = total.ToString();
 
-                        // Display subtotal3 in textBox_TOTAL
-                        textBox_TOTAL.Text = subtotal3.ToString();
+                     
                     }
                     else
                     {
-                        // Handle parsing errors or null values if necessary
-                        textBox_SUBTOTAL3.Text = "Error"; // Or any appropriate default value
+                      
                         textBox_TOTAL.Text = "Error"; // Or any appropriate default value
                     }
                 }
@@ -313,11 +320,14 @@ namespace FightingFeather
                     // Handle parsing errors or null values if necessary
                     textBox_SUBTOTAL1.Text = "Error"; // Or any appropriate default value
                     textBox_SUBTOTAL2.Text = "Error"; // Or any appropriate default value
-                    textBox_SUBTOTAL3.Text = "Error"; // Or any appropriate default value
                     textBox_TOTAL.Text = "Error"; // Or any appropriate default value
                 }
             }
 
+        }
+
+        private void metroTile_PrintReceipt_Click(object sender, EventArgs e)
+        {
 
         }
     }

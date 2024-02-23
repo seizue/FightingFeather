@@ -120,6 +120,12 @@
     <Compile Include="UserControl_Earnings.Designer.cs">
       <DependentUpon>UserControl_Earnings.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_Summary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Summary.Designer.cs">
+      <DependentUpon>UserControl_Summary.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EntryForm.resx">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="UserControl_Earnings.resx">
       <DependentUpon>UserControl_Earnings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Summary.resx">
+      <DependentUpon>UserControl_Summary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel18 = new MetroFramework.Controls.MetroPanel();
             this.button_CreateNewPlasada = new System.Windows.Forms.Button();
@@ -56,8 +56,6 @@
             this.Panel_MainBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
-            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,24 +75,29 @@
             this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
-            this.button_CashBreakDown = new System.Windows.Forms.Button();
-            this.button_Plasada = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.button_Shortcut = new System.Windows.Forms.Button();
-            this.button_Inventory = new System.Windows.Forms.Button();
-            this.button_Home = new System.Windows.Forms.Button();
+            this.panel_Summary = new System.Windows.Forms.Panel();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
             this.button_New = new System.Windows.Forms.Button();
             this.button_SaveAndClear = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
+            this.button_Summa = new System.Windows.Forms.Button();
+            this.button_Plasada = new System.Windows.Forms.Button();
+            this.button_Shortcut = new System.Windows.Forms.Button();
+            this.button_Inventory = new System.Windows.Forms.Button();
+            this.button_Home = new System.Windows.Forms.Button();
+            this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
+            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
+            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).BeginInit();
             this.metroPanel_Border.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            this.panel_Summary.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel19
@@ -105,7 +108,7 @@
             this.metroPanel19.HorizontalScrollbarBarColor = true;
             this.metroPanel19.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel19.HorizontalScrollbarSize = 10;
-            this.metroPanel19.Location = new System.Drawing.Point(1222, 50);
+            this.metroPanel19.Location = new System.Drawing.Point(1222, 58);
             this.metroPanel19.Name = "metroPanel19";
             this.metroPanel19.Size = new System.Drawing.Size(2, 29);
             this.metroPanel19.TabIndex = 250;
@@ -123,7 +126,7 @@
             this.metroPanel18.HorizontalScrollbarBarColor = true;
             this.metroPanel18.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel18.HorizontalScrollbarSize = 10;
-            this.metroPanel18.Location = new System.Drawing.Point(1071, 49);
+            this.metroPanel18.Location = new System.Drawing.Point(1071, 57);
             this.metroPanel18.Name = "metroPanel18";
             this.metroPanel18.Size = new System.Drawing.Size(2, 29);
             this.metroPanel18.TabIndex = 249;
@@ -144,7 +147,7 @@
             this.button_CreateNewPlasada.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CreateNewPlasada.ForeColor = System.Drawing.Color.MintCream;
             this.button_CreateNewPlasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_CreateNewPlasada.Location = new System.Drawing.Point(1081, 45);
+            this.button_CreateNewPlasada.Location = new System.Drawing.Point(1081, 53);
             this.button_CreateNewPlasada.Name = "button_CreateNewPlasada";
             this.button_CreateNewPlasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_CreateNewPlasada.Size = new System.Drawing.Size(133, 38);
@@ -160,7 +163,7 @@
             this.metroPanel17.HorizontalScrollbarBarColor = true;
             this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel17.HorizontalScrollbarSize = 10;
-            this.metroPanel17.Location = new System.Drawing.Point(743, 98);
+            this.metroPanel17.Location = new System.Drawing.Point(766, 98);
             this.metroPanel17.Name = "metroPanel17";
             this.metroPanel17.Size = new System.Drawing.Size(1, 29);
             this.metroPanel17.TabIndex = 247;
@@ -177,7 +180,7 @@
             this.metroPanel16.HorizontalScrollbarBarColor = true;
             this.metroPanel16.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel16.HorizontalScrollbarSize = 10;
-            this.metroPanel16.Location = new System.Drawing.Point(694, 98);
+            this.metroPanel16.Location = new System.Drawing.Point(717, 98);
             this.metroPanel16.Name = "metroPanel16";
             this.metroPanel16.Size = new System.Drawing.Size(1, 29);
             this.metroPanel16.TabIndex = 246;
@@ -194,7 +197,7 @@
             this.metroPanel15.HorizontalScrollbarBarColor = true;
             this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(637, 98);
+            this.metroPanel15.Location = new System.Drawing.Point(660, 98);
             this.metroPanel15.Name = "metroPanel15";
             this.metroPanel15.Size = new System.Drawing.Size(2, 29);
             this.metroPanel15.TabIndex = 245;
@@ -282,7 +285,7 @@
             this.metroPanel12.HorizontalScrollbarBarColor = true;
             this.metroPanel12.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel12.HorizontalScrollbarSize = 10;
-            this.metroPanel12.Location = new System.Drawing.Point(1119, 103);
+            this.metroPanel12.Location = new System.Drawing.Point(1149, 103);
             this.metroPanel12.Name = "metroPanel12";
             this.metroPanel12.Size = new System.Drawing.Size(1, 29);
             this.metroPanel12.TabIndex = 235;
@@ -299,7 +302,7 @@
             this.metroPanel11.HorizontalScrollbarBarColor = true;
             this.metroPanel11.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel11.HorizontalScrollbarSize = 10;
-            this.metroPanel11.Location = new System.Drawing.Point(309, 5);
+            this.metroPanel11.Location = new System.Drawing.Point(316, 5);
             this.metroPanel11.Name = "metroPanel11";
             this.metroPanel11.Size = new System.Drawing.Size(1, 29);
             this.metroPanel11.TabIndex = 209;
@@ -447,33 +450,16 @@
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel9.VerticalScrollbarSize = 10;
             // 
-            // userControl_CashBreakDown1
-            // 
-            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
-            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_CashBreakDown1.TabIndex = 5;
-            // 
-            // userControl_Earnings1
-            // 
-            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Earnings1.Name = "userControl_Earnings1";
-            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_Earnings1.TabIndex = 4;
-            this.userControl_Earnings1.Visible = false;
-            // 
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.GridPlasada_Entries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -482,14 +468,14 @@
             this.GridPlasada_Entries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Entries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Entries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.GridPlasada_Entries.ColumnHeadersHeight = 48;
             this.GridPlasada_Entries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIGHT,
@@ -508,14 +494,14 @@
             this.TOTAL_PLASADA,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle38;
             this.GridPlasada_Entries.EnableHeadersVisualStyles = false;
             this.GridPlasada_Entries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Entries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -523,20 +509,20 @@
             this.GridPlasada_Entries.MultiSelect = false;
             this.GridPlasada_Entries.Name = "GridPlasada_Entries";
             this.GridPlasada_Entries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.GridPlasada_Entries.RowHeadersVisible = false;
             this.GridPlasada_Entries.RowHeadersWidth = 42;
             this.GridPlasada_Entries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.GridPlasada_Entries.RowTemplate.Height = 23;
             this.GridPlasada_Entries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Entries.Size = new System.Drawing.Size(1059, 512);
@@ -619,12 +605,12 @@
             // 
             // WINNER
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle35;
             this.WINNER.FillWeight = 91.15936F;
             this.WINNER.HeaderText = "WINNER";
             this.WINNER.Name = "WINNER";
@@ -632,16 +618,16 @@
             // 
             // RATE_AMOUNT
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle36;
             this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
             this.RATE_AMOUNT.Name = "RATE_AMOUNT";
             // 
             // RATE
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.RATE.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.White;
+            this.RATE.DefaultCellStyle = dataGridViewCellStyle37;
             this.RATE.DividerWidth = 3;
             this.RATE.FillWeight = 91.15936F;
             this.RATE.HeaderText = "RATE";
@@ -701,7 +687,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel_Border.BackColor = System.Drawing.Color.Transparent;
             this.metroPanel_Border.Controls.Add(this.metroPanel11);
-            this.metroPanel_Border.Controls.Add(this.button_CashBreakDown);
+            this.metroPanel_Border.Controls.Add(this.button_Summa);
             this.metroPanel_Border.Controls.Add(this.button_Plasada);
             this.metroPanel_Border.ForeColor = System.Drawing.Color.White;
             this.metroPanel_Border.HorizontalScrollbarBarColor = true;
@@ -714,46 +700,6 @@
             this.metroPanel_Border.VerticalScrollbarBarColor = true;
             this.metroPanel_Border.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel_Border.VerticalScrollbarSize = 10;
-            // 
-            // button_CashBreakDown
-            // 
-            this.button_CashBreakDown.BackColor = System.Drawing.Color.Transparent;
-            this.button_CashBreakDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_CashBreakDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_CashBreakDown.FlatAppearance.BorderSize = 0;
-            this.button_CashBreakDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_CashBreakDown.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CashBreakDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_CashBreakDown.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
-            this.button_CashBreakDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_CashBreakDown.Location = new System.Drawing.Point(323, 5);
-            this.button_CashBreakDown.Name = "button_CashBreakDown";
-            this.button_CashBreakDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_CashBreakDown.Size = new System.Drawing.Size(147, 29);
-            this.button_CashBreakDown.TabIndex = 206;
-            this.button_CashBreakDown.Text = "CASH BREAKDOWN";
-            this.button_CashBreakDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_CashBreakDown.UseVisualStyleBackColor = false;
-            // 
-            // button_Plasada
-            // 
-            this.button_Plasada.BackColor = System.Drawing.Color.Transparent;
-            this.button_Plasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Plasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Plasada.FlatAppearance.BorderSize = 0;
-            this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.align_center_24px;
-            this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Plasada.Location = new System.Drawing.Point(193, 5);
-            this.button_Plasada.Name = "button_Plasada";
-            this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Plasada.Size = new System.Drawing.Size(103, 29);
-            this.button_Plasada.TabIndex = 205;
-            this.button_Plasada.Text = "PLASADA";
-            this.button_Plasada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Plasada.UseVisualStyleBackColor = false;
             // 
             // metroPanel1
             // 
@@ -778,6 +724,183 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // panel_Summary
+            // 
+            this.panel_Summary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Summary.Controls.Add(this.userControl_Summa1);
+            this.panel_Summary.Location = new System.Drawing.Point(195, 93);
+            this.panel_Summary.Name = "panel_Summary";
+            this.panel_Summary.Size = new System.Drawing.Size(1071, 574);
+            this.panel_Summary.TabIndex = 252;
+            this.panel_Summary.Visible = false;
+            // 
+            // button_Delete
+            // 
+            this.button_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.button_Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Delete.FlatAppearance.BorderSize = 0;
+            this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Delete.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Delete.Image = global::FightingFeather.Properties.Resources.waste_24px;
+            this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Delete.Location = new System.Drawing.Point(774, 98);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Delete.Size = new System.Drawing.Size(36, 29);
+            this.button_Delete.TabIndex = 244;
+            this.button_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Delete.UseVisualStyleBackColor = false;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
+            // 
+            // button_Update
+            // 
+            this.button_Update.BackColor = System.Drawing.Color.Transparent;
+            this.button_Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Update.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Update.FlatAppearance.BorderSize = 0;
+            this.button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Update.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Update.Image = global::FightingFeather.Properties.Resources.renew_24px;
+            this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Update.Location = new System.Drawing.Point(723, 98);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Update.Size = new System.Drawing.Size(36, 29);
+            this.button_Update.TabIndex = 243;
+            this.button_Update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Update.UseVisualStyleBackColor = false;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
+            // 
+            // button_New
+            // 
+            this.button_New.BackColor = System.Drawing.Color.Transparent;
+            this.button_New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_New.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_New.FlatAppearance.BorderSize = 0;
+            this.button_New.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_New.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_New.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_New.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
+            this.button_New.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_New.Location = new System.Drawing.Point(675, 98);
+            this.button_New.Name = "button_New";
+            this.button_New.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_New.Size = new System.Drawing.Size(36, 29);
+            this.button_New.TabIndex = 242;
+            this.button_New.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_New.UseVisualStyleBackColor = false;
+            this.button_New.Click += new System.EventHandler(this.button_New_Click);
+            // 
+            // button_SaveAndClear
+            // 
+            this.button_SaveAndClear.BackColor = System.Drawing.Color.Transparent;
+            this.button_SaveAndClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_SaveAndClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_SaveAndClear.FlatAppearance.BorderSize = 0;
+            this.button_SaveAndClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SaveAndClear.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SaveAndClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_SaveAndClear.Image = global::FightingFeather.Properties.Resources.smart_home_checked_30px;
+            this.button_SaveAndClear.Location = new System.Drawing.Point(610, 93);
+            this.button_SaveAndClear.Name = "button_SaveAndClear";
+            this.button_SaveAndClear.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_SaveAndClear.Size = new System.Drawing.Size(36, 34);
+            this.button_SaveAndClear.TabIndex = 241;
+            this.button_SaveAndClear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_SaveAndClear.UseVisualStyleBackColor = false;
+            this.button_SaveAndClear.Click += new System.EventHandler(this.button_SaveAndClear_Click);
+            // 
+            // button_Refresh
+            // 
+            this.button_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Refresh.BackColor = System.Drawing.Color.Transparent;
+            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Refresh.FlatAppearance.BorderSize = 0;
+            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Refresh.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Refresh.Image = global::FightingFeather.Properties.Resources.data_backup_24px;
+            this.button_Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Refresh.Location = new System.Drawing.Point(1045, 103);
+            this.button_Refresh.Name = "button_Refresh";
+            this.button_Refresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Refresh.Size = new System.Drawing.Size(97, 29);
+            this.button_Refresh.TabIndex = 233;
+            this.button_Refresh.Text = "REFRESH";
+            this.button_Refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Refresh.UseVisualStyleBackColor = false;
+            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
+            // 
+            // button_Export
+            // 
+            this.button_Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Export.BackColor = System.Drawing.Color.Transparent;
+            this.button_Export.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Export.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Export.FlatAppearance.BorderSize = 0;
+            this.button_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Export.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Export.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Export.Image = global::FightingFeather.Properties.Resources.export_24px;
+            this.button_Export.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Export.Location = new System.Drawing.Point(1158, 103);
+            this.button_Export.Name = "button_Export";
+            this.button_Export.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Export.Size = new System.Drawing.Size(87, 29);
+            this.button_Export.TabIndex = 234;
+            this.button_Export.Text = "EXPORT";
+            this.button_Export.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Export.UseVisualStyleBackColor = false;
+            this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
+            // 
+            // button_Summa
+            // 
+            this.button_Summa.BackColor = System.Drawing.Color.Transparent;
+            this.button_Summa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Summa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Summa.FlatAppearance.BorderSize = 0;
+            this.button_Summa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Summa.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Summa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Summa.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
+            this.button_Summa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Summa.Location = new System.Drawing.Point(330, 3);
+            this.button_Summa.Name = "button_Summa";
+            this.button_Summa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Summa.Size = new System.Drawing.Size(103, 29);
+            this.button_Summa.TabIndex = 206;
+            this.button_Summa.Text = "SUMMARY";
+            this.button_Summa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Summa.UseVisualStyleBackColor = false;
+            this.button_Summa.Click += new System.EventHandler(this.button_Summa_Click);
+            // 
+            // button_Plasada
+            // 
+            this.button_Plasada.BackColor = System.Drawing.Color.Transparent;
+            this.button_Plasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Plasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Plasada.FlatAppearance.BorderSize = 0;
+            this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.align_center_24px;
+            this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Plasada.Location = new System.Drawing.Point(204, 3);
+            this.button_Plasada.Name = "button_Plasada";
+            this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Plasada.Size = new System.Drawing.Size(98, 29);
+            this.button_Plasada.TabIndex = 205;
+            this.button_Plasada.Text = "PLASADA";
+            this.button_Plasada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Plasada.UseVisualStyleBackColor = false;
+            this.button_Plasada.Click += new System.EventHandler(this.button_Plasada_Click);
             // 
             // button_Shortcut
             // 
@@ -839,133 +962,38 @@
             this.button_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Home.UseVisualStyleBackColor = true;
             // 
-            // button_Delete
+            // userControl_Summa1
             // 
-            this.button_Delete.BackColor = System.Drawing.Color.Transparent;
-            this.button_Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Delete.FlatAppearance.BorderSize = 0;
-            this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Delete.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Delete.Image = global::FightingFeather.Properties.Resources.waste_24px;
-            this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Delete.Location = new System.Drawing.Point(751, 98);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Delete.Size = new System.Drawing.Size(36, 29);
-            this.button_Delete.TabIndex = 244;
-            this.button_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Delete.UseVisualStyleBackColor = false;
-            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
+            this.userControl_Summa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Summa1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Summa1.Name = "userControl_Summa1";
+            this.userControl_Summa1.Size = new System.Drawing.Size(1071, 574);
+            this.userControl_Summa1.TabIndex = 0;
+            this.userControl_Summa1.Visible = false;
             // 
-            // button_Update
+            // userControl_CashBreakDown1
             // 
-            this.button_Update.BackColor = System.Drawing.Color.Transparent;
-            this.button_Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Update.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Update.FlatAppearance.BorderSize = 0;
-            this.button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Update.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Update.Image = global::FightingFeather.Properties.Resources.renew_24px;
-            this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Update.Location = new System.Drawing.Point(700, 98);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Update.Size = new System.Drawing.Size(36, 29);
-            this.button_Update.TabIndex = 243;
-            this.button_Update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Update.UseVisualStyleBackColor = false;
-            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
+            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
+            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_CashBreakDown1.TabIndex = 5;
             // 
-            // button_New
+            // userControl_Earnings1
             // 
-            this.button_New.BackColor = System.Drawing.Color.Transparent;
-            this.button_New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_New.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_New.FlatAppearance.BorderSize = 0;
-            this.button_New.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_New.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_New.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_New.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
-            this.button_New.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_New.Location = new System.Drawing.Point(652, 98);
-            this.button_New.Name = "button_New";
-            this.button_New.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_New.Size = new System.Drawing.Size(36, 29);
-            this.button_New.TabIndex = 242;
-            this.button_New.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_New.UseVisualStyleBackColor = false;
-            this.button_New.Click += new System.EventHandler(this.button_New_Click);
-            // 
-            // button_SaveAndClear
-            // 
-            this.button_SaveAndClear.BackColor = System.Drawing.Color.Transparent;
-            this.button_SaveAndClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_SaveAndClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_SaveAndClear.FlatAppearance.BorderSize = 0;
-            this.button_SaveAndClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SaveAndClear.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SaveAndClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_SaveAndClear.Image = global::FightingFeather.Properties.Resources.smart_home_checked_30px;
-            this.button_SaveAndClear.Location = new System.Drawing.Point(587, 93);
-            this.button_SaveAndClear.Name = "button_SaveAndClear";
-            this.button_SaveAndClear.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_SaveAndClear.Size = new System.Drawing.Size(36, 34);
-            this.button_SaveAndClear.TabIndex = 241;
-            this.button_SaveAndClear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_SaveAndClear.UseVisualStyleBackColor = false;
-            this.button_SaveAndClear.Click += new System.EventHandler(this.button_SaveAndClear_Click);
-            // 
-            // button_Refresh
-            // 
-            this.button_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Refresh.BackColor = System.Drawing.Color.Transparent;
-            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Refresh.FlatAppearance.BorderSize = 0;
-            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Refresh.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Refresh.Image = global::FightingFeather.Properties.Resources.data_backup_24px;
-            this.button_Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Refresh.Location = new System.Drawing.Point(1015, 103);
-            this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Refresh.Size = new System.Drawing.Size(97, 29);
-            this.button_Refresh.TabIndex = 233;
-            this.button_Refresh.Text = "REFRESH";
-            this.button_Refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Refresh.UseVisualStyleBackColor = false;
-            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
-            // 
-            // button_Export
-            // 
-            this.button_Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Export.BackColor = System.Drawing.Color.Transparent;
-            this.button_Export.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Export.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Export.FlatAppearance.BorderSize = 0;
-            this.button_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Export.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Export.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Export.Image = global::FightingFeather.Properties.Resources.export_24px;
-            this.button_Export.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Export.Location = new System.Drawing.Point(1128, 103);
-            this.button_Export.Name = "button_Export";
-            this.button_Export.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Export.Size = new System.Drawing.Size(123, 29);
-            this.button_Export.TabIndex = 234;
-            this.button_Export.Text = "EXPORT";
-            this.button_Export.UseVisualStyleBackColor = false;
-            this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
+            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Earnings1.Name = "userControl_Earnings1";
+            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_Earnings1.TabIndex = 4;
+            this.userControl_Earnings1.Visible = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 679);
+            this.Controls.Add(this.panel_Summary);
             this.Controls.Add(this.metroPanel19);
             this.Controls.Add(this.metroPanel18);
             this.Controls.Add(this.button_CreateNewPlasada);
@@ -995,6 +1023,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).EndInit();
             this.metroPanel_Border.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
+            this.panel_Summary.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1019,7 +1048,7 @@
         private MetroFramework.Controls.MetroPanel metroPanel12;
         private System.Windows.Forms.Button button_Refresh;
         private MetroFramework.Controls.MetroPanel metroPanel11;
-        private System.Windows.Forms.Button button_CashBreakDown;
+        private System.Windows.Forms.Button button_Summa;
         private System.Windows.Forms.Button button_Plasada;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private System.Windows.Forms.Button button_Shortcut;
@@ -1054,6 +1083,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
         private UserControl_Earnings userControl_Earnings1;
         private UserControl_CashBreakDown userControl_CashBreakDown1;
+        private System.Windows.Forms.Panel panel_Summary;
+        private UserControl_Summa userControl_Summa1;
     }
 }
 

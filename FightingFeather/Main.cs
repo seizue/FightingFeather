@@ -1047,5 +1047,28 @@ namespace FightingFeather
         {
 
         }
+
+        private void button_Summa_Click(object sender, EventArgs e)
+        {
+            userControl_Summa1.Visible = true;
+            panel_Summary.Visible = true;
+            userControl_Summa1.BringToFront();
+            userControl_CashBreakDown1.Visible = false;
+            userControl_Earnings1.Visible = false;
+
+            button_Summa.ForeColor = clickedColor;
+            button_Home.ForeColor = clickedColor;
+            button_Plasada.ForeColor = defaultColor;
+            
+        }
+
+        private void button_Plasada_Click(object sender, EventArgs e)
+        {
+            userControl_Summa1.Visible = false;
+            panel_Summary.Visible = false;
+
+            button_Plasada.ForeColor = clickedColor;
+            button_Summa.ForeColor= defaultColor;
+        }
     }
 }

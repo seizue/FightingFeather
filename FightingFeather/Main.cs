@@ -1016,8 +1016,7 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
         }
-
-      
+     
 
         private void label_Entries_Click(object sender, EventArgs e)
         {
@@ -1042,6 +1041,11 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = clickedColor;
             label_Ernings.ForeColor= defaultColor;
             label_Entries.ForeColor= defaultColor;
+        }
+
+        private void button_Shortcut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,6 +56,8 @@
             this.Panel_MainBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
+            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
+            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +80,7 @@
             this.button_CashBreakDown = new System.Windows.Forms.Button();
             this.button_Plasada = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.button_Dashboard = new System.Windows.Forms.Button();
+            this.button_Shortcut = new System.Windows.Forms.Button();
             this.button_Inventory = new System.Windows.Forms.Button();
             this.button_Home = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
@@ -87,8 +89,6 @@
             this.button_SaveAndClear = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
-            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
-            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -447,6 +447,23 @@
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel9.VerticalScrollbarSize = 10;
             // 
+            // userControl_CashBreakDown1
+            // 
+            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
+            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_CashBreakDown1.TabIndex = 5;
+            // 
+            // userControl_Earnings1
+            // 
+            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Earnings1.Name = "userControl_Earnings1";
+            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_Earnings1.TabIndex = 4;
+            this.userControl_Earnings1.Visible = false;
+            // 
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
@@ -742,7 +759,7 @@
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.White;
             this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.Controls.Add(this.button_Dashboard);
+            this.metroPanel1.Controls.Add(this.button_Shortcut);
             this.metroPanel1.Controls.Add(this.metroPanel7);
             this.metroPanel1.Controls.Add(this.metroPanel5);
             this.metroPanel1.Controls.Add(this.metroPanel4);
@@ -762,25 +779,26 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // button_Dashboard
+            // button_Shortcut
             // 
-            this.button_Dashboard.BackColor = System.Drawing.Color.Transparent;
-            this.button_Dashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Dashboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Dashboard.FlatAppearance.BorderSize = 0;
-            this.button_Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Dashboard.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Dashboard.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
-            this.button_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Dashboard.Location = new System.Drawing.Point(6, 135);
-            this.button_Dashboard.Name = "button_Dashboard";
-            this.button_Dashboard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Dashboard.Size = new System.Drawing.Size(140, 29);
-            this.button_Dashboard.TabIndex = 204;
-            this.button_Dashboard.Text = "             SHORTCUT";
-            this.button_Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Dashboard.UseVisualStyleBackColor = false;
+            this.button_Shortcut.BackColor = System.Drawing.Color.Transparent;
+            this.button_Shortcut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Shortcut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Shortcut.FlatAppearance.BorderSize = 0;
+            this.button_Shortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Shortcut.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Shortcut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Shortcut.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
+            this.button_Shortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Shortcut.Location = new System.Drawing.Point(6, 135);
+            this.button_Shortcut.Name = "button_Shortcut";
+            this.button_Shortcut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Shortcut.Size = new System.Drawing.Size(140, 29);
+            this.button_Shortcut.TabIndex = 204;
+            this.button_Shortcut.Text = "             SHORTCUT";
+            this.button_Shortcut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Shortcut.UseVisualStyleBackColor = false;
+            this.button_Shortcut.Click += new System.EventHandler(this.button_Shortcut_Click);
             // 
             // button_Inventory
             // 
@@ -943,23 +961,6 @@
             this.button_Export.UseVisualStyleBackColor = false;
             this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
             // 
-            // userControl_Earnings1
-            // 
-            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Earnings1.Name = "userControl_Earnings1";
-            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_Earnings1.TabIndex = 4;
-            this.userControl_Earnings1.Visible = false;
-            // 
-            // userControl_CashBreakDown1
-            // 
-            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
-            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_CashBreakDown1.TabIndex = 5;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1021,7 +1022,7 @@
         private System.Windows.Forms.Button button_CashBreakDown;
         private System.Windows.Forms.Button button_Plasada;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private System.Windows.Forms.Button button_Dashboard;
+        private System.Windows.Forms.Button button_Shortcut;
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private MetroFramework.Controls.MetroPanel metroPanel4;

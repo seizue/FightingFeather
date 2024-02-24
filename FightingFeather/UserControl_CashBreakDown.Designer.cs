@@ -36,48 +36,47 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GridPlasada_Earnings = new MetroFramework.Controls.MetroGrid();
+            this.GridPlasada_CashBreakDown = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PARADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_810 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_710 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_CashBreakDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.panel1.Controls.Add(this.GridPlasada_Earnings);
+            this.panel1.Controls.Add(this.GridPlasada_CashBreakDown);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1063, 523);
             this.panel1.TabIndex = 0;
             // 
-            // GridPlasada_Earnings
+            // GridPlasada_CashBreakDown
             // 
-            this.GridPlasada_Earnings.AllowUserToAddRows = false;
-            this.GridPlasada_Earnings.AllowUserToResizeRows = false;
+            this.GridPlasada_CashBreakDown.AllowUserToAddRows = false;
+            this.GridPlasada_CashBreakDown.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Earnings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridPlasada_Earnings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridPlasada_CashBreakDown.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridPlasada_CashBreakDown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridPlasada_Earnings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridPlasada_Earnings.BackgroundColor = System.Drawing.Color.White;
-            this.GridPlasada_Earnings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridPlasada_Earnings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridPlasada_Earnings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.GridPlasada_CashBreakDown.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridPlasada_CashBreakDown.BackgroundColor = System.Drawing.Color.White;
+            this.GridPlasada_CashBreakDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridPlasada_CashBreakDown.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.GridPlasada_CashBreakDown.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
@@ -85,15 +84,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Earnings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridPlasada_Earnings.ColumnHeadersHeight = 48;
-            this.GridPlasada_Earnings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridPlasada_CashBreakDown.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GridPlasada_CashBreakDown.ColumnHeadersHeight = 48;
+            this.GridPlasada_CashBreakDown.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIGHT,
             this.WINNER,
             this.PARADA,
-            this.RATE_810,
-            this.RATE_34,
-            this.RATE_710,
+            this.RATE,
+            this.RATE_EARNINGS,
             this.PLASADA,
             this.TOTAL});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -103,14 +101,14 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Earnings.DefaultCellStyle = dataGridViewCellStyle5;
-            this.GridPlasada_Earnings.EnableHeadersVisualStyles = false;
-            this.GridPlasada_Earnings.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GridPlasada_Earnings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.GridPlasada_Earnings.Location = new System.Drawing.Point(3, 2);
-            this.GridPlasada_Earnings.MultiSelect = false;
-            this.GridPlasada_Earnings.Name = "GridPlasada_Earnings";
-            this.GridPlasada_Earnings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.GridPlasada_CashBreakDown.DefaultCellStyle = dataGridViewCellStyle5;
+            this.GridPlasada_CashBreakDown.EnableHeadersVisualStyles = false;
+            this.GridPlasada_CashBreakDown.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GridPlasada_CashBreakDown.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            this.GridPlasada_CashBreakDown.Location = new System.Drawing.Point(3, 2);
+            this.GridPlasada_CashBreakDown.MultiSelect = false;
+            this.GridPlasada_CashBreakDown.Name = "GridPlasada_CashBreakDown";
+            this.GridPlasada_CashBreakDown.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,20 +116,20 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Earnings.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.GridPlasada_Earnings.RowHeadersVisible = false;
-            this.GridPlasada_Earnings.RowHeadersWidth = 43;
-            this.GridPlasada_Earnings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.GridPlasada_CashBreakDown.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.GridPlasada_CashBreakDown.RowHeadersVisible = false;
+            this.GridPlasada_CashBreakDown.RowHeadersWidth = 43;
+            this.GridPlasada_CashBreakDown.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Earnings.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.GridPlasada_Earnings.RowTemplate.Height = 23;
-            this.GridPlasada_Earnings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Earnings.Size = new System.Drawing.Size(1057, 517);
-            this.GridPlasada_Earnings.TabIndex = 240;
-            this.GridPlasada_Earnings.UseCustomBackColor = true;
-            this.GridPlasada_Earnings.UseCustomForeColor = true;
-            this.GridPlasada_Earnings.UseStyleColors = true;
+            this.GridPlasada_CashBreakDown.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.GridPlasada_CashBreakDown.RowTemplate.Height = 23;
+            this.GridPlasada_CashBreakDown.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridPlasada_CashBreakDown.Size = new System.Drawing.Size(1057, 517);
+            this.GridPlasada_CashBreakDown.TabIndex = 240;
+            this.GridPlasada_CashBreakDown.UseCustomBackColor = true;
+            this.GridPlasada_CashBreakDown.UseCustomForeColor = true;
+            this.GridPlasada_CashBreakDown.UseStyleColors = true;
             // 
             // FIGHT
             // 
@@ -161,24 +159,17 @@
             this.PARADA.HeaderText = "PARADA";
             this.PARADA.Name = "PARADA";
             // 
-            // RATE_810
+            // RATE
             // 
-            this.RATE_810.FillWeight = 91.15936F;
-            this.RATE_810.HeaderText = "8/10";
-            this.RATE_810.Name = "RATE_810";
+            this.RATE.FillWeight = 91.15936F;
+            this.RATE.HeaderText = "RATE";
+            this.RATE.Name = "RATE";
             // 
-            // RATE_34
+            // RATE_EARNINGS
             // 
-            this.RATE_34.FillWeight = 91.15936F;
-            this.RATE_34.HeaderText = "3/4";
-            this.RATE_34.Name = "RATE_34";
-            // 
-            // RATE_710
-            // 
-            this.RATE_710.DividerWidth = 3;
-            this.RATE_710.FillWeight = 91.15936F;
-            this.RATE_710.HeaderText = "7/10";
-            this.RATE_710.Name = "RATE_710";
+            this.RATE_EARNINGS.DividerWidth = 3;
+            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
+            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
             // 
             // PLASADA
             // 
@@ -201,7 +192,7 @@
             this.Name = "UserControl_CashBreakDown";
             this.Size = new System.Drawing.Size(1063, 523);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_CashBreakDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,13 +200,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroGrid GridPlasada_Earnings;
+        private MetroFramework.Controls.MetroGrid GridPlasada_CashBreakDown;
         private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNER;
         private System.Windows.Forms.DataGridViewTextBoxColumn PARADA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_810;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_710;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn PLASADA;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
     }

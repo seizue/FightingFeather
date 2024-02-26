@@ -38,9 +38,7 @@ namespace FightingFeather
 
             InitializeDatabase();
             UpdateFightIDs();
-            RefreshGrid();
-           
-
+            RefreshGrid();          
 
             CalculateAndDisplayFightTotal();
             CalculateAndDisplayDrawCancelTotal();
@@ -1033,6 +1031,7 @@ namespace FightingFeather
             CalculateAndDisplayDrawCancelTotal();
             CalculateAndDisplayFeeTotal();
             CalculateAndDisplayTotalPlasada();
+            CalculateTotalCityTax();
             CalculateAndDisplayWinnerEarnTotal();
         }
 

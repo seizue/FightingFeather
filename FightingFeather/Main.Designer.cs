@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel18 = new MetroFramework.Controls.MetroPanel();
             this.button_CreateNewPlasada = new System.Windows.Forms.Button();
@@ -57,22 +57,6 @@
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
-            this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WALA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BET_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BET_W = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INITIAL_BET_DIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAREHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOGRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FEE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
             this.button_Summa = new System.Windows.Forms.Button();
@@ -92,6 +76,22 @@
             this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
             this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WALA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BET_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BET_W = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INITIAL_BET_DIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAREHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE_AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOGRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FEE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -454,13 +454,13 @@
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridPlasada_Entries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -469,14 +469,14 @@
             this.GridPlasada_Entries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Entries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Entries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridPlasada_Entries.ColumnHeadersHeight = 48;
             this.GridPlasada_Entries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIGHT,
@@ -495,14 +495,14 @@
             this.TOTAL_PLASADA,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle6;
             this.GridPlasada_Entries.EnableHeadersVisualStyles = false;
             this.GridPlasada_Entries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Entries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -510,20 +510,20 @@
             this.GridPlasada_Entries.MultiSelect = false;
             this.GridPlasada_Entries.Name = "GridPlasada_Entries";
             this.GridPlasada_Entries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GridPlasada_Entries.RowHeadersVisible = false;
             this.GridPlasada_Entries.RowHeadersWidth = 42;
             this.GridPlasada_Entries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.GridPlasada_Entries.RowTemplate.Height = 23;
             this.GridPlasada_Entries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Entries.Size = new System.Drawing.Size(1059, 512);
@@ -531,138 +531,6 @@
             this.GridPlasada_Entries.UseCustomBackColor = true;
             this.GridPlasada_Entries.UseCustomForeColor = true;
             this.GridPlasada_Entries.UseStyleColors = true;
-            // 
-            // FIGHT
-            // 
-            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FIGHT.FillWeight = 91.15936F;
-            this.FIGHT.Frozen = true;
-            this.FIGHT.HeaderText = "FIGHT";
-            this.FIGHT.Name = "FIGHT";
-            this.FIGHT.Width = 76;
-            // 
-            // MERON
-            // 
-            this.MERON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.MERON.FillWeight = 91.15936F;
-            this.MERON.Frozen = true;
-            this.MERON.HeaderText = "MERON";
-            this.MERON.Name = "MERON";
-            this.MERON.Width = 76;
-            // 
-            // WALA
-            // 
-            this.WALA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.WALA.FillWeight = 91.15936F;
-            this.WALA.Frozen = true;
-            this.WALA.HeaderText = "WALA";
-            this.WALA.Name = "WALA";
-            this.WALA.Width = 76;
-            // 
-            // BET_M
-            // 
-            this.BET_M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.BET_M.FillWeight = 91.15936F;
-            this.BET_M.Frozen = true;
-            this.BET_M.HeaderText = "BET (M)";
-            this.BET_M.Name = "BET_M";
-            this.BET_M.Width = 76;
-            // 
-            // BET_W
-            // 
-            this.BET_W.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.BET_W.FillWeight = 91.15936F;
-            this.BET_W.Frozen = true;
-            this.BET_W.HeaderText = "BET (W)";
-            this.BET_W.Name = "BET_W";
-            this.BET_W.Width = 76;
-            // 
-            // INITIAL_BET_DIF
-            // 
-            this.INITIAL_BET_DIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.INITIAL_BET_DIF.FillWeight = 91.15936F;
-            this.INITIAL_BET_DIF.Frozen = true;
-            this.INITIAL_BET_DIF.HeaderText = "INITIAL BET DIFF";
-            this.INITIAL_BET_DIF.Name = "INITIAL_BET_DIF";
-            this.INITIAL_BET_DIF.Width = 76;
-            // 
-            // PAREHAS
-            // 
-            this.PAREHAS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PAREHAS.FillWeight = 91.15936F;
-            this.PAREHAS.Frozen = true;
-            this.PAREHAS.HeaderText = "PAREHAS";
-            this.PAREHAS.Name = "PAREHAS";
-            this.PAREHAS.Width = 76;
-            // 
-            // PAGO
-            // 
-            this.PAGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PAGO.FillWeight = 91.15936F;
-            this.PAGO.Frozen = true;
-            this.PAGO.HeaderText = "PAGO";
-            this.PAGO.Name = "PAGO";
-            this.PAGO.Width = 76;
-            // 
-            // WINNER
-            // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle19;
-            this.WINNER.FillWeight = 91.15936F;
-            this.WINNER.HeaderText = "WINNER";
-            this.WINNER.Name = "WINNER";
-            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // RATE_AMOUNT
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle20;
-            this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
-            this.RATE_AMOUNT.Name = "RATE_AMOUNT";
-            // 
-            // RATE
-            // 
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            this.RATE.DefaultCellStyle = dataGridViewCellStyle21;
-            this.RATE.DividerWidth = 3;
-            this.RATE.FillWeight = 91.15936F;
-            this.RATE.HeaderText = "RATE";
-            this.RATE.Name = "RATE";
-            // 
-            // LOGRO
-            // 
-            this.LOGRO.FillWeight = 91.15936F;
-            this.LOGRO.HeaderText = "LOGRO";
-            this.LOGRO.Name = "LOGRO";
-            // 
-            // FEE
-            // 
-            this.FEE.FillWeight = 91.15936F;
-            this.FEE.HeaderText = "FEE";
-            this.FEE.Name = "FEE";
-            // 
-            // TOTAL_PLASADA
-            // 
-            this.TOTAL_PLASADA.FillWeight = 91.15936F;
-            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
-            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
-            // 
-            // RATE_EARNINGS
-            // 
-            this.RATE_EARNINGS.FillWeight = 63.81155F;
-            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
-            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
-            // 
-            // WINNERS_EARN
-            // 
-            this.WINNERS_EARN.FillWeight = 70F;
-            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
-            this.WINNERS_EARN.Name = "WINNERS_EARN";
             // 
             // metroPanel2
             // 
@@ -1004,6 +872,138 @@
             this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
             // 
+            // FIGHT
+            // 
+            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FIGHT.FillWeight = 91.15936F;
+            this.FIGHT.Frozen = true;
+            this.FIGHT.HeaderText = "FIGHT";
+            this.FIGHT.Name = "FIGHT";
+            this.FIGHT.Width = 76;
+            // 
+            // MERON
+            // 
+            this.MERON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MERON.FillWeight = 91.15936F;
+            this.MERON.Frozen = true;
+            this.MERON.HeaderText = "MERON";
+            this.MERON.Name = "MERON";
+            this.MERON.Width = 76;
+            // 
+            // WALA
+            // 
+            this.WALA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.WALA.FillWeight = 91.15936F;
+            this.WALA.Frozen = true;
+            this.WALA.HeaderText = "WALA";
+            this.WALA.Name = "WALA";
+            this.WALA.Width = 76;
+            // 
+            // BET_M
+            // 
+            this.BET_M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BET_M.FillWeight = 91.15936F;
+            this.BET_M.Frozen = true;
+            this.BET_M.HeaderText = "BET (M)";
+            this.BET_M.Name = "BET_M";
+            this.BET_M.Width = 76;
+            // 
+            // BET_W
+            // 
+            this.BET_W.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BET_W.FillWeight = 91.15936F;
+            this.BET_W.Frozen = true;
+            this.BET_W.HeaderText = "BET (W)";
+            this.BET_W.Name = "BET_W";
+            this.BET_W.Width = 76;
+            // 
+            // INITIAL_BET_DIF
+            // 
+            this.INITIAL_BET_DIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.INITIAL_BET_DIF.FillWeight = 91.15936F;
+            this.INITIAL_BET_DIF.Frozen = true;
+            this.INITIAL_BET_DIF.HeaderText = "INITIAL BET DIFF";
+            this.INITIAL_BET_DIF.Name = "INITIAL_BET_DIF";
+            this.INITIAL_BET_DIF.Width = 76;
+            // 
+            // PAREHAS
+            // 
+            this.PAREHAS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PAREHAS.FillWeight = 91.15936F;
+            this.PAREHAS.Frozen = true;
+            this.PAREHAS.HeaderText = "PAREHAS";
+            this.PAREHAS.Name = "PAREHAS";
+            this.PAREHAS.Width = 60;
+            // 
+            // PAGO
+            // 
+            this.PAGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PAGO.FillWeight = 91.15936F;
+            this.PAGO.Frozen = true;
+            this.PAGO.HeaderText = "PAGO";
+            this.PAGO.Name = "PAGO";
+            this.PAGO.Width = 76;
+            // 
+            // WINNER
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle3;
+            this.WINNER.FillWeight = 91.15936F;
+            this.WINNER.HeaderText = "WINNER";
+            this.WINNER.Name = "WINNER";
+            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // RATE_AMOUNT
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
+            this.RATE_AMOUNT.Name = "RATE_AMOUNT";
+            // 
+            // RATE
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.RATE.DefaultCellStyle = dataGridViewCellStyle5;
+            this.RATE.DividerWidth = 3;
+            this.RATE.FillWeight = 91.15936F;
+            this.RATE.HeaderText = "RATE";
+            this.RATE.Name = "RATE";
+            // 
+            // LOGRO
+            // 
+            this.LOGRO.FillWeight = 91.15936F;
+            this.LOGRO.HeaderText = "LOGRO";
+            this.LOGRO.Name = "LOGRO";
+            // 
+            // FEE
+            // 
+            this.FEE.FillWeight = 91.15936F;
+            this.FEE.HeaderText = "FEE";
+            this.FEE.Name = "FEE";
+            // 
+            // TOTAL_PLASADA
+            // 
+            this.TOTAL_PLASADA.FillWeight = 91.15936F;
+            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
+            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
+            // 
+            // RATE_EARNINGS
+            // 
+            this.RATE_EARNINGS.FillWeight = 63.81155F;
+            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
+            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
+            // 
+            // WINNERS_EARN
+            // 
+            this.WINNERS_EARN.FillWeight = 70F;
+            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
+            this.WINNERS_EARN.Name = "WINNERS_EARN";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1082,6 +1082,11 @@
         private MetroFramework.Controls.MetroPanel metroPanel_Border;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroGrid GridPlasada_Entries;
+        private UserControl_Earnings userControl_Earnings1;
+        private UserControl_CashBreakDown userControl_CashBreakDown1;
+        private System.Windows.Forms.Panel panel_Summary;
+        private UserControl_Summa userControl_Summa1;
+        private RaDateTimePicker raDateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MERON;
         private System.Windows.Forms.DataGridViewTextBoxColumn WALA;
@@ -1098,11 +1103,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
         private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
-        private UserControl_Earnings userControl_Earnings1;
-        private UserControl_CashBreakDown userControl_CashBreakDown1;
-        private System.Windows.Forms.Panel panel_Summary;
-        private UserControl_Summa userControl_Summa1;
-        private RaDateTimePicker raDateTimePicker1;
     }
 }
 

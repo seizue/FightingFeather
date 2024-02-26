@@ -326,6 +326,13 @@ namespace FightingFeather
             textBox_Draw.Text = $"{totalDraws}";
         }
 
+  
+        public void UpdateCityTax(string cityTaxValue)
+        {
+            
+            textBox_CityTax.Text = cityTaxValue;
+        }
+
     }
 }
 

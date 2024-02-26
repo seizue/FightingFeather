@@ -46,6 +46,7 @@ namespace FightingFeather
             CalculateAndDisplayDrawCancelTotal();
             CalculateAndDisplayFeeTotal();
             CalculateAndDisplayTotalPlasada();
+            CalculateTotalCityTax();
             CalculateAndDisplayWinnerEarnTotal();
 
             // Subscribe to the CellFormatting event
@@ -428,6 +429,33 @@ namespace FightingFeather
             userControl_Summa1.UpdateTotal(totalPlasada.ToString());
         }
 
+        public void CalculateTotalCityTax()
+        {
+            int totalFights = 0;
+
+            // Iterate through the rows of the DataGridView
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                // Check if the value in the WINNER column is not null or empty and not "CANCEL"
+                if (row.Cells["WINNER"].Value != null &&
+                    !string.IsNullOrEmpty(row.Cells["WINNER"].Value.ToString()) &&
+                    !row.Cells["WINNER"].Value.ToString().Equals("Cancel", StringComparison.OrdinalIgnoreCase))
+                {
+                    totalFights++;
+                }
+            }
+
+            // Calculate total city tax
+            int totalCityTax = totalFights * 300;
+            // Find the last row
+            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+            // Display the total city tax in the last row
+            lastRow.Cells["PAREHAS"].Value = $"Tax: {totalCityTax}";
+
+            // Update textBox_CityTax with the calculated total city tax
+            userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
+        }
 
 
         public void CalculateAndDisplayWinnerEarnTotal()

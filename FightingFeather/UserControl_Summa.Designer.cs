@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_ClearCashCount = new System.Windows.Forms.Button();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.metroTile_PrintSummary = new MetroFramework.Controls.MetroTile();
@@ -73,7 +74,6 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_Date = new System.Windows.Forms.TextBox();
-            this.button_ClearCashCount = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.metroPanel6.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -104,6 +104,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 574);
             this.panel1.TabIndex = 0;
+            // 
+            // button_ClearCashCount
+            // 
+            this.button_ClearCashCount.BackColor = System.Drawing.Color.Transparent;
+            this.button_ClearCashCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_ClearCashCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_ClearCashCount.FlatAppearance.BorderSize = 0;
+            this.button_ClearCashCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ClearCashCount.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ClearCashCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_ClearCashCount.Image = global::FightingFeather.Properties.Resources.handcart_24px;
+            this.button_ClearCashCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_ClearCashCount.Location = new System.Drawing.Point(423, 4);
+            this.button_ClearCashCount.Name = "button_ClearCashCount";
+            this.button_ClearCashCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_ClearCashCount.Size = new System.Drawing.Size(188, 31);
+            this.button_ClearCashCount.TabIndex = 323;
+            this.button_ClearCashCount.Text = "CLEAR CASH COUNT";
+            this.button_ClearCashCount.UseVisualStyleBackColor = true;
+            this.button_ClearCashCount.Click += new System.EventHandler(this.button_ClearCashCount_Click);
             // 
             // metroPanel6
             // 
@@ -213,40 +233,40 @@
             // GridPlasada_Summary
             // 
             this.GridPlasada_Summary.AllowUserToResizeRows = false;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 14F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Summary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 14F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Summary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GridPlasada_Summary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridPlasada_Summary.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GridPlasada_Summary.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Summary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Summary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Summary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Summary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GridPlasada_Summary.ColumnHeadersHeight = 55;
             this.GridPlasada_Summary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridPlasada_Summary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AMOUNT,
             this.QUANTITY,
             this.TOTAL_AMOUNT});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 12F);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Summary.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Summary.DefaultCellStyle = dataGridViewCellStyle8;
             this.GridPlasada_Summary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPlasada_Summary.EnableHeadersVisualStyles = false;
             this.GridPlasada_Summary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -255,20 +275,20 @@
             this.GridPlasada_Summary.MultiSelect = false;
             this.GridPlasada_Summary.Name = "GridPlasada_Summary";
             this.GridPlasada_Summary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Summary.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Summary.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GridPlasada_Summary.RowHeadersVisible = false;
             this.GridPlasada_Summary.RowHeadersWidth = 43;
             this.GridPlasada_Summary.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 14F);
-            this.GridPlasada_Summary.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 14F);
+            this.GridPlasada_Summary.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.GridPlasada_Summary.RowTemplate.Height = 23;
             this.GridPlasada_Summary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Summary.Size = new System.Drawing.Size(623, 378);
@@ -392,7 +412,7 @@
             this.textBox_Gate.Name = "textBox_Gate";
             this.textBox_Gate.Size = new System.Drawing.Size(50, 17);
             this.textBox_Gate.TabIndex = 298;
-            this.textBox_Gate.Text = "TEST";
+            this.textBox_Gate.Text = "-";
             this.textBox_Gate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // metroPanel5
@@ -480,7 +500,7 @@
             this.textBox_Draw.Name = "textBox_Draw";
             this.textBox_Draw.Size = new System.Drawing.Size(50, 17);
             this.textBox_Draw.TabIndex = 298;
-            this.textBox_Draw.Text = "TEST";
+            this.textBox_Draw.Text = "-";
             this.textBox_Draw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // metroPanel18
@@ -544,7 +564,7 @@
             this.textBox_TotalFight.Name = "textBox_TotalFight";
             this.textBox_TotalFight.Size = new System.Drawing.Size(50, 17);
             this.textBox_TotalFight.TabIndex = 298;
-            this.textBox_TotalFight.Text = "TEST";
+            this.textBox_TotalFight.Text = "-";
             this.textBox_TotalFight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // metroPanel11
@@ -586,7 +606,7 @@
             this.textBox_Total.Name = "textBox_Total";
             this.textBox_Total.Size = new System.Drawing.Size(50, 17);
             this.textBox_Total.TabIndex = 298;
-            this.textBox_Total.Text = "TEST";
+            this.textBox_Total.Text = "-";
             this.textBox_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // metroPanel4
@@ -650,7 +670,7 @@
             this.textBox_CityTax.Name = "textBox_CityTax";
             this.textBox_CityTax.Size = new System.Drawing.Size(50, 17);
             this.textBox_CityTax.TabIndex = 298;
-            this.textBox_CityTax.Text = "TEST";
+            this.textBox_CityTax.Text = "-";
             this.textBox_CityTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // metroPanel1
@@ -714,7 +734,7 @@
             this.textBox_Plasada.Name = "textBox_Plasada";
             this.textBox_Plasada.Size = new System.Drawing.Size(50, 17);
             this.textBox_Plasada.TabIndex = 298;
-            this.textBox_Plasada.Text = "TEST";
+            this.textBox_Plasada.Text = "-";
             this.textBox_Plasada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // metroPanel3
@@ -754,33 +774,13 @@
             this.textBox_Date.BackColor = System.Drawing.Color.White;
             this.textBox_Date.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Date.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 12F);
-            this.textBox_Date.Location = new System.Drawing.Point(256, 18);
+            this.textBox_Date.Location = new System.Drawing.Point(155, 18);
             this.textBox_Date.Multiline = true;
             this.textBox_Date.Name = "textBox_Date";
-            this.textBox_Date.Size = new System.Drawing.Size(50, 17);
+            this.textBox_Date.Size = new System.Drawing.Size(151, 18);
             this.textBox_Date.TabIndex = 298;
-            this.textBox_Date.Text = "TEST";
+            this.textBox_Date.Text = "-";
             this.textBox_Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // button_ClearCashCount
-            // 
-            this.button_ClearCashCount.BackColor = System.Drawing.Color.Transparent;
-            this.button_ClearCashCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_ClearCashCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_ClearCashCount.FlatAppearance.BorderSize = 0;
-            this.button_ClearCashCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ClearCashCount.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ClearCashCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_ClearCashCount.Image = global::FightingFeather.Properties.Resources.handcart_24px;
-            this.button_ClearCashCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_ClearCashCount.Location = new System.Drawing.Point(423, 4);
-            this.button_ClearCashCount.Name = "button_ClearCashCount";
-            this.button_ClearCashCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_ClearCashCount.Size = new System.Drawing.Size(188, 31);
-            this.button_ClearCashCount.TabIndex = 323;
-            this.button_ClearCashCount.Text = "CLEAR CASH COUNT";
-            this.button_ClearCashCount.UseVisualStyleBackColor = true;
-            this.button_ClearCashCount.Click += new System.EventHandler(this.button_ClearCashCount_Click);
             // 
             // UserControl_Summa
             // 

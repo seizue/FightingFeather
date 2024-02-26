@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FightingFeather
 {
@@ -25,12 +26,14 @@ namespace FightingFeather
             GridPlasada_Summary.CellPainting += GridPlasada_Summary_CellPainting;
             GridPlasada_Summary.CellEndEdit += GridPlasada_Summary_CellEndEdit;
 
+
             foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
             {
                 row.Height = 32;
             }
 
             LoadDataFromFile();
+
         }
 
 
@@ -46,28 +49,6 @@ namespace FightingFeather
                 // Add a new row and set the value for the "AMOUNT" column
                 int rowIndex = GridPlasada_Summary.Rows.Add();
                 GridPlasada_Summary.Rows[rowIndex].Cells["AMOUNT"].Value = amount;
-            }
-        }
-
-
-        private void GridPlasada_Summary_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == GridPlasada_Summary.Columns["QUANTITY"].Index && e.RowIndex >= 0)
-            {
-                DataGridViewCell quantityCell = GridPlasada_Summary.Rows[e.RowIndex].Cells["QUANTITY"];
-                DataGridViewCell amountCell = GridPlasada_Summary.Rows[e.RowIndex].Cells["AMOUNT"];
-                DataGridViewCell totalAmountCell = GridPlasada_Summary.Rows[e.RowIndex].Cells["TOTAL_AMOUNT"];
-
-                if (decimal.TryParse(quantityCell.Value?.ToString(), out decimal quantity) && decimal.TryParse(amountCell.Value?.ToString(), out decimal amount))
-                {
-                    decimal totalAmount = quantity * amount;
-                    totalAmountCell.Value = totalAmount.ToString(); // Convert totalAmount to string for display
-                    SaveDataToFile();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid quantity or amount. Please enter valid decimal numbers.");
-                }
             }
         }
 
@@ -120,10 +101,6 @@ namespace FightingFeather
             }
         }
 
-
-
-
-
         private void SaveDataToFile()
         {
             List<Dictionary<string, object>> data = new List<Dictionary<string, object>>();
@@ -148,11 +125,6 @@ namespace FightingFeather
             string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
             File.WriteAllText(jsonFilePath, jsonData);
         }
-
-
-
-
-
 
         private int FindRowIndexByAmount(int amount)
         {
@@ -224,20 +196,118 @@ namespace FightingFeather
                 row.Height = 32;
             }
 
-            // Clear the DataGridView
-            GridPlasada_Summary.Rows.Clear();
+            foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
+            {
+                // Set the value of QUANTITY column to null
+                row.Cells["QUANTITY"].Value = null;
+
+                // Set the value of TOTAL_AMOUNT column to empty string
+                row.Cells["TOTAL_AMOUNT"].Value = "";
+
+                // You can also apply any other custom clearing logic here if needed
+            }
 
             // Clear the TextBox for the overall total
-            textBox_Total.Text = "";
+            textBox_Total.Text = "-";
 
             // Clear the JSON file
             if (File.Exists(jsonFilePath))
             {
                 File.Delete(jsonFilePath);
             }
+
+
         }
+
+
+        public void SetDateText(string text)
+        {
+            textBox_Date.Text = text;
+        }
+
+        private void GridPlasada_Summary_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == GridPlasada_Summary.Columns["QUANTITY"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewCell quantityCell = GridPlasada_Summary.Rows[e.RowIndex].Cells["QUANTITY"];
+                DataGridViewCell amountCell = GridPlasada_Summary.Rows[e.RowIndex].Cells["AMOUNT"];
+                DataGridViewCell totalAmountCell = GridPlasada_Summary.Rows[e.RowIndex].Cells["TOTAL_AMOUNT"];
+
+                if (decimal.TryParse(quantityCell.Value?.ToString(), out decimal quantity) && decimal.TryParse(amountCell.Value?.ToString(), out decimal amount))
+                {
+                    decimal totalAmount = quantity * amount;
+                    totalAmountCell.Value = totalAmount.ToString(); // Convert totalAmount to string for display
+                    SaveDataToFile();
+                    CalculateTotalSum(); // Recalculate total sum after editing
+                }
+                else
+                {
+                    MessageBox.Show("Invalid quantity or amount. Please enter valid decimal numbers.");
+                }
+            }
+            else if (e.ColumnIndex == GridPlasada_Summary.Columns["AMOUNT"].Index && e.RowIndex >= 0)
+            {
+                RecalculateTotalSum();
+            }
+
+        }
+
+        private void CalculateTotalSum()
+        {
+            decimal totalSum = 0;
+
+            foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["TOTAL_AMOUNT"].Value != null)
+                {
+                    if (decimal.TryParse(row.Cells["TOTAL_AMOUNT"].Value.ToString(), out decimal amount))
+                    {
+                        totalSum += amount;
+                    }
+                }
+            }
+
+            // Set the total sum only in the last row of the "TOTAL_AMOUNT" column
+            int lastRowIndex = GridPlasada_Summary.Rows.Count - 1;
+            DataGridViewCell lastTotalAmountCell = GridPlasada_Summary.Rows[lastRowIndex].Cells["TOTAL_AMOUNT"];
+            if (lastTotalAmountCell.Value == null || lastTotalAmountCell.Value.ToString() == "")
+            {
+                lastTotalAmountCell.Value = totalSum.ToString();
+                lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
+
+                // Display the total sum in the textBox_Total
+                textBox_Total.Text = totalSum.ToString();
+            }
+        }
+
+        private void RecalculateTotalSum()
+        {
+            decimal totalSum = 0;
+
+            foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["TOTAL_AMOUNT"].Value != null)
+                {
+                    if (decimal.TryParse(row.Cells["TOTAL_AMOUNT"].Value.ToString(), out decimal amount))
+                    {
+                        totalSum += amount;
+                    }
+                }
+            }
+
+            // Set the total sum only in the last row of the "TOTAL_AMOUNT" column
+            int lastRowIndex = GridPlasada_Summary.Rows.Count - 1;
+            DataGridViewCell lastTotalAmountCell = GridPlasada_Summary.Rows[lastRowIndex].Cells["TOTAL_AMOUNT"];
+            if (lastTotalAmountCell.Value == null || lastTotalAmountCell.Value.ToString() == "")
+            {
+                lastTotalAmountCell.Value = totalSum.ToString();
+                lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
+
+                // Display the total sum in the textBox_Total
+                textBox_Total.Text = totalSum.ToString();
+            }
+        }
+
     }
-
-
 }
 

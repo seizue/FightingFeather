@@ -39,6 +39,7 @@ namespace FightingFeather
             InitializeDatabase();
             UpdateFightIDs();
             RefreshGrid();
+           
 
 
             CalculateAndDisplayFightTotal();
@@ -1059,7 +1060,12 @@ namespace FightingFeather
             button_Summa.ForeColor = clickedColor;
             button_Home.ForeColor = clickedColor;
             button_Plasada.ForeColor = defaultColor;
-            
+
+            // Get the selected date without the time component
+            string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
+
+            // Pass the formatted date to the UserControl_Summa
+            userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Plasada_Click(object sender, EventArgs e)
@@ -1069,6 +1075,15 @@ namespace FightingFeather
 
             button_Plasada.ForeColor = clickedColor;
             button_Summa.ForeColor= defaultColor;
+        }
+
+        private void raDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            // Get the selected date without the time component
+            string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
+
+            // Pass the formatted date to the UserControl_Summa
+            userControl_Summa1.SetDateText(selectedDate);
         }
     }
 }

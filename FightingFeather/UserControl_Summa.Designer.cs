@@ -34,11 +34,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel22 = new MetroFramework.Controls.MetroPanel();
+            this.GridPlasada_Summary = new MetroFramework.Controls.MetroGrid();
+            this.AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,33 +60,35 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_FIGHT = new System.Windows.Forms.TextBox();
-            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel18 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.metroPanel16 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel17 = new MetroFramework.Controls.MetroPanel();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.GridPlasada_Summary = new MetroFramework.Controls.MetroGrid();
-            this.AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.metroPanel14.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
+            this.metroPanel6.SuspendLayout();
+            this.metroPanel9.SuspendLayout();
             this.metroPanel8.SuspendLayout();
             this.metroPanel12.SuspendLayout();
             this.metroPanel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Summary)).BeginInit();
+            this.metroPanel14.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
             this.metroPanel5.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
-            this.metroPanel6.SuspendLayout();
-            this.metroPanel9.SuspendLayout();
+            this.metroPanel18.SuspendLayout();
             this.metroPanel13.SuspendLayout();
             this.metroPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Summary)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,43 +103,40 @@
             this.panel1.Size = new System.Drawing.Size(1071, 574);
             this.panel1.TabIndex = 0;
             // 
-            // metroPanel14
+            // metroPanel6
             // 
-            this.metroPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.metroPanel14.Controls.Add(this.metroPanel2);
-            this.metroPanel14.HorizontalScrollbarBarColor = true;
-            this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel14.HorizontalScrollbarSize = 10;
-            this.metroPanel14.Location = new System.Drawing.Point(55, 37);
-            this.metroPanel14.Name = "metroPanel14";
-            this.metroPanel14.Size = new System.Drawing.Size(336, 218);
-            this.metroPanel14.TabIndex = 320;
-            this.metroPanel14.UseCustomBackColor = true;
-            this.metroPanel14.UseStyleColors = true;
-            this.metroPanel14.VerticalScrollbarBarColor = true;
-            this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel14.VerticalScrollbarSize = 10;
+            this.metroPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.metroPanel6.Controls.Add(this.metroPanel9);
+            this.metroPanel6.HorizontalScrollbarBarColor = true;
+            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.HorizontalScrollbarSize = 10;
+            this.metroPanel6.Location = new System.Drawing.Point(55, 433);
+            this.metroPanel6.Name = "metroPanel6";
+            this.metroPanel6.Size = new System.Drawing.Size(336, 104);
+            this.metroPanel6.TabIndex = 322;
+            this.metroPanel6.UseCustomBackColor = true;
+            this.metroPanel6.UseStyleColors = true;
+            this.metroPanel6.VerticalScrollbarBarColor = true;
+            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.VerticalScrollbarSize = 10;
             // 
-            // metroPanel2
+            // metroPanel9
             // 
-            this.metroPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.metroPanel2.Controls.Add(this.metroPanel5);
-            this.metroPanel2.Controls.Add(this.metroPanel4);
-            this.metroPanel2.Controls.Add(this.metroPanel1);
-            this.metroPanel2.Controls.Add(this.metroPanel3);
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(3, 4);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(329, 211);
-            this.metroPanel2.TabIndex = 227;
-            this.metroPanel2.UseCustomBackColor = true;
-            this.metroPanel2.UseStyleColors = true;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
+            this.metroPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.metroPanel9.Controls.Add(this.metroTile1);
+            this.metroPanel9.HorizontalScrollbarBarColor = true;
+            this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel9.HorizontalScrollbarSize = 10;
+            this.metroPanel9.Location = new System.Drawing.Point(4, 4);
+            this.metroPanel9.Name = "metroPanel9";
+            this.metroPanel9.Size = new System.Drawing.Size(328, 97);
+            this.metroPanel9.TabIndex = 227;
+            this.metroPanel9.UseCustomBackColor = true;
+            this.metroPanel9.UseStyleColors = true;
+            this.metroPanel9.VerticalScrollbarBarColor = true;
+            this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel9.VerticalScrollbarSize = 10;
             // 
             // metroPanel8
             // 
@@ -144,7 +149,7 @@
             this.metroPanel8.HorizontalScrollbarSize = 10;
             this.metroPanel8.Location = new System.Drawing.Point(397, 37);
             this.metroPanel8.Name = "metroPanel8";
-            this.metroPanel8.Size = new System.Drawing.Size(634, 461);
+            this.metroPanel8.Size = new System.Drawing.Size(634, 390);
             this.metroPanel8.TabIndex = 321;
             this.metroPanel8.UseCustomBackColor = true;
             this.metroPanel8.UseStyleColors = true;
@@ -163,7 +168,7 @@
             this.metroPanel12.HorizontalScrollbarSize = 10;
             this.metroPanel12.Location = new System.Drawing.Point(3, 4);
             this.metroPanel12.Name = "metroPanel12";
-            this.metroPanel12.Size = new System.Drawing.Size(627, 454);
+            this.metroPanel12.Size = new System.Drawing.Size(627, 383);
             this.metroPanel12.TabIndex = 227;
             this.metroPanel12.UseCustomBackColor = true;
             this.metroPanel12.UseStyleColors = true;
@@ -183,389 +188,13 @@
             this.metroPanel22.HorizontalScrollbarSize = 10;
             this.metroPanel22.Location = new System.Drawing.Point(2, 2);
             this.metroPanel22.Name = "metroPanel22";
-            this.metroPanel22.Size = new System.Drawing.Size(623, 449);
+            this.metroPanel22.Size = new System.Drawing.Size(623, 378);
             this.metroPanel22.TabIndex = 228;
             this.metroPanel22.UseCustomBackColor = true;
             this.metroPanel22.UseStyleColors = true;
             this.metroPanel22.VerticalScrollbarBarColor = true;
             this.metroPanel22.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel22.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel5
-            // 
-            this.metroPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel5.BackColor = System.Drawing.Color.White;
-            this.metroPanel5.Controls.Add(this.metroPanel11);
-            this.metroPanel5.Controls.Add(this.label3);
-            this.metroPanel5.Controls.Add(this.textBox3);
-            this.metroPanel5.HorizontalScrollbarBarColor = true;
-            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel5.HorizontalScrollbarSize = 10;
-            this.metroPanel5.Location = new System.Drawing.Point(2, 155);
-            this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(325, 51);
-            this.metroPanel5.TabIndex = 235;
-            this.metroPanel5.UseCustomBackColor = true;
-            this.metroPanel5.UseStyleColors = true;
-            this.metroPanel5.VerticalScrollbarBarColor = true;
-            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel5.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel11
-            // 
-            this.metroPanel11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel11.HorizontalScrollbarBarColor = true;
-            this.metroPanel11.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel11.HorizontalScrollbarSize = 10;
-            this.metroPanel11.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel11.Name = "metroPanel11";
-            this.metroPanel11.Size = new System.Drawing.Size(325, 1);
-            this.metroPanel11.TabIndex = 319;
-            this.metroPanel11.UseCustomBackColor = true;
-            this.metroPanel11.UseStyleColors = true;
-            this.metroPanel11.VerticalScrollbarBarColor = true;
-            this.metroPanel11.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel11.VerticalScrollbarSize = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(13, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 18);
-            this.label3.TabIndex = 318;
-            this.label3.Text = "GATE";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
-            this.textBox3.Location = new System.Drawing.Point(256, 18);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(50, 17);
-            this.textBox3.TabIndex = 298;
-            this.textBox3.Text = "TEST";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // metroPanel4
-            // 
-            this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel4.BackColor = System.Drawing.Color.White;
-            this.metroPanel4.Controls.Add(this.metroPanel10);
-            this.metroPanel4.Controls.Add(this.label2);
-            this.metroPanel4.Controls.Add(this.textBox2);
-            this.metroPanel4.HorizontalScrollbarBarColor = true;
-            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(2, 104);
-            this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(325, 51);
-            this.metroPanel4.TabIndex = 234;
-            this.metroPanel4.UseCustomBackColor = true;
-            this.metroPanel4.UseStyleColors = true;
-            this.metroPanel4.VerticalScrollbarBarColor = true;
-            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel10
-            // 
-            this.metroPanel10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel10.HorizontalScrollbarBarColor = true;
-            this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel10.HorizontalScrollbarSize = 10;
-            this.metroPanel10.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel10.Name = "metroPanel10";
-            this.metroPanel10.Size = new System.Drawing.Size(325, 1);
-            this.metroPanel10.TabIndex = 319;
-            this.metroPanel10.UseCustomBackColor = true;
-            this.metroPanel10.UseStyleColors = true;
-            this.metroPanel10.VerticalScrollbarBarColor = true;
-            this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel10.VerticalScrollbarSize = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(13, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 18);
-            this.label2.TabIndex = 318;
-            this.label2.Text = "DRAW";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
-            this.textBox2.Location = new System.Drawing.Point(256, 18);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(50, 17);
-            this.textBox2.TabIndex = 298;
-            this.textBox2.Text = "TEST";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel1.BackColor = System.Drawing.Color.White;
-            this.metroPanel1.Controls.Add(this.metroPanel7);
-            this.metroPanel1.Controls.Add(this.label1);
-            this.metroPanel1.Controls.Add(this.textBox1);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(2, 53);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(325, 51);
-            this.metroPanel1.TabIndex = 233;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.UseStyleColors = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel7
-            // 
-            this.metroPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel7.HorizontalScrollbarBarColor = true;
-            this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(325, 1);
-            this.metroPanel7.TabIndex = 319;
-            this.metroPanel7.UseCustomBackColor = true;
-            this.metroPanel7.UseStyleColors = true;
-            this.metroPanel7.VerticalScrollbarBarColor = true;
-            this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel7.VerticalScrollbarSize = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(13, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 18);
-            this.label1.TabIndex = 318;
-            this.label1.Text = "TOTAL FIGHT";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
-            this.textBox1.Location = new System.Drawing.Point(256, 18);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(50, 17);
-            this.textBox1.TabIndex = 298;
-            this.textBox1.Text = "TEST";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // metroPanel3
-            // 
-            this.metroPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel3.BackColor = System.Drawing.Color.White;
-            this.metroPanel3.Controls.Add(this.label6);
-            this.metroPanel3.Controls.Add(this.textBox_FIGHT);
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(2, 2);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(325, 51);
-            this.metroPanel3.TabIndex = 232;
-            this.metroPanel3.UseCustomBackColor = true;
-            this.metroPanel3.UseStyleColors = true;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(13, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 18);
-            this.label6.TabIndex = 318;
-            this.label6.Text = "TOTAL";
-            // 
-            // textBox_FIGHT
-            // 
-            this.textBox_FIGHT.BackColor = System.Drawing.Color.White;
-            this.textBox_FIGHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_FIGHT.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
-            this.textBox_FIGHT.Location = new System.Drawing.Point(256, 18);
-            this.textBox_FIGHT.Multiline = true;
-            this.textBox_FIGHT.Name = "textBox_FIGHT";
-            this.textBox_FIGHT.Size = new System.Drawing.Size(50, 17);
-            this.textBox_FIGHT.TabIndex = 298;
-            this.textBox_FIGHT.Text = "TEST";
-            this.textBox_FIGHT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // metroPanel6
-            // 
-            this.metroPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.metroPanel6.Controls.Add(this.metroPanel9);
-            this.metroPanel6.HorizontalScrollbarBarColor = true;
-            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel6.HorizontalScrollbarSize = 10;
-            this.metroPanel6.Location = new System.Drawing.Point(55, 261);
-            this.metroPanel6.Name = "metroPanel6";
-            this.metroPanel6.Size = new System.Drawing.Size(336, 237);
-            this.metroPanel6.TabIndex = 322;
-            this.metroPanel6.UseCustomBackColor = true;
-            this.metroPanel6.UseStyleColors = true;
-            this.metroPanel6.VerticalScrollbarBarColor = true;
-            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel6.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel9
-            // 
-            this.metroPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.metroPanel9.Controls.Add(this.metroPanel16);
-            this.metroPanel9.Controls.Add(this.metroPanel13);
-            this.metroPanel9.HorizontalScrollbarBarColor = true;
-            this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel9.HorizontalScrollbarSize = 10;
-            this.metroPanel9.Location = new System.Drawing.Point(3, 4);
-            this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(329, 230);
-            this.metroPanel9.TabIndex = 227;
-            this.metroPanel9.UseCustomBackColor = true;
-            this.metroPanel9.UseStyleColors = true;
-            this.metroPanel9.VerticalScrollbarBarColor = true;
-            this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel9.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel13
-            // 
-            this.metroPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel13.BackColor = System.Drawing.Color.White;
-            this.metroPanel13.Controls.Add(this.metroTile1);
-            this.metroPanel13.Controls.Add(this.metroPanel15);
-            this.metroPanel13.HorizontalScrollbarBarColor = true;
-            this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel13.HorizontalScrollbarSize = 10;
-            this.metroPanel13.Location = new System.Drawing.Point(2, 2);
-            this.metroPanel13.Name = "metroPanel13";
-            this.metroPanel13.Size = new System.Drawing.Size(325, 111);
-            this.metroPanel13.TabIndex = 236;
-            this.metroPanel13.UseCustomBackColor = true;
-            this.metroPanel13.UseStyleColors = true;
-            this.metroPanel13.VerticalScrollbarBarColor = true;
-            this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel13.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel15
-            // 
-            this.metroPanel15.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel15.HorizontalScrollbarBarColor = true;
-            this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel15.Name = "metroPanel15";
-            this.metroPanel15.Size = new System.Drawing.Size(325, 1);
-            this.metroPanel15.TabIndex = 319;
-            this.metroPanel15.UseCustomBackColor = true;
-            this.metroPanel15.UseStyleColors = true;
-            this.metroPanel15.VerticalScrollbarBarColor = true;
-            this.metroPanel15.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel15.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel16
-            // 
-            this.metroPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel16.BackColor = System.Drawing.Color.White;
-            this.metroPanel16.Controls.Add(this.metroTile2);
-            this.metroPanel16.Controls.Add(this.metroPanel17);
-            this.metroPanel16.HorizontalScrollbarBarColor = true;
-            this.metroPanel16.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel16.HorizontalScrollbarSize = 10;
-            this.metroPanel16.Location = new System.Drawing.Point(2, 116);
-            this.metroPanel16.Name = "metroPanel16";
-            this.metroPanel16.Size = new System.Drawing.Size(325, 111);
-            this.metroPanel16.TabIndex = 237;
-            this.metroPanel16.UseCustomBackColor = true;
-            this.metroPanel16.UseStyleColors = true;
-            this.metroPanel16.VerticalScrollbarBarColor = true;
-            this.metroPanel16.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel16.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel17
-            // 
-            this.metroPanel17.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel17.HorizontalScrollbarBarColor = true;
-            this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel17.HorizontalScrollbarSize = 10;
-            this.metroPanel17.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel17.Name = "metroPanel17";
-            this.metroPanel17.Size = new System.Drawing.Size(325, 1);
-            this.metroPanel17.TabIndex = 319;
-            this.metroPanel17.UseCustomBackColor = true;
-            this.metroPanel17.UseStyleColors = true;
-            this.metroPanel17.VerticalScrollbarBarColor = true;
-            this.metroPanel17.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel17.VerticalScrollbarSize = 10;
-            // 
-            // metroTile2
-            // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTile2.Location = new System.Drawing.Point(0, 1);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(325, 110);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Brown;
-            this.metroTile2.TabIndex = 320;
-            this.metroTile2.Text = "EXPORT";
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTile1.Location = new System.Drawing.Point(0, 1);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(325, 110);
-            this.metroTile1.TabIndex = 320;
-            this.metroTile1.Text = "PRINT SUMMARY";
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseTileImage = true;
             // 
             // GridPlasada_Summary
             // 
@@ -629,7 +258,7 @@
             this.GridPlasada_Summary.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GridPlasada_Summary.RowTemplate.Height = 23;
             this.GridPlasada_Summary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Summary.Size = new System.Drawing.Size(623, 449);
+            this.GridPlasada_Summary.Size = new System.Drawing.Size(623, 378);
             this.GridPlasada_Summary.TabIndex = 240;
             this.GridPlasada_Summary.UseCustomBackColor = true;
             this.GridPlasada_Summary.UseCustomForeColor = true;
@@ -650,6 +279,488 @@
             this.TOTAL_AMOUNT.HeaderText = "TOTAL AMOUNT";
             this.TOTAL_AMOUNT.Name = "TOTAL_AMOUNT";
             // 
+            // metroPanel14
+            // 
+            this.metroPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.metroPanel14.Controls.Add(this.metroPanel2);
+            this.metroPanel14.HorizontalScrollbarBarColor = true;
+            this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel14.HorizontalScrollbarSize = 10;
+            this.metroPanel14.Location = new System.Drawing.Point(55, 37);
+            this.metroPanel14.Name = "metroPanel14";
+            this.metroPanel14.Size = new System.Drawing.Size(336, 390);
+            this.metroPanel14.TabIndex = 320;
+            this.metroPanel14.UseCustomBackColor = true;
+            this.metroPanel14.UseStyleColors = true;
+            this.metroPanel14.VerticalScrollbarBarColor = true;
+            this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel14.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.metroPanel2.Controls.Add(this.metroPanel16);
+            this.metroPanel2.Controls.Add(this.metroPanel5);
+            this.metroPanel2.Controls.Add(this.metroPanel4);
+            this.metroPanel2.Controls.Add(this.metroPanel1);
+            this.metroPanel2.Controls.Add(this.metroPanel3);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(3, 4);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(329, 383);
+            this.metroPanel2.TabIndex = 227;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.UseStyleColors = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel5
+            // 
+            this.metroPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel5.BackColor = System.Drawing.Color.White;
+            this.metroPanel5.Controls.Add(this.metroPanel13);
+            this.metroPanel5.Controls.Add(this.metroPanel18);
+            this.metroPanel5.Controls.Add(this.metroPanel11);
+            this.metroPanel5.Controls.Add(this.label3);
+            this.metroPanel5.Controls.Add(this.textBox3);
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(2, 155);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(325, 225);
+            this.metroPanel5.TabIndex = 235;
+            this.metroPanel5.UseCustomBackColor = true;
+            this.metroPanel5.UseStyleColors = true;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel11
+            // 
+            this.metroPanel11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel11.HorizontalScrollbarBarColor = true;
+            this.metroPanel11.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel11.HorizontalScrollbarSize = 10;
+            this.metroPanel11.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel11.Name = "metroPanel11";
+            this.metroPanel11.Size = new System.Drawing.Size(325, 1);
+            this.metroPanel11.TabIndex = 319;
+            this.metroPanel11.UseCustomBackColor = true;
+            this.metroPanel11.UseStyleColors = true;
+            this.metroPanel11.VerticalScrollbarBarColor = true;
+            this.metroPanel11.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel11.VerticalScrollbarSize = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(13, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 18);
+            this.label3.TabIndex = 318;
+            this.label3.Text = "TOTAL";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox3.Location = new System.Drawing.Point(256, 18);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(50, 17);
+            this.textBox3.TabIndex = 298;
+            this.textBox3.Text = "TEST";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel4.BackColor = System.Drawing.Color.White;
+            this.metroPanel4.Controls.Add(this.metroPanel10);
+            this.metroPanel4.Controls.Add(this.label2);
+            this.metroPanel4.Controls.Add(this.textBox2);
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(2, 104);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(325, 223);
+            this.metroPanel4.TabIndex = 234;
+            this.metroPanel4.UseCustomBackColor = true;
+            this.metroPanel4.UseStyleColors = true;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel10
+            // 
+            this.metroPanel10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel10.HorizontalScrollbarBarColor = true;
+            this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel10.HorizontalScrollbarSize = 10;
+            this.metroPanel10.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel10.Name = "metroPanel10";
+            this.metroPanel10.Size = new System.Drawing.Size(325, 1);
+            this.metroPanel10.TabIndex = 319;
+            this.metroPanel10.UseCustomBackColor = true;
+            this.metroPanel10.UseStyleColors = true;
+            this.metroPanel10.VerticalScrollbarBarColor = true;
+            this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel10.VerticalScrollbarSize = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(13, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 18);
+            this.label2.TabIndex = 318;
+            this.label2.Text = "CITY TAX";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox2.Location = new System.Drawing.Point(256, 18);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(50, 17);
+            this.textBox2.TabIndex = 298;
+            this.textBox2.Text = "TEST";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.BackColor = System.Drawing.Color.White;
+            this.metroPanel1.Controls.Add(this.metroPanel7);
+            this.metroPanel1.Controls.Add(this.label1);
+            this.metroPanel1.Controls.Add(this.textBox1);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(2, 53);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(325, 223);
+            this.metroPanel1.TabIndex = 233;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseStyleColors = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel7
+            // 
+            this.metroPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel7.HorizontalScrollbarBarColor = true;
+            this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel7.HorizontalScrollbarSize = 10;
+            this.metroPanel7.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel7.Name = "metroPanel7";
+            this.metroPanel7.Size = new System.Drawing.Size(325, 1);
+            this.metroPanel7.TabIndex = 319;
+            this.metroPanel7.UseCustomBackColor = true;
+            this.metroPanel7.UseStyleColors = true;
+            this.metroPanel7.VerticalScrollbarBarColor = true;
+            this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel7.VerticalScrollbarSize = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 18);
+            this.label1.TabIndex = 318;
+            this.label1.Text = "PLASADA";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox1.Location = new System.Drawing.Point(256, 18);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(50, 17);
+            this.textBox1.TabIndex = 298;
+            this.textBox1.Text = "TEST";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel3.BackColor = System.Drawing.Color.White;
+            this.metroPanel3.Controls.Add(this.label6);
+            this.metroPanel3.Controls.Add(this.textBox_FIGHT);
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(2, 2);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(325, 223);
+            this.metroPanel3.TabIndex = 232;
+            this.metroPanel3.UseCustomBackColor = true;
+            this.metroPanel3.UseStyleColors = true;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(13, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 18);
+            this.label6.TabIndex = 318;
+            this.label6.Text = "DATE";
+            // 
+            // textBox_FIGHT
+            // 
+            this.textBox_FIGHT.BackColor = System.Drawing.Color.White;
+            this.textBox_FIGHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FIGHT.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox_FIGHT.Location = new System.Drawing.Point(256, 18);
+            this.textBox_FIGHT.Multiline = true;
+            this.textBox_FIGHT.Name = "textBox_FIGHT";
+            this.textBox_FIGHT.Size = new System.Drawing.Size(50, 17);
+            this.textBox_FIGHT.TabIndex = 298;
+            this.textBox_FIGHT.Text = "TEST";
+            this.textBox_FIGHT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroPanel18
+            // 
+            this.metroPanel18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel18.BackColor = System.Drawing.Color.White;
+            this.metroPanel18.Controls.Add(this.metroPanel19);
+            this.metroPanel18.Controls.Add(this.label4);
+            this.metroPanel18.Controls.Add(this.textBox4);
+            this.metroPanel18.HorizontalScrollbarBarColor = true;
+            this.metroPanel18.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel18.HorizontalScrollbarSize = 10;
+            this.metroPanel18.Location = new System.Drawing.Point(0, 55);
+            this.metroPanel18.Name = "metroPanel18";
+            this.metroPanel18.Size = new System.Drawing.Size(325, 170);
+            this.metroPanel18.TabIndex = 320;
+            this.metroPanel18.UseCustomBackColor = true;
+            this.metroPanel18.UseStyleColors = true;
+            this.metroPanel18.VerticalScrollbarBarColor = true;
+            this.metroPanel18.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel18.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel19
+            // 
+            this.metroPanel19.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel19.HorizontalScrollbarBarColor = true;
+            this.metroPanel19.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel19.HorizontalScrollbarSize = 10;
+            this.metroPanel19.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel19.Name = "metroPanel19";
+            this.metroPanel19.Size = new System.Drawing.Size(325, 1);
+            this.metroPanel19.TabIndex = 319;
+            this.metroPanel19.UseCustomBackColor = true;
+            this.metroPanel19.UseStyleColors = true;
+            this.metroPanel19.VerticalScrollbarBarColor = true;
+            this.metroPanel19.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel19.VerticalScrollbarSize = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(13, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 18);
+            this.label4.TabIndex = 318;
+            this.label4.Text = "TOTAL FIGHT";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox4.Location = new System.Drawing.Point(256, 18);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(50, 17);
+            this.textBox4.TabIndex = 298;
+            this.textBox4.Text = "TEST";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroPanel13
+            // 
+            this.metroPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel13.BackColor = System.Drawing.Color.White;
+            this.metroPanel13.Controls.Add(this.metroPanel15);
+            this.metroPanel13.Controls.Add(this.label5);
+            this.metroPanel13.Controls.Add(this.textBox5);
+            this.metroPanel13.HorizontalScrollbarBarColor = true;
+            this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel13.HorizontalScrollbarSize = 10;
+            this.metroPanel13.Location = new System.Drawing.Point(0, 110);
+            this.metroPanel13.Name = "metroPanel13";
+            this.metroPanel13.Size = new System.Drawing.Size(325, 115);
+            this.metroPanel13.TabIndex = 321;
+            this.metroPanel13.UseCustomBackColor = true;
+            this.metroPanel13.UseStyleColors = true;
+            this.metroPanel13.VerticalScrollbarBarColor = true;
+            this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel13.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel15
+            // 
+            this.metroPanel15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel15.HorizontalScrollbarBarColor = true;
+            this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel15.HorizontalScrollbarSize = 10;
+            this.metroPanel15.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel15.Name = "metroPanel15";
+            this.metroPanel15.Size = new System.Drawing.Size(325, 1);
+            this.metroPanel15.TabIndex = 319;
+            this.metroPanel15.UseCustomBackColor = true;
+            this.metroPanel15.UseStyleColors = true;
+            this.metroPanel15.VerticalScrollbarBarColor = true;
+            this.metroPanel15.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel15.VerticalScrollbarSize = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(13, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 18);
+            this.label5.TabIndex = 318;
+            this.label5.Text = "DRAW";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox5.Location = new System.Drawing.Point(256, 18);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(50, 17);
+            this.textBox5.TabIndex = 298;
+            this.textBox5.Text = "TEST";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroPanel16
+            // 
+            this.metroPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel16.BackColor = System.Drawing.Color.White;
+            this.metroPanel16.Controls.Add(this.metroPanel17);
+            this.metroPanel16.Controls.Add(this.label7);
+            this.metroPanel16.Controls.Add(this.textBox6);
+            this.metroPanel16.HorizontalScrollbarBarColor = true;
+            this.metroPanel16.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel16.HorizontalScrollbarSize = 10;
+            this.metroPanel16.Location = new System.Drawing.Point(2, 319);
+            this.metroPanel16.Name = "metroPanel16";
+            this.metroPanel16.Size = new System.Drawing.Size(325, 58);
+            this.metroPanel16.TabIndex = 322;
+            this.metroPanel16.UseCustomBackColor = true;
+            this.metroPanel16.UseStyleColors = true;
+            this.metroPanel16.VerticalScrollbarBarColor = true;
+            this.metroPanel16.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel16.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel17
+            // 
+            this.metroPanel17.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel17.HorizontalScrollbarBarColor = true;
+            this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel17.HorizontalScrollbarSize = 10;
+            this.metroPanel17.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel17.Name = "metroPanel17";
+            this.metroPanel17.Size = new System.Drawing.Size(325, 1);
+            this.metroPanel17.TabIndex = 319;
+            this.metroPanel17.UseCustomBackColor = true;
+            this.metroPanel17.UseStyleColors = true;
+            this.metroPanel17.VerticalScrollbarBarColor = true;
+            this.metroPanel17.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel17.VerticalScrollbarSize = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(13, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 18);
+            this.label7.TabIndex = 318;
+            this.label7.Text = "GATE";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 11F);
+            this.textBox6.Location = new System.Drawing.Point(256, 18);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(50, 17);
+            this.textBox6.TabIndex = 298;
+            this.textBox6.Text = "TEST";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTile1.Location = new System.Drawing.Point(0, 0);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(328, 97);
+            this.metroTile1.TabIndex = 325;
+            this.metroTile1.Text = "PRINT SUMMARY";
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseTileImage = true;
+            // 
             // UserControl_Summa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -658,11 +769,14 @@
             this.Name = "UserControl_Summa";
             this.Size = new System.Drawing.Size(1071, 574);
             this.panel1.ResumeLayout(false);
-            this.metroPanel14.ResumeLayout(false);
-            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel6.ResumeLayout(false);
+            this.metroPanel9.ResumeLayout(false);
             this.metroPanel8.ResumeLayout(false);
             this.metroPanel12.ResumeLayout(false);
             this.metroPanel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Summary)).EndInit();
+            this.metroPanel14.ResumeLayout(false);
+            this.metroPanel2.ResumeLayout(false);
             this.metroPanel5.ResumeLayout(false);
             this.metroPanel5.PerformLayout();
             this.metroPanel4.ResumeLayout(false);
@@ -671,11 +785,12 @@
             this.metroPanel1.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
-            this.metroPanel6.ResumeLayout(false);
-            this.metroPanel9.ResumeLayout(false);
+            this.metroPanel18.ResumeLayout(false);
+            this.metroPanel18.PerformLayout();
             this.metroPanel13.ResumeLayout(false);
+            this.metroPanel13.PerformLayout();
             this.metroPanel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Summary)).EndInit();
+            this.metroPanel16.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -705,15 +820,22 @@
         private System.Windows.Forms.TextBox textBox_FIGHT;
         private MetroFramework.Controls.MetroPanel metroPanel6;
         private MetroFramework.Controls.MetroPanel metroPanel9;
-        private MetroFramework.Controls.MetroPanel metroPanel13;
-        private MetroFramework.Controls.MetroPanel metroPanel15;
-        private MetroFramework.Controls.MetroPanel metroPanel16;
-        private MetroFramework.Controls.MetroPanel metroPanel17;
-        private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroGrid GridPlasada_Summary;
         private System.Windows.Forms.DataGridViewTextBoxColumn AMOUNT;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_AMOUNT;
+        private MetroFramework.Controls.MetroPanel metroPanel18;
+        private MetroFramework.Controls.MetroPanel metroPanel13;
+        private MetroFramework.Controls.MetroPanel metroPanel15;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox5;
+        private MetroFramework.Controls.MetroPanel metroPanel19;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
+        private MetroFramework.Controls.MetroPanel metroPanel16;
+        private MetroFramework.Controls.MetroPanel metroPanel17;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox6;
+        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }

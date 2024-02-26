@@ -16,7 +16,7 @@ namespace FightingFeather
     public partial class UserControl_Summa : UserControl
     {
 
-        private string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "summary.json");
+        private string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "cashCount.json");
 
         public UserControl_Summa()
         {
@@ -216,7 +216,6 @@ namespace FightingFeather
                 File.Delete(jsonFilePath);
             }
 
-
         }
 
 
@@ -248,6 +247,7 @@ namespace FightingFeather
             else if (e.ColumnIndex == GridPlasada_Summary.Columns["AMOUNT"].Index && e.RowIndex >= 0)
             {
                 RecalculateTotalSum();
+               
             }
 
         }
@@ -275,8 +275,6 @@ namespace FightingFeather
                 lastTotalAmountCell.Value = totalSum.ToString();
                 lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
 
-                // Display the total sum in the textBox_Total
-                textBox_Total.Text = totalSum.ToString();
             }
         }
 
@@ -303,9 +301,29 @@ namespace FightingFeather
                 lastTotalAmountCell.Value = totalSum.ToString();
                 lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
 
-                // Display the total sum in the textBox_Total
-                textBox_Total.Text = totalSum.ToString();
+
             }
+        }
+
+        public void UpdateFightTotal(int totalFights)
+        {
+            textBox_TotalFight.Text = $"{totalFights}";
+        }
+
+
+        public void UpdateTotal(string total)
+        {
+            textBox_Total.Text = total;
+        }
+
+        public void UpdateFeeTotal(string total)
+        {
+            textBox_Plasada.Text = total;
+        }
+
+        public void UpdateDrawCancelTotal(int totalDraws)
+        {
+            textBox_Draw.Text = $"{totalDraws}";
         }
 
     }

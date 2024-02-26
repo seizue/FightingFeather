@@ -315,19 +315,39 @@ namespace FightingFeather
             return double.TryParse(value.ToString(), out _);
         }
 
+
         public void CalculateAndDisplayFightTotal()
         {
-            int totalFights = GridPlasada_Entries.Rows.Count;
+            int totalFights = 0;
 
-            // Create a new row to display the totalFights at the end
-            DataGridViewRow totalRow = new DataGridViewRow();
-            totalRow.CreateCells(GridPlasada_Entries);
-            totalRow.Cells[0].Value = "";
-         
+            // Iterate through the rows of the DataGridView
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                // Check if the value in the WINNER column is not null or empty and not "CANCEL"
+                if (row.Cells["WINNER"].Value != null &&
+                    !string.IsNullOrEmpty(row.Cells["WINNER"].Value.ToString()) &&
+                    !row.Cells["WINNER"].Value.ToString().Equals("Cancel", StringComparison.OrdinalIgnoreCase))
+                {
+                    totalFights++;
+                }
+            }
 
-            // Add the total row to the DataGridView
-            GridPlasada_Entries.Rows.Add(totalRow);
+            // Update the UserControl's textBox_TotalFight
+            userControl_Summa1.UpdateFightTotal(totalFights);
+
+            // Find the last row
+            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+            // Display the totalFights in the last row
+            DataGridViewCell totalFightsCell = lastRow.Cells["MERON"];
+            totalFightsCell.Value = totalFights.ToString();
+
+            // Set the foreground color of the cell
+            totalFightsCell.Style.ForeColor = Color.OrangeRed; // Change to the color you desire
         }
+
+
+
 
         public void CalculateAndDisplayDrawCancelTotal()
         {
@@ -350,17 +370,17 @@ namespace FightingFeather
                 }
             }
 
-            // Find the row labeled "Total Fights:"
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
-                {
-                    row.Cells[1].Value = $"Draws: {totalDraws}"; // Add label for total draws
-                    row.Cells[2].Value = $"Cancels: {totalCancels}"; // Add label for total cancels
-                    break;
-                }
-            }
+            // Find the last row
+            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+            // Display the total draws and total cancels in the last row
+            lastRow.Cells["BET_W"].Value = $"Draws: {totalDraws}";
+            lastRow.Cells["BET_M"].Value = $"Cancels: {totalCancels}";
+
+            // Update the UserControl's textBox_Draw
+            userControl_Summa1.UpdateDrawCancelTotal(totalDraws);
         }
+
 
         public void CalculateAndDisplayFeeTotal()
         {
@@ -374,18 +394,16 @@ namespace FightingFeather
                 }
             }
 
-            // Find the row labeled "Total Fights:"
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
-                {
-                    // Assuming the "FEE" column is at index 5, display the total fee in the next column
-                    row.Cells[11].Value = $"";
-                    row.Cells[12].Value = $"{totalFee}";
-                    break;
-                }
-            }
+            // Find the last row
+            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+            // Display the total fee in the last row
+            lastRow.Cells["FEE"].Value = $"{totalFee}";
+
+            // Update the UserControl's textBox_Plasada
+            userControl_Summa1.UpdateFeeTotal(totalFee.ToString());
         }
+
 
 
         public void CalculateAndDisplayTotalPlasada()
@@ -400,17 +418,17 @@ namespace FightingFeather
                 }
             }
 
-            // Find the row labeled "Total Fights:"
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
-                {
-                    // Assuming the "TOTAL PLASADA" column is at index 6, display the total plasada in the next column
-                    row.Cells[13].Value = $"{totalPlasada}";
-                    break;
-                }
-            }
+            // Find the last row
+            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+            // Display the total plasada in the last row
+            lastRow.Cells["TOTAL_PLASADA"].Value = $"{totalPlasada}";
+
+            // Update the UserControl's textBox_Total
+            userControl_Summa1.UpdateTotal(totalPlasada.ToString());
         }
+
+
 
         public void CalculateAndDisplayWinnerEarnTotal()
         {
@@ -424,17 +442,13 @@ namespace FightingFeather
                 }
             }
 
-            // Find the row labeled "Total Fights:"
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "")
-                {
-                    // Assuming the "WINNER_EARN" column is at index 7, display the total winner earn in the next column
-                    row.Cells[15].Value = $"{totalWinnerEarn}";
-                    break;
-                }
-            }
+            // Find the last row
+            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+            // Display the total winner earn in the last row
+            lastRow.Cells["WINNERS_EARN"].Value = $"{totalWinnerEarn}";
         }
+
 
 
 

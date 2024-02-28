@@ -12,6 +12,7 @@ using System.IO;
 using System.Data.SqlClient;
 using Newtonsoft.Json;
 using MetroFramework.Controls;
+using System.Configuration;
 
 namespace FightingFeather
 {
@@ -46,6 +47,9 @@ namespace FightingFeather
             CalculateAndDisplayTotalPlasada();
             CalculateTotalCityTax();
             CalculateAndDisplayWinnerEarnTotal();
+
+            LoadColumnVisibilitySettings();
+            RevertColumnVisibilityChanges();
 
             // Subscribe to the CellFormatting event
             GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
@@ -1011,7 +1015,8 @@ namespace FightingFeather
 
         private void button_Export_Click(object sender, EventArgs e)
         {
-
+            // Subscribe to the RowPrePaint event
+            GridPlasada_Entries.MouseClick += GridPlasada_Entries_MouseClick;
         }
 
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)
@@ -1127,6 +1132,108 @@ namespace FightingFeather
             button_Shortcut.ForeColor= defaultColor;
         }
 
-       
+
+        // Declare a dictionary to store the initial visibility state of columns
+        Dictionary<string, bool> columnVisibilityBackup = new Dictionary<string, bool>();
+
+        // Handle MouseClick event for the DataGridView
+        private void GridPlasada_Entries_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) // Check if right mouse button is clicked
+            {
+                // Check if column header was clicked
+                DataGridView.HitTestInfo hitTestInfo = GridPlasada_Entries.HitTest(e.X, e.Y);
+                if (hitTestInfo.Type == DataGridViewHitTestType.ColumnHeader ||
+                    hitTestInfo.Type == DataGridViewHitTestType.TopLeftHeader)
+                {
+                    // Create a context menu
+                    ContextMenu menu = new ContextMenu();
+
+                    // Add items on the menu
+                    foreach (DataGridViewColumn column in GridPlasada_Entries.Columns)
+                    {
+                        // Exclude the FIGHT column
+                        if (column.Name != "FIGHT")
+                        {
+                            MenuItem item = new MenuItem();
+
+                            item.Text = column.HeaderText;
+                            item.Checked = column.Visible;
+
+                            // Check if the column visibility backup contains the column name
+                            if (!columnVisibilityBackup.ContainsKey(column.Name))
+                            {
+                                // If not, add it with the current visibility state
+                                columnVisibilityBackup[column.Name] = column.Visible;
+                            }
+
+                            // Add event if the item was clicked
+                            item.Click += (obj, ea) =>
+                            {
+                                bool originalVisibility = columnVisibilityBackup[column.Name]; // Get the original visibility
+
+                                column.Visible = !originalVisibility;
+
+                                // Update the check
+                                item.Checked = column.Visible;
+
+                                // Save column visibility setting
+                                Properties.Settings.Default[$"ColumnVisibility_{column.Name}"] = column.Visible;
+                                Properties.Settings.Default.Save(); // Save settings
+
+                                // Show the selection again
+                                menu.Show(GridPlasada_Entries, e.Location);
+
+                                if (column.Visible)
+                                {
+                                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                                }
+                            };
+
+                            menu.MenuItems.Add(item);
+                        }
+                    }
+
+                    // Show the menu
+                    menu.Show(GridPlasada_Entries, e.Location);
+                }
+            }
+        }
+
+        // Load column visibility settings from application settings
+        private void LoadColumnVisibilitySettings()
+        {
+            foreach (DataGridViewColumn column in GridPlasada_Entries.Columns)
+            {
+                try
+                {
+                    // Check if the setting exists
+                    if (Properties.Settings.Default.Properties[$"ColumnVisibility_{column.Name}"] != null)
+                    {
+                        // Set column visibility based on saved setting
+                        column.Visible = (bool)Properties.Settings.Default[$"ColumnVisibility_{column.Name}"];
+                    }
+                }
+                catch (SettingsPropertyNotFoundException ex)
+                {
+                    // Handle the case where the setting is not found
+                    Console.WriteLine($"Setting for {column.Name} visibility not found: {ex.Message}");
+                    // You can choose to set a default visibility here if needed
+                }
+            }
+        }
+
+        // Revert column visibility changes
+        private void RevertColumnVisibilityChanges()
+        {
+            foreach (DataGridViewColumn column in GridPlasada_Entries.Columns)
+            {
+                if (columnVisibilityBackup.ContainsKey(column.Name))
+                {
+                    column.Visible = columnVisibilityBackup[column.Name]; // Restore original visibility
+                }
+            }
+        }
+
     }
 }

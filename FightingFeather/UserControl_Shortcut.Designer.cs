@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel26 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel27 = new MetroFramework.Controls.MetroPanel();
@@ -82,13 +82,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
-            this.textBox_Meron = new System.Windows.Forms.TextBox();
+            this.textBox_MeronName = new System.Windows.Forms.TextBox();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
-            this.textBox_BetM = new System.Windows.Forms.TextBox();
+            this.textBox_MeronBet = new System.Windows.Forms.TextBox();
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
-            this.textBox_Wala = new System.Windows.Forms.TextBox();
+            this.textBox_WalaName = new System.Windows.Forms.TextBox();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
-            this.textBox_BetW = new System.Windows.Forms.TextBox();
+            this.textBox_MeronWala = new System.Windows.Forms.TextBox();
             this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
             this.textBox_BetDiff = new System.Windows.Forms.TextBox();
             this.metroPanel17 = new MetroFramework.Controls.MetroPanel();
@@ -773,13 +773,13 @@
             // GridPlasada_Shortcut
             // 
             this.GridPlasada_Shortcut.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             this.GridPlasada_Shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -788,14 +788,14 @@
             this.GridPlasada_Shortcut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Shortcut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Shortcut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 7.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Shortcut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 7.75F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Shortcut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.GridPlasada_Shortcut.ColumnHeadersHeight = 36;
             this.GridPlasada_Shortcut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridPlasada_Shortcut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -804,14 +804,14 @@
             this.BET_M,
             this.WALA,
             this.BET_W});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 12F);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle28;
             this.GridPlasada_Shortcut.EnableHeadersVisualStyles = false;
             this.GridPlasada_Shortcut.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Shortcut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
@@ -819,20 +819,20 @@
             this.GridPlasada_Shortcut.MultiSelect = false;
             this.GridPlasada_Shortcut.Name = "GridPlasada_Shortcut";
             this.GridPlasada_Shortcut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Shortcut.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Shortcut.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.GridPlasada_Shortcut.RowHeadersVisible = false;
             this.GridPlasada_Shortcut.RowHeadersWidth = 43;
             this.GridPlasada_Shortcut.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 14F);
-            this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 14F);
+            this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.GridPlasada_Shortcut.RowTemplate.Height = 23;
             this.GridPlasada_Shortcut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Shortcut.Size = new System.Drawing.Size(449, 243);
@@ -903,7 +903,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.metroPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel5.Controls.Add(this.textBox_Meron);
+            this.metroPanel5.Controls.Add(this.textBox_MeronName);
             this.metroPanel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel5.HorizontalScrollbarBarColor = true;
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
@@ -918,17 +918,17 @@
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
             // 
-            // textBox_Meron
+            // textBox_MeronName
             // 
-            this.textBox_Meron.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_Meron.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_Meron.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Meron.Location = new System.Drawing.Point(1, 3);
-            this.textBox_Meron.Multiline = true;
-            this.textBox_Meron.Name = "textBox_Meron";
-            this.textBox_Meron.Size = new System.Drawing.Size(159, 17);
-            this.textBox_Meron.TabIndex = 216;
-            this.textBox_Meron.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_MeronName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_MeronName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MeronName.Location = new System.Drawing.Point(1, 3);
+            this.textBox_MeronName.Multiline = true;
+            this.textBox_MeronName.Name = "textBox_MeronName";
+            this.textBox_MeronName.Size = new System.Drawing.Size(159, 17);
+            this.textBox_MeronName.TabIndex = 216;
+            this.textBox_MeronName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // metroPanel6
             // 
@@ -936,7 +936,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.metroPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel6.Controls.Add(this.textBox_BetM);
+            this.metroPanel6.Controls.Add(this.textBox_MeronBet);
             this.metroPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel6.HorizontalScrollbarBarColor = true;
             this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
@@ -951,17 +951,17 @@
             this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel6.VerticalScrollbarSize = 10;
             // 
-            // textBox_BetM
+            // textBox_MeronBet
             // 
-            this.textBox_BetM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_BetM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_BetM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_BetM.Location = new System.Drawing.Point(1, 3);
-            this.textBox_BetM.Multiline = true;
-            this.textBox_BetM.Name = "textBox_BetM";
-            this.textBox_BetM.Size = new System.Drawing.Size(159, 17);
-            this.textBox_BetM.TabIndex = 216;
-            this.textBox_BetM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_MeronBet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_MeronBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MeronBet.Location = new System.Drawing.Point(1, 3);
+            this.textBox_MeronBet.Multiline = true;
+            this.textBox_MeronBet.Name = "textBox_MeronBet";
+            this.textBox_MeronBet.Size = new System.Drawing.Size(159, 17);
+            this.textBox_MeronBet.TabIndex = 216;
+            this.textBox_MeronBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // metroPanel10
             // 
@@ -969,7 +969,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.metroPanel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel10.Controls.Add(this.textBox_Wala);
+            this.metroPanel10.Controls.Add(this.textBox_WalaName);
             this.metroPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel10.HorizontalScrollbarBarColor = true;
             this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
@@ -984,17 +984,17 @@
             this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel10.VerticalScrollbarSize = 10;
             // 
-            // textBox_Wala
+            // textBox_WalaName
             // 
-            this.textBox_Wala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_Wala.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_Wala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Wala.Location = new System.Drawing.Point(1, 3);
-            this.textBox_Wala.Multiline = true;
-            this.textBox_Wala.Name = "textBox_Wala";
-            this.textBox_Wala.Size = new System.Drawing.Size(159, 17);
-            this.textBox_Wala.TabIndex = 216;
-            this.textBox_Wala.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_WalaName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_WalaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_WalaName.Location = new System.Drawing.Point(1, 3);
+            this.textBox_WalaName.Multiline = true;
+            this.textBox_WalaName.Name = "textBox_WalaName";
+            this.textBox_WalaName.Size = new System.Drawing.Size(159, 17);
+            this.textBox_WalaName.TabIndex = 216;
+            this.textBox_WalaName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // metroPanel13
             // 
@@ -1002,7 +1002,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.metroPanel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel13.Controls.Add(this.textBox_BetW);
+            this.metroPanel13.Controls.Add(this.textBox_MeronWala);
             this.metroPanel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel13.HorizontalScrollbarBarColor = true;
             this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
@@ -1017,17 +1017,17 @@
             this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel13.VerticalScrollbarSize = 10;
             // 
-            // textBox_BetW
+            // textBox_MeronWala
             // 
-            this.textBox_BetW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_BetW.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_BetW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_BetW.Location = new System.Drawing.Point(1, 3);
-            this.textBox_BetW.Multiline = true;
-            this.textBox_BetW.Name = "textBox_BetW";
-            this.textBox_BetW.Size = new System.Drawing.Size(159, 17);
-            this.textBox_BetW.TabIndex = 216;
-            this.textBox_BetW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronWala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_MeronWala.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_MeronWala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MeronWala.Location = new System.Drawing.Point(1, 3);
+            this.textBox_MeronWala.Multiline = true;
+            this.textBox_MeronWala.Name = "textBox_MeronWala";
+            this.textBox_MeronWala.Size = new System.Drawing.Size(159, 17);
+            this.textBox_MeronWala.TabIndex = 216;
+            this.textBox_MeronWala.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // metroPanel15
             // 
@@ -1054,7 +1054,8 @@
             // 
             this.textBox_BetDiff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.textBox_BetDiff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_BetDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BetDiff.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BetDiff.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_BetDiff.Location = new System.Drawing.Point(1, 3);
             this.textBox_BetDiff.Multiline = true;
             this.textBox_BetDiff.Name = "textBox_BetDiff";
@@ -1234,15 +1235,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WALA;
         private System.Windows.Forms.DataGridViewTextBoxColumn BET_W;
         private MetroFramework.Controls.MetroPanel metroPanel6;
-        private System.Windows.Forms.TextBox textBox_BetM;
+        private System.Windows.Forms.TextBox textBox_MeronBet;
         private MetroFramework.Controls.MetroPanel metroPanel5;
-        private System.Windows.Forms.TextBox textBox_Meron;
+        private System.Windows.Forms.TextBox textBox_MeronName;
         private MetroFramework.Controls.MetroPanel metroPanel15;
         private System.Windows.Forms.TextBox textBox_BetDiff;
         private MetroFramework.Controls.MetroPanel metroPanel13;
-        private System.Windows.Forms.TextBox textBox_BetW;
+        private System.Windows.Forms.TextBox textBox_MeronWala;
         private MetroFramework.Controls.MetroPanel metroPanel10;
-        private System.Windows.Forms.TextBox textBox_Wala;
+        private System.Windows.Forms.TextBox textBox_WalaName;
         private MetroFramework.Controls.MetroPanel metroPanel18;
         private System.Windows.Forms.TextBox textBox_Parehas;
         private MetroFramework.Controls.MetroPanel metroPanel17;

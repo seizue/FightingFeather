@@ -17,7 +17,7 @@ namespace FightingFeather
         private string databasePath;
         private Main mainForm;
         private int fightId;
-        private UserControl_Shortcut userControl;
+     
 
         public EntryForm(Main mainForm, string databasePath)
         {
@@ -25,10 +25,6 @@ namespace FightingFeather
             this.mainForm = mainForm;
             this.databasePath = databasePath;
          
-
-            // Subscribe to the SaveButtonClicked event of the UserControl
-            userControl.SaveButtonClicked += UserControl_SaveButtonClicked;
-
             // Populate the ComboBox with options
             comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
             comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
@@ -359,25 +355,6 @@ namespace FightingFeather
         {
             button_Update.Visible = isVisible;
 
-        }
-
-        private void UserControl_SaveButtonClicked(object sender, EventArgs e)
-        {
-            // Handle the save operation when the save button in the UserControl is clicked
-
-            // Retrieve data from EntryForm controls
-            string meronName = textBox_MeronName.Text;
-            int meronBet = Convert.ToInt32(textBox_MeronBet.Text);
-            string walaName = textBox_WalaName.Text;
-            int walaBet = Convert.ToInt32(textBox_WalaBet.Text);
-            int pago = Convert.ToInt32(textBox_Pago.Text);
-            string winner = comboBox_Winner.SelectedItem?.ToString();
-            string rate = comboBox_Rate.SelectedItem?.ToString();
-            int rateamount = Convert.ToInt32(textBox_EnterAmountRate.Text);
-
-            // Perform the saving operation using the retrieved data
-            // For demonstration purposes, you can simply display the data
-            MessageBox.Show($"Data saved:\nMeron: {meronName}, Wala: {walaName}, Pago: {pago}, Winner: {winner}");
         }
     }
 }

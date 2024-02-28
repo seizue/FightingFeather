@@ -590,35 +590,12 @@ namespace FightingFeather
                 e.CellStyle.ForeColor = Color.FromArgb(120, 30, 199);
             }
 
-
             // Check if the cell belongs to the "PAREHAS" column and if it's not a header cell
             if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "PAREHAS" && e.RowIndex >= 0)
             {
                 // Set the font color for cells in the "PAREHASF" column
                 e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
             }
-
-            // Check if the cell belongs to the "LOGRO" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "LOGRO" column
-                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
-            }
-
-            // Check if the cell belongs to the "FEE" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FEE" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "FEE" column
-                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
-            }
-
-            // Check if the cell belongs to the "TOTAL PLASAD" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "TOTAL_PLASADA" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "TOTAL PLASA" column
-                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
-            }
-
 
             // Check if the cell belongs to the "RATE RESULT" column and if it's not a header cell
             if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_EARNINGS" && e.RowIndex >= 0)
@@ -1014,10 +991,7 @@ namespace FightingFeather
             }
         }
 
-        private void button_SaveAndClear_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void button_Refresh_Click(object sender, EventArgs e)
         {
@@ -1087,13 +1061,21 @@ namespace FightingFeather
 
         private void button_Shortcut_Click(object sender, EventArgs e)
         {
+            userControl_Shortcut1.Visible = true;
+            userControl_Shortcut1.BringToFront();
+            panel_Shortcut.Visible = true;
+            panel_Shortcut.BringToFront();
 
+            button_Shortcut.ForeColor = clickedColor;
+            button_Home.ForeColor = defaultColor;
+            button_Inventory.ForeColor = defaultColor;
         }
 
         private void button_Summa_Click(object sender, EventArgs e)
         {
             userControl_Summa1.Visible = true;
             panel_Summary.Visible = true;
+            panel_Summary.BringToFront();
             userControl_Summa1.BringToFront();
             userControl_CashBreakDown1.Visible = false;
             userControl_Earnings1.Visible = false;
@@ -1116,6 +1098,7 @@ namespace FightingFeather
 
             button_Plasada.ForeColor = clickedColor;
             button_Summa.ForeColor= defaultColor;
+            button_Inventory.ForeColor= defaultColor;
         }
 
         private void raDateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -1126,5 +1109,24 @@ namespace FightingFeather
             // Pass the formatted date to the UserControl_Summa
             userControl_Summa1.SetDateText(selectedDate);
         }
+
+        private void button_Home_Click(object sender, EventArgs e)
+        {
+            userControl_Shortcut1.Visible = false;
+            userControl_Shortcut1.SendToBack();
+            panel_Shortcut.Visible = false;
+            panel_Shortcut.SendToBack();
+            userControl_Summa1.Visible = false;
+            userControl_Summa1.SendToBack();
+            panel_Summary.Visible = false;
+            panel_Summary.SendToBack();
+
+            button_Home.ForeColor= clickedColor;
+            button_Summa.ForeColor = defaultColor;
+            button_Inventory.ForeColor= defaultColor;
+            button_Shortcut.ForeColor= defaultColor;
+        }
+
+       
     }
 }

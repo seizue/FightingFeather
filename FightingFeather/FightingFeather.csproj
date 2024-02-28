@@ -144,6 +144,12 @@
     <Compile Include="UserControl_CashBreakDown.Designer.cs">
       <DependentUpon>UserControl_CashBreakDown.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_Shortcut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Shortcut.Designer.cs">
+      <DependentUpon>UserControl_Shortcut.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Summa.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_CashBreakDown.resx">
       <DependentUpon>UserControl_CashBreakDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Shortcut.resx">
+      <DependentUpon>UserControl_Shortcut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Summa.resx">
       <DependentUpon>UserControl_Summa.cs</DependentUpon>

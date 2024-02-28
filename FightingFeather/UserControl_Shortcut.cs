@@ -12,9 +12,17 @@ namespace FightingFeather
 {
     public partial class UserControl_Shortcut : UserControl
     {
+        public event EventHandler SaveButtonClicked;
+
         public UserControl_Shortcut()
         {
             InitializeComponent();
+        }
+
+        private void button_Enter_Click(object sender, EventArgs e)
+        {
+            // Raise the SaveButtonClicked event
+            SaveButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

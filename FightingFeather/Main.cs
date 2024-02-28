@@ -1011,12 +1011,13 @@ namespace FightingFeather
             CalculateAndDisplayTotalPlasada();
             CalculateTotalCityTax();
             CalculateAndDisplayWinnerEarnTotal();
+
+      
         }
 
         private void button_Export_Click(object sender, EventArgs e)
         {
-            // Subscribe to the RowPrePaint event
-            GridPlasada_Entries.MouseClick += GridPlasada_Entries_MouseClick;
+         
         }
 
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)

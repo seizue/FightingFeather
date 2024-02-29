@@ -36,6 +36,7 @@ namespace FightingFeather
             // Get the application directory and set up the database path
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
             databasePath = Path.Combine(appDirectory, DatabaseFileName);
+      
 
             InitializeDatabase();
             UpdateFightIDs();

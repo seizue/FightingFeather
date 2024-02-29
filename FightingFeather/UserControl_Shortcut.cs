@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FightingFeather
@@ -71,10 +74,6 @@ namespace FightingFeather
             }
         }
 
-
-
-
-
         private bool ValidateInput()
         {
             // Check if the required fields are filled and if the input data is valid
@@ -93,6 +92,7 @@ namespace FightingFeather
 
         private void SaveDataToDatabase()
         {
+           
             try
             {
                 // Example connection string for SQLite
@@ -125,6 +125,8 @@ namespace FightingFeather
                     }
                 }
 
+                GridPlasada_Shortcut.Rows.Clear(); 
+                PopulateGridPlasadaShortcut();
                 MessageBox.Show("Data saved successfully!");
             }
             catch (Exception ex)
@@ -132,6 +134,7 @@ namespace FightingFeather
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
 
         private void button_Enter_Click(object sender, EventArgs e)
         {
@@ -147,9 +150,84 @@ namespace FightingFeather
             }
         }
 
+
         private void PopulateGridPlasadaShortcut()
         {
-          
+
+            {
+                string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "receipt.json");
+                Console.WriteLine("Attempting to load JSON file from path: " + jsonFilePath);
+
+                if (File.Exists(jsonFilePath))
+                {
+                    string jsonText = File.ReadAllText(jsonFilePath);
+
+                    try
+                    {
+                        JArray jsonArray = JArray.Parse(jsonText);
+
+                        // Assuming jsonArray contains an array of objects
+                        foreach (JObject obj in jsonArray)
+                        {
+                            // Check if the "WINNER" key exists and has a non-null or non-empty value
+                            if (obj.ContainsKey("WINNER") && !string.IsNullOrEmpty(obj["WINNER"].ToString()))
+                            {
+                                // Skip this row as it already has a value in the "WINNER" column
+                                continue;
+                            }
+
+                            // Convert WALA to uppercase
+                            if (obj.ContainsKey("WALA"))
+                            {
+                                string walaValue = obj["WALA"].ToString();
+                                obj["WALA"] = char.ToUpper(walaValue[0]) + walaValue.Substring(1);
+                            }
+
+                            // Convert MERON to uppercase
+                            if (obj.ContainsKey("MERON"))
+                            {
+                                string meronValue = obj["MERON"].ToString();
+                                obj["MERON"] = char.ToUpper(meronValue[0]) + meronValue.Substring(1);
+                            }
+
+                            // Create a new row
+                            DataGridViewRow row = new DataGridViewRow();
+
+                            // Add cells based on the columns you want to display
+                            DataGridViewTextBoxCell cell1 = new DataGridViewTextBoxCell();
+                            cell1.Value = obj["FIGHT"];
+                            row.Cells.Add(cell1);
+
+                            DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
+                            cell2.Value = obj["MERON"];
+                            row.Cells.Add(cell2);
+
+                            DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
+                            cell3.Value = obj["BET (M)"];
+                            row.Cells.Add(cell3);
+
+                            DataGridViewTextBoxCell cell4 = new DataGridViewTextBoxCell();
+                            cell4.Value = obj["WALA"];
+                            row.Cells.Add(cell4);
+
+                            DataGridViewTextBoxCell cell5 = new DataGridViewTextBoxCell();
+                            cell5.Value = obj["BET (W)"];
+                            row.Cells.Add(cell5);
+
+                            // Add the row to the DataGridView
+                            GridPlasada_Shortcut.Rows.Add(row);
+                        }
+
+                    }
+                    
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading JSON data: " + ex.Message + "\nStack Trace: " + ex.StackTrace);
+                    }
+
+                }
+            
+            }
         }
 
     }

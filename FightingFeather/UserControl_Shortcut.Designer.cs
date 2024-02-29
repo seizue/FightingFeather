@@ -87,14 +87,14 @@
             this.metroTile_ClaimWala = new MetroFramework.Controls.MetroTile();
             this.metroPanel16 = new MetroFramework.Controls.MetroPanel();
             this.GridPlasada_Shortcut = new MetroFramework.Controls.MetroGrid();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BET_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WALA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BET_W = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.metroPanel14.SuspendLayout();
             this.metroPanel26.SuspendLayout();
             this.metroPanel27.SuspendLayout();
@@ -1007,12 +1007,13 @@
             // 
             // GridPlasada_Shortcut
             // 
+            this.GridPlasada_Shortcut.AllowUserToAddRows = false;
             this.GridPlasada_Shortcut.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridPlasada_Shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1043,7 +1044,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle3;
@@ -1070,38 +1071,12 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
             this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GridPlasada_Shortcut.RowTemplate.Height = 23;
-            this.GridPlasada_Shortcut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridPlasada_Shortcut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.GridPlasada_Shortcut.Size = new System.Drawing.Size(449, 243);
             this.GridPlasada_Shortcut.TabIndex = 243;
             this.GridPlasada_Shortcut.UseCustomBackColor = true;
             this.GridPlasada_Shortcut.UseCustomForeColor = true;
             this.GridPlasada_Shortcut.UseStyleColors = true;
-            // 
-            // FIGHT
-            // 
-            this.FIGHT.HeaderText = "FIGHT";
-            this.FIGHT.Name = "FIGHT";
-            // 
-            // MERON
-            // 
-            this.MERON.HeaderText = "MERON";
-            this.MERON.Name = "MERON";
-            // 
-            // BET_M
-            // 
-            this.BET_M.DividerWidth = 3;
-            this.BET_M.HeaderText = "BET (M)";
-            this.BET_M.Name = "BET_M";
-            // 
-            // WALA
-            // 
-            this.WALA.HeaderText = "WALA";
-            this.WALA.Name = "WALA";
-            // 
-            // BET_W
-            // 
-            this.BET_W.HeaderText = "BET (W)";
-            this.BET_W.Name = "BET_W";
             // 
             // panel2
             // 
@@ -1132,6 +1107,33 @@
             this.label1.Size = new System.Drawing.Size(105, 14);
             this.label1.TabIndex = 225;
             this.label1.Text = "ENTRY PREVIEW LIST";
+            // 
+            // FIGHT
+            // 
+            this.FIGHT.DividerWidth = 3;
+            this.FIGHT.HeaderText = "FIGHT";
+            this.FIGHT.Name = "FIGHT";
+            // 
+            // MERON
+            // 
+            this.MERON.HeaderText = "MERON";
+            this.MERON.Name = "MERON";
+            // 
+            // BET_M
+            // 
+            this.BET_M.DividerWidth = 3;
+            this.BET_M.HeaderText = "BET (M)";
+            this.BET_M.Name = "BET_M";
+            // 
+            // WALA
+            // 
+            this.WALA.HeaderText = "WALA";
+            this.WALA.Name = "WALA";
+            // 
+            // BET_W
+            // 
+            this.BET_W.HeaderText = "BET (W)";
+            this.BET_W.Name = "BET_W";
             // 
             // UserControl_Shortcut
             // 

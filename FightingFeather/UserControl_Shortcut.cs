@@ -29,8 +29,7 @@ namespace FightingFeather
             // Attach event handlers to calculate bet difference when bet values change
             textBox_MeronBet.TextChanged += CalculateBetDifference;
             textBox_WalaBet.TextChanged += CalculateBetDifference;
-            textBox_Pago.TextChanged += CalculateParehas; 
-
+            textBox_Pago.TextChanged += CalculateParehas;
 
             // Populate the ComboBox with options
             comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
@@ -140,32 +139,6 @@ namespace FightingFeather
             }
         }
 
-
-        private void button_Enter_Click(object sender, EventArgs e)
-        {
-
-            // Validate user input
-            if (ValidateInput())
-            {
-                // Save data to the database if input is valid
-                SaveDataToDatabase();
-
-                // Raise the event
-                ButtonEnterClicked?.Invoke(this, EventArgs.Empty);
-
-                GridPlasada_Shortcut.Rows.Clear();
-                PopulateGridPlasadaShortcut();
-
-                ClearInputFields();
-            }
-            else
-            {
-                MessageBox.Show("Please fill in all required fields!");
-            }
-        }
-
-  
-
         private void PopulateGridPlasadaShortcut()
         {
             string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "receipt.json");
@@ -254,6 +227,138 @@ namespace FightingFeather
             comboBox_Rate.Items.Clear();
             textBox_EnterAmountRate.Clear();
         }
+
+        private void button_Enter_Click(object sender, EventArgs e)
+        {
+
+            // Validate user input
+            if (ValidateInput())
+            {
+                // Save data to the database if input is valid
+                SaveDataToDatabase();
+
+                // Raise the event
+                ButtonEnterClicked?.Invoke(this, EventArgs.Empty);
+
+                GridPlasada_Shortcut.Rows.Clear();
+                PopulateGridPlasadaShortcut();
+
+                ClearInputFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all required fields!");
+            }
+        }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+
+            // Check if there is a selected row
+            if (GridPlasada_Shortcut.SelectedRows.Count > 0)
+            {
+                // Get the index of the selected row
+                int selectedIndex = GridPlasada_Shortcut.SelectedRows[0].Index;
+
+                // Get the FIGHT ID of the selected row
+                int fightId = Convert.ToInt32(GridPlasada_Shortcut.Rows[selectedIndex].Cells["FIGHT"].Value);
+
+                // Delete the row from the database
+                DeleteRowFromDatabase(fightId);
+
+                // Remove the row from the DataGridView
+                GridPlasada_Shortcut.Rows.RemoveAt(selectedIndex);             
+
+                // Update the IDs in the database
+                UpdateIDsInDatabase(fightId);
+
+                // Raise the event
+                ButtonEnterClicked?.Invoke(this, EventArgs.Empty);
+
+                GridPlasada_Shortcut.Rows.Clear();
+                PopulateGridPlasadaShortcut();
+
+
+                MessageBox.Show("Row deleted successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+
+        private void DeleteRowFromDatabase(int fightId)
+        {
+            try
+            {
+                // Example connection string for SQLite
+                string connectionString = "Data Source=dofox.db;Version=3;";
+
+                // Create an SQLite connection object
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Define the SQL command to delete the row from the database
+                    string deleteQuery = "DELETE FROM PLASADA WHERE FIGHT = @FightId";
+
+                    // Create a SQLiteCommand object
+                    using (var command = new SQLiteCommand(deleteQuery, connection))
+                    {
+                        // Set the parameter value
+                        command.Parameters.AddWithValue("@FightId", fightId);
+
+                        // Execute the command
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the row: " + ex.Message);
+            }
+        }
+
+        private void UpdateIDsInDatabase(int deletedFightId)
+        {
+            try
+            {
+                // Example connection string for SQLite
+                string connectionString = "Data Source=dofox.db;Version=3;";
+
+                // Create an SQLite connection object
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Define the SQL command to update the IDs in the database
+                    string updateQuery = "UPDATE PLASADA SET FIGHT = FIGHT - 1 WHERE FIGHT > @DeletedFightId";
+
+                    // Create a SQLiteCommand object
+                    using (var command = new SQLiteCommand(updateQuery, connection))
+                    {
+                        // Set the parameter value
+                        command.Parameters.AddWithValue("@DeletedFightId", deletedFightId);
+
+                        // Execute the command
+                        command.ExecuteNonQuery();
+                    }
+                }         
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while updating IDs: " + ex.Message);
+            }
+        }
+
 
     }
 

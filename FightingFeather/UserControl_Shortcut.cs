@@ -13,12 +13,14 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing.Text;
 
 namespace FightingFeather
 {
     public partial class UserControl_Shortcut : UserControl
     {
-      
+        public event EventHandler ButtonEnterClicked;
+
         public UserControl_Shortcut()
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace FightingFeather
             // Populate the ComboBox with options
             comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
             comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
+
         }
 
         private void CalculateBetDifference(object sender, EventArgs e)
@@ -91,8 +94,7 @@ namespace FightingFeather
         }
 
         private void SaveDataToDatabase()
-        {
-           
+        {        
             try
             {
                 // Example connection string for SQLite
@@ -123,10 +125,13 @@ namespace FightingFeather
                         // Execute the command
                         command.ExecuteNonQuery();
                     }
-                }
 
-                GridPlasada_Shortcut.Rows.Clear(); 
+                }
+                
+                GridPlasada_Shortcut.Rows.Clear();
+
                 PopulateGridPlasadaShortcut();
+
                 MessageBox.Show("Data saved successfully!");
             }
             catch (Exception ex)
@@ -138,11 +143,20 @@ namespace FightingFeather
 
         private void button_Enter_Click(object sender, EventArgs e)
         {
+
             // Validate user input
             if (ValidateInput())
             {
                 // Save data to the database if input is valid
                 SaveDataToDatabase();
+
+                // Raise the event
+                ButtonEnterClicked?.Invoke(this, EventArgs.Empty);
+
+                GridPlasada_Shortcut.Rows.Clear();
+                PopulateGridPlasadaShortcut();
+
+                ClearInputFields();
             }
             else
             {
@@ -150,84 +164,95 @@ namespace FightingFeather
             }
         }
 
+  
 
         private void PopulateGridPlasadaShortcut()
         {
+            string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "receipt.json");
+            Console.WriteLine("Attempting to load JSON file from path: " + jsonFilePath);
 
+            if (File.Exists(jsonFilePath))
             {
-                string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JSON", "receipt.json");
-                Console.WriteLine("Attempting to load JSON file from path: " + jsonFilePath);
+                string jsonText = File.ReadAllText(jsonFilePath);
 
-                if (File.Exists(jsonFilePath))
+
+                try
                 {
-                    string jsonText = File.ReadAllText(jsonFilePath);
+                    JArray jsonArray = JArray.Parse(jsonText);
 
-                    try
+                    // Assuming jsonArray contains an array of objects
+                    foreach (JObject obj in jsonArray)
                     {
-                        JArray jsonArray = JArray.Parse(jsonText);
-
-                        // Assuming jsonArray contains an array of objects
-                        foreach (JObject obj in jsonArray)
+                        // Check if the "WINNER" key exists and has a non-null or non-empty value
+                        if (obj.ContainsKey("WINNER") && !string.IsNullOrEmpty(obj["WINNER"].ToString()))
                         {
-                            // Check if the "WINNER" key exists and has a non-null or non-empty value
-                            if (obj.ContainsKey("WINNER") && !string.IsNullOrEmpty(obj["WINNER"].ToString()))
-                            {
-                                // Skip this row as it already has a value in the "WINNER" column
-                                continue;
-                            }
-
-                            // Convert WALA to uppercase
-                            if (obj.ContainsKey("WALA"))
-                            {
-                                string walaValue = obj["WALA"].ToString();
-                                obj["WALA"] = char.ToUpper(walaValue[0]) + walaValue.Substring(1);
-                            }
-
-                            // Convert MERON to uppercase
-                            if (obj.ContainsKey("MERON"))
-                            {
-                                string meronValue = obj["MERON"].ToString();
-                                obj["MERON"] = char.ToUpper(meronValue[0]) + meronValue.Substring(1);
-                            }
-
-                            // Create a new row
-                            DataGridViewRow row = new DataGridViewRow();
-
-                            // Add cells based on the columns you want to display
-                            DataGridViewTextBoxCell cell1 = new DataGridViewTextBoxCell();
-                            cell1.Value = obj["FIGHT"];
-                            row.Cells.Add(cell1);
-
-                            DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
-                            cell2.Value = obj["MERON"];
-                            row.Cells.Add(cell2);
-
-                            DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
-                            cell3.Value = obj["BET (M)"];
-                            row.Cells.Add(cell3);
-
-                            DataGridViewTextBoxCell cell4 = new DataGridViewTextBoxCell();
-                            cell4.Value = obj["WALA"];
-                            row.Cells.Add(cell4);
-
-                            DataGridViewTextBoxCell cell5 = new DataGridViewTextBoxCell();
-                            cell5.Value = obj["BET (W)"];
-                            row.Cells.Add(cell5);
-
-                            // Add the row to the DataGridView
-                            GridPlasada_Shortcut.Rows.Add(row);
+                            // Skip this row as it already has a value in the "WINNER" column
+                            continue;
                         }
 
-                    }
-                    
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error loading JSON data: " + ex.Message + "\nStack Trace: " + ex.StackTrace);
+                        // Convert WALA to uppercase
+                        if (obj.ContainsKey("WALA"))
+                        {
+                            string walaValue = obj["WALA"].ToString();
+                            obj["WALA"] = char.ToUpper(walaValue[0]) + walaValue.Substring(1);
+                        }
+
+                        // Convert MERON to uppercase
+                        if (obj.ContainsKey("MERON"))
+                        {
+                            string meronValue = obj["MERON"].ToString();
+                            obj["MERON"] = char.ToUpper(meronValue[0]) + meronValue.Substring(1);
+                        }
+
+                        // Create a new row
+                        DataGridViewRow row = new DataGridViewRow();
+
+                        // Add cells based on the columns you want to display
+                        DataGridViewTextBoxCell cell1 = new DataGridViewTextBoxCell();
+                        cell1.Value = obj["FIGHT"];
+                        row.Cells.Add(cell1);
+
+                        DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
+                        cell2.Value = obj["MERON"];
+                        row.Cells.Add(cell2);
+
+                        DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
+                        cell3.Value = obj["BET (M)"];
+                        row.Cells.Add(cell3);
+
+                        DataGridViewTextBoxCell cell4 = new DataGridViewTextBoxCell();
+                        cell4.Value = obj["WALA"];
+                        row.Cells.Add(cell4);
+
+                        DataGridViewTextBoxCell cell5 = new DataGridViewTextBoxCell();
+                        cell5.Value = obj["BET (W)"];
+                        row.Cells.Add(cell5);
+
+                        // Add the row to the DataGridView
+                        GridPlasada_Shortcut.Rows.Add(row);
                     }
 
                 }
-            
-            }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading JSON data: " + ex.Message + "\nStack Trace: " + ex.StackTrace);
+                }
+            }         
+        }
+
+        private void ClearInputFields()
+        {
+            textBox_MeronName.Clear();
+            textBox_MeronBet.Clear();
+            textBox_WalaName.Clear();
+            textBox_WalaBet.Clear();
+            textBox_BetDiff.Clear();
+            textBox_Pago.Clear();
+            textBox_Parehas.Clear();
+            comboBox_Winner.Items.Clear();
+            comboBox_Rate.Items.Clear();
+            textBox_EnterAmountRate.Clear();
         }
 
     }

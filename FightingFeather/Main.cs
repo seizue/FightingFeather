@@ -67,6 +67,9 @@ namespace FightingFeather
             // Subscribe to the RowPrePaint event
             GridPlasada_Entries.RowPrePaint += GridPlasada_Entries_RowPrePaint;
 
+            userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
+
+       
 
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
@@ -481,7 +484,15 @@ namespace FightingFeather
         }
 
 
-
+        private void RefreshCalculationDatagrid()
+        {
+            CalculateAndDisplayFightTotal();
+            CalculateAndDisplayDrawCancelTotal();
+            CalculateAndDisplayFeeTotal();
+            CalculateAndDisplayTotalPlasada();
+            CalculateTotalCityTax();
+            CalculateAndDisplayWinnerEarnTotal();
+        }
 
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -984,19 +995,18 @@ namespace FightingFeather
                 ResetAutoIncrement();
                 UpdateFightIDs();
                 RefreshGrid();
+                RefreshCalculationDatagrid();
                 GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
-
+               
                 MessageBox.Show("Successfully deleted.");
-              
 
+               
             }
             else
             {
                 MessageBox.Show("Please select a row to delete.");
             }
         }
-
-    
 
         private void button_Refresh_Click(object sender, EventArgs e)
         {
@@ -1006,14 +1016,8 @@ namespace FightingFeather
             // Refresh the grid with the updated data
             RefreshGrid();
 
-            CalculateAndDisplayFightTotal();
-            CalculateAndDisplayDrawCancelTotal();
-            CalculateAndDisplayFeeTotal();
-            CalculateAndDisplayTotalPlasada();
-            CalculateTotalCityTax();
-            CalculateAndDisplayWinnerEarnTotal();
+            RefreshCalculationDatagrid();
 
-      
         }
 
         private void button_Export_Click(object sender, EventArgs e)
@@ -1038,6 +1042,9 @@ namespace FightingFeather
             label_Entries.ForeColor = defaultColor;
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
+
+            RefreshGrid();
+           
         }
      
 
@@ -1064,6 +1071,9 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = clickedColor;
             label_Ernings.ForeColor= defaultColor;
             label_Entries.ForeColor= defaultColor;
+
+            RefreshGrid();
+          
         }
 
         private void button_Shortcut_Click(object sender, EventArgs e)
@@ -1076,6 +1086,8 @@ namespace FightingFeather
             button_Shortcut.ForeColor = clickedColor;
             button_Home.ForeColor = defaultColor;
             button_Inventory.ForeColor = defaultColor;
+       
+            RefreshGrid();
         }
 
         private void button_Summa_Click(object sender, EventArgs e)
@@ -1132,6 +1144,9 @@ namespace FightingFeather
             button_Summa.ForeColor = defaultColor;
             button_Inventory.ForeColor= defaultColor;
             button_Shortcut.ForeColor= defaultColor;
+
+            RefreshGrid();
+            RefreshCalculationDatagrid();
         }
 
 
@@ -1235,6 +1250,12 @@ namespace FightingFeather
                     column.Visible = columnVisibilityBackup[column.Name]; // Restore original visibility
                 }
             }
+        }
+
+        private void UserControl_Shortcut1_ButtonEnterClicked(object sender, EventArgs e)
+        {
+            // Call the RefreshGrid() method in your main form
+            RefreshGrid();
         }
 
     }

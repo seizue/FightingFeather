@@ -331,9 +331,9 @@ namespace FightingFeather
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
                 // Check if the value in the WINNER column is not null or empty and not "CANCEL"
-                if (row.Cells["WINNER"].Value != null &&
-                    !string.IsNullOrEmpty(row.Cells["WINNER"].Value.ToString()) &&
-                    !row.Cells["WINNER"].Value.ToString().Equals("Cancel", StringComparison.OrdinalIgnoreCase))
+                if (row.Cells["FIGHT"].Value != null &&
+                    !string.IsNullOrEmpty(row.Cells["FIGHT"].Value.ToString()) &&
+                    !row.Cells["FIGHT"].Value.ToString().Equals("Cancel", StringComparison.OrdinalIgnoreCase))
                 {
                     totalFights++;
                 }
@@ -352,8 +352,6 @@ namespace FightingFeather
             // Set the foreground color of the cell
             totalFightsCell.Style.ForeColor = Color.OrangeRed; // Change to the color you desire
         }
-
-
 
 
         public void CalculateAndDisplayDrawCancelTotal()
@@ -1044,7 +1042,8 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
 
             RefreshGrid();
-           
+          
+
         }
      
 
@@ -1060,6 +1059,8 @@ namespace FightingFeather
             label_Entries.ForeColor = clickedColor;
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
+
+            RefreshCalculationDatagrid();
         }
 
         private void label_CashBreakDown_Click(object sender, EventArgs e)
@@ -1118,6 +1119,8 @@ namespace FightingFeather
             button_Plasada.ForeColor = clickedColor;
             button_Summa.ForeColor= defaultColor;
             button_Inventory.ForeColor= defaultColor;
+
+            RefreshCalculationDatagrid();
         }
 
         private void raDateTimePicker1_ValueChanged(object sender, EventArgs e)

@@ -886,7 +886,8 @@ namespace FightingFeather
 
         private void button_New_Click(object sender, EventArgs e)
         {
-            EntryForm entryForm = new EntryForm(this, databasePath); // Pass 'this' to refer to the Main form
+            EntryForm entryForm = new EntryForm(this, databasePath);
+
 
             // Hide the Save button in the EntryForm
             entryForm.ToggleUpdateButtonVisibility(false);
@@ -1015,7 +1016,6 @@ namespace FightingFeather
             RefreshGrid();
 
             RefreshCalculationDatagrid();
-
         }
 
         private void button_Export_Click(object sender, EventArgs e)
@@ -1030,6 +1030,8 @@ namespace FightingFeather
 
         private void label_Ernings_Click(object sender, EventArgs e)
         {
+           
+
             userControl_Earnings1.Size = new Size(1055, 518);
             userControl_Earnings1.Visible = true;
             userControl_Earnings1.BringToFront();
@@ -1042,13 +1044,13 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
 
             RefreshGrid();
-          
-
+        
         }
      
 
         private void label_Entries_Click(object sender, EventArgs e)
         {
+          
             userControl_Earnings1.Size = new Size(0, 0);
             userControl_Earnings1.Visible = false;
             userControl_Earnings1.SendToBack();
@@ -1059,7 +1061,7 @@ namespace FightingFeather
             label_Entries.ForeColor = clickedColor;
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
-
+          
             RefreshCalculationDatagrid();
         }
 
@@ -1073,8 +1075,7 @@ namespace FightingFeather
             label_Ernings.ForeColor= defaultColor;
             label_Entries.ForeColor= defaultColor;
 
-            RefreshGrid();
-          
+            RefreshGrid();       
         }
 
         private void button_Shortcut_Click(object sender, EventArgs e)
@@ -1261,5 +1262,6 @@ namespace FightingFeather
             RefreshGrid();
         }
 
+       
     }
 }

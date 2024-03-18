@@ -359,7 +359,45 @@ namespace FightingFeather
             }
         }
 
+        private void textBox_MeronBet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
 
+        private void textBox_WalaBet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Pago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_EnterAmountRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
     }
 
 }

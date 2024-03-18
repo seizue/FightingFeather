@@ -17,7 +17,8 @@ namespace FightingFeather
         private string databasePath;
         private Main mainForm;
         private int fightId;
-     
+        private UserControl_Earnings userEarn;
+        private UserControl_CashBreakDown cashBreak;
 
         public EntryForm(Main mainForm, string databasePath)
         {
@@ -338,7 +339,7 @@ namespace FightingFeather
 
             mainForm.RefreshGrid();
             OnDataChanged(EventArgs.Empty);
-
+            
             // Close the EntryForm after updating
             this.Close();
         }
@@ -355,6 +356,56 @@ namespace FightingFeather
         {
             button_Update.Visible = isVisible;
 
+        }
+
+        private void textBox_MeronBet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_WalaBet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_BetDiff_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Pago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_EnterAmountRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or a control key (like backspace or delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // If the key is not a digit or a control key, suppress the key press event
+                e.Handled = true;
+            }
         }
     }
 }

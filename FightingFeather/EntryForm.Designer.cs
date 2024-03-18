@@ -137,6 +137,7 @@
             this.textBox_EnterAmountRate.Size = new System.Drawing.Size(159, 17);
             this.textBox_EnterAmountRate.TabIndex = 216;
             this.textBox_EnterAmountRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_EnterAmountRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnterAmountRate_KeyPress);
             // 
             // label7
             // 
@@ -262,6 +263,7 @@
             this.textBox_MeronBet.Size = new System.Drawing.Size(159, 17);
             this.textBox_MeronBet.TabIndex = 216;
             this.textBox_MeronBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MeronBet_KeyPress);
             // 
             // label11
             // 
@@ -468,6 +470,7 @@
             this.textBox_Pago.Size = new System.Drawing.Size(159, 17);
             this.textBox_Pago.TabIndex = 216;
             this.textBox_Pago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Pago_KeyPress);
             // 
             // label2
             // 
@@ -585,6 +588,7 @@
             this.textBox_BetDiff.Size = new System.Drawing.Size(159, 15);
             this.textBox_BetDiff.TabIndex = 216;
             this.textBox_BetDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_BetDiff.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_BetDiff_KeyPress);
             // 
             // label10
             // 
@@ -659,6 +663,7 @@
             this.textBox_WalaBet.Size = new System.Drawing.Size(159, 17);
             this.textBox_WalaBet.TabIndex = 216;
             this.textBox_WalaBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_WalaBet_KeyPress);
             // 
             // metroPanel27
             // 

@@ -133,16 +133,6 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap detective_24px {
-            get {
-                object obj = ResourceManager.GetObject("detective_24px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap detective_24px1 {
             get {
                 object obj = ResourceManager.GetObject("detective_24px1", resourceCulture);
@@ -196,16 +186,6 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap handcart_24px {
             get {
                 object obj = ResourceManager.GetObject("handcart_24px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap info_squared_24px {
-            get {
-                object obj = ResourceManager.GetObject("info_squared_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

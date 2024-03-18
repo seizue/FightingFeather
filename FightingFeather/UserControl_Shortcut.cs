@@ -35,6 +35,11 @@ namespace FightingFeather
             comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
             comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
 
+            // Create a new System.Windows.Forms.ToolTip instance
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+
+            // Set tooltip for the PictureBox
+            toolTip.SetToolTip(pictureBox1, "Entries that don't have a Winner yet are displayed here.");
         }
 
         private void CalculateBetDifference(object sender, EventArgs e)

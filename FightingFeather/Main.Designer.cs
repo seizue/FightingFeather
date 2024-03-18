@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,29 +57,9 @@
             this.Panel_MainBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
-            this.button_Summa = new System.Windows.Forms.Button();
-            this.button_Plasada = new System.Windows.Forms.Button();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.button_Shortcut = new System.Windows.Forms.Button();
-            this.button_Inventory = new System.Windows.Forms.Button();
-            this.button_Home = new System.Windows.Forms.Button();
-            this.panel_Summary = new System.Windows.Forms.Panel();
-            this.button_Delete = new System.Windows.Forms.Button();
-            this.button_Update = new System.Windows.Forms.Button();
-            this.button_New = new System.Windows.Forms.Button();
-            this.button_Receipt = new System.Windows.Forms.Button();
-            this.button_Refresh = new System.Windows.Forms.Button();
-            this.button_Export = new System.Windows.Forms.Button();
-            this.panel_Shortcut = new System.Windows.Forms.Panel();
-            this.button_Munton = new System.Windows.Forms.Button();
-            this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
-            this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
             this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
             this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WALA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +76,26 @@
             this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
+            this.button_Summa = new System.Windows.Forms.Button();
+            this.button_Plasada = new System.Windows.Forms.Button();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.button_Shortcut = new System.Windows.Forms.Button();
+            this.button_Inventory = new System.Windows.Forms.Button();
+            this.button_Home = new System.Windows.Forms.Button();
+            this.panel_Summary = new System.Windows.Forms.Panel();
+            this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
+            this.button_Delete = new System.Windows.Forms.Button();
+            this.button_Update = new System.Windows.Forms.Button();
+            this.button_New = new System.Windows.Forms.Button();
+            this.button_Receipt = new System.Windows.Forms.Button();
+            this.button_Refresh = new System.Windows.Forms.Button();
+            this.button_Export = new System.Windows.Forms.Button();
+            this.panel_Shortcut = new System.Windows.Forms.Panel();
+            this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -157,7 +158,7 @@
             this.button_CreateNewPlasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_CreateNewPlasada.Size = new System.Drawing.Size(133, 38);
             this.button_CreateNewPlasada.TabIndex = 248;
-            this.button_CreateNewPlasada.Text = "SAVE";
+            this.button_CreateNewPlasada.Text = "POST";
             this.button_CreateNewPlasada.UseVisualStyleBackColor = false;
             this.button_CreateNewPlasada.Click += new System.EventHandler(this.button_CreateNewPlasada_Click);
             // 
@@ -168,7 +169,7 @@
             this.metroPanel17.HorizontalScrollbarBarColor = true;
             this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel17.HorizontalScrollbarSize = 10;
-            this.metroPanel17.Location = new System.Drawing.Point(758, 98);
+            this.metroPanel17.Location = new System.Drawing.Point(735, 98);
             this.metroPanel17.Name = "metroPanel17";
             this.metroPanel17.Size = new System.Drawing.Size(1, 29);
             this.metroPanel17.TabIndex = 247;
@@ -185,7 +186,7 @@
             this.metroPanel16.HorizontalScrollbarBarColor = true;
             this.metroPanel16.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel16.HorizontalScrollbarSize = 10;
-            this.metroPanel16.Location = new System.Drawing.Point(710, 98);
+            this.metroPanel16.Location = new System.Drawing.Point(687, 98);
             this.metroPanel16.Name = "metroPanel16";
             this.metroPanel16.Size = new System.Drawing.Size(1, 29);
             this.metroPanel16.TabIndex = 246;
@@ -202,7 +203,7 @@
             this.metroPanel15.HorizontalScrollbarBarColor = true;
             this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(658, 98);
+            this.metroPanel15.Location = new System.Drawing.Point(635, 98);
             this.metroPanel15.Name = "metroPanel15";
             this.metroPanel15.Size = new System.Drawing.Size(2, 29);
             this.metroPanel15.TabIndex = 245;
@@ -455,6 +456,24 @@
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel9.VerticalScrollbarSize = 10;
             // 
+            // userControl_CashBreakDown1
+            // 
+            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
+            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_CashBreakDown1.TabIndex = 5;
+            this.userControl_CashBreakDown1.Visible = false;
+            // 
+            // userControl_Earnings1
+            // 
+            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Earnings1.Name = "userControl_Earnings1";
+            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_Earnings1.TabIndex = 4;
+            this.userControl_Earnings1.Visible = false;
+            // 
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
@@ -534,6 +553,130 @@
             this.GridPlasada_Entries.UseCustomForeColor = true;
             this.GridPlasada_Entries.UseStyleColors = true;
             this.GridPlasada_Entries.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GridPlasada_Entries_MouseClick);
+            // 
+            // FIGHT
+            // 
+            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.FIGHT.FillWeight = 91.15936F;
+            this.FIGHT.HeaderText = "FIGHT";
+            this.FIGHT.Name = "FIGHT";
+            this.FIGHT.Width = 57;
+            // 
+            // MERON
+            // 
+            this.MERON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MERON.FillWeight = 91.15936F;
+            this.MERON.HeaderText = "MERON";
+            this.MERON.Name = "MERON";
+            // 
+            // WALA
+            // 
+            this.WALA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.WALA.FillWeight = 91.15936F;
+            this.WALA.HeaderText = "WALA";
+            this.WALA.Name = "WALA";
+            // 
+            // BET_M
+            // 
+            this.BET_M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BET_M.FillWeight = 91.15936F;
+            this.BET_M.HeaderText = "BET (M)";
+            this.BET_M.Name = "BET_M";
+            // 
+            // BET_W
+            // 
+            this.BET_W.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BET_W.FillWeight = 91.15936F;
+            this.BET_W.HeaderText = "BET (W)";
+            this.BET_W.Name = "BET_W";
+            // 
+            // INITIAL_BET_DIF
+            // 
+            this.INITIAL_BET_DIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.INITIAL_BET_DIF.FillWeight = 91.15936F;
+            this.INITIAL_BET_DIF.HeaderText = "INITIAL BET DIFF";
+            this.INITIAL_BET_DIF.Name = "INITIAL_BET_DIF";
+            // 
+            // PAREHAS
+            // 
+            this.PAREHAS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PAREHAS.FillWeight = 91.15936F;
+            this.PAREHAS.HeaderText = "PAREHAS";
+            this.PAREHAS.Name = "PAREHAS";
+            // 
+            // PAGO
+            // 
+            this.PAGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PAGO.FillWeight = 91.15936F;
+            this.PAGO.HeaderText = "PAGO";
+            this.PAGO.Name = "PAGO";
+            // 
+            // WINNER
+            // 
+            this.WINNER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle3;
+            this.WINNER.FillWeight = 91.15936F;
+            this.WINNER.HeaderText = "WINNER";
+            this.WINNER.Name = "WINNER";
+            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // RATE_AMOUNT
+            // 
+            this.RATE_AMOUNT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
+            this.RATE_AMOUNT.Name = "RATE_AMOUNT";
+            // 
+            // RATE
+            // 
+            this.RATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.RATE.DefaultCellStyle = dataGridViewCellStyle5;
+            this.RATE.DividerWidth = 3;
+            this.RATE.FillWeight = 91.15936F;
+            this.RATE.HeaderText = "RATE";
+            this.RATE.Name = "RATE";
+            // 
+            // LOGRO
+            // 
+            this.LOGRO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LOGRO.FillWeight = 91.15936F;
+            this.LOGRO.HeaderText = "LOGRO";
+            this.LOGRO.Name = "LOGRO";
+            // 
+            // FEE
+            // 
+            this.FEE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FEE.FillWeight = 91.15936F;
+            this.FEE.HeaderText = "FEE";
+            this.FEE.Name = "FEE";
+            // 
+            // TOTAL_PLASADA
+            // 
+            this.TOTAL_PLASADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TOTAL_PLASADA.FillWeight = 91.15936F;
+            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
+            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
+            // 
+            // RATE_EARNINGS
+            // 
+            this.RATE_EARNINGS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.RATE_EARNINGS.FillWeight = 63.81155F;
+            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
+            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
+            // 
+            // WINNERS_EARN
+            // 
+            this.WINNERS_EARN.FillWeight = 70F;
+            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
+            this.WINNERS_EARN.Name = "WINNERS_EARN";
             // 
             // metroPanel2
             // 
@@ -706,11 +849,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Summary.Controls.Add(this.userControl_Summa1);
-            this.panel_Summary.Location = new System.Drawing.Point(195, 92);
+            this.panel_Summary.Location = new System.Drawing.Point(195, 93);
             this.panel_Summary.Name = "panel_Summary";
-            this.panel_Summary.Size = new System.Drawing.Size(1071, 575);
+            this.panel_Summary.Size = new System.Drawing.Size(1071, 574);
             this.panel_Summary.TabIndex = 252;
             this.panel_Summary.Visible = false;
+            // 
+            // userControl_Summa1
+            // 
+            this.userControl_Summa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Summa1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Summa1.Name = "userControl_Summa1";
+            this.userControl_Summa1.Size = new System.Drawing.Size(1071, 574);
+            this.userControl_Summa1.TabIndex = 0;
+            this.userControl_Summa1.Visible = false;
             // 
             // button_Delete
             // 
@@ -723,7 +875,7 @@
             this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Delete.Image = global::FightingFeather.Properties.Resources.waste_24px;
             this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Delete.Location = new System.Drawing.Point(766, 98);
+            this.button_Delete.Location = new System.Drawing.Point(743, 98);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Delete.Size = new System.Drawing.Size(36, 29);
@@ -743,7 +895,7 @@
             this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Update.Image = global::FightingFeather.Properties.Resources.renew_24px;
             this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Update.Location = new System.Drawing.Point(716, 98);
+            this.button_Update.Location = new System.Drawing.Point(693, 98);
             this.button_Update.Name = "button_Update";
             this.button_Update.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Update.Size = new System.Drawing.Size(36, 29);
@@ -763,7 +915,7 @@
             this.button_New.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_New.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
             this.button_New.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_New.Location = new System.Drawing.Point(667, 98);
+            this.button_New.Location = new System.Drawing.Point(644, 98);
             this.button_New.Name = "button_New";
             this.button_New.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_New.Size = new System.Drawing.Size(36, 29);
@@ -781,8 +933,8 @@
             this.button_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Receipt.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Receipt.Image = global::FightingFeather.Properties.Resources.smart_home_checked_30px;
-            this.button_Receipt.Location = new System.Drawing.Point(608, 93);
+            this.button_Receipt.Image = global::FightingFeather.Properties.Resources.receipt_30px;
+            this.button_Receipt.Location = new System.Drawing.Point(585, 93);
             this.button_Receipt.Name = "button_Receipt";
             this.button_Receipt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Receipt.Size = new System.Drawing.Size(36, 34);
@@ -845,24 +997,6 @@
             this.panel_Shortcut.Size = new System.Drawing.Size(1084, 647);
             this.panel_Shortcut.TabIndex = 254;
             // 
-            // button_Munton
-            // 
-            this.button_Munton.BackColor = System.Drawing.Color.Transparent;
-            this.button_Munton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_Munton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Munton.FlatAppearance.BorderSize = 0;
-            this.button_Munton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Munton.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Munton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Munton.Image = global::FightingFeather.Properties.Resources.smart_home_checked_30px;
-            this.button_Munton.Location = new System.Drawing.Point(563, 93);
-            this.button_Munton.Name = "button_Munton";
-            this.button_Munton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Munton.Size = new System.Drawing.Size(36, 34);
-            this.button_Munton.TabIndex = 255;
-            this.button_Munton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Munton.UseVisualStyleBackColor = false;
-            // 
             // userControl_Shortcut1
             // 
             this.userControl_Shortcut1.BackColor = System.Drawing.Color.White;
@@ -873,33 +1007,6 @@
             this.userControl_Shortcut1.Size = new System.Drawing.Size(1084, 647);
             this.userControl_Shortcut1.TabIndex = 2;
             // 
-            // userControl_Summa1
-            // 
-            this.userControl_Summa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Summa1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Summa1.Name = "userControl_Summa1";
-            this.userControl_Summa1.Size = new System.Drawing.Size(1071, 575);
-            this.userControl_Summa1.TabIndex = 0;
-            this.userControl_Summa1.Visible = false;
-            // 
-            // userControl_CashBreakDown1
-            // 
-            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
-            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_CashBreakDown1.TabIndex = 5;
-            this.userControl_CashBreakDown1.Visible = false;
-            // 
-            // userControl_Earnings1
-            // 
-            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Earnings1.Name = "userControl_Earnings1";
-            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_Earnings1.TabIndex = 4;
-            this.userControl_Earnings1.Visible = false;
-            // 
             // raDateTimePicker1
             // 
             this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
@@ -907,7 +1014,7 @@
             this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
             this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(802, 99);
+            this.raDateTimePicker1.Location = new System.Drawing.Point(779, 99);
             this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.raDateTimePicker1.Name = "raDateTimePicker1";
             this.raDateTimePicker1.Size = new System.Drawing.Size(229, 35);
@@ -915,129 +1022,10 @@
             this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
             // 
-            // FIGHT
+            // toolTip1
             // 
-            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.FIGHT.FillWeight = 91.15936F;
-            this.FIGHT.HeaderText = "FIGHT";
-            this.FIGHT.Name = "FIGHT";
-            this.FIGHT.Width = 57;
-            // 
-            // MERON
-            // 
-            this.MERON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MERON.FillWeight = 91.15936F;
-            this.MERON.HeaderText = "MERON";
-            this.MERON.Name = "MERON";
-            // 
-            // WALA
-            // 
-            this.WALA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.WALA.FillWeight = 91.15936F;
-            this.WALA.HeaderText = "WALA";
-            this.WALA.Name = "WALA";
-            // 
-            // BET_M
-            // 
-            this.BET_M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BET_M.FillWeight = 91.15936F;
-            this.BET_M.HeaderText = "BET (M)";
-            this.BET_M.Name = "BET_M";
-            // 
-            // BET_W
-            // 
-            this.BET_W.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BET_W.FillWeight = 91.15936F;
-            this.BET_W.HeaderText = "BET (W)";
-            this.BET_W.Name = "BET_W";
-            // 
-            // INITIAL_BET_DIF
-            // 
-            this.INITIAL_BET_DIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.INITIAL_BET_DIF.FillWeight = 91.15936F;
-            this.INITIAL_BET_DIF.HeaderText = "INITIAL BET DIFF";
-            this.INITIAL_BET_DIF.Name = "INITIAL_BET_DIF";
-            // 
-            // PAREHAS
-            // 
-            this.PAREHAS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PAREHAS.FillWeight = 91.15936F;
-            this.PAREHAS.HeaderText = "PAREHAS";
-            this.PAREHAS.Name = "PAREHAS";
-            // 
-            // PAGO
-            // 
-            this.PAGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PAGO.FillWeight = 91.15936F;
-            this.PAGO.HeaderText = "PAGO";
-            this.PAGO.Name = "PAGO";
-            // 
-            // WINNER
-            // 
-            this.WINNER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle3;
-            this.WINNER.FillWeight = 91.15936F;
-            this.WINNER.HeaderText = "WINNER";
-            this.WINNER.Name = "WINNER";
-            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // RATE_AMOUNT
-            // 
-            this.RATE_AMOUNT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle4;
-            this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
-            this.RATE_AMOUNT.Name = "RATE_AMOUNT";
-            // 
-            // RATE
-            // 
-            this.RATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.RATE.DefaultCellStyle = dataGridViewCellStyle5;
-            this.RATE.DividerWidth = 3;
-            this.RATE.FillWeight = 91.15936F;
-            this.RATE.HeaderText = "RATE";
-            this.RATE.Name = "RATE";
-            // 
-            // LOGRO
-            // 
-            this.LOGRO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LOGRO.FillWeight = 91.15936F;
-            this.LOGRO.HeaderText = "LOGRO";
-            this.LOGRO.Name = "LOGRO";
-            // 
-            // FEE
-            // 
-            this.FEE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FEE.FillWeight = 91.15936F;
-            this.FEE.HeaderText = "FEE";
-            this.FEE.Name = "FEE";
-            // 
-            // TOTAL_PLASADA
-            // 
-            this.TOTAL_PLASADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TOTAL_PLASADA.FillWeight = 91.15936F;
-            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
-            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
-            // 
-            // RATE_EARNINGS
-            // 
-            this.RATE_EARNINGS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.RATE_EARNINGS.FillWeight = 63.81155F;
-            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
-            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
-            // 
-            // WINNERS_EARN
-            // 
-            this.WINNERS_EARN.FillWeight = 70F;
-            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
-            this.WINNERS_EARN.Name = "WINNERS_EARN";
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Hint";
             // 
             // Main
             // 
@@ -1069,7 +1057,6 @@
             this.Controls.Add(this.metroPanel_Border);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.raDateTimePicker1);
-            this.Controls.Add(this.button_Munton);
             this.Name = "Main";
             this.Panel_MainBG.ResumeLayout(false);
             this.Panel_PlasadaEER.ResumeLayout(false);
@@ -1126,7 +1113,6 @@
         private UserControl_Summa userControl_Summa1;
         private RaDateTimePicker raDateTimePicker1;
         private System.Windows.Forms.Panel panel_Shortcut;
-        private System.Windows.Forms.Button button_Munton;
         private UserControl_Shortcut userControl_Shortcut1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MERON;
@@ -1144,6 +1130,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
         private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

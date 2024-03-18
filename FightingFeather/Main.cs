@@ -69,7 +69,15 @@ namespace FightingFeather
 
             userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
 
-       
+            ToolTip toolTip1 = new ToolTip();
+
+            // Set the tooltip text for the button
+            toolTip1.SetToolTip(button_Receipt, "Print Munton Receipt");
+            toolTip1.SetToolTip(button_New, "Add New Entry");
+            toolTip1.SetToolTip(button_Update, "Update Entry");
+            toolTip1.SetToolTip(button_Delete, "Delete Entry");
+            toolTip1.SetToolTip(raDateTimePicker1, "Select Date");
+            toolTip1.SetToolTip(button_CreateNewPlasada, "Save Munton");
 
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {

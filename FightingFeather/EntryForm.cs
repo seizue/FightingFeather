@@ -17,8 +17,7 @@ namespace FightingFeather
         private string databasePath;
         private Main mainForm;
         private int fightId;
-        private UserControl_Earnings userEarn;
-        private UserControl_CashBreakDown cashBreak;
+      
 
         public EntryForm(Main mainForm, string databasePath)
         {

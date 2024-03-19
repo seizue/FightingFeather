@@ -284,7 +284,7 @@ namespace FightingFeather
                 button_Enter.Visible = false;
 
                 // Set the new location of the button
-                button_SaveUpdate.Location = new Point(55, 168);
+                button_SaveUpdate.Location = new Point(59, 159);
 
             }
             else
@@ -504,10 +504,28 @@ namespace FightingFeather
         {
             ClearInputFields();
 
+            button_SaveUpdate.Visible = false;
+            button_Enter.Visible = true;
+
             MessageBox.Show("Successfully cleared the fields!");
 
         }
 
+
+     
+
+      
+
+        private void button_Inspection_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the InspectionForm class
+            InspectionForm inspectionForm = new InspectionForm();
+
+            // Show the form
+            inspectionForm.Show();
+
+            inspectionForm.ReloadData();
+        }
 
         private void textBox_MeronBet_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -547,17 +565,6 @@ namespace FightingFeather
                 // If the key is not a digit or a control key, suppress the key press event
                 e.Handled = true;
             }
-        }
-
-        private void button_Inspection_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the InspectionForm class
-            InspectionForm inspectionForm = new InspectionForm();
-
-            // Show the form
-            inspectionForm.Show();
-
-            inspectionForm.ReloadData();
         }
     }
 

@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace FightingFeather
 {
@@ -14,6 +15,9 @@ namespace FightingFeather
 
             ReloadData();
 
+            // Populate the ComboBox with options
+            comboBox_Filter.Items.AddRange(new object[] { "Default", "Show Duplicate Rows", "Show Duplicate Names"});
+           
         }
 
         public void ReloadData()

@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -17,7 +19,9 @@ namespace FightingFeather
 
             // Populate the ComboBox with options
             comboBox_Filter.Items.AddRange(new object[] { "Default", "Show Duplicate Rows", "Show Duplicate Names"});
-           
+
+            // Set the default filter
+            comboBox_Filter.SelectedIndex = 0;
         }
 
         public void ReloadData()
@@ -135,9 +139,93 @@ namespace FightingFeather
         {
             GridPlasada_Inspection.CellFormatting += GridPlasada_Inspection_CellFormatting;
         }
-    }
-    
 
+        private void ApplyFilter(string filter)
+        {
+            // Check for uncommitted new row
+            if (GridPlasada_Inspection.Rows.Count > 0 && GridPlasada_Inspection.Rows[GridPlasada_Inspection.Rows.Count - 1].IsNewRow)
+            {
+                GridPlasada_Inspection.EndEdit();
+            }
+
+            GridPlasada_Inspection.SuspendLayout(); // Suspend layout to improve performance
+
+            foreach (DataGridViewRow row in GridPlasada_Inspection.Rows)
+            {
+                if (!row.IsNewRow) // Skip processing the new row
+                {
+                    switch (filter)
+                    {
+                        case "Show Duplicate Rows":
+                            if (row.Cells["FIGHT"].Style.BackColor != Color.FromArgb(242, 236, 236))
+                            {
+                                row.Visible = false;
+                            }
+                            else
+                            {
+                                row.Visible = true;
+                            }
+                            break;
+                        case "Show Duplicate Names":
+                            if (row.Cells["FIGHT"].Style.BackColor != Color.FromArgb(246, 243, 243))
+                            {
+                                row.Visible = false;
+                            }
+                            else
+                            {
+                                row.Visible = true;
+                            }
+                            break;
+                        default:
+                            row.Visible = true; // Show all rows by default
+                            break;
+                    }
+                }
+            }
+
+            GridPlasada_Inspection.ResumeLayout(); // Resume layout after filtering
+        }
+
+        private void comboBox_Filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedFilter = comboBox_Filter.SelectedItem?.ToString();
+            ApplyFilter(selectedFilter);
+        }
+
+        private void button_Search_Click(object sender, EventArgs e)
+        {
+            string nameSearchKeyword = textBox_NameSearch.Text.Trim();
+            string betSearchKeyword = textBox_BetSearch.Text.Trim();
+
+            GridPlasada_Inspection.SuspendLayout(); // Suspend layout to improve performance
+
+            bool foundMatch = false; // Flag to track if any match is found
+
+            foreach (DataGridViewRow row in GridPlasada_Inspection.Rows)
+            {
+                if (!row.IsNewRow) // Skip processing the new row
+                {
+                    bool nameMatch = string.IsNullOrEmpty(nameSearchKeyword) || row.Cells["MERON"].Value.ToString().Contains(nameSearchKeyword) || row.Cells["WALA"].Value.ToString().Contains(nameSearchKeyword);
+                    bool betMatch = string.IsNullOrEmpty(betSearchKeyword) || row.Cells["BET_M"].Value.ToString().Contains(betSearchKeyword) || row.Cells["BET_W"].Value.ToString().Contains(betSearchKeyword);
+
+                    row.Visible = nameMatch && betMatch;
+
+                    if (row.Visible)
+                    {
+                        foundMatch = true; // Set flag if any match is found
+                    }
+                }
+            }
+
+            GridPlasada_Inspection.ResumeLayout(); // Resume layout after filtering
+
+            // Show message box if no match is found
+            if (!foundMatch)
+            {
+                MessageBox.Show("No matching results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    }
 
 }
 

@@ -40,14 +40,9 @@ namespace FightingFeather
 
             InitializeDatabase();
             UpdateFightIDs();
-            RefreshGrid();          
+            RefreshGrid();
 
-            CalculateAndDisplayFightTotal();
-            CalculateAndDisplayDrawCancelTotal();
-            CalculateAndDisplayFeeTotal();
-            CalculateAndDisplayTotalPlasada();
-            CalculateTotalCityTax();
-            CalculateAndDisplayWinnerEarnTotal();
+            RefreshCalculationDatagrid();
 
             LoadColumnVisibilitySettings();
             RevertColumnVisibilityChanges();
@@ -79,6 +74,7 @@ namespace FightingFeather
             toolTip1.SetToolTip(raDateTimePicker1, "Select Date");
             toolTip1.SetToolTip(button_CreateNewPlasada, "Save Munton");
 
+            // Custom cell height row
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
                 row.Height = 28;
@@ -1045,11 +1041,9 @@ namespace FightingFeather
         private void label_Ernings_Click(object sender, EventArgs e)
         {
            
-
             userControl_Earnings1.Size = new Size(1055, 518);
             userControl_Earnings1.Visible = true;
-            userControl_Earnings1.BringToFront();
-        
+            userControl_Earnings1.BringToFront();        
 
             // Change the color of the labels and button
             label_Ernings.ForeColor = clickedColor;
@@ -1057,8 +1051,7 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
 
-            RefreshGrid();
-
+           
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
         }
@@ -1095,12 +1088,9 @@ namespace FightingFeather
             label_Ernings.ForeColor= defaultColor;
             label_Entries.ForeColor= defaultColor;
 
-            RefreshGrid();
-
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
-
-          
+       
         }
 
         private void button_Shortcut_Click(object sender, EventArgs e)
@@ -1114,7 +1104,7 @@ namespace FightingFeather
             button_Home.ForeColor = defaultColor;
             button_Inventory.ForeColor = defaultColor;
        
-            RefreshGrid();
+            userControl_Shortcut1.ReloadData();
         }
 
         private void button_Summa_Click(object sender, EventArgs e)

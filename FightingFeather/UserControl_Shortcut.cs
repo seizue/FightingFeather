@@ -24,7 +24,6 @@ namespace FightingFeather
         public UserControl_Shortcut()
         {
             InitializeComponent();
-            PopulateGridPlasadaShortcut();
             
             // Attach event handlers to calculate bet difference when bet values change
             textBox_MeronBet.TextChanged += CalculateBetDifference;
@@ -40,6 +39,16 @@ namespace FightingFeather
 
             // Set tooltip for the PictureBox
             toolTip.SetToolTip(pictureBox1, "Entries that don't have a Winner yet are displayed here.");
+
+            ReloadData();
+        }
+
+
+        public void ReloadData()
+        {
+            GridPlasada_Shortcut.Rows.Clear(); // Clear existing rows
+
+            PopulateGridPlasadaShortcut(); // Reload data
         }
 
         private void CalculateBetDifference(object sender, EventArgs e)
@@ -249,6 +258,7 @@ namespace FightingFeather
                 PopulateGridPlasadaShortcut();
 
                 ClearInputFields();
+
             }
             else
             {
@@ -258,9 +268,134 @@ namespace FightingFeather
 
         private void button_Update_Click(object sender, EventArgs e)
         {
+            // Check if there is a selected row
+            if (GridPlasada_Shortcut.SelectedRows.Count > 0)
+            {
+                // Get the index of the selected row
+                int selectedIndex = GridPlasada_Shortcut.SelectedRows[0].Index;
 
-           
+                // Get the FIGHT ID of the selected row
+                int fightId = Convert.ToInt32(GridPlasada_Shortcut.Rows[selectedIndex].Cells["FIGHT"].Value);
+
+                // Populate the input fields with the data from the selected row
+                PopulateInputFields(selectedIndex);
+
+                button_SaveUpdate.Visible = true;
+                button_Enter.Visible = false;
+
+                // Set the new location of the button
+                button_SaveUpdate.Location = new Point(55, 168);
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to update.");
+
+                // Hide the "SaveUpdate" button if no row is selected
+                button_SaveUpdate.Visible = false;
+            }
         }
+
+        private void button_SaveUpdate_Click(object sender, EventArgs e)
+        {
+          
+
+            // Check if the user input is valid
+            if (ValidateInput())
+            {
+                // Get the FIGHT ID of the selected row
+                int selectedIndex = GridPlasada_Shortcut.SelectedRows[0].Index;
+                int fightId = Convert.ToInt32(GridPlasada_Shortcut.Rows[selectedIndex].Cells["FIGHT"].Value);
+
+                GridPlasada_Shortcut.Rows.Clear();
+
+                // Update data in the database
+                UpdateDataToDatabase(fightId);
+
+                // Raise the event
+                ButtonEnterClicked?.Invoke(this, EventArgs.Empty);
+
+                GridPlasada_Shortcut.Rows.Clear();
+                PopulateGridPlasadaShortcut();
+
+                ClearInputFields();
+
+                button_SaveUpdate.Visible = false;
+                button_Enter.Visible = true;
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all required fields!");
+            }
+        }
+
+        private void PopulateInputFields(int selectedIndex)
+        {
+            // Get the values from the selected row
+            string meron = GridPlasada_Shortcut.Rows[selectedIndex].Cells["MERON"].Value.ToString();
+            string meronBet = GridPlasada_Shortcut.Rows[selectedIndex].Cells["BET_M"].Value.ToString();
+            string wala = GridPlasada_Shortcut.Rows[selectedIndex].Cells["WALA"].Value.ToString();
+            string walaBet = GridPlasada_Shortcut.Rows[selectedIndex].Cells["BET_W"].Value.ToString();
+
+            // Update the input fields with the values from the selected row
+            textBox_MeronName.Text = meron;
+            textBox_MeronBet.Text = meronBet;
+            textBox_WalaName.Text = wala;
+            textBox_WalaBet.Text = walaBet;
+          
+        }
+
+        private void UpdateDataToDatabase(int fightId)
+        {
+            try
+            {
+                // Example connection string for SQLite
+                string connectionString = "Data Source=dofox.db;Version=3;";
+
+                // Create an SQLite connection object
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Define the SQL command to update data in the database
+                    string updateQuery = "UPDATE PLASADA SET MERON = @MeronName, [BET (M)] = @MeronBet, " +
+                                         "WALA = @WalaName, [BET (W)] = @WalaBet, " +
+                                         "[INITIAL BET DIFF] = @InitialBetDiff, PAGO = @Pago, " +
+                                         "WINNER = @Winner, RATE = @Rate WHERE FIGHT = @FightId";
+
+                    // Create a SQLiteCommand object
+                    using (var command = new SQLiteCommand(updateQuery, connection))
+                    {
+                        // Set parameter values
+                        command.Parameters.AddWithValue("@MeronName", textBox_MeronName.Text);
+                        command.Parameters.AddWithValue("@MeronBet", textBox_MeronBet.Text);
+                        command.Parameters.AddWithValue("@WalaName", textBox_WalaName.Text);
+                        command.Parameters.AddWithValue("@WalaBet", textBox_WalaBet.Text);
+                        command.Parameters.AddWithValue("@InitialBetDiff", textBox_BetDiff.Text);
+                        command.Parameters.AddWithValue("@Pago", textBox_Pago.Text);
+                        command.Parameters.AddWithValue("@Winner", comboBox_Winner.SelectedItem);
+                        command.Parameters.AddWithValue("@Rate", comboBox_Rate.SelectedItem);
+                        command.Parameters.AddWithValue("@FightId", fightId);
+
+                        // Execute the command
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                GridPlasada_Shortcut.Rows.Clear();
+
+                PopulateGridPlasadaShortcut();
+
+                MessageBox.Show("Data updated successfully!");
+      
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
@@ -298,6 +433,41 @@ namespace FightingFeather
             }
         }
 
+        private void UpdateIDsInDatabase(int deletedFightId)
+        {
+            try
+            {
+                // Example connection string for SQLite
+                string connectionString = "Data Source=dofox.db;Version=3;";
+
+                // Create an SQLite connection object
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Define the SQL command to update the IDs in the database
+                    string updateQuery = "UPDATE PLASADA SET FIGHT = FIGHT - 1 WHERE FIGHT > @DeletedFightId";
+
+                    // Create a SQLiteCommand object
+                    using (var command = new SQLiteCommand(updateQuery, connection))
+                    {
+                        // Set the parameter value
+                        command.Parameters.AddWithValue("@DeletedFightId", deletedFightId);
+
+                        // Execute the command
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while updating IDs: " + ex.Message);
+            }
+        }
+
+
         private void DeleteRowFromDatabase(int fightId)
         {
             try
@@ -330,39 +500,14 @@ namespace FightingFeather
             }
         }
 
-        private void UpdateIDsInDatabase(int deletedFightId)
+        private void button_ClearFields_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Example connection string for SQLite
-                string connectionString = "Data Source=dofox.db;Version=3;";
+            ClearInputFields();
 
-                // Create an SQLite connection object
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                {
-                    connection.Open();
+            MessageBox.Show("Successfully cleared the fields!");
 
-                    // Define the SQL command to update the IDs in the database
-                    string updateQuery = "UPDATE PLASADA SET FIGHT = FIGHT - 1 WHERE FIGHT > @DeletedFightId";
-
-                    // Create a SQLiteCommand object
-                    using (var command = new SQLiteCommand(updateQuery, connection))
-                    {
-                        // Set the parameter value
-                        command.Parameters.AddWithValue("@DeletedFightId", deletedFightId);
-
-                        // Execute the command
-                        command.ExecuteNonQuery();
-                    }
-                }         
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while updating IDs: " + ex.Message);
-            }
         }
+
 
         private void textBox_MeronBet_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -403,6 +548,8 @@ namespace FightingFeather
                 e.Handled = true;
             }
         }
+
+  
     }
 
 }

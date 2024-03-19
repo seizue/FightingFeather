@@ -17,7 +17,6 @@ namespace FightingFeather
         private string databasePath;
         private Main mainForm;
         private int fightId;
-      
 
         public EntryForm(Main mainForm, string databasePath)
         {
@@ -220,6 +219,7 @@ namespace FightingFeather
             MessageBox.Show("Data saved successfully!");
 
             mainForm.RefreshGrid();
+
             OnDataChanged(EventArgs.Empty);
 
             // Optionally, close the EntryForm after saving
@@ -332,13 +332,14 @@ namespace FightingFeather
 
                     command.ExecuteNonQuery();
                 }
-            }
+            }      
 
             MessageBox.Show("Data updated successfully!");
 
             mainForm.RefreshGrid();
+
             OnDataChanged(EventArgs.Empty);
-            
+
             // Close the EntryForm after updating
             this.Close();
         }

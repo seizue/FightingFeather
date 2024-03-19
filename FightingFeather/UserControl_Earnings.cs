@@ -19,19 +19,30 @@ namespace FightingFeather
         {
             InitializeComponent();
 
+            ReloadData();
+
             // Subscribe to the CellFormatting event
             GridPlasada_Earnings.CellFormatting += GridPlasada_Earnings_CellFormatting;
             GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
             GridPlasada_Earnings.SelectionChanged += GridPlasada_Earnings_SelectionChanged;
-
-            LoadJsonData();
 
             foreach (DataGridViewRow row in GridPlasada_Earnings.Rows)
             {
                 row.Height = 28;
             }
 
+        }
 
+        public void ReloadData()
+        {
+            GridPlasada_Earnings.Rows.Clear(); // Clear existing rows
+
+            LoadJsonData(); // Reload data
+
+            foreach (DataGridViewRow row in GridPlasada_Earnings.Rows) // Change back the custom cell height
+            {
+                row.Height = 28;
+            }
         }
 
         private void LoadJsonData()
@@ -325,8 +336,6 @@ namespace FightingFeather
                 {
                     textBox_TOTAL.Text = "Error: Rate earnings is null"; // Or any appropriate default value
                 }
-
-
 
             }
 

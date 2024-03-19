@@ -83,7 +83,6 @@ namespace FightingFeather
             {
                 row.Height = 28;
             }
-
         }
 
         private void InitializeDatabase()
@@ -996,17 +995,21 @@ namespace FightingFeather
                     }
                 }
 
+
                 // Remove the row from the DataGridView
                 GridPlasada_Entries.Rows.RemoveAt(selectedIndex);
+                RefreshGrid();
 
                 ResetAutoIncrement();
                 UpdateFightIDs();
-                RefreshGrid();
+               
                 RefreshCalculationDatagrid();
                 GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
                
-                MessageBox.Show("Successfully deleted.");
+                userControl_Earnings1.ReloadData();
+                userControl_CashBreakDown1.ReloadData();
 
+                MessageBox.Show("Successfully deleted.");
                
             }
             else
@@ -1024,6 +1027,9 @@ namespace FightingFeather
             RefreshGrid();
 
             RefreshCalculationDatagrid();
+
+            userControl_Earnings1.ReloadData();
+            userControl_CashBreakDown1.ReloadData();
         }
 
         private void button_Export_Click(object sender, EventArgs e)
@@ -1052,7 +1058,9 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
 
             RefreshGrid();
-        
+
+            userControl_Earnings1.ReloadData();
+            userControl_CashBreakDown1.ReloadData();
         }
      
 
@@ -1071,6 +1079,10 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
           
             RefreshCalculationDatagrid();
+
+            userControl_Earnings1.ReloadData();
+            userControl_CashBreakDown1.ReloadData();
+
         }
 
         private void label_CashBreakDown_Click(object sender, EventArgs e)
@@ -1083,7 +1095,12 @@ namespace FightingFeather
             label_Ernings.ForeColor= defaultColor;
             label_Entries.ForeColor= defaultColor;
 
-            RefreshGrid();       
+            RefreshGrid();
+
+            userControl_Earnings1.ReloadData();
+            userControl_CashBreakDown1.ReloadData();
+
+          
         }
 
         private void button_Shortcut_Click(object sender, EventArgs e)
@@ -1270,6 +1287,6 @@ namespace FightingFeather
             RefreshGrid();
         }
 
-       
+
     }
 }

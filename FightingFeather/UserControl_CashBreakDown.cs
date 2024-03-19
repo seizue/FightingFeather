@@ -17,9 +17,7 @@ namespace FightingFeather
     {
         public UserControl_CashBreakDown()
         {
-            InitializeComponent();
-
-            LoadJsonData();
+            InitializeComponent();   
 
             GridPlasada_CashBreakDown.CellFormatting += GridPlasada_CashBreakDown_CellFormatting;
 
@@ -27,8 +25,21 @@ namespace FightingFeather
             {
                 row.Height = 28;
             }
+
+            ReloadData();
         }
 
+        public void ReloadData()
+        {
+            GridPlasada_CashBreakDown.Rows.Clear(); // Clear existing rows   
+
+            LoadJsonData(); // Reload data
+
+            foreach (DataGridViewRow row in GridPlasada_CashBreakDown.Rows) //Change back the custom cell height 
+            {
+                row.Height = 28;
+            }
+        }
 
         private void LoadJsonData()
         {
@@ -97,7 +108,6 @@ namespace FightingFeather
 
                         // Add the row to the DataGridView
                         GridPlasada_CashBreakDown.Rows.Add(row);
-
 
                     }
                 }

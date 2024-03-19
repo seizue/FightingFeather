@@ -196,15 +196,8 @@ namespace FightingFeather
                 }
 
             }
-            else
-            {
-               
-            }
+          
         }
-
-
-
-
 
 
         private void GridPlasada_Earnings_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -324,17 +317,17 @@ namespace FightingFeather
                         }
                         else
                         {
-                            textBox_TOTAL.Text = "Error: Invalid bet or fee"; // Or any appropriate default value
+                            textBox_TOTAL.Text = "-"; // Or any appropriate default value
                         }
                     }
                     else
                     {
-                        textBox_TOTAL.Text = "Error: Invalid rate earnings"; // Or any appropriate default value
+                        textBox_TOTAL.Text = "-"; // Or any appropriate default value
                     }
                 }
                 else
                 {
-                    textBox_TOTAL.Text = "Error: Rate earnings is null"; // Or any appropriate default value
+                    textBox_TOTAL.Text = "-"; // Or any appropriate default value
                 }
 
             }

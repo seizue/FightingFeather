@@ -549,7 +549,16 @@ namespace FightingFeather
             }
         }
 
-  
+        private void button_Inspection_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the InspectionForm class
+            InspectionForm inspectionForm = new InspectionForm();
+
+            // Show the form
+            inspectionForm.Show();
+
+            inspectionForm.ReloadData();
+        }
     }
 
 }

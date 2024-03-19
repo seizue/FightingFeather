@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel18 = new MetroFramework.Controls.MetroPanel();
             this.button_CreateNewPlasada = new System.Windows.Forms.Button();
@@ -81,6 +81,7 @@
             this.button_Summa = new System.Windows.Forms.Button();
             this.button_Plasada = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.button_Shortcut = new System.Windows.Forms.Button();
@@ -90,7 +91,6 @@
             this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
             this.panel_Shortcut = new System.Windows.Forms.Panel();
             this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             this.button_Update = new System.Windows.Forms.Button();
             this.button_New = new System.Windows.Forms.Button();
             this.button_Receipt = new System.Windows.Forms.Button();
-            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -112,13 +112,13 @@
             // 
             // metroPanel19
             // 
-            this.metroPanel19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroPanel19.BackColor = System.Drawing.Color.WhiteSmoke;
             this.metroPanel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel19.HorizontalScrollbarBarColor = true;
             this.metroPanel19.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel19.HorizontalScrollbarSize = 10;
-            this.metroPanel19.Location = new System.Drawing.Point(1222, 58);
+            this.metroPanel19.Location = new System.Drawing.Point(1200, 58);
             this.metroPanel19.Name = "metroPanel19";
             this.metroPanel19.Size = new System.Drawing.Size(2, 29);
             this.metroPanel19.TabIndex = 250;
@@ -130,13 +130,13 @@
             // 
             // metroPanel18
             // 
-            this.metroPanel18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroPanel18.BackColor = System.Drawing.Color.WhiteSmoke;
             this.metroPanel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel18.HorizontalScrollbarBarColor = true;
             this.metroPanel18.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel18.HorizontalScrollbarSize = 10;
-            this.metroPanel18.Location = new System.Drawing.Point(1071, 57);
+            this.metroPanel18.Location = new System.Drawing.Point(1049, 57);
             this.metroPanel18.Name = "metroPanel18";
             this.metroPanel18.Size = new System.Drawing.Size(2, 29);
             this.metroPanel18.TabIndex = 249;
@@ -148,7 +148,7 @@
             // 
             // button_CreateNewPlasada
             // 
-            this.button_CreateNewPlasada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_CreateNewPlasada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button_CreateNewPlasada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(142)))), ((int)(((byte)(141)))));
             this.button_CreateNewPlasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_CreateNewPlasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(189)))), ((int)(((byte)(188)))));
@@ -157,7 +157,7 @@
             this.button_CreateNewPlasada.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CreateNewPlasada.ForeColor = System.Drawing.Color.MintCream;
             this.button_CreateNewPlasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_CreateNewPlasada.Location = new System.Drawing.Point(1081, 53);
+            this.button_CreateNewPlasada.Location = new System.Drawing.Point(1059, 53);
             this.button_CreateNewPlasada.Name = "button_CreateNewPlasada";
             this.button_CreateNewPlasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_CreateNewPlasada.Size = new System.Drawing.Size(133, 38);
@@ -173,7 +173,7 @@
             this.metroPanel17.HorizontalScrollbarBarColor = true;
             this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel17.HorizontalScrollbarSize = 10;
-            this.metroPanel17.Location = new System.Drawing.Point(735, 98);
+            this.metroPanel17.Location = new System.Drawing.Point(956, 100);
             this.metroPanel17.Name = "metroPanel17";
             this.metroPanel17.Size = new System.Drawing.Size(1, 29);
             this.metroPanel17.TabIndex = 247;
@@ -190,7 +190,7 @@
             this.metroPanel16.HorizontalScrollbarBarColor = true;
             this.metroPanel16.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel16.HorizontalScrollbarSize = 10;
-            this.metroPanel16.Location = new System.Drawing.Point(687, 98);
+            this.metroPanel16.Location = new System.Drawing.Point(908, 100);
             this.metroPanel16.Name = "metroPanel16";
             this.metroPanel16.Size = new System.Drawing.Size(1, 29);
             this.metroPanel16.TabIndex = 246;
@@ -207,7 +207,7 @@
             this.metroPanel15.HorizontalScrollbarBarColor = true;
             this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(635, 98);
+            this.metroPanel15.Location = new System.Drawing.Point(853, 101);
             this.metroPanel15.Name = "metroPanel15";
             this.metroPanel15.Size = new System.Drawing.Size(2, 29);
             this.metroPanel15.TabIndex = 245;
@@ -224,7 +224,7 @@
             this.metroPanel14.HorizontalScrollbarBarColor = true;
             this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel14.HorizontalScrollbarSize = 10;
-            this.metroPanel14.Location = new System.Drawing.Point(383, 103);
+            this.metroPanel14.Location = new System.Drawing.Point(382, 105);
             this.metroPanel14.Name = "metroPanel14";
             this.metroPanel14.Size = new System.Drawing.Size(1, 29);
             this.metroPanel14.TabIndex = 240;
@@ -241,7 +241,7 @@
             this.metroPanel13.HorizontalScrollbarBarColor = true;
             this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel13.HorizontalScrollbarSize = 10;
-            this.metroPanel13.Location = new System.Drawing.Point(288, 103);
+            this.metroPanel13.Location = new System.Drawing.Point(287, 105);
             this.metroPanel13.Name = "metroPanel13";
             this.metroPanel13.Size = new System.Drawing.Size(1, 29);
             this.metroPanel13.TabIndex = 239;
@@ -256,7 +256,7 @@
             this.label_CashBreakDown.AutoSize = true;
             this.label_CashBreakDown.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_CashBreakDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.label_CashBreakDown.Location = new System.Drawing.Point(403, 109);
+            this.label_CashBreakDown.Location = new System.Drawing.Point(402, 111);
             this.label_CashBreakDown.Name = "label_CashBreakDown";
             this.label_CashBreakDown.Size = new System.Drawing.Size(101, 16);
             this.label_CashBreakDown.TabIndex = 238;
@@ -268,7 +268,7 @@
             this.label_Ernings.AutoSize = true;
             this.label_Ernings.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Ernings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.label_Ernings.Location = new System.Drawing.Point(307, 109);
+            this.label_Ernings.Location = new System.Drawing.Point(306, 111);
             this.label_Ernings.Name = "label_Ernings";
             this.label_Ernings.Size = new System.Drawing.Size(58, 16);
             this.label_Ernings.TabIndex = 237;
@@ -280,7 +280,7 @@
             this.label_Entries.AutoSize = true;
             this.label_Entries.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Entries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.label_Entries.Location = new System.Drawing.Point(219, 109);
+            this.label_Entries.Location = new System.Drawing.Point(219, 111);
             this.label_Entries.Name = "label_Entries";
             this.label_Entries.Size = new System.Drawing.Size(49, 16);
             this.label_Entries.TabIndex = 236;
@@ -295,7 +295,7 @@
             this.metroPanel12.HorizontalScrollbarBarColor = true;
             this.metroPanel12.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel12.HorizontalScrollbarSize = 10;
-            this.metroPanel12.Location = new System.Drawing.Point(1150, 103);
+            this.metroPanel12.Location = new System.Drawing.Point(1154, 105);
             this.metroPanel12.Name = "metroPanel12";
             this.metroPanel12.Size = new System.Drawing.Size(1, 29);
             this.metroPanel12.TabIndex = 235;
@@ -312,7 +312,7 @@
             this.metroPanel11.HorizontalScrollbarBarColor = true;
             this.metroPanel11.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel11.HorizontalScrollbarSize = 10;
-            this.metroPanel11.Location = new System.Drawing.Point(316, 5);
+            this.metroPanel11.Location = new System.Drawing.Point(334, 6);
             this.metroPanel11.Name = "metroPanel11";
             this.metroPanel11.Size = new System.Drawing.Size(1, 29);
             this.metroPanel11.TabIndex = 209;
@@ -481,26 +481,26 @@
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle97.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle97.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle97;
             this.GridPlasada_Entries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridPlasada_Entries.BackgroundColor = System.Drawing.Color.White;
             this.GridPlasada_Entries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Entries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Entries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle98.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle98.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle98;
             this.GridPlasada_Entries.ColumnHeadersHeight = 48;
             this.GridPlasada_Entries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIGHT,
@@ -519,14 +519,14 @@
             this.TOTAL_PLASADA,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle102.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle102.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle102.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle102;
             this.GridPlasada_Entries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPlasada_Entries.EnableHeadersVisualStyles = false;
             this.GridPlasada_Entries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -535,20 +535,20 @@
             this.GridPlasada_Entries.MultiSelect = false;
             this.GridPlasada_Entries.Name = "GridPlasada_Entries";
             this.GridPlasada_Entries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle103.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle103.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle103.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle103.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle103.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle103;
             this.GridPlasada_Entries.RowHeadersVisible = false;
             this.GridPlasada_Entries.RowHeadersWidth = 42;
             this.GridPlasada_Entries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle104.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle104.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle104;
             this.GridPlasada_Entries.RowTemplate.Height = 23;
             this.GridPlasada_Entries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Entries.Size = new System.Drawing.Size(1059, 512);
@@ -618,12 +618,12 @@
             // WINNER
             // 
             this.WINNER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle99.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle99;
             this.WINNER.FillWeight = 91.15936F;
             this.WINNER.HeaderText = "WINNER";
             this.WINNER.Name = "WINNER";
@@ -632,17 +632,17 @@
             // RATE_AMOUNT
             // 
             this.RATE_AMOUNT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle100.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle100;
             this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
             this.RATE_AMOUNT.Name = "RATE_AMOUNT";
             // 
             // RATE
             // 
             this.RATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.RATE.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle101.BackColor = System.Drawing.Color.White;
+            this.RATE.DefaultCellStyle = dataGridViewCellStyle101;
             this.RATE.DividerWidth = 3;
             this.RATE.FillWeight = 91.15936F;
             this.RATE.HeaderText = "RATE";
@@ -731,7 +731,7 @@
             this.button_Summa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Summa.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
             this.button_Summa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Summa.Location = new System.Drawing.Point(330, 3);
+            this.button_Summa.Location = new System.Drawing.Point(371, 5);
             this.button_Summa.Name = "button_Summa";
             this.button_Summa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Summa.Size = new System.Drawing.Size(103, 29);
@@ -750,9 +750,9 @@
             this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.align_center_24px;
+            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.line_style_24px;
             this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Plasada.Location = new System.Drawing.Point(204, 3);
+            this.button_Plasada.Location = new System.Drawing.Point(196, 5);
             this.button_Plasada.Name = "button_Plasada";
             this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Plasada.Size = new System.Drawing.Size(98, 29);
@@ -788,6 +788,24 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel6
+            // 
+            this.metroPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.metroPanel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel6.HorizontalScrollbarBarColor = true;
+            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.HorizontalScrollbarSize = 10;
+            this.metroPanel6.Location = new System.Drawing.Point(11, 540);
+            this.metroPanel6.Name = "metroPanel6";
+            this.metroPanel6.Size = new System.Drawing.Size(126, 1);
+            this.metroPanel6.TabIndex = 257;
+            this.metroPanel6.UseCustomBackColor = true;
+            this.metroPanel6.UseStyleColors = true;
+            this.metroPanel6.VerticalScrollbarBarColor = true;
+            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.VerticalScrollbarSize = 10;
             // 
             // button1
             // 
@@ -922,21 +940,6 @@
             this.userControl_Shortcut1.Size = new System.Drawing.Size(1084, 647);
             this.userControl_Shortcut1.TabIndex = 2;
             // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(779, 99);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(229, 35);
-            this.raDateTimePicker1.TabIndex = 253;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
-            // 
             // toolTip1
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -954,7 +957,7 @@
             this.button_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Refresh.Image = global::FightingFeather.Properties.Resources.data_backup_24px;
             this.button_Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Refresh.Location = new System.Drawing.Point(1042, 103);
+            this.button_Refresh.Location = new System.Drawing.Point(1046, 105);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Refresh.Size = new System.Drawing.Size(97, 29);
@@ -976,7 +979,7 @@
             this.button_Export.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Export.Image = global::FightingFeather.Properties.Resources.export_24px;
             this.button_Export.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Export.Location = new System.Drawing.Point(1162, 103);
+            this.button_Export.Location = new System.Drawing.Point(1166, 105);
             this.button_Export.Name = "button_Export";
             this.button_Export.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Export.Size = new System.Drawing.Size(87, 29);
@@ -997,7 +1000,7 @@
             this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Delete.Image = global::FightingFeather.Properties.Resources.waste_24px;
             this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Delete.Location = new System.Drawing.Point(743, 98);
+            this.button_Delete.Location = new System.Drawing.Point(964, 100);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Delete.Size = new System.Drawing.Size(36, 29);
@@ -1017,7 +1020,7 @@
             this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Update.Image = global::FightingFeather.Properties.Resources.renew_24px;
             this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Update.Location = new System.Drawing.Point(693, 98);
+            this.button_Update.Location = new System.Drawing.Point(914, 100);
             this.button_Update.Name = "button_Update";
             this.button_Update.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Update.Size = new System.Drawing.Size(36, 29);
@@ -1037,7 +1040,7 @@
             this.button_New.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_New.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
             this.button_New.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_New.Location = new System.Drawing.Point(644, 98);
+            this.button_New.Location = new System.Drawing.Point(865, 100);
             this.button_New.Name = "button_New";
             this.button_New.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_New.Size = new System.Drawing.Size(36, 29);
@@ -1056,7 +1059,7 @@
             this.button_Receipt.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Receipt.Image = global::FightingFeather.Properties.Resources.receipt_30px;
-            this.button_Receipt.Location = new System.Drawing.Point(585, 93);
+            this.button_Receipt.Location = new System.Drawing.Point(803, 96);
             this.button_Receipt.Name = "button_Receipt";
             this.button_Receipt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Receipt.Size = new System.Drawing.Size(36, 34);
@@ -1064,23 +1067,20 @@
             this.button_Receipt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Receipt.UseVisualStyleBackColor = false;
             // 
-            // metroPanel6
+            // raDateTimePicker1
             // 
-            this.metroPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroPanel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel6.HorizontalScrollbarBarColor = true;
-            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel6.HorizontalScrollbarSize = 10;
-            this.metroPanel6.Location = new System.Drawing.Point(11, 540);
-            this.metroPanel6.Name = "metroPanel6";
-            this.metroPanel6.Size = new System.Drawing.Size(126, 1);
-            this.metroPanel6.TabIndex = 257;
-            this.metroPanel6.UseCustomBackColor = true;
-            this.metroPanel6.UseStyleColors = true;
-            this.metroPanel6.VerticalScrollbarBarColor = true;
-            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel6.VerticalScrollbarSize = 10;
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(514, 100);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(229, 35);
+            this.raDateTimePicker1.TabIndex = 253;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
             // 
             // Main
             // 
@@ -1090,6 +1090,7 @@
             this.Controls.Add(this.panel_Shortcut);
             this.Controls.Add(this.panel_Summary);
             this.Controls.Add(this.metroPanel19);
+            this.Controls.Add(this.raDateTimePicker1);
             this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.metroPanel18);
             this.Controls.Add(this.button_Export);
@@ -1111,7 +1112,6 @@
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel_Border);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.raDateTimePicker1);
             this.Name = "Main";
             this.Panel_MainBG.ResumeLayout(false);
             this.Panel_PlasadaEER.ResumeLayout(false);

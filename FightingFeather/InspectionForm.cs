@@ -20,13 +20,11 @@ namespace FightingFeather
         {
             GridPlasada_Inspection.Rows.Clear(); // Clear existing rows
             LoadJsonData(); // Reload data
-
-          
+       
             foreach (DataGridViewRow row in GridPlasada_Inspection.Rows) // Change back the custom cell height
             {
                 row.Height = 28;
-            }
-           
+            }       
 
         }
 
@@ -116,20 +114,18 @@ namespace FightingFeather
             if (exactlySameName)
             {
                 // Set the cell color to RGB(255, 243, 245)
-                Console.WriteLine($"Changing cell in row {e.RowIndex}, column FIGHT color to RGB(255, 243, 245).");
+                Console.WriteLine($"Changing cell in row {e.RowIndex}, column FIGHT color to RGB(242, 236, 236).");
                 currentRow.Cells["FIGHT"].Style.BackColor = Color.FromArgb(242, 236, 236);
                 currentRow.Cells["FIGHT"].Style.ForeColor = Color.FromArgb(149, 32, 37);
             }
             else if (sameName)
             {
                 // Set the cell color to RGB(239, 253, 244)
-                Console.WriteLine($"Changing cell in row {e.RowIndex}, column FIGHT color to RGB(242, 236, 236).");
+                Console.WriteLine($"Changing cell in row {e.RowIndex}, column FIGHT color to RGB(246, 243, 243).");
                 currentRow.Cells["FIGHT"].Style.BackColor = Color.FromArgb(246, 243, 243);
                 currentRow.Cells["FIGHT"].Style.ForeColor = Color.FromArgb(26, 47, 47);
             }
         }
-
-
 
         private void InspectionForm_Load(object sender, EventArgs e)
         {

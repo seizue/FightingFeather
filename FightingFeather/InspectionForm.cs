@@ -82,12 +82,12 @@ namespace FightingFeather
                 return;
 
             DataGridViewRow currentRow = GridPlasada_Inspection.Rows[e.RowIndex];
+            string fightValue = currentRow.Cells["FIGHT"].Value?.ToString();
             string meronValue = currentRow.Cells["MERON"].Value?.ToString();
             string walaValue = currentRow.Cells["WALA"].Value?.ToString();
-            string betMValue = currentRow.Cells["BET_M"].Value?.ToString();
-            string betWValue = currentRow.Cells["BET_W"].Value?.ToString();
 
-            bool sameNameAndBetAmount = false;
+            bool sameName = false;
+            bool exactlySameName = false;
 
             // Iterate through all rows
             foreach (DataGridViewRow otherRow in GridPlasada_Inspection.Rows)
@@ -96,27 +96,40 @@ namespace FightingFeather
                 {
                     string otherMeronValue = otherRow.Cells["MERON"].Value?.ToString();
                     string otherWalaValue = otherRow.Cells["WALA"].Value?.ToString();
-                    string otherBetMValue = otherRow.Cells["BET_M"].Value?.ToString();
-                    string otherBetWValue = otherRow.Cells["BET_W"].Value?.ToString();
 
-                    // Check if MERON and WALA columns have the same name and BET_M and BET_W have the same amount
-                    if (meronValue == otherWalaValue && walaValue == otherMeronValue && betMValue == otherBetWValue && betWValue == otherBetMValue)
+                    // Check if MERON and WALA columns have the same name
+                    if ((meronValue == otherMeronValue && meronValue != "") || (walaValue == otherWalaValue && walaValue != ""))
                     {
-                        sameNameAndBetAmount = true;
-                        break; // No need to check other rows
+                        sameName = true;
+
+                        // Check if both MERON and WALA have the same name
+                        if (meronValue == otherMeronValue && walaValue == otherWalaValue)
+                        {
+                            exactlySameName = true;
+                            break; // No need to check other rows
+                        }
                     }
                 }
             }
 
-            if (sameNameAndBetAmount)
+            // Apply colors based on the conditions
+            if (exactlySameName)
             {
-                // Set the row color to red
-                Console.WriteLine($"Changing row {e.RowIndex} color to red.");
-                currentRow.DefaultCellStyle.BackColor = Color.Red;
-                currentRow.DefaultCellStyle.ForeColor = Color.White;
+                // Set the cell color to RGB(255, 243, 245)
+                Console.WriteLine($"Changing cell in row {e.RowIndex}, column FIGHT color to RGB(255, 243, 245).");
+                currentRow.Cells["FIGHT"].Style.BackColor = Color.FromArgb(242, 236, 236);
+                currentRow.Cells["FIGHT"].Style.ForeColor = Color.FromArgb(149, 32, 37);
             }
-       
+            else if (sameName)
+            {
+                // Set the cell color to RGB(239, 253, 244)
+                Console.WriteLine($"Changing cell in row {e.RowIndex}, column FIGHT color to RGB(242, 236, 236).");
+                currentRow.Cells["FIGHT"].Style.BackColor = Color.FromArgb(246, 243, 243);
+                currentRow.Cells["FIGHT"].Style.ForeColor = Color.FromArgb(26, 47, 47);
+            }
         }
+
+
 
         private void InspectionForm_Load(object sender, EventArgs e)
         {

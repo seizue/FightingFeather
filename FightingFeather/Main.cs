@@ -21,8 +21,13 @@ namespace FightingFeather
         private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
+     
+
         private string connectionString = "Data Source = munton_posted.db;Version=3;";
+
         private int currentTableNumber = 0;
+        private int tableNumberCounter = 1;
+
         private const string DatabaseFileName = "dofox.db";
         private string databasePath;
         private DataTable dataTable;
@@ -1059,14 +1064,19 @@ namespace FightingFeather
                     ""FEE"" REAL,
                     ""TOTAL PLASADA"" INTEGER,
                     ""RATE EARNINGS"" INTEGER,
-                    ""WINNERS EARN"" INTEGER
+                    ""WINNERS EARN"" INTEGER,
+                    ""DATE"" INTEGER
                 )";
 
             currentTableNumber = GetNextTableNumber();
-            CreateCustomTable(currentTableNumber, customSchema);
+            DateTime currentDate = DateTime.Now.Date; // Get current date without time
+            CreateCustomTable(currentTableNumber, customSchema, currentDate);
 
-            // Call the method to save data to the database
-            SaveDataToDatabase();
+            // Save data to database
+            SaveDataToDatabase(currentDate);
+
+            SaveTableToJson();
+
 
         }
 
@@ -1081,7 +1091,7 @@ namespace FightingFeather
 
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
-                    command.CommandText = "SELECT MAX(SUBSTR(tbl_name, LENGTH('MTN_ID_') + 1)) FROM sqlite_master WHERE tbl_name LIKE 'MTN_ID_%'";
+                    command.CommandText = "SELECT MAX(CAST(SUBSTR(tbl_name, LENGTH('MTN_ID_') + 1) AS INTEGER)) FROM sqlite_master WHERE tbl_name LIKE 'MTN_ID_%'";
                     var result = command.ExecuteScalar();
                     if (result != DBNull.Value)
                     {
@@ -1093,9 +1103,11 @@ namespace FightingFeather
             return nextTableNumber;
         }
 
-        private void CreateCustomTable(int tableNumber, string schema)
+
+        private void CreateCustomTable(int tableNumber, string schema, DateTime date)
         {
-            string tableName = $"MTN_ID_{tableNumber:D9}";
+            string dateString = date.ToString("yyyyMMdd");
+            string tableName = $"MTN_ID_{tableNumber:D8}_{dateString}";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
@@ -1109,11 +1121,13 @@ namespace FightingFeather
             }
         }
 
+
         private void InsertDataIntoTable(int fight, string meron, string wala, int betM, int betW, int initialBetDiff,
-                             int parehas, int pago, string winner, int rateAmount, string rate, int logro,
-                             double fee, int totalPlasada, int rateEarnings, int winnersEarn)
+                                 int parehas, int pago, string winner, int rateAmount, string rate, int logro,
+                                 double fee, int totalPlasada, int rateEarnings, int winnersEarn, int tableNumber, DateTime saveDate)
         {
-            string tableName = $"MTN_ID_{currentTableNumber:D9}";
+            string dateString = saveDate.ToString("yyyyMMdd");
+            string tableName = $"MTN_ID_{tableNumber:D8}_{dateString}";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
@@ -1122,9 +1136,9 @@ namespace FightingFeather
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
                     command.CommandText = $@"INSERT INTO {tableName} (FIGHT, MERON, WALA, [BET (M)], [BET (W)], [INITIAL BET DIFF], PAREHAS, PAGO, WINNER,
-                                     [RATE AMOUNT], RATE, LOGRO, FEE, [TOTAL PLASADA], [RATE EARNINGS], [WINNERS EARN])
-                                     VALUES (@fight, @meron, @wala, @betM, @betW, @initialBetDiff, @parehas, @pago, @winner,
-                                     @rateAmount, @rate, @logro, @fee, @totalPlasada, @rateEarnings, @winnersEarn)";
+                                [RATE AMOUNT], RATE, LOGRO, FEE, [TOTAL PLASADA], [RATE EARNINGS], [WINNERS EARN], [DATE])
+                                VALUES (@fight, @meron, @wala, @betM, @betW, @initialBetDiff, @parehas, @pago, @winner,
+                                @rateAmount, @rate, @logro, @fee, @totalPlasada, @rateEarnings, @winnersEarn, @saveDate)";
                     command.Parameters.AddWithValue("@fight", fight);
                     command.Parameters.AddWithValue("@meron", meron);
                     command.Parameters.AddWithValue("@wala", wala);
@@ -1141,13 +1155,18 @@ namespace FightingFeather
                     command.Parameters.AddWithValue("@totalPlasada", totalPlasada);
                     command.Parameters.AddWithValue("@rateEarnings", rateEarnings);
                     command.Parameters.AddWithValue("@winnersEarn", winnersEarn);
+                    command.Parameters.AddWithValue("@saveDate", saveDate.ToString("yyyy-MM-dd"));
 
                     command.ExecuteNonQuery();
                 }
             }
         }
-        private void SaveDataToDatabase()
+
+        private void SaveDataToDatabase(DateTime saveDate)
         {
+            // Track whether any data was successfully saved
+            bool dataSaved = false;
+
             // Iterate through the rows of the DataGridView
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
@@ -1172,9 +1191,12 @@ namespace FightingFeather
                     int rateEarnings = row.Cells["RATE_EARNINGS"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["RATE_EARNINGS"].Value) : 0;
                     int winnersEarn = row.Cells["WINNERS_EARN"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["WINNERS_EARN"].Value) : 0;
 
-                    // Insert the values into the database
                     InsertDataIntoTable(fight, meron, wala, betM, betW, initialBetDiff, parehas, pago, winner,
-                                        rateAmount, rate, logro, fee, totalPlasada, rateEarnings, winnersEarn);
+                                 rateAmount, rate, logro, fee, totalPlasada, rateEarnings, winnersEarn, currentTableNumber, saveDate);
+
+                    // Set dataSaved to true if data was successfully saved
+                    dataSaved = true;
+
                 }
                 catch (FormatException ex)
                 {
@@ -1188,8 +1210,112 @@ namespace FightingFeather
                 }
             }
 
-            MessageBox.Show($"Posted: 'Munton' table {currentTableNumber} created successfully.");         
+            // Display success message if data was saved
+            if (dataSaved)
+            {
+                MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No data saved.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
+       
+
+        private void SaveTableToJson()
+        {
+            try
+            {
+                // Create a list to store the data
+                List<Dictionary<string, object>> data = new List<Dictionary<string, object>>();
+
+                // Get the date from raDateTimePicker1
+                DateTime date = raDateTimePicker1.Value.Date;
+
+                // Iterate through the rows of the DataGridView
+                for (int i = 0; i < GridPlasada_Entries.Rows.Count - 1; i++)
+                {
+                    DataGridViewRow row = GridPlasada_Entries.Rows[i];
+                    // Create a dictionary to store the data of each row
+                    Dictionary<string, object> rowData = new Dictionary<string, object>();
+
+                    // Iterate through the cells of the current row
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        // Add cell value to the dictionary
+                        rowData[cell.OwningColumn.HeaderText] = cell.Value;
+                    }
+
+                    // Add date to the row data
+                    rowData["Date"] = date.ToString("yyyy-MM-dd");
+
+
+                    // Add row data to the list
+                    data.Add(rowData);
+                }
+
+                // Convert the data to JSON
+                string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+                // Load the table number counter from the file
+                int tableNumberCounter = LoadTableNumberCounter();
+
+                // Generate the file name
+                string tableNumber = tableNumberCounter.ToString().PadLeft(8, '0');
+                string fileName = $"MTN_ID_{tableNumber}_{date:yyyyMMdd}.json";
+
+                // Specify the path to the JSON folder
+                string jsonFolderPath = Path.Combine(Application.StartupPath, "TABLES");
+
+                // Combine folder path and file name
+                string jsonFilePath = Path.Combine(jsonFolderPath, fileName);
+
+                // Create the JSON folder if it doesn't exist
+                if (!Directory.Exists(jsonFolderPath))
+                {
+                    Directory.CreateDirectory(jsonFolderPath);
+                }
+
+                // Write the JSON data to the file
+                File.WriteAllText(jsonFilePath, jsonData);
+
+                // Increment the table number counter for the next save
+                tableNumberCounter++;
+
+                // Save the updated table number counter to the file
+                SaveTableNumberCounter(tableNumberCounter);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data to JSON file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int LoadTableNumberCounter()
+        {
+            string counterFilePath = Path.Combine(Application.StartupPath, "TABLES", "tableCounter.txt");
+
+            // If the file exists, read the counter value
+            if (File.Exists(counterFilePath))
+            {
+                string counterString = File.ReadAllText(counterFilePath);
+                if (int.TryParse(counterString, out int counter))
+                {
+                    return counter;
+                }
+            }
+
+            // If the file doesn't exist or the counter value couldn't be parsed, return 1
+            return 1;
+        }
+
+        private void SaveTableNumberCounter(int counter)
+        {
+            string counterFilePath = Path.Combine(Application.StartupPath, "TABLES", "tableCounter.txt");
+            File.WriteAllText(counterFilePath, counter.ToString());
+        }
+
 
 
         private void label_Ernings_Click(object sender, EventArgs e)

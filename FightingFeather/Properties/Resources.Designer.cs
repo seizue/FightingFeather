@@ -83,6 +83,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap binoculars_24px {
+            get {
+                object obj = ResourceManager.GetObject("binoculars_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap birdhouse_24px {
             get {
                 object obj = ResourceManager.GetObject("birdhouse_24px", resourceCulture);
@@ -123,6 +133,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cash_24px {
+            get {
+                object obj = ResourceManager.GetObject("cash_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cheque_24px {
             get {
                 object obj = ResourceManager.GetObject("Cheque_24px", resourceCulture);
@@ -143,9 +163,29 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap csv_24px {
+            get {
+                object obj = ResourceManager.GetObject("csv_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap data_backup_24px {
             get {
                 object obj = ResourceManager.GetObject("data_backup_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_backup_24px {
+            get {
+                object obj = ResourceManager.GetObject("database_backup_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +256,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap feather_96px1 {
             get {
                 object obj = ResourceManager.GetObject("feather_96px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter_24px {
+            get {
+                object obj = ResourceManager.GetObject("filter_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +353,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money_24px {
+            get {
+                object obj = ResourceManager.GetObject("money_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap new_copy_24px {
             get {
                 object obj = ResourceManager.GetObject("new_copy_24px", resourceCulture);
@@ -316,6 +376,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap print_24px {
             get {
                 object obj = ResourceManager.GetObject("print_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profit_analysis_24px {
+            get {
+                object obj = ResourceManager.GetObject("profit_analysis_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +413,29 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sales_performance_24px {
+            get {
+                object obj = ResourceManager.GetObject("sales_performance_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_in_list_24px {
             get {
                 object obj = ResourceManager.GetObject("search_in_list_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send_file_24px {
+            get {
+                object obj = ResourceManager.GetObject("send_file_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

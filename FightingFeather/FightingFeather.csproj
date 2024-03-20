@@ -328,6 +328,33 @@
   <ItemGroup>
     <None Include="Resources\line_style_24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_backup_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profit_analysis_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales_performance_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binoculars_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

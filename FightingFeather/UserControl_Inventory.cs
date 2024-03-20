@@ -12,9 +12,21 @@ namespace FightingFeather
 {
     public partial class UserControl_Inventory : UserControl
     {
+     
         public UserControl_Inventory()
         {
             InitializeComponent();
+          
         }
+
+
+
+        private void button_ViewMunton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+     
+
     }
 }

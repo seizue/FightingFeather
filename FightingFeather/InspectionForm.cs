@@ -31,7 +31,7 @@ namespace FightingFeather
        
             foreach (DataGridViewRow row in GridPlasada_Inspection.Rows) // Change back the custom cell height
             {
-                row.Height = 28;
+                row.Height = 25;
             }       
 
         }
@@ -88,7 +88,6 @@ namespace FightingFeather
                 return;
 
             DataGridViewRow currentRow = GridPlasada_Inspection.Rows[e.RowIndex];
-            string fightValue = currentRow.Cells["FIGHT"].Value?.ToString();
             string meronValue = currentRow.Cells["MERON"].Value?.ToString();
             string walaValue = currentRow.Cells["WALA"].Value?.ToString();
 

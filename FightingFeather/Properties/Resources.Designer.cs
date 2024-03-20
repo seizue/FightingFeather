@@ -173,6 +173,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap export_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("export_24px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap export_24pxS {
             get {
                 object obj = ResourceManager.GetObject("export_24pxS", resourceCulture);

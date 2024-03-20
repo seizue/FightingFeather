@@ -36,20 +36,26 @@
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel26 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel27 = new MetroFramework.Controls.MetroPanel();
+            this.textBox_BetDiff = new System.Windows.Forms.MaskedTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.metroPanel29 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel30 = new MetroFramework.Controls.MetroPanel();
+            this.textBox_WalaBet = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_WalaName = new System.Windows.Forms.MaskedTextBox();
             this.metroPanel31 = new MetroFramework.Controls.MetroPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.metroPanel34 = new MetroFramework.Controls.MetroPanel();
+            this.textBox_MeronBet = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_MeronName = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
+            this.textBox_EnterAmountRate = new System.Windows.Forms.MaskedTextBox();
             this.button_SaveUpdate = new System.Windows.Forms.Button();
             this.button_Enter = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,6 +69,8 @@
             this.comboBox_Winner = new System.Windows.Forms.ComboBox();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.textBox_Parehas = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Pago = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
@@ -90,19 +98,12 @@
             this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel24 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_MeronName = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_MeronBet = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_WalaName = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_WalaBet = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_BetDiff = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_Pago = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_Parehas = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_EnterAmountRate = new System.Windows.Forms.MaskedTextBox();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.button_ClearFields = new System.Windows.Forms.Button();
@@ -110,7 +111,6 @@
             this.button_Inspection = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel14.SuspendLayout();
             this.metroPanel26.SuspendLayout();
             this.metroPanel27.SuspendLayout();
@@ -128,8 +128,8 @@
             this.metroPanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Shortcut)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel14
@@ -194,6 +194,18 @@
             this.metroPanel27.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel27.VerticalScrollbarSize = 10;
             // 
+            // textBox_BetDiff
+            // 
+            this.textBox_BetDiff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_BetDiff.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_BetDiff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(56)))), ((int)(((byte)(21)))));
+            this.textBox_BetDiff.Location = new System.Drawing.Point(59, 36);
+            this.textBox_BetDiff.Name = "textBox_BetDiff";
+            this.textBox_BetDiff.ReadOnly = true;
+            this.textBox_BetDiff.Size = new System.Drawing.Size(166, 23);
+            this.textBox_BetDiff.TabIndex = 328;
+            this.textBox_BetDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -247,6 +259,27 @@
             this.metroPanel30.VerticalScrollbarBarColor = true;
             this.metroPanel30.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel30.VerticalScrollbarSize = 10;
+            // 
+            // textBox_WalaBet
+            // 
+            this.textBox_WalaBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_WalaBet.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_WalaBet.Location = new System.Drawing.Point(59, 121);
+            this.textBox_WalaBet.Name = "textBox_WalaBet";
+            this.textBox_WalaBet.Size = new System.Drawing.Size(166, 23);
+            this.textBox_WalaBet.TabIndex = 327;
+            this.textBox_WalaBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_WalaBet_KeyPress);
+            // 
+            // textBox_WalaName
+            // 
+            this.textBox_WalaName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_WalaName.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_WalaName.Location = new System.Drawing.Point(59, 49);
+            this.textBox_WalaName.Name = "textBox_WalaName";
+            this.textBox_WalaName.Size = new System.Drawing.Size(166, 23);
+            this.textBox_WalaName.TabIndex = 326;
+            this.textBox_WalaName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // metroPanel31
             // 
@@ -322,6 +355,27 @@
             this.metroPanel34.VerticalScrollbarBarColor = true;
             this.metroPanel34.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel34.VerticalScrollbarSize = 10;
+            // 
+            // textBox_MeronBet
+            // 
+            this.textBox_MeronBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_MeronBet.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_MeronBet.Location = new System.Drawing.Point(59, 124);
+            this.textBox_MeronBet.Name = "textBox_MeronBet";
+            this.textBox_MeronBet.Size = new System.Drawing.Size(166, 23);
+            this.textBox_MeronBet.TabIndex = 325;
+            this.textBox_MeronBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MeronBet_KeyPress);
+            // 
+            // textBox_MeronName
+            // 
+            this.textBox_MeronName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_MeronName.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_MeronName.Location = new System.Drawing.Point(59, 54);
+            this.textBox_MeronName.Name = "textBox_MeronName";
+            this.textBox_MeronName.Size = new System.Drawing.Size(166, 23);
+            this.textBox_MeronName.TabIndex = 252;
+            this.textBox_MeronName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
@@ -422,9 +476,20 @@
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
             // 
+            // textBox_EnterAmountRate
+            // 
+            this.textBox_EnterAmountRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_EnterAmountRate.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_EnterAmountRate.Location = new System.Drawing.Point(59, 86);
+            this.textBox_EnterAmountRate.Name = "textBox_EnterAmountRate";
+            this.textBox_EnterAmountRate.Size = new System.Drawing.Size(166, 23);
+            this.textBox_EnterAmountRate.TabIndex = 328;
+            this.textBox_EnterAmountRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_EnterAmountRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnterAmountRate_KeyPress);
+            // 
             // button_SaveUpdate
             // 
-            this.button_SaveUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_SaveUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_SaveUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(136)))), ((int)(((byte)(43)))));
             this.button_SaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_SaveUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(65)))));
@@ -519,9 +584,9 @@
             this.comboBox_Rate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Rate.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
             this.comboBox_Rate.FormattingEnabled = true;
-            this.comboBox_Rate.Location = new System.Drawing.Point(1, 1);
+            this.comboBox_Rate.Location = new System.Drawing.Point(-1, -1);
             this.comboBox_Rate.Name = "comboBox_Rate";
-            this.comboBox_Rate.Size = new System.Drawing.Size(159, 24);
+            this.comboBox_Rate.Size = new System.Drawing.Size(165, 24);
             this.comboBox_Rate.TabIndex = 229;
             // 
             // label22
@@ -595,9 +660,9 @@
             this.comboBox_Winner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Winner.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
             this.comboBox_Winner.FormattingEnabled = true;
-            this.comboBox_Winner.Location = new System.Drawing.Point(0, 1);
+            this.comboBox_Winner.Location = new System.Drawing.Point(0, -1);
             this.comboBox_Winner.Name = "comboBox_Winner";
-            this.comboBox_Winner.Size = new System.Drawing.Size(159, 24);
+            this.comboBox_Winner.Size = new System.Drawing.Size(163, 24);
             this.comboBox_Winner.TabIndex = 229;
             // 
             // metroPanel7
@@ -640,6 +705,29 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // textBox_Parehas
+            // 
+            this.textBox_Parehas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_Parehas.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_Parehas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(56)))), ((int)(((byte)(21)))));
+            this.textBox_Parehas.Location = new System.Drawing.Point(59, 124);
+            this.textBox_Parehas.Name = "textBox_Parehas";
+            this.textBox_Parehas.ReadOnly = true;
+            this.textBox_Parehas.Size = new System.Drawing.Size(166, 23);
+            this.textBox_Parehas.TabIndex = 329;
+            this.textBox_Parehas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_Pago
+            // 
+            this.textBox_Pago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_Pago.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_Pago.Location = new System.Drawing.Point(59, 54);
+            this.textBox_Pago.Name = "textBox_Pago";
+            this.textBox_Pago.Size = new System.Drawing.Size(166, 23);
+            this.textBox_Pago.TabIndex = 326;
+            this.textBox_Pago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Pago_KeyPress);
             // 
             // label7
             // 
@@ -968,6 +1056,17 @@
             this.panel1.Size = new System.Drawing.Size(455, 40);
             this.panel1.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.information_24px;
+            this.pictureBox1.Location = new System.Drawing.Point(424, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 226;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1035,94 +1134,6 @@
             this.label3.TabIndex = 237;
             this.label3.Text = "Note: Only entries that don\'t have a \'WINNER\' are displayed in the preview list!";
             // 
-            // textBox_MeronName
-            // 
-            this.textBox_MeronName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_MeronName.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_MeronName.Location = new System.Drawing.Point(59, 54);
-            this.textBox_MeronName.Name = "textBox_MeronName";
-            this.textBox_MeronName.Size = new System.Drawing.Size(166, 23);
-            this.textBox_MeronName.TabIndex = 252;
-            this.textBox_MeronName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_MeronBet
-            // 
-            this.textBox_MeronBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_MeronBet.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_MeronBet.Location = new System.Drawing.Point(59, 124);
-            this.textBox_MeronBet.Name = "textBox_MeronBet";
-            this.textBox_MeronBet.Size = new System.Drawing.Size(166, 23);
-            this.textBox_MeronBet.TabIndex = 325;
-            this.textBox_MeronBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_MeronBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MeronBet_KeyPress);
-            // 
-            // textBox_WalaName
-            // 
-            this.textBox_WalaName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_WalaName.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_WalaName.Location = new System.Drawing.Point(59, 49);
-            this.textBox_WalaName.Name = "textBox_WalaName";
-            this.textBox_WalaName.Size = new System.Drawing.Size(166, 23);
-            this.textBox_WalaName.TabIndex = 326;
-            this.textBox_WalaName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_WalaBet
-            // 
-            this.textBox_WalaBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_WalaBet.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_WalaBet.Location = new System.Drawing.Point(59, 121);
-            this.textBox_WalaBet.Name = "textBox_WalaBet";
-            this.textBox_WalaBet.Size = new System.Drawing.Size(166, 23);
-            this.textBox_WalaBet.TabIndex = 327;
-            this.textBox_WalaBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_WalaBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_WalaBet_KeyPress);
-            // 
-            // textBox_BetDiff
-            // 
-            this.textBox_BetDiff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_BetDiff.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_BetDiff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(56)))), ((int)(((byte)(21)))));
-            this.textBox_BetDiff.Location = new System.Drawing.Point(59, 36);
-            this.textBox_BetDiff.Name = "textBox_BetDiff";
-            this.textBox_BetDiff.ReadOnly = true;
-            this.textBox_BetDiff.Size = new System.Drawing.Size(166, 23);
-            this.textBox_BetDiff.TabIndex = 328;
-            this.textBox_BetDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_Pago
-            // 
-            this.textBox_Pago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_Pago.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_Pago.Location = new System.Drawing.Point(59, 54);
-            this.textBox_Pago.Name = "textBox_Pago";
-            this.textBox_Pago.Size = new System.Drawing.Size(166, 23);
-            this.textBox_Pago.TabIndex = 326;
-            this.textBox_Pago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Pago_KeyPress);
-            // 
-            // textBox_Parehas
-            // 
-            this.textBox_Parehas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_Parehas.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_Parehas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(56)))), ((int)(((byte)(21)))));
-            this.textBox_Parehas.Location = new System.Drawing.Point(59, 124);
-            this.textBox_Parehas.Name = "textBox_Parehas";
-            this.textBox_Parehas.ReadOnly = true;
-            this.textBox_Parehas.Size = new System.Drawing.Size(166, 23);
-            this.textBox_Parehas.TabIndex = 329;
-            this.textBox_Parehas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_EnterAmountRate
-            // 
-            this.textBox_EnterAmountRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_EnterAmountRate.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_EnterAmountRate.Location = new System.Drawing.Point(59, 86);
-            this.textBox_EnterAmountRate.Name = "textBox_EnterAmountRate";
-            this.textBox_EnterAmountRate.Size = new System.Drawing.Size(166, 23);
-            this.textBox_EnterAmountRate.TabIndex = 328;
-            this.textBox_EnterAmountRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_EnterAmountRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnterAmountRate_KeyPress);
-            // 
             // metroPanel5
             // 
             this.metroPanel5.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1130,7 +1141,7 @@
             this.metroPanel5.HorizontalScrollbarBarColor = true;
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel5.HorizontalScrollbarSize = 10;
-            this.metroPanel5.Location = new System.Drawing.Point(457, 59);
+            this.metroPanel5.Location = new System.Drawing.Point(455, 59);
             this.metroPanel5.Name = "metroPanel5";
             this.metroPanel5.Size = new System.Drawing.Size(2, 20);
             this.metroPanel5.TabIndex = 325;
@@ -1251,17 +1262,6 @@
             this.button_Update.UseVisualStyleBackColor = false;
             this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.information_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(424, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 226;
-            this.pictureBox1.TabStop = false;
-            // 
             // UserControl_Shortcut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1308,8 +1308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Shortcut)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -156,6 +156,12 @@
     <Compile Include="UserControl_CashBreakDown.Designer.cs">
       <DependentUpon>UserControl_CashBreakDown.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Inventory.Designer.cs">
+      <DependentUpon>UserControl_Inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Shortcut.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_CashBreakDown.resx">
       <DependentUpon>UserControl_CashBreakDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Inventory.resx">
+      <DependentUpon>UserControl_Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Shortcut.resx">
       <DependentUpon>UserControl_Shortcut.cs</DependentUpon>

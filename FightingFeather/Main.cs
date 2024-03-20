@@ -21,7 +21,8 @@ namespace FightingFeather
         private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
-       
+        private string connectionString = "Data Source = munton_posted.db;Version=3;";
+        private int currentTableNumber = 0;
         private const string DatabaseFileName = "dofox.db";
         private string databasePath;
         private DataTable dataTable;
@@ -36,8 +37,7 @@ namespace FightingFeather
             // Get the application directory and set up the database path
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
             databasePath = Path.Combine(appDirectory, DatabaseFileName);
-      
-
+           
             InitializeDatabase();
             UpdateFightIDs();
             RefreshGrid();
@@ -92,33 +92,40 @@ namespace FightingFeather
                 using (var connection = new SQLiteConnection($"Data Source={databasePath}"))
                 {
                     connection.Open();
-                    string createTableQuery = @"CREATE TABLE IF NOT EXISTS PLASADA (
-                FIGHT INTEGER PRIMARY KEY,
-                MERON TEXT,            
-                WALA TEXT,
-                [BET (M)] INTEGER,
-                [BET (W)] INTEGER,
-                [INITIAL BET DIFF] INTEGER,
-                PAREHAS INTEGER,
-                PAGO INTEGER,
-                WINNER TEXT,
-                [RATE AMOUNT] INTEGER,
-                RATE TEXT,
-                LOGRO INTEGER,
-                FEE REAL,
-                [TOTAL PLASADA] INTEGER,
-                [RATE EARNINGS] INTEGER,
-                [WINNERS EARN] INTEGER
-            )";
 
+                    // Query to create PLASADA table
+                    string createPlasadaTableQuery = @"
+                CREATE TABLE IF NOT EXISTS PLASADA (
+                    FIGHT INTEGER PRIMARY KEY,
+                    MERON TEXT,            
+                    WALA TEXT,
+                    [BET (M)] INTEGER,
+                    [BET (W)] INTEGER,
+                    [INITIAL BET DIFF] INTEGER,
+                    PAREHAS INTEGER,
+                    PAGO INTEGER,
+                    WINNER TEXT,
+                    [RATE AMOUNT] INTEGER,
+                    RATE TEXT,
+                    LOGRO INTEGER,
+                    FEE REAL,
+                    [TOTAL PLASADA] INTEGER,
+                    [RATE EARNINGS] INTEGER,
+                    [WINNERS EARN] INTEGER
+                );";
 
-                    using (var command = new SQLiteCommand(createTableQuery, connection))
+                 
+
+                    // Execute queries to create tables
+                    using (var command = new SQLiteCommand(createPlasadaTableQuery, connection))
                     {
                         command.ExecuteNonQuery();
                     }
+
                 }
             }
         }
+
 
         private void CalculateParehasValues()
         {
@@ -516,7 +523,6 @@ namespace FightingFeather
             {
                 row.Height = 28;
             }
-
 
 
             // Check if the cell value is 0 and if it's not a header cell
@@ -1035,23 +1041,172 @@ namespace FightingFeather
 
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)
         {
+         // Define your custom schema here
+            string customSchema = @"
+                (
+                    ""FIGHT"" INTEGER,
+                    ""MERON"" TEXT,
+                    ""WALA"" TEXT,
+                    ""BET (M)"" INTEGER,
+                    ""BET (W)"" INTEGER,
+                    ""INITIAL BET DIFF"" INTEGER,
+                    ""PAREHAS"" INTEGER,
+                    ""PAGO"" INTEGER,
+                    ""WINNER"" TEXT,
+                    ""RATE AMOUNT"" INTEGER,
+                    ""RATE"" TEXT,
+                    ""LOGRO"" INTEGER,
+                    ""FEE"" REAL,
+                    ""TOTAL PLASADA"" INTEGER,
+                    ""RATE EARNINGS"" INTEGER,
+                    ""WINNERS EARN"" INTEGER
+                )";
+
+            currentTableNumber = GetNextTableNumber();
+            CreateCustomTable(currentTableNumber, customSchema);
+
+            // Call the method to save data to the database
+            SaveDataToDatabase();
 
         }
 
+        private int GetNextTableNumber()
+        {
+            // Fetch the highest existing table number from the database
+            int nextTableNumber = 1;
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = "SELECT MAX(SUBSTR(tbl_name, LENGTH('MTN_ID_') + 1)) FROM sqlite_master WHERE tbl_name LIKE 'MTN_ID_%'";
+                    var result = command.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        nextTableNumber = Convert.ToInt32(result) + 1;
+                    }
+                }
+            }
+
+            return nextTableNumber;
+        }
+
+        private void CreateCustomTable(int tableNumber, string schema)
+        {
+            string tableName = $"MTN_ID_{tableNumber:D9}";
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = $"CREATE TABLE IF NOT EXISTS {tableName} {schema}";
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void InsertDataIntoTable(int fight, string meron, string wala, int betM, int betW, int initialBetDiff,
+                             int parehas, int pago, string winner, int rateAmount, string rate, int logro,
+                             double fee, int totalPlasada, int rateEarnings, int winnersEarn)
+        {
+            string tableName = $"MTN_ID_{currentTableNumber:D9}";
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = $@"INSERT INTO {tableName} (FIGHT, MERON, WALA, [BET (M)], [BET (W)], [INITIAL BET DIFF], PAREHAS, PAGO, WINNER,
+                                     [RATE AMOUNT], RATE, LOGRO, FEE, [TOTAL PLASADA], [RATE EARNINGS], [WINNERS EARN])
+                                     VALUES (@fight, @meron, @wala, @betM, @betW, @initialBetDiff, @parehas, @pago, @winner,
+                                     @rateAmount, @rate, @logro, @fee, @totalPlasada, @rateEarnings, @winnersEarn)";
+                    command.Parameters.AddWithValue("@fight", fight);
+                    command.Parameters.AddWithValue("@meron", meron);
+                    command.Parameters.AddWithValue("@wala", wala);
+                    command.Parameters.AddWithValue("@betM", betM);
+                    command.Parameters.AddWithValue("@betW", betW);
+                    command.Parameters.AddWithValue("@initialBetDiff", initialBetDiff);
+                    command.Parameters.AddWithValue("@parehas", parehas);
+                    command.Parameters.AddWithValue("@pago", pago);
+                    command.Parameters.AddWithValue("@winner", winner);
+                    command.Parameters.AddWithValue("@rateAmount", rateAmount);
+                    command.Parameters.AddWithValue("@rate", rate);
+                    command.Parameters.AddWithValue("@logro", logro);
+                    command.Parameters.AddWithValue("@fee", fee);
+                    command.Parameters.AddWithValue("@totalPlasada", totalPlasada);
+                    command.Parameters.AddWithValue("@rateEarnings", rateEarnings);
+                    command.Parameters.AddWithValue("@winnersEarn", winnersEarn);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        private void SaveDataToDatabase()
+        {
+            // Iterate through the rows of the DataGridView
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                try
+                {
+                    // Assuming the columns are in the same order as defined in the custom schema
+                    int fight = row.Cells["FIGHT"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["FIGHT"].Value) : 0;
+                    string meron = row.Cells["MERON"].Value != DBNull.Value ? Convert.ToString(row.Cells["MERON"].Value) : string.Empty;
+                    int betM = row.Cells["BET_M"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["BET_M"].Value) : 0;
+                    string wala = row.Cells["WALA"].Value != DBNull.Value ? Convert.ToString(row.Cells["WALA"].Value) : string.Empty;
+
+                    int betW = row.Cells["BET_W"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["BET_W"].Value) : 0;
+                    int initialBetDiff = row.Cells["INITIAL_BET_DIF"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["INITIAL_BET_DIF"].Value) : 0;
+                    int parehas = row.Cells["PAREHAS"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["PAREHAS"].Value) : 0;
+                    int pago = row.Cells["PAGO"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["PAGO"].Value) : 0;
+                    string winner = row.Cells["WINNER"].Value != DBNull.Value ? Convert.ToString(row.Cells["WINNER"].Value) : string.Empty;
+                    int rateAmount = row.Cells["RATE_AMOUNT"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["RATE_AMOUNT"].Value) : 0;
+                    string rate = row.Cells["RATE"].Value != DBNull.Value ? Convert.ToString(row.Cells["RATE"].Value) : string.Empty;
+                    int logro = row.Cells["LOGRO"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["LOGRO"].Value) : 0;
+                    double fee = row.Cells["FEE"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["FEE"].Value) : 0;
+                    int totalPlasada = row.Cells["TOTAL_PLASADA"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["TOTAL_PLASADA"].Value) : 0;
+                    int rateEarnings = row.Cells["RATE_EARNINGS"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["RATE_EARNINGS"].Value) : 0;
+                    int winnersEarn = row.Cells["WINNERS_EARN"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["WINNERS_EARN"].Value) : 0;
+
+                    // Insert the values into the database
+                    InsertDataIntoTable(fight, meron, wala, betM, betW, initialBetDiff, parehas, pago, winner,
+                                        rateAmount, rate, logro, fee, totalPlasada, rateEarnings, winnersEarn);
+                }
+                catch (FormatException ex)
+                {
+                    // Log the problematic row or specific values causing the exception
+                    Console.WriteLine($"FormatException occurred: {ex.Message}");
+                    Console.WriteLine("Problematic row:");
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        Console.WriteLine($"{cell.OwningColumn.Name}: {cell.Value}");
+                    }
+                }
+            }
+
+            MessageBox.Show($"Posted: 'Munton' table {currentTableNumber} created successfully.");         
+        }
+
+
         private void label_Ernings_Click(object sender, EventArgs e)
         {
-           
+
             userControl_Earnings1.Size = new Size(1055, 518);
             userControl_Earnings1.Visible = true;
-            userControl_Earnings1.BringToFront();        
+            userControl_Earnings1.BringToFront();
 
             // Change the color of the labels and button
             label_Ernings.ForeColor = clickedColor;
             label_Entries.ForeColor = defaultColor;
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
+            button_Export.Visible = false;
+            separatorRefresh.Visible = false;
 
-           
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
         }
@@ -1070,7 +1225,9 @@ namespace FightingFeather
             label_Entries.ForeColor = clickedColor;
             label_CashBreakDown.ForeColor = defaultColor;
             button_Home.ForeColor = clickedColor;
-          
+            button_Export.Visible = true;
+            separatorRefresh.Visible = true;
+
             RefreshCalculationDatagrid();
 
             userControl_Earnings1.ReloadData();
@@ -1087,6 +1244,8 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = clickedColor;
             label_Ernings.ForeColor= defaultColor;
             label_Entries.ForeColor= defaultColor;
+            button_Export.Visible = false;
+            separatorRefresh.Visible = false;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1131,10 +1290,19 @@ namespace FightingFeather
         {
             userControl_Summa1.Visible = false;
             panel_Summary.Visible = false;
+            userControl_CashBreakDown1.Visible = false;
+            userControl_Earnings1.Visible = false;
+
+            button_Export.Visible = true;
+            separatorRefresh.Visible = true;
 
             button_Plasada.ForeColor = clickedColor;
+            label_Entries.ForeColor = clickedColor;
+
             button_Summa.ForeColor= defaultColor;
             button_Inventory.ForeColor= defaultColor;
+            label_CashBreakDown.ForeColor = defaultColor;
+            label_Ernings.ForeColor = defaultColor;
 
             RefreshCalculationDatagrid();
         }
@@ -1156,8 +1324,13 @@ namespace FightingFeather
             panel_Shortcut.SendToBack();
             userControl_Summa1.Visible = false;
             userControl_Summa1.SendToBack();
+          
+        
             panel_Summary.Visible = false;
             panel_Summary.SendToBack();
+
+            button_Export.Visible = true;
+            separatorRefresh.Visible = true;
 
             button_Home.ForeColor= clickedColor;
             button_Summa.ForeColor = defaultColor;
@@ -1277,6 +1450,17 @@ namespace FightingFeather
             RefreshGrid();
         }
 
-
+        private void button_Inventory_Click(object sender, EventArgs e)
+        {
+           
+            panel_Shortcut.Visible = true;
+            panel_Shortcut.BringToFront();
+            userControl_Inventory1.Visible = true;
+            userControl_Inventory1.BringToFront();
+          
+            button_Inventory.ForeColor = clickedColor;
+            button_Home.ForeColor = defaultColor;
+            button_Shortcut.ForeColor = defaultColor;
+        }
     }
 }

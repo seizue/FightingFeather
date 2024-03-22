@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.postedMunton = new MetroFramework.Controls.MetroGrid();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -41,10 +41,10 @@
             this.comboBox_Filter = new System.Windows.Forms.ComboBox();
             this.metroPanel29 = new MetroFramework.Controls.MetroPanel();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
-            this.button_ClearCashCount = new System.Windows.Forms.Button();
+            this.button_ExportMunton = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.button_Search = new System.Windows.Forms.Button();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.textBox_Search = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel39 = new MetroFramework.Controls.MetroPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -81,13 +81,13 @@
             // postedMunton
             // 
             this.postedMunton.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.postedMunton.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.postedMunton.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.postedMunton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -96,27 +96,27 @@
             this.postedMunton.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.postedMunton.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.postedMunton.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.postedMunton.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.postedMunton.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.postedMunton.ColumnHeadersHeight = 35;
             this.postedMunton.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ITEM_NO,
             this.MUNTON,
             this.DATE});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.postedMunton.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.postedMunton.DefaultCellStyle = dataGridViewCellStyle18;
             this.postedMunton.EnableHeadersVisualStyles = false;
             this.postedMunton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.postedMunton.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -124,20 +124,20 @@
             this.postedMunton.MultiSelect = false;
             this.postedMunton.Name = "postedMunton";
             this.postedMunton.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.postedMunton.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.postedMunton.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.postedMunton.RowHeadersVisible = false;
             this.postedMunton.RowHeadersWidth = 42;
             this.postedMunton.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.postedMunton.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.postedMunton.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.postedMunton.RowTemplate.Height = 23;
             this.postedMunton.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.postedMunton.Size = new System.Drawing.Size(745, 595);
@@ -154,10 +154,10 @@
             this.metroPanel1.Controls.Add(this.comboBox_Filter);
             this.metroPanel1.Controls.Add(this.metroPanel29);
             this.metroPanel1.Controls.Add(this.raDateTimePicker1);
-            this.metroPanel1.Controls.Add(this.button_ClearCashCount);
+            this.metroPanel1.Controls.Add(this.button_ExportMunton);
             this.metroPanel1.Controls.Add(this.metroPanel2);
             this.metroPanel1.Controls.Add(this.button_Search);
-            this.metroPanel1.Controls.Add(this.metroTextBox1);
+            this.metroPanel1.Controls.Add(this.textBox_Search);
             this.metroPanel1.Controls.Add(this.metroPanel39);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
@@ -245,25 +245,27 @@
             this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
             this.raDateTimePicker1.TabIndex = 333;
             this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
             // 
-            // button_ClearCashCount
+            // button_ExportMunton
             // 
-            this.button_ClearCashCount.BackColor = System.Drawing.Color.Transparent;
-            this.button_ClearCashCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_ClearCashCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_ClearCashCount.FlatAppearance.BorderSize = 0;
-            this.button_ClearCashCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ClearCashCount.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ClearCashCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_ClearCashCount.Image = global::FightingFeather.Properties.Resources.send_file_24px;
-            this.button_ClearCashCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_ClearCashCount.Location = new System.Drawing.Point(22, 10);
-            this.button_ClearCashCount.Name = "button_ClearCashCount";
-            this.button_ClearCashCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_ClearCashCount.Size = new System.Drawing.Size(119, 31);
-            this.button_ClearCashCount.TabIndex = 332;
-            this.button_ClearCashCount.Text = "EXPORT";
-            this.button_ClearCashCount.UseVisualStyleBackColor = true;
+            this.button_ExportMunton.BackColor = System.Drawing.Color.Transparent;
+            this.button_ExportMunton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_ExportMunton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_ExportMunton.FlatAppearance.BorderSize = 0;
+            this.button_ExportMunton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ExportMunton.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ExportMunton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_ExportMunton.Image = global::FightingFeather.Properties.Resources.send_file_24px;
+            this.button_ExportMunton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_ExportMunton.Location = new System.Drawing.Point(22, 10);
+            this.button_ExportMunton.Name = "button_ExportMunton";
+            this.button_ExportMunton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_ExportMunton.Size = new System.Drawing.Size(119, 31);
+            this.button_ExportMunton.TabIndex = 332;
+            this.button_ExportMunton.Text = "EXPORT";
+            this.button_ExportMunton.UseVisualStyleBackColor = true;
+            this.button_ExportMunton.Click += new System.EventHandler(this.button_ExportMunton_Click);
             // 
             // metroPanel2
             // 
@@ -300,38 +302,39 @@
             this.button_Search.TabIndex = 330;
             this.button_Search.Text = "SEARCH";
             this.button_Search.UseVisualStyleBackColor = false;
+            this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
             // 
-            // metroTextBox1
+            // textBox_Search
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(246, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(28, 72);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.ShowButton = true;
-            this.metroTextBox1.ShowClearButton = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(272, 27);
-            this.metroTextBox1.TabIndex = 329;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox_Search.CustomButton.Image = null;
+            this.textBox_Search.CustomButton.Location = new System.Drawing.Point(246, 1);
+            this.textBox_Search.CustomButton.Name = "";
+            this.textBox_Search.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.textBox_Search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBox_Search.CustomButton.TabIndex = 1;
+            this.textBox_Search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBox_Search.CustomButton.UseSelectable = true;
+            this.textBox_Search.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textBox_Search.Lines = new string[0];
+            this.textBox_Search.Location = new System.Drawing.Point(28, 72);
+            this.textBox_Search.MaxLength = 32767;
+            this.textBox_Search.Name = "textBox_Search";
+            this.textBox_Search.PasswordChar = '\0';
+            this.textBox_Search.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox_Search.SelectedText = "";
+            this.textBox_Search.SelectionLength = 0;
+            this.textBox_Search.SelectionStart = 0;
+            this.textBox_Search.ShortcutsEnabled = true;
+            this.textBox_Search.ShowButton = true;
+            this.textBox_Search.ShowClearButton = true;
+            this.textBox_Search.Size = new System.Drawing.Size(272, 27);
+            this.textBox_Search.TabIndex = 329;
+            this.textBox_Search.UseSelectable = true;
+            this.textBox_Search.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox_Search.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroPanel39
             // 
@@ -445,10 +448,10 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroGrid postedMunton;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox textBox_Search;
         private System.Windows.Forms.Button button_Search;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.Button button_ClearCashCount;
+        private System.Windows.Forms.Button button_ExportMunton;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroPanel metroPanel29;
         private RaDateTimePicker raDateTimePicker1;

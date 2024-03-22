@@ -511,11 +511,6 @@ namespace FightingFeather
 
         }
 
-
-     
-
-      
-
         private void button_Inspection_Click(object sender, EventArgs e)
         {
             // Create an instance of the InspectionForm class

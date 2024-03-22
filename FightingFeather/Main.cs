@@ -1586,6 +1586,8 @@ namespace FightingFeather
             button_Inventory.ForeColor = clickedColor;
             button_Home.ForeColor = defaultColor;
             button_Shortcut.ForeColor = defaultColor;
+
+            userControl_Inventory1.ReloadData();
         }
     }
 }

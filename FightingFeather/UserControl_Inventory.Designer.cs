@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox_Filter = new System.Windows.Forms.ComboBox();
             this.metroPanel29 = new MetroFramework.Controls.MetroPanel();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_ClearCashCount = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.button_Search = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.ITEM_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MUNTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -231,6 +231,21 @@
             this.metroPanel29.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel29.VerticalScrollbarSize = 10;
             // 
+            // raDateTimePicker1
+            // 
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.raDateTimePicker1.Location = new System.Drawing.Point(177, 6);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
+            this.raDateTimePicker1.TabIndex = 333;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            // 
             // button_ClearCashCount
             // 
             this.button_ClearCashCount.BackColor = System.Drawing.Color.Transparent;
@@ -388,7 +403,7 @@
             // ITEM_NO
             // 
             this.ITEM_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ITEM_NO.HeaderText = "ITEM NO.";
+            this.ITEM_NO.HeaderText = "MTN NO.";
             this.ITEM_NO.Name = "ITEM_NO";
             // 
             // MUNTON
@@ -403,21 +418,6 @@
             this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DATE.HeaderText = "DATE";
             this.DATE.Name = "DATE";
-            // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.raDateTimePicker1.Location = new System.Drawing.Point(177, 6);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
-            this.raDateTimePicker1.TabIndex = 333;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             // 
             // UserControl_Inventory
             // 

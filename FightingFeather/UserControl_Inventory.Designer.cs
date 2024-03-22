@@ -40,7 +40,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox_Filter = new System.Windows.Forms.ComboBox();
             this.metroPanel29 = new MetroFramework.Controls.MetroPanel();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_ClearCashCount = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.button_Search = new System.Windows.Forms.Button();
@@ -49,9 +48,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.button_ViewMunton = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MUNTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -81,8 +81,8 @@
             // postedMunton
             // 
             this.postedMunton.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
@@ -96,7 +96,7 @@
             this.postedMunton.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.postedMunton.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.postedMunton.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
@@ -106,10 +106,10 @@
             this.postedMunton.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.postedMunton.ColumnHeadersHeight = 35;
             this.postedMunton.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.DATE,
-            this.NO});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ITEM_NO,
+            this.MUNTON,
+            this.DATE});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -230,21 +230,6 @@
             this.metroPanel29.VerticalScrollbarBarColor = true;
             this.metroPanel29.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel29.VerticalScrollbarSize = 10;
-            // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.raDateTimePicker1.Location = new System.Drawing.Point(177, 6);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
-            this.raDateTimePicker1.TabIndex = 333;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             // 
             // button_ClearCashCount
             // 
@@ -400,12 +385,18 @@
             this.button_ViewMunton.UseVisualStyleBackColor = true;
             this.button_ViewMunton.Click += new System.EventHandler(this.button_ViewMunton_Click);
             // 
-            // dataGridViewTextBoxColumn2
+            // ITEM_NO
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.FillWeight = 91.15936F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "MUNTON";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.ITEM_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ITEM_NO.HeaderText = "ITEM NO.";
+            this.ITEM_NO.Name = "ITEM_NO";
+            // 
+            // MUNTON
+            // 
+            this.MUNTON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MUNTON.FillWeight = 91.15936F;
+            this.MUNTON.HeaderText = "MUNTON";
+            this.MUNTON.Name = "MUNTON";
             // 
             // DATE
             // 
@@ -413,11 +404,20 @@
             this.DATE.HeaderText = "DATE";
             this.DATE.Name = "DATE";
             // 
-            // NO
+            // raDateTimePicker1
             // 
-            this.NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NO.HeaderText = "NO.";
-            this.NO.Name = "NO";
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.raDateTimePicker1.Location = new System.Drawing.Point(177, 6);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
+            this.raDateTimePicker1.TabIndex = 333;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             // 
             // UserControl_Inventory
             // 
@@ -457,8 +457,8 @@
         private MetroFramework.Controls.MetroPanel metroPanel39;
         private System.Windows.Forms.ComboBox comboBox_Filter;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MUNTON;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NO;
     }
 }

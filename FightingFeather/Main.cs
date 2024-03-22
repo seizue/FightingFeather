@@ -26,7 +26,6 @@ namespace FightingFeather
         private string connectionString = "Data Source = munton_posted.db;Version=3;";
 
         private int currentTableNumber = 0;
-        private int tableNumberCounter = 1;
 
         private const string DatabaseFileName = "dofox.db";
         private string databasePath;

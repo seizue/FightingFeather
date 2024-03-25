@@ -66,8 +66,6 @@
             this.Panel_MainBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
-            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
@@ -81,10 +79,7 @@
             this.button_Inventory = new System.Windows.Forms.Button();
             this.button_Home = new System.Windows.Forms.Button();
             this.panel_Summary = new System.Windows.Forms.Panel();
-            this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
             this.panel_Shortcut = new System.Windows.Forms.Panel();
-            this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
-            this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
@@ -92,7 +87,12 @@
             this.button_Update = new System.Windows.Forms.Button();
             this.button_New = new System.Windows.Forms.Button();
             this.button_Receipt = new System.Windows.Forms.Button();
+            this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
+            this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
+            this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
+            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WALA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -469,24 +469,6 @@
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel9.VerticalScrollbarSize = 10;
             // 
-            // userControl_CashBreakDown1
-            // 
-            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
-            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_CashBreakDown1.TabIndex = 5;
-            this.userControl_CashBreakDown1.Visible = false;
-            // 
-            // userControl_Earnings1
-            // 
-            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Earnings1.Name = "userControl_Earnings1";
-            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
-            this.userControl_Earnings1.TabIndex = 4;
-            this.userControl_Earnings1.Visible = false;
-            // 
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
@@ -542,16 +524,15 @@
             this.GridPlasada_Entries.Location = new System.Drawing.Point(0, 0);
             this.GridPlasada_Entries.MultiSelect = false;
             this.GridPlasada_Entries.Name = "GridPlasada_Entries";
-            this.GridPlasada_Entries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.GridPlasada_Entries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.GridPlasada_Entries.RowHeadersVisible = false;
             this.GridPlasada_Entries.RowHeadersWidth = 42;
             this.GridPlasada_Entries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
@@ -795,15 +776,6 @@
             this.panel_Summary.TabIndex = 252;
             this.panel_Summary.Visible = false;
             // 
-            // userControl_Summa1
-            // 
-            this.userControl_Summa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Summa1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Summa1.Name = "userControl_Summa1";
-            this.userControl_Summa1.Size = new System.Drawing.Size(1071, 574);
-            this.userControl_Summa1.TabIndex = 0;
-            this.userControl_Summa1.Visible = false;
-            // 
             // panel_Shortcut
             // 
             this.panel_Shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -815,25 +787,6 @@
             this.panel_Shortcut.Name = "panel_Shortcut";
             this.panel_Shortcut.Size = new System.Drawing.Size(1077, 648);
             this.panel_Shortcut.TabIndex = 254;
-            // 
-            // userControl_Inventory1
-            // 
-            this.userControl_Inventory1.BackColor = System.Drawing.Color.White;
-            this.userControl_Inventory1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Inventory1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Inventory1.Name = "userControl_Inventory1";
-            this.userControl_Inventory1.Size = new System.Drawing.Size(1077, 648);
-            this.userControl_Inventory1.TabIndex = 3;
-            // 
-            // userControl_Shortcut1
-            // 
-            this.userControl_Shortcut1.BackColor = System.Drawing.Color.White;
-            this.userControl_Shortcut1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Shortcut1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Shortcut1.Name = "userControl_Shortcut1";
-            this.userControl_Shortcut1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.userControl_Shortcut1.Size = new System.Drawing.Size(1077, 648);
-            this.userControl_Shortcut1.TabIndex = 2;
             // 
             // toolTip1
             // 
@@ -960,6 +913,34 @@
             this.button_Receipt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Receipt.UseVisualStyleBackColor = false;
             // 
+            // userControl_Inventory1
+            // 
+            this.userControl_Inventory1.BackColor = System.Drawing.Color.White;
+            this.userControl_Inventory1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Inventory1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Inventory1.Name = "userControl_Inventory1";
+            this.userControl_Inventory1.Size = new System.Drawing.Size(1077, 648);
+            this.userControl_Inventory1.TabIndex = 3;
+            // 
+            // userControl_Shortcut1
+            // 
+            this.userControl_Shortcut1.BackColor = System.Drawing.Color.White;
+            this.userControl_Shortcut1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Shortcut1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Shortcut1.Name = "userControl_Shortcut1";
+            this.userControl_Shortcut1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.userControl_Shortcut1.Size = new System.Drawing.Size(1077, 648);
+            this.userControl_Shortcut1.TabIndex = 2;
+            // 
+            // userControl_Summa1
+            // 
+            this.userControl_Summa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Summa1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Summa1.Name = "userControl_Summa1";
+            this.userControl_Summa1.Size = new System.Drawing.Size(1071, 574);
+            this.userControl_Summa1.TabIndex = 0;
+            this.userControl_Summa1.Visible = false;
+            // 
             // raDateTimePicker1
             // 
             this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
@@ -975,6 +956,24 @@
             this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
             this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
+            // 
+            // userControl_CashBreakDown1
+            // 
+            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
+            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_CashBreakDown1.TabIndex = 5;
+            this.userControl_CashBreakDown1.Visible = false;
+            // 
+            // userControl_Earnings1
+            // 
+            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Earnings1.Name = "userControl_Earnings1";
+            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 512);
+            this.userControl_Earnings1.TabIndex = 4;
+            this.userControl_Earnings1.Visible = false;
             // 
             // FIGHT
             // 

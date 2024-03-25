@@ -610,7 +610,6 @@ namespace FightingFeather
                 }
             }
 
-
             // Check if the cell belongs to the "INITIAL_BET_DIF" column and if it's not a header cell
             if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "INITIAL_BET_DIF" && e.RowIndex >= 0)
             {
@@ -662,6 +661,13 @@ namespace FightingFeather
                     }
                 }
             }
+
+            // Check if the cell belongs to the "FEE" or "LOGRO" column headers
+            if (e.RowIndex == -1 && (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" || GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT"))
+            {
+                // Align the column header text to the middle-right
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
         }
 
 
@@ -669,64 +675,27 @@ namespace FightingFeather
         private void GridPlasada_Entries_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "INITIAL BET DIFF")
+            if (e.RowIndex == -1 &&
+               (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FIGHT" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO"))
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+                e.PaintBackground(e.CellBounds, true);
 
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                using (StringFormat sf = new StringFormat())
                 {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
 
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
+                    // Specify custom font
+                    Font headerFont = new Font("Calibri", 8f, FontStyle.Bold);
 
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "BET (W)")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "PAREHAS")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                    using (Brush brush = new SolidBrush(e.CellStyle.ForeColor))
+                    {
+                        e.Graphics.DrawString(e.Value.ToString(), headerFont, brush, e.CellBounds, sf);
+                    }
                 }
 
                 e.Handled = true;
@@ -752,6 +721,7 @@ namespace FightingFeather
 
                 e.Handled = true;
             }
+
         }
 
         private void GridPlasada_Entries_CellClick(object sender, DataGridViewCellEventArgs e)

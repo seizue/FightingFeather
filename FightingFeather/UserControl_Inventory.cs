@@ -29,6 +29,17 @@ namespace FightingFeather
         {
             postedMunton.Rows.Clear(); // Clear existing rows
 
+            // Change the width of the column "MUNTON"
+            if (postedMunton.Columns.Contains("ITEM_NO"))
+            {
+                postedMunton.Columns["ITEM_NO"].Width = 80; // Set the desired width
+            }
+
+            foreach (DataGridViewRow row in postedMunton.Rows)
+            {
+                row.Height = 28;
+            }
+
             LoadJSONFilesIntoDataGrid(); // Reload data
         }
 
@@ -208,9 +219,6 @@ namespace FightingFeather
                 }
                 else
                 {
-                    // Handle invalid date format in the "DATE" column (optional)
-                    // You can choose to show/hide rows or display an error message
-                    // Here, we choose to show the row if the date format is invalid
                     row.Visible = true;
                 }
             }

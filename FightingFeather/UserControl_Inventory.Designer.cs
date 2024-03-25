@@ -49,6 +49,9 @@
             this.ITEM_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MUNTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_ENTRY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PLASAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNERS_EARNING = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -76,8 +79,8 @@
             // 
             // postedMunton
             // 
+            this.postedMunton.AllowUserToAddRows = false;
             this.postedMunton.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -104,7 +107,10 @@
             this.postedMunton.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ITEM_NO,
             this.MUNTON,
-            this.DATE});
+            this.DATE,
+            this.TOTAL_ENTRY,
+            this.PLASAD,
+            this.WINNERS_EARNING});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,7 +134,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.postedMunton.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.postedMunton.RowHeadersWidth = 42;
+            this.postedMunton.RowHeadersVisible = false;
+            this.postedMunton.RowHeadersWidth = 20;
             this.postedMunton.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
@@ -338,10 +345,11 @@
             // ITEM_NO
             // 
             this.ITEM_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.ITEM_NO.DefaultCellStyle = dataGridViewCellStyle3;
             this.ITEM_NO.HeaderText = "MTN NO.";
             this.ITEM_NO.Name = "ITEM_NO";
+            this.ITEM_NO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // MUNTON
             // 
@@ -355,6 +363,24 @@
             this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DATE.HeaderText = "DATE";
             this.DATE.Name = "DATE";
+            // 
+            // TOTAL_ENTRY
+            // 
+            this.TOTAL_ENTRY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TOTAL_ENTRY.HeaderText = "TOTAL_ENTRY";
+            this.TOTAL_ENTRY.Name = "TOTAL_ENTRY";
+            // 
+            // PLASAD
+            // 
+            this.PLASAD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PLASAD.HeaderText = "PLASADA";
+            this.PLASAD.Name = "PLASAD";
+            // 
+            // WINNERS_EARNING
+            // 
+            this.WINNERS_EARNING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.WINNERS_EARNING.HeaderText = "WINNERS_EARNING";
+            this.WINNERS_EARNING.Name = "WINNERS_EARNING";
             // 
             // UserControl_Inventory
             // 
@@ -392,5 +418,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NO;
         private System.Windows.Forms.DataGridViewTextBoxColumn MUNTON;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_ENTRY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PLASAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARNING;
     }
 }

@@ -468,8 +468,51 @@ namespace FightingFeather
                     }
                 }
             }
+
+            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "WINNERS EARNING")
+            {
+                // Center-align the content of the cell
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                // Check if the current cell is the header cell
+                if (e.RowIndex == -1)
+                {
+                    // Center-align the header text
+                    DataMuntonGrid.Columns[e.ColumnIndex].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+            }
         }
 
+        private void DataMuntonGrid_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].HeaderText == "RATE EARNINGS")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            // Check if the current cell being painted is the header cell of the "WINNERS EARNING" column
+            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "WINNERS EARNING" && e.RowIndex == -1)
+            {
+                // Center-align the header text
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
     }
 }
 

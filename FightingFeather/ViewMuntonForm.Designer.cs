@@ -114,6 +114,7 @@
             // 
             // DataMuntonGrid
             // 
+            this.DataMuntonGrid.AllowUserToAddRows = false;
             this.DataMuntonGrid.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -175,6 +176,7 @@
             this.DataMuntonGrid.UseCustomForeColor = true;
             this.DataMuntonGrid.UseStyleColors = true;
             this.DataMuntonGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataMuntonGrid_CellFormatting);
+            this.DataMuntonGrid.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DataMuntonGrid_CellPainting);
             // 
             // pictureBox1
             // 

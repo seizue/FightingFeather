@@ -99,11 +99,25 @@ namespace FightingFeather
 
         private void button_ViewMunton_Click(object sender, EventArgs e)
         {
-            // Create an instance of the InspectionForm class
-            ViewMuntonForm viewMuntonForm = new ViewMuntonForm();
+            // Check if any row is selected
+            if (postedMunton.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = postedMunton.SelectedRows[0];
 
-            // Show the form
-            viewMuntonForm.Show();
+                // Get the filename from the selected row
+                string fileName = selectedRow.Cells["MUNTON"].Value.ToString();
+
+                // Pass the filename to the ViewMuntonForm
+                using (ViewMuntonForm viewMuntonForm = new ViewMuntonForm(fileName))
+                {
+                    viewMuntonForm.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to view Munton data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_Search_Click(object sender, EventArgs e)

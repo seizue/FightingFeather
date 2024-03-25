@@ -21,8 +21,6 @@ namespace FightingFeather
         private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
-     
-
         private string connectionString = "Data Source = munton_posted.db;Version=3;";
 
         private int currentTableNumber = 0;
@@ -67,6 +65,9 @@ namespace FightingFeather
             GridPlasada_Entries.RowPrePaint += GridPlasada_Entries_RowPrePaint;
 
             userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
+
+            // Set raDateTimePicker1 to show the current date
+            raDateTimePicker1.Value = DateTime.Today;
 
             ToolTip toolTip1 = new ToolTip();
 

@@ -662,10 +662,8 @@ namespace FightingFeather
                     }
                 }
             }
-
-
-
         }
+
 
         //Cell column border of GridPlasada datagrid
         private void GridPlasada_Entries_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -954,8 +952,6 @@ namespace FightingFeather
                     // Parse RATE EARNINGS
                     if (!int.TryParse(GridPlasada_Entries.Rows[selectedIndex].Cells["RATE_AMOUNT"].Value.ToString(), out rateamount))
                     {
-                        // If parsing fails, you can either set rateamount to 0 or handle it differently
-                        // Here, we set it to 0 and proceed with updating
                         rateamount = 0;
                     }
                 }
@@ -1076,7 +1072,6 @@ namespace FightingFeather
             SaveDataToDatabase(currentDate);
 
             SaveTableToJson();
-
 
         }
 
@@ -1315,8 +1310,6 @@ namespace FightingFeather
             string counterFilePath = Path.Combine(Application.StartupPath, "TABLES", "tableCounter.txt");
             File.WriteAllText(counterFilePath, counter.ToString());
         }
-
-
 
         private void label_Ernings_Click(object sender, EventArgs e)
         {

@@ -45,6 +45,8 @@
             this.button_Earnings = new System.Windows.Forms.Button();
             this.textBox_Search = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.button_Home = new System.Windows.Forms.Button();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataMuntonGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +63,7 @@
             this.button_CashBreakDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_CashBreakDown.Image = global::FightingFeather.Properties.Resources.sales_performance_24px;
             this.button_CashBreakDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_CashBreakDown.Location = new System.Drawing.Point(399, 46);
+            this.button_CashBreakDown.Location = new System.Drawing.Point(543, 46);
             this.button_CashBreakDown.Name = "button_CashBreakDown";
             this.button_CashBreakDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_CashBreakDown.Size = new System.Drawing.Size(141, 31);
@@ -148,7 +150,7 @@
             this.DataMuntonGrid.EnableHeadersVisualStyles = false;
             this.DataMuntonGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.DataMuntonGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DataMuntonGrid.Location = new System.Drawing.Point(3, 4);
+            this.DataMuntonGrid.Location = new System.Drawing.Point(3, 3);
             this.DataMuntonGrid.MultiSelect = false;
             this.DataMuntonGrid.Name = "DataMuntonGrid";
             this.DataMuntonGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -225,13 +227,14 @@
             this.button_ExportMunton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_ExportMunton.Image = global::FightingFeather.Properties.Resources.send_file_24px;
             this.button_ExportMunton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_ExportMunton.Location = new System.Drawing.Point(948, 46);
+            this.button_ExportMunton.Location = new System.Drawing.Point(1092, 46);
             this.button_ExportMunton.Name = "button_ExportMunton";
             this.button_ExportMunton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_ExportMunton.Size = new System.Drawing.Size(119, 31);
             this.button_ExportMunton.TabIndex = 343;
             this.button_ExportMunton.Text = "EXPORT";
             this.button_ExportMunton.UseVisualStyleBackColor = true;
+            this.button_ExportMunton.Click += new System.EventHandler(this.button_ExportMunton_Click);
             // 
             // metroPanel19
             // 
@@ -240,7 +243,7 @@
             this.metroPanel19.HorizontalScrollbarBarColor = true;
             this.metroPanel19.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel19.HorizontalScrollbarSize = 10;
-            this.metroPanel19.Location = new System.Drawing.Point(573, 53);
+            this.metroPanel19.Location = new System.Drawing.Point(717, 53);
             this.metroPanel19.Name = "metroPanel19";
             this.metroPanel19.Size = new System.Drawing.Size(2, 20);
             this.metroPanel19.TabIndex = 344;
@@ -261,7 +264,7 @@
             this.button_Earnings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Earnings.Image = global::FightingFeather.Properties.Resources.money_24px;
             this.button_Earnings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Earnings.Location = new System.Drawing.Point(276, 46);
+            this.button_Earnings.Location = new System.Drawing.Point(420, 46);
             this.button_Earnings.Name = "button_Earnings";
             this.button_Earnings.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Earnings.Size = new System.Drawing.Size(101, 31);
@@ -286,7 +289,7 @@
             this.textBox_Search.CustomButton.UseSelectable = true;
             this.textBox_Search.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.textBox_Search.Lines = new string[0];
-            this.textBox_Search.Location = new System.Drawing.Point(613, 47);
+            this.textBox_Search.Location = new System.Drawing.Point(757, 47);
             this.textBox_Search.MaxLength = 32767;
             this.textBox_Search.Name = "textBox_Search";
             this.textBox_Search.PasswordChar = '\0';
@@ -312,7 +315,7 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(921, 54);
+            this.metroPanel1.Location = new System.Drawing.Point(1065, 54);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(2, 20);
             this.metroPanel1.TabIndex = 347;
@@ -322,11 +325,51 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // button_Home
+            // 
+            this.button_Home.BackColor = System.Drawing.Color.Transparent;
+            this.button_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Home.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Home.FlatAppearance.BorderSize = 0;
+            this.button_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Home.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_Home.Image = global::FightingFeather.Properties.Resources.smart_home_checked_30px;
+            this.button_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Home.Location = new System.Drawing.Point(286, 46);
+            this.button_Home.Name = "button_Home";
+            this.button_Home.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Home.Size = new System.Drawing.Size(79, 31);
+            this.button_Home.TabIndex = 348;
+            this.button_Home.Text = "HOME";
+            this.button_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Home.UseVisualStyleBackColor = true;
+            this.button_Home.Click += new System.EventHandler(this.button_Home_Click);
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(388, 53);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(2, 20);
+            this.metroPanel2.TabIndex = 349;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.UseStyleColors = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
             // ViewMuntonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 687);
+            this.Controls.Add(this.metroPanel2);
+            this.Controls.Add(this.button_Home);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.textBox_Search);
             this.Controls.Add(this.button_Earnings);
@@ -360,5 +403,7 @@
         private System.Windows.Forms.Button button_Earnings;
         private MetroFramework.Controls.MetroTextBox textBox_Search;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.Button button_Home;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
     }
 }

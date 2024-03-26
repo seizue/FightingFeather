@@ -115,6 +115,8 @@
             // DataMuntonGrid
             // 
             this.DataMuntonGrid.AllowUserToAddRows = false;
+            this.DataMuntonGrid.AllowUserToDeleteRows = false;
+            this.DataMuntonGrid.AllowUserToOrderColumns = true;
             this.DataMuntonGrid.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;

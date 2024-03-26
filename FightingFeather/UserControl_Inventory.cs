@@ -29,10 +29,9 @@ namespace FightingFeather
         {
             postedMunton.Rows.Clear(); // Clear existing rows
 
-            // Change the width of the column "MUNTON"
-            if (postedMunton.Columns.Contains("ITEM_NO"))
+            if (postedMunton.Columns.Contains("MUNTON"))
             {
-                postedMunton.Columns["ITEM_NO"].Width = 80; // Set the desired width
+                postedMunton.Columns["MUNTON"].Width = 290; // Set the desired width
             }
 
             foreach (DataGridViewRow row in postedMunton.Rows)
@@ -61,24 +60,17 @@ namespace FightingFeather
                 // Get the list of JSON files in the folder
                 string[] jsonFiles = Directory.GetFiles(tablesFolderPath, "*.json");
 
-
                 // Clear existing rows in postedMunton DataGridView
                 postedMunton.Rows.Clear();
 
-                int activeSellCount = 0;
-
+                // Iterate through each JSON file
                 foreach (string jsonFile in jsonFiles)
                 {
-                    activeSellCount++;
+                    // Read the JSON file and parse its content
+                    string jsonContent = File.ReadAllText(jsonFile);
 
-                    string fileName = Path.GetFileName(jsonFile);
-                    string[] fileNameParts = fileName.Split('_');
-
-                    // Assuming the date part is always at the last index of fileNameParts
-                    string datePart = fileNameParts[fileNameParts.Length - 1];
-
-                    // Format date as YYYY-MM-DD
-                    string formattedDate = $"{datePart.Substring(0, 4)}-{datePart.Substring(4, 2)}-{datePart.Substring(6, 2)}";
+                    // Deserialize the JSON content as a JArray (JSON array)
+                    JArray jsonArray = JArray.Parse(jsonContent);
 
                     // Add a new row to the DataGridView
                     int rowIndex = postedMunton.Rows.Add();
@@ -86,16 +78,23 @@ namespace FightingFeather
                     // Specify the "MUNTON" column index or name where you want to display the file name
                     int muntonColumnIndex = postedMunton.Columns["MUNTON"].Index;
                     // Set the file name to the specified column in the newly added row
-                    postedMunton.Rows[rowIndex].Cells[muntonColumnIndex].Value = fileName;
-
-                    // Set the ITEM_NO column to the sequential number
-                    int itemNoColumnIndex = postedMunton.Columns["ITEM_NO"].Index;
-                    postedMunton.Rows[rowIndex].Cells[itemNoColumnIndex].Value = activeSellCount;
+                    postedMunton.Rows[rowIndex].Cells[muntonColumnIndex].Value = Path.GetFileName(jsonFile);
 
                     // Set the date to the "DATE" column
                     int dateColumnIndex = postedMunton.Columns["DATE"].Index; // Assuming "DATE" is the column name
-                    postedMunton.Rows[rowIndex].Cells[dateColumnIndex].Value = formattedDate;
+                    postedMunton.Rows[rowIndex].Cells[dateColumnIndex].Value = jsonArray.Last()["Date"]; // Assuming the key for the date is "Date"
 
+                    // Set the padding for the header of the "DATE" column
+                    postedMunton.Columns[dateColumnIndex].HeaderCell.Style.Padding = new Padding(10, 4, 0, 4);
+
+                    // Set the value in the TOTAL_ENTRY column of the DataGridView
+                    int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index; // Assuming "TOTAL_ENTRY" is the column name
+                    postedMunton.Rows[rowIndex].Cells[totalEntryColumnIndex].Value = jsonArray.Last()["MERON"]; // Set MERON value to TOTAL_ENTRY column
+
+                    int totalEarnings= postedMunton.Columns["TOTAL_EARNING"].Index;
+                    postedMunton.Rows[rowIndex].Cells[totalEarnings].Value = jsonArray.Last()["WINNERS EARNING"]; 
+
+                 
                 }
             }
             catch (DirectoryNotFoundException)
@@ -107,6 +106,7 @@ namespace FightingFeather
                 MessageBox.Show($"Error displaying JSON files in DataGrid: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void button_ViewMunton_Click(object sender, EventArgs e)
         {

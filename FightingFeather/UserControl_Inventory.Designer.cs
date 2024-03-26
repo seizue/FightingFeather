@@ -30,10 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.postedMunton = new MetroFramework.Controls.MetroGrid();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -46,12 +47,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.button_ViewMunton = new System.Windows.Forms.Button();
-            this.ITEM_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MUNTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOTAL_ENTRY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PLASAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNERS_EARNING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_EARNING = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -105,20 +104,18 @@
             this.postedMunton.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.postedMunton.ColumnHeadersHeight = 35;
             this.postedMunton.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ITEM_NO,
             this.MUNTON,
             this.DATE,
             this.TOTAL_ENTRY,
-            this.PLASAD,
-            this.WINNERS_EARNING});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.postedMunton.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TOTAL_EARNING});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.postedMunton.DefaultCellStyle = dataGridViewCellStyle5;
             this.postedMunton.EnableHeadersVisualStyles = false;
             this.postedMunton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.postedMunton.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -126,20 +123,19 @@
             this.postedMunton.MultiSelect = false;
             this.postedMunton.Name = "postedMunton";
             this.postedMunton.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.postedMunton.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.postedMunton.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.postedMunton.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.postedMunton.RowHeadersWidth = 20;
             this.postedMunton.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.postedMunton.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.postedMunton.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.postedMunton.RowTemplate.Height = 23;
             this.postedMunton.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.postedMunton.Size = new System.Drawing.Size(745, 595);
@@ -342,18 +338,10 @@
             this.button_ViewMunton.UseVisualStyleBackColor = true;
             this.button_ViewMunton.Click += new System.EventHandler(this.button_ViewMunton_Click);
             // 
-            // ITEM_NO
-            // 
-            this.ITEM_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ITEM_NO.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ITEM_NO.HeaderText = "MTN NO.";
-            this.ITEM_NO.Name = "ITEM_NO";
-            this.ITEM_NO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // MUNTON
             // 
             this.MUNTON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MUNTON.DividerWidth = 3;
             this.MUNTON.FillWeight = 91.15936F;
             this.MUNTON.HeaderText = "MUNTON";
             this.MUNTON.Name = "MUNTON";
@@ -361,26 +349,26 @@
             // DATE
             // 
             this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DATE.HeaderText = "DATE";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.DATE.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DATE.HeaderText = "MTN DATE";
             this.DATE.Name = "DATE";
             // 
             // TOTAL_ENTRY
             // 
             this.TOTAL_ENTRY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TOTAL_ENTRY.HeaderText = "TOTAL_ENTRY";
+            this.TOTAL_ENTRY.HeaderText = "TOTAL ENTRY";
             this.TOTAL_ENTRY.Name = "TOTAL_ENTRY";
             // 
-            // PLASAD
+            // TOTAL_EARNING
             // 
-            this.PLASAD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PLASAD.HeaderText = "PLASADA";
-            this.PLASAD.Name = "PLASAD";
-            // 
-            // WINNERS_EARNING
-            // 
-            this.WINNERS_EARNING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.WINNERS_EARNING.HeaderText = "WINNERS_EARNING";
-            this.WINNERS_EARNING.Name = "WINNERS_EARNING";
+            this.TOTAL_EARNING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.TOTAL_EARNING.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TOTAL_EARNING.HeaderText = "TOTAL EARNING";
+            this.TOTAL_EARNING.Name = "TOTAL_EARNING";
             // 
             // UserControl_Inventory
             // 
@@ -415,11 +403,9 @@
         private MetroFramework.Controls.MetroPanel metroPanel29;
         private RaDateTimePicker raDateTimePicker1;
         private System.Windows.Forms.Button button_ViewMunton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NO;
         private System.Windows.Forms.DataGridViewTextBoxColumn MUNTON;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_ENTRY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PLASAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARNING;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_EARNING;
     }
 }

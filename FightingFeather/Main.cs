@@ -84,6 +84,7 @@ namespace FightingFeather
             {
                 row.Height = 28;
             }
+
         }
 
         private void InitializeDatabase()
@@ -677,10 +678,13 @@ namespace FightingFeather
 
             if (e.RowIndex == -1 &&
                (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FIGHT" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FEE" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "TOTAL_PLASADA" ||
                 GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO"))
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||             
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN" ))
+               
             {
                 e.PaintBackground(e.CellBounds, true);
 
@@ -723,6 +727,7 @@ namespace FightingFeather
             }
 
         }
+
 
         private void GridPlasada_Entries_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1007,7 +1012,64 @@ namespace FightingFeather
 
         private void button_Export_Click(object sender, EventArgs e)
         {
-         
+            // Show a save file dialog to choose where to save the CSV file
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV (Comma delimited)|*.csv";
+            saveFileDialog.Title = "Save CSV File";
+            saveFileDialog.ShowDialog();
+
+            // If the user didn't cancel the dialog and entered a filename
+            if (saveFileDialog.FileName != "")
+            {
+                try
+                {
+                    // Create a new StreamWriter to write to the CSV file
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                    {
+                        // Write the column headers of visible columns to the file
+                        foreach (DataGridViewColumn column in GridPlasada_Entries.Columns)
+                        {
+                            if (column.Visible)
+                            {
+                                sw.Write("\"" + column.HeaderText + "\",");
+                            }
+                        }
+                        sw.WriteLine();
+
+                        // Write each row of data to the file
+                        foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+                        {
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.OwningColumn.Visible)
+                                {
+                                    // Check for null values and replace them with empty strings
+                                    if (cell.Value != null)
+                                    {
+                                        string valueToWrite = cell.Value.ToString();
+
+                                        // Prepend an apostrophe to force Excel to treat the value as text
+                                        if (cell.OwningColumn.Name == "RATE")
+                                        {
+                                            valueToWrite = "'" + valueToWrite;
+                                        }
+
+                                        sw.Write("\"" + valueToWrite + "\"");
+                                    }
+                                    sw.Write(",");
+                                }
+                            }
+                            sw.WriteLine();
+                        }
+                    }
+
+                    MessageBox.Show("CSV file exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error exporting CSV file: " + ex.Message, "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)
@@ -1186,7 +1248,6 @@ namespace FightingFeather
             }
         }
 
-       
 
         private void SaveTableToJson()
         {
@@ -1215,9 +1276,31 @@ namespace FightingFeather
                     // Add date to the row data
                     rowData["Date"] = date.ToString("yyyy-MM-dd");
 
-
                     // Add row data to the list
                     data.Add(rowData);
+                }
+
+                // Get the last row of the DataGridView
+                DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
+
+                // If the last row is not null and it contains data
+                if (lastRow != null && lastRow.Cells.Count > 0)
+                {
+                    // Create a dictionary to store the data of the last row
+                    Dictionary<string, object> lastRowData = new Dictionary<string, object>();
+
+                    // Iterate through the cells of the last row
+                    foreach (DataGridViewCell cell in lastRow.Cells)
+                    {
+                        // Add cell value to the dictionary
+                        lastRowData[cell.OwningColumn.HeaderText] = cell.Value;
+                    }
+
+                    // Add date to the last row data
+                    lastRowData["Date"] = date.ToString("yyyy-MM-dd");
+
+                    // Add last row data to the list
+                    data.Add(lastRowData);
                 }
 
                 // Convert the data to JSON
@@ -1256,6 +1339,7 @@ namespace FightingFeather
                 MessageBox.Show($"Error saving data to JSON file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private int LoadTableNumberCounter()
         {
@@ -1553,5 +1637,7 @@ namespace FightingFeather
 
             userControl_Inventory1.ReloadData();
         }
+
+
     }
 }

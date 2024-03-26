@@ -985,56 +985,48 @@
             // 
             // MERON
             // 
-            this.MERON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MERON.FillWeight = 91.15936F;
             this.MERON.HeaderText = "MERON";
             this.MERON.Name = "MERON";
             // 
             // WALA
             // 
-            this.WALA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.WALA.FillWeight = 91.15936F;
             this.WALA.HeaderText = "WALA";
             this.WALA.Name = "WALA";
             // 
             // BET_M
             // 
-            this.BET_M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.BET_M.FillWeight = 91.15936F;
             this.BET_M.HeaderText = "BET (M)";
             this.BET_M.Name = "BET_M";
             // 
             // BET_W
             // 
-            this.BET_W.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.BET_W.FillWeight = 91.15936F;
             this.BET_W.HeaderText = "BET (W)";
             this.BET_W.Name = "BET_W";
             // 
             // INITIAL_BET_DIF
             // 
-            this.INITIAL_BET_DIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.INITIAL_BET_DIF.FillWeight = 91.15936F;
             this.INITIAL_BET_DIF.HeaderText = "INITIAL BET DIFF";
             this.INITIAL_BET_DIF.Name = "INITIAL_BET_DIF";
             // 
             // PAREHAS
             // 
-            this.PAREHAS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PAREHAS.FillWeight = 91.15936F;
             this.PAREHAS.HeaderText = "PAREHAS";
             this.PAREHAS.Name = "PAREHAS";
             // 
             // PAGO
             // 
-            this.PAGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PAGO.FillWeight = 91.15936F;
             this.PAGO.HeaderText = "PAGO";
             this.PAGO.Name = "PAGO";
             // 
             // WINNER
             // 
-            this.WINNER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1048,7 +1040,6 @@
             // 
             // RATE_AMOUNT
             // 
-            this.RATE_AMOUNT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle5;
@@ -1057,7 +1048,6 @@
             // 
             // RATE
             // 
-            this.RATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             this.RATE.DefaultCellStyle = dataGridViewCellStyle6;
@@ -1068,8 +1058,8 @@
             // 
             // LOGRO
             // 
-            this.LOGRO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
             this.LOGRO.DefaultCellStyle = dataGridViewCellStyle7;
             this.LOGRO.FillWeight = 91.15936F;
             this.LOGRO.HeaderText = "LOGRO";
@@ -1077,8 +1067,8 @@
             // 
             // FEE
             // 
-            this.FEE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
             this.FEE.DefaultCellStyle = dataGridViewCellStyle8;
             this.FEE.FillWeight = 91.15936F;
             this.FEE.HeaderText = "FEE";
@@ -1086,17 +1076,17 @@
             // 
             // TOTAL_PLASADA
             // 
-            this.TOTAL_PLASADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
             this.TOTAL_PLASADA.DefaultCellStyle = dataGridViewCellStyle9;
             this.TOTAL_PLASADA.FillWeight = 91.15936F;
-            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
+            this.TOTAL_PLASADA.HeaderText = "PLASADA";
             this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
             // 
             // RATE_EARNINGS
             // 
-            this.RATE_EARNINGS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
             this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle10;
             this.RATE_EARNINGS.FillWeight = 63.81155F;
             this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";

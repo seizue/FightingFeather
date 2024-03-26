@@ -512,6 +512,13 @@ namespace FightingFeather
                 // Center-align the header text
                 e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+
+            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "RATE AMOUNT" && e.RowIndex == -1)
+            {
+                // Center-align the header text
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
         }
     }
 }

@@ -1631,7 +1631,5 @@ namespace FightingFeather
 
             userControl_Inventory1.ReloadData();
         }
-
-
     }
 }

@@ -1492,10 +1492,17 @@ namespace FightingFeather
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
 
+            GridPlasada_Entries.Visible = true;
+            GridPlasada_Entries.BringToFront();
+        
             button_Home.ForeColor= clickedColor;
+            label_Entries.ForeColor = clickedColor;
+            label_CashBreakDown.ForeColor = defaultColor;
+            label_Ernings.ForeColor = defaultColor;
             button_Summa.ForeColor = defaultColor;
             button_Inventory.ForeColor= defaultColor;
             button_Shortcut.ForeColor= defaultColor;
+
 
             RefreshGrid();
             RefreshCalculationDatagrid();

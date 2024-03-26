@@ -89,12 +89,21 @@ namespace FightingFeather
 
                     // Set the value in the TOTAL_ENTRY column of the DataGridView
                     int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index; // Assuming "TOTAL_ENTRY" is the column name
-                    postedMunton.Rows[rowIndex].Cells[totalEntryColumnIndex].Value = jsonArray.Last()["MERON"]; // Set MERON value to TOTAL_ENTRY column
+                    postedMunton.Rows[rowIndex].Cells[totalEntryColumnIndex].Value = jsonArray.Last()["FIGHT"]; // Set MERON value to TOTAL_ENTRY column
 
-                    int totalEarnings= postedMunton.Columns["TOTAL_EARNING"].Index;
-                    postedMunton.Rows[rowIndex].Cells[totalEarnings].Value = jsonArray.Last()["WINNERS EARNING"]; 
+                    int totalPlasadaIndex = postedMunton.Columns["TOTAL_PLASADA"].Index;
+                    string totalPlasadaValue = jsonArray.Last()["BET (W)"].ToString();
 
-                 
+                    // Splitting the string to get the numerical value
+                    string[] parts = totalPlasadaValue.Split(' ');
+                    if (parts.Length > 1)
+                    {
+                        totalPlasadaValue = parts[1]; // Assuming the value is always in the second part
+                    }
+
+                    postedMunton.Rows[rowIndex].Cells[totalPlasadaIndex].Value = totalPlasadaValue;
+
+
                 }
             }
             catch (DirectoryNotFoundException)

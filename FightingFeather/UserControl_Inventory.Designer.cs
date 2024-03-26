@@ -50,7 +50,7 @@
             this.MUNTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOTAL_ENTRY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_EARNING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -107,7 +107,7 @@
             this.MUNTON,
             this.DATE,
             this.TOTAL_ENTRY,
-            this.TOTAL_EARNING});
+            this.TOTAL_PLASADA});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -361,14 +361,14 @@
             this.TOTAL_ENTRY.HeaderText = "TOTAL ENTRY";
             this.TOTAL_ENTRY.Name = "TOTAL_ENTRY";
             // 
-            // TOTAL_EARNING
+            // TOTAL_PLASADA
             // 
-            this.TOTAL_EARNING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TOTAL_PLASADA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle4.Format = "N2";
             dataGridViewCellStyle4.NullValue = null;
-            this.TOTAL_EARNING.DefaultCellStyle = dataGridViewCellStyle4;
-            this.TOTAL_EARNING.HeaderText = "TOTAL EARNING";
-            this.TOTAL_EARNING.Name = "TOTAL_EARNING";
+            this.TOTAL_PLASADA.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
+            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
             // 
             // UserControl_Inventory
             // 
@@ -406,6 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MUNTON;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_ENTRY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_EARNING;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
     }
 }

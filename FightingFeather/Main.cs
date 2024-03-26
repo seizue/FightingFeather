@@ -220,7 +220,9 @@ namespace FightingFeather
 
             // Calculate the PAREHAS values after populating the DataGridView
             CalculateParehasValues();
+          
             SaveDataGridViewToJson();
+
         }
 
         public void PopulateGridRow(SQLiteDataReader reader, SQLiteConnection connection)
@@ -362,7 +364,7 @@ namespace FightingFeather
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
 
             // Display the totalFights in the last row
-            DataGridViewCell totalFightsCell = lastRow.Cells["MERON"];
+            DataGridViewCell totalFightsCell = lastRow.Cells["FIGHT"];
             totalFightsCell.Value = totalFights.ToString();
 
             // Set the foreground color of the cell
@@ -395,8 +397,8 @@ namespace FightingFeather
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
 
             // Display the total draws and total cancels in the last row
-            lastRow.Cells["BET_W"].Value = $"Draws: {totalDraws}";
-            lastRow.Cells["BET_M"].Value = $"Cancels: {totalCancels}";
+            lastRow.Cells["MERON"].Value = $"Draws: {totalDraws}";
+            lastRow.Cells["WALA"].Value = $"Cancels: {totalCancels}";
 
             // Update the UserControl's textBox_Draw
             userControl_Summa1.UpdateDrawCancelTotal(totalDraws);
@@ -419,7 +421,7 @@ namespace FightingFeather
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
 
             // Display the total fee in the last row
-            lastRow.Cells["FEE"].Value = $"{totalFee}";
+            lastRow.Cells["BET_M"].Value = $"Fee: {totalFee}";
 
             // Update the UserControl's textBox_Plasada
             userControl_Summa1.UpdateFeeTotal(totalFee.ToString());
@@ -443,7 +445,7 @@ namespace FightingFeather
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
 
             // Display the total plasada in the last row
-            lastRow.Cells["TOTAL_PLASADA"].Value = $"{totalPlasada}";
+            lastRow.Cells["BET_W"].Value = $"Plasada: {totalPlasada}";
 
             // Update the UserControl's textBox_Total
             userControl_Summa1.UpdateTotal(totalPlasada.ToString());
@@ -471,30 +473,11 @@ namespace FightingFeather
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
 
             // Display the total city tax in the last row
-            lastRow.Cells["PAREHAS"].Value = $"Tax: {totalCityTax}";
+            lastRow.Cells["PAREHAS"].Value = $"City Tax: {totalCityTax}";
 
             // Update textBox_CityTax with the calculated total city tax
             userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
-        }
 
-
-        public void CalculateAndDisplayWinnerEarnTotal()
-        {
-            decimal totalWinnerEarn = 0;
-
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                if (row.Cells["WINNERS_EARN"].Value != null && decimal.TryParse(row.Cells["WINNERS_EARN"].Value.ToString(), out decimal winnerEarn))
-                {
-                    totalWinnerEarn += winnerEarn;
-                }
-            }
-
-            // Find the last row
-            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-            // Display the total winner earn in the last row
-            lastRow.Cells["WINNERS_EARN"].Value = $"{totalWinnerEarn}";
         }
 
 
@@ -504,8 +487,7 @@ namespace FightingFeather
             CalculateAndDisplayDrawCancelTotal();
             CalculateAndDisplayFeeTotal();
             CalculateAndDisplayTotalPlasada();
-            CalculateTotalCityTax();
-            CalculateAndDisplayWinnerEarnTotal();
+            CalculateTotalCityTax();        
         }
 
 
@@ -976,17 +958,19 @@ namespace FightingFeather
 
                 // Remove the row from the DataGridView
                 GridPlasada_Entries.Rows.RemoveAt(selectedIndex);
-                RefreshGrid();
 
                 ResetAutoIncrement();
+
                 UpdateFightIDs();
-               
+
+                RefreshGrid();
                 RefreshCalculationDatagrid();
-                GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
-               
+
                 userControl_Earnings1.ReloadData();
                 userControl_CashBreakDown1.ReloadData();
 
+                GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
+              
                 MessageBox.Show("Successfully deleted.");
                
             }
@@ -1380,6 +1364,8 @@ namespace FightingFeather
             button_Export.Visible = false;
             separatorRefresh.Visible = false;
 
+            RefreshCalculationDatagrid();
+
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
         }
@@ -1392,7 +1378,7 @@ namespace FightingFeather
             userControl_Earnings1.Visible = false;
             userControl_Earnings1.SendToBack();
             userControl_CashBreakDown1.SendToBack();
-
+            
             // Change the color of the labels and button
             label_Ernings.ForeColor = defaultColor;
             label_Entries.ForeColor = clickedColor;
@@ -1401,6 +1387,7 @@ namespace FightingFeather
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
 
+            RefreshGrid();
             RefreshCalculationDatagrid();
 
             userControl_Earnings1.ReloadData();

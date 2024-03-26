@@ -296,6 +296,7 @@
             this.GridPlasada_Summary.UseCustomBackColor = true;
             this.GridPlasada_Summary.UseCustomForeColor = true;
             this.GridPlasada_Summary.UseStyleColors = true;
+            this.GridPlasada_Summary.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GridPlasada_Summary_CellValidating);
             // 
             // AMOUNT
             // 

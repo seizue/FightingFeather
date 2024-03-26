@@ -25,7 +25,7 @@ namespace FightingFeather
 
             GridPlasada_Summary.CellPainting += GridPlasada_Summary_CellPainting;
             GridPlasada_Summary.CellEndEdit += GridPlasada_Summary_CellEndEdit;
-
+            GridPlasada_Summary.CellValueChanged += GridPlasada_Summary_CellValueChanged;
 
             foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
             {
@@ -242,14 +242,21 @@ namespace FightingFeather
                 else
                 {
                     MessageBox.Show("Invalid quantity or amount. Please enter valid decimal numbers.");
+                    // Clear the total amount cell if parsing fails
+                    totalAmountCell.Value = null;
                 }
             }
-            else if (e.ColumnIndex == GridPlasada_Summary.Columns["AMOUNT"].Index && e.RowIndex >= 0)
-            {
-                RecalculateTotalSum();
-               
-            }
 
+        }
+
+        private void GridPlasada_Summary_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the edited cell is in the "TOTAL_AMOUNT" column
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Summary.Columns[e.ColumnIndex].HeaderText == "TOTAL_AMOUNT")
+            {
+                // Recalculate total sum after any edit in the "TOTAL_AMOUNT" column
+                CalculateTotalSum();
+            }
         }
 
         private void CalculateTotalSum()
@@ -258,12 +265,9 @@ namespace FightingFeather
 
             foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
             {
-                if (!row.IsNewRow && row.Cells["TOTAL_AMOUNT"].Value != null)
+                if (!row.IsNewRow && row.Cells["TOTAL_AMOUNT"].Value != null && decimal.TryParse(row.Cells["TOTAL_AMOUNT"].Value.ToString(), out decimal amount))
                 {
-                    if (decimal.TryParse(row.Cells["TOTAL_AMOUNT"].Value.ToString(), out decimal amount))
-                    {
-                        totalSum += amount;
-                    }
+                    totalSum += amount;
                 }
             }
 
@@ -274,34 +278,6 @@ namespace FightingFeather
             {
                 lastTotalAmountCell.Value = totalSum.ToString();
                 lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
-
-            }
-        }
-
-        private void RecalculateTotalSum()
-        {
-            decimal totalSum = 0;
-
-            foreach (DataGridViewRow row in GridPlasada_Summary.Rows)
-            {
-                if (!row.IsNewRow && row.Cells["TOTAL_AMOUNT"].Value != null)
-                {
-                    if (decimal.TryParse(row.Cells["TOTAL_AMOUNT"].Value.ToString(), out decimal amount))
-                    {
-                        totalSum += amount;
-                    }
-                }
-            }
-
-            // Set the total sum only in the last row of the "TOTAL_AMOUNT" column
-            int lastRowIndex = GridPlasada_Summary.Rows.Count - 1;
-            DataGridViewCell lastTotalAmountCell = GridPlasada_Summary.Rows[lastRowIndex].Cells["TOTAL_AMOUNT"];
-            if (lastTotalAmountCell.Value == null || lastTotalAmountCell.Value.ToString() == "")
-            {
-                lastTotalAmountCell.Value = totalSum.ToString();
-                lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
-
-
             }
         }
 
@@ -333,6 +309,28 @@ namespace FightingFeather
             textBox_CityTax.Text = cityTaxValue;
         }
 
+        private void GridPlasada_Summary_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                // Check if the entered value is not null or empty
+                if (!string.IsNullOrEmpty(e.FormattedValue?.ToString()))
+                {
+                    // Check if the entered value is a valid number
+                    if (!int.TryParse(e.FormattedValue.ToString(), out _))
+                    {
+                        // If the entered value is not a valid number, cancel the event
+                        GridPlasada_Summary.Rows[e.RowIndex].ErrorText = "Only numeric values are allowed.";
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        // Clear any error message if the entered value is a valid number
+                        GridPlasada_Summary.Rows[e.RowIndex].ErrorText = "";
+                    }
+                }
+            }
+        }
     }
 }
 

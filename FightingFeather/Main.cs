@@ -21,8 +21,10 @@ namespace FightingFeather
         private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
-        private string connectionString = "Data Source = munton_posted.db;Version=3;";
+        private SQLiteConnection connection;
+        private UserControl_Summa summa;
 
+        private string connectionString = "Data Source = munton_posted.db;Version=3;";
         private int currentTableNumber = 0;
 
         private const string DatabaseFileName = "dofox.db";
@@ -39,7 +41,10 @@ namespace FightingFeather
             // Get the application directory and set up the database path
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
             databasePath = Path.Combine(appDirectory, DatabaseFileName);
-           
+
+            connection = new SQLiteConnection("Data Source=munton_summa.db;Version=3;");
+            connection.Open();
+
             InitializeDatabase();
             UpdateFightIDs();
             RefreshGrid();
@@ -57,7 +62,7 @@ namespace FightingFeather
 
             //Subscribe to the CellPainting event
             GridPlasada_Entries.CellPainting += GridPlasada_Entries_CellPainting;
-         
+
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
 
@@ -84,6 +89,8 @@ namespace FightingFeather
             {
                 row.Height = 28;
             }
+
+            summa = new UserControl_Summa();
 
         }
 
@@ -120,7 +127,7 @@ namespace FightingFeather
                     [WINNERS EARN] INTEGER
                 );";
 
-                 
+
 
                     // Execute queries to create tables
                     using (var command = new SQLiteCommand(createPlasadaTableQuery, connection))
@@ -212,7 +219,7 @@ namespace FightingFeather
                             {
                                 PopulateGridRow(reader, connection);
                             }
-                        
+
                         }
                     }
                 }
@@ -220,7 +227,7 @@ namespace FightingFeather
 
             // Calculate the PAREHAS values after populating the DataGridView
             CalculateParehasValues();
-          
+
             SaveDataGridViewToJson();
 
         }
@@ -487,13 +494,13 @@ namespace FightingFeather
             CalculateAndDisplayDrawCancelTotal();
             CalculateAndDisplayFeeTotal();
             CalculateAndDisplayTotalPlasada();
-            CalculateTotalCityTax();        
+            CalculateTotalCityTax();
         }
 
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-        
+
             // Check if the current cell contains text
             if (e.Value != null && e.Value.GetType() == typeof(string))
             {
@@ -664,9 +671,9 @@ namespace FightingFeather
                 GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO" ||
                 GridPlasada_Entries.Columns[e.ColumnIndex].Name == "TOTAL_PLASADA" ||
                 GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||             
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN" ))
-               
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN"))
+
             {
                 e.PaintBackground(e.CellBounds, true);
 
@@ -970,9 +977,9 @@ namespace FightingFeather
                 userControl_CashBreakDown1.ReloadData();
 
                 GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
-              
+
                 MessageBox.Show("Successfully deleted.");
-               
+
             }
             else
             {
@@ -1056,9 +1063,10 @@ namespace FightingFeather
             }
         }
 
+
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)
         {
-         // Define your custom schema here
+            // Define your custom schema here
             string customSchema = @"
                 (
                     ""FIGHT"" INTEGER,
@@ -1083,13 +1091,14 @@ namespace FightingFeather
             currentTableNumber = GetNextTableNumber();
             DateTime currentDate = DateTime.Now.Date; // Get current date without time
             CreateCustomTable(currentTableNumber, customSchema, currentDate);
-
-            // Save data to database
+     
             SaveDataToDatabase(currentDate);
 
             SaveTableToJson();
 
+            userControl_Summa1.PerformSQLiteExport();
         }
+
 
         private int GetNextTableNumber()
         {

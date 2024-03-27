@@ -1664,5 +1664,14 @@ namespace FightingFeather
 
             userControl_Inventory1.ReloadData();
         }
+
+        private void button_Settings_Click(object sender, EventArgs e)
+        {
+
+            SettingsForm settingsForm = new SettingsForm();
+           
+            settingsForm.ShowDialog();
+
+        }
     }
 }

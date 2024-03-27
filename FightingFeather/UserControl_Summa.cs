@@ -218,7 +218,6 @@ namespace FightingFeather
 
         }
 
-
         public void SetDateText(string text)
         {
             textBox_Date.Text = text;
@@ -271,15 +270,13 @@ namespace FightingFeather
                 }
             }
 
-            // Set the total sum only in the last row of the "TOTAL_AMOUNT" column
+            // Update the total sum in the last row of the "TOTAL_AMOUNT" column
             int lastRowIndex = GridPlasada_Summary.Rows.Count - 1;
             DataGridViewCell lastTotalAmountCell = GridPlasada_Summary.Rows[lastRowIndex].Cells["TOTAL_AMOUNT"];
-            if (lastTotalAmountCell.Value == null || lastTotalAmountCell.Value.ToString() == "")
-            {
-                lastTotalAmountCell.Value = totalSum.ToString();
-                lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
-            }
+            lastTotalAmountCell.Value = totalSum.ToString(); // Update the value
+            lastTotalAmountCell.Style.ForeColor = Color.Red; // Set the foreground color to red
         }
+
 
         public void UpdateFightTotal(int totalFights)
         {

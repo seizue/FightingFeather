@@ -144,6 +144,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReminderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReminderForm.Designer.cs">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Earnings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +199,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReminderForm.resx">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Earnings.resx">
       <DependentUpon>UserControl_Earnings.cs</DependentUpon>

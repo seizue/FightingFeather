@@ -94,6 +94,11 @@ namespace FightingFeather
 
         }
 
+        public DateTime RaDateTimePickerValue
+        {
+            get { return raDateTimePicker1.Value; }
+        }
+
         private void InitializeDatabase()
         {
             // Check if the database file exists, create it if not
@@ -458,6 +463,7 @@ namespace FightingFeather
             userControl_Summa1.UpdateTotal(totalPlasada.ToString());
         }
 
+
         public void CalculateTotalCityTax()
         {
             int totalFights = 0;
@@ -480,7 +486,7 @@ namespace FightingFeather
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
 
             // Display the total city tax in the last row
-            lastRow.Cells["PAREHAS"].Value = $"City Tax: {totalCityTax}";
+            lastRow.Cells["PAGO"].Value = $"City Tax: {totalCityTax}";
 
             // Update textBox_CityTax with the calculated total city tax
             userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
@@ -864,7 +870,6 @@ namespace FightingFeather
         {
             EntryForm entryForm = new EntryForm(this, databasePath);
 
-
             // Hide the Save button in the EntryForm
             entryForm.ToggleUpdateButtonVisibility(false);
 
@@ -1064,40 +1069,59 @@ namespace FightingFeather
         }
 
 
-        private void button_CreateNewPlasada_Click(object sender, EventArgs e)
+
+        private void ExecutePlasadaCreation()
         {
             // Define your custom schema here
             string customSchema = @"
-                (
-                    ""FIGHT"" INTEGER,
-                    ""MERON"" TEXT,
-                    ""WALA"" TEXT,
-                    ""BET (M)"" INTEGER,
-                    ""BET (W)"" INTEGER,
-                    ""INITIAL BET DIFF"" INTEGER,
-                    ""PAREHAS"" INTEGER,
-                    ""PAGO"" INTEGER,
-                    ""WINNER"" TEXT,
-                    ""RATE AMOUNT"" INTEGER,
-                    ""RATE"" TEXT,
-                    ""LOGRO"" INTEGER,
-                    ""FEE"" REAL,
-                    ""TOTAL PLASADA"" INTEGER,
-                    ""RATE EARNINGS"" INTEGER,
-                    ""WINNERS EARN"" INTEGER,
-                    ""DATE"" INTEGER
-                )";
+        (
+            ""FIGHT"" INTEGER,
+            ""MERON"" TEXT,
+            ""WALA"" TEXT,
+            ""BET (M)"" INTEGER,
+            ""BET (W)"" INTEGER,
+            ""INITIAL BET DIFF"" INTEGER,
+            ""PAREHAS"" INTEGER,
+            ""PAGO"" INTEGER,
+            ""WINNER"" TEXT,
+            ""RATE AMOUNT"" INTEGER,
+            ""RATE"" TEXT,
+            ""LOGRO"" INTEGER,
+            ""FEE"" REAL,
+            ""TOTAL PLASADA"" INTEGER,
+            ""RATE EARNINGS"" INTEGER,
+            ""WINNERS EARN"" INTEGER,
+            ""DATE"" INTEGER
+        )";
 
             currentTableNumber = GetNextTableNumber();
             DateTime currentDate = DateTime.Now.Date; // Get current date without time
             CreateCustomTable(currentTableNumber, customSchema, currentDate);
-     
+
             SaveDataToDatabase(currentDate);
 
             SaveTableToJson();
 
             userControl_Summa1.PerformSQLiteExport();
         }
+
+
+        private void button_CreateNewPlasada_Click(object sender, EventArgs e)
+        {
+            // Create an instance of ReminderForm and pass the value of raDateTimePicker1
+            ReminderForm reminderForm = new ReminderForm(raDateTimePicker1.Value);
+
+            // Show ReminderForm as a dialog
+            DialogResult result = reminderForm.ShowDialog();
+
+            // Check if the form was closed with OK result
+            if (result == DialogResult.OK)
+            {
+                // Execute the action if the user clicked "Continue" in ReminderForm
+                ExecutePlasadaCreation();
+            }
+        }
+
 
 
         private int GetNextTableNumber()

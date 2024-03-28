@@ -31,6 +31,9 @@ namespace FightingFeather
         private string databasePath;
         private DataTable dataTable;
 
+        private SettingsForm settingsForm;
+        private ReminderForm reminderForm;
+
         public Main()
         {
             InitializeComponent();
@@ -91,6 +94,17 @@ namespace FightingFeather
             }
 
             summa = new UserControl_Summa();
+
+            settingsForm = new SettingsForm();
+            settingsForm.ReminderToggleChanged += SettingsForm_ReminderToggleChanged;
+
+            // Set the initial window state based on the saved value
+            string savedWindowState = Properties.Settings.Default.MainFormWindowState;
+            if (!string.IsNullOrEmpty(savedWindowState) && Enum.IsDefined(typeof(FormWindowState), savedWindowState))
+            {
+                // Parse the saved value and set the window state
+                this.WindowState = (FormWindowState)Enum.Parse(typeof(FormWindowState), savedWindowState);
+            }
 
         }
 
@@ -1108,23 +1122,58 @@ namespace FightingFeather
 
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)
         {
-            // Create an instance of ReminderForm and pass the value of raDateTimePicker1
-            ReminderForm reminderForm = new ReminderForm(raDateTimePicker1.Value);
-
-            // Show ReminderForm as a dialog
-            DialogResult result = reminderForm.ShowDialog();
-
-            // Check if the form was closed with OK result
-            if (result == DialogResult.OK)
+            // Check if the Reminder toggle is off
+            if (!Properties.Settings.Default.ReminderEnabled)
             {
-                // Execute the action if the user clicked "Continue" in ReminderForm
+                // Create an instance of ReminderForm and pass the value of raDateTimePicker1
+                ReminderForm reminderForm = new ReminderForm(raDateTimePicker1.Value);
+
+                // Show ReminderForm as a dialog
+                DialogResult result = reminderForm.ShowDialog();
+
+                // Check if the form was closed with OK result
+                if (result == DialogResult.OK)
+                {
+                    // Execute the action if the user clicked "Continue" in ReminderForm
+                    ExecutePlasadaCreation();
+                }
+            }
+            else
+            {
+                // If Reminder is enabled, directly execute the action
                 ExecutePlasadaCreation();
             }
+
         }
 
+        private void SettingsForm_ReminderToggleChanged(object sender, bool isChecked)
+        {
+            // Show or hide the ReminderForm based on the toggle state received from the settings form
+            if (isChecked)
+            {
+                // Create and show the ReminderForm only if it's not created yet or disposed
+                if (reminderForm == null || reminderForm.IsDisposed)
+                {
+                    reminderForm = new ReminderForm(raDateTimePicker1.Value);
+                    reminderForm.Show();
+                }
+                else
+                {
+                    reminderForm.Show();
+                }
+            }
+            else
+            {
+                // Hide the ReminderForm if it's visible
+                if (reminderForm != null && !reminderForm.IsDisposed && reminderForm.Visible)
+                {
+                    reminderForm.Hide();
+                }
+            }
+    }
 
 
-        private int GetNextTableNumber()
+    private int GetNextTableNumber()
         {
             // Fetch the highest existing table number from the database
             int nextTableNumber = 1;
@@ -1672,6 +1721,13 @@ namespace FightingFeather
            
             settingsForm.ShowDialog();
 
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            // Save the current window state whenever it changes
+            Properties.Settings.Default.MainFormWindowState = this.WindowState.ToString();
+            Properties.Settings.Default.Save();
         }
     }
 }

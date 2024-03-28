@@ -214,5 +214,29 @@ namespace FightingFeather.Properties {
                 this["ColumnVisibility_SETTINGS"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReminderEnabled {
+            get {
+                return ((bool)(this["ReminderEnabled"]));
+            }
+            set {
+                this["ReminderEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string MainFormWindowState {
+            get {
+                return ((string)(this["MainFormWindowState"]));
+            }
+            set {
+                this["MainFormWindowState"] = value;
+            }
+        }
     }
 }

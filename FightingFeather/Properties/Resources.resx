@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="feather_96px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feather_96px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="filter_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filter_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,11 +130,11 @@
   <data name="handcart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\handcart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="export_24pxS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\export_24pxS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="sales_performance_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sales_performance_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="export_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,23 +157,11 @@
   <data name="binoculars_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\binoculars_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="print_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cash_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="battle_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\battle_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="csv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\csv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="detective_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\detective_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="line_style_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\line_style_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clear_cart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear_cart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,6 +174,9 @@
   </data>
   <data name="information_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plasada_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plasada_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="send_file_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\send_file_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,17 +193,11 @@
   <data name="data_backup_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_backup_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list_19px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list_19px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="birdhouse_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\birdhouse_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="feather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feather.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="feather_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feather_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="info_squared_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info_squared_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,11 +211,8 @@
   <data name="Cheque_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cheque_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="profit_analysis_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profit_analysis_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="export_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\export_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Licence_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Licence_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="smart_home_checked_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\smart_home_checked_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,7 +220,7 @@
   <data name="money_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\money_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plasada_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plasada_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="File Configuration_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File Configuration_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

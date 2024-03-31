@@ -170,10 +170,10 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(236, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 75);
+            this.label2.Size = new System.Drawing.Size(145, 75);
             this.label2.TabIndex = 346;
-            this.label2.Text = "Are you sure you want to \r\ncontinue?\r\n\r\nReminder! You won\'t be  able to\r\nEdit onc" +
-    "e posted!\r\n";
+            this.label2.Text = "Are you sure you want to \r\ncontinue?\r\n\r\nYou won\'t be able to edit \r\nonce it\'s pos" +
+    "ted!";
             // 
             // metroPanel1
             // 

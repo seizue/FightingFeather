@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_Help = new System.Windows.Forms.Button();
-            this.button_License = new System.Windows.Forms.Button();
-            this.button_General = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +39,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comBox_WindowState = new MetroFramework.Controls.MetroComboBox();
             this.metroToggle_Reminder = new MetroFramework.Controls.MetroToggle();
+            this.button_Help = new System.Windows.Forms.Button();
+            this.button_License = new System.Windows.Forms.Button();
+            this.button_General = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,65 +57,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(219, 573);
             this.panel1.TabIndex = 0;
-            // 
-            // button_Help
-            // 
-            this.button_Help.BackColor = System.Drawing.Color.Transparent;
-            this.button_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Help.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Help.FlatAppearance.BorderSize = 0;
-            this.button_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Help.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Help.Image = global::FightingFeather.Properties.Resources.send_file_24px;
-            this.button_Help.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Help.Location = new System.Drawing.Point(23, 111);
-            this.button_Help.Name = "button_Help";
-            this.button_Help.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Help.Size = new System.Drawing.Size(113, 31);
-            this.button_Help.TabIndex = 335;
-            this.button_Help.Text = "HELP";
-            this.button_Help.UseVisualStyleBackColor = true;
-            // 
-            // button_License
-            // 
-            this.button_License.BackColor = System.Drawing.Color.Transparent;
-            this.button_License.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_License.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_License.FlatAppearance.BorderSize = 0;
-            this.button_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_License.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_License.Image = global::FightingFeather.Properties.Resources.send_file_24px;
-            this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_License.Location = new System.Drawing.Point(23, 74);
-            this.button_License.Name = "button_License";
-            this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_License.Size = new System.Drawing.Size(130, 31);
-            this.button_License.TabIndex = 334;
-            this.button_License.Text = "LICENSE";
-            this.button_License.UseVisualStyleBackColor = true;
-            this.button_License.Click += new System.EventHandler(this.button_License_Click);
-            // 
-            // button_General
-            // 
-            this.button_General.BackColor = System.Drawing.Color.Transparent;
-            this.button_General.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_General.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_General.FlatAppearance.BorderSize = 0;
-            this.button_General.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_General.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_General.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_General.Image = global::FightingFeather.Properties.Resources.send_file_24px;
-            this.button_General.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_General.Location = new System.Drawing.Point(23, 37);
-            this.button_General.Name = "button_General";
-            this.button_General.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_General.Size = new System.Drawing.Size(134, 31);
-            this.button_General.TabIndex = 333;
-            this.button_General.Text = "GENERAL";
-            this.button_General.UseVisualStyleBackColor = true;
-            this.button_General.Click += new System.EventHandler(this.button_General_Click);
             // 
             // label1
             // 
@@ -254,6 +195,65 @@
             this.metroToggle_Reminder.Text = "Off";
             this.metroToggle_Reminder.UseSelectable = true;
             this.metroToggle_Reminder.CheckedChanged += new System.EventHandler(this.metroToggle_Reminder_CheckedChanged);
+            // 
+            // button_Help
+            // 
+            this.button_Help.BackColor = System.Drawing.Color.Transparent;
+            this.button_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Help.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Help.FlatAppearance.BorderSize = 0;
+            this.button_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Help.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Help.Image = global::FightingFeather.Properties.Resources.help_24px;
+            this.button_Help.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Help.Location = new System.Drawing.Point(23, 111);
+            this.button_Help.Name = "button_Help";
+            this.button_Help.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Help.Size = new System.Drawing.Size(113, 31);
+            this.button_Help.TabIndex = 335;
+            this.button_Help.Text = "HELP";
+            this.button_Help.UseVisualStyleBackColor = true;
+            // 
+            // button_License
+            // 
+            this.button_License.BackColor = System.Drawing.Color.Transparent;
+            this.button_License.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_License.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_License.FlatAppearance.BorderSize = 0;
+            this.button_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_License.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_License.Image = global::FightingFeather.Properties.Resources.Licence_24px;
+            this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_License.Location = new System.Drawing.Point(23, 74);
+            this.button_License.Name = "button_License";
+            this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_License.Size = new System.Drawing.Size(130, 31);
+            this.button_License.TabIndex = 334;
+            this.button_License.Text = "LICENSE";
+            this.button_License.UseVisualStyleBackColor = true;
+            this.button_License.Click += new System.EventHandler(this.button_License_Click);
+            // 
+            // button_General
+            // 
+            this.button_General.BackColor = System.Drawing.Color.Transparent;
+            this.button_General.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_General.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_General.FlatAppearance.BorderSize = 0;
+            this.button_General.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_General.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_General.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_General.Image = global::FightingFeather.Properties.Resources.File_Configuration_24px;
+            this.button_General.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_General.Location = new System.Drawing.Point(23, 37);
+            this.button_General.Name = "button_General";
+            this.button_General.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_General.Size = new System.Drawing.Size(134, 31);
+            this.button_General.TabIndex = 333;
+            this.button_General.Text = "GENERAL";
+            this.button_General.UseVisualStyleBackColor = true;
+            this.button_General.Click += new System.EventHandler(this.button_General_Click);
             // 
             // SettingsForm
             // 

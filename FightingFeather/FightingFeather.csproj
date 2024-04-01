@@ -421,6 +421,12 @@
   <ItemGroup>
     <None Include="Resources\File Configuration_24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gmail Logo_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

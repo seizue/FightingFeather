@@ -243,6 +243,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gmail_Logo_24px {
+            get {
+                object obj = ResourceManager.GetObject("Gmail Logo_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap handcart_24px {
             get {
                 object obj = ResourceManager.GetObject("handcart_24px", resourceCulture);
@@ -316,6 +326,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap new_copy_24px {
             get {
                 object obj = ResourceManager.GetObject("new_copy_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phone_24px {
+            get {
+                object obj = ResourceManager.GetObject("phone_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

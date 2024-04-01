@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             this.metroPanel29.HorizontalScrollbarBarColor = true;
             this.metroPanel29.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel29.HorizontalScrollbarSize = 10;
-            this.metroPanel29.Location = new System.Drawing.Point(24, 185);
+            this.metroPanel29.Location = new System.Drawing.Point(24, 170);
             this.metroPanel29.Name = "metroPanel29";
             this.metroPanel29.Size = new System.Drawing.Size(150, 1);
             this.metroPanel29.TabIndex = 340;
@@ -66,7 +67,7 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(24, 131);
+            this.metroPanel2.Location = new System.Drawing.Point(24, 116);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(150, 1);
             this.metroPanel2.TabIndex = 337;
@@ -87,10 +88,10 @@
             this.button_Continue.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.button_Continue.ForeColor = System.Drawing.Color.MintCream;
             this.button_Continue.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Continue.Location = new System.Drawing.Point(239, 166);
+            this.button_Continue.Location = new System.Drawing.Point(396, 175);
             this.button_Continue.Name = "button_Continue";
             this.button_Continue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Continue.Size = new System.Drawing.Size(174, 29);
+            this.button_Continue.Size = new System.Drawing.Size(127, 29);
             this.button_Continue.TabIndex = 336;
             this.button_Continue.Text = "CONTINUE";
             this.button_Continue.UseVisualStyleBackColor = false;
@@ -99,7 +100,7 @@
             // button_Cancel
             // 
             this.button_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Cancel.BackColor = System.Drawing.Color.Silver;
+            this.button_Cancel.BackColor = System.Drawing.Color.Gray;
             this.button_Cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_Cancel.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.button_Cancel.FlatAppearance.BorderSize = 2;
@@ -109,10 +110,10 @@
             this.button_Cancel.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.button_Cancel.ForeColor = System.Drawing.Color.White;
             this.button_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Cancel.Location = new System.Drawing.Point(239, 206);
+            this.button_Cancel.Location = new System.Drawing.Point(241, 175);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Cancel.Size = new System.Drawing.Size(174, 29);
+            this.button_Cancel.Size = new System.Drawing.Size(127, 29);
             this.button_Cancel.TabIndex = 341;
             this.button_Cancel.Text = "CANCEL";
             this.button_Cancel.UseVisualStyleBackColor = false;
@@ -123,7 +124,7 @@
             this.label_Date.AutoSize = true;
             this.label_Date.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Date.ForeColor = System.Drawing.Color.Azure;
-            this.label_Date.Location = new System.Drawing.Point(51, 147);
+            this.label_Date.Location = new System.Drawing.Point(51, 132);
             this.label_Date.Name = "label_Date";
             this.label_Date.Size = new System.Drawing.Size(98, 23);
             this.label_Date.TabIndex = 342;
@@ -133,7 +134,7 @@
             // pictureLogo
             // 
             this.pictureLogo.Image = global::FightingFeather.Properties.Resources.feather;
-            this.pictureLogo.Location = new System.Drawing.Point(65, 44);
+            this.pictureLogo.Location = new System.Drawing.Point(65, 29);
             this.pictureLogo.Name = "pictureLogo";
             this.pictureLogo.Size = new System.Drawing.Size(67, 71);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,13 +144,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(146)))));
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureLogo);
             this.panel1.Controls.Add(this.metroPanel2);
             this.panel1.Controls.Add(this.label_Date);
             this.panel1.Controls.Add(this.metroPanel29);
             this.panel1.Location = new System.Drawing.Point(0, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 290);
+            this.panel1.Size = new System.Drawing.Size(200, 253);
             this.panel1.TabIndex = 344;
             // 
             // label1
@@ -168,12 +170,13 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(236, 70);
+            this.label2.Location = new System.Drawing.Point(238, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 75);
+            this.label2.Size = new System.Drawing.Size(236, 45);
             this.label2.TabIndex = 346;
-            this.label2.Text = "Are you sure you want to \r\ncontinue?\r\n\r\nYou won\'t be able to edit \r\nonce it\'s pos" +
-    "ted!";
+            this.label2.Text = "Are you sure you want to continue?\r\n\r\nYou won\'t be able to edit  once it\'s posted" +
+    "!";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // metroPanel1
             // 
@@ -192,11 +195,23 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            this.label3.Location = new System.Drawing.Point(51, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.TabIndex = 344;
+            this.label3.Text = "PREVIEW DATE SAVE";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ReminderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 291);
+            this.ClientSize = new System.Drawing.Size(585, 250);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -225,5 +240,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.Label label3;
     }
 }

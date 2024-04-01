@@ -73,14 +73,30 @@ namespace FightingFeather
             button_General.ForeColor = clickedColor;
             button_License.ForeColor = defaultColor;
             button_Help.ForeColor = defaultColor;
-        }
 
+            userControl_SettingsLicense1.Visible = false;
+            userControl_SettingsHelp1.Visible = false;
+        }
 
         private void button_License_Click(object sender, EventArgs e)
         {
             button_License.ForeColor = clickedColor;
             button_General.ForeColor = defaultColor;
             button_Help.ForeColor = defaultColor;
+
+            userControl_SettingsLicense1.Visible = true;
+            userControl_SettingsHelp1.Visible = false;
+        }
+
+        private void button_Help_Click(object sender, EventArgs e)
+        {
+            button_Help.ForeColor = clickedColor;
+            button_General.ForeColor = defaultColor;
+            button_License.ForeColor = defaultColor;
+
+            userControl_SettingsHelp1.Visible = true;
+            userControl_SettingsLicense1.Visible = false;
+
         }
     }
 }

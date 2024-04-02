@@ -561,6 +561,18 @@ namespace FightingFeather
                 e.Handled = true;
             }
         }
+
+        private void metroTile_ClaimMeron_Click(object sender, EventArgs e)
+        {
+            ClaimStabMeronForm claimMeron = new ClaimStabMeronForm();
+            claimMeron.ShowDialog();
+        }
+
+        private void metroTile_ClaimWala_Click(object sender, EventArgs e)
+        {
+            ClaimStabWalaForm claimWala = new ClaimStabWalaForm();
+            claimWala.ShowDialog();
+        }
     }
 
 }

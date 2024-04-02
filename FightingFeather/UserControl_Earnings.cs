@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Drawing.Printing;
 
 namespace FightingFeather
 {
     public partial class UserControl_Earnings : UserControl
     {
+        private PrintDocument pd = new PrintDocument();
         public UserControl_Earnings()
         {
             InitializeComponent();
@@ -25,6 +27,8 @@ namespace FightingFeather
             GridPlasada_Earnings.CellFormatting += GridPlasada_Earnings_CellFormatting;
             GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
             GridPlasada_Earnings.SelectionChanged += GridPlasada_Earnings_SelectionChanged;
+
+         
 
             foreach (DataGridViewRow row in GridPlasada_Earnings.Rows)
             {
@@ -336,7 +340,32 @@ namespace FightingFeather
 
         private void metroTile_PrintReceipt_Click(object sender, EventArgs e)
         {
+            pd.PrintPage += new PrintPageEventHandler(PrintPage);
+            pd.QueryPageSettings += new QueryPageSettingsEventHandler(QueryPageSettings);
 
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print();
+            }
+        }
+
+        private void PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Draw the panel content at its original size
+            using (Bitmap bmp = new Bitmap(Panel_PrintReceipt.Width, Panel_PrintReceipt.Height))
+            {
+                Panel_PrintReceipt.DrawToBitmap(bmp, new Rectangle(0, 0, Panel_PrintReceipt.Width, Panel_PrintReceipt.Height));
+                e.Graphics.DrawImage(bmp, e.MarginBounds.Left, e.MarginBounds.Top);
+            }
+        }
+
+        private void QueryPageSettings(object sender, QueryPageSettingsEventArgs e)
+        {
+            // Adjust the paper size here
+            e.PageSettings.PaperSize = new PaperSize("CustomSize", 294, 421);
         }
     }
 

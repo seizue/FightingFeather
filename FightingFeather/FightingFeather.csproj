@@ -116,6 +116,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaimStabMeronForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaimStabMeronForm.Designer.cs">
+      <DependentUpon>ClaimStabMeronForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClaimStabWalaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaimStabWalaForm.Designer.cs">
+      <DependentUpon>ClaimStabWalaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     <Compile Include="ViewMuntonForm.Designer.cs">
       <DependentUpon>ViewMuntonForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClaimStabMeronForm.resx">
+      <DependentUpon>ClaimStabMeronForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClaimStabWalaForm.resx">
+      <DependentUpon>ClaimStabWalaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EntryForm.resx">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +444,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\phone_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

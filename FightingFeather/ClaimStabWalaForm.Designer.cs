@@ -49,6 +49,7 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +66,7 @@
             this.button_SaveUpdate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SaveUpdate.ForeColor = System.Drawing.Color.MintCream;
             this.button_SaveUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_SaveUpdate.Location = new System.Drawing.Point(23, 226);
+            this.button_SaveUpdate.Location = new System.Drawing.Point(23, 234);
             this.button_SaveUpdate.Name = "button_SaveUpdate";
             this.button_SaveUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_SaveUpdate.Size = new System.Drawing.Size(279, 29);
@@ -78,7 +79,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(23, 40);
+            this.label5.Location = new System.Drawing.Point(23, 44);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 17);
             this.label5.TabIndex = 381;
@@ -87,7 +88,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.metroPanel1);
-            this.panel1.Location = new System.Drawing.Point(23, 71);
+            this.panel1.Location = new System.Drawing.Point(23, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(279, 144);
             this.panel1.TabIndex = 380;
@@ -131,9 +132,9 @@
             this.metroPanel9.HorizontalScrollbarBarColor = true;
             this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel9.HorizontalScrollbarSize = 10;
-            this.metroPanel9.Location = new System.Drawing.Point(72, 68);
+            this.metroPanel9.Location = new System.Drawing.Point(72, 65);
             this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(1, 72);
+            this.metroPanel9.Size = new System.Drawing.Size(1, 78);
             this.metroPanel9.TabIndex = 379;
             this.metroPanel9.UseCustomBackColor = true;
             this.metroPanel9.UseStyleColors = true;
@@ -343,7 +344,7 @@
             // 
             this.metroPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel2.BackColor = System.Drawing.Color.Gainsboro;
             this.metroPanel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
@@ -363,17 +364,37 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 10F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(122, 40);
+            this.label6.Location = new System.Drawing.Point(122, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 383;
             this.label6.Text = "[WALA]";
             // 
+            // metroPanel10
+            // 
+            this.metroPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel10.BackColor = System.Drawing.Color.BurlyWood;
+            this.metroPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel10.HorizontalScrollbarBarColor = true;
+            this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel10.HorizontalScrollbarSize = 10;
+            this.metroPanel10.Location = new System.Drawing.Point(23, 69);
+            this.metroPanel10.Name = "metroPanel10";
+            this.metroPanel10.Size = new System.Drawing.Size(279, 4);
+            this.metroPanel10.TabIndex = 386;
+            this.metroPanel10.UseCustomBackColor = true;
+            this.metroPanel10.UseStyleColors = true;
+            this.metroPanel10.VerticalScrollbarBarColor = true;
+            this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel10.VerticalScrollbarSize = 10;
+            // 
             // ClaimStabWalaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 295);
+            this.ClientSize = new System.Drawing.Size(325, 317);
+            this.Controls.Add(this.metroPanel10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button_SaveUpdate);
             this.Controls.Add(this.label5);
@@ -381,6 +402,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ClaimStabWalaForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.panel1.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
@@ -413,5 +435,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private System.Windows.Forms.Label label6;
+        private MetroFramework.Controls.MetroPanel metroPanel10;
     }
 }

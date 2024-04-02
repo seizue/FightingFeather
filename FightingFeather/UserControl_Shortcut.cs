@@ -573,6 +573,12 @@ namespace FightingFeather
             ClaimStabWalaForm claimWala = new ClaimStabWalaForm();
             claimWala.ShowDialog();
         }
+
+        private void metroTile_PrintMunton_Click(object sender, EventArgs e)
+        {
+            MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
+            muntonPrintForm.ShowDialog();
+        }
     }
 
 }

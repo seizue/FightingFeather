@@ -134,6 +134,12 @@
     <Compile Include="InspectionForm.Designer.cs">
       <DependentUpon>InspectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MuntonPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuntonPrintForm.Designer.cs">
+      <DependentUpon>MuntonPrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuntonPrintForm.resx">
+      <DependentUpon>MuntonPrintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

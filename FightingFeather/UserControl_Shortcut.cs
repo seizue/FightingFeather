@@ -224,10 +224,7 @@ namespace FightingFeather
                         DataGridViewTextBoxCell cell7 = new DataGridViewTextBoxCell();
                         cell7.Value = obj["PAREHAS"];
                         row.Cells.Add(cell7);
-
-                        DataGridViewTextBoxCell cell8 = new DataGridViewTextBoxCell();
-                        cell8.Value = obj["LOGRO"];
-                        row.Cells.Add(cell8);
+               
 
                         // Add the row to the DataGridView
                         GridPlasada_Shortcut.Rows.Add(row);
@@ -611,8 +608,6 @@ namespace FightingFeather
 
             GridPlasada_Shortcut.Columns["INITIAL_BET_DIF"].Visible = false;
             GridPlasada_Shortcut.Columns["PAREHAS"].Visible = false;
-            GridPlasada_Shortcut.Columns["LOGRO"].Visible = false;
-            GridPlasada_Shortcut.Columns["RATE"].Visible = false;
 
         }
 
@@ -630,8 +625,7 @@ namespace FightingFeather
 
             GridPlasada_Shortcut.Columns["INITIAL_BET_DIF"].Visible = true;
             GridPlasada_Shortcut.Columns["PAREHAS"].Visible = true;
-            GridPlasada_Shortcut.Columns["LOGRO"].Visible = true;
-            GridPlasada_Shortcut.Columns["RATE"].Visible = true;
+        
         }
     }
 

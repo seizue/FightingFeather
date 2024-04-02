@@ -82,8 +82,15 @@
             this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel_Border = new MetroFramework.Controls.MetroPanel();
+            this.button_Summa = new System.Windows.Forms.Button();
+            this.button_Plasada = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
+            this.button_Settings = new System.Windows.Forms.Button();
+            this.pictureLogo = new System.Windows.Forms.PictureBox();
+            this.button_Shortcut = new System.Windows.Forms.Button();
+            this.button_Inventory = new System.Windows.Forms.Button();
+            this.button_Home = new System.Windows.Forms.Button();
             this.panel_Summary = new System.Windows.Forms.Panel();
             this.panel_Shortcut = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -93,28 +100,22 @@
             this.button_Update = new System.Windows.Forms.Button();
             this.button_New = new System.Windows.Forms.Button();
             this.button_Receipt = new System.Windows.Forms.Button();
-            this.button_Summa = new System.Windows.Forms.Button();
-            this.button_Plasada = new System.Windows.Forms.Button();
-            this.button_Settings = new System.Windows.Forms.Button();
-            this.pictureLogo = new System.Windows.Forms.PictureBox();
-            this.button_Shortcut = new System.Windows.Forms.Button();
-            this.button_Inventory = new System.Windows.Forms.Button();
-            this.button_Home = new System.Windows.Forms.Button();
             this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
             this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
             this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
             this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
+            this.button_Admin = new System.Windows.Forms.Button();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).BeginInit();
             this.metroPanel_Border.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panel_Summary.SuspendLayout();
             this.panel_Shortcut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel19
@@ -710,9 +711,52 @@
             this.metroPanel_Border.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel_Border.VerticalScrollbarSize = 10;
             // 
+            // button_Summa
+            // 
+            this.button_Summa.BackColor = System.Drawing.Color.Transparent;
+            this.button_Summa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Summa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Summa.FlatAppearance.BorderSize = 0;
+            this.button_Summa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Summa.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Summa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Summa.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
+            this.button_Summa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Summa.Location = new System.Drawing.Point(380, 3);
+            this.button_Summa.Name = "button_Summa";
+            this.button_Summa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Summa.Size = new System.Drawing.Size(103, 29);
+            this.button_Summa.TabIndex = 206;
+            this.button_Summa.Text = "SUMMARY";
+            this.button_Summa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Summa.UseVisualStyleBackColor = false;
+            this.button_Summa.Click += new System.EventHandler(this.button_Summa_Click);
+            // 
+            // button_Plasada
+            // 
+            this.button_Plasada.BackColor = System.Drawing.Color.Transparent;
+            this.button_Plasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Plasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Plasada.FlatAppearance.BorderSize = 0;
+            this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.plasada_24px;
+            this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Plasada.Location = new System.Drawing.Point(207, 5);
+            this.button_Plasada.Name = "button_Plasada";
+            this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Plasada.Size = new System.Drawing.Size(98, 29);
+            this.button_Plasada.TabIndex = 205;
+            this.button_Plasada.Text = "PLASADA";
+            this.button_Plasada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Plasada.UseVisualStyleBackColor = false;
+            this.button_Plasada.Click += new System.EventHandler(this.button_Plasada_Click);
+            // 
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.White;
+            this.metroPanel1.Controls.Add(this.button_Admin);
             this.metroPanel1.Controls.Add(this.metroPanel6);
             this.metroPanel1.Controls.Add(this.button_Settings);
             this.metroPanel1.Controls.Add(this.pictureLogo);
@@ -754,6 +798,99 @@
             this.metroPanel6.VerticalScrollbarBarColor = true;
             this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel6.VerticalScrollbarSize = 10;
+            // 
+            // button_Settings
+            // 
+            this.button_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Settings.BackColor = System.Drawing.Color.Transparent;
+            this.button_Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Settings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Settings.FlatAppearance.BorderSize = 0;
+            this.button_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Settings.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Settings.Image = global::FightingFeather.Properties.Resources.settings_24px;
+            this.button_Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Settings.Location = new System.Drawing.Point(5, 563);
+            this.button_Settings.Name = "button_Settings";
+            this.button_Settings.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Settings.Size = new System.Drawing.Size(140, 29);
+            this.button_Settings.TabIndex = 256;
+            this.button_Settings.Text = "SETTINGS";
+            this.button_Settings.UseVisualStyleBackColor = true;
+            this.button_Settings.Click += new System.EventHandler(this.button_Settings_Click);
+            // 
+            // pictureLogo
+            // 
+            this.pictureLogo.Image = global::FightingFeather.Properties.Resources.feather;
+            this.pictureLogo.Location = new System.Drawing.Point(37, 3);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(67, 71);
+            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureLogo.TabIndex = 255;
+            this.pictureLogo.TabStop = false;
+            // 
+            // button_Shortcut
+            // 
+            this.button_Shortcut.BackColor = System.Drawing.Color.Transparent;
+            this.button_Shortcut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Shortcut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Shortcut.FlatAppearance.BorderSize = 0;
+            this.button_Shortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Shortcut.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Shortcut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_Shortcut.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
+            this.button_Shortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Shortcut.Location = new System.Drawing.Point(6, 126);
+            this.button_Shortcut.Name = "button_Shortcut";
+            this.button_Shortcut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Shortcut.Size = new System.Drawing.Size(140, 29);
+            this.button_Shortcut.TabIndex = 204;
+            this.button_Shortcut.Text = "             SHORTCUT";
+            this.button_Shortcut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Shortcut.UseVisualStyleBackColor = false;
+            this.button_Shortcut.Click += new System.EventHandler(this.button_Shortcut_Click);
+            // 
+            // button_Inventory
+            // 
+            this.button_Inventory.BackColor = System.Drawing.Color.Transparent;
+            this.button_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Inventory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Inventory.FlatAppearance.BorderSize = 0;
+            this.button_Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Inventory.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Inventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Inventory.Image = global::FightingFeather.Properties.Resources.handcart_24px;
+            this.button_Inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Inventory.Location = new System.Drawing.Point(5, 231);
+            this.button_Inventory.Name = "button_Inventory";
+            this.button_Inventory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Inventory.Size = new System.Drawing.Size(140, 29);
+            this.button_Inventory.TabIndex = 206;
+            this.button_Inventory.Text = "INVENTORY";
+            this.button_Inventory.UseVisualStyleBackColor = true;
+            this.button_Inventory.Click += new System.EventHandler(this.button_Inventory_Click);
+            // 
+            // button_Home
+            // 
+            this.button_Home.BackColor = System.Drawing.Color.Transparent;
+            this.button_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Home.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Home.FlatAppearance.BorderSize = 0;
+            this.button_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Home.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Home.Image = global::FightingFeather.Properties.Resources.birdhouse_24px;
+            this.button_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Home.Location = new System.Drawing.Point(6, 178);
+            this.button_Home.Name = "button_Home";
+            this.button_Home.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Home.Size = new System.Drawing.Size(140, 29);
+            this.button_Home.TabIndex = 205;
+            this.button_Home.Text = "                    HOME";
+            this.button_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Home.UseVisualStyleBackColor = true;
+            this.button_Home.Click += new System.EventHandler(this.button_Home_Click);
             // 
             // panel_Summary
             // 
@@ -904,141 +1041,6 @@
             this.button_Receipt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Receipt.UseVisualStyleBackColor = false;
             // 
-            // button_Summa
-            // 
-            this.button_Summa.BackColor = System.Drawing.Color.Transparent;
-            this.button_Summa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Summa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Summa.FlatAppearance.BorderSize = 0;
-            this.button_Summa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Summa.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Summa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Summa.Image = global::FightingFeather.Properties.Resources.Cheque_24px;
-            this.button_Summa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Summa.Location = new System.Drawing.Point(380, 3);
-            this.button_Summa.Name = "button_Summa";
-            this.button_Summa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Summa.Size = new System.Drawing.Size(103, 29);
-            this.button_Summa.TabIndex = 206;
-            this.button_Summa.Text = "SUMMARY";
-            this.button_Summa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Summa.UseVisualStyleBackColor = false;
-            this.button_Summa.Click += new System.EventHandler(this.button_Summa_Click);
-            // 
-            // button_Plasada
-            // 
-            this.button_Plasada.BackColor = System.Drawing.Color.Transparent;
-            this.button_Plasada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Plasada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Plasada.FlatAppearance.BorderSize = 0;
-            this.button_Plasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Plasada.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Plasada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_Plasada.Image = global::FightingFeather.Properties.Resources.plasada_24px;
-            this.button_Plasada.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Plasada.Location = new System.Drawing.Point(207, 5);
-            this.button_Plasada.Name = "button_Plasada";
-            this.button_Plasada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Plasada.Size = new System.Drawing.Size(98, 29);
-            this.button_Plasada.TabIndex = 205;
-            this.button_Plasada.Text = "PLASADA";
-            this.button_Plasada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Plasada.UseVisualStyleBackColor = false;
-            this.button_Plasada.Click += new System.EventHandler(this.button_Plasada_Click);
-            // 
-            // button_Settings
-            // 
-            this.button_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Settings.BackColor = System.Drawing.Color.Transparent;
-            this.button_Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Settings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Settings.FlatAppearance.BorderSize = 0;
-            this.button_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Settings.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Settings.Image = global::FightingFeather.Properties.Resources.settings_24px;
-            this.button_Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Settings.Location = new System.Drawing.Point(5, 563);
-            this.button_Settings.Name = "button_Settings";
-            this.button_Settings.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Settings.Size = new System.Drawing.Size(140, 29);
-            this.button_Settings.TabIndex = 256;
-            this.button_Settings.Text = "SETTINGS";
-            this.button_Settings.UseVisualStyleBackColor = true;
-            this.button_Settings.Click += new System.EventHandler(this.button_Settings_Click);
-            // 
-            // pictureLogo
-            // 
-            this.pictureLogo.Image = global::FightingFeather.Properties.Resources.feather;
-            this.pictureLogo.Location = new System.Drawing.Point(37, 3);
-            this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(67, 71);
-            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureLogo.TabIndex = 255;
-            this.pictureLogo.TabStop = false;
-            // 
-            // button_Shortcut
-            // 
-            this.button_Shortcut.BackColor = System.Drawing.Color.Transparent;
-            this.button_Shortcut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Shortcut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Shortcut.FlatAppearance.BorderSize = 0;
-            this.button_Shortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Shortcut.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Shortcut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_Shortcut.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
-            this.button_Shortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Shortcut.Location = new System.Drawing.Point(6, 126);
-            this.button_Shortcut.Name = "button_Shortcut";
-            this.button_Shortcut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Shortcut.Size = new System.Drawing.Size(140, 29);
-            this.button_Shortcut.TabIndex = 204;
-            this.button_Shortcut.Text = "             SHORTCUT";
-            this.button_Shortcut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Shortcut.UseVisualStyleBackColor = false;
-            this.button_Shortcut.Click += new System.EventHandler(this.button_Shortcut_Click);
-            // 
-            // button_Inventory
-            // 
-            this.button_Inventory.BackColor = System.Drawing.Color.Transparent;
-            this.button_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Inventory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Inventory.FlatAppearance.BorderSize = 0;
-            this.button_Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Inventory.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Inventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Inventory.Image = global::FightingFeather.Properties.Resources.handcart_24px;
-            this.button_Inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Inventory.Location = new System.Drawing.Point(5, 231);
-            this.button_Inventory.Name = "button_Inventory";
-            this.button_Inventory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Inventory.Size = new System.Drawing.Size(140, 29);
-            this.button_Inventory.TabIndex = 206;
-            this.button_Inventory.Text = "INVENTORY";
-            this.button_Inventory.UseVisualStyleBackColor = true;
-            this.button_Inventory.Click += new System.EventHandler(this.button_Inventory_Click);
-            // 
-            // button_Home
-            // 
-            this.button_Home.BackColor = System.Drawing.Color.Transparent;
-            this.button_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Home.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Home.FlatAppearance.BorderSize = 0;
-            this.button_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Home.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Home.Image = global::FightingFeather.Properties.Resources.birdhouse_24px;
-            this.button_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Home.Location = new System.Drawing.Point(6, 178);
-            this.button_Home.Name = "button_Home";
-            this.button_Home.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Home.Size = new System.Drawing.Size(140, 29);
-            this.button_Home.TabIndex = 205;
-            this.button_Home.Text = "                    HOME";
-            this.button_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Home.UseVisualStyleBackColor = true;
-            this.button_Home.Click += new System.EventHandler(this.button_Home_Click);
-            // 
             // userControl_Inventory1
             // 
             this.userControl_Inventory1.BackColor = System.Drawing.Color.White;
@@ -1102,6 +1104,26 @@
             this.userControl_Earnings1.TabIndex = 4;
             this.userControl_Earnings1.Visible = false;
             // 
+            // button_Admin
+            // 
+            this.button_Admin.BackColor = System.Drawing.Color.Transparent;
+            this.button_Admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Admin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Admin.FlatAppearance.BorderSize = 0;
+            this.button_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Admin.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Admin.Image = global::FightingFeather.Properties.Resources.handcart_24px;
+            this.button_Admin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Admin.Location = new System.Drawing.Point(5, 333);
+            this.button_Admin.Name = "button_Admin";
+            this.button_Admin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Admin.Size = new System.Drawing.Size(141, 29);
+            this.button_Admin.TabIndex = 258;
+            this.button_Admin.Text = "ADMIN";
+            this.button_Admin.UseVisualStyleBackColor = true;
+            this.button_Admin.Click += new System.EventHandler(this.button_Admin_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1139,9 +1161,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Entries)).EndInit();
             this.metroPanel_Border.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panel_Summary.ResumeLayout(false);
             this.panel_Shortcut.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1211,6 +1233,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
         private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
+        private System.Windows.Forms.Button button_Admin;
     }
 }
 

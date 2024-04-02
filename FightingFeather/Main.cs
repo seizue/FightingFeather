@@ -1729,5 +1729,11 @@ namespace FightingFeather
             Properties.Settings.Default.MainFormWindowState = this.WindowState.ToString();
             Properties.Settings.Default.Save();
         }
+
+        private void button_Admin_Click(object sender, EventArgs e)
+        {
+            LoginRegisterForm loginRegisterForm = new LoginRegisterForm();
+            loginRegisterForm.ShowDialog();
+        }
     }
 }

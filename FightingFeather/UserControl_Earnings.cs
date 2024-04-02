@@ -17,6 +17,7 @@ namespace FightingFeather
     public partial class UserControl_Earnings : UserControl
     {
         private PrintDocument pd = new PrintDocument();
+        private PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
         public UserControl_Earnings()
         {
             InitializeComponent();
@@ -340,32 +341,41 @@ namespace FightingFeather
 
         private void metroTile_PrintReceipt_Click(object sender, EventArgs e)
         {
+
+            PrintPreview();
+        }
+
+        private void PrintPreview()
+        {
             pd.PrintPage += new PrintPageEventHandler(PrintPage);
             pd.QueryPageSettings += new QueryPageSettingsEventHandler(QueryPageSettings);
 
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = pd;
-
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                pd.Print();
-            }
+            printPreviewDialog.Document = pd;
+            printPreviewDialog.ShowDialog();
         }
 
         private void PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Draw the panel content at its original size
-            using (Bitmap bmp = new Bitmap(Panel_PrintReceipt.Width, Panel_PrintReceipt.Height))
+            int paperWidth = e.PageSettings.PaperSize.Width;
+            int paperHeight = e.PageSettings.PaperSize.Height;
+            int panelWidth = Panel_PrintReceipt.Width;
+            int panelHeight = Panel_PrintReceipt.Height;
+
+            int centerX = (paperWidth - panelWidth) / 2;
+            int centerY = (paperHeight - panelHeight) / 2;
+
+            // Draw the panel content at the calculated center position
+            using (Bitmap bmp = new Bitmap(panelWidth, panelHeight))
             {
-                Panel_PrintReceipt.DrawToBitmap(bmp, new Rectangle(0, 0, Panel_PrintReceipt.Width, Panel_PrintReceipt.Height));
-                e.Graphics.DrawImage(bmp, e.MarginBounds.Left, e.MarginBounds.Top);
+                Panel_PrintReceipt.DrawToBitmap(bmp, new Rectangle(0, 0, panelWidth, panelHeight));
+                e.Graphics.DrawImage(bmp, centerX, centerY);
             }
         }
 
         private void QueryPageSettings(object sender, QueryPageSettingsEventArgs e)
         {
             // Adjust the paper size here
-            e.PageSettings.PaperSize = new PaperSize("CustomSize", 294, 421);
+            e.PageSettings.PaperSize = new PaperSize("CustomSize", 400, 395); 
         }
     }
 

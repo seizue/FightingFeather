@@ -170,6 +170,8 @@ namespace FightingFeather
                     // Assuming jsonArray contains an array of objects
                     foreach (JObject obj in jsonArray)
                     {
+                     
+
                         // Check if the "WINNER" key exists and has a non-null or non-empty value
                         if (obj.ContainsKey("WINNER") && !string.IsNullOrEmpty(obj["WINNER"].ToString()))
                         {
@@ -215,6 +217,18 @@ namespace FightingFeather
                         cell5.Value = obj["BET (W)"];
                         row.Cells.Add(cell5);
 
+                        DataGridViewTextBoxCell cell6 = new DataGridViewTextBoxCell();
+                        cell6.Value = obj["INITIAL BET DIFF"];
+                        row.Cells.Add(cell6);
+
+                        DataGridViewTextBoxCell cell7 = new DataGridViewTextBoxCell();
+                        cell7.Value = obj["PAREHAS"];
+                        row.Cells.Add(cell7);
+
+                        DataGridViewTextBoxCell cell8 = new DataGridViewTextBoxCell();
+                        cell8.Value = obj["LOGRO"];
+                        row.Cells.Add(cell8);
+
                         // Add the row to the DataGridView
                         GridPlasada_Shortcut.Rows.Add(row);
                     }
@@ -227,6 +241,9 @@ namespace FightingFeather
                 }
             }         
         }
+
+
+     
 
         private void ClearInputFields()
         {
@@ -578,6 +595,43 @@ namespace FightingFeather
         {
             MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
             muntonPrintForm.ShowDialog();
+        }
+
+        private void button_PreviewEntry_Click(object sender, EventArgs e)
+        {
+            GridPlasada_Shortcut.Rows.Clear();
+            PopulateGridPlasadaShortcut();
+            button_PreviewEntry.ForeColor = Color.White;
+            button_PreviewOtherInfo.ForeColor = Color.Silver;
+
+            GridPlasada_Shortcut.Columns["MERON"].Visible = true;
+            GridPlasada_Shortcut.Columns["BET_M"].Visible = true;
+            GridPlasada_Shortcut.Columns["WALA"].Visible =  true;
+            GridPlasada_Shortcut.Columns["BET_W"].Visible = true;
+
+            GridPlasada_Shortcut.Columns["INITIAL_BET_DIF"].Visible = false;
+            GridPlasada_Shortcut.Columns["PAREHAS"].Visible = false;
+            GridPlasada_Shortcut.Columns["LOGRO"].Visible = false;
+            GridPlasada_Shortcut.Columns["RATE"].Visible = false;
+
+        }
+
+        private void button_PreviewOtherInfo_Click(object sender, EventArgs e)
+        {
+            GridPlasada_Shortcut.Rows.Clear();
+            PopulateGridPlasadaShortcut();
+            button_PreviewOtherInfo.ForeColor = Color.White;
+            button_PreviewEntry.ForeColor = Color.Silver;
+
+            GridPlasada_Shortcut.Columns["MERON"].Visible = false;
+            GridPlasada_Shortcut.Columns["BET_M"].Visible = false;
+            GridPlasada_Shortcut.Columns["WALA"].Visible = false;
+            GridPlasada_Shortcut.Columns["BET_W"].Visible = false;
+
+            GridPlasada_Shortcut.Columns["INITIAL_BET_DIF"].Visible = true;
+            GridPlasada_Shortcut.Columns["PAREHAS"].Visible = true;
+            GridPlasada_Shortcut.Columns["LOGRO"].Visible = true;
+            GridPlasada_Shortcut.Columns["RATE"].Visible = true;
         }
     }
 

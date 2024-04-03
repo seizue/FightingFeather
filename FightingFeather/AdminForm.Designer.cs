@@ -36,9 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_License = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
-            this.button_General = new System.Windows.Forms.Button();
             this.label_RegisterUsers = new System.Windows.Forms.Label();
             this.Panel_Line = new MetroFramework.Controls.MetroPanel();
             this.Grid_RegisterUsers = new MetroFramework.Controls.MetroGrid();
@@ -50,14 +48,9 @@
             this.textBox_Search = new MetroFramework.Controls.MetroTextBox();
             this.button_FIND = new System.Windows.Forms.Button();
             this.button_CLEAR = new System.Windows.Forms.Button();
-            this.button_AddNewUser = new System.Windows.Forms.Button();
-            this.button_CheckPass = new System.Windows.Forms.Button();
-            this.button_ChangePass = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.button_Export = new System.Windows.Forms.Button();
             this.label_AdminSettings = new System.Windows.Forms.Label();
             this.panel_Indicator = new System.Windows.Forms.Panel();
-            this.button_UpdateUser = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.panel_BGAddNewUser = new System.Windows.Forms.Panel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
@@ -66,6 +59,7 @@
             this.button_CloseRegForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label_Dis = new System.Windows.Forms.Label();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_SaveNewUser = new System.Windows.Forms.Button();
             this.button_ClearFields = new System.Windows.Forms.Button();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -82,7 +76,13 @@
             this.textBox_ID = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.button_UpdateUser = new System.Windows.Forms.Button();
+            this.button_Export = new System.Windows.Forms.Button();
+            this.button_ChangePass = new System.Windows.Forms.Button();
+            this.button_CheckPass = new System.Windows.Forms.Button();
+            this.button_AddNewUser = new System.Windows.Forms.Button();
+            this.button_License = new System.Windows.Forms.Button();
+            this.button_General = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -102,25 +102,6 @@
             this.panel1.Size = new System.Drawing.Size(219, 684);
             this.panel1.TabIndex = 1;
             // 
-            // button_License
-            // 
-            this.button_License.BackColor = System.Drawing.Color.Transparent;
-            this.button_License.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_License.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_License.FlatAppearance.BorderSize = 0;
-            this.button_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_License.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_License.Image = global::FightingFeather.Properties.Resources.Licence_24px;
-            this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_License.Location = new System.Drawing.Point(12, 107);
-            this.button_License.Name = "button_License";
-            this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_License.Size = new System.Drawing.Size(201, 31);
-            this.button_License.TabIndex = 335;
-            this.button_License.Text = "LICENSE MANAGEMENT";
-            this.button_License.UseVisualStyleBackColor = true;
-            // 
             // metroPanel4
             // 
             this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -139,25 +120,6 @@
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
-            // 
-            // button_General
-            // 
-            this.button_General.BackColor = System.Drawing.Color.Transparent;
-            this.button_General.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_General.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_General.FlatAppearance.BorderSize = 0;
-            this.button_General.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_General.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_General.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_General.Image = global::FightingFeather.Properties.Resources.File_Configuration_24px;
-            this.button_General.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_General.Location = new System.Drawing.Point(12, 37);
-            this.button_General.Name = "button_General";
-            this.button_General.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_General.Size = new System.Drawing.Size(201, 31);
-            this.button_General.TabIndex = 333;
-            this.button_General.Text = "ACCESS MANAGEMENT";
-            this.button_General.UseVisualStyleBackColor = true;
             // 
             // label_RegisterUsers
             // 
@@ -365,67 +327,6 @@
             this.button_CLEAR.Text = "CLEAR";
             this.button_CLEAR.UseVisualStyleBackColor = false;
             // 
-            // button_AddNewUser
-            // 
-            this.button_AddNewUser.BackColor = System.Drawing.Color.Transparent;
-            this.button_AddNewUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_AddNewUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_AddNewUser.FlatAppearance.BorderSize = 0;
-            this.button_AddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_AddNewUser.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_AddNewUser.ForeColor = System.Drawing.Color.Black;
-            this.button_AddNewUser.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
-            this.button_AddNewUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_AddNewUser.Location = new System.Drawing.Point(839, 108);
-            this.button_AddNewUser.Name = "button_AddNewUser";
-            this.button_AddNewUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_AddNewUser.Size = new System.Drawing.Size(77, 65);
-            this.button_AddNewUser.TabIndex = 368;
-            this.button_AddNewUser.Text = "ADD NEW USER";
-            this.button_AddNewUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_AddNewUser.UseVisualStyleBackColor = false;
-            this.button_AddNewUser.Click += new System.EventHandler(this.button_AddNewUser_Click);
-            // 
-            // button_CheckPass
-            // 
-            this.button_CheckPass.BackColor = System.Drawing.Color.Transparent;
-            this.button_CheckPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_CheckPass.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_CheckPass.FlatAppearance.BorderSize = 0;
-            this.button_CheckPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_CheckPass.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_CheckPass.ForeColor = System.Drawing.Color.Black;
-            this.button_CheckPass.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
-            this.button_CheckPass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_CheckPass.Location = new System.Drawing.Point(1031, 107);
-            this.button_CheckPass.Name = "button_CheckPass";
-            this.button_CheckPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_CheckPass.Size = new System.Drawing.Size(73, 65);
-            this.button_CheckPass.TabIndex = 369;
-            this.button_CheckPass.Text = "CHECK PASSWORD";
-            this.button_CheckPass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_CheckPass.UseVisualStyleBackColor = false;
-            // 
-            // button_ChangePass
-            // 
-            this.button_ChangePass.BackColor = System.Drawing.Color.Transparent;
-            this.button_ChangePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_ChangePass.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_ChangePass.FlatAppearance.BorderSize = 0;
-            this.button_ChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ChangePass.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_ChangePass.ForeColor = System.Drawing.Color.Black;
-            this.button_ChangePass.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
-            this.button_ChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_ChangePass.Location = new System.Drawing.Point(1111, 107);
-            this.button_ChangePass.Name = "button_ChangePass";
-            this.button_ChangePass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_ChangePass.Size = new System.Drawing.Size(75, 65);
-            this.button_ChangePass.TabIndex = 370;
-            this.button_ChangePass.Text = "CHANGE PASSWORD";
-            this.button_ChangePass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_ChangePass.UseVisualStyleBackColor = false;
-            // 
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -442,26 +343,6 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // button_Export
-            // 
-            this.button_Export.BackColor = System.Drawing.Color.Transparent;
-            this.button_Export.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Export.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_Export.FlatAppearance.BorderSize = 0;
-            this.button_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Export.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_Export.ForeColor = System.Drawing.Color.Black;
-            this.button_Export.Image = global::FightingFeather.Properties.Resources.send_file_24px;
-            this.button_Export.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Export.Location = new System.Drawing.Point(1227, 113);
-            this.button_Export.Name = "button_Export";
-            this.button_Export.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Export.Size = new System.Drawing.Size(54, 51);
-            this.button_Export.TabIndex = 372;
-            this.button_Export.Text = "EXPORT";
-            this.button_Export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_Export.UseVisualStyleBackColor = false;
             // 
             // label_AdminSettings
             // 
@@ -482,27 +363,6 @@
             this.panel_Indicator.Name = "panel_Indicator";
             this.panel_Indicator.Size = new System.Drawing.Size(65, 4);
             this.panel_Indicator.TabIndex = 374;
-            // 
-            // button_UpdateUser
-            // 
-            this.button_UpdateUser.BackColor = System.Drawing.Color.Transparent;
-            this.button_UpdateUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_UpdateUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_UpdateUser.FlatAppearance.BorderSize = 0;
-            this.button_UpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_UpdateUser.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_UpdateUser.ForeColor = System.Drawing.Color.Black;
-            this.button_UpdateUser.Image = global::FightingFeather.Properties.Resources.new_copy_24px;
-            this.button_UpdateUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_UpdateUser.Location = new System.Drawing.Point(923, 108);
-            this.button_UpdateUser.Name = "button_UpdateUser";
-            this.button_UpdateUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_UpdateUser.Size = new System.Drawing.Size(77, 65);
-            this.button_UpdateUser.TabIndex = 375;
-            this.button_UpdateUser.Text = "UPDATE USER";
-            this.button_UpdateUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_UpdateUser.UseVisualStyleBackColor = false;
-            this.button_UpdateUser.Click += new System.EventHandler(this.button_UpdateUser_Click);
             // 
             // metroPanel2
             // 
@@ -547,9 +407,9 @@
             this.panel_BGAddNewUser.Controls.Add(this.textBox_Name);
             this.panel_BGAddNewUser.Controls.Add(this.label21);
             this.panel_BGAddNewUser.Controls.Add(this.textBox_ID);
-            this.panel_BGAddNewUser.Location = new System.Drawing.Point(253, 77);
+            this.panel_BGAddNewUser.Location = new System.Drawing.Point(253, 206);
             this.panel_BGAddNewUser.Name = "panel_BGAddNewUser";
-            this.panel_BGAddNewUser.Size = new System.Drawing.Size(1057, 562);
+            this.panel_BGAddNewUser.Size = new System.Drawing.Size(1057, 433);
             this.panel_BGAddNewUser.TabIndex = 377;
             this.panel_BGAddNewUser.Visible = false;
             // 
@@ -648,6 +508,23 @@
             this.label_Dis.Size = new System.Drawing.Size(172, 22);
             this.label_Dis.TabIndex = 394;
             this.label_Dis.Text = "REGESTRATION FORM\r\n";
+            // 
+            // raDateTimePicker1
+            // 
+            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
+            this.raDateTimePicker1.TabIndex = 393;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
             // 
             // button_SaveNewUser
             // 
@@ -841,22 +718,145 @@
             this.label8.TabIndex = 396;
             this.label8.Text = "USERS ACCESS MANAGEMENT";
             // 
-            // raDateTimePicker1
+            // button_UpdateUser
             // 
-            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
-            this.raDateTimePicker1.TabIndex = 393;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            this.button_UpdateUser.BackColor = System.Drawing.Color.Transparent;
+            this.button_UpdateUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_UpdateUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_UpdateUser.FlatAppearance.BorderSize = 0;
+            this.button_UpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UpdateUser.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_UpdateUser.ForeColor = System.Drawing.Color.Black;
+            this.button_UpdateUser.Image = global::FightingFeather.Properties.Resources.edit_profile_24px;
+            this.button_UpdateUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_UpdateUser.Location = new System.Drawing.Point(923, 108);
+            this.button_UpdateUser.Name = "button_UpdateUser";
+            this.button_UpdateUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_UpdateUser.Size = new System.Drawing.Size(77, 65);
+            this.button_UpdateUser.TabIndex = 375;
+            this.button_UpdateUser.Text = "UPDATE USER";
+            this.button_UpdateUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_UpdateUser.UseVisualStyleBackColor = false;
+            this.button_UpdateUser.Click += new System.EventHandler(this.button_UpdateUser_Click);
+            // 
+            // button_Export
+            // 
+            this.button_Export.BackColor = System.Drawing.Color.Transparent;
+            this.button_Export.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Export.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_Export.FlatAppearance.BorderSize = 0;
+            this.button_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Export.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_Export.ForeColor = System.Drawing.Color.Black;
+            this.button_Export.Image = global::FightingFeather.Properties.Resources.send_file_24px;
+            this.button_Export.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Export.Location = new System.Drawing.Point(1227, 113);
+            this.button_Export.Name = "button_Export";
+            this.button_Export.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Export.Size = new System.Drawing.Size(54, 51);
+            this.button_Export.TabIndex = 372;
+            this.button_Export.Text = "EXPORT";
+            this.button_Export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_Export.UseVisualStyleBackColor = false;
+            // 
+            // button_ChangePass
+            // 
+            this.button_ChangePass.BackColor = System.Drawing.Color.Transparent;
+            this.button_ChangePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_ChangePass.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_ChangePass.FlatAppearance.BorderSize = 0;
+            this.button_ChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ChangePass.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_ChangePass.ForeColor = System.Drawing.Color.Black;
+            this.button_ChangePass.Image = global::FightingFeather.Properties.Resources.Laptop_Password_24px;
+            this.button_ChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_ChangePass.Location = new System.Drawing.Point(1111, 107);
+            this.button_ChangePass.Name = "button_ChangePass";
+            this.button_ChangePass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_ChangePass.Size = new System.Drawing.Size(75, 65);
+            this.button_ChangePass.TabIndex = 370;
+            this.button_ChangePass.Text = "CHANGE PASSWORD";
+            this.button_ChangePass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_ChangePass.UseVisualStyleBackColor = false;
+            // 
+            // button_CheckPass
+            // 
+            this.button_CheckPass.BackColor = System.Drawing.Color.Transparent;
+            this.button_CheckPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_CheckPass.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_CheckPass.FlatAppearance.BorderSize = 0;
+            this.button_CheckPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_CheckPass.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_CheckPass.ForeColor = System.Drawing.Color.Black;
+            this.button_CheckPass.Image = global::FightingFeather.Properties.Resources.show_password_24px;
+            this.button_CheckPass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_CheckPass.Location = new System.Drawing.Point(1031, 107);
+            this.button_CheckPass.Name = "button_CheckPass";
+            this.button_CheckPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_CheckPass.Size = new System.Drawing.Size(73, 65);
+            this.button_CheckPass.TabIndex = 369;
+            this.button_CheckPass.Text = "CHECK PASSWORD";
+            this.button_CheckPass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_CheckPass.UseVisualStyleBackColor = false;
+            // 
+            // button_AddNewUser
+            // 
+            this.button_AddNewUser.BackColor = System.Drawing.Color.Transparent;
+            this.button_AddNewUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_AddNewUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_AddNewUser.FlatAppearance.BorderSize = 0;
+            this.button_AddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_AddNewUser.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_AddNewUser.ForeColor = System.Drawing.Color.Black;
+            this.button_AddNewUser.Image = global::FightingFeather.Properties.Resources.add_user_male_24px;
+            this.button_AddNewUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_AddNewUser.Location = new System.Drawing.Point(839, 108);
+            this.button_AddNewUser.Name = "button_AddNewUser";
+            this.button_AddNewUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_AddNewUser.Size = new System.Drawing.Size(77, 65);
+            this.button_AddNewUser.TabIndex = 368;
+            this.button_AddNewUser.Text = "ADD NEW USER";
+            this.button_AddNewUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_AddNewUser.UseVisualStyleBackColor = false;
+            this.button_AddNewUser.Click += new System.EventHandler(this.button_AddNewUser_Click);
+            // 
+            // button_License
+            // 
+            this.button_License.BackColor = System.Drawing.Color.Transparent;
+            this.button_License.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_License.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_License.FlatAppearance.BorderSize = 0;
+            this.button_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_License.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_License.Image = global::FightingFeather.Properties.Resources.Licence_24px;
+            this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_License.Location = new System.Drawing.Point(12, 107);
+            this.button_License.Name = "button_License";
+            this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_License.Size = new System.Drawing.Size(201, 31);
+            this.button_License.TabIndex = 335;
+            this.button_License.Text = "LICENSE MANAGEMENT";
+            this.button_License.UseVisualStyleBackColor = true;
+            // 
+            // button_General
+            // 
+            this.button_General.BackColor = System.Drawing.Color.Transparent;
+            this.button_General.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_General.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_General.FlatAppearance.BorderSize = 0;
+            this.button_General.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_General.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_General.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_General.Image = global::FightingFeather.Properties.Resources.File_Configuration_24px;
+            this.button_General.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_General.Location = new System.Drawing.Point(12, 37);
+            this.button_General.Name = "button_General";
+            this.button_General.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_General.Size = new System.Drawing.Size(201, 31);
+            this.button_General.TabIndex = 333;
+            this.button_General.Text = "ACCESS MANAGEMENT";
+            this.button_General.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 

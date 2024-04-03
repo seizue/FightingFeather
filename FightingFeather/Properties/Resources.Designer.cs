@@ -63,6 +63,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user_male_24px {
+            get {
+                object obj = ResourceManager.GetObject("add_user_male_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap align_center_24px {
             get {
                 object obj = ResourceManager.GetObject("align_center_24px", resourceCulture);
@@ -183,6 +193,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_profile_24px {
+            get {
+                object obj = ResourceManager.GetObject("edit_profile_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap export_24px {
             get {
                 object obj = ResourceManager.GetObject("export_24px", resourceCulture);
@@ -286,6 +306,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap information_24px {
             get {
                 object obj = ResourceManager.GetObject("information_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Laptop_Password_24px {
+            get {
+                object obj = ResourceManager.GetObject("Laptop Password_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,6 +446,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap settings_24px {
             get {
                 object obj = ResourceManager.GetObject("settings_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_password_24px {
+            get {
+                object obj = ResourceManager.GetObject("show_password_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -475,6 +475,18 @@
   <ItemGroup>
     <None Include="Resources\Picture1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_male_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_profile_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_password_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Laptop Password_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

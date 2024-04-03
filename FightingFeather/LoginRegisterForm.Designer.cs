@@ -37,17 +37,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button_Login = new System.Windows.Forms.Button();
             this.rememberMe = new MetroFramework.Controls.MetroCheckBox();
-            this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.panel_Indicator = new System.Windows.Forms.Panel();
             this.fogotPass_Link = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.panel_Help = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.panel_Help.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel2
@@ -242,16 +242,6 @@
             this.rememberMe.UseCustomForeColor = true;
             this.rememberMe.UseSelectable = true;
             // 
-            // pictureLogo
-            // 
-            this.pictureLogo.Image = global::FightingFeather.Properties.Resources.feather;
-            this.pictureLogo.Location = new System.Drawing.Point(345, 72);
-            this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(94, 99);
-            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureLogo.TabIndex = 368;
-            this.pictureLogo.TabStop = false;
-            // 
             // panel_Indicator
             // 
             this.panel_Indicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -274,7 +264,7 @@
             // 
             this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.metroPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.metroPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -300,22 +290,12 @@
             this.panel_Help.TabIndex = 373;
             this.panel_Help.Visible = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.feather;
-            this.pictureBox1.Location = new System.Drawing.Point(285, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 256;
-            this.pictureBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 10F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(167, 236);
+            this.label3.Location = new System.Drawing.Point(167, 234);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(422, 17);
             this.label3.TabIndex = 360;
@@ -324,13 +304,33 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(319, 200);
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(319, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 359;
             this.label2.Text = "INFORMATION";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.online_support_160px;
+            this.pictureBox1.Location = new System.Drawing.Point(293, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 256;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureLogo
+            // 
+            this.pictureLogo.Image = global::FightingFeather.Properties.Resources.feather;
+            this.pictureLogo.Location = new System.Drawing.Point(345, 72);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(94, 99);
+            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureLogo.TabIndex = 368;
+            this.pictureLogo.TabStop = false;
             // 
             // LoginRegisterForm
             // 
@@ -355,10 +355,10 @@
             this.Name = "LoginRegisterForm";
             this.Opacity = 0.97D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panel_Help.ResumeLayout(false);
             this.panel_Help.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

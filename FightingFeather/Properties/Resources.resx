@@ -121,26 +121,17 @@
   <data name="File Configuration_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\File Configuration_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="filter_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filter_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="show_password_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\show_password_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="waste_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\waste_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lists_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lists_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="handcart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\handcart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add_user_male_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_user_male_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sales_performance_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sales_performance_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="print_28px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print_28px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +139,8 @@
   <data name="export_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="renew_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\renew_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="security_configuration_36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\security_configuration_36px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phone_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,6 +157,15 @@
   <data name="align_center_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\align_center_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="renew_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\renew_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Licence_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Licence_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Laptop Password_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Laptop Password_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="csv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\csv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,23 +175,26 @@
   <data name="clear_cart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear_cart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new_copy_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new_copy_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Picture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Picture1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="laptop_settings_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\laptop_settings_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Material_print_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Material_print_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="four_squares_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\four_squares_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filter_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="information_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plasada_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plasada_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Picture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Picture1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="send_file_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\send_file_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,11 +205,17 @@
   <data name="calendarWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendarWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="combo_chart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\combo_chart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="receipt_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\receipt_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="data_backup_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_backup_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="online_support_160px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\online_support_160px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="birdhouse_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\birdhouse_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,11 +226,14 @@
   <data name="feather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feather.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="handcart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\handcart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="info_squared_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info_squared_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="four_squares_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\four_squares_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sales_performance_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sales_performance_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gmail Logo_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gmail Logo_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,19 +241,22 @@
   <data name="Cheque_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cheque_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="binoculars_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\binoculars_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new_copy_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_copy_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Licence_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Licence_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="four_squares_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\four_squares_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="smart_home_checked_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\smart_home_checked_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="binoculars_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\binoculars_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="money_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\money_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Laptop Password_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Laptop Password_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="four_squares_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\four_squares_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

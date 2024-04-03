@@ -1742,5 +1742,11 @@ namespace FightingFeather
             adminForm.ShowDialog();
            
         }
+
+        private void button_DashBoard_Click(object sender, EventArgs e)
+        {
+            LoginRegisterForm loginRegisterForm = new LoginRegisterForm(this);
+            loginRegisterForm.ShowDialog();
+        }
     }
 }

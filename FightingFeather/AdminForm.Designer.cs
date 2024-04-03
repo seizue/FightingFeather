@@ -36,7 +36,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_License = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.button_General = new System.Windows.Forms.Button();
             this.label_RegisterUsers = new System.Windows.Forms.Label();
             this.Panel_Line = new MetroFramework.Controls.MetroPanel();
             this.Grid_RegisterUsers = new MetroFramework.Controls.MetroGrid();
@@ -59,7 +61,6 @@
             this.button_CloseRegForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label_Dis = new System.Windows.Forms.Label();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_SaveNewUser = new System.Windows.Forms.Button();
             this.button_ClearFields = new System.Windows.Forms.Button();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -81,8 +82,7 @@
             this.button_ChangePass = new System.Windows.Forms.Button();
             this.button_CheckPass = new System.Windows.Forms.Button();
             this.button_AddNewUser = new System.Windows.Forms.Button();
-            this.button_License = new System.Windows.Forms.Button();
-            this.button_General = new System.Windows.Forms.Button();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -102,6 +102,25 @@
             this.panel1.Size = new System.Drawing.Size(219, 684);
             this.panel1.TabIndex = 1;
             // 
+            // button_License
+            // 
+            this.button_License.BackColor = System.Drawing.Color.Transparent;
+            this.button_License.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_License.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_License.FlatAppearance.BorderSize = 0;
+            this.button_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_License.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_License.Image = global::FightingFeather.Properties.Resources.Licence_24px;
+            this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_License.Location = new System.Drawing.Point(12, 123);
+            this.button_License.Name = "button_License";
+            this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_License.Size = new System.Drawing.Size(201, 31);
+            this.button_License.TabIndex = 335;
+            this.button_License.Text = "LICENSE MANAGEMENT";
+            this.button_License.UseVisualStyleBackColor = true;
+            // 
             // metroPanel4
             // 
             this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -111,7 +130,7 @@
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(29, 84);
+            this.metroPanel4.Location = new System.Drawing.Point(29, 100);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(160, 1);
             this.metroPanel4.TabIndex = 334;
@@ -120,6 +139,25 @@
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // button_General
+            // 
+            this.button_General.BackColor = System.Drawing.Color.Transparent;
+            this.button_General.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_General.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_General.FlatAppearance.BorderSize = 0;
+            this.button_General.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_General.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_General.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
+            this.button_General.Image = global::FightingFeather.Properties.Resources.File_Configuration_24px;
+            this.button_General.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_General.Location = new System.Drawing.Point(12, 53);
+            this.button_General.Name = "button_General";
+            this.button_General.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_General.Size = new System.Drawing.Size(201, 31);
+            this.button_General.TabIndex = 333;
+            this.button_General.Text = "ACCESS MANAGEMENT";
+            this.button_General.UseVisualStyleBackColor = true;
             // 
             // label_RegisterUsers
             // 
@@ -407,9 +445,9 @@
             this.panel_BGAddNewUser.Controls.Add(this.textBox_Name);
             this.panel_BGAddNewUser.Controls.Add(this.label21);
             this.panel_BGAddNewUser.Controls.Add(this.textBox_ID);
-            this.panel_BGAddNewUser.Location = new System.Drawing.Point(253, 206);
+            this.panel_BGAddNewUser.Location = new System.Drawing.Point(253, 23);
             this.panel_BGAddNewUser.Name = "panel_BGAddNewUser";
-            this.panel_BGAddNewUser.Size = new System.Drawing.Size(1057, 433);
+            this.panel_BGAddNewUser.Size = new System.Drawing.Size(1057, 616);
             this.panel_BGAddNewUser.TabIndex = 377;
             this.panel_BGAddNewUser.Visible = false;
             // 
@@ -508,23 +546,6 @@
             this.label_Dis.Size = new System.Drawing.Size(172, 22);
             this.label_Dis.TabIndex = 394;
             this.label_Dis.Text = "REGESTRATION FORM\r\n";
-            // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
-            this.raDateTimePicker1.TabIndex = 393;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
             // 
             // button_SaveNewUser
             // 
@@ -750,12 +771,12 @@
             this.button_Export.ForeColor = System.Drawing.Color.Black;
             this.button_Export.Image = global::FightingFeather.Properties.Resources.send_file_24px;
             this.button_Export.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Export.Location = new System.Drawing.Point(1227, 113);
+            this.button_Export.Location = new System.Drawing.Point(1227, 107);
             this.button_Export.Name = "button_Export";
             this.button_Export.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Export.Size = new System.Drawing.Size(54, 51);
+            this.button_Export.Size = new System.Drawing.Size(54, 65);
             this.button_Export.TabIndex = 372;
-            this.button_Export.Text = "EXPORT";
+            this.button_Export.Text = "EXPORT CSV";
             this.button_Export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_Export.UseVisualStyleBackColor = false;
             // 
@@ -820,43 +841,22 @@
             this.button_AddNewUser.UseVisualStyleBackColor = false;
             this.button_AddNewUser.Click += new System.EventHandler(this.button_AddNewUser_Click);
             // 
-            // button_License
+            // raDateTimePicker1
             // 
-            this.button_License.BackColor = System.Drawing.Color.Transparent;
-            this.button_License.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_License.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_License.FlatAppearance.BorderSize = 0;
-            this.button_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_License.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_License.Image = global::FightingFeather.Properties.Resources.Licence_24px;
-            this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_License.Location = new System.Drawing.Point(12, 107);
-            this.button_License.Name = "button_License";
-            this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_License.Size = new System.Drawing.Size(201, 31);
-            this.button_License.TabIndex = 335;
-            this.button_License.Text = "LICENSE MANAGEMENT";
-            this.button_License.UseVisualStyleBackColor = true;
-            // 
-            // button_General
-            // 
-            this.button_General.BackColor = System.Drawing.Color.Transparent;
-            this.button_General.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_General.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_General.FlatAppearance.BorderSize = 0;
-            this.button_General.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_General.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_General.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(84)))), ((int)(((byte)(55)))));
-            this.button_General.Image = global::FightingFeather.Properties.Resources.File_Configuration_24px;
-            this.button_General.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_General.Location = new System.Drawing.Point(12, 37);
-            this.button_General.Name = "button_General";
-            this.button_General.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_General.Size = new System.Drawing.Size(201, 31);
-            this.button_General.TabIndex = 333;
-            this.button_General.Text = "ACCESS MANAGEMENT";
-            this.button_General.UseVisualStyleBackColor = true;
+            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
+            this.raDateTimePicker1.TabIndex = 393;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
             // 
             // AdminForm
             // 

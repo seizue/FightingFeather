@@ -153,6 +153,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap combo_chart_24px {
+            get {
+                object obj = ResourceManager.GetObject("combo_chart_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap csv_24px {
             get {
                 object obj = ResourceManager.GetObject("csv_24px", resourceCulture);
@@ -323,6 +333,16 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap laptop_settings_24px {
+            get {
+                object obj = ResourceManager.GetObject("laptop_settings_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Licence_24px {
             get {
                 object obj = ResourceManager.GetObject("Licence_24px", resourceCulture);
@@ -333,9 +353,9 @@ namespace FightingFeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lists_24px {
+        internal static System.Drawing.Bitmap Material_print_24px {
             get {
-                object obj = ResourceManager.GetObject("lists_24px", resourceCulture);
+                object obj = ResourceManager.GetObject("Material_print_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +376,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap new_copy_24px {
             get {
                 object obj = ResourceManager.GetObject("new_copy_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap online_support_160px {
+            get {
+                object obj = ResourceManager.GetObject("online_support_160px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +416,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap plasada_24px {
             get {
                 object obj = ResourceManager.GetObject("plasada_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_28px {
+            get {
+                object obj = ResourceManager.GetObject("print_28px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,6 +466,16 @@ namespace FightingFeather.Properties {
         internal static System.Drawing.Bitmap search_in_list_24px {
             get {
                 object obj = ResourceManager.GetObject("search_in_list_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap security_configuration_36px {
+            get {
+                object obj = ResourceManager.GetObject("security_configuration_36px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

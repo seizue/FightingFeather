@@ -17,7 +17,6 @@ namespace FightingFeather
             InitializeComponent();
         }
 
-   
 
         private void label_RegisterUsers_Click(object sender, EventArgs e)
         {
@@ -33,6 +32,17 @@ namespace FightingFeather
             label_RegisterUsers.ForeColor = Color.FromArgb(64, 64, 64);
             panel_Indicator.Location = new Point(457, 66);
             panel_Indicator.Size = new Size(120, 4);
+        }
+
+        private void button_AddNewUser_Click(object sender, EventArgs e)
+        {
+            panel_BGAddNewUser.Visible = true;
+         
+        }
+
+        private void button_CloseRegForm_Click(object sender, EventArgs e)
+        {
+            panel_BGAddNewUser.Visible=false;
         }
     }
 }

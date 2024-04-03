@@ -35,12 +35,19 @@
             this.textBox_Password = new MetroFramework.Controls.MetroTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button_Search = new System.Windows.Forms.Button();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.button_Login = new System.Windows.Forms.Button();
+            this.rememberMe = new MetroFramework.Controls.MetroCheckBox();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.panel_Indicator = new System.Windows.Forms.Panel();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.fogotPass_Link = new MetroFramework.Controls.MetroLink();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.panel_Help = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
+            this.panel_Help.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel2
@@ -69,7 +76,7 @@
             this.label_Login.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.label_Login.FlatAppearance.BorderSize = 0;
             this.label_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Login.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Login.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.label_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(64)))), ((int)(((byte)(113)))));
             this.label_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_Login.Location = new System.Drawing.Point(23, 23);
@@ -88,7 +95,7 @@
             this.label_Help.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.label_Help.FlatAppearance.BorderSize = 0;
             this.label_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Help.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Help.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.label_Help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label_Help.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_Help.Location = new System.Drawing.Point(119, 23);
@@ -151,7 +158,7 @@
             this.textBox_Password.Location = new System.Drawing.Point(256, 286);
             this.textBox_Password.MaxLength = 32767;
             this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.PasswordChar = '\0';
+            this.textBox_Password.PasswordChar = '●';
             this.textBox_Password.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textBox_Password.SelectedText = "";
             this.textBox_Password.SelectionLength = 0;
@@ -162,6 +169,7 @@
             this.textBox_Password.Size = new System.Drawing.Size(272, 27);
             this.textBox_Password.TabIndex = 362;
             this.textBox_Password.UseSelectable = true;
+            this.textBox_Password.UseSystemPasswordChar = true;
             this.textBox_Password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textBox_Password.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.textBox_Password.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.textBox_Password_ButtonClick);
@@ -202,34 +210,37 @@
             this.button3.Text = "PASSWORD";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button_Search
+            // button_Login
             // 
-            this.button_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Search.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_Search.FlatAppearance.BorderSize = 2;
-            this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Search.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_Search.ForeColor = System.Drawing.Color.MintCream;
-            this.button_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Search.Location = new System.Drawing.Point(256, 363);
-            this.button_Search.Name = "button_Search";
-            this.button_Search.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Search.Size = new System.Drawing.Size(272, 36);
-            this.button_Search.TabIndex = 365;
-            this.button_Search.Text = "LOGIN";
-            this.button_Search.UseVisualStyleBackColor = false;
+            this.button_Login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.button_Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Login.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_Login.FlatAppearance.BorderSize = 2;
+            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Login.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.5F, System.Drawing.FontStyle.Bold);
+            this.button_Login.ForeColor = System.Drawing.Color.MintCream;
+            this.button_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Login.Location = new System.Drawing.Point(256, 363);
+            this.button_Login.Name = "button_Login";
+            this.button_Login.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Login.Size = new System.Drawing.Size(272, 36);
+            this.button_Login.TabIndex = 365;
+            this.button_Login.Text = "LOGIN";
+            this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
-            // metroCheckBox1
+            // rememberMe
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(256, 323);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(101, 15);
-            this.metroCheckBox1.TabIndex = 367;
-            this.metroCheckBox1.Text = "Remember me";
-            this.metroCheckBox1.UseSelectable = true;
+            this.rememberMe.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rememberMe.AutoSize = true;
+            this.rememberMe.Location = new System.Drawing.Point(256, 323);
+            this.rememberMe.Name = "rememberMe";
+            this.rememberMe.Size = new System.Drawing.Size(101, 15);
+            this.rememberMe.TabIndex = 367;
+            this.rememberMe.Text = "Remember me";
+            this.rememberMe.UseCustomForeColor = true;
+            this.rememberMe.UseSelectable = true;
             // 
             // pictureLogo
             // 
@@ -244,30 +255,95 @@
             // panel_Indicator
             // 
             this.panel_Indicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panel_Indicator.Location = new System.Drawing.Point(127, 51);
+            this.panel_Indicator.Location = new System.Drawing.Point(29, 50);
             this.panel_Indicator.Name = "panel_Indicator";
             this.panel_Indicator.Size = new System.Drawing.Size(65, 4);
             this.panel_Indicator.TabIndex = 370;
             // 
-            // metroLink2
+            // fogotPass_Link
             // 
-            this.metroLink2.Location = new System.Drawing.Point(409, 319);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(119, 23);
-            this.metroLink2.TabIndex = 371;
-            this.metroLink2.Text = "Forgotten Password";
-            this.metroLink2.UseSelectable = true;
+            this.fogotPass_Link.Location = new System.Drawing.Point(409, 319);
+            this.fogotPass_Link.Name = "fogotPass_Link";
+            this.fogotPass_Link.Size = new System.Drawing.Size(119, 23);
+            this.fogotPass_Link.TabIndex = 371;
+            this.fogotPass_Link.Text = "Forgotten Password";
+            this.fogotPass_Link.UseSelectable = true;
+            this.fogotPass_Link.Click += new System.EventHandler(this.fogotPass_Link_Click);
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.metroPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 463);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(801, 42);
+            this.metroPanel1.TabIndex = 372;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseStyleColors = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // panel_Help
+            // 
+            this.panel_Help.Controls.Add(this.label3);
+            this.panel_Help.Controls.Add(this.label2);
+            this.panel_Help.Controls.Add(this.pictureBox1);
+            this.panel_Help.Location = new System.Drawing.Point(23, 63);
+            this.panel_Help.Name = "panel_Help";
+            this.panel_Help.Size = new System.Drawing.Size(754, 379);
+            this.panel_Help.TabIndex = 373;
+            this.panel_Help.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.feather;
+            this.pictureBox1.Location = new System.Drawing.Point(285, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(166, 144);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 256;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 10F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(167, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(422, 17);
+            this.label3.TabIndex = 360;
+            this.label3.Text = "Please contact your system administrator if you need help on registration!";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 11F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(319, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 18);
+            this.label2.TabIndex = 359;
+            this.label2.Text = "INFORMATION";
             // 
             // LoginRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
-            this.Controls.Add(this.metroLink2);
+            this.Controls.Add(this.panel_Help);
+            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.fogotPass_Link);
             this.Controls.Add(this.panel_Indicator);
             this.Controls.Add(this.pictureLogo);
-            this.Controls.Add(this.metroCheckBox1);
-            this.Controls.Add(this.button_Search);
+            this.Controls.Add(this.rememberMe);
+            this.Controls.Add(this.button_Login);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox_Password);
@@ -277,8 +353,12 @@
             this.Controls.Add(this.metroPanel2);
             this.MaximizeBox = false;
             this.Name = "LoginRegisterForm";
+            this.Opacity = 0.97D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
+            this.panel_Help.ResumeLayout(false);
+            this.panel_Help.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,10 +373,15 @@
         private MetroFramework.Controls.MetroTextBox textBox_Password;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button_Search;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private System.Windows.Forms.Button button_Login;
+        private MetroFramework.Controls.MetroCheckBox rememberMe;
         private System.Windows.Forms.PictureBox pictureLogo;
         private System.Windows.Forms.Panel panel_Indicator;
-        private MetroFramework.Controls.MetroLink metroLink2;
+        private MetroFramework.Controls.MetroLink fogotPass_Link;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.Panel panel_Help;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

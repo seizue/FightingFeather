@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel18 = new MetroFramework.Controls.MetroPanel();
             this.button_CreateNewPlasada = new System.Windows.Forms.Button();
@@ -85,6 +85,7 @@
             this.button_Summa = new System.Windows.Forms.Button();
             this.button_Plasada = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.button_Admin = new System.Windows.Forms.Button();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.button_Settings = new System.Windows.Forms.Button();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
@@ -106,7 +107,6 @@
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
             this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
-            this.button_Admin = new System.Windows.Forms.Button();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -470,25 +470,25 @@
             // GridPlasada_Entries
             // 
             this.GridPlasada_Entries.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Entries.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
             this.GridPlasada_Entries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridPlasada_Entries.BackgroundColor = System.Drawing.Color.White;
             this.GridPlasada_Entries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Entries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Entries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
             this.GridPlasada_Entries.ColumnHeadersHeight = 48;
             this.GridPlasada_Entries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIGHT,
@@ -507,14 +507,14 @@
             this.TOTAL_PLASADA,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Entries.DefaultCellStyle = dataGridViewCellStyle68;
             this.GridPlasada_Entries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPlasada_Entries.EnableHeadersVisualStyles = false;
             this.GridPlasada_Entries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -523,20 +523,20 @@
             this.GridPlasada_Entries.MultiSelect = false;
             this.GridPlasada_Entries.Name = "GridPlasada_Entries";
             this.GridPlasada_Entries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Entries.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.GridPlasada_Entries.RowHeadersVisible = false;
             this.GridPlasada_Entries.RowHeadersWidth = 30;
             this.GridPlasada_Entries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle70.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle70;
             this.GridPlasada_Entries.RowTemplate.Height = 23;
             this.GridPlasada_Entries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Entries.Size = new System.Drawing.Size(1059, 522);
@@ -549,8 +549,8 @@
             // FIGHT
             // 
             this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FIGHT.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FIGHT.DefaultCellStyle = dataGridViewCellStyle59;
             this.FIGHT.FillWeight = 91.15936F;
             this.FIGHT.HeaderText = "FIGHT";
             this.FIGHT.Name = "FIGHT";
@@ -600,12 +600,12 @@
             // 
             // WINNER
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle60.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle60;
             this.WINNER.DividerWidth = 3;
             this.WINNER.FillWeight = 91.15936F;
             this.WINNER.HeaderText = "WINNER";
@@ -614,61 +614,61 @@
             // 
             // RATE_AMOUNT
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle61.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RATE_AMOUNT.DefaultCellStyle = dataGridViewCellStyle61;
             this.RATE_AMOUNT.HeaderText = "RATE AMOUNT";
             this.RATE_AMOUNT.Name = "RATE_AMOUNT";
             // 
             // RATE
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.RATE.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle62.BackColor = System.Drawing.Color.White;
+            this.RATE.DefaultCellStyle = dataGridViewCellStyle62;
             this.RATE.FillWeight = 91.15936F;
             this.RATE.HeaderText = "RATE";
             this.RATE.Name = "RATE";
             // 
             // LOGRO
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            this.LOGRO.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle63.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.LOGRO.DefaultCellStyle = dataGridViewCellStyle63;
             this.LOGRO.FillWeight = 91.15936F;
             this.LOGRO.HeaderText = "LOGRO";
             this.LOGRO.Name = "LOGRO";
             // 
             // FEE
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            this.FEE.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.FEE.DefaultCellStyle = dataGridViewCellStyle64;
             this.FEE.FillWeight = 91.15936F;
             this.FEE.HeaderText = "FEE";
             this.FEE.Name = "FEE";
             // 
             // TOTAL_PLASADA
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            this.TOTAL_PLASADA.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle65.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.TOTAL_PLASADA.DefaultCellStyle = dataGridViewCellStyle65;
             this.TOTAL_PLASADA.FillWeight = 91.15936F;
             this.TOTAL_PLASADA.HeaderText = "PLASADA";
             this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
             // 
             // RATE_EARNINGS
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
-            this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle66.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
+            this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle66;
             this.RATE_EARNINGS.FillWeight = 63.81155F;
             this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
             this.RATE_EARNINGS.Name = "RATE_EARNINGS";
             // 
             // WINNERS_EARN
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WINNERS_EARN.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WINNERS_EARN.DefaultCellStyle = dataGridViewCellStyle67;
             this.WINNERS_EARN.FillWeight = 70F;
             this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
             this.WINNERS_EARN.Name = "WINNERS_EARN";
@@ -780,6 +780,27 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // button_Admin
+            // 
+            this.button_Admin.BackColor = System.Drawing.Color.Transparent;
+            this.button_Admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Admin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Admin.FlatAppearance.BorderSize = 0;
+            this.button_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Admin.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            this.button_Admin.Image = global::FightingFeather.Properties.Resources.four_squares_24px;
+            this.button_Admin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Admin.Location = new System.Drawing.Point(5, 340);
+            this.button_Admin.Name = "button_Admin";
+            this.button_Admin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Admin.Size = new System.Drawing.Size(140, 29);
+            this.button_Admin.TabIndex = 258;
+            this.button_Admin.Text = "       MANAGEMENT";
+            this.button_Admin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Admin.UseVisualStyleBackColor = true;
+            this.button_Admin.Click += new System.EventHandler(this.button_Admin_Click);
             // 
             // metroPanel6
             // 
@@ -1103,26 +1124,6 @@
             this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 522);
             this.userControl_Earnings1.TabIndex = 4;
             this.userControl_Earnings1.Visible = false;
-            // 
-            // button_Admin
-            // 
-            this.button_Admin.BackColor = System.Drawing.Color.Transparent;
-            this.button_Admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Admin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Admin.FlatAppearance.BorderSize = 0;
-            this.button_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Admin.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            this.button_Admin.Image = global::FightingFeather.Properties.Resources.handcart_24px;
-            this.button_Admin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Admin.Location = new System.Drawing.Point(5, 333);
-            this.button_Admin.Name = "button_Admin";
-            this.button_Admin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Admin.Size = new System.Drawing.Size(141, 29);
-            this.button_Admin.TabIndex = 258;
-            this.button_Admin.Text = "ADMIN";
-            this.button_Admin.UseVisualStyleBackColor = true;
-            this.button_Admin.Click += new System.EventHandler(this.button_Admin_Click);
             // 
             // Main
             // 

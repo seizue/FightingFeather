@@ -108,6 +108,12 @@ namespace FightingFeather
 
         }
 
+        public void UpdateAdminButtonVisibility(bool isAdmin)
+        {
+            button_Admin.Visible = isAdmin;
+        }
+
+
         public DateTime RaDateTimePickerValue
         {
             get { return raDateTimePicker1.Value; }
@@ -1732,8 +1738,9 @@ namespace FightingFeather
 
         private void button_Admin_Click(object sender, EventArgs e)
         {
-            LoginRegisterForm loginRegisterForm = new LoginRegisterForm();
-            loginRegisterForm.ShowDialog();
+            AdminForm adminForm = new AdminForm();
+            adminForm.ShowDialog();
+           
         }
     }
 }

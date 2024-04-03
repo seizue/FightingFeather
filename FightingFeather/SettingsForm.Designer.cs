@@ -44,6 +44,8 @@
             this.metroToggle_Reminder = new MetroFramework.Controls.MetroToggle();
             this.userControl_SettingsHelp1 = new FightingFeather.UserControl_SettingsHelp();
             this.userControl_SettingsLicense1 = new FightingFeather.UserControl_SettingsLicense();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +54,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.panel1.Controls.Add(this.metroPanel1);
+            this.panel1.Controls.Add(this.metroPanel4);
             this.panel1.Controls.Add(this.button_Help);
             this.panel1.Controls.Add(this.button_License);
             this.panel1.Controls.Add(this.button_General);
@@ -71,7 +75,7 @@
             this.button_Help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_Help.Image = global::FightingFeather.Properties.Resources.help_24px;
             this.button_Help.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Help.Location = new System.Drawing.Point(23, 111);
+            this.button_Help.Location = new System.Drawing.Point(23, 147);
             this.button_Help.Name = "button_Help";
             this.button_Help.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Help.Size = new System.Drawing.Size(113, 31);
@@ -91,7 +95,7 @@
             this.button_License.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.button_License.Image = global::FightingFeather.Properties.Resources.Licence_24px;
             this.button_License.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_License.Location = new System.Drawing.Point(23, 74);
+            this.button_License.Location = new System.Drawing.Point(23, 92);
             this.button_License.Name = "button_License";
             this.button_License.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_License.Size = new System.Drawing.Size(130, 31);
@@ -279,6 +283,44 @@
             this.userControl_SettingsLicense1.TabIndex = 356;
             this.userControl_SettingsLicense1.Visible = false;
             // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(27, 80);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(160, 1);
+            this.metroPanel4.TabIndex = 336;
+            this.metroPanel4.UseCustomBackColor = true;
+            this.metroPanel4.UseStyleColors = true;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(27, 135);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(160, 1);
+            this.metroPanel1.TabIndex = 337;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseStyleColors = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +365,7 @@
         private MetroFramework.Controls.MetroToggle metroToggle_Reminder;
         private UserControl_SettingsLicense userControl_SettingsLicense1;
         private UserControl_SettingsHelp userControl_SettingsHelp1;
+        private MetroFramework.Controls.MetroPanel metroPanel4;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }

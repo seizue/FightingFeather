@@ -359,6 +359,9 @@ namespace FightingFeather
                 Directory.CreateDirectory(folderPath);
             }
 
+            // Create the folder if it doesn't exist
+            CreateFolder(folderPath);
+
             // Combine the folder path and the file name "summa.json"
             string filePath = Path.Combine(folderPath, "MSu", "summa.json");
 
@@ -401,6 +404,26 @@ namespace FightingFeather
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while saving the data to summa.json: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CreateFolder(string folderPath)
+        {
+            try
+            {
+                // Combine the folder path and the folder name "MSu"
+                string msuFolderPath = Path.Combine(folderPath, "MSu");
+
+                // Check if the folder already exists
+                if (!Directory.Exists(msuFolderPath))
+                {
+                    // Create the folder
+                    Directory.CreateDirectory(msuFolderPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while creating the folder: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

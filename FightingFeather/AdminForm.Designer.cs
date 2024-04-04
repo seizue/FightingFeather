@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle141 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle142 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle148 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle149 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle150 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle143 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle144 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle145 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle146 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle147 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle191 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle192 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle198 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle199 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle200 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle193 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle194 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle195 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle196 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle197 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_License = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -100,9 +100,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -111,8 +108,8 @@
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -226,12 +223,12 @@
             // 
             this.Grid_RegisterUsers.AllowUserToAddRows = false;
             this.Grid_RegisterUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle141.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle141.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle141.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle141.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle141.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Grid_RegisterUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle141;
+            dataGridViewCellStyle191.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle191.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle191.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle191.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle191.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Grid_RegisterUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle191;
             this.Grid_RegisterUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,14 +237,14 @@
             this.Grid_RegisterUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_RegisterUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grid_RegisterUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle142.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle142.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle142.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle142.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle142.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle142.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle142.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_RegisterUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle142;
+            dataGridViewCellStyle192.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle192.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle192.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle192.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle192.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle192.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle192.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_RegisterUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle192;
             this.Grid_RegisterUsers.ColumnHeadersHeight = 35;
             this.Grid_RegisterUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -256,14 +253,14 @@
             this.PASSWORD,
             this.DATE,
             this.STATUS});
-            dataGridViewCellStyle148.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle148.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle148.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle148.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle148.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle148.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle148.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_RegisterUsers.DefaultCellStyle = dataGridViewCellStyle148;
+            dataGridViewCellStyle198.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle198.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle198.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle198.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle198.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle198.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle198.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_RegisterUsers.DefaultCellStyle = dataGridViewCellStyle198;
             this.Grid_RegisterUsers.EnableHeadersVisualStyles = false;
             this.Grid_RegisterUsers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_RegisterUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -271,19 +268,19 @@
             this.Grid_RegisterUsers.MultiSelect = false;
             this.Grid_RegisterUsers.Name = "Grid_RegisterUsers";
             this.Grid_RegisterUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle149.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle149.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle149.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle149.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle149.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle149.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle149.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_RegisterUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle149;
+            dataGridViewCellStyle199.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle199.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle199.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle199.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle199.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle199.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle199.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_RegisterUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle199;
             this.Grid_RegisterUsers.RowHeadersWidth = 20;
             this.Grid_RegisterUsers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle150.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle150.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.Grid_RegisterUsers.RowsDefaultCellStyle = dataGridViewCellStyle150;
+            dataGridViewCellStyle200.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle200.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.Grid_RegisterUsers.RowsDefaultCellStyle = dataGridViewCellStyle200;
             this.Grid_RegisterUsers.RowTemplate.Height = 23;
             this.Grid_RegisterUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_RegisterUsers.Size = new System.Drawing.Size(1057, 433);
@@ -303,42 +300,42 @@
             // NAME
             // 
             this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle143.Format = "N2";
-            dataGridViewCellStyle143.NullValue = null;
-            this.NAME.DefaultCellStyle = dataGridViewCellStyle143;
+            dataGridViewCellStyle193.Format = "N2";
+            dataGridViewCellStyle193.NullValue = null;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle193;
             this.NAME.HeaderText = "NAME";
             this.NAME.Name = "NAME";
             // 
             // USERNAME
             // 
             this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle144.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle144.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle144;
+            dataGridViewCellStyle194.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle194.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle194;
             this.USERNAME.HeaderText = "USERNAME";
             this.USERNAME.Name = "USERNAME";
             // 
             // PASSWORD
             // 
             this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle145.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle145;
+            dataGridViewCellStyle195.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle195;
             this.PASSWORD.HeaderText = "PASSWORD";
             this.PASSWORD.Name = "PASSWORD";
             // 
             // DATE
             // 
             this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle146.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.DATE.DefaultCellStyle = dataGridViewCellStyle146;
+            dataGridViewCellStyle196.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DATE.DefaultCellStyle = dataGridViewCellStyle196;
             this.DATE.HeaderText = "DATE";
             this.DATE.Name = "DATE";
             // 
             // STATUS
             // 
             this.STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle147.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.STATUS.DefaultCellStyle = dataGridViewCellStyle147;
+            dataGridViewCellStyle197.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.STATUS.DefaultCellStyle = dataGridViewCellStyle197;
             this.STATUS.HeaderText = "STATUS";
             this.STATUS.Name = "STATUS";
             // 
@@ -504,14 +501,11 @@
             // 
             // panel_AdvanceSettings
             // 
+            this.panel_AdvanceSettings.Controls.Add(this.metroPanel9);
             this.panel_AdvanceSettings.Controls.Add(this.metroPanel14);
-            this.panel_AdvanceSettings.Controls.Add(this.label6);
             this.panel_AdvanceSettings.Controls.Add(this.panel2);
             this.panel_AdvanceSettings.Controls.Add(this.metroTextBox5);
             this.panel_AdvanceSettings.Controls.Add(this.label19);
-            this.panel_AdvanceSettings.Controls.Add(this.label18);
-            this.panel_AdvanceSettings.Controls.Add(this.metroTextBox2);
-            this.panel_AdvanceSettings.Controls.Add(this.metroPanel9);
             this.panel_AdvanceSettings.Controls.Add(this.label17);
             this.panel_AdvanceSettings.Controls.Add(this.label15);
             this.panel_AdvanceSettings.Controls.Add(this.metroTextBox3);
@@ -534,7 +528,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label11.Location = new System.Drawing.Point(558, 290);
+            this.label11.Location = new System.Drawing.Point(551, 290);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 15);
             this.label11.TabIndex = 411;
@@ -545,7 +539,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label10.Location = new System.Drawing.Point(558, 150);
+            this.label10.Location = new System.Drawing.Point(551, 152);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(122, 15);
             this.label10.TabIndex = 409;
@@ -553,15 +547,15 @@
             // 
             // button_SaveNewPassword
             // 
-            this.button_SaveNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.button_SaveNewPassword.BackColor = System.Drawing.Color.Sienna;
             this.button_SaveNewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_SaveNewPassword.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_SaveNewPassword.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.button_SaveNewPassword.FlatAppearance.BorderSize = 2;
             this.button_SaveNewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SaveNewPassword.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_SaveNewPassword.ForeColor = System.Drawing.Color.MintCream;
+            this.button_SaveNewPassword.ForeColor = System.Drawing.Color.Snow;
             this.button_SaveNewPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_SaveNewPassword.Location = new System.Drawing.Point(561, 360);
+            this.button_SaveNewPassword.Location = new System.Drawing.Point(554, 360);
             this.button_SaveNewPassword.Name = "button_SaveNewPassword";
             this.button_SaveNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_SaveNewPassword.Size = new System.Drawing.Size(314, 34);
@@ -1080,7 +1074,7 @@
             this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBox3.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(561, 182);
+            this.metroTextBox3.Location = new System.Drawing.Point(554, 182);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '*';
@@ -1118,12 +1112,12 @@
             this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.MintCream;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(7, 360);
+            this.button1.Location = new System.Drawing.Point(7, 256);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(314, 34);
             this.button1.TabIndex = 413;
-            this.button1.Text = "DECRYPT";
+            this.button1.Text = "ENTER";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label15
@@ -1133,94 +1127,31 @@
             this.label15.ForeColor = System.Drawing.Color.Gray;
             this.label15.Location = new System.Drawing.Point(6, 62);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(322, 14);
+            this.label15.Size = new System.Drawing.Size(216, 14);
             this.label15.TabIndex = 419;
-            this.label15.Text = "Password is encrypted automatically for security purposes";
+            this.label15.Text = "Password must be atleast 8 characters";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.label17.ForeColor = System.Drawing.Color.Gray;
-            this.label17.Location = new System.Drawing.Point(4, 219);
+            this.label17.Location = new System.Drawing.Point(58, 216);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(208, 15);
             this.label17.TabIndex = 421;
             this.label17.Text = "Enter security key inorder to proceed";
-            // 
-            // metroPanel9
-            // 
-            this.metroPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel9.HorizontalScrollbarBarColor = true;
-            this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel9.HorizontalScrollbarSize = 10;
-            this.metroPanel9.Location = new System.Drawing.Point(76, 263);
-            this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(160, 1);
-            this.metroPanel9.TabIndex = 422;
-            this.metroPanel9.UseCustomBackColor = true;
-            this.metroPanel9.UseStyleColors = true;
-            this.metroPanel9.VerticalScrollbarBarColor = true;
-            this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel9.VerticalScrollbarSize = 10;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(4, 290);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(135, 15);
-            this.label18.TabIndex = 424;
-            this.label18.Text = "ENCRYPTED PASSWORD";
-            // 
-            // metroTextBox2
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(288, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox2.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(7, 320);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '*';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.ShowButton = true;
-            this.metroTextBox2.ShowClearButton = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(314, 27);
-            this.metroTextBox2.TabIndex = 423;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Calibri", 9.55F);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DimGray;
-            this.label19.Location = new System.Drawing.Point(6, 421);
+            this.label19.Location = new System.Drawing.Point(4, 347);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 15);
             this.label19.TabIndex = 425;
-            this.label19.Text = "RESULT";
+            this.label19.Text = "STATUS";
             // 
             // metroTextBox5
             // 
@@ -1238,7 +1169,7 @@
             this.metroTextBox5.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBox5.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.metroTextBox5.Lines = new string[0];
-            this.metroTextBox5.Location = new System.Drawing.Point(561, 320);
+            this.metroTextBox5.Location = new System.Drawing.Point(554, 320);
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '*';
@@ -1262,7 +1193,7 @@
             this.panel2.Controls.Add(this.metroPanel12);
             this.panel2.Controls.Add(this.metroPanel11);
             this.panel2.Controls.Add(this.metroPanel10);
-            this.panel2.Location = new System.Drawing.Point(9, 453);
+            this.panel2.Location = new System.Drawing.Point(7, 379);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(312, 100);
             this.panel2.TabIndex = 430;
@@ -1350,17 +1281,6 @@
             this.richTextBox1.TabIndex = 434;
             this.richTextBox1.Text = "";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(558, 219);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(239, 15);
-            this.label6.TabIndex = 431;
-            this.label6.Text = "Enter password from decrypting result box";
-            // 
             // metroPanel14
             // 
             this.metroPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1370,7 +1290,7 @@
             this.metroPanel14.HorizontalScrollbarBarColor = true;
             this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel14.HorizontalScrollbarSize = 10;
-            this.metroPanel14.Location = new System.Drawing.Point(637, 265);
+            this.metroPanel14.Location = new System.Drawing.Point(630, 265);
             this.metroPanel14.Name = "metroPanel14";
             this.metroPanel14.Size = new System.Drawing.Size(160, 1);
             this.metroPanel14.TabIndex = 432;
@@ -1379,6 +1299,25 @@
             this.metroPanel14.VerticalScrollbarBarColor = true;
             this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel14.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel9
+            // 
+            this.metroPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel9.HorizontalScrollbarBarColor = true;
+            this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel9.HorizontalScrollbarSize = 10;
+            this.metroPanel9.Location = new System.Drawing.Point(78, 320);
+            this.metroPanel9.Name = "metroPanel9";
+            this.metroPanel9.Size = new System.Drawing.Size(160, 1);
+            this.metroPanel9.TabIndex = 433;
+            this.metroPanel9.UseCustomBackColor = true;
+            this.metroPanel9.UseStyleColors = true;
+            this.metroPanel9.VerticalScrollbarBarColor = true;
+            this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel9.VerticalScrollbarSize = 10;
             // 
             // AdminForm
             // 
@@ -1485,9 +1424,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroPanel metroPanel9;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel2;
@@ -1497,6 +1433,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel11;
         private MetroFramework.Controls.MetroPanel metroPanel10;
         private MetroFramework.Controls.MetroPanel metroPanel14;
-        private System.Windows.Forms.Label label6;
+        private MetroFramework.Controls.MetroPanel metroPanel9;
     }
 }

@@ -40,6 +40,10 @@ namespace FightingFeather
             label_AdminSettings.ForeColor = Color.FromArgb(64, 64, 64);
             panel_Indicator.Location = new Point(260, 66);
             panel_Indicator.Size = new Size(65, 4);
+
+           
+            panel_BGAddNewUser.Visible = false;
+            panel_AdvanceSettings.Visible = false;
         }
 
         private void label_AdminSettings_Click(object sender, EventArgs e)
@@ -48,6 +52,10 @@ namespace FightingFeather
             label_RegisterUsers.ForeColor = Color.FromArgb(64, 64, 64);
             panel_Indicator.Location = new Point(375, 66);
             panel_Indicator.Size = new Size(121, 4);
+
+            panel_AdvanceSettings.Visible = true;
+            panel_BGAddNewUser.Visible = true;
+           
         }
 
         private void button_AddNewUser_Click(object sender, EventArgs e)
@@ -60,8 +68,11 @@ namespace FightingFeather
 
             panel_BGAddNewUser.Visible = true;
             label_AdminSettings.Enabled = false;
+            label_RegisterUsers.Enabled = false;
             button_License.Enabled = false;
-            button_SaveUpdate.Enabled = false;
+            button_SaveUpdate.Visible = false;
+            
+            
         }
 
         private string GetNextIdFromDatabase()
@@ -97,7 +108,11 @@ namespace FightingFeather
 
             panel_BGAddNewUser.Visible=false;
             label_AdminSettings.Enabled = true;
+            label_RegisterUsers.Enabled = true;
             button_License.Enabled = true;
+            button_SaveUpdate.Visible = false;
+            button_AddNewUser.Visible = true;
+            label_Dis.Text = "REGISTRATION FORM";
         }
 
         private void button_SaveNewUser_Click(object sender, EventArgs e)
@@ -167,7 +182,9 @@ namespace FightingFeather
                 // Show the update form
                 panel_BGAddNewUser.Visible = true;
                 button_SaveUpdate.Visible = true;
+                button_SaveUpdate.Enabled = true;
                 label_AdminSettings.Enabled = false;
+                label_RegisterUsers.Enabled = false;
                 button_License.Enabled = false;
                 label_Dis.Text = "UPDATE FORM";
             }
@@ -554,7 +571,6 @@ namespace FightingFeather
             // Reload the data into the DataGridView to revert to the default state
             LoadDataToGrid();
         }
-
 
         private void textBox_Search_ClearClicked()
         {

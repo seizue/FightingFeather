@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_License = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -42,11 +45,6 @@
             this.label_RegisterUsers = new System.Windows.Forms.Label();
             this.Panel_Line = new MetroFramework.Controls.MetroPanel();
             this.Grid_RegisterUsers = new MetroFramework.Controls.MetroGrid();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_Search = new MetroFramework.Controls.MetroTextBox();
             this.button_FIND = new System.Windows.Forms.Button();
             this.button_CLEAR = new System.Windows.Forms.Button();
@@ -74,7 +72,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Name = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox_ID = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button_UpdateUser = new System.Windows.Forms.Button();
@@ -82,7 +79,15 @@
             this.button_ChangePass = new System.Windows.Forms.Button();
             this.button_CheckPass = new System.Windows.Forms.Button();
             this.button_AddNewUser = new System.Windows.Forms.Button();
+            this.button_SaveUpdate = new System.Windows.Forms.Button();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox_ID = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -194,12 +199,12 @@
             // 
             this.Grid_RegisterUsers.AllowUserToAddRows = false;
             this.Grid_RegisterUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Grid_RegisterUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle61.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle61.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Grid_RegisterUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle61;
             this.Grid_RegisterUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -208,29 +213,30 @@
             this.Grid_RegisterUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_RegisterUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grid_RegisterUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_RegisterUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_RegisterUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;
             this.Grid_RegisterUsers.ColumnHeadersHeight = 35;
             this.Grid_RegisterUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NAME,
             this.USERNAME,
             this.PASSWORD,
+            this.DATE,
             this.STATUS});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_RegisterUsers.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_RegisterUsers.DefaultCellStyle = dataGridViewCellStyle68;
             this.Grid_RegisterUsers.EnableHeadersVisualStyles = false;
             this.Grid_RegisterUsers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_RegisterUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -238,19 +244,19 @@
             this.Grid_RegisterUsers.MultiSelect = false;
             this.Grid_RegisterUsers.Name = "Grid_RegisterUsers";
             this.Grid_RegisterUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_RegisterUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_RegisterUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.Grid_RegisterUsers.RowHeadersWidth = 20;
             this.Grid_RegisterUsers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.Grid_RegisterUsers.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.Grid_RegisterUsers.RowsDefaultCellStyle = dataGridViewCellStyle70;
             this.Grid_RegisterUsers.RowTemplate.Height = 23;
             this.Grid_RegisterUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_RegisterUsers.Size = new System.Drawing.Size(1057, 433);
@@ -258,44 +264,6 @@
             this.Grid_RegisterUsers.UseCustomBackColor = true;
             this.Grid_RegisterUsers.UseCustomForeColor = true;
             this.Grid_RegisterUsers.UseStyleColors = true;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DividerWidth = 3;
-            this.ID.FillWeight = 91.15936F;
-            this.ID.HeaderText = "ID NO.";
-            this.ID.Name = "ID";
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.NAME.DefaultCellStyle = dataGridViewCellStyle10;
-            this.NAME.HeaderText = "NAME";
-            this.NAME.Name = "NAME";
-            // 
-            // USERNAME
-            // 
-            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle11;
-            this.USERNAME.HeaderText = "USERNAME";
-            this.USERNAME.Name = "USERNAME";
-            // 
-            // PASSWORD
-            // 
-            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PASSWORD.HeaderText = "PASSWORD";
-            this.PASSWORD.Name = "PASSWORD";
-            // 
-            // STATUS
-            // 
-            this.STATUS.HeaderText = "STATUS";
-            this.STATUS.Name = "STATUS";
-            this.STATUS.Width = 62;
             // 
             // textBox_Search
             // 
@@ -346,6 +314,7 @@
             this.button_FIND.TabIndex = 366;
             this.button_FIND.Text = "FIND";
             this.button_FIND.UseVisualStyleBackColor = false;
+            this.button_FIND.Click += new System.EventHandler(this.button_FIND_Click);
             // 
             // button_CLEAR
             // 
@@ -364,6 +333,7 @@
             this.button_CLEAR.TabIndex = 367;
             this.button_CLEAR.Text = "CLEAR";
             this.button_CLEAR.UseVisualStyleBackColor = false;
+            this.button_CLEAR.Click += new System.EventHandler(this.button_CLEAR_Click);
             // 
             // metroPanel1
             // 
@@ -425,6 +395,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_BGAddNewUser.BackColor = System.Drawing.Color.White;
+            this.panel_BGAddNewUser.Controls.Add(this.textBox_ID);
+            this.panel_BGAddNewUser.Controls.Add(this.button_SaveUpdate);
             this.panel_BGAddNewUser.Controls.Add(this.metroPanel6);
             this.panel_BGAddNewUser.Controls.Add(this.metroPanel7);
             this.panel_BGAddNewUser.Controls.Add(this.metroPanel5);
@@ -444,10 +416,9 @@
             this.panel_BGAddNewUser.Controls.Add(this.label1);
             this.panel_BGAddNewUser.Controls.Add(this.textBox_Name);
             this.panel_BGAddNewUser.Controls.Add(this.label21);
-            this.panel_BGAddNewUser.Controls.Add(this.textBox_ID);
-            this.panel_BGAddNewUser.Location = new System.Drawing.Point(253, 76);
+            this.panel_BGAddNewUser.Location = new System.Drawing.Point(253, 77);
             this.panel_BGAddNewUser.Name = "panel_BGAddNewUser";
-            this.panel_BGAddNewUser.Size = new System.Drawing.Size(1057, 563);
+            this.panel_BGAddNewUser.Size = new System.Drawing.Size(1057, 562);
             this.panel_BGAddNewUser.TabIndex = 377;
             this.panel_BGAddNewUser.Visible = false;
             // 
@@ -625,7 +596,7 @@
             this.comboBox_Status.Name = "comboBox_Status";
             this.comboBox_Status.Size = new System.Drawing.Size(197, 23);
             this.comboBox_Status.TabIndex = 264;
-            this.comboBox_Status.Text = "ACTIVE";
+            this.comboBox_Status.Text = "N/A";
             // 
             // label4
             // 
@@ -634,26 +605,26 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(467, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 15);
+            this.label4.Size = new System.Drawing.Size(53, 15);
             this.label4.TabIndex = 388;
-            this.label4.Text = "STATUS";
+            this.label4.Text = "STATUS *";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(244, 215);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(244, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 15);
+            this.label3.Size = new System.Drawing.Size(113, 15);
             this.label3.TabIndex = 387;
-            this.label3.Text = "ENTER PASSWORD";
+            this.label3.Text = "ENTER PASSWORD *";
             // 
             // textBox_Password
             // 
             this.textBox_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.textBox_Password.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Password.Location = new System.Drawing.Point(247, 239);
+            this.textBox_Password.Location = new System.Drawing.Point(247, 246);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(197, 23);
             this.textBox_Password.TabIndex = 386;
@@ -665,15 +636,15 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(244, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 15);
+            this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 385;
-            this.label2.Text = "ENTER USERNAME";
+            this.label2.Text = "ENTER NAME *";
             // 
             // textBox_Username
             // 
             this.textBox_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.textBox_Username.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Username.Location = new System.Drawing.Point(247, 173);
+            this.textBox_Username.Location = new System.Drawing.Point(23, 246);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(197, 23);
             this.textBox_Username.TabIndex = 384;
@@ -682,18 +653,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(20, 215);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(20, 222);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.Size = new System.Drawing.Size(111, 15);
             this.label1.TabIndex = 383;
-            this.label1.Text = "ENTER NAME";
+            this.label1.Text = "ENTER USERNAME *";
             // 
             // textBox_Name
             // 
             this.textBox_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.textBox_Name.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Name.Location = new System.Drawing.Point(23, 240);
+            this.textBox_Name.Location = new System.Drawing.Point(247, 173);
             this.textBox_Name.Name = "textBox_Name";
             this.textBox_Name.Size = new System.Drawing.Size(197, 23);
             this.textBox_Name.TabIndex = 382;
@@ -708,16 +679,6 @@
             this.label21.Size = new System.Drawing.Size(69, 15);
             this.label21.TabIndex = 381;
             this.label21.Text = "ID NUMBER";
-            // 
-            // textBox_ID
-            // 
-            this.textBox_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_ID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ID.Location = new System.Drawing.Point(23, 173);
-            this.textBox_ID.Name = "textBox_ID";
-            this.textBox_ID.ReadOnly = true;
-            this.textBox_ID.Size = new System.Drawing.Size(197, 23);
-            this.textBox_ID.TabIndex = 380;
             // 
             // label7
             // 
@@ -781,6 +742,7 @@
             this.button_Export.Text = "EXPORT CSV";
             this.button_Export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_Export.UseVisualStyleBackColor = false;
+            this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
             // 
             // button_ChangePass
             // 
@@ -801,6 +763,7 @@
             this.button_ChangePass.Text = "CHANGE PASSWORD";
             this.button_ChangePass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_ChangePass.UseVisualStyleBackColor = false;
+            this.button_ChangePass.Click += new System.EventHandler(this.button_ChangePass_Click);
             // 
             // button_CheckPass
             // 
@@ -821,6 +784,7 @@
             this.button_CheckPass.Text = "CHECK PASSWORD";
             this.button_CheckPass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_CheckPass.UseVisualStyleBackColor = false;
+            this.button_CheckPass.Click += new System.EventHandler(this.button_CheckPass_Click);
             // 
             // button_AddNewUser
             // 
@@ -843,6 +807,27 @@
             this.button_AddNewUser.UseVisualStyleBackColor = false;
             this.button_AddNewUser.Click += new System.EventHandler(this.button_AddNewUser_Click);
             // 
+            // button_SaveUpdate
+            // 
+            this.button_SaveUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_SaveUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(136)))), ((int)(((byte)(43)))));
+            this.button_SaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_SaveUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(65)))));
+            this.button_SaveUpdate.FlatAppearance.BorderSize = 2;
+            this.button_SaveUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SaveUpdate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_SaveUpdate.ForeColor = System.Drawing.Color.MintCream;
+            this.button_SaveUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_SaveUpdate.Location = new System.Drawing.Point(513, 368);
+            this.button_SaveUpdate.Name = "button_SaveUpdate";
+            this.button_SaveUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_SaveUpdate.Size = new System.Drawing.Size(171, 29);
+            this.button_SaveUpdate.TabIndex = 400;
+            this.button_SaveUpdate.Text = "UPDATE";
+            this.button_SaveUpdate.UseVisualStyleBackColor = false;
+            this.button_SaveUpdate.Visible = false;
+            this.button_SaveUpdate.Click += new System.EventHandler(this.button_SaveUpdate_Click);
+            // 
             // raDateTimePicker1
             // 
             this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -859,6 +844,65 @@
             this.raDateTimePicker1.TabIndex = 393;
             this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.DividerWidth = 3;
+            this.ID.FillWeight = 91.15936F;
+            this.ID.HeaderText = "ID NO.";
+            this.ID.Name = "ID";
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle63.Format = "N2";
+            dataGridViewCellStyle63.NullValue = null;
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle63;
+            this.NAME.HeaderText = "NAME";
+            this.NAME.Name = "NAME";
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle64;
+            this.USERNAME.HeaderText = "USERNAME";
+            this.USERNAME.Name = "USERNAME";
+            // 
+            // PASSWORD
+            // 
+            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle65;
+            this.PASSWORD.HeaderText = "PASSWORD";
+            this.PASSWORD.Name = "PASSWORD";
+            // 
+            // DATE
+            // 
+            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DATE.DefaultCellStyle = dataGridViewCellStyle66;
+            this.DATE.HeaderText = "DATE";
+            this.DATE.Name = "DATE";
+            // 
+            // STATUS
+            // 
+            this.STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.STATUS.DefaultCellStyle = dataGridViewCellStyle67;
+            this.STATUS.HeaderText = "STATUS";
+            this.STATUS.Name = "STATUS";
+            // 
+            // textBox_ID
+            // 
+            this.textBox_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_ID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ID.Location = new System.Drawing.Point(23, 173);
+            this.textBox_ID.Name = "textBox_ID";
+            this.textBox_ID.Size = new System.Drawing.Size(197, 23);
+            this.textBox_ID.TabIndex = 401;
             // 
             // AdminForm
             // 
@@ -886,6 +930,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "AdminForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).EndInit();
             this.panel_BGAddNewUser.ResumeLayout(false);
@@ -917,11 +963,6 @@
         private System.Windows.Forms.Panel panel_Indicator;
         private System.Windows.Forms.Button button_UpdateUser;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PASSWORD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
         private System.Windows.Forms.Panel panel_BGAddNewUser;
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private MetroFramework.Controls.MetroPanel metroPanel5;
@@ -942,9 +983,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox textBox_Name;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.MaskedTextBox textBox_ID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroPanel metroPanel6;
+        private System.Windows.Forms.Button button_SaveUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PASSWORD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
+        private System.Windows.Forms.MaskedTextBox textBox_ID;
     }
 }

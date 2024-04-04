@@ -159,5 +159,14 @@ namespace FightingFeather
             MessageBox.Show("Please contact your system administrator if you forgot the password!");
         }
 
+        private void textBox_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Trigger the button click event
+                button_Login.PerformClick();
+            }
+        }
     }
 }

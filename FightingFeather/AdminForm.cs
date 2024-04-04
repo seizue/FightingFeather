@@ -71,8 +71,7 @@ namespace FightingFeather
             label_RegisterUsers.Enabled = false;
             button_License.Enabled = false;
             button_SaveUpdate.Visible = false;
-            
-            
+                    
         }
 
         private string GetNextIdFromDatabase()
@@ -596,5 +595,9 @@ namespace FightingFeather
             }
         }
 
+        private void button_SaveNewPassword_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

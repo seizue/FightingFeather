@@ -108,11 +108,13 @@ namespace FightingFeather
 
         }
 
-        public void UpdateAdminButtonVisibility(bool isAdmin)
-        {
-            button_Admin.Visible = isAdmin;
-        }
 
+        public void LoginComplete(LoginRegisterForm.UserType userType)
+        {
+            // Show or hide the admin button based on the user type
+            button_Admin.Visible = userType == LoginRegisterForm.UserType.Admin;
+            AdminDivider.Visible = userType == LoginRegisterForm.UserType.Admin;
+        }
 
         public DateTime RaDateTimePickerValue
         {

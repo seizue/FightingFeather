@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -274,6 +275,300 @@ namespace FightingFeather
                 }
             }
         }
+  
+
+        private void button_CheckPass_Click(object sender, EventArgs e)
+        {
+            if (Grid_RegisterUsers.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = Grid_RegisterUsers.SelectedRows[0];
+
+                // Get the value of the Password column in the selected row
+                string password = selectedRow.Cells["PASSWORD"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(password))
+                {
+                    // Display the password
+                    MessageBox.Show($"Password: {password}", "Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No password found for the selected row.", "No Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to view the password.", "No Row Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void button_ChangePass_Click(object sender, EventArgs e)
+        {
+            if (Grid_RegisterUsers.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = Grid_RegisterUsers.SelectedRows[0];
+
+                // Get the ID of the selected user
+                string userId = selectedRow.Cells["ID"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    // Prompt user to enter new password
+                    string newPassword = PromptForNewPassword();
+
+                    if (!string.IsNullOrEmpty(newPassword))
+                    {
+                        // Update password in the database
+                        UpdatePasswordInDatabase(userId, newPassword);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No user ID found for the selected row.", "No User ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to change the password.", "No Row Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private string PromptForNewPassword()
+        {
+            // Create the form
+            using (var form = new Form())
+            {
+                // Set form properties
+                form.Text = "Enter New Password";
+                form.FormBorderStyle = FormBorderStyle.FixedDialog; // Remove minimize and maximize buttons
+                form.StartPosition = FormStartPosition.CenterScreen; // Center the form
+                form.ClientSize = new Size(200, 70); // Set custom size
+                form.MaximizeBox = false; // Disable maximize button
+                form.MinimizeBox = false; // Disable minimize button
+
+                // Create the password input textbox
+                var passwordBox = new TextBox
+                {
+                    PasswordChar = '*',
+                    Dock = DockStyle.Top,
+                    MaxLength = 100,
+                    Margin = new Padding(10)
+                };
+
+                // Create the OK button
+                var okButton = new Button
+                {
+                    Text = "OK",
+                    Dock = DockStyle.Bottom,
+                    BackColor = Color.WhiteSmoke,
+                    ForeColor = Color.DimGray
+                };
+
+                // Handle button click event
+                okButton.Click += (sender, e) => form.DialogResult = DialogResult.OK;
+
+                // Add controls to the form
+                form.Controls.Add(passwordBox);
+                form.Controls.Add(okButton);
+
+                // Show the form
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    return passwordBox.Text;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+
+        private void UpdatePasswordInDatabase(string userId, string newPassword)
+        {
+            string updateQuery = "UPDATE AccountRegistered SET Password = @Password WHERE ID = @ID";
+
+            using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, sqliteConnection))
+            {
+                cmd.Parameters.AddWithValue("@ID", userId);
+                cmd.Parameters.AddWithValue("@Password", newPassword);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Password changed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refresh the grid
+                    LoadDataToGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to change password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private void button_Export_Click(object sender, EventArgs e)
+        {
+            // Show the save file dialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+            saveFileDialog.FileName = "FF_Accounts.csv"; // Default file name
+            saveFileDialog.Title = "Export to CSV";
+            saveFileDialog.ShowDialog();
+
+            // If the file name is not an empty string, proceed to export
+            if (saveFileDialog.FileName != "")
+            {
+                try
+                {
+                    // Open the file stream for writing
+                    using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
+                    {
+                        // Write the column headers
+                        for (int i = 0; i < Grid_RegisterUsers.Columns.Count; i++)
+                        {
+                            streamWriter.Write(Grid_RegisterUsers.Columns[i].HeaderText);
+                            if (i < Grid_RegisterUsers.Columns.Count - 1)
+                                streamWriter.Write(",");
+                        }
+                        streamWriter.WriteLine();
+
+                        // Write the data rows
+                        foreach (DataGridViewRow row in Grid_RegisterUsers.Rows)
+                        {
+                            for (int i = 0; i < Grid_RegisterUsers.Columns.Count; i++)
+                            {
+                                if (row.Cells[i].Value != null)
+                                    streamWriter.Write(row.Cells[i].Value.ToString());
+                                else
+                                    streamWriter.Write("");
+                                if (i < Grid_RegisterUsers.Columns.Count - 1)
+                                    streamWriter.Write(",");
+                            }
+                            streamWriter.WriteLine();
+                        }
+                    }
+
+                    MessageBox.Show("Data exported successfully!", "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error exporting data: " + ex.Message, "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button_FIND_Click(object sender, EventArgs e)
+        {
+            SearchAccountsGrid();
+        }
+
+        private void SearchAccountsGrid()
+        {
+            // Get the search term from the TextBox
+            string searchTerm = textBox_Search.Text.Trim();
+
+            // If the search term is empty, return
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                MessageBox.Show("Please enter a search term.", "Empty Search Term", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Store the visibility state of columns
+            Dictionary<string, bool> columnVisibility = new Dictionary<string, bool>();
+            foreach (DataGridViewColumn column in Grid_RegisterUsers.Columns)
+            {
+                columnVisibility[column.Name] = column.Visible;
+            }
+
+            // Show all columns to ensure searching works correctly
+            foreach (DataGridViewColumn column in Grid_RegisterUsers.Columns)
+            {
+                column.Visible = true;
+            }
+
+            // Flag to check if any match is found
+            bool matchFound = false;
+
+            // Iterate through the rows of the DataGridView
+            foreach (DataGridViewRow row in Grid_RegisterUsers.Rows)
+            {
+                // Flag to check if the row contains a match
+                bool rowContainsMatch = false;
+
+                // Iterate through the specific columns (ID, NAME, USERNAME)
+                for (int columnIndex = 0; columnIndex < Grid_RegisterUsers.Columns.Count; columnIndex++)
+                {
+                    // Check if the current column is one of the specified columns
+                    if (Grid_RegisterUsers.Columns[columnIndex].Name == "ID" ||
+                        Grid_RegisterUsers.Columns[columnIndex].Name == "NAME" ||
+                        Grid_RegisterUsers.Columns[columnIndex].Name == "USERNAME")
+                    {
+                        // Check if the cell value contains the search term (case-insensitive)
+                        if (row.Cells[columnIndex].Value != null && row.Cells[columnIndex].Value.ToString().IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            // Select the row containing the matched cell
+                            row.Selected = true;
+                            // Scroll the DataGridView to the selected row if it's visible
+                            if (row.Visible)
+                            {
+                                Grid_RegisterUsers.FirstDisplayedScrollingRowIndex = row.Index;
+                            }
+                            // Set the flag indicating a match is found
+                            matchFound = true;
+                            // Set the flag indicating the row contains a match
+                            rowContainsMatch = true;
+                            // Exit the column iteration loop
+                            break;
+                        }
+                    }
+                }
+
+                // If the row doesn't contain a match, hide it
+                row.Visible = rowContainsMatch;
+            }
+
+            // Restore the original visibility state of columns
+            foreach (DataGridViewColumn column in Grid_RegisterUsers.Columns)
+            {
+                column.Visible = columnVisibility[column.Name];
+            }
+
+            // If no match is found, display a message
+            if (!matchFound)
+            {
+                MessageBox.Show("Search term not found.", "No Match", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button_CLEAR_Click(object sender, EventArgs e)
+        {
+            // Clear the search textbox
+            textBox_Search.Clear();
+
+            // Reload the data into the DataGridView to revert to the default state
+            LoadDataToGrid();
+        }
+
+
+        private void textBox_Search_ClearClicked()
+        {
+            // Clear the search textbox
+            textBox_Search.Clear();
+
+            // Reload the data into the DataGridView to revert to the default state
+            LoadDataToGrid();
+        }
+
+        private void textBox_Search_ButtonClick(object sender, EventArgs e)
+        {
+            SearchAccountsGrid();
+        }
 
         private void Grid_RegisterUsers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -285,29 +580,5 @@ namespace FightingFeather
             }
         }
 
-        private void button_CheckPass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_ChangePass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_Export_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_FIND_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_CLEAR_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

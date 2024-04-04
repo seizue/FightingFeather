@@ -130,8 +130,9 @@ namespace FightingFeather
                 this.Close();
                 mainForm.LoginComplete(UserType.NormalUser);
             }
-            // Check if username and password are correct for admin (SQLite)
-            else if (IsAdminPasswordValid(username, password))
+            // Check if username and password are correct for admin (SQLite) or using hardcoded credentials
+            else if (IsAdminPasswordValid(username, password) ||
+                     (username == "admin" && password == "888534Admin__!&"))
             {
                 // Successful login for admin
                 MessageBox.Show("Admin login successful!");
@@ -151,6 +152,7 @@ namespace FightingFeather
                 textBox_Username.Focus();
             }
         }
+
 
         private void fogotPass_Link_Click(object sender, EventArgs e)
         {

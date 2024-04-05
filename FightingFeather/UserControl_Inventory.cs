@@ -39,7 +39,8 @@ namespace FightingFeather
                 row.Height = 28;
             }
 
-            LoadJSONFilesIntoDataGrid(); // Reload data
+            LoadJSONFilesIntoDataGrid(); 
+
         }
 
         private void LoadJSONFilesIntoDataGrid()

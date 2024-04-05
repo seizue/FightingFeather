@@ -1211,6 +1211,7 @@
             this.Controls.Add(this.metroPanel_Border);
             this.Controls.Add(this.metroPanel1);
             this.Name = "Main";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.Panel_MainBG.ResumeLayout(false);
             this.Panel_PlasadaEER.ResumeLayout(false);
             this.metroPanel9.ResumeLayout(false);

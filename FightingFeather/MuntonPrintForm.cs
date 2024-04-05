@@ -60,5 +60,6 @@ namespace FightingFeather
             // Adjust the paper size here
             e.PageSettings.PaperSize = new PaperSize("CustomSize", 510, 510); // Custom size in hundredths of an inch
         }
+
     }
 }

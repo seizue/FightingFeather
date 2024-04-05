@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel26 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel27 = new MetroFramework.Controls.MetroPanel();
@@ -98,6 +98,9 @@
             this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_PreviewOtherInfo = new System.Windows.Forms.Button();
+            this.button_PreviewEntry = new System.Windows.Forms.Button();
+            this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel24 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel19 = new MetroFramework.Controls.MetroPanel();
@@ -110,9 +113,6 @@
             this.button_Inspection = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
-            this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
-            this.button_PreviewEntry = new System.Windows.Forms.Button();
-            this.button_PreviewOtherInfo = new System.Windows.Forms.Button();
             this.metroPanel14.SuspendLayout();
             this.metroPanel26.SuspendLayout();
             this.metroPanel27.SuspendLayout();
@@ -269,8 +269,9 @@
             this.textBox_WalaBet.Location = new System.Drawing.Point(59, 121);
             this.textBox_WalaBet.Name = "textBox_WalaBet";
             this.textBox_WalaBet.Size = new System.Drawing.Size(166, 23);
-            this.textBox_WalaBet.TabIndex = 327;
+            this.textBox_WalaBet.TabIndex = 4;
             this.textBox_WalaBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaBet.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_WalaBet_KeyDown);
             this.textBox_WalaBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_WalaBet_KeyPress);
             // 
             // textBox_WalaName
@@ -280,8 +281,9 @@
             this.textBox_WalaName.Location = new System.Drawing.Point(59, 49);
             this.textBox_WalaName.Name = "textBox_WalaName";
             this.textBox_WalaName.Size = new System.Drawing.Size(166, 23);
-            this.textBox_WalaName.TabIndex = 326;
+            this.textBox_WalaName.TabIndex = 3;
             this.textBox_WalaName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_WalaName_KeyDown);
             // 
             // metroPanel31
             // 
@@ -365,8 +367,9 @@
             this.textBox_MeronBet.Location = new System.Drawing.Point(59, 124);
             this.textBox_MeronBet.Name = "textBox_MeronBet";
             this.textBox_MeronBet.Size = new System.Drawing.Size(166, 23);
-            this.textBox_MeronBet.TabIndex = 325;
+            this.textBox_MeronBet.TabIndex = 2;
             this.textBox_MeronBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronBet.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_MeronBet_KeyDown);
             this.textBox_MeronBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MeronBet_KeyPress);
             // 
             // textBox_MeronName
@@ -376,8 +379,9 @@
             this.textBox_MeronName.Location = new System.Drawing.Point(59, 54);
             this.textBox_MeronName.Name = "textBox_MeronName";
             this.textBox_MeronName.Size = new System.Drawing.Size(166, 23);
-            this.textBox_MeronName.TabIndex = 252;
+            this.textBox_MeronName.TabIndex = 1;
             this.textBox_MeronName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_MeronName_KeyDown);
             // 
             // label19
             // 
@@ -485,8 +489,9 @@
             this.textBox_EnterAmountRate.Location = new System.Drawing.Point(59, 86);
             this.textBox_EnterAmountRate.Name = "textBox_EnterAmountRate";
             this.textBox_EnterAmountRate.Size = new System.Drawing.Size(166, 23);
-            this.textBox_EnterAmountRate.TabIndex = 328;
+            this.textBox_EnterAmountRate.TabIndex = 8;
             this.textBox_EnterAmountRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_EnterAmountRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_EnterAmountRate_KeyDown);
             this.textBox_EnterAmountRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnterAmountRate_KeyPress);
             // 
             // button_SaveUpdate
@@ -504,7 +509,7 @@
             this.button_SaveUpdate.Name = "button_SaveUpdate";
             this.button_SaveUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_SaveUpdate.Size = new System.Drawing.Size(166, 29);
-            this.button_SaveUpdate.TabIndex = 240;
+            this.button_SaveUpdate.TabIndex = 9;
             this.button_SaveUpdate.Text = "UPDATE";
             this.button_SaveUpdate.UseVisualStyleBackColor = false;
             this.button_SaveUpdate.Visible = false;
@@ -517,6 +522,7 @@
             this.button_Enter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_Enter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
             this.button_Enter.FlatAppearance.BorderSize = 2;
+            this.button_Enter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button_Enter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Enter.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Enter.ForeColor = System.Drawing.Color.MintCream;
@@ -589,7 +595,8 @@
             this.comboBox_Rate.Location = new System.Drawing.Point(-1, -1);
             this.comboBox_Rate.Name = "comboBox_Rate";
             this.comboBox_Rate.Size = new System.Drawing.Size(165, 24);
-            this.comboBox_Rate.TabIndex = 229;
+            this.comboBox_Rate.TabIndex = 7;
+            this.comboBox_Rate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox_Rate_KeyDown);
             // 
             // label22
             // 
@@ -665,7 +672,8 @@
             this.comboBox_Winner.Location = new System.Drawing.Point(0, -1);
             this.comboBox_Winner.Name = "comboBox_Winner";
             this.comboBox_Winner.Size = new System.Drawing.Size(163, 24);
-            this.comboBox_Winner.TabIndex = 229;
+            this.comboBox_Winner.TabIndex = 6;
+            this.comboBox_Winner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox_Winner_KeyDown);
             // 
             // metroPanel7
             // 
@@ -727,8 +735,9 @@
             this.textBox_Pago.Location = new System.Drawing.Point(59, 54);
             this.textBox_Pago.Name = "textBox_Pago";
             this.textBox_Pago.Size = new System.Drawing.Size(166, 23);
-            this.textBox_Pago.TabIndex = 326;
+            this.textBox_Pago.TabIndex = 5;
             this.textBox_Pago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Pago.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Pago_KeyDown);
             this.textBox_Pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Pago_KeyPress);
             // 
             // label7
@@ -804,7 +813,7 @@
             this.metroTile_ClaimMeron.Name = "metroTile_ClaimMeron";
             this.metroTile_ClaimMeron.Size = new System.Drawing.Size(277, 110);
             this.metroTile_ClaimMeron.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroTile_ClaimMeron.TabIndex = 232;
+            this.metroTile_ClaimMeron.TabIndex = 16;
             this.metroTile_ClaimMeron.Text = "PRINT CLAIM STAB (MERON)";
             this.metroTile_ClaimMeron.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.metroTile_ClaimMeron.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -820,7 +829,7 @@
             this.metroTile_PrintMunton.Name = "metroTile_PrintMunton";
             this.metroTile_PrintMunton.Size = new System.Drawing.Size(169, 222);
             this.metroTile_PrintMunton.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroTile_PrintMunton.TabIndex = 234;
+            this.metroTile_PrintMunton.TabIndex = 18;
             this.metroTile_PrintMunton.Text = "PRINT MUNTON";
             this.metroTile_PrintMunton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.metroTile_PrintMunton.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -835,7 +844,7 @@
             this.metroTile_ClaimWala.Name = "metroTile_ClaimWala";
             this.metroTile_ClaimWala.Size = new System.Drawing.Size(277, 110);
             this.metroTile_ClaimWala.Style = MetroFramework.MetroColorStyle.Brown;
-            this.metroTile_ClaimWala.TabIndex = 233;
+            this.metroTile_ClaimWala.TabIndex = 17;
             this.metroTile_ClaimWala.Text = "PRINT CLAIM STAB (WALA)";
             this.metroTile_ClaimWala.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.metroTile_ClaimWala.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -868,13 +877,13 @@
             // 
             this.GridPlasada_Shortcut.AllowUserToAddRows = false;
             this.GridPlasada_Shortcut.AllowUserToResizeRows = false;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.GridPlasada_Shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -883,14 +892,14 @@
             this.GridPlasada_Shortcut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Shortcut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Shortcut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 7.75F);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Shortcut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 7.75F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Shortcut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.GridPlasada_Shortcut.ColumnHeadersHeight = 36;
             this.GridPlasada_Shortcut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridPlasada_Shortcut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -910,14 +919,14 @@
             this.TOTAL_PLASADA,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle13;
             this.GridPlasada_Shortcut.EnableHeadersVisualStyles = false;
             this.GridPlasada_Shortcut.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Shortcut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
@@ -925,21 +934,21 @@
             this.GridPlasada_Shortcut.MultiSelect = false;
             this.GridPlasada_Shortcut.Name = "GridPlasada_Shortcut";
             this.GridPlasada_Shortcut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Shortcut.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Shortcut.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.GridPlasada_Shortcut.RowHeadersVisible = false;
             this.GridPlasada_Shortcut.RowHeadersWidth = 43;
             this.GridPlasada_Shortcut.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
-            this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
+            this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.GridPlasada_Shortcut.RowTemplate.Height = 23;
             this.GridPlasada_Shortcut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlasada_Shortcut.Size = new System.Drawing.Size(449, 243);
@@ -1063,6 +1072,63 @@
             this.panel1.Size = new System.Drawing.Size(455, 40);
             this.panel1.TabIndex = 2;
             // 
+            // button_PreviewOtherInfo
+            // 
+            this.button_PreviewOtherInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_PreviewOtherInfo.BackColor = System.Drawing.Color.DimGray;
+            this.button_PreviewOtherInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_PreviewOtherInfo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button_PreviewOtherInfo.FlatAppearance.BorderSize = 0;
+            this.button_PreviewOtherInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PreviewOtherInfo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PreviewOtherInfo.ForeColor = System.Drawing.Color.Silver;
+            this.button_PreviewOtherInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_PreviewOtherInfo.Location = new System.Drawing.Point(247, 7);
+            this.button_PreviewOtherInfo.Name = "button_PreviewOtherInfo";
+            this.button_PreviewOtherInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_PreviewOtherInfo.Size = new System.Drawing.Size(165, 25);
+            this.button_PreviewOtherInfo.TabIndex = 15;
+            this.button_PreviewOtherInfo.Text = "OTHER INFO...";
+            this.button_PreviewOtherInfo.UseVisualStyleBackColor = false;
+            this.button_PreviewOtherInfo.Click += new System.EventHandler(this.button_PreviewOtherInfo_Click);
+            // 
+            // button_PreviewEntry
+            // 
+            this.button_PreviewEntry.BackColor = System.Drawing.Color.DimGray;
+            this.button_PreviewEntry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_PreviewEntry.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button_PreviewEntry.FlatAppearance.BorderSize = 0;
+            this.button_PreviewEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PreviewEntry.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PreviewEntry.ForeColor = System.Drawing.Color.MintCream;
+            this.button_PreviewEntry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_PreviewEntry.Location = new System.Drawing.Point(19, 7);
+            this.button_PreviewEntry.Name = "button_PreviewEntry";
+            this.button_PreviewEntry.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_PreviewEntry.Size = new System.Drawing.Size(192, 25);
+            this.button_PreviewEntry.TabIndex = 14;
+            this.button_PreviewEntry.Text = "ENTRY LIST";
+            this.button_PreviewEntry.UseVisualStyleBackColor = false;
+            this.button_PreviewEntry.Click += new System.EventHandler(this.button_PreviewEntry_Click);
+            // 
+            // metroPanel10
+            // 
+            this.metroPanel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel10.HorizontalScrollbarBarColor = true;
+            this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel10.HorizontalScrollbarSize = 10;
+            this.metroPanel10.Location = new System.Drawing.Point(226, 3);
+            this.metroPanel10.Name = "metroPanel10";
+            this.metroPanel10.Size = new System.Drawing.Size(1, 35);
+            this.metroPanel10.TabIndex = 327;
+            this.metroPanel10.UseCustomBackColor = true;
+            this.metroPanel10.UseStyleColors = true;
+            this.metroPanel10.VerticalScrollbarBarColor = true;
+            this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel10.VerticalScrollbarSize = 10;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1179,7 +1245,7 @@
             this.button_ClearFields.Name = "button_ClearFields";
             this.button_ClearFields.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_ClearFields.Size = new System.Drawing.Size(117, 31);
-            this.button_ClearFields.TabIndex = 324;
+            this.button_ClearFields.TabIndex = 10;
             this.button_ClearFields.Text = "CLEAR FIELDS";
             this.button_ClearFields.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_ClearFields.UseVisualStyleBackColor = true;
@@ -1210,7 +1276,7 @@
             this.button_Inspection.Name = "button_Inspection";
             this.button_Inspection.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Inspection.Size = new System.Drawing.Size(109, 29);
-            this.button_Inspection.TabIndex = 233;
+            this.button_Inspection.TabIndex = 13;
             this.button_Inspection.Text = "INSPECTION";
             this.button_Inspection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Inspection.UseVisualStyleBackColor = false;
@@ -1231,7 +1297,7 @@
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Delete.Size = new System.Drawing.Size(82, 29);
-            this.button_Delete.TabIndex = 231;
+            this.button_Delete.TabIndex = 12;
             this.button_Delete.Text = "DELETE";
             this.button_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Delete.UseVisualStyleBackColor = false;
@@ -1252,68 +1318,11 @@
             this.button_Update.Name = "button_Update";
             this.button_Update.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Update.Size = new System.Drawing.Size(86, 29);
-            this.button_Update.TabIndex = 230;
+            this.button_Update.TabIndex = 11;
             this.button_Update.Text = "UPDATE";
             this.button_Update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Update.UseVisualStyleBackColor = false;
             this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
-            // 
-            // metroPanel10
-            // 
-            this.metroPanel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.metroPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel10.HorizontalScrollbarBarColor = true;
-            this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel10.HorizontalScrollbarSize = 10;
-            this.metroPanel10.Location = new System.Drawing.Point(226, 3);
-            this.metroPanel10.Name = "metroPanel10";
-            this.metroPanel10.Size = new System.Drawing.Size(1, 35);
-            this.metroPanel10.TabIndex = 327;
-            this.metroPanel10.UseCustomBackColor = true;
-            this.metroPanel10.UseStyleColors = true;
-            this.metroPanel10.VerticalScrollbarBarColor = true;
-            this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel10.VerticalScrollbarSize = 10;
-            // 
-            // button_PreviewEntry
-            // 
-            this.button_PreviewEntry.BackColor = System.Drawing.Color.DimGray;
-            this.button_PreviewEntry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_PreviewEntry.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button_PreviewEntry.FlatAppearance.BorderSize = 0;
-            this.button_PreviewEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PreviewEntry.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_PreviewEntry.ForeColor = System.Drawing.Color.MintCream;
-            this.button_PreviewEntry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_PreviewEntry.Location = new System.Drawing.Point(19, 7);
-            this.button_PreviewEntry.Name = "button_PreviewEntry";
-            this.button_PreviewEntry.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_PreviewEntry.Size = new System.Drawing.Size(192, 25);
-            this.button_PreviewEntry.TabIndex = 328;
-            this.button_PreviewEntry.Text = "ENTRY LIST";
-            this.button_PreviewEntry.UseVisualStyleBackColor = false;
-            this.button_PreviewEntry.Click += new System.EventHandler(this.button_PreviewEntry_Click);
-            // 
-            // button_PreviewOtherInfo
-            // 
-            this.button_PreviewOtherInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_PreviewOtherInfo.BackColor = System.Drawing.Color.DimGray;
-            this.button_PreviewOtherInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_PreviewOtherInfo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button_PreviewOtherInfo.FlatAppearance.BorderSize = 0;
-            this.button_PreviewOtherInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PreviewOtherInfo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_PreviewOtherInfo.ForeColor = System.Drawing.Color.Silver;
-            this.button_PreviewOtherInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_PreviewOtherInfo.Location = new System.Drawing.Point(247, 7);
-            this.button_PreviewOtherInfo.Name = "button_PreviewOtherInfo";
-            this.button_PreviewOtherInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_PreviewOtherInfo.Size = new System.Drawing.Size(165, 25);
-            this.button_PreviewOtherInfo.TabIndex = 329;
-            this.button_PreviewOtherInfo.Text = "OTHER INFO...";
-            this.button_PreviewOtherInfo.UseVisualStyleBackColor = false;
-            this.button_PreviewOtherInfo.Click += new System.EventHandler(this.button_PreviewOtherInfo_Click);
             // 
             // UserControl_Shortcut
             // 

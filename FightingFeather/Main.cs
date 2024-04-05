@@ -106,6 +106,12 @@ namespace FightingFeather
                 this.WindowState = (FormWindowState)Enum.Parse(typeof(FormWindowState), savedWindowState);
             }
 
+            // Set KeyPreview to true
+            this.KeyPreview = true;
+
+            // Wire up the KeyDown event handler
+            this.KeyDown += Main_KeyDown;
+
         }
 
 
@@ -1749,6 +1755,20 @@ namespace FightingFeather
         {
             LoginRegisterForm loginRegisterForm = new LoginRegisterForm(this);
             loginRegisterForm.ShowDialog();
+        }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if Ctrl + M keys are pressed simultaneously
+            if (e.Control && e.KeyCode == Keys.M)
+            {
+                // Prevent the key from being processed further
+                e.SuppressKeyPress = true;
+
+                // Show the MuntonPrintForm
+                MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
+                muntonPrintForm.ShowDialog();
+            }
         }
     }
 }

@@ -45,12 +45,6 @@
             this.label_RegisterUsers = new System.Windows.Forms.Label();
             this.Panel_Line = new MetroFramework.Controls.MetroPanel();
             this.Grid_RegisterUsers = new MetroFramework.Controls.MetroGrid();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_Search = new MetroFramework.Controls.MetroTextBox();
             this.button_FIND = new System.Windows.Forms.Button();
             this.button_CLEAR = new System.Windows.Forms.Button();
@@ -65,7 +59,7 @@
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Status = new System.Windows.Forms.RichTextBox();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
@@ -76,11 +70,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_SecKey = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button_SaveNewPassword = new System.Windows.Forms.Button();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.textBox_SecKey = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.MaskedTextBox();
@@ -91,6 +85,7 @@
             this.button_CloseRegForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label_Dis = new System.Windows.Forms.Label();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_SaveNewUser = new System.Windows.Forms.Button();
             this.button_ClearFields = new System.Windows.Forms.Button();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -111,7 +106,12 @@
             this.button_ChangePass = new System.Windows.Forms.Button();
             this.button_CheckPass = new System.Windows.Forms.Button();
             this.button_AddNewUser = new System.Windows.Forms.Button();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -253,8 +253,8 @@
             this.NAME,
             this.USERNAME,
             this.PASSWORD,
-            this.DATE,
-            this.STATUS});
+            this.STATUS,
+            this.DATE});
             dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle28.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle28.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,56 +290,7 @@
             this.Grid_RegisterUsers.UseCustomBackColor = true;
             this.Grid_RegisterUsers.UseCustomForeColor = true;
             this.Grid_RegisterUsers.UseStyleColors = true;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DividerWidth = 3;
-            this.ID.FillWeight = 91.15936F;
-            this.ID.HeaderText = "ID NO.";
-            this.ID.Name = "ID";
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle23.Format = "N2";
-            dataGridViewCellStyle23.NullValue = null;
-            this.NAME.DefaultCellStyle = dataGridViewCellStyle23;
-            this.NAME.HeaderText = "NAME";
-            this.NAME.Name = "NAME";
-            // 
-            // USERNAME
-            // 
-            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle24;
-            this.USERNAME.HeaderText = "USERNAME";
-            this.USERNAME.Name = "USERNAME";
-            // 
-            // PASSWORD
-            // 
-            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle25;
-            this.PASSWORD.HeaderText = "PASSWORD";
-            this.PASSWORD.Name = "PASSWORD";
-            // 
-            // DATE
-            // 
-            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.DATE.DefaultCellStyle = dataGridViewCellStyle26;
-            this.DATE.HeaderText = "DATE";
-            this.DATE.Name = "DATE";
-            // 
-            // STATUS
-            // 
-            this.STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.STATUS.DefaultCellStyle = dataGridViewCellStyle27;
-            this.STATUS.HeaderText = "STATUS";
-            this.STATUS.Name = "STATUS";
+            this.Grid_RegisterUsers.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Grid_RegisterUsers_CellPainting);
             // 
             // textBox_Search
             // 
@@ -514,11 +465,11 @@
             this.panel_AdvanceSettings.Controls.Add(this.label15);
             this.panel_AdvanceSettings.Controls.Add(this.metroTextBox3);
             this.panel_AdvanceSettings.Controls.Add(this.label13);
-            this.panel_AdvanceSettings.Controls.Add(this.button1);
+            this.panel_AdvanceSettings.Controls.Add(this.button_SecKey);
             this.panel_AdvanceSettings.Controls.Add(this.label11);
             this.panel_AdvanceSettings.Controls.Add(this.label10);
             this.panel_AdvanceSettings.Controls.Add(this.button_SaveNewPassword);
-            this.panel_AdvanceSettings.Controls.Add(this.metroTextBox1);
+            this.panel_AdvanceSettings.Controls.Add(this.textBox_SecKey);
             this.panel_AdvanceSettings.Controls.Add(this.metroPanel8);
             this.panel_AdvanceSettings.Controls.Add(this.label9);
             this.panel_AdvanceSettings.Location = new System.Drawing.Point(3, 3);
@@ -611,7 +562,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.richTextBox_Status);
             this.panel2.Controls.Add(this.metroPanel13);
             this.panel2.Controls.Add(this.metroPanel12);
             this.panel2.Controls.Add(this.metroPanel11);
@@ -621,16 +572,17 @@
             this.panel2.Size = new System.Drawing.Size(312, 100);
             this.panel2.TabIndex = 430;
             // 
-            // richTextBox1
+            // richTextBox_Status
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(1, 1);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(310, 98);
-            this.richTextBox1.TabIndex = 434;
-            this.richTextBox1.Text = "";
+            this.richTextBox_Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.richTextBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox_Status.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_Status.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox_Status.Location = new System.Drawing.Point(1, 1);
+            this.richTextBox_Status.Name = "richTextBox_Status";
+            this.richTextBox_Status.Size = new System.Drawing.Size(310, 98);
+            this.richTextBox_Status.TabIndex = 434;
+            this.richTextBox_Status.Text = "";
             // 
             // metroPanel13
             // 
@@ -814,23 +766,24 @@
             this.label13.TabIndex = 414;
             this.label13.Text = "SECURITY KEY";
             // 
-            // button1
+            // button_SecKey
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(142)))), ((int)(((byte)(141)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(189)))), ((int)(((byte)(188)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(7, 256);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(314, 34);
-            this.button1.TabIndex = 413;
-            this.button1.Text = "ENTER";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_SecKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(142)))), ((int)(((byte)(141)))));
+            this.button_SecKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_SecKey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(189)))), ((int)(((byte)(188)))));
+            this.button_SecKey.FlatAppearance.BorderSize = 2;
+            this.button_SecKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SecKey.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_SecKey.ForeColor = System.Drawing.Color.MintCream;
+            this.button_SecKey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_SecKey.Location = new System.Drawing.Point(7, 256);
+            this.button_SecKey.Name = "button_SecKey";
+            this.button_SecKey.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_SecKey.Size = new System.Drawing.Size(314, 34);
+            this.button_SecKey.TabIndex = 413;
+            this.button_SecKey.Text = "ENTER";
+            this.button_SecKey.UseVisualStyleBackColor = false;
+            this.button_SecKey.Click += new System.EventHandler(this.button_SecKey_Click);
             // 
             // label11
             // 
@@ -873,38 +826,38 @@
             this.button_SaveNewPassword.UseVisualStyleBackColor = false;
             this.button_SaveNewPassword.Click += new System.EventHandler(this.button_SaveNewPassword_Click);
             // 
-            // metroTextBox1
+            // textBox_SecKey
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(288, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(7, 182);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.ShowButton = true;
-            this.metroTextBox1.ShowClearButton = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(314, 27);
-            this.metroTextBox1.TabIndex = 406;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Calibri", 9.55F);
+            this.textBox_SecKey.CustomButton.Image = null;
+            this.textBox_SecKey.CustomButton.Location = new System.Drawing.Point(288, 1);
+            this.textBox_SecKey.CustomButton.Name = "";
+            this.textBox_SecKey.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.textBox_SecKey.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBox_SecKey.CustomButton.TabIndex = 1;
+            this.textBox_SecKey.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBox_SecKey.CustomButton.UseSelectable = true;
+            this.textBox_SecKey.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textBox_SecKey.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.textBox_SecKey.Lines = new string[0];
+            this.textBox_SecKey.Location = new System.Drawing.Point(7, 182);
+            this.textBox_SecKey.MaxLength = 32767;
+            this.textBox_SecKey.Name = "textBox_SecKey";
+            this.textBox_SecKey.PasswordChar = '\0';
+            this.textBox_SecKey.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox_SecKey.SelectedText = "";
+            this.textBox_SecKey.SelectionLength = 0;
+            this.textBox_SecKey.SelectionStart = 0;
+            this.textBox_SecKey.ShortcutsEnabled = true;
+            this.textBox_SecKey.ShowButton = true;
+            this.textBox_SecKey.ShowClearButton = true;
+            this.textBox_SecKey.Size = new System.Drawing.Size(314, 27);
+            this.textBox_SecKey.TabIndex = 406;
+            this.textBox_SecKey.UseSelectable = true;
+            this.textBox_SecKey.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox_SecKey.WaterMarkFont = new System.Drawing.Font("Calibri", 9.55F);
             // 
             // metroPanel8
             // 
@@ -1060,6 +1013,23 @@
             this.label_Dis.Size = new System.Drawing.Size(168, 22);
             this.label_Dis.TabIndex = 394;
             this.label_Dis.Text = "REGISTRATION FORM\r\n";
+            // 
+            // raDateTimePicker1
+            // 
+            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
+            this.raDateTimePicker1.TabIndex = 393;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
             // 
             // button_SaveNewUser
             // 
@@ -1350,22 +1320,59 @@
             this.button_AddNewUser.UseVisualStyleBackColor = false;
             this.button_AddNewUser.Click += new System.EventHandler(this.button_AddNewUser_Click);
             // 
-            // raDateTimePicker1
+            // ID
             // 
-            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
-            this.raDateTimePicker1.TabIndex = 393;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.DividerWidth = 3;
+            this.ID.FillWeight = 91.15936F;
+            this.ID.HeaderText = "ID NO.";
+            this.ID.Name = "ID";
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.NAME.DefaultCellStyle = dataGridViewCellStyle23;
+            this.NAME.HeaderText = "NAME";
+            this.NAME.Name = "NAME";
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.USERNAME.DefaultCellStyle = dataGridViewCellStyle24;
+            this.USERNAME.HeaderText = "USERNAME";
+            this.USERNAME.Name = "USERNAME";
+            // 
+            // PASSWORD
+            // 
+            this.PASSWORD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.PASSWORD.DefaultCellStyle = dataGridViewCellStyle25;
+            this.PASSWORD.HeaderText = "PASSWORD";
+            this.PASSWORD.Name = "PASSWORD";
+            // 
+            // STATUS
+            // 
+            this.STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.STATUS.DefaultCellStyle = dataGridViewCellStyle26;
+            this.STATUS.HeaderText = "STATUS";
+            this.STATUS.Name = "STATUS";
+            // 
+            // DATE
+            // 
+            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.DATE.DefaultCellStyle = dataGridViewCellStyle27;
+            this.DATE.HeaderText = "DATE";
+            this.DATE.Name = "DATE";
             // 
             // AdminForm
             // 
@@ -1452,30 +1459,24 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroPanel metroPanel6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PASSWORD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
         private System.Windows.Forms.MaskedTextBox textBox_ID;
         private System.Windows.Forms.Panel panel_AdvanceSettings;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroPanel metroPanel8;
         private System.Windows.Forms.Button button_SaveNewPassword;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox textBox_SecKey;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button_SaveUpdate;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_SecKey;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox_Status;
         private MetroFramework.Controls.MetroPanel metroPanel13;
         private MetroFramework.Controls.MetroPanel metroPanel12;
         private MetroFramework.Controls.MetroPanel metroPanel11;
@@ -1484,5 +1485,11 @@
         private MetroFramework.Controls.MetroPanel metroPanel9;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PASSWORD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
     }
 }

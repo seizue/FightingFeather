@@ -627,6 +627,148 @@ namespace FightingFeather
             GridPlasada_Shortcut.Columns["PAREHAS"].Visible = true;
         
         }
+
+        private void textBox_MeronName_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_MeronBet.Focus();
+            }
+        }
+
+        private void textBox_MeronBet_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if Ctrl + P keys are pressed simultaneously
+            if (e.Control && e.KeyCode == Keys.P)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Execute the desired method
+                metroTile_ClaimMeron_Click(sender, e);
+            }
+
+            // Check if the Enter key is pressed
+            else if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_WalaName.Focus();
+            }
+        }
+
+        private void textBox_WalaName_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_WalaBet.Focus();
+            }
+        }
+
+        private void textBox_WalaBet_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if Ctrl + P keys are pressed simultaneously
+            if (e.Control && e.KeyCode == Keys.P)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Execute the desired method
+                metroTile_ClaimWala_Click(sender, e);
+            }
+
+            // Check if the Enter key is pressed
+            else if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_Pago.Focus();
+            }
+        }
+
+        private void textBox_Pago_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                comboBox_Winner.Focus();
+
+                // Collapse the dropdown list of the ComboBox
+                comboBox_Winner.DroppedDown = true;
+            }         
+        }
+
+        private void comboBox_Winner_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                comboBox_Rate.Focus();
+
+                // Collapse the dropdown list of the ComboBox
+                comboBox_Rate.DroppedDown = true;
+            }
+        }
+
+        private void comboBox_Rate_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Collapse the dropdown list of the ComboBox
+                comboBox_Winner.DroppedDown = false;
+
+                // Set focus to the next textbox 
+                textBox_EnterAmountRate.Focus();
+            }
+        }
+
+        private void textBox_EnterAmountRate_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Check if button_Enter is visible
+                if (button_Enter.Visible)
+                {
+                    button_Enter.Focus();
+                    button_Enter_Click(sender, e);
+                }
+                else
+                {
+                    button_SaveUpdate.Focus();
+                    button_SaveUpdate_Click(sender, e);
+                }
+            }
+        }
     }
 
 }

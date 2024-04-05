@@ -134,11 +134,12 @@
             this.textBox_Username.ShowButton = true;
             this.textBox_Username.ShowClearButton = true;
             this.textBox_Username.Size = new System.Drawing.Size(272, 27);
-            this.textBox_Username.TabIndex = 361;
+            this.textBox_Username.TabIndex = 1;
             this.textBox_Username.UseSelectable = true;
             this.textBox_Username.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textBox_Username.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.textBox_Username.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.textBox_Search_ButtonClick);
+            this.textBox_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Username_KeyDown);
             // 
             // textBox_Password
             // 
@@ -167,7 +168,7 @@
             this.textBox_Password.ShowButton = true;
             this.textBox_Password.ShowClearButton = true;
             this.textBox_Password.Size = new System.Drawing.Size(272, 27);
-            this.textBox_Password.TabIndex = 362;
+            this.textBox_Password.TabIndex = 2;
             this.textBox_Password.UseSelectable = true;
             this.textBox_Password.UseSystemPasswordChar = true;
             this.textBox_Password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -226,7 +227,7 @@
             this.button_Login.Name = "button_Login";
             this.button_Login.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Login.Size = new System.Drawing.Size(272, 36);
-            this.button_Login.TabIndex = 365;
+            this.button_Login.TabIndex = 3;
             this.button_Login.Text = "LOGIN";
             this.button_Login.UseVisualStyleBackColor = false;
             this.button_Login.Click += new System.EventHandler(this.button_Login_Click);

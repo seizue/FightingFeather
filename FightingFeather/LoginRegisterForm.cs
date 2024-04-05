@@ -187,5 +187,18 @@ namespace FightingFeather
                 button_Login.PerformClick();
             }
         }
+
+        private void textBox_Username_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox
+                textBox_Password.Focus();
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace FightingFeather
         private string databaseName = "FFkey.db";
         private string connectionString;
 
+        private string securityKey = "1727";
+
         public AdminForm()
         {
             InitializeComponent();
@@ -26,14 +29,18 @@ namespace FightingFeather
             // Set raDateTimePicker1 to show the current date
             raDateTimePicker1.Value = DateTime.Today;
 
-            // Populate the ComboBox with options
-            comboBox_Status.Items.AddRange(new object[] { "N/A", "ACTIVE", "SUSPENDED" });
-
             sqliteConnection = new SQLiteConnection("Data Source=FFKey.db;Version=3;");
             sqliteConnection.Open();
 
+            // Populate the ComboBox with options
+            comboBox_Status.Items.AddRange(new object[] { "N/A", "ACTIVE", "SUSPENDED" });
+
             // Subscribe to the CellFormatting event
             Grid_RegisterUsers.CellFormatting += Grid_RegisterUsers_CellFormatting;
+
+            //Subscribe to the CellPainting event
+            Grid_RegisterUsers.CellPainting += Grid_RegisterUsers_CellPainting;
+
         }
 
 
@@ -239,6 +246,7 @@ namespace FightingFeather
                 if (result > 0)
                 {
                     MessageBox.Show("User updated successfully!");
+                    panel_BGAddNewUser.Visible = false;
                     LoadDataToGrid();
                 }
                 else
@@ -316,17 +324,32 @@ namespace FightingFeather
 
                 if (adminTableExists == 0)
                 {
+                    // If Admin table doesn't exist, create it
                     string createAdminTable = @"CREATE TABLE Admin (
-                                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                                            Username TEXT,
-                                            Password TEXT
-                                        )";
+                                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Username TEXT,
+                                Password TEXT
+                            )";
                     SQLiteCommand createCommand2 = new SQLiteCommand(createAdminTable, connection);
                     createCommand2.ExecuteNonQuery();
+                }
+                else
+                {
+                    // Check if Admin table is empty
+                    string checkAdminEmpty = "SELECT count(*) FROM Admin";
+                    SQLiteCommand checkAdminCommand = new SQLiteCommand(checkAdminEmpty, connection);
+                    int adminRowCount = Convert.ToInt32(checkAdminCommand.ExecuteScalar());
 
-                    string insertAdminData = @"INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__!&')";
-                    SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
-                    insertCommand.ExecuteNonQuery();
+                    if (adminRowCount == 0)
+                    {
+                        // If Admin table exists but is empty, insert new records
+                        string insertAdminData = @"
+        INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__!&');
+        INSERT INTO Admin (Username, Password) VALUES ('master', '888534master__17!&');
+        ";
+                        SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
+                        insertCommand.ExecuteNonQuery();
+                    }
                 }
             }
         }
@@ -647,6 +670,28 @@ namespace FightingFeather
             SearchAccountsGrid();
         }
 
+        private void button_SecKey_Click(object sender, EventArgs e)
+        {
+            string enteredKey = textBox_SecKey.Text;
+
+            // Check if the entered key matches the predefined security key
+            if (enteredKey == securityKey)
+            {
+                richTextBox_Status.Text = "Security key matched. Access granted!";
+            }
+            else
+
+            {
+                richTextBox_Status.Text = "Incorrect security key. Access denied!";
+            }
+
+        }
+
+        private void button_SaveNewPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Grid_RegisterUsers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Check if the current cell belongs to the Password column and its value is not null
@@ -655,11 +700,116 @@ namespace FightingFeather
                 // Replace the actual password value with asterisks
                 e.Value = new string('*', e.Value.ToString().Length);
             }
+
+            // Check if the current cell belongs to the column "NAME"
+            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "NAME")
+            {
+                // Apply the padding to the header cell of the "NAME" column
+                Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderCell.Style.Padding = new Padding(10, 4, 0, 4);
+            }
+
+            // Check if the current cell belongs to the "STATUS" column
+            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "STATUS")
+            {
+                // Check the cell value and set the forecolor accordingly
+                if (e.Value != null && e.Value.ToString() == "ACTIVE")
+                {
+                    e.CellStyle.ForeColor = Color.SeaGreen;
+                }
+                else if (e.Value != null && e.Value.ToString() == "SUSPENDED")
+                {
+                    e.CellStyle.ForeColor = Color.Salmon;
+                }
+            }
         }
 
-        private void button_SaveNewPassword_Click(object sender, EventArgs e)
+        private void Grid_RegisterUsers_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-           
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "NAME")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "USERNAME")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "PASSWORD")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "STATUS")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
         }
+
+      
     }
 }

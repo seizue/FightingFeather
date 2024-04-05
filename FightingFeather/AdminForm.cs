@@ -344,7 +344,7 @@ namespace FightingFeather
                     {
                         // If Admin table exists but is empty, insert new records
                         string insertAdminData = @"
-        INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__!&');
+        INSERT INTO Admin (Username, Password) VALUES ('admin', 'admin');
         INSERT INTO Admin (Username, Password) VALUES ('master', '888534master__17!&');
         ";
                         SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
@@ -677,12 +677,20 @@ namespace FightingFeather
             // Check if the entered key matches the predefined security key
             if (enteredKey == securityKey)
             {
-                richTextBox_Status.Text = "Security key matched. Access granted!";
+                MessageBox.Show("Security key matched. Access granted.");
+
+                // Enable controls if security key is successful
+                textBox_NewPass.Enabled = true;
+                textBox_ConfirmPass.Enabled = true;
+                button_SaveNewPassword.Enabled = true;
+                button_SaveNewPassword.BackColor = Color.FromArgb(0, 120, 215);
+                button_SaveNewPassword.FlatAppearance.BorderColor = Color.FromArgb(141, 195, 237);
+                button_SaveNewPassword.ForeColor = Color.White;
             }
             else
-
             {
-                richTextBox_Status.Text = "Incorrect security key. Access denied!";
+                MessageBox.Show("Incorrect security key. Access denied.");
+
             }
 
         }

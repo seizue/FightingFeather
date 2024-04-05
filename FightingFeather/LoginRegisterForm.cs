@@ -54,7 +54,7 @@ namespace FightingFeather
             string connectionString = "Data Source=FFkey.db;Version=3;";
 
             // Define the query to check if the username and password match
-            string query = "SELECT COUNT(*) FROM AccountRegistered WHERE Username = @Username AND Password = @Password";
+            string query = "SELECT COUNT(*) FROM AccountRegistered WHERE Username = @Username AND Password = @Password AND Status != 'SUSPENDED'";
 
             // Create a connection to the database
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -74,7 +74,8 @@ namespace FightingFeather
                         // Execute the query and get the result
                         int count = Convert.ToInt32(command.ExecuteScalar());
 
-                        // If count > 0, it means there is a match, otherwise, the credentials are invalid
+                        // If count > 0, it means there is a match and the account is not suspended
+                        // Otherwise, the credentials are invalid or the account is suspended
                         return count > 0;
                     }
                 }
@@ -86,6 +87,7 @@ namespace FightingFeather
                 }
             }
         }
+
 
         private bool IsAdminPasswordValid(string username, string password)
         {
@@ -151,7 +153,7 @@ namespace FightingFeather
             }
             // Check if username and password are correct for admin (SQLite) or using hardcoded credentials
             else if (IsAdminPasswordValid(username, password) ||
-                     (username == "admin" && password == "888534Admin__!&"))
+                     (username == "admin" && password == "888534Admin__"))
             {
                 // Successful login for admin
                 MessageBox.Show("Admin login successful!");

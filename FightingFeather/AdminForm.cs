@@ -15,10 +15,13 @@ namespace FightingFeather
     public partial class AdminForm : MetroFramework.Forms.MetroForm
     {
         private SQLiteConnection sqliteConnection;
+        private string databaseName = "FFkey.db";
+        private string connectionString;
 
         public AdminForm()
         {
             InitializeComponent();
+            connectionString = $"Data Source={databaseName};Version=3;";
 
             // Set raDateTimePicker1 to show the current date
             raDateTimePicker1.Value = DateTime.Today;
@@ -260,13 +263,72 @@ namespace FightingFeather
 
         private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            sqliteConnection.Close();
-
+            // Close the SQLite connection if it's open
+            if (sqliteConnection.State != ConnectionState.Closed)
+            {
+                sqliteConnection.Close();
+            }
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            if (!File.Exists(databaseName))
+            {
+                CreateDatabase();
+            }
+            CreateTablesIfNotExist();
             LoadDataToGrid();
+        }
+
+        private void CreateDatabase()
+        {
+            SQLiteConnection.CreateFile(databaseName);
+        }
+
+        private void CreateTablesIfNotExist()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                string checkAccountRegisteredTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='AccountRegistered'";
+                string checkAdminTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='Admin'";
+
+                SQLiteCommand command1 = new SQLiteCommand(checkAccountRegisteredTableExists, connection);
+                int accountRegisteredTableExists = Convert.ToInt32(command1.ExecuteScalar());
+
+                SQLiteCommand command2 = new SQLiteCommand(checkAdminTableExists, connection);
+                int adminTableExists = Convert.ToInt32(command2.ExecuteScalar());
+
+                if (accountRegisteredTableExists == 0)
+                {
+                    string createAccountRegisteredTable = @"CREATE TABLE AccountRegistered (
+                                                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                    Name TEXT,
+                                                    Username TEXT,
+                                                    Password TEXT,
+                                                    Status TEXT,
+                                                    Date INTEGER
+                                                )";
+                    SQLiteCommand createCommand1 = new SQLiteCommand(createAccountRegisteredTable, connection);
+                    createCommand1.ExecuteNonQuery();
+                }
+
+                if (adminTableExists == 0)
+                {
+                    string createAdminTable = @"CREATE TABLE Admin (
+                                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                            Username TEXT,
+                                            Password TEXT
+                                        )";
+                    SQLiteCommand createCommand2 = new SQLiteCommand(createAdminTable, connection);
+                    createCommand2.ExecuteNonQuery();
+
+                    string insertAdminData = @"INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__!&')";
+                    SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
         }
 
         private void LoadDataToGrid()

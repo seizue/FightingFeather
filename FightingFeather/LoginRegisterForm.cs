@@ -59,21 +59,30 @@ namespace FightingFeather
             // Create a connection to the database
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-                // Open the connection
-                connection.Open();
-
-                // Create a command to execute the query
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                try
                 {
-                    // Add parameters to the query
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
+                    // Open the connection
+                    connection.Open();
 
-                    // Execute the query and get the result
-                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    // Create a command to execute the query
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        // Add parameters to the query
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
 
-                    // If count > 0, it means there is a match, otherwise, the credentials are invalid
-                    return count > 0;
+                        // Execute the query and get the result
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+
+                        // If count > 0, it means there is a match, otherwise, the credentials are invalid
+                        return count > 0;
+                    }
+                }
+                finally
+                {
+                    // Ensure the connection is always closed even if an exception occurs
+                    if (connection.State != ConnectionState.Closed)
+                        connection.Close();
                 }
             }
         }
@@ -89,24 +98,34 @@ namespace FightingFeather
             // Create a connection to the database
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-                // Open the connection
-                connection.Open();
-
-                // Create a command to execute the query
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                try
                 {
-                    // Add parameters to the query
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
+                    // Open the connection
+                    connection.Open();
 
-                    // Execute the query and get the result
-                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    // Create a command to execute the query
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        // Add parameters to the query
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
 
-                    // If count > 0, it means there is a match, otherwise, the credentials are invalid
-                    return count > 0;
+                        // Execute the query and get the result
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+
+                        // If count > 0, it means there is a match, otherwise, the credentials are invalid
+                        return count > 0;
+                    }
+                }
+                finally
+                {
+                    // Ensure the connection is always closed even if an exception occurs
+                    if (connection.State != ConnectionState.Closed)
+                        connection.Close();
                 }
             }
         }
+
 
         public enum UserType
         {

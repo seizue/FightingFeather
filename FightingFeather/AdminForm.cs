@@ -697,8 +697,60 @@ namespace FightingFeather
 
         private void button_SaveNewPassword_Click(object sender, EventArgs e)
         {
+            string newPassword = textBox_NewPass.Text;
+            string confirmPassword = textBox_ConfirmPass.Text;
 
+            // Validate new password and confirm password
+            if (string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
+            {
+                MessageBox.Show("Please enter both new and confirm passwords.", "Incomplete Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                MessageBox.Show("New password and confirm password do not match.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Update password for admin
+            UpdateAdminPassword(newPassword);
+
+            // Clear textboxes after saving
+            textBox_NewPass.Clear();
+            textBox_ConfirmPass.Clear();
         }
+
+        private void UpdateAdminPassword(string newPassword)
+        {
+            // Query to update the admin password
+            string updateQuery = "UPDATE Admin SET Password = @Password WHERE Username = 'admin'";
+
+            using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, sqliteConnection))
+            {
+                cmd.Parameters.AddWithValue("@Password", newPassword);
+
+                try
+                {
+                    // Execute the update command
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        // Password updated successfully
+                        MessageBox.Show("Admin password updated successfully.", "Password Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update admin password.", "Password Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while updating admin password: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         private void Grid_RegisterUsers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

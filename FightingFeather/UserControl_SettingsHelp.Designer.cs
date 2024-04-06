@@ -33,23 +33,23 @@
             this.Panel_Line = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -125,6 +125,26 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(48, 18);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(134, 23);
+            this.metroLink1.TabIndex = 364;
+            this.metroLink1.Text = "reinhobby@gmail.com";
+            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroLink1.UseCustomBackColor = true;
+            this.metroLink1.UseSelectable = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.Gmail_Logo_24px;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 24);
+            this.pictureBox1.TabIndex = 363;
+            this.pictureBox1.TabStop = false;
+            // 
             // metroPanel6
             // 
             this.metroPanel6.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -197,17 +217,6 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // metroLink1
-            // 
-            this.metroLink1.Location = new System.Drawing.Point(48, 18);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(134, 23);
-            this.metroLink1.TabIndex = 364;
-            this.metroLink1.Text = "reinhobby@gmail.com";
-            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.metroLink1.UseCustomBackColor = true;
-            this.metroLink1.UseSelectable = true;
-            // 
             // metroPanel2
             // 
             this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
@@ -235,10 +244,19 @@
             this.metroLink2.Name = "metroLink2";
             this.metroLink2.Size = new System.Drawing.Size(134, 23);
             this.metroLink2.TabIndex = 364;
-            this.metroLink2.Text = "00000000000";
+            this.metroLink2.Text = "00-000-000-000";
             this.metroLink2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLink2.UseCustomBackColor = true;
             this.metroLink2.UseSelectable = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FightingFeather.Properties.Resources.phone_24px;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 24);
+            this.pictureBox2.TabIndex = 363;
+            this.pictureBox2.TabStop = false;
             // 
             // metroPanel7
             // 
@@ -312,24 +330,6 @@
             this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel10.VerticalScrollbarSize = 10;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FightingFeather.Properties.Resources.phone_24px;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 24);
-            this.pictureBox2.TabIndex = 363;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.Gmail_Logo_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 24);
-            this.pictureBox1.TabIndex = 363;
-            this.pictureBox1.TabStop = false;
-            // 
             // UserControl_SettingsHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,9 +344,9 @@
             this.Name = "UserControl_SettingsHelp";
             this.Size = new System.Drawing.Size(624, 540);
             this.metroPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

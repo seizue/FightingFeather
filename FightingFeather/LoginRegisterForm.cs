@@ -18,6 +18,9 @@ namespace FightingFeather
         public LoginRegisterForm()
         {
             InitializeComponent();
+            
+            // Subscribe to the CheckedChanged event of the ShowPasswordCheckBox
+            ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
         }
 
         public LoginRegisterForm(Main mainForm) : this()
@@ -222,6 +225,29 @@ namespace FightingFeather
                 // Set focus to the next textbox
                 textBox_Password.Focus();
             }
+        }
+        
+        private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            // Toggle the UseSystemPasswordChar property of the password textbox
+            textBox_Password.UseSystemPasswordChar = !ShowPasswordCheckBox.Checked;
+
+            // If system password characters are used, set PasswordChar to an empty string to show the password as plain text
+            if (ShowPasswordCheckBox.Checked)
+            {
+                textBox_Password.PasswordChar = '\0'; // Set PasswordChar to null character
+            }
+            else
+            {
+                // If system password characters are not used, set PasswordChar to * to hide the password
+                textBox_Password.PasswordChar = '*';
+            }
+        }
+
+
+        private void LoginRegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

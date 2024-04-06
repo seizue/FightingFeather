@@ -36,7 +36,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button_Login = new System.Windows.Forms.Button();
-            this.rememberMe = new MetroFramework.Controls.MetroCheckBox();
             this.panel_Indicator = new System.Windows.Forms.Panel();
             this.fogotPass_Link = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -45,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
+            this.ShowPasswordCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.panel_Help.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
@@ -232,18 +232,6 @@
             this.button_Login.UseVisualStyleBackColor = false;
             this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
-            // rememberMe
-            // 
-            this.rememberMe.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rememberMe.AutoSize = true;
-            this.rememberMe.Location = new System.Drawing.Point(256, 323);
-            this.rememberMe.Name = "rememberMe";
-            this.rememberMe.Size = new System.Drawing.Size(101, 15);
-            this.rememberMe.TabIndex = 367;
-            this.rememberMe.Text = "Remember me";
-            this.rememberMe.UseCustomForeColor = true;
-            this.rememberMe.UseSelectable = true;
-            // 
             // panel_Indicator
             // 
             this.panel_Indicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -334,6 +322,19 @@
             this.pictureLogo.TabIndex = 368;
             this.pictureLogo.TabStop = false;
             // 
+            // ShowPasswordCheckBox
+            // 
+            this.ShowPasswordCheckBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ShowPasswordCheckBox.AutoSize = true;
+            this.ShowPasswordCheckBox.Location = new System.Drawing.Point(256, 323);
+            this.ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
+            this.ShowPasswordCheckBox.Size = new System.Drawing.Size(105, 15);
+            this.ShowPasswordCheckBox.TabIndex = 367;
+            this.ShowPasswordCheckBox.Text = "Show password";
+            this.ShowPasswordCheckBox.UseCustomForeColor = true;
+            this.ShowPasswordCheckBox.UseSelectable = true;
+            this.ShowPasswordCheckBox.CheckedChanged += new System.EventHandler(this.ShowPasswordCheckBox_CheckedChanged);
+            // 
             // LoginRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,7 +345,7 @@
             this.Controls.Add(this.fogotPass_Link);
             this.Controls.Add(this.panel_Indicator);
             this.Controls.Add(this.pictureLogo);
-            this.Controls.Add(this.rememberMe);
+            this.Controls.Add(this.ShowPasswordCheckBox);
             this.Controls.Add(this.button_Login);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -357,6 +358,7 @@
             this.Name = "LoginRegisterForm";
             this.Opacity = 0.97D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginRegisterForm_FormClosing);
             this.panel_Help.ResumeLayout(false);
             this.panel_Help.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -376,7 +378,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_Login;
-        private MetroFramework.Controls.MetroCheckBox rememberMe;
         private System.Windows.Forms.PictureBox pictureLogo;
         private System.Windows.Forms.Panel panel_Indicator;
         private MetroFramework.Controls.MetroLink fogotPass_Link;
@@ -385,5 +386,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroCheckBox ShowPasswordCheckBox;
     }
 }

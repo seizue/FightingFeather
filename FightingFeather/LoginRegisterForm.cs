@@ -15,17 +15,14 @@ namespace FightingFeather
     {
         private Main mainForm;
 
-        public LoginRegisterForm()
-        {
-            InitializeComponent();
-            
-            // Subscribe to the CheckedChanged event of the ShowPasswordCheckBox
-            ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
-        }
-
-        public LoginRegisterForm(Main mainForm) : this()
+        public LoginRegisterForm(Main mainForm)
         {
             this.mainForm = mainForm;
+
+            InitializeComponent();
+
+            // Subscribe to the CheckedChanged event of the ShowPasswordCheckBox
+            ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
         }
 
         private void label_Login_Click(object sender, EventArgs e)
@@ -159,6 +156,7 @@ namespace FightingFeather
                 // Show the MainForm
                 Main mainForm = new Main();
                 mainForm.Show();
+                mainForm.LoginComplete(UserType.NormalUser);
 
                 // Optionally, you can clear the input fields
                 textBox_Username.Clear();
@@ -177,6 +175,7 @@ namespace FightingFeather
                 // Show the MainForm
                 Main mainForm = new Main();
                 mainForm.Show();
+                mainForm.LoginComplete(UserType.Admin);
 
                 // Optionally, you can clear the input fields
                 textBox_Username.Clear();

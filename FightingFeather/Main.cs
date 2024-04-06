@@ -1808,8 +1808,8 @@ namespace FightingFeather
 
         private void button_DashBoard_Click(object sender, EventArgs e)
         {
-            LoginRegisterForm loginRegisterForm = new LoginRegisterForm(this);
-            loginRegisterForm.ShowDialog();
+            DashBoardForm dashboardForm = new DashBoardForm();
+            dashboardForm.ShowDialog();
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)

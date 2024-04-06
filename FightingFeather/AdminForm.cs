@@ -715,7 +715,7 @@ namespace FightingFeather
 
             // Update password for admin
             UpdateAdminPassword(newPassword);
-
+            
             // Clear textboxes after saving
             textBox_NewPass.Clear();
             textBox_ConfirmPass.Clear();

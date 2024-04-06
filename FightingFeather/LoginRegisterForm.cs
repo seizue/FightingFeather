@@ -15,10 +15,13 @@ namespace FightingFeather
     {
         private Main mainForm;
 
-
-        public LoginRegisterForm(Main mainForm)
+        public LoginRegisterForm()
         {
             InitializeComponent();
+        }
+
+        public LoginRegisterForm(Main mainForm) : this()
+        {
             this.mainForm = mainForm;
         }
 
@@ -147,9 +150,16 @@ namespace FightingFeather
                 // Successful login for normal user
                 MessageBox.Show("Login successful!");
 
-                // Close the login form and pass user type as NormalUser
-                this.Close();
-                mainForm.LoginComplete(UserType.NormalUser);
+                // Hide the LoginForm
+                this.Hide();
+
+                // Show the MainForm
+                Main mainForm = new Main();
+                mainForm.Show();
+
+                // Optionally, you can clear the input fields
+                textBox_Username.Clear();
+                textBox_Password.Clear();
             }
             // Check if username and password are correct for admin (SQLite) or using hardcoded credentials
             else if (IsAdminPasswordValid(username, password) ||
@@ -158,21 +168,32 @@ namespace FightingFeather
                 // Successful login for admin
                 MessageBox.Show("Admin login successful!");
 
-                // Close the login form and pass user type as Admin
-                this.Close();
-                mainForm.LoginComplete(UserType.Admin);
+                // Hide the LoginForm
+                this.Hide();
+
+                // Show the MainForm
+                Main mainForm = new Main();
+                mainForm.Show();
+
+                // Optionally, you can clear the input fields
+                textBox_Username.Clear();
+                textBox_Password.Clear();
             }
             else
             {
                 // Failed login
                 MessageBox.Show("Invalid username or password. Please try again.");
+
                 // You can optionally clear the input fields to allow the user to retry.
                 textBox_Username.Clear();
                 textBox_Password.Clear();
+
                 // Set focus back to the username field for convenience.
                 textBox_Username.Focus();
             }
         }
+
+
 
 
         private void fogotPass_Link_Click(object sender, EventArgs e)

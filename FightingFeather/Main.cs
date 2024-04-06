@@ -112,8 +112,10 @@ namespace FightingFeather
             // Wire up the KeyDown event handler
             this.KeyDown += Main_KeyDown;
 
-        }
+            // Subscribe to the FormClosing event
+            this.FormClosing += Main_FormClosing;
 
+        }
 
         public void LoginComplete(LoginRegisterForm.UserType userType)
         {
@@ -1822,6 +1824,11 @@ namespace FightingFeather
                 MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
                 muntonPrintForm.ShowDialog();
             }
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

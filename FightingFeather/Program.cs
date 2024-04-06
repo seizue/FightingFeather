@@ -16,7 +16,19 @@ namespace FightingFeather
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            // Create an instance of the Main formA
+            Main mainForm = new Main();
+
+            // Create an instance of the LoginRegisterForm and pass the Main form instance
+            LoginRegisterForm loginForm = new LoginRegisterForm(mainForm);
+
+            // Show the LoginRegisterForm
+            Application.Run(loginForm);
+
+            // Show the Main form after the login form closes
+            mainForm.ShowDialog();
         }
+
     }
 }

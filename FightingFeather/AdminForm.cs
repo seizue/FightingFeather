@@ -345,7 +345,7 @@ namespace FightingFeather
                         // If Admin table exists but is empty, insert new records
                         string insertAdminData = @"
         INSERT INTO Admin (Username, Password) VALUES ('admin', 'admin');
-        INSERT INTO Admin (Username, Password) VALUES ('master', '888534master__17!&');
+        INSERT INTO Admin (Username, Password) VALUES ('master', '888534master17__!&');
         ";
                         SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
                         insertCommand.ExecuteNonQuery();

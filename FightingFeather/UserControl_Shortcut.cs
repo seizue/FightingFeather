@@ -31,8 +31,7 @@ namespace FightingFeather
             textBox_Pago.TextChanged += CalculateParehas;
 
             // Populate the ComboBox with options
-            comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
-            comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
+            PopulateComboBoxes();
 
             // Create a new System.Windows.Forms.ToolTip instance
             System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
@@ -49,6 +48,13 @@ namespace FightingFeather
             GridPlasada_Shortcut.Rows.Clear(); // Clear existing rows
 
             PopulateGridPlasadaShortcut(); // Reload data
+        }
+
+        private void PopulateComboBoxes()
+        {
+            // Populate the ComboBox with options
+            comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
+            comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
         }
 
         private void CalculateBetDifference(object sender, EventArgs e)
@@ -240,7 +246,6 @@ namespace FightingFeather
         }
 
 
-     
 
         private void ClearInputFields()
         {
@@ -258,7 +263,6 @@ namespace FightingFeather
 
         private void button_Enter_Click(object sender, EventArgs e)
         {
-
             // Validate user input
             if (ValidateInput())
             {
@@ -273,6 +277,8 @@ namespace FightingFeather
 
                 ClearInputFields();
 
+                // Repopulate the ComboBoxes after clearing the fields
+                PopulateComboBoxes();
             }
             else
             {
@@ -288,21 +294,22 @@ namespace FightingFeather
                 // Get the index of the selected row
                 int selectedIndex = GridPlasada_Shortcut.SelectedRows[0].Index;
 
-                // Get the FIGHT ID of the selected row
-                int fightId = Convert.ToInt32(GridPlasada_Shortcut.Rows[selectedIndex].Cells["FIGHT"].Value);
-
                 // Populate the input fields with the data from the selected row
                 PopulateInputFields(selectedIndex);
-
+        
+                // Show the "SaveUpdate" button and hide the "Enter" button
                 button_SaveUpdate.Visible = true;
                 button_Enter.Visible = false;
 
+                button_CloseUpdate_ClearFields.Text = "CLOSE UPDATE";
+                button_CloseUpdate_ClearFields.Image = FightingFeather.Properties.Resources.close_24px;
+
                 // Set the new location of the button
                 button_SaveUpdate.Location = new Point(59, 159);
-
             }
             else
             {
+                // Display a message if no row is selected
                 MessageBox.Show("Please select a row to update.");
 
                 // Hide the "SaveUpdate" button if no row is selected
@@ -311,9 +318,7 @@ namespace FightingFeather
         }
 
         private void button_SaveUpdate_Click(object sender, EventArgs e)
-        {
-          
-
+        {        
             // Check if the user input is valid
             if (ValidateInput())
             {
@@ -333,6 +338,9 @@ namespace FightingFeather
                 PopulateGridPlasadaShortcut();
 
                 ClearInputFields();
+
+                // Repopulate the ComboBoxes after clearing the fields
+                PopulateComboBoxes();
 
                 button_SaveUpdate.Visible = false;
                 button_Enter.Visible = true;
@@ -518,10 +526,16 @@ namespace FightingFeather
         {
             ClearInputFields();
 
+            // Repopulate the ComboBoxes after clearing the fields
+            PopulateComboBoxes();
+
             button_SaveUpdate.Visible = false;
             button_Enter.Visible = true;
 
-            MessageBox.Show("Successfully cleared the fields!");
+            button_CloseUpdate_ClearFields.Text = "CLEAR FIELDS";
+            button_CloseUpdate_ClearFields.Image = FightingFeather.Properties.Resources.broom_24px;
+
+            MessageBox.Show("Successful!");
 
         }
 
@@ -739,9 +753,6 @@ namespace FightingFeather
             {
                 // Prevent the key from being processed by the textbox
                 e.SuppressKeyPress = true;
-
-                // Collapse the dropdown list of the ComboBox
-                comboBox_Winner.DroppedDown = false;
 
                 // Set focus to the next textbox 
                 textBox_EnterAmountRate.Focus();

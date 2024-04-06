@@ -204,8 +204,6 @@ namespace FightingFeather
                 }
                 else
                 {
-                    // PAGO is not a valid integer
-                    MessageBox.Show("Invalid value for PAGO in row " + (i + 1));
                     return;
                 }
             }
@@ -1032,6 +1030,9 @@ namespace FightingFeather
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
+
+            // Display a message indicating successful refresh
+            MessageBox.Show("Refresh successful!");
         }
 
         private void button_Export_Click(object sender, EventArgs e)
@@ -1097,40 +1098,87 @@ namespace FightingFeather
         }
 
 
-
         private void ExecutePlasadaCreation()
         {
             // Define your custom schema here
             string customSchema = @"
-        (
-            ""FIGHT"" INTEGER,
-            ""MERON"" TEXT,
-            ""WALA"" TEXT,
-            ""BET (M)"" INTEGER,
-            ""BET (W)"" INTEGER,
-            ""INITIAL BET DIFF"" INTEGER,
-            ""PAREHAS"" INTEGER,
-            ""PAGO"" INTEGER,
-            ""WINNER"" TEXT,
-            ""RATE AMOUNT"" INTEGER,
-            ""RATE"" TEXT,
-            ""LOGRO"" INTEGER,
-            ""FEE"" REAL,
-            ""TOTAL PLASADA"" INTEGER,
-            ""RATE EARNINGS"" INTEGER,
-            ""WINNERS EARN"" INTEGER,
-            ""DATE"" INTEGER
-        )";
+ (
+     ""FIGHT"" INTEGER,
+     ""MERON"" TEXT,
+     ""WALA"" TEXT,
+     ""BET (M)"" INTEGER,
+     ""BET (W)"" INTEGER,
+     ""INITIAL BET DIFF"" INTEGER,
+     ""PAREHAS"" INTEGER,
+     ""PAGO"" INTEGER,
+     ""WINNER"" TEXT,
+     ""RATE AMOUNT"" INTEGER,
+     ""RATE"" TEXT,
+     ""LOGRO"" INTEGER,
+     ""FEE"" REAL,
+     ""TOTAL PLASADA"" INTEGER,
+     ""RATE EARNINGS"" INTEGER,
+     ""WINNERS EARN"" INTEGER,
+     ""DATE"" INTEGER
+ )";
 
             currentTableNumber = GetNextTableNumber();
             DateTime currentDate = DateTime.Now.Date; // Get current date without time
+
+            // Create custom table in your current database
             CreateCustomTable(currentTableNumber, customSchema, currentDate);
 
+            // Save data to current database
             SaveDataToDatabase(currentDate);
 
+            // Save table to JSON
             SaveTableToJson();
 
-            userControl_Summa1.PerformSQLiteExport();
+            // Now, create tables in munton_summa.db
+            string muntonDbConnectionString = "Data Source=munton_summa.db;Version=3;";
+
+            try
+            {
+                using (SQLiteConnection muntonDbConnection = new SQLiteConnection(muntonDbConnectionString))
+                {
+                    muntonDbConnection.Open();
+
+                    // Create Plasada_CashCount table if not exists
+                    string createPlasadaCashCountTableQuery = @"CREATE TABLE IF NOT EXISTS Plasada_CashCount (
+                                                         ""Amount"" INTEGER,
+                                                         ""Quantity"" INTEGER,
+                                                         ""TotalAmount"" INTEGER,
+                                                         ""Date"" INTEGER
+                                                         )";
+                    using (SQLiteCommand createCommand = new SQLiteCommand(createPlasadaCashCountTableQuery, muntonDbConnection))
+                    {
+                        createCommand.ExecuteNonQuery();
+                    }
+
+                    // Create Plasada_Summary table if not exists
+                    string createPlasadaSummaryTableQuery = @"CREATE TABLE IF NOT EXISTS Plasada_Summary (
+                                                      ""ID"" INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                      ""Date"" TEXT,
+                                                      ""Plasada"" INTEGER,
+                                                      ""CityTax"" REAL,
+                                                      ""Total"" REAL,
+                                                      ""TotalFight"" INTEGER,
+                                                      ""Draw"" NUMERIC,
+                                                      ""Gate"" NUMERIC
+                                                      )";
+                    using (SQLiteCommand createCommand = new SQLiteCommand(createPlasadaSummaryTableQuery, muntonDbConnection))
+                    {
+                        createCommand.ExecuteNonQuery();
+                    }
+                }
+
+                // Export data using SQLiteExport method in UserControl_Summa1
+                userControl_Summa1.PerformSQLiteExport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while creating Plasada tables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -1535,6 +1583,9 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
             button_Plasada.ForeColor = defaultColor;
 
+            RefreshGrid();
+            RefreshCalculationDatagrid();
+
             // Get the selected date without the time component
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
@@ -1560,7 +1611,9 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = defaultColor;
             label_Ernings.ForeColor = defaultColor;
 
+            RefreshGrid();
             RefreshCalculationDatagrid();
+
         }
 
         private void raDateTimePicker1_ValueChanged(object sender, EventArgs e)

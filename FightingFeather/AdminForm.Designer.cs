@@ -81,6 +81,7 @@
             this.button_CloseRegForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label_Dis = new System.Windows.Forms.Label();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_SaveNewUser = new System.Windows.Forms.Button();
             this.button_ClearFields = new System.Windows.Forms.Button();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -101,7 +102,6 @@
             this.button_ChangePass = new System.Windows.Forms.Button();
             this.button_CheckPass = new System.Windows.Forms.Button();
             this.button_AddNewUser = new System.Windows.Forms.Button();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -882,6 +882,23 @@
             this.label_Dis.TabIndex = 394;
             this.label_Dis.Text = "REGISTRATION FORM\r\n";
             // 
+            // raDateTimePicker1
+            // 
+            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
+            this.raDateTimePicker1.TabIndex = 393;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            // 
             // button_SaveNewUser
             // 
             this.button_SaveNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1171,23 +1188,6 @@
             this.button_AddNewUser.UseVisualStyleBackColor = false;
             this.button_AddNewUser.Click += new System.EventHandler(this.button_AddNewUser_Click);
             // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(456, 39);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
-            this.raDateTimePicker1.TabIndex = 393;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1212,7 +1212,10 @@
             this.Controls.Add(this.Panel_Line);
             this.Controls.Add(this.label_RegisterUsers);
             this.Controls.Add(this.panel1);
+            this.MinimizeBox = false;
             this.Name = "AdminForm";
+            this.Opacity = 0.98D;
+            this.Resizable = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
             this.Load += new System.EventHandler(this.AdminForm_Load);

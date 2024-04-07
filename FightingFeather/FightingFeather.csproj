@@ -558,6 +558,18 @@
   <ItemGroup>
     <None Include="Resources\close_24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Statistic Document_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Analytics_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deviation_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart Bar_36px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1810,6 +1810,7 @@ namespace FightingFeather
         {
             DashBoardForm dashboardForm = new DashBoardForm();
             dashboardForm.ShowDialog();
+            dashboardForm.Reload();
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)

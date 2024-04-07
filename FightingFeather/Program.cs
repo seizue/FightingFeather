@@ -17,7 +17,7 @@ namespace FightingFeather
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Create an instance of the Main formA
+            // Create an instance of the Main form
             Main mainForm = new Main();
 
             // Create an instance of the LoginRegisterForm and pass the Main form instance

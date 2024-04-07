@@ -19,6 +19,11 @@ namespace FightingFeather
         public DashBoardForm()
         {
             InitializeComponent();
+            Reload();
+        }
+
+        public void Reload()
+        {
             LoadChartPlasada();
             LoadChartFight();
             LoadChartTax();
@@ -94,10 +99,12 @@ namespace FightingFeather
             string connectionString = "Data Source=munton_summa.db;Version=3;";
 
             // Define the query to retrieve data from the database for Fight
-            string query = "SELECT TotalFight, Draw FROM Plasada_Summary";
+            string query = "SELECT Date, TotalFight, Draw FROM Plasada_Summary";
 
-            // Create a new ChartValues list to hold the data for the pie chart
-            ChartValues<double> pieChartData = new ChartValues<double>();
+            // Create a new SeriesCollection to hold the chart data
+            SeriesCollection series = new SeriesCollection();
+            ChartValues<double> values = new ChartValues<double>();
+            ChartValues<string> labels = new ChartValues<string>();
 
             // Create a connection to the database
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -115,28 +122,37 @@ namespace FightingFeather
                         while (reader.Read())
                         {
                             // Extract the values from the database
-                            double totalFight = reader.IsDBNull(0) ? 0.0 : reader.GetDouble(0);
-                            double draw = reader.IsDBNull(1) ? 0.0 : reader.GetDouble(1);
+                            string dateString = reader.GetString(0);
+                            double totalFight = reader.IsDBNull(1) ? 0.0 : reader.GetDouble(1);
+                            double draw = reader.IsDBNull(2) ? 0.0 : reader.GetDouble(2);
 
                             // Calculate the total value (sum of TotalFight and Draw)
                             double total = totalFight + draw;
 
-                            // Add the total to the pie chart data
-                            pieChartData.Add(total);
+                            // Parse the date string using the specified format
+                            DateTime date = DateTime.ParseExact(dateString, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+
+                            // Add the data to the chart series
+                            values.Add(total);
+                            labels.Add(date.ToString("MM/dd/yyyy"));
                         }
                     }
                 }
             }
 
-            // Bind the pie chart data to the pieChart_Fight control
-            pieChart_Fight.Series = new SeriesCollection
-    {
-        new PieSeries
-        {
-            Title = "Total",
-            Values = pieChartData
-        }
-    };
+            // Bind the chart series to the CartesianChart control
+            series.Add(new LineSeries
+            {
+                Title = "Total",
+                Values = values
+            });
+
+            cartesianChart_Fight.Series = series;
+            cartesianChart_Fight.AxisX.Add(new Axis
+            {
+                Title = "Date",
+                Labels = labels
+            });
         }
 
 

@@ -246,7 +246,12 @@ namespace FightingFeather
 
         private void LoginRegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            // Prevent the application from exiting if the login or register form is closed
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true; // Cancel the form closing event
+                this.Hide(); // Hide the login or register form instead of closing it
+            }
         }
     }
 }

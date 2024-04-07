@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using Newtonsoft.Json;
 using MetroFramework.Controls;
 using System.Configuration;
+using MetroFramework.Forms;
 
 namespace FightingFeather
 {
@@ -1830,6 +1831,11 @@ namespace FightingFeather
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            this.ShadowType = MetroFormShadowType.None;
         }
     }
 }

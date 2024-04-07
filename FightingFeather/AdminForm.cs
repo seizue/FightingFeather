@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -280,6 +281,7 @@ namespace FightingFeather
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            this.ShadowType = MetroFormShadowType.None;
             if (!File.Exists(databaseName))
             {
                 CreateDatabase();

@@ -1212,7 +1212,6 @@
             this.Controls.Add(this.Panel_Line);
             this.Controls.Add(this.label_RegisterUsers);
             this.Controls.Add(this.panel1);
-            this.MinimizeBox = false;
             this.Name = "AdminForm";
             this.Opacity = 0.98D;
             this.Resizable = false;

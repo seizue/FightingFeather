@@ -469,6 +469,7 @@ namespace FightingFeather
                 }
             }
 
+
             if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "WINNERS EARNING")
             {
                 // Center-align the content of the cell
@@ -508,6 +509,13 @@ namespace FightingFeather
 
             // Check if the current cell being painted is the header cell of the "WINNERS EARNING" column
             if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "WINNERS EARNING" && e.RowIndex == -1)
+            {
+                // Center-align the header text
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            // Check if the current cell being painted is the header cell of the "WINNERS EARNING" column
+            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "WINNER" && e.RowIndex == -1)
             {
                 // Center-align the header text
                 e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

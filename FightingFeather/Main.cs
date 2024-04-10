@@ -73,7 +73,7 @@ namespace FightingFeather
             // Subscribe to the RowPrePaint event
             GridPlasada_Entries.RowPrePaint += GridPlasada_Entries_RowPrePaint;
 
-            userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
+            //userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
 
             // Set raDateTimePicker1 to show the current date
             raDateTimePicker1.Value = DateTime.Today;
@@ -399,7 +399,7 @@ namespace FightingFeather
             }
 
             // Update the UserControl's textBox_TotalFight
-            userControl_Summa1.UpdateFightTotal(totalFights);
+           // userControl_Summa1.UpdateFightTotal(totalFights);
 
             // Find the last row
             DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
@@ -410,6 +410,9 @@ namespace FightingFeather
 
             // Set the foreground color of the cell
             totalFightsCell.Style.ForeColor = Color.OrangeRed; // Change to the color you desire
+
+            // Display the totalFights in labelValueFight
+            labelValueFight.Text = totalFights.ToString();
         }
 
 
@@ -442,7 +445,10 @@ namespace FightingFeather
             lastRow.Cells["WALA"].Value = $"Cancels: {totalCancels}";
 
             // Update the UserControl's textBox_Draw
-            userControl_Summa1.UpdateDrawCancelTotal(totalDraws);
+          //  userControl_Summa1.UpdateDrawCancelTotal(totalDraws);
+
+            labelValueDraw.Text = totalDraws.ToString();
+            label_ValueCancel.Text = totalCancels.ToString();
         }
 
 
@@ -465,7 +471,9 @@ namespace FightingFeather
             lastRow.Cells["BET_M"].Value = $"Fee: {totalFee}";
 
             // Update the UserControl's textBox_Plasada
-            userControl_Summa1.UpdateFeeTotal(totalFee.ToString());
+           // userControl_Summa1.UpdateFeeTotal(totalFee.ToString());
+
+            labelValueFee.Text = totalFee.ToString();
         }
 
 
@@ -489,7 +497,8 @@ namespace FightingFeather
             lastRow.Cells["BET_W"].Value = $"Plasada: {totalPlasada}";
 
             // Update the UserControl's textBox_Total
-            userControl_Summa1.UpdateTotal(totalPlasada.ToString());
+         //   userControl_Summa1.UpdateTotal(totalPlasada.ToString());
+            labelValuePlasada.Text = totalPlasada.ToString();
         }
 
 
@@ -518,7 +527,9 @@ namespace FightingFeather
             lastRow.Cells["PAGO"].Value = $"City Tax: {totalCityTax}";
 
             // Update textBox_CityTax with the calculated total city tax
-            userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
+          //  userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
+
+            labelValueCityTax.Text = totalCityTax.ToString();
 
         }
 
@@ -1238,7 +1249,7 @@ namespace FightingFeather
                 }
 
                 // Export data using SQLiteExport method in UserControl_Summa1
-                userControl_Summa1.PerformSQLiteExport();
+                //userControl_Summa1.PerformSQLiteExport();
             }
             catch (Exception ex)
             {
@@ -1572,8 +1583,8 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
             button_Export.Visible = false;
             separatorRefresh.Visible = false;
-
-            RefreshCalculationDatagrid();
+            panel_Indicator.Location = new Point(311, 105);
+            panel_Indicator.Size = new Size(65, 4);
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1595,6 +1606,8 @@ namespace FightingFeather
             button_Home.ForeColor = clickedColor;
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
+            panel_Indicator.Location = new Point(200, 105);
+            panel_Indicator.Size = new Size(65, 4);
 
             RefreshGrid();
             RefreshCalculationDatagrid();
@@ -1615,6 +1628,8 @@ namespace FightingFeather
             label_Entries.ForeColor= defaultColor;
             button_Export.Visible = false;
             separatorRefresh.Visible = false;
+            panel_Indicator.Location = new Point(430, 105);
+            panel_Indicator.Size = new Size(94, 4);
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1623,24 +1638,24 @@ namespace FightingFeather
 
         private void button_Shortcut_Click(object sender, EventArgs e)
         {
-            userControl_Shortcut1.Visible = true;
-            userControl_Shortcut1.BringToFront();
-            panel_Shortcut.Visible = true;
-            panel_Shortcut.BringToFront();
+          //  userControl_Shortcut1.Visible = true;
+          //  userControl_Shortcut1.BringToFront();
+          //  panel_Shortcut.Visible = true;
+           // panel_Shortcut.BringToFront();
 
             button_Shortcut.ForeColor = clickedColor;
             button_Home.ForeColor = defaultColor;
             button_Inventory.ForeColor = defaultColor;
        
-            userControl_Shortcut1.ReloadData();
+          //  userControl_Shortcut1.ReloadData();
         }
 
         private void button_Summa_Click(object sender, EventArgs e)
         {
-            userControl_Summa1.Visible = true;
-            panel_Summary.Visible = true;
-            panel_Summary.BringToFront();
-            userControl_Summa1.BringToFront();
+        //    userControl_Summa1.Visible = true;
+        //    panel_Summary.Visible = true;
+       //     panel_Summary.BringToFront();
+       //     userControl_Summa1.BringToFront();
             userControl_CashBreakDown1.Visible = false;
             userControl_Earnings1.Visible = false;
 
@@ -1655,13 +1670,13 @@ namespace FightingFeather
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             // Pass the formatted date to the UserControl_Summa
-            userControl_Summa1.SetDateText(selectedDate);
+           // userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Plasada_Click(object sender, EventArgs e)
         {
-            userControl_Summa1.Visible = false;
-            panel_Summary.Visible = false;
+         //   userControl_Summa1.Visible = false;
+          //  panel_Summary.Visible = false;
             userControl_CashBreakDown1.Visible = false;
             userControl_Earnings1.Visible = false;
 
@@ -1687,21 +1702,21 @@ namespace FightingFeather
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             // Pass the formatted date to the UserControl_Summa
-            userControl_Summa1.SetDateText(selectedDate);
+           // userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Home_Click(object sender, EventArgs e)
         {
-            userControl_Shortcut1.Visible = false;
-            userControl_Shortcut1.SendToBack();
-            panel_Shortcut.Visible = false;
-            panel_Shortcut.SendToBack();
-            userControl_Summa1.Visible = false;
-            userControl_Summa1.SendToBack();
+         //   userControl_Shortcut1.Visible = false;
+          //  userControl_Shortcut1.SendToBack();
+       //     panel_Shortcut.Visible = false;
+        //    panel_Shortcut.SendToBack();
+        //    userControl_Summa1.Visible = false;
+         //   userControl_Summa1.SendToBack();
           
         
-            panel_Summary.Visible = false;
-            panel_Summary.SendToBack();
+         //   panel_Summary.Visible = false;
+      //      panel_Summary.SendToBack();
 
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
@@ -1834,16 +1849,16 @@ namespace FightingFeather
         private void button_Inventory_Click(object sender, EventArgs e)
         {
            
-            panel_Shortcut.Visible = true;
-            panel_Shortcut.BringToFront();
-            userControl_Inventory1.Visible = true;
-            userControl_Inventory1.BringToFront();
+        //    panel_Shortcut.Visible = true;
+       //     panel_Shortcut.BringToFront();
+       //     userControl_Inventory1.Visible = true;
+     //       userControl_Inventory1.BringToFront();
           
             button_Inventory.ForeColor = clickedColor;
             button_Home.ForeColor = defaultColor;
             button_Shortcut.ForeColor = defaultColor;
 
-            userControl_Inventory1.ReloadData();
+        //    userControl_Inventory1.ReloadData();
         }
 
         private void button_Settings_Click(object sender, EventArgs e)

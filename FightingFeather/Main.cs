@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using MetroFramework.Controls;
 using System.Configuration;
 using MetroFramework.Forms;
+using System.Reflection;
 
 namespace FightingFeather
 {
@@ -236,6 +237,9 @@ namespace FightingFeather
 
         public void RefreshGrid()
         {
+            // Clear the DataGridView
+            GridPlasada_Entries.Rows.Clear();
+
             using (var connection = new SQLiteConnection($"Data Source={databasePath}"))
             {
                 connection.Open();
@@ -247,13 +251,10 @@ namespace FightingFeather
                     {
                         if (reader.HasRows)
                         {
-                            GridPlasada_Entries.Rows.Clear();
-
                             while (reader.Read())
                             {
                                 PopulateGridRow(reader, connection);
                             }
-
                         }
                     }
                 }
@@ -263,15 +264,19 @@ namespace FightingFeather
             CalculateParehasValues();
 
             SaveDataGridViewToJson();
-
         }
+
 
         public void PopulateGridRow(SQLiteDataReader reader, SQLiteConnection connection)
         {
             // Handle DBNull for nullable fields
             int initialBetDiff = Convert.IsDBNull(reader["INITIAL BET DIFF"]) ? 0 : Convert.ToInt32(reader["INITIAL BET DIFF"]);
             int pago = Convert.IsDBNull(reader["PAGO"]) ? 0 : Convert.ToInt32(reader["PAGO"]);
+            int walaBet = Convert.IsDBNull(reader["BET (W)"]) ? 0 : Convert.ToInt32(reader["BET (W)"]);
             int rateAmount = Convert.IsDBNull(reader["RATE AMOUNT"]) ? 0 : Convert.ToInt32(reader["RATE AMOUNT"]);
+            int rateResult = Convert.IsDBNull(reader["RATE EARNINGS"]) ? 0 : Convert.ToInt32(reader["RATE EARNINGS"]);
+            string winner = Convert.IsDBNull(reader["WINNER"]) ? string.Empty : reader["WINNER"].ToString();
+
 
             // Call CalculateFee to get the fee value
             decimal fee = CalculateFee(Convert.ToDecimal(reader["BET (M)"]), Convert.ToDecimal(reader["BET (W)"]), reader["WINNER"].ToString(), pago);
@@ -295,6 +300,17 @@ namespace FightingFeather
 
             // Calculate the PAREHAS value based on the formula
             int parehas = betW + pago;
+
+            decimal winnersEarning = 0;
+
+            if (winner == "M")
+            {
+                winnersEarning = parehas - totalPlasada + rateResult;
+            }
+            else if (winner == "W")
+            {
+                winnersEarning = walaBet - totalPlasada;
+            }
 
             // Update the PAREHAS column in the database
             string updateParehasQuery = "UPDATE PLASADA SET PAREHAS = @Parehas WHERE FIGHT = @FightId";
@@ -320,7 +336,7 @@ namespace FightingFeather
                 reader["FIGHT"], reader["MERON"], reader["WALA"], reader["BET (M)"], reader["BET (W)"],
                 reader["INITIAL BET DIFF"], reader["PAREHAS"], pago, reader["WINNER"],
                 reader["RATE AMOUNT"], reader["RATE"], logro, fee,
-                totalPlasada, reader["RATE EARNINGS"], reader["WINNERS EARN"]);
+                totalPlasada, reader["RATE EARNINGS"], winnersEarning);
             GridPlasada_Entries.Rows.Add(row);
         }
 
@@ -1173,6 +1189,39 @@ namespace FightingFeather
             }
         }
 
+        private void button_CreateNewPlasada_Click(object sender, EventArgs e)
+        {
+            // Check if the Reminder toggle is off
+            if (!Properties.Settings.Default.ReminderEnabled)
+            {
+                // Create an instance of ReminderForm and pass the value of raDateTimePicker1
+                ReminderForm reminderForm = new ReminderForm(raDateTimePicker1.Value);
+
+                // Show ReminderForm as a dialog
+                DialogResult result = reminderForm.ShowDialog();
+
+                // Check if the form was closed with OK result
+                if (result == DialogResult.OK)
+                {
+                    // Execute the action if the user clicked "Continue" in ReminderForm
+                    ExecutePlasadaCreation();
+
+                    // Clear the DataGridView
+                    GridPlasada_Entries.Rows.Clear();
+                    DeleteAllRowsFromPlasadaTable();
+                }
+            }
+            else
+            {
+                // If Reminder is enabled, directly execute the action
+                ExecutePlasadaCreation();
+
+                // Clear the DataGridView
+                GridPlasada_Entries.Rows.Clear();
+                DeleteAllRowsFromPlasadaTable();
+            }
+        }
+
 
         private void ExecutePlasadaCreation()
         {
@@ -1257,32 +1306,29 @@ namespace FightingFeather
             }
         }
 
-
-        private void button_CreateNewPlasada_Click(object sender, EventArgs e)
+        private void DeleteAllRowsFromPlasadaTable()
         {
-            // Check if the Reminder toggle is off
-            if (!Properties.Settings.Default.ReminderEnabled)
+            try
             {
-                // Create an instance of ReminderForm and pass the value of raDateTimePicker1
-                ReminderForm reminderForm = new ReminderForm(raDateTimePicker1.Value);
-
-                // Show ReminderForm as a dialog
-                DialogResult result = reminderForm.ShowDialog();
-
-                // Check if the form was closed with OK result
-                if (result == DialogResult.OK)
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={databasePath};Version=3;"))
                 {
-                    // Execute the action if the user clicked "Continue" in ReminderForm
-                    ExecutePlasadaCreation();
+                    connection.Open();
+
+                    using (SQLiteCommand command = new SQLiteCommand(connection))
+                    {
+                        // Delete all rows from the PLASADA table
+                        command.CommandText = "DELETE FROM PLASADA";
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                // If Reminder is enabled, directly execute the action
-                ExecutePlasadaCreation();
+                MessageBox.Show($"An error occurred while deleting rows from the PLASADA table: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
+
 
         private void SettingsForm_ReminderToggleChanged(object sender, bool isChecked)
         {
@@ -1638,8 +1684,8 @@ namespace FightingFeather
 
         private void button_Shortcut_Click(object sender, EventArgs e)
         {
-          //  userControl_Shortcut1.Visible = true;
-          //  userControl_Shortcut1.BringToFront();
+            userControl_Shortcut1.Visible = true;
+            userControl_Shortcut1.BringToFront();
           //  panel_Shortcut.Visible = true;
            // panel_Shortcut.BringToFront();
 
@@ -1647,7 +1693,7 @@ namespace FightingFeather
             button_Home.ForeColor = defaultColor;
             button_Inventory.ForeColor = defaultColor;
        
-          //  userControl_Shortcut1.ReloadData();
+            userControl_Shortcut1.ReloadData();
         }
 
         private void button_Summa_Click(object sender, EventArgs e)
@@ -1707,10 +1753,10 @@ namespace FightingFeather
 
         private void button_Home_Click(object sender, EventArgs e)
         {
-         //   userControl_Shortcut1.Visible = false;
-          //  userControl_Shortcut1.SendToBack();
+              userControl_Shortcut1.Visible = false;
+         
        //     panel_Shortcut.Visible = false;
-        //    panel_Shortcut.SendToBack();
+      
         //    userControl_Summa1.Visible = false;
          //   userControl_Summa1.SendToBack();
           

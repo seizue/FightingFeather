@@ -305,7 +305,7 @@ namespace FightingFeather
                 button_CloseUpdate_ClearFields.Image = FightingFeather.Properties.Resources.close_24px;
 
                 // Set the new location of the button
-                button_SaveUpdate.Location = new Point(59, 159);
+                button_SaveUpdate.Location = new Point(59, 155);
             }
             else
             {

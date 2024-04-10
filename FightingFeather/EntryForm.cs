@@ -407,5 +407,122 @@ namespace FightingFeather
                 e.Handled = true;
             }
         }
+
+        private void textBox_MeronName_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_MeronBet.Focus();
+            }
+        }
+
+        private void textBox_MeronBet_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_WalaName.Focus();
+            }
+        }
+
+        private void textBox_WalaName_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_WalaBet.Focus();
+            }
+        }
+
+        private void textBox_WalaBet_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_Pago.Focus();
+            }
+        }
+
+        private void textBox_Pago_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                comboBox_Winner.Focus();
+
+                // Collapse the dropdown list of the ComboBox
+                comboBox_Winner.DroppedDown = true;
+            }
+        }
+
+        private void comboBox_Winner_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                comboBox_Rate.Focus();
+
+                // Collapse the dropdown list of the ComboBox
+                comboBox_Rate.DroppedDown = true;
+            }
+        }
+
+        private void comboBox_Rate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_EnterAmountRate.Focus();
+            }
+        }
+
+        private void textBox_EnterAmountRate_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Check if button_Enter is visible
+                if (button_Save.Visible)
+                {
+                    button_Save.Focus();
+                    button_Save_Click(sender, e);
+                }
+                else
+                {
+                    button_Update.Focus();
+                    button_Update_Click(sender, e);
+                }
+            }
+        }
     }
 }

@@ -133,6 +133,8 @@
             this.metroPanel24 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
+            this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
+            this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -1544,11 +1546,36 @@
             this.userControl_Shortcut1.Size = new System.Drawing.Size(1084, 640);
             this.userControl_Shortcut1.TabIndex = 6;
             // 
+            // userControl_Inventory1
+            // 
+            this.userControl_Inventory1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userControl_Inventory1.BackColor = System.Drawing.Color.White;
+            this.userControl_Inventory1.Location = new System.Drawing.Point(189, 23);
+            this.userControl_Inventory1.Name = "userControl_Inventory1";
+            this.userControl_Inventory1.Size = new System.Drawing.Size(1084, 640);
+            this.userControl_Inventory1.TabIndex = 378;
+            this.userControl_Inventory1.Visible = false;
+            // 
+            // userControl_Summa1
+            // 
+            this.userControl_Summa1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userControl_Summa1.Location = new System.Drawing.Point(191, 65);
+            this.userControl_Summa1.Name = "userControl_Summa1";
+            this.userControl_Summa1.Size = new System.Drawing.Size(1082, 598);
+            this.userControl_Summa1.TabIndex = 380;
+            this.userControl_Summa1.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 679);
+            this.Controls.Add(this.userControl_Summa1);
+            this.Controls.Add(this.userControl_Inventory1);
             this.Controls.Add(this.userControl_Shortcut1);
             this.Controls.Add(this.metroPanel11);
             this.Controls.Add(this.metroPanel24);
@@ -1620,13 +1647,9 @@
         private System.Windows.Forms.Button button_Export;
         private MetroFramework.Controls.MetroPanel Panel_MainBG;
         private MetroFramework.Controls.MetroPanel Panel_PlasadaEER;
-        private MetroFramework.Controls.MetroPanel metroPanel9;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroPanel metroPanel_Border;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroGrid GridPlasada_Entries;
-        private UserControl_Earnings userControl_Earnings1;
-        private UserControl_CashBreakDown userControl_CashBreakDown1;
         private RaDateTimePicker raDateTimePicker1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureLogo;
@@ -1635,22 +1658,6 @@
         private System.Windows.Forms.Button button_Admin;
         private MetroFramework.Controls.MetroPanel AdminDivider;
         private System.Windows.Forms.Button button_DashBoard;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MERON;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WALA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BET_M;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BET_W;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INITIAL_BET_DIF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAREHAS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAGO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WINNER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_AMOUNT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOGRO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FEE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
         private MetroFramework.Controls.MetroPanel metroPanel8;
         private System.Windows.Forms.Panel panel4;
         private MetroFramework.Controls.MetroPanel metroPanel22;
@@ -1685,6 +1692,28 @@
         private System.Windows.Forms.Button buttonNext;
         private MetroFramework.Controls.MetroPanel metroPanel11;
         private UserControl_Shortcut userControl_Shortcut1;
+        private MetroFramework.Controls.MetroPanel metroPanel9;
+        private UserControl_CashBreakDown userControl_CashBreakDown1;
+        private UserControl_Earnings userControl_Earnings1;
+        private MetroFramework.Controls.MetroGrid GridPlasada_Entries;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIGHT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MERON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WALA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BET_M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BET_W;
+        private System.Windows.Forms.DataGridViewTextBoxColumn INITIAL_BET_DIF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAREHAS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WINNER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_AMOUNT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOGRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FEE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
+        private UserControl_Inventory userControl_Inventory1;
+        private UserControl_Summa userControl_Summa1;
     }
 }
 

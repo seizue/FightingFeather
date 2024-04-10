@@ -73,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridPlasada_CashBreakDown.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridPlasada_CashBreakDown.BackgroundColor = System.Drawing.Color.White;
+            this.GridPlasada_CashBreakDown.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
             this.GridPlasada_CashBreakDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_CashBreakDown.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_CashBreakDown.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

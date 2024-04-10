@@ -24,8 +24,7 @@ namespace FightingFeather
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
         private SQLiteConnection connection;
-        private UserControl_Summa summa;
-
+     
         private string connectionString = "Data Source = munton_posted.db;Version=3;";
         private int currentTableNumber = 0;
 
@@ -33,6 +32,7 @@ namespace FightingFeather
         private string databasePath;
         private DataTable dataTable;
 
+        private UserControl_Summa summa;
         private SettingsForm settingsForm;
         private ReminderForm reminderForm;
 
@@ -53,9 +53,7 @@ namespace FightingFeather
             InitializeDatabase();
             UpdateFightIDs();
             RefreshGrid();
-
             RefreshCalculationDatagrid();
-
             LoadColumnVisibilitySettings();
             RevertColumnVisibilityChanges();
 
@@ -74,7 +72,8 @@ namespace FightingFeather
             // Subscribe to the RowPrePaint event
             GridPlasada_Entries.RowPrePaint += GridPlasada_Entries_RowPrePaint;
 
-            //userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
+            // Subscribe to the Shortcut ButtonEnter event
+            userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
 
             // Set raDateTimePicker1 to show the current date
             raDateTimePicker1.Value = DateTime.Today;
@@ -96,7 +95,6 @@ namespace FightingFeather
             }
 
             summa = new UserControl_Summa();
-
             settingsForm = new SettingsForm();
             settingsForm.ReminderToggleChanged += SettingsForm_ReminderToggleChanged;
 
@@ -391,6 +389,7 @@ namespace FightingFeather
             }
         }
 
+
         private bool IsNumeric(object value)
         {
             // Check if the value can be parsed as a number
@@ -415,17 +414,7 @@ namespace FightingFeather
             }
 
             // Update the UserControl's textBox_TotalFight
-           // userControl_Summa1.UpdateFightTotal(totalFights);
-
-            // Find the last row
-            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-            // Display the totalFights in the last row
-            DataGridViewCell totalFightsCell = lastRow.Cells["FIGHT"];
-            totalFightsCell.Value = totalFights.ToString();
-
-            // Set the foreground color of the cell
-            totalFightsCell.Style.ForeColor = Color.OrangeRed; // Change to the color you desire
+            userControl_Summa1.UpdateFightTotal(totalFights);
 
             // Display the totalFights in labelValueFight
             labelValueFight.Text = totalFights.ToString();
@@ -453,15 +442,8 @@ namespace FightingFeather
                 }
             }
 
-            // Find the last row
-            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-            // Display the total draws and total cancels in the last row
-            lastRow.Cells["MERON"].Value = $"Draws: {totalDraws}";
-            lastRow.Cells["WALA"].Value = $"Cancels: {totalCancels}";
-
             // Update the UserControl's textBox_Draw
-          //  userControl_Summa1.UpdateDrawCancelTotal(totalDraws);
+            userControl_Summa1.UpdateDrawCancelTotal(totalDraws);
 
             labelValueDraw.Text = totalDraws.ToString();
             label_ValueCancel.Text = totalCancels.ToString();
@@ -480,14 +462,8 @@ namespace FightingFeather
                 }
             }
 
-            // Find the last row
-            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-            // Display the total fee in the last row
-            lastRow.Cells["BET_M"].Value = $"Fee: {totalFee}";
-
             // Update the UserControl's textBox_Plasada
-           // userControl_Summa1.UpdateFeeTotal(totalFee.ToString());
+            userControl_Summa1.UpdateFeeTotal(totalFee.ToString());
 
             labelValueFee.Text = totalFee.ToString();
         }
@@ -506,14 +482,9 @@ namespace FightingFeather
                 }
             }
 
-            // Find the last row
-            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-            // Display the total plasada in the last row
-            lastRow.Cells["BET_W"].Value = $"Plasada: {totalPlasada}";
-
             // Update the UserControl's textBox_Total
-         //   userControl_Summa1.UpdateTotal(totalPlasada.ToString());
+            userControl_Summa1.UpdateTotal(totalPlasada.ToString());
+
             labelValuePlasada.Text = totalPlasada.ToString();
         }
 
@@ -536,17 +507,11 @@ namespace FightingFeather
 
             // Calculate total city tax
             int totalCityTax = totalFights * 300;
-            // Find the last row
-            DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-            // Display the total city tax in the last row
-            lastRow.Cells["PAGO"].Value = $"City Tax: {totalCityTax}";
 
             // Update textBox_CityTax with the calculated total city tax
-          //  userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
+            userControl_Summa1.UpdateCityTax(totalCityTax.ToString());
 
             labelValueCityTax.Text = totalCityTax.ToString();
-
         }
 
 
@@ -557,329 +522,6 @@ namespace FightingFeather
             CalculateAndDisplayFeeTotal();
             CalculateAndDisplayTotalPlasada();
             CalculateTotalCityTax();
-        }
-
-
-        private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-            // Check if the current cell contains text
-            if (e.Value != null && e.Value.GetType() == typeof(string))
-            {
-                string originalText = (string)e.Value;
-                if (!string.IsNullOrEmpty(originalText))
-                {
-                    // Convert the first letter to uppercase and the rest to lowercase
-                    string formattedText = char.ToUpper(originalText[0]) + originalText.Substring(1).ToLower();
-                    e.Value = formattedText;
-                    // Set the cell style to display the text with the modified formatting
-                    e.FormattingApplied = true;
-                }
-            }
-
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                row.Height = 28;
-            }
-
-            // Check if the cell value is 0 and if it's not a header cell
-            if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Replace the cell value with "-"
-                e.Value = "-";
-                e.FormattingApplied = true; // Indicate that the formatting is applied
-            }
-
-            if (e.Value != null && e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Retrieve the column type
-                var column = GridPlasada_Entries.Columns[e.ColumnIndex];
-
-                // Check if the value is numeric
-                if (IsNumeric(e.Value))
-                {
-                    // Format the value with commas for thousands separator
-                    e.Value = string.Format("{0:#,0}", e.Value);
-                    e.FormattingApplied = true; // Indicate that the formatting is applied
-                }
-            }
-
-            // Check if the cell value is 0 and if it's not a header cell
-            if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Replace the cell value with "-"
-                e.Value = "-";
-                e.FormattingApplied = true; // Indicate that the formatting is applied
-            }
-
-
-            // Check if the cell belongs to the "RATE" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" && e.RowIndex >= 0)
-            {
-                // Get the value of the cell
-                string rate = GridPlasada_Entries.Rows[e.RowIndex].Cells["RATE"].Value?.ToString();
-
-                // Check if the rate is "None"
-                if (rate == "None")
-                {
-                    // Set the cell value to "-"
-                    e.Value = "-";
-                    e.FormattingApplied = true; // Indicate that the formatting is applied
-                }
-            }
-
-            // Check if the column index is valid and the current cell being formatted is in the WINNER column
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" && e.RowIndex >= 0)
-            {
-                // Get the value of the cell and ensure it's not null
-                if (GridPlasada_Entries.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                {
-                    string winner = GridPlasada_Entries.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-
-                    // Set custom text color based on the value of the cell
-                    if (winner == "W")
-                    {
-                        // Set the text color to a custom color for winner "W"
-                        e.CellStyle.ForeColor = Color.Maroon; // Change this to your desired color
-                        e.CellStyle.BackColor = Color.FromArgb(255, 243, 245);
-                    }
-                    else if (winner == "M")
-                    {
-                        // Set the text color to a custom color for winner "M"
-                        e.CellStyle.ForeColor = Color.Green; // Change this to your desired color
-                        e.CellStyle.BackColor = Color.FromArgb(239, 253, 244);
-                    }
-                    else if (winner == "Cancel" || winner == "Draw")
-                    {
-                        // Set the text color to a custom color for winner "Cancel" or "Draw"
-                        e.CellStyle.ForeColor = Color.Gray; // Change this to your desired color
-                    }
-                    else
-                    {
-                        // Set the default text color for other values
-                        e.CellStyle.ForeColor = GridPlasada_Entries.DefaultCellStyle.ForeColor;
-                    }
-                }
-            }
-
-            // Check if the cell belongs to the "INITIAL_BET_DIF" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "INITIAL_BET_DIF" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "INITIAL_BET_DIF" column
-                e.CellStyle.ForeColor = Color.FromArgb(120, 30, 199);
-            }
-
-            // Check if the cell belongs to the "PAREHAS" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "PAREHAS" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "PAREHASF" column
-                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
-            }
-
-            // Check if the cell belongs to the "RATE RESULT" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_EARNINGS" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "RATE RESULT" column
-                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
-            }
-
-            // Check if the cell belongs to the "WINNERS EARNING" column and if it's not a header cell
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN" && e.RowIndex >= 0)
-            {
-                // Set the font color for cells in the "WINNERS EARNING" column
-                e.CellStyle.ForeColor = Color.FromArgb(149, 32, 37);
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
-            {
-                DataGridViewColumn column = GridPlasada_Entries.Columns[e.ColumnIndex];
-                DataGridViewRow row = GridPlasada_Entries.Rows[e.RowIndex];
-
-                // Check for MERON, WALA, WINNERS_EARN columns
-                if ((column.Name == "MERON" || column.Name == "WALA" || column.Name == "WINNERS_EARN" || column.Name == "RATE_EARNINGS") && column.Name != "WINNER" && row.Cells["WINNER"].Value != null)
-                {
-                    string winner = row.Cells["WINNER"].Value.ToString();
-
-                    // Determine the color based on the winner formula and if the value is greater than 0
-                    if (winner == "M" && (column.Name == "MERON"))
-                    {
-                        // Set the color for MERON
-                        row.Cells[column.Name].Style.BackColor = Color.FromArgb(239, 253, 244);
-                    }
-                    else if (winner == "W" && (column.Name == "WALA"))
-                    {
-                        // Set the color for WALA
-                        row.Cells[column.Name].Style.BackColor = Color.FromArgb(255, 243, 245);
-                    }
-                }
-            }
-
-            // Check if the cell belongs to the "RATE" or "RATE AMOUNT" column headers
-            if (e.RowIndex == -1 && (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" || GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT"))
-            {
-                // Align the column header text to the middle-right
-                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            }
-        }
-
-        private void GridPlasada_Entries_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
-            if (e.RowIndex == -1 &&
-               (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FIGHT" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FEE" ||
-                 GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "TOTAL_PLASADA" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||
-                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN"))
-
-            {
-                e.PaintBackground(e.CellBounds, true);
-
-                using (StringFormat sf = new StringFormat())
-                {
-                    sf.Alignment = StringAlignment.Center;
-                    sf.LineAlignment = StringAlignment.Center;
-
-                    // Specify custom font
-                    Font headerFont = new Font("Calibri", 8f, FontStyle.Bold);
-
-                    using (Brush brush = new SolidBrush(e.CellStyle.ForeColor))
-                    {
-                        e.Graphics.DrawString(e.Value.ToString(), headerFont, brush, e.CellBounds, sf);
-                    }
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "RATE EARNINGS")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "PAREHAS")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "WINNER")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "RATE_AMOUNT")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-        }
-
-
-
-        private void GridPlasada_Entries_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Check if the clicked cell is a full row
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Select the entire row
-                GridPlasada_Entries.Rows[e.RowIndex].Selected = true;
-            }
-        }
-
-
-        // Event handler for the CellValueChanged event
-        private void GridPlasada_Entries_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            // Check if the changed cell is in the "WINNER" column
-            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" && e.RowIndex >= 0)
-            {
-                // Get the value of the changed cell
-                string winner = GridPlasada_Entries.Rows[e.RowIndex].Cells["WINNER"].Value?.ToString();
-
-                // Check if the winner is "Cancel" or "Draw"
-                if (winner == "Cancel" || winner == "Draw")
-                {
-                    // Set the corresponding cells to 0
-                    GridPlasada_Entries.Rows[e.RowIndex].Cells["RATE_EARNINGS"].Value = 0;
-                    GridPlasada_Entries.Rows[e.RowIndex].Cells["WINNERS_EARN"].Value = 0;
-                }
-            }
-        }
-
-        private void GridPlasada_Entries_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            // Check if the current row is the last row
-            if (e.RowIndex == GridPlasada_Entries.Rows.Count - 1)
-            {
-                // Set the desired background color for the last row
-                GridPlasada_Entries.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 236, 242); // Change this to the desired color
-            }
         }
 
         private void UpdateFightIDs()
@@ -909,6 +551,8 @@ namespace FightingFeather
                 ResetAutoIncrement();
             }
         }
+
+
         private void ResetAutoIncrement()
         {
             using (var connection = new SQLiteConnection($"Data Source={databasePath}"))
@@ -1298,7 +942,7 @@ namespace FightingFeather
                 }
 
                 // Export data using SQLiteExport method in UserControl_Summa1
-                //userControl_Summa1.PerformSQLiteExport();
+                userControl_Summa1.PerformSQLiteExport();
             }
             catch (Exception ex)
             {
@@ -1328,8 +972,6 @@ namespace FightingFeather
             }
         }
 
-
-
         private void SettingsForm_ReminderToggleChanged(object sender, bool isChecked)
         {
             // Show or hide the ReminderForm based on the toggle state received from the settings form
@@ -1354,10 +996,11 @@ namespace FightingFeather
                     reminderForm.Hide();
                 }
             }
-    }
+
+        }
 
 
-    private int GetNextTableNumber()
+        private int GetNextTableNumber()
         {
             // Fetch the highest existing table number from the database
             int nextTableNumber = 1;
@@ -1686,8 +1329,6 @@ namespace FightingFeather
         {
             userControl_Shortcut1.Visible = true;
             userControl_Shortcut1.BringToFront();
-          //  panel_Shortcut.Visible = true;
-           // panel_Shortcut.BringToFront();
 
             button_Shortcut.ForeColor = clickedColor;
             button_Home.ForeColor = defaultColor;
@@ -1698,10 +1339,8 @@ namespace FightingFeather
 
         private void button_Summa_Click(object sender, EventArgs e)
         {
-        //    userControl_Summa1.Visible = true;
-        //    panel_Summary.Visible = true;
-       //     panel_Summary.BringToFront();
-       //     userControl_Summa1.BringToFront();
+            userControl_Summa1.Visible = true;
+            userControl_Summa1.BringToFront();
             userControl_CashBreakDown1.Visible = false;
             userControl_Earnings1.Visible = false;
 
@@ -1716,13 +1355,12 @@ namespace FightingFeather
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             // Pass the formatted date to the UserControl_Summa
-           // userControl_Summa1.SetDateText(selectedDate);
+           userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Plasada_Click(object sender, EventArgs e)
         {
-         //   userControl_Summa1.Visible = false;
-          //  panel_Summary.Visible = false;
+            userControl_Summa1.Visible = false;
             userControl_CashBreakDown1.Visible = false;
             userControl_Earnings1.Visible = false;
 
@@ -1748,22 +1386,16 @@ namespace FightingFeather
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             // Pass the formatted date to the UserControl_Summa
-           // userControl_Summa1.SetDateText(selectedDate);
+           userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Home_Click(object sender, EventArgs e)
         {
-              userControl_Shortcut1.Visible = false;
-         
-       //     panel_Shortcut.Visible = false;
-      
-        //    userControl_Summa1.Visible = false;
-         //   userControl_Summa1.SendToBack();
-          
-        
-         //   panel_Summary.Visible = false;
-      //      panel_Summary.SendToBack();
 
+            userControl_Shortcut1.Visible = false;
+            userControl_Inventory1.Visible = false;
+            userControl_Summa1.Visible = false;
+     
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
 
@@ -1777,7 +1409,6 @@ namespace FightingFeather
             button_Summa.ForeColor = defaultColor;
             button_Inventory.ForeColor= defaultColor;
             button_Shortcut.ForeColor= defaultColor;
-
 
             RefreshGrid();
             RefreshCalculationDatagrid();
@@ -1895,25 +1526,21 @@ namespace FightingFeather
         private void button_Inventory_Click(object sender, EventArgs e)
         {
            
-        //    panel_Shortcut.Visible = true;
-       //     panel_Shortcut.BringToFront();
-       //     userControl_Inventory1.Visible = true;
-     //       userControl_Inventory1.BringToFront();
+            userControl_Inventory1.Visible = true;   
+            userControl_Shortcut1.Visible = false;
+            userControl_Summa1.Visible = false;
           
             button_Inventory.ForeColor = clickedColor;
             button_Home.ForeColor = defaultColor;
             button_Shortcut.ForeColor = defaultColor;
 
-        //    userControl_Inventory1.ReloadData();
+            userControl_Inventory1.ReloadData();
         }
 
         private void button_Settings_Click(object sender, EventArgs e)
         {
-
-            SettingsForm settingsForm = new SettingsForm();
-           
+            SettingsForm settingsForm = new SettingsForm();          
             settingsForm.ShowDialog();
-
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
@@ -1926,8 +1553,7 @@ namespace FightingFeather
         private void button_Admin_Click(object sender, EventArgs e)
         {
             AdminForm adminForm = new AdminForm();
-            adminForm.ShowDialog();
-           
+            adminForm.ShowDialog();     
         }
 
         private void button_DashBoard_Click(object sender, EventArgs e)
@@ -1960,5 +1586,327 @@ namespace FightingFeather
         {
             this.ShadowType = MetroFormShadowType.None;
         }
+
+
+        private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            // Check if the current cell contains text
+            if (e.Value != null && e.Value.GetType() == typeof(string))
+            {
+                string originalText = (string)e.Value;
+                if (!string.IsNullOrEmpty(originalText))
+                {
+                    // Convert the first letter to uppercase and the rest to lowercase
+                    string formattedText = char.ToUpper(originalText[0]) + originalText.Substring(1).ToLower();
+                    e.Value = formattedText;
+                    // Set the cell style to display the text with the modified formatting
+                    e.FormattingApplied = true;
+                }
+            }
+
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                row.Height = 28;
+            }
+
+            // Check if the cell value is 0 and if it's not a header cell
+            if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Replace the cell value with "-"
+                e.Value = "-";
+                e.FormattingApplied = true; // Indicate that the formatting is applied
+            }
+
+            if (e.Value != null && e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Retrieve the column type
+                var column = GridPlasada_Entries.Columns[e.ColumnIndex];
+
+                // Check if the value is numeric
+                if (IsNumeric(e.Value))
+                {
+                    // Format the value with commas for thousands separator
+                    e.Value = string.Format("{0:#,0}", e.Value);
+                    e.FormattingApplied = true; // Indicate that the formatting is applied
+                }
+            }
+
+            // Check if the cell value is 0 and if it's not a header cell
+            if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Replace the cell value with "-"
+                e.Value = "-";
+                e.FormattingApplied = true; // Indicate that the formatting is applied
+            }
+
+
+            // Check if the cell belongs to the "RATE" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" && e.RowIndex >= 0)
+            {
+                // Get the value of the cell
+                string rate = GridPlasada_Entries.Rows[e.RowIndex].Cells["RATE"].Value?.ToString();
+
+                // Check if the rate is "None"
+                if (rate == "None")
+                {
+                    // Set the cell value to "-"
+                    e.Value = "-";
+                    e.FormattingApplied = true; // Indicate that the formatting is applied
+                }
+            }
+
+            // Check if the column index is valid and the current cell being formatted is in the WINNER column
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" && e.RowIndex >= 0)
+            {
+                // Get the value of the cell and ensure it's not null
+                if (GridPlasada_Entries.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    string winner = GridPlasada_Entries.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                    // Set custom text color based on the value of the cell
+                    if (winner == "W")
+                    {
+                        // Set the text color to a custom color for winner "W"
+                        e.CellStyle.ForeColor = Color.Maroon; // Change this to your desired color
+                        e.CellStyle.BackColor = Color.FromArgb(255, 243, 245);
+                    }
+                    else if (winner == "M")
+                    {
+                        // Set the text color to a custom color for winner "M"
+                        e.CellStyle.ForeColor = Color.Green; // Change this to your desired color
+                        e.CellStyle.BackColor = Color.FromArgb(239, 253, 244);
+                    }
+                    else if (winner == "Cancel" || winner == "Draw")
+                    {
+                        // Set the text color to a custom color for winner "Cancel" or "Draw"
+                        e.CellStyle.ForeColor = Color.Gray; // Change this to your desired color
+                    }
+                    else
+                    {
+                        // Set the default text color for other values
+                        e.CellStyle.ForeColor = GridPlasada_Entries.DefaultCellStyle.ForeColor;
+                    }
+                }
+            }
+
+            // Check if the cell belongs to the "INITIAL_BET_DIF" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "INITIAL_BET_DIF" && e.RowIndex >= 0)
+            {
+                // Set the font color for cells in the "INITIAL_BET_DIF" column
+                e.CellStyle.ForeColor = Color.FromArgb(120, 30, 199);
+            }
+
+            // Check if the cell belongs to the "PAREHAS" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "PAREHAS" && e.RowIndex >= 0)
+            {
+                // Set the font color for cells in the "PAREHASF" column
+                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
+            }
+
+            // Check if the cell belongs to the "RATE RESULT" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_EARNINGS" && e.RowIndex >= 0)
+            {
+                // Set the font color for cells in the "RATE RESULT" column
+                e.CellStyle.ForeColor = Color.FromArgb(99, 66, 0);
+            }
+
+            // Check if the cell belongs to the "WINNERS EARNING" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN" && e.RowIndex >= 0)
+            {
+                // Set the font color for cells in the "WINNERS EARNING" column
+                e.CellStyle.ForeColor = Color.FromArgb(149, 32, 37);
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                DataGridViewColumn column = GridPlasada_Entries.Columns[e.ColumnIndex];
+                DataGridViewRow row = GridPlasada_Entries.Rows[e.RowIndex];
+
+                // Check for MERON, WALA, WINNERS_EARN columns
+                if ((column.Name == "MERON" || column.Name == "WALA" || column.Name == "WINNERS_EARN" || column.Name == "RATE_EARNINGS") && column.Name != "WINNER" && row.Cells["WINNER"].Value != null)
+                {
+                    string winner = row.Cells["WINNER"].Value.ToString();
+
+                    // Determine the color based on the winner formula and if the value is greater than 0
+                    if (winner == "M" && (column.Name == "MERON"))
+                    {
+                        // Set the color for MERON
+                        row.Cells[column.Name].Style.BackColor = Color.FromArgb(239, 253, 244);
+                    }
+                    else if (winner == "W" && (column.Name == "WALA"))
+                    {
+                        // Set the color for WALA
+                        row.Cells[column.Name].Style.BackColor = Color.FromArgb(255, 243, 245);
+                    }
+                }
+            }
+
+            // Check if the cell belongs to the "RATE" or "RATE AMOUNT" column headers
+            if (e.RowIndex == -1 && (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" || GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT"))
+            {
+                // Align the column header text to the middle-right
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+        }
+
+        private void GridPlasada_Entries_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.RowIndex == -1 &&
+               (GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FIGHT" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "FEE" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "LOGRO" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "TOTAL_PLASADA" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE_AMOUNT" ||
+                GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNERS_EARN"))
+
+            {
+                e.PaintBackground(e.CellBounds, true);
+
+                using (StringFormat sf = new StringFormat())
+                {
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
+
+                    // Specify custom font
+                    Font headerFont = new Font("Calibri", 8f, FontStyle.Bold);
+
+                    using (Brush brush = new SolidBrush(e.CellStyle.ForeColor))
+                    {
+                        e.Graphics.DrawString(e.Value.ToString(), headerFont, brush, e.CellBounds, sf);
+                    }
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "RATE EARNINGS")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "PAREHAS")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "WINNER")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "RATE_AMOUNT")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+        }
+
+        private void GridPlasada_Entries_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is a full row
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Select the entire row
+                GridPlasada_Entries.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+
+        // Event handler for the CellValueChanged event
+        private void GridPlasada_Entries_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the changed cell is in the "WINNER" column
+            if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "WINNER" && e.RowIndex >= 0)
+            {
+                // Get the value of the changed cell
+                string winner = GridPlasada_Entries.Rows[e.RowIndex].Cells["WINNER"].Value?.ToString();
+
+                // Check if the winner is "Cancel" or "Draw"
+                if (winner == "Cancel" || winner == "Draw")
+                {
+                    // Set the corresponding cells to 0
+                    GridPlasada_Entries.Rows[e.RowIndex].Cells["RATE_EARNINGS"].Value = 0;
+                    GridPlasada_Entries.Rows[e.RowIndex].Cells["WINNERS_EARN"].Value = 0;
+                }
+            }
+        }
+
+        private void GridPlasada_Entries_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Check if the current row is the last row
+            if (e.RowIndex == GridPlasada_Entries.Rows.Count - 1)
+            {
+                // Set the desired background color for the last row
+                GridPlasada_Entries.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+            }
+        }
+
     }
 }

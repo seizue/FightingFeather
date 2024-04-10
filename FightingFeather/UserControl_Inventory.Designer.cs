@@ -67,7 +67,7 @@
             this.metroPanel11.HorizontalScrollbarSize = 10;
             this.metroPanel11.Location = new System.Drawing.Point(331, 49);
             this.metroPanel11.Name = "metroPanel11";
-            this.metroPanel11.Size = new System.Drawing.Size(751, 601);
+            this.metroPanel11.Size = new System.Drawing.Size(751, 594);
             this.metroPanel11.TabIndex = 231;
             this.metroPanel11.UseCustomBackColor = true;
             this.metroPanel11.UseStyleColors = true;
@@ -137,7 +137,7 @@
             this.postedMunton.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.postedMunton.RowTemplate.Height = 23;
             this.postedMunton.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.postedMunton.Size = new System.Drawing.Size(745, 592);
+            this.postedMunton.Size = new System.Drawing.Size(745, 585);
             this.postedMunton.TabIndex = 10;
             this.postedMunton.UseCustomBackColor = true;
             this.postedMunton.UseCustomForeColor = true;
@@ -352,7 +352,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(324, 647);
+            this.metroPanel1.Size = new System.Drawing.Size(324, 640);
             this.metroPanel1.TabIndex = 232;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.UseStyleColors = true;
@@ -370,7 +370,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroPanel11);
             this.Name = "UserControl_Inventory";
-            this.Size = new System.Drawing.Size(1084, 647);
+            this.Size = new System.Drawing.Size(1084, 640);
             this.metroPanel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).EndInit();
             this.metroPanel1.ResumeLayout(false);

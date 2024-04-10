@@ -137,6 +137,7 @@
             this.textBox_EnterAmountRate.Size = new System.Drawing.Size(159, 17);
             this.textBox_EnterAmountRate.TabIndex = 216;
             this.textBox_EnterAmountRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_EnterAmountRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_EnterAmountRate_KeyDown);
             this.textBox_EnterAmountRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnterAmountRate_KeyPress);
             // 
             // label7
@@ -182,6 +183,7 @@
             this.textBox_MeronName.Size = new System.Drawing.Size(159, 17);
             this.textBox_MeronName.TabIndex = 217;
             this.textBox_MeronName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_MeronName_KeyDown);
             // 
             // metroPanel15
             // 
@@ -263,6 +265,7 @@
             this.textBox_MeronBet.Size = new System.Drawing.Size(159, 17);
             this.textBox_MeronBet.TabIndex = 216;
             this.textBox_MeronBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MeronBet.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_MeronBet_KeyDown);
             this.textBox_MeronBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MeronBet_KeyPress);
             // 
             // label11
@@ -345,6 +348,7 @@
             this.comboBox_Rate.Name = "comboBox_Rate";
             this.comboBox_Rate.Size = new System.Drawing.Size(159, 21);
             this.comboBox_Rate.TabIndex = 229;
+            this.comboBox_Rate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox_Rate_KeyDown);
             // 
             // label1
             // 
@@ -407,6 +411,7 @@
             this.comboBox_Winner.Name = "comboBox_Winner";
             this.comboBox_Winner.Size = new System.Drawing.Size(159, 21);
             this.comboBox_Winner.TabIndex = 229;
+            this.comboBox_Winner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox_Winner_KeyDown);
             // 
             // label3
             // 
@@ -470,6 +475,7 @@
             this.textBox_Pago.Size = new System.Drawing.Size(159, 17);
             this.textBox_Pago.TabIndex = 216;
             this.textBox_Pago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Pago.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Pago_KeyDown);
             this.textBox_Pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Pago_KeyPress);
             // 
             // label2
@@ -663,6 +669,7 @@
             this.textBox_WalaBet.Size = new System.Drawing.Size(159, 17);
             this.textBox_WalaBet.TabIndex = 216;
             this.textBox_WalaBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaBet.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_WalaBet_KeyDown);
             this.textBox_WalaBet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_WalaBet_KeyPress);
             // 
             // metroPanel27
@@ -697,6 +704,7 @@
             this.textBox_WalaName.Size = new System.Drawing.Size(159, 17);
             this.textBox_WalaName.TabIndex = 216;
             this.textBox_WalaName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_WalaName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_WalaName_KeyDown);
             // 
             // label8
             // 

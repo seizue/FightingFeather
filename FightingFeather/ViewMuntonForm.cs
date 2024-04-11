@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.Common;
+using Newtonsoft.Json;
 
 namespace FightingFeather
 {
@@ -46,61 +47,66 @@ namespace FightingFeather
             try
             {
                 // Load JSON file based on the filename
-                string jsonFilePath = Path.Combine(Environment.CurrentDirectory, "TABLES", fileName);
+                string jsonFilePath = Path.Combine(Environment.CurrentDirectory, "TABLES", fileName + ".json");
 
                 if (File.Exists(jsonFilePath))
                 {
                     string jsonContent = File.ReadAllText(jsonFilePath);
 
                     // Deserialize JSON string into a list of dictionaries
-                    List<Dictionary<string, string>> dataList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(jsonContent);
+                    List<Dictionary<string, string>> dataList = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(jsonContent);
 
                     // Clear existing rows and columns in the DataGridView
                     DataMuntonGrid.Rows.Clear();
                     DataMuntonGrid.Columns.Clear();
 
-                    // Add columns to the DataGridView based on the keys of the first dictionary
-                    if (dataList.Count > 0)
+                    // Add columns to the DataGridView for the fight details
+                    DataMuntonGrid.Columns.Add("FIGHT", "FIGHT");
+                    DataMuntonGrid.Columns.Add("MERON", "MERON");
+                    DataMuntonGrid.Columns.Add("WALA", "WALA");
+                    DataMuntonGrid.Columns.Add("BET (M)", "BET (M)");
+                    DataMuntonGrid.Columns.Add("BET (W)", "BET (W)");
+                    DataMuntonGrid.Columns.Add("INITIAL BET DIFF", "INITIAL BET DIFF");
+                    DataMuntonGrid.Columns.Add("PAREHAS", "PAREHAS");
+                    DataMuntonGrid.Columns.Add("PAGO", "PAGO");
+                    DataMuntonGrid.Columns.Add("WINNER", "WINNER");
+                    DataMuntonGrid.Columns.Add("RATE AMOUNT", "RATE AMOUNT");
+                    DataMuntonGrid.Columns.Add("RATE", "RATE");
+                    DataMuntonGrid.Columns.Add("LOGRO", "LOGRO");
+                    DataMuntonGrid.Columns.Add("FEE", "FEE");
+                    DataMuntonGrid.Columns.Add("PLASADA", "PLASADA");
+                    DataMuntonGrid.Columns.Add("RATE EARNINGS", "RATE EARNINGS");
+                    DataMuntonGrid.Columns.Add("WINNERS EARNING", "WINNERS EARNING");
+
+                    // Add rows to the DataGridView for each fight detail
+                    foreach (Dictionary<string, string> data in dataList)
                     {
-                        foreach (string key in dataList[0].Keys)
-                        {
-                            // Add all columns except the "Date" column
-                            if (key != "Date")
-                            {
-                                DataMuntonGrid.Columns.Add(key, key);
-                            }
-                        }
+                        // Skip the summary data
+                        if (!data.ContainsKey("FIGHT"))
+                            continue;
 
-                        // Add rows to the DataGridView
-                        foreach (Dictionary<string, string> data in dataList)
-                        {
-                            DataGridViewRow row = new DataGridViewRow();
-                            row.CreateCells(DataMuntonGrid);
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(DataMuntonGrid);
 
-                            // Iterate over the DataGridView columns and set cell values based on the JSON data
-                            foreach (DataGridViewColumn column in DataMuntonGrid.Columns)
-                            {
-                                if (column.Name != "Date")
-                                {
-                                    if (data.ContainsKey(column.Name))
-                                    {
-                                        row.Cells[column.Index].Value = data[column.Name];
-                                    }
-                                    else
-                                    {
-                                        // Handle missing data here if necessary
-                                        row.Cells[column.Index].Value = string.Empty;
-                                    }
-                                }
-                            }
+                        // Set cell values for each column
+                        row.Cells[0].Value = data["FIGHT"];
+                        row.Cells[1].Value = data["MERON"];
+                        row.Cells[2].Value = data["WALA"];
+                        row.Cells[3].Value = data["BET (M)"];
+                        row.Cells[4].Value = data["BET (W)"];
+                        row.Cells[5].Value = data["INITIAL BET DIFF"];
+                        row.Cells[6].Value = data["PAREHAS"];
+                        row.Cells[7].Value = data["PAGO"];
+                        row.Cells[8].Value = data["WINNER"];
+                        row.Cells[9].Value = data["RATE AMOUNT"];
+                        row.Cells[10].Value = data["RATE"];
+                        row.Cells[11].Value = data["LOGRO"];
+                        row.Cells[12].Value = data["FEE"];
+                        row.Cells[13].Value = data["PLASADA"];
+                        row.Cells[14].Value = data["RATE EARNINGS"];
+                        row.Cells[15].Value = data["WINNERS EARNING"];
 
-                            DataMuntonGrid.Rows.Add(row);
-                        }
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("No data found in the JSON file.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataMuntonGrid.Rows.Add(row);
                     }
                 }
                 else
@@ -115,6 +121,7 @@ namespace FightingFeather
                 // Handle the error as needed
             }
         }
+
 
 
         private void textBox_Search_ButtonClick(object sender, EventArgs e)

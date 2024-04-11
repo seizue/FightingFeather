@@ -473,7 +473,6 @@ namespace FightingFeather
         }
 
 
-
         public void CalculateAndDisplayTotalPlasada()
         {
             decimal totalPlasada = 0;
@@ -1117,7 +1116,6 @@ namespace FightingFeather
             }
         }
 
-        //Posted Munton save to json file
         private void SaveTableToJson()
         {
             try
@@ -1127,6 +1125,19 @@ namespace FightingFeather
 
                 // Get the date from raDateTimePicker1
                 DateTime date = raDateTimePicker1.Value.Date;
+
+                // Additional data dictionary
+                Dictionary<string, object> additionalData = new Dictionary<string, object>();
+                additionalData["Date"] = date.ToString("yyyy-MM-dd");
+                additionalData["totalFights"] = labelValueFight.Text;
+                additionalData["totalDraws"] = labelValueDraw.Text;
+                additionalData["totalCancels"] = label_ValueCancel.Text;
+                additionalData["totalFee"] = labelValueFee.Text;
+                additionalData["totalCityTax"] = labelValueCityTax.Text;
+                additionalData["OverAllTotalPlasada"] = labelValuePlasada.Text;
+
+                // Add additional data to the list
+                data.Add(additionalData);
 
                 // Iterate through the rows of the DataGridView
                 for (int i = 0; i < GridPlasada_Entries.Rows.Count - 1; i++)
@@ -1142,15 +1153,9 @@ namespace FightingFeather
                         rowData[cell.OwningColumn.HeaderText] = cell.Value;
                     }
 
-                    // Add date to the row data
-                    rowData["Date"] = date.ToString("yyyy-MM-dd");
-
                     // Add row data to the list
                     data.Add(rowData);
                 }
-
-                // Calculate and add totals to the data
-                CalculateAndAddTotals(data);
 
                 // Convert the data to JSON
                 string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
@@ -1182,67 +1187,13 @@ namespace FightingFeather
 
                 // Save the updated table number counter to the file
                 SaveTableNumberCounter(tableNumberCounter);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error saving data to JSON file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void CalculateAndAddTotals(List<Dictionary<string, object>> data)
-        {
-            int totalFights = 0;
-            int totalDraws = 0;
-            int totalCancels = 0;
-            decimal totalFee = 0;
-            decimal totalPlasada = 0;
-
-            // Iterate through the rows of the DataGridView
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                if (row.Cells["FIGHT"].Value != null &&
-                    !string.IsNullOrEmpty(row.Cells["FIGHT"].Value.ToString()) &&
-                    !row.Cells["FIGHT"].Value.ToString().Equals("Cancel", StringComparison.OrdinalIgnoreCase))
-                {
-                    totalFights++;
-                }
-
-                if (row.Cells["WINNER"].Value != null)
-                {
-                    string winnerValue = row.Cells["WINNER"].Value.ToString();
-                    if (winnerValue.Equals("DRAW", StringComparison.OrdinalIgnoreCase))
-                    {
-                        totalDraws++;
-                    }
-                    else if (winnerValue.Equals("CANCEL", StringComparison.OrdinalIgnoreCase))
-                    {
-                        totalCancels++;
-                    }
-                }
-
-                if (row.Cells["FEE"].Value != null && decimal.TryParse(row.Cells["FEE"].Value.ToString(), out decimal fee))
-                {
-                    totalFee += fee;
-                }
-
-                if (row.Cells["TOTAL_PLASADA"].Value != null && decimal.TryParse(row.Cells["TOTAL_PLASADA"].Value.ToString(), out decimal plasada))
-                {
-                    totalPlasada += plasada;
-                }
-            }
-
-            // Add totals to the data
-            Dictionary<string, object> totals = new Dictionary<string, object>();
-            totals["TotalFights"] = totalFights;
-            totals["TotalDraws"] = totalDraws;
-            totals["TotalCancels"] = totalCancels;
-            totals["TotalFee"] = totalFee;
-            totals["TotalPlasada"] = totalPlasada;
-
-            // Add totals to the data list
-            data.Add(totals);
-        }
-
 
 
         private int LoadTableNumberCounter()

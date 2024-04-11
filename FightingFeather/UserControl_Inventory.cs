@@ -73,13 +73,19 @@ namespace FightingFeather
                     // Get the filename without extension
                     string fileName = Path.GetFileNameWithoutExtension(jsonFile);
 
-                    // Check if there's an existing row with the same filename
-                    DataGridViewRow existingRow = postedMunton.Rows
-                        .Cast<DataGridViewRow>()
-                        .FirstOrDefault(row => row.Cells["MUNTON"].Value.ToString() == fileName);
+                    // Find the row with the matching filename
+                    DataGridViewRow rowToUpdate = null;
+                    foreach (DataGridViewRow row in postedMunton.Rows)
+                    {
+                        if (row.Cells["MUNTON"].Value.ToString() == fileName)
+                        {
+                            rowToUpdate = row;
+                            break;
+                        }
+                    }
 
-                    // If an existing row is found, update its data
-                    if (existingRow != null)
+                    // If the row is found, update its data
+                    if (rowToUpdate != null)
                     {
                         foreach (JObject jsonObject in jsonArray)
                         {
@@ -87,30 +93,30 @@ namespace FightingFeather
                             int dateColumnIndex = postedMunton.Columns["DATE"].Index;
                             if (jsonObject.TryGetValue("Date", out var dateValue))
                             {
-                                existingRow.Cells[dateColumnIndex].Value = dateValue.ToString();
+                                rowToUpdate.Cells[dateColumnIndex].Value = dateValue.ToString();
                             }
 
                             // Set the TOTAL_ENTRY value in the DataGridView
                             int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index;
-                            if (jsonObject.TryGetValue("TotalFights", out var totalFightsValue))
+                            if (jsonObject.TryGetValue("totalFights", out var totalFightsValue))
                             {
-                                existingRow.Cells[totalEntryColumnIndex].Value = totalFightsValue.ToString();
+                                rowToUpdate.Cells[totalEntryColumnIndex].Value = totalFightsValue.ToString();
                             }
 
                             // Set the TOTAL_PLASADA value in the DataGridView
                             int totalPlasadaColumnIndex = postedMunton.Columns["TOTAL_PLASADA"].Index;
-                            if (jsonObject.TryGetValue("TotalPlasada", out var totalPlasadaValue))
+                            if (jsonObject.TryGetValue("OverAllTotalPlasada", out var totalPlasadaValue))
                             {
-                                existingRow.Cells[totalPlasadaColumnIndex].Value = totalPlasadaValue.ToString();
+                                rowToUpdate.Cells[totalPlasadaColumnIndex].Value = totalPlasadaValue.ToString();
                             }
                         }
                     }
-                    // If no existing row is found, add a new row
+                    // If the row is not found, add a new row and fill its data
                     else
                     {
                         int rowIndex = postedMunton.Rows.Add();
 
-                        // Set the file name to the "MUNTON" column
+                        // Set the filename to the "MUNTON" column
                         int muntonColumnIndex = postedMunton.Columns["MUNTON"].Index;
                         postedMunton.Rows[rowIndex].Cells[muntonColumnIndex].Value = fileName;
 
@@ -126,14 +132,14 @@ namespace FightingFeather
 
                             // Set the TOTAL_ENTRY value in the DataGridView
                             int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index;
-                            if (jsonObject.TryGetValue("TotalFights", out var totalFightsValue))
+                            if (jsonObject.TryGetValue("totalFights", out var totalFightsValue))
                             {
                                 postedMunton.Rows[rowIndex].Cells[totalEntryColumnIndex].Value = totalFightsValue.ToString();
                             }
 
                             // Set the TOTAL_PLASADA value in the DataGridView
                             int totalPlasadaColumnIndex = postedMunton.Columns["TOTAL_PLASADA"].Index;
-                            if (jsonObject.TryGetValue("TotalPlasada", out var totalPlasadaValue))
+                            if (jsonObject.TryGetValue("OverAllTotalPlasada", out var totalPlasadaValue))
                             {
                                 postedMunton.Rows[rowIndex].Cells[totalPlasadaColumnIndex].Value = totalPlasadaValue.ToString();
                             }
@@ -150,7 +156,6 @@ namespace FightingFeather
                 MessageBox.Show($"Error displaying JSON files in DataGrid: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void button_ViewMunton_Click(object sender, EventArgs e)
         {
             // Check if any row is selected
@@ -173,6 +178,7 @@ namespace FightingFeather
                 MessageBox.Show("Please select a row to view Munton data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void button_Search_Click(object sender, EventArgs e)
         {

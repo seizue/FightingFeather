@@ -61,9 +61,6 @@ namespace FightingFeather
                 // Get the list of JSON files in the folder
                 string[] jsonFiles = Directory.GetFiles(tablesFolderPath, "*.json");
 
-                // Clear existing rows in postedMunton DataGridView
-                postedMunton.Rows.Clear();
-
                 // Iterate through each JSON file
                 foreach (string jsonFile in jsonFiles)
                 {
@@ -73,38 +70,75 @@ namespace FightingFeather
                     // Deserialize the JSON content as a JArray (JSON array)
                     JArray jsonArray = JArray.Parse(jsonContent);
 
-                    // Add a new row to the DataGridView
-                    int rowIndex = postedMunton.Rows.Add();
+                    // Get the filename without extension
+                    string fileName = Path.GetFileNameWithoutExtension(jsonFile);
 
-                    // Specify the "MUNTON" column index or name where you want to display the file name
-                    int muntonColumnIndex = postedMunton.Columns["MUNTON"].Index;
-                    // Set the file name to the specified column in the newly added row
-                    postedMunton.Rows[rowIndex].Cells[muntonColumnIndex].Value = Path.GetFileName(jsonFile);
+                    // Check if there's an existing row with the same filename
+                    DataGridViewRow existingRow = postedMunton.Rows
+                        .Cast<DataGridViewRow>()
+                        .FirstOrDefault(row => row.Cells["MUNTON"].Value.ToString() == fileName);
 
-                    // Set the date to the "DATE" column
-                    int dateColumnIndex = postedMunton.Columns["DATE"].Index; // Assuming "DATE" is the column name
-                    postedMunton.Rows[rowIndex].Cells[dateColumnIndex].Value = jsonArray.Last()["Date"]; // Assuming the key for the date is "Date"
-
-                    // Set the padding for the header of the "DATE" column
-                    postedMunton.Columns[dateColumnIndex].HeaderCell.Style.Padding = new Padding(10, 4, 0, 4);
-
-                    // Set the value in the TOTAL_ENTRY column of the DataGridView
-                    int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index; // Assuming "TOTAL_ENTRY" is the column name
-                    postedMunton.Rows[rowIndex].Cells[totalEntryColumnIndex].Value = jsonArray.Last()["FIGHT"]; // Set MERON value to TOTAL_ENTRY column
-
-                    int totalPlasadaIndex = postedMunton.Columns["TOTAL_PLASADA"].Index;
-                    string totalPlasadaValue = jsonArray.Last()["BET (W)"].ToString();
-
-                    // Splitting the string to get the numerical value
-                    string[] parts = totalPlasadaValue.Split(' ');
-                    if (parts.Length > 1)
+                    // If an existing row is found, update its data
+                    if (existingRow != null)
                     {
-                        totalPlasadaValue = parts[1]; // Assuming the value is always in the second part
+                        foreach (JObject jsonObject in jsonArray)
+                        {
+                            // Set the date to the "DATE" column
+                            int dateColumnIndex = postedMunton.Columns["DATE"].Index;
+                            if (jsonObject.TryGetValue("Date", out var dateValue))
+                            {
+                                existingRow.Cells[dateColumnIndex].Value = dateValue.ToString();
+                            }
+
+                            // Set the TOTAL_ENTRY value in the DataGridView
+                            int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index;
+                            if (jsonObject.TryGetValue("TotalFights", out var totalFightsValue))
+                            {
+                                existingRow.Cells[totalEntryColumnIndex].Value = totalFightsValue.ToString();
+                            }
+
+                            // Set the TOTAL_PLASADA value in the DataGridView
+                            int totalPlasadaColumnIndex = postedMunton.Columns["TOTAL_PLASADA"].Index;
+                            if (jsonObject.TryGetValue("TotalPlasada", out var totalPlasadaValue))
+                            {
+                                existingRow.Cells[totalPlasadaColumnIndex].Value = totalPlasadaValue.ToString();
+                            }
+                        }
                     }
+                    // If no existing row is found, add a new row
+                    else
+                    {
+                        int rowIndex = postedMunton.Rows.Add();
 
-                    postedMunton.Rows[rowIndex].Cells[totalPlasadaIndex].Value = totalPlasadaValue;
+                        // Set the file name to the "MUNTON" column
+                        int muntonColumnIndex = postedMunton.Columns["MUNTON"].Index;
+                        postedMunton.Rows[rowIndex].Cells[muntonColumnIndex].Value = fileName;
 
+                        // Iterate through each item in the JSON array
+                        foreach (JObject jsonObject in jsonArray)
+                        {
+                            // Set the date to the "DATE" column
+                            int dateColumnIndex = postedMunton.Columns["DATE"].Index;
+                            if (jsonObject.TryGetValue("Date", out var dateValue))
+                            {
+                                postedMunton.Rows[rowIndex].Cells[dateColumnIndex].Value = dateValue.ToString();
+                            }
 
+                            // Set the TOTAL_ENTRY value in the DataGridView
+                            int totalEntryColumnIndex = postedMunton.Columns["TOTAL_ENTRY"].Index;
+                            if (jsonObject.TryGetValue("TotalFights", out var totalFightsValue))
+                            {
+                                postedMunton.Rows[rowIndex].Cells[totalEntryColumnIndex].Value = totalFightsValue.ToString();
+                            }
+
+                            // Set the TOTAL_PLASADA value in the DataGridView
+                            int totalPlasadaColumnIndex = postedMunton.Columns["TOTAL_PLASADA"].Index;
+                            if (jsonObject.TryGetValue("TotalPlasada", out var totalPlasadaValue))
+                            {
+                                postedMunton.Rows[rowIndex].Cells[totalPlasadaColumnIndex].Value = totalPlasadaValue.ToString();
+                            }
+                        }
+                    }
                 }
             }
             catch (DirectoryNotFoundException)
@@ -116,7 +150,6 @@ namespace FightingFeather
                 MessageBox.Show($"Error displaying JSON files in DataGrid: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void button_ViewMunton_Click(object sender, EventArgs e)
         {

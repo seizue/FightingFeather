@@ -972,34 +972,6 @@ namespace FightingFeather
             }
         }
 
-        private void SettingsForm_ReminderToggleChanged(object sender, bool isChecked)
-        {
-            // Show or hide the ReminderForm based on the toggle state received from the settings form
-            if (isChecked)
-            {
-                // Create and show the ReminderForm only if it's not created yet or disposed
-                if (reminderForm == null || reminderForm.IsDisposed)
-                {
-                    reminderForm = new ReminderForm(raDateTimePicker1.Value);
-                    reminderForm.Show();
-                }
-                else
-                {
-                    reminderForm.Show();
-                }
-            }
-            else
-            {
-                // Hide the ReminderForm if it's visible
-                if (reminderForm != null && !reminderForm.IsDisposed && reminderForm.Visible)
-                {
-                    reminderForm.Hide();
-                }
-            }
-
-        }
-
-
         private int GetNextTableNumber()
         {
             // Fetch the highest existing table number from the database
@@ -1141,7 +1113,7 @@ namespace FightingFeather
             }
         }
 
-
+        //Posted Munton save to json file
         private void SaveTableToJson()
         {
             try
@@ -1173,28 +1145,8 @@ namespace FightingFeather
                     data.Add(rowData);
                 }
 
-                // Get the last row of the DataGridView
-                DataGridViewRow lastRow = GridPlasada_Entries.Rows[GridPlasada_Entries.Rows.Count - 1];
-
-                // If the last row is not null and it contains data
-                if (lastRow != null && lastRow.Cells.Count > 0)
-                {
-                    // Create a dictionary to store the data of the last row
-                    Dictionary<string, object> lastRowData = new Dictionary<string, object>();
-
-                    // Iterate through the cells of the last row
-                    foreach (DataGridViewCell cell in lastRow.Cells)
-                    {
-                        // Add cell value to the dictionary
-                        lastRowData[cell.OwningColumn.HeaderText] = cell.Value;
-                    }
-
-                    // Add date to the last row data
-                    lastRowData["Date"] = date.ToString("yyyy-MM-dd");
-
-                    // Add last row data to the list
-                    data.Add(lastRowData);
-                }
+                // Calculate and add totals to the data
+                CalculateAndAddTotals(data);
 
                 // Convert the data to JSON
                 string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
@@ -1233,6 +1185,61 @@ namespace FightingFeather
             }
         }
 
+        private void CalculateAndAddTotals(List<Dictionary<string, object>> data)
+        {
+            int totalFights = 0;
+            int totalDraws = 0;
+            int totalCancels = 0;
+            decimal totalFee = 0;
+            decimal totalPlasada = 0;
+
+            // Iterate through the rows of the DataGridView
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (row.Cells["FIGHT"].Value != null &&
+                    !string.IsNullOrEmpty(row.Cells["FIGHT"].Value.ToString()) &&
+                    !row.Cells["FIGHT"].Value.ToString().Equals("Cancel", StringComparison.OrdinalIgnoreCase))
+                {
+                    totalFights++;
+                }
+
+                if (row.Cells["WINNER"].Value != null)
+                {
+                    string winnerValue = row.Cells["WINNER"].Value.ToString();
+                    if (winnerValue.Equals("DRAW", StringComparison.OrdinalIgnoreCase))
+                    {
+                        totalDraws++;
+                    }
+                    else if (winnerValue.Equals("CANCEL", StringComparison.OrdinalIgnoreCase))
+                    {
+                        totalCancels++;
+                    }
+                }
+
+                if (row.Cells["FEE"].Value != null && decimal.TryParse(row.Cells["FEE"].Value.ToString(), out decimal fee))
+                {
+                    totalFee += fee;
+                }
+
+                if (row.Cells["TOTAL_PLASADA"].Value != null && decimal.TryParse(row.Cells["TOTAL_PLASADA"].Value.ToString(), out decimal plasada))
+                {
+                    totalPlasada += plasada;
+                }
+            }
+
+            // Add totals to the data
+            Dictionary<string, object> totals = new Dictionary<string, object>();
+            totals["TotalFights"] = totalFights;
+            totals["TotalDraws"] = totalDraws;
+            totals["TotalCancels"] = totalCancels;
+            totals["TotalFee"] = totalFee;
+            totals["TotalPlasada"] = totalPlasada;
+
+            // Add totals to the data list
+            data.Add(totals);
+        }
+
+
 
         private int LoadTableNumberCounter()
         {
@@ -1252,11 +1259,42 @@ namespace FightingFeather
             return 1;
         }
 
+
         private void SaveTableNumberCounter(int counter)
         {
             string counterFilePath = Path.Combine(Application.StartupPath, "TABLES", "tableCounter.txt");
             File.WriteAllText(counterFilePath, counter.ToString());
         }
+
+
+
+        private void SettingsForm_ReminderToggleChanged(object sender, bool isChecked)
+        {
+            // Show or hide the ReminderForm based on the toggle state received from the settings form
+            if (isChecked)
+            {
+                // Create and show the ReminderForm only if it's not created yet or disposed
+                if (reminderForm == null || reminderForm.IsDisposed)
+                {
+                    reminderForm = new ReminderForm(raDateTimePicker1.Value);
+                    reminderForm.Show();
+                }
+                else
+                {
+                    reminderForm.Show();
+                }
+            }
+            else
+            {
+                // Hide the ReminderForm if it's visible
+                if (reminderForm != null && !reminderForm.IsDisposed && reminderForm.Visible)
+                {
+                    reminderForm.Hide();
+                }
+            }
+
+        }
+
 
         private void label_Ernings_Click(object sender, EventArgs e)
         {
@@ -1413,6 +1451,7 @@ namespace FightingFeather
             RefreshGrid();
             RefreshCalculationDatagrid();
         }
+
 
 
         // Declare a dictionary to store the initial visibility state of columns

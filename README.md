@@ -2,4 +2,5 @@
 
 Control panel for cockfight using C# and SQLite (Database). Currently in WIP
 
-![FFsc](https://github.com/seizue/FightingFeather/assets/25120376/7694c046-effd-40c8-8549-136eeb97f4b3)
+![Screenshot 2024-04-11 172345](https://github.com/seizue/FightingFeather/assets/25120376/bb82b0c6-414c-4c8b-aef3-c4dada8c19b6)
+

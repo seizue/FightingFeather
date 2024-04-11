@@ -359,6 +359,7 @@
             this.Opacity = 0.97D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginRegisterForm_FormClosing);
+            this.Load += new System.EventHandler(this.LoginRegisterForm_Load);
             this.panel_Help.ResumeLayout(false);
             this.panel_Help.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

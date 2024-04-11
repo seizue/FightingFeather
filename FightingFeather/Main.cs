@@ -261,6 +261,10 @@ namespace FightingFeather
             // Calculate the PAREHAS values after populating the DataGridView
             CalculateParehasValues();
 
+            // Refresh the Calculations
+            RefreshCalculationDatagrid();
+
+            // Save to a backup json file
             SaveDataGridViewToJson();
         }
 

@@ -891,8 +891,13 @@ namespace FightingFeather
      ""TOTAL PLASADA"" INTEGER,
      ""RATE EARNINGS"" INTEGER,
      ""WINNERS EARN"" INTEGER,
-     ""DATE"" INTEGER
- )";
+     ""DATE"" INTEGER,
+     ""TotalFights"" INTEGER,
+     ""TotalDraws"" INTEGER,
+     ""TotalCancels"" INTEGER,
+     ""TotalFee"" REAL,
+     ""TotalCitytax"" INTEGER,
+     ""OverAllTotalPlasada"" REAL)";
 
             currentTableNumber = GetNextTableNumber();
             DateTime currentDate = DateTime.Now.Date; // Get current date without time
@@ -1019,7 +1024,8 @@ namespace FightingFeather
 
         private void InsertDataIntoTable(int fight, string meron, string wala, int betM, int betW, int initialBetDiff,
                                  int parehas, int pago, string winner, int rateAmount, string rate, int logro,
-                                 double fee, int totalPlasada, int rateEarnings, int winnersEarn, int tableNumber, DateTime saveDate)
+                                 double fee, int totalPlasada, int rateEarnings, int winnersEarn, int tableNumber, DateTime saveDate,
+                                 int totalFights, int totalDraws, int totalCancels, double totalFee, int totalCityTax, double overallTotalPlasada)
         {
             string dateString = saveDate.ToString("yyyyMMdd");
             string tableName = $"MTN_ID_{tableNumber:D8}_{dateString}";
@@ -1031,9 +1037,9 @@ namespace FightingFeather
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
                     command.CommandText = $@"INSERT INTO {tableName} (FIGHT, MERON, WALA, [BET (M)], [BET (W)], [INITIAL BET DIFF], PAREHAS, PAGO, WINNER,
-                                [RATE AMOUNT], RATE, LOGRO, FEE, [TOTAL PLASADA], [RATE EARNINGS], [WINNERS EARN], [DATE])
+                                [RATE AMOUNT], RATE, LOGRO, FEE, [TOTAL PLASADA], [RATE EARNINGS], [WINNERS EARN], [DATE], TotalFights, TotalDraws, TotalCancels, TotalFee, TotalCitytax, OverAllTotalPlasada)
                                 VALUES (@fight, @meron, @wala, @betM, @betW, @initialBetDiff, @parehas, @pago, @winner,
-                                @rateAmount, @rate, @logro, @fee, @totalPlasada, @rateEarnings, @winnersEarn, @saveDate)";
+                                @rateAmount, @rate, @logro, @fee, @totalPlasada, @rateEarnings, @winnersEarn, @saveDate, @totalFights, @totalDraws, @totalCancels, @totalFee, @totalCityTax, @overallTotalPlasada)";
                     command.Parameters.AddWithValue("@fight", fight);
                     command.Parameters.AddWithValue("@meron", meron);
                     command.Parameters.AddWithValue("@wala", wala);
@@ -1051,6 +1057,12 @@ namespace FightingFeather
                     command.Parameters.AddWithValue("@rateEarnings", rateEarnings);
                     command.Parameters.AddWithValue("@winnersEarn", winnersEarn);
                     command.Parameters.AddWithValue("@saveDate", saveDate.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@totalFights", totalFights);
+                    command.Parameters.AddWithValue("@totalDraws", totalDraws);
+                    command.Parameters.AddWithValue("@totalCancels", totalCancels);
+                    command.Parameters.AddWithValue("@totalFee", totalFee);
+                    command.Parameters.AddWithValue("@totalCityTax", totalCityTax);
+                    command.Parameters.AddWithValue("@overallTotalPlasada", overallTotalPlasada);
 
                     command.ExecuteNonQuery();
                 }
@@ -1063,8 +1075,10 @@ namespace FightingFeather
             bool dataSaved = false;
 
             // Iterate through the rows of the DataGridView
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            for (int i = 0; i < GridPlasada_Entries.Rows.Count - 1; i++)
             {
+                DataGridViewRow row = GridPlasada_Entries.Rows[i];
+                
                 try
                 {
                     // Assuming the columns are in the same order as defined in the custom schema
@@ -1085,9 +1099,16 @@ namespace FightingFeather
                     int totalPlasada = row.Cells["TOTAL_PLASADA"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["TOTAL_PLASADA"].Value) : 0;
                     int rateEarnings = row.Cells["RATE_EARNINGS"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["RATE_EARNINGS"].Value) : 0;
                     int winnersEarn = row.Cells["WINNERS_EARN"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["WINNERS_EARN"].Value) : 0;
+                    int totalFights = Convert.ToInt32(labelValueFight.Text);
+                    int totalDraws = Convert.ToInt32(labelValueDraw.Text);
+                    int totalCancels = Convert.ToInt32(label_ValueCancel.Text);
+                    double totalFee = Convert.ToDouble(labelValueFee.Text);
+                    int totalCityTax = Convert.ToInt32(labelValueCityTax.Text);
+                    double overallTotalPlasada = Convert.ToDouble(labelValuePlasada.Text);
 
                     InsertDataIntoTable(fight, meron, wala, betM, betW, initialBetDiff, parehas, pago, winner,
-                                 rateAmount, rate, logro, fee, totalPlasada, rateEarnings, winnersEarn, currentTableNumber, saveDate);
+                                 rateAmount, rate, logro, fee, totalPlasada, rateEarnings, winnersEarn, currentTableNumber, saveDate, totalFights, totalDraws, totalCancels,
+                                 totalFee,totalCityTax,overallTotalPlasada);
 
                     // Set dataSaved to true if data was successfully saved
                     dataSaved = true;
@@ -1115,6 +1136,8 @@ namespace FightingFeather
                 MessageBox.Show("No data saved.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
 
         private void SaveTableToJson()
         {

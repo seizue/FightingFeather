@@ -25,6 +25,12 @@ namespace FightingFeather
 
             InitializeComponent();
 
+            if (!File.Exists(databaseName))
+            {
+                CreateDatabase();
+            }
+            CreateTablesIfNotExist();
+
             // Subscribe to the CheckedChanged event of the ShowPasswordCheckBox
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
         }

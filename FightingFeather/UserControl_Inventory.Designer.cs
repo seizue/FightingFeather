@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
+            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.postedMunton = new MetroFramework.Controls.MetroGrid();
             this.MUNTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +48,9 @@
             this.button_Search = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.button_ExportMunton = new System.Windows.Forms.Button();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.metroPanel29 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -76,6 +76,24 @@
             this.metroPanel11.VerticalScrollbarBarColor = true;
             this.metroPanel11.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel11.VerticalScrollbarSize = 10;
+            // 
+            // metroScrollBar1
+            // 
+            this.metroScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroScrollBar1.LargeChange = 10;
+            this.metroScrollBar1.Location = new System.Drawing.Point(746, 0);
+            this.metroScrollBar1.Maximum = 100;
+            this.metroScrollBar1.Minimum = 0;
+            this.metroScrollBar1.MouseWheelBarPartitions = 10;
+            this.metroScrollBar1.Name = "metroScrollBar1";
+            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
+            this.metroScrollBar1.ScrollbarSize = 5;
+            this.metroScrollBar1.Size = new System.Drawing.Size(5, 588);
+            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroScrollBar1.TabIndex = 384;
+            this.metroScrollBar1.UseBarColor = true;
+            this.metroScrollBar1.UseCustomBackColor = true;
+            this.metroScrollBar1.UseSelectable = true;
             // 
             // postedMunton
             // 
@@ -307,22 +325,6 @@
             this.button_ExportMunton.UseVisualStyleBackColor = true;
             this.button_ExportMunton.Click += new System.EventHandler(this.button_ExportMunton_Click);
             // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.raDateTimePicker1.Location = new System.Drawing.Point(175, 6);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
-            this.raDateTimePicker1.TabIndex = 333;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
-            // 
             // metroPanel29
             // 
             this.metroPanel29.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -363,23 +365,21 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroScrollBar1
+            // raDateTimePicker1
             // 
-            this.metroScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroScrollBar1.LargeChange = 10;
-            this.metroScrollBar1.Location = new System.Drawing.Point(746, 0);
-            this.metroScrollBar1.Maximum = 100;
-            this.metroScrollBar1.Minimum = 0;
-            this.metroScrollBar1.MouseWheelBarPartitions = 10;
-            this.metroScrollBar1.Name = "metroScrollBar1";
-            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
-            this.metroScrollBar1.ScrollbarSize = 5;
-            this.metroScrollBar1.Size = new System.Drawing.Size(5, 588);
-            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroScrollBar1.TabIndex = 384;
-            this.metroScrollBar1.UseBarColor = true;
-            this.metroScrollBar1.UseCustomBackColor = true;
-            this.metroScrollBar1.UseSelectable = true;
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.raDateTimePicker1.Location = new System.Drawing.Point(175, 6);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(123, 35);
+            this.raDateTimePicker1.TabIndex = 333;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
             // 
             // UserControl_Inventory
             // 

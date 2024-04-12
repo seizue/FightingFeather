@@ -801,6 +801,62 @@ namespace FightingFeather
             }
         }
 
-      
+        private void textBox_SecKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                button_SecKey.Focus();
+                button_SecKey_Click(sender, e);         
+            }
+            else
+            {
+                // If the action fails, refocus on the textBox_SecKey
+                textBox_SecKey.Focus();
+            }
+        }
+
+        private void button_SecKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_NewPass.Focus();
+            }
+        }
+
+        private void textBox_NewPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_ConfirmPass.Focus();
+            }
+        }
+
+        private void textBox_ConfirmPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                button_SaveNewPassword.Focus();
+                button_SaveNewPassword_Click(sender, e);
+            }
+        }
+
+    
     }
 }

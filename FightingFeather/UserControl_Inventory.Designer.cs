@@ -50,6 +50,7 @@
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.metroPanel29 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.metroPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postedMunton)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -61,13 +62,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.metroPanel11.Controls.Add(this.metroScrollBar1);
             this.metroPanel11.Controls.Add(this.postedMunton);
             this.metroPanel11.HorizontalScrollbarBarColor = true;
             this.metroPanel11.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel11.HorizontalScrollbarSize = 10;
             this.metroPanel11.Location = new System.Drawing.Point(331, 49);
             this.metroPanel11.Name = "metroPanel11";
-            this.metroPanel11.Size = new System.Drawing.Size(751, 594);
+            this.metroPanel11.Size = new System.Drawing.Size(751, 588);
             this.metroPanel11.TabIndex = 231;
             this.metroPanel11.UseCustomBackColor = true;
             this.metroPanel11.UseStyleColors = true;
@@ -118,7 +120,7 @@
             this.postedMunton.EnableHeadersVisualStyles = false;
             this.postedMunton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.postedMunton.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.postedMunton.Location = new System.Drawing.Point(3, 3);
+            this.postedMunton.Location = new System.Drawing.Point(4, 4);
             this.postedMunton.MultiSelect = false;
             this.postedMunton.Name = "postedMunton";
             this.postedMunton.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -136,8 +138,9 @@
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             this.postedMunton.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.postedMunton.RowTemplate.Height = 23;
+            this.postedMunton.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.postedMunton.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.postedMunton.Size = new System.Drawing.Size(745, 585);
+            this.postedMunton.Size = new System.Drawing.Size(741, 576);
             this.postedMunton.TabIndex = 10;
             this.postedMunton.UseCustomBackColor = true;
             this.postedMunton.UseCustomForeColor = true;
@@ -360,6 +363,24 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroScrollBar1
+            // 
+            this.metroScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroScrollBar1.LargeChange = 10;
+            this.metroScrollBar1.Location = new System.Drawing.Point(746, 0);
+            this.metroScrollBar1.Maximum = 100;
+            this.metroScrollBar1.Minimum = 0;
+            this.metroScrollBar1.MouseWheelBarPartitions = 10;
+            this.metroScrollBar1.Name = "metroScrollBar1";
+            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
+            this.metroScrollBar1.ScrollbarSize = 5;
+            this.metroScrollBar1.Size = new System.Drawing.Size(5, 588);
+            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroScrollBar1.TabIndex = 384;
+            this.metroScrollBar1.UseBarColor = true;
+            this.metroScrollBar1.UseCustomBackColor = true;
+            this.metroScrollBar1.UseSelectable = true;
+            // 
             // UserControl_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,5 +416,6 @@
         private RaDateTimePicker raDateTimePicker1;
         private MetroFramework.Controls.MetroPanel metroPanel29;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
     }
 }

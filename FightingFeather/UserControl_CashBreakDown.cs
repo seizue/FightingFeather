@@ -23,10 +23,10 @@ namespace FightingFeather
 
             foreach (DataGridViewRow row in GridPlasada_CashBreakDown.Rows)
             {
-                row.Height = 28;
+                row.Height = 30;
             }
 
-            ReloadData();
+            ReloadData();      
         }
 
         public void ReloadData()
@@ -34,10 +34,10 @@ namespace FightingFeather
             GridPlasada_CashBreakDown.Rows.Clear(); // Clear existing rows   
 
             LoadJsonData(); // Reload data
-
+    
             foreach (DataGridViewRow row in GridPlasada_CashBreakDown.Rows) //Change back the custom cell height 
             {
-                row.Height = 28;
+                row.Height = 30;
             }
         }
 

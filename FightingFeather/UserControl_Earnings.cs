@@ -33,7 +33,7 @@ namespace FightingFeather
 
             foreach (DataGridViewRow row in GridPlasada_Earnings.Rows)
             {
-                row.Height = 28;
+                row.Height = 30;
             }
 
         }
@@ -46,7 +46,7 @@ namespace FightingFeather
 
             foreach (DataGridViewRow row in GridPlasada_Earnings.Rows) // Change back the custom cell height
             {
-                row.Height = 28;
+                row.Height = 30;
             }
         }
 

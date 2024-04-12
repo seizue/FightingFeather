@@ -49,13 +49,16 @@ namespace FightingFeather
 
             connection = new SQLiteConnection("Data Source=munton_summa.db;Version=3;");
             connection.Open();
-
+            
             InitializeDatabase();
             UpdateFightIDs();
             RefreshGrid();
             RefreshCalculationDatagrid();
             LoadColumnVisibilitySettings();
             RevertColumnVisibilityChanges();
+
+            // Set up the custom scroll bar
+            FFCustomScroll();
 
             // Subscribe to the CellFormatting event
             GridPlasada_Entries.CellFormatting += GridPlasada_Entries_CellFormatting;
@@ -68,9 +71,6 @@ namespace FightingFeather
 
             // Subscribe to the CellValueChanged event
             GridPlasada_Entries.CellValueChanged += GridPlasada_Entries_CellValueChanged;
-
-            // Subscribe to the RowPrePaint event
-            GridPlasada_Entries.RowPrePaint += GridPlasada_Entries_RowPrePaint;
 
             // Subscribe to the Shortcut ButtonEnter event
             userControl_Shortcut1.ButtonEnterClicked += UserControl_Shortcut1_ButtonEnterClicked;
@@ -91,7 +91,7 @@ namespace FightingFeather
             // Custom cell height row
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
-                row.Height = 28;
+                row.Height = 30;
             }
 
             summa = new UserControl_Summa();
@@ -1290,6 +1290,7 @@ namespace FightingFeather
             separatorRefresh.Visible = false;
             panel_Indicator.Location = new Point(311, 105);
             panel_Indicator.Size = new Size(65, 4);
+            metroScrollBar1.Visible = false;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1320,6 +1321,8 @@ namespace FightingFeather
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
 
+            FFCustomScroll();
+
         }
 
         private void label_CashBreakDown_Click(object sender, EventArgs e)
@@ -1335,6 +1338,7 @@ namespace FightingFeather
             separatorRefresh.Visible = false;
             panel_Indicator.Location = new Point(430, 105);
             panel_Indicator.Size = new Size(94, 4);
+            metroScrollBar1.Visible = false;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1371,7 +1375,7 @@ namespace FightingFeather
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             // Pass the formatted date to the UserControl_Summa
-           userControl_Summa1.SetDateText(selectedDate);
+            userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Plasada_Click(object sender, EventArgs e)
@@ -1396,6 +1400,8 @@ namespace FightingFeather
             RefreshGrid();
             RefreshCalculationDatagrid();
 
+            FFCustomScroll();
+
         }
 
         private void raDateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -1404,7 +1410,7 @@ namespace FightingFeather
             string selectedDate = raDateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             // Pass the formatted date to the UserControl_Summa
-           userControl_Summa1.SetDateText(selectedDate);
+            userControl_Summa1.SetDateText(selectedDate);
         }
 
         private void button_Home_Click(object sender, EventArgs e)
@@ -1433,6 +1439,8 @@ namespace FightingFeather
 
             RefreshGrid();
             RefreshCalculationDatagrid();
+
+            FFCustomScroll();
         }
 
 
@@ -1629,7 +1637,7 @@ namespace FightingFeather
 
             foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
             {
-                row.Height = 28;
+                row.Height = 30;
             }
 
 
@@ -1891,15 +1899,51 @@ namespace FightingFeather
             }
         }
 
-        private void GridPlasada_Entries_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+
+        private void FFCustomScroll()
         {
-            // Check if the current row is the last row
-            if (e.RowIndex == GridPlasada_Entries.Rows.Count - 1)
+            // Set up event handlers for the scrollbar
+            metroScrollBar1.Scroll += (sender, e) =>
             {
-                // Set the desired background color for the last row
-                GridPlasada_Entries.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
-            }
+                // Synchronize the DataGridView scroll position with the scrollbar value
+                GridPlasada_Entries.FirstDisplayedScrollingRowIndex = metroScrollBar1.Value;
+            };
+
+            // Set the maximum value of the scrollbar to the total row count in the DataGridView
+            metroScrollBar1.Minimum = 0;
+            metroScrollBar1.Maximum = GridPlasada_Entries.RowCount - 1;
+            metroScrollBar1.LargeChange = GridPlasada_Entries.DisplayedRowCount(false);
+            metroScrollBar1.SmallChange = 1;
+
+            // Set up event handlers for the DataGridView to update the scrollbar
+            GridPlasada_Entries.Scroll += (sender, e) =>
+            {
+                metroScrollBar1.Value = GridPlasada_Entries.FirstDisplayedScrollingRowIndex;
+            };
+            GridPlasada_Entries.Resize += (sender, e) =>
+            {
+                metroScrollBar1.Height = GridPlasada_Entries.Height;
+                metroScrollBar1.LargeChange = GridPlasada_Entries.DisplayedRowCount(false);
+            };
+
+            // Show or hide the scrollbar based on the row count and active cells
+            UpdateScrollBarVisibility();
         }
 
+        private void UpdateScrollBarVisibility()
+        {
+            // Determine if scroll bars should be visible
+            bool showScrollBar = GridPlasada_Entries.RowCount > 12;
+
+            // Show or hide the scrollbar accordingly
+            metroScrollBar1.Visible = showScrollBar;
+        }
+
+
+        private void GridPlasada_Entries_SelectionChanged(object sender, EventArgs e)
+        {
+            UpdateScrollBarVisibility();
+
+        }
     }
 }

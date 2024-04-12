@@ -105,7 +105,7 @@
             this.GridPlasada_CashBreakDown.EnableHeadersVisualStyles = false;
             this.GridPlasada_CashBreakDown.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_CashBreakDown.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.GridPlasada_CashBreakDown.Location = new System.Drawing.Point(3, 2);
+            this.GridPlasada_CashBreakDown.Location = new System.Drawing.Point(0, 0);
             this.GridPlasada_CashBreakDown.MultiSelect = false;
             this.GridPlasada_CashBreakDown.Name = "GridPlasada_CashBreakDown";
             this.GridPlasada_CashBreakDown.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -124,8 +124,9 @@
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             this.GridPlasada_CashBreakDown.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.GridPlasada_CashBreakDown.RowTemplate.Height = 23;
+            this.GridPlasada_CashBreakDown.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.GridPlasada_CashBreakDown.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_CashBreakDown.Size = new System.Drawing.Size(1057, 517);
+            this.GridPlasada_CashBreakDown.Size = new System.Drawing.Size(1070, 523);
             this.GridPlasada_CashBreakDown.TabIndex = 240;
             this.GridPlasada_CashBreakDown.UseCustomBackColor = true;
             this.GridPlasada_CashBreakDown.UseCustomForeColor = true;

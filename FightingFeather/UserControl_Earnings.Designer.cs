@@ -93,12 +93,12 @@
             // Panel_PlasadaEER
             // 
             this.Panel_PlasadaEER.BackColor = System.Drawing.Color.White;
-            this.Panel_PlasadaEER.Controls.Add(this.GridPlasada_Earnings);
             this.Panel_PlasadaEER.Controls.Add(this.PanelBG);
             this.Panel_PlasadaEER.Controls.Add(this.metroPanel3);
             this.Panel_PlasadaEER.Controls.Add(this.metroPanel2);
             this.Panel_PlasadaEER.Controls.Add(this.metroPanel1);
             this.Panel_PlasadaEER.Controls.Add(this.metroPanel7);
+            this.Panel_PlasadaEER.Controls.Add(this.GridPlasada_Earnings);
             this.Panel_PlasadaEER.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_PlasadaEER.HorizontalScrollbarBarColor = true;
             this.Panel_PlasadaEER.HorizontalScrollbarHighlightOnWheel = false;
@@ -162,7 +162,7 @@
             this.GridPlasada_Earnings.EnableHeadersVisualStyles = false;
             this.GridPlasada_Earnings.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Earnings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.GridPlasada_Earnings.Location = new System.Drawing.Point(2, 1);
+            this.GridPlasada_Earnings.Location = new System.Drawing.Point(0, 1);
             this.GridPlasada_Earnings.MultiSelect = false;
             this.GridPlasada_Earnings.Name = "GridPlasada_Earnings";
             this.GridPlasada_Earnings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -182,7 +182,7 @@
             this.GridPlasada_Earnings.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.GridPlasada_Earnings.RowTemplate.Height = 23;
             this.GridPlasada_Earnings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Earnings.Size = new System.Drawing.Size(749, 517);
+            this.GridPlasada_Earnings.Size = new System.Drawing.Size(758, 517);
             this.GridPlasada_Earnings.TabIndex = 239;
             this.GridPlasada_Earnings.UseCustomBackColor = true;
             this.GridPlasada_Earnings.UseCustomForeColor = true;

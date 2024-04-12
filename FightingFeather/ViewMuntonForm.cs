@@ -38,7 +38,7 @@ namespace FightingFeather
 
             foreach (DataGridViewRow row in DataMuntonGrid.Rows)
             {
-                row.Height = 28;
+                row.Height = 30;
             }
         }
 

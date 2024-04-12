@@ -58,8 +58,6 @@
             this.Panel_MainBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
-            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
             this.GridPlasada_Entries = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MERON = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,14 +96,8 @@
             this.button_Export = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
             this.button_Receipt = new System.Windows.Forms.Button();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.metroPanel23 = new MetroFramework.Controls.MetroPanel();
-            this.buttonNextLast = new System.Windows.Forms.Button();
-            this.buttonPreviousLast = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
             this.metroPanel22 = new MetroFramework.Controls.MetroPanel();
             this.labelValueFee = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -132,9 +124,13 @@
             this.panel_Indicator = new System.Windows.Forms.Panel();
             this.metroPanel24 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
-            this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
-            this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
             this.userControl_Summa1 = new FightingFeather.UserControl_Summa();
+            this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
+            this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.userControl_CashBreakDown1 = new FightingFeather.UserControl_CashBreakDown();
+            this.userControl_Earnings1 = new FightingFeather.UserControl_Earnings();
+            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -392,9 +388,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel9.BackColor = System.Drawing.Color.White;
-            this.metroPanel9.Controls.Add(this.userControl_CashBreakDown1);
             this.metroPanel9.Controls.Add(this.userControl_Earnings1);
             this.metroPanel9.Controls.Add(this.GridPlasada_Entries);
+            this.metroPanel9.Controls.Add(this.userControl_CashBreakDown1);
+            this.metroPanel9.Controls.Add(this.metroScrollBar1);
             this.metroPanel9.HorizontalScrollbarBarColor = true;
             this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel9.HorizontalScrollbarSize = 10;
@@ -407,25 +404,6 @@
             this.metroPanel9.VerticalScrollbarBarColor = true;
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel9.VerticalScrollbarSize = 10;
-            // 
-            // userControl_CashBreakDown1
-            // 
-            this.userControl_CashBreakDown1.BackColor = System.Drawing.Color.White;
-            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
-            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1059, 424);
-            this.userControl_CashBreakDown1.TabIndex = 5;
-            this.userControl_CashBreakDown1.Visible = false;
-            // 
-            // userControl_Earnings1
-            // 
-            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_Earnings1.Name = "userControl_Earnings1";
-            this.userControl_Earnings1.Size = new System.Drawing.Size(1059, 424);
-            this.userControl_Earnings1.TabIndex = 4;
-            this.userControl_Earnings1.Visible = false;
             // 
             // GridPlasada_Entries
             // 
@@ -498,12 +476,14 @@
             dataGridViewCellStyle42.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             this.GridPlasada_Entries.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.GridPlasada_Entries.RowTemplate.Height = 23;
+            this.GridPlasada_Entries.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.GridPlasada_Entries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Entries.Size = new System.Drawing.Size(1059, 424);
+            this.GridPlasada_Entries.Size = new System.Drawing.Size(1054, 424);
             this.GridPlasada_Entries.TabIndex = 3;
             this.GridPlasada_Entries.UseCustomBackColor = true;
             this.GridPlasada_Entries.UseCustomForeColor = true;
             this.GridPlasada_Entries.UseStyleColors = true;
+            this.GridPlasada_Entries.SelectionChanged += new System.EventHandler(this.GridPlasada_Entries_SelectionChanged);
             this.GridPlasada_Entries.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GridPlasada_Entries_MouseClick);
             // 
             // FIGHT
@@ -1043,22 +1023,6 @@
             this.button_Receipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_Receipt.UseVisualStyleBackColor = false;
             // 
-            // raDateTimePicker1
-            // 
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(557, 68);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(209, 35);
-            this.raDateTimePicker1.TabIndex = 253;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
-            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
-            // 
             // metroPanel8
             // 
             this.metroPanel8.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1083,11 +1047,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.panel4.Controls.Add(this.metroPanel23);
-            this.panel4.Controls.Add(this.buttonNextLast);
-            this.panel4.Controls.Add(this.buttonPreviousLast);
-            this.panel4.Controls.Add(this.buttonPrevious);
-            this.panel4.Controls.Add(this.buttonNext);
             this.panel4.Controls.Add(this.metroPanel22);
             this.panel4.Controls.Add(this.labelValueFee);
             this.panel4.Controls.Add(this.label3);
@@ -1109,76 +1068,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1059, 40);
             this.panel4.TabIndex = 257;
-            // 
-            // metroPanel23
-            // 
-            this.metroPanel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel23.BackColor = System.Drawing.Color.Gainsboro;
-            this.metroPanel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel23.HorizontalScrollbarBarColor = true;
-            this.metroPanel23.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel23.HorizontalScrollbarSize = 10;
-            this.metroPanel23.Location = new System.Drawing.Point(965, 9);
-            this.metroPanel23.Name = "metroPanel23";
-            this.metroPanel23.Size = new System.Drawing.Size(1, 23);
-            this.metroPanel23.TabIndex = 273;
-            this.metroPanel23.UseCustomBackColor = true;
-            this.metroPanel23.UseStyleColors = true;
-            this.metroPanel23.VerticalScrollbarBarColor = true;
-            this.metroPanel23.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel23.VerticalScrollbarSize = 10;
-            // 
-            // buttonNextLast
-            // 
-            this.buttonNextLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNextLast.BackColor = System.Drawing.Color.White;
-            this.buttonNextLast.FlatAppearance.BorderSize = 0;
-            this.buttonNextLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNextLast.Location = new System.Drawing.Point(1012, 9);
-            this.buttonNextLast.Name = "buttonNextLast";
-            this.buttonNextLast.Size = new System.Drawing.Size(27, 23);
-            this.buttonNextLast.TabIndex = 272;
-            this.buttonNextLast.Text = ">I";
-            this.buttonNextLast.UseVisualStyleBackColor = false;
-            // 
-            // buttonPreviousLast
-            // 
-            this.buttonPreviousLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPreviousLast.BackColor = System.Drawing.Color.White;
-            this.buttonPreviousLast.FlatAppearance.BorderSize = 0;
-            this.buttonPreviousLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPreviousLast.Location = new System.Drawing.Point(892, 9);
-            this.buttonPreviousLast.Name = "buttonPreviousLast";
-            this.buttonPreviousLast.Size = new System.Drawing.Size(27, 23);
-            this.buttonPreviousLast.TabIndex = 271;
-            this.buttonPreviousLast.Text = "I<";
-            this.buttonPreviousLast.UseVisualStyleBackColor = false;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPrevious.BackColor = System.Drawing.Color.White;
-            this.buttonPrevious.FlatAppearance.BorderSize = 0;
-            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPrevious.Location = new System.Drawing.Point(925, 9);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(27, 23);
-            this.buttonPrevious.TabIndex = 270;
-            this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = false;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.BackColor = System.Drawing.Color.White;
-            this.buttonNext.FlatAppearance.BorderSize = 0;
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Location = new System.Drawing.Point(979, 9);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(27, 23);
-            this.buttonNext.TabIndex = 6;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = false;
             // 
             // metroPanel22
             // 
@@ -1534,17 +1423,16 @@
             this.metroPanel11.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel11.VerticalScrollbarSize = 10;
             // 
-            // userControl_Shortcut1
+            // userControl_Summa1
             // 
-            this.userControl_Shortcut1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.userControl_Summa1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userControl_Shortcut1.BackColor = System.Drawing.Color.White;
-            this.userControl_Shortcut1.Location = new System.Drawing.Point(189, 23);
-            this.userControl_Shortcut1.Name = "userControl_Shortcut1";
-            this.userControl_Shortcut1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.userControl_Shortcut1.Size = new System.Drawing.Size(1084, 640);
-            this.userControl_Shortcut1.TabIndex = 6;
+            this.userControl_Summa1.Location = new System.Drawing.Point(191, 65);
+            this.userControl_Summa1.Name = "userControl_Summa1";
+            this.userControl_Summa1.Size = new System.Drawing.Size(1075, 598);
+            this.userControl_Summa1.TabIndex = 380;
+            this.userControl_Summa1.Visible = false;
             // 
             // userControl_Inventory1
             // 
@@ -1554,20 +1442,74 @@
             this.userControl_Inventory1.BackColor = System.Drawing.Color.White;
             this.userControl_Inventory1.Location = new System.Drawing.Point(189, 23);
             this.userControl_Inventory1.Name = "userControl_Inventory1";
-            this.userControl_Inventory1.Size = new System.Drawing.Size(1084, 640);
+            this.userControl_Inventory1.Size = new System.Drawing.Size(1077, 640);
             this.userControl_Inventory1.TabIndex = 378;
             this.userControl_Inventory1.Visible = false;
             // 
-            // userControl_Summa1
+            // userControl_Shortcut1
             // 
-            this.userControl_Summa1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.userControl_Shortcut1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userControl_Summa1.Location = new System.Drawing.Point(191, 65);
-            this.userControl_Summa1.Name = "userControl_Summa1";
-            this.userControl_Summa1.Size = new System.Drawing.Size(1082, 598);
-            this.userControl_Summa1.TabIndex = 380;
-            this.userControl_Summa1.Visible = false;
+            this.userControl_Shortcut1.BackColor = System.Drawing.Color.White;
+            this.userControl_Shortcut1.Location = new System.Drawing.Point(189, 23);
+            this.userControl_Shortcut1.Name = "userControl_Shortcut1";
+            this.userControl_Shortcut1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.userControl_Shortcut1.Size = new System.Drawing.Size(1077, 640);
+            this.userControl_Shortcut1.TabIndex = 6;
+            // 
+            // raDateTimePicker1
+            // 
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(557, 68);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(209, 35);
+            this.raDateTimePicker1.TabIndex = 253;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
+            // 
+            // userControl_CashBreakDown1
+            // 
+            this.userControl_CashBreakDown1.BackColor = System.Drawing.Color.White;
+            this.userControl_CashBreakDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_CashBreakDown1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_CashBreakDown1.Name = "userControl_CashBreakDown1";
+            this.userControl_CashBreakDown1.Size = new System.Drawing.Size(1054, 424);
+            this.userControl_CashBreakDown1.TabIndex = 5;
+            this.userControl_CashBreakDown1.Visible = false;
+            // 
+            // userControl_Earnings1
+            // 
+            this.userControl_Earnings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Earnings1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Earnings1.Name = "userControl_Earnings1";
+            this.userControl_Earnings1.Size = new System.Drawing.Size(1054, 424);
+            this.userControl_Earnings1.TabIndex = 4;
+            this.userControl_Earnings1.Visible = false;
+            // 
+            // metroScrollBar1
+            // 
+            this.metroScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroScrollBar1.LargeChange = 10;
+            this.metroScrollBar1.Location = new System.Drawing.Point(1054, 0);
+            this.metroScrollBar1.Maximum = 100;
+            this.metroScrollBar1.Minimum = 0;
+            this.metroScrollBar1.MouseWheelBarPartitions = 10;
+            this.metroScrollBar1.Name = "metroScrollBar1";
+            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
+            this.metroScrollBar1.ScrollbarSize = 5;
+            this.metroScrollBar1.Size = new System.Drawing.Size(5, 424);
+            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroScrollBar1.TabIndex = 383;
+            this.metroScrollBar1.UseBarColor = true;
+            this.metroScrollBar1.UseCustomBackColor = true;
+            this.metroScrollBar1.UseSelectable = true;
             // 
             // Main
             // 
@@ -1685,13 +1627,9 @@
         private MetroFramework.Controls.MetroPanel Panel_Line;
         private System.Windows.Forms.Panel panel_Indicator;
         private MetroFramework.Controls.MetroPanel metroPanel24;
-        private MetroFramework.Controls.MetroPanel metroPanel23;
-        private System.Windows.Forms.Button buttonNextLast;
-        private System.Windows.Forms.Button buttonPreviousLast;
-        private System.Windows.Forms.Button buttonPrevious;
-        private System.Windows.Forms.Button buttonNext;
         private MetroFramework.Controls.MetroPanel metroPanel11;
         private UserControl_Shortcut userControl_Shortcut1;
+        private UserControl_Inventory userControl_Inventory1;
         private MetroFramework.Controls.MetroPanel metroPanel9;
         private UserControl_CashBreakDown userControl_CashBreakDown1;
         private UserControl_Earnings userControl_Earnings1;
@@ -1712,8 +1650,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
         private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
-        private UserControl_Inventory userControl_Inventory1;
         private UserControl_Summa userControl_Summa1;
+        private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
     }
 }
 

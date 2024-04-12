@@ -39,8 +39,8 @@ namespace FightingFeather
                 row.Height = 28;
             }
 
-            LoadJSONFilesIntoDataGrid(); 
-
+            LoadJSONFilesIntoDataGrid();
+            FFCustomScroll();
         }
 
         // Display the backup of Munton as json files
@@ -334,6 +334,46 @@ namespace FightingFeather
                     MessageBox.Show($"Error exporting data: {ex.Message}", "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+
+        private void FFCustomScroll()
+        {
+            // Set up event handlers for the scrollbar
+            metroScrollBar1.Scroll += (sender, e) =>
+            {
+                // Synchronize the DataGridView scroll position with the scrollbar value
+                postedMunton.FirstDisplayedScrollingRowIndex = metroScrollBar1.Value;
+            };
+
+            // Set the maximum value of the scrollbar to the total row count in the DataGridView
+            metroScrollBar1.Minimum = 0;
+            metroScrollBar1.Maximum = postedMunton.RowCount - 1;
+            metroScrollBar1.LargeChange = postedMunton.DisplayedRowCount(false);
+            metroScrollBar1.SmallChange = 1;
+
+            // Set up event handlers for the DataGridView to update the scrollbar
+            postedMunton.Scroll += (sender, e) =>
+            {
+                metroScrollBar1.Value = postedMunton.FirstDisplayedScrollingRowIndex;
+            };
+            postedMunton.Resize += (sender, e) =>
+            {
+                metroScrollBar1.Height = postedMunton.Height;
+                metroScrollBar1.LargeChange = postedMunton.DisplayedRowCount(false);
+            };
+
+            // Show or hide the scrollbar based on the row count and active cells
+            UpdateScrollBarVisibility();
+        }
+
+        private void UpdateScrollBarVisibility()
+        {
+            // Determine if scroll bars should be visible
+            bool showScrollBar = postedMunton.RowCount > 12;
+
+            // Show or hide the scrollbar accordingly
+            metroScrollBar1.Visible = showScrollBar;
         }
     }
 }

@@ -175,9 +175,6 @@
   <data name="clear_cart_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear_cart_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new_copy_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new_copy_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="laptop_settings_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\laptop_settings_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,6 +244,12 @@
   <data name="Gmail Logo_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gmail Logo_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="new_copy_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_copy_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chart Bar_36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chart Bar_36px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cheque_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cheque_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -265,7 +268,7 @@
   <data name="money_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\money_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Chart Bar_36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Chart Bar_36px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ball_point_pen_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ball_point_pen_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

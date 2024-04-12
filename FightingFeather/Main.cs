@@ -1379,6 +1379,8 @@ namespace FightingFeather
             userControl_Summa1.Visible = false;
             userControl_CashBreakDown1.Visible = false;
             userControl_Earnings1.Visible = false;
+            panel_Indicator.Location = new Point(200, 105);
+            panel_Indicator.Size = new Size(65, 4);
 
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
@@ -1411,7 +1413,9 @@ namespace FightingFeather
             userControl_Shortcut1.Visible = false;
             userControl_Inventory1.Visible = false;
             userControl_Summa1.Visible = false;
-     
+            panel_Indicator.Location = new Point(200, 105);
+            panel_Indicator.Size = new Size(65, 4);
+
             button_Export.Visible = true;
             separatorRefresh.Visible = true;
 
@@ -1420,6 +1424,7 @@ namespace FightingFeather
         
             button_Home.ForeColor= clickedColor;
             label_Entries.ForeColor = clickedColor;
+            button_Plasada.ForeColor= clickedColor;
             label_CashBreakDown.ForeColor = defaultColor;
             label_Ernings.ForeColor = defaultColor;
             button_Summa.ForeColor = defaultColor;
@@ -1813,27 +1818,6 @@ namespace FightingFeather
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "PAREHAS")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "WINNER")
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
@@ -1855,7 +1839,7 @@ namespace FightingFeather
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "RATE_AMOUNT")
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].HeaderText == "RATE")
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
 

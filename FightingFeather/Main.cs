@@ -15,6 +15,7 @@ using MetroFramework.Controls;
 using System.Configuration;
 using MetroFramework.Forms;
 using System.Reflection;
+using System.Drawing.Text;
 
 namespace FightingFeather
 {
@@ -51,6 +52,7 @@ namespace FightingFeather
             connection.Open();
             
             InitializeDatabase();
+            CreateSummaTables();
             UpdateFightIDs();
             RefreshGrid();
             RefreshCalculationDatagrid();
@@ -161,8 +163,6 @@ namespace FightingFeather
                     [RATE EARNINGS] INTEGER,
                     [WINNERS EARN] INTEGER
                 );";
-
-
 
                     // Execute queries to create tables
                     using (var command = new SQLiteCommand(createPlasadaTableQuery, connection))
@@ -872,45 +872,63 @@ namespace FightingFeather
 
         private void ExecutePlasadaCreation()
         {
-            // Define your custom schema here
-            string customSchema = @"
- (
-     ""FIGHT"" INTEGER,
-     ""MERON"" TEXT,
-     ""WALA"" TEXT,
-     ""BET (M)"" INTEGER,
-     ""BET (W)"" INTEGER,
-     ""INITIAL BET DIFF"" INTEGER,
-     ""PAREHAS"" INTEGER,
-     ""PAGO"" INTEGER,
-     ""WINNER"" TEXT,
-     ""RATE AMOUNT"" INTEGER,
-     ""RATE"" TEXT,
-     ""LOGRO"" INTEGER,
-     ""FEE"" REAL,
-     ""TOTAL PLASADA"" INTEGER,
-     ""RATE EARNINGS"" INTEGER,
-     ""WINNERS EARN"" INTEGER,
-     ""DATE"" INTEGER,
-     ""TotalFights"" INTEGER,
-     ""TotalDraws"" INTEGER,
-     ""TotalCancels"" INTEGER,
-     ""TotalFee"" REAL,
-     ""TotalCitytax"" INTEGER,
-     ""OverAllTotalPlasada"" REAL)";
+            try
+            {
+                // Define your custom schema here
+                string customSchema = @"
+        (
+            ""FIGHT"" INTEGER,
+            ""MERON"" TEXT,
+            ""WALA"" TEXT,
+            ""BET (M)"" INTEGER,
+            ""BET (W)"" INTEGER,
+            ""INITIAL BET DIFF"" INTEGER,
+            ""PAREHAS"" INTEGER,
+            ""PAGO"" INTEGER,
+            ""WINNER"" TEXT,
+            ""RATE AMOUNT"" INTEGER,
+            ""RATE"" TEXT,
+            ""LOGRO"" INTEGER,
+            ""FEE"" REAL,
+            ""TOTAL PLASADA"" INTEGER,
+            ""RATE EARNINGS"" INTEGER,
+            ""WINNERS EARN"" INTEGER,
+            ""DATE"" INTEGER,
+            ""TotalFights"" INTEGER,
+            ""TotalDraws"" INTEGER,
+            ""TotalCancels"" INTEGER,
+            ""TotalFee"" REAL,
+            ""TotalCitytax"" INTEGER,
+            ""OverAllTotalPlasada"" REAL
+        )";
 
-            currentTableNumber = GetNextTableNumber();
-            DateTime currentDate = DateTime.Now.Date; // Get current date without time
+                currentTableNumber = GetNextTableNumber();
+                DateTime currentDate = DateTime.Now.Date; // Get current date without time
 
-            // Create custom table in your current database
-            CreateCustomTable(currentTableNumber, customSchema, currentDate);
+                // Create custom table in your current database
+                CreateCustomTable(currentTableNumber, customSchema, currentDate);
 
-            // Save data to current database
-            SaveDataToDatabase(currentDate);
+                // Save data to current database
+                SaveDataToDatabase(currentDate);
 
-            // Save table to JSON
-            SaveTableToJson();
+                // Save table to JSON
+                SaveTableToJson();
 
+                // Create tables for summary
+                CreateSummaTables();
+
+                // Export data using SQLiteExport method in UserControl_Summa1
+                userControl_Summa1.PerformSQLiteExport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while creating Plasada tables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void CreateSummaTables()
+        {
             // Now, create tables in munton_summa.db
             string muntonDbConnectionString = "Data Source=munton_summa.db;Version=3;";
 
@@ -948,15 +966,13 @@ namespace FightingFeather
                         createCommand.ExecuteNonQuery();
                     }
                 }
-
-                // Export data using SQLiteExport method in UserControl_Summa1
-                userControl_Summa1.PerformSQLiteExport();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while creating Plasada tables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while creating Summa tables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void DeleteAllRowsFromPlasadaTable()
         {

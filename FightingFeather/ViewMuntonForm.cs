@@ -61,53 +61,86 @@ namespace FightingFeather
                     DataMuntonGrid.Rows.Clear();
                     DataMuntonGrid.Columns.Clear();
 
-                    // Add columns to the DataGridView for the fight details
-                    DataMuntonGrid.Columns.Add("FIGHT", "FIGHT");
-                    DataMuntonGrid.Columns.Add("MERON", "MERON");
-                    DataMuntonGrid.Columns.Add("WALA", "WALA");
-                    DataMuntonGrid.Columns.Add("BET (M)", "BET (M)");
-                    DataMuntonGrid.Columns.Add("BET (W)", "BET (W)");
-                    DataMuntonGrid.Columns.Add("INITIAL BET DIFF", "INITIAL BET DIFF");
-                    DataMuntonGrid.Columns.Add("PAREHAS", "PAREHAS");
-                    DataMuntonGrid.Columns.Add("PAGO", "PAGO");
-                    DataMuntonGrid.Columns.Add("WINNER", "WINNER");
-                    DataMuntonGrid.Columns.Add("RATE AMOUNT", "RATE AMOUNT");
-                    DataMuntonGrid.Columns.Add("RATE", "RATE");
-                    DataMuntonGrid.Columns.Add("LOGRO", "LOGRO");
-                    DataMuntonGrid.Columns.Add("FEE", "FEE");
-                    DataMuntonGrid.Columns.Add("PLASADA", "PLASADA");
-                    DataMuntonGrid.Columns.Add("RATE EARNINGS", "RATE EARNINGS");
-                    DataMuntonGrid.Columns.Add("WINNERS EARNING", "WINNERS EARNING");
-
-                    // Add rows to the DataGridView for each fight detail
-                    foreach (Dictionary<string, string> data in dataList)
+                    // Check if the "SUMMARY" option is selected in the comboBox_Filter
+                    if (comboBox_Filter.SelectedItem?.ToString() == "SUMMARY")
                     {
-                        // Skip the summary data
-                        if (!data.ContainsKey("FIGHT"))
-                            continue;
+                        // Check if there is at least one item in the dataList
+                        if (dataList.Count > 0)
+                        {
+                            // Get the first item (summary data)
+                            Dictionary<string, string> summaryData = dataList[0];
 
-                        DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(DataMuntonGrid);
+                            // Add columns to the DataGridView for the summary data
+                            foreach (var kvp in summaryData)
+                            {
+                                DataMuntonGrid.Columns.Add(kvp.Key, kvp.Key);
+                            }
 
-                        // Set cell values for each column
-                        row.Cells[0].Value = data["FIGHT"];
-                        row.Cells[1].Value = data["MERON"];
-                        row.Cells[2].Value = data["WALA"];
-                        row.Cells[3].Value = data["BET (M)"];
-                        row.Cells[4].Value = data["BET (W)"];
-                        row.Cells[5].Value = data["INITIAL BET DIFF"];
-                        row.Cells[6].Value = data["PAREHAS"];
-                        row.Cells[7].Value = data["PAGO"];
-                        row.Cells[8].Value = data["WINNER"];
-                        row.Cells[9].Value = data["RATE AMOUNT"];
-                        row.Cells[10].Value = data["RATE"];
-                        row.Cells[11].Value = data["LOGRO"];
-                        row.Cells[12].Value = data["FEE"];
-                        row.Cells[13].Value = data["PLASADA"];
-                        row.Cells[14].Value = data["RATE EARNINGS"];
-                        row.Cells[15].Value = data["WINNERS EARNING"];
+                            // Add a row for the summary data
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.CreateCells(DataMuntonGrid);
 
-                        DataMuntonGrid.Rows.Add(row);
+                            // Set cell values for the summary data
+                            for (int i = 0; i < DataMuntonGrid.ColumnCount; i++)
+                            {
+                                string columnName = DataMuntonGrid.Columns[i].HeaderText;
+                                row.Cells[i].Value = summaryData.ContainsKey(columnName) ? summaryData[columnName] : "";
+                            }
+
+                            // Add the row to the DataGridView
+                            DataMuntonGrid.Rows.Add(row);
+                        }
+                    }
+                    else
+                    {
+                        // Add columns to the DataGridView for default data
+                        DataMuntonGrid.Columns.Add("FIGHT", "FIGHT");
+                        DataMuntonGrid.Columns.Add("MERON", "MERON");
+                        DataMuntonGrid.Columns.Add("WALA", "WALA");
+                        DataMuntonGrid.Columns.Add("BET (M)", "BET (M)");
+                        DataMuntonGrid.Columns.Add("BET (W)", "BET (W)");
+                        DataMuntonGrid.Columns.Add("INITIAL BET DIFF", "INITIAL BET DIFF");
+                        DataMuntonGrid.Columns.Add("PAREHAS", "PAREHAS");
+                        DataMuntonGrid.Columns.Add("PAGO", "PAGO");
+                        DataMuntonGrid.Columns.Add("WINNER", "WINNER");
+                        DataMuntonGrid.Columns.Add("RATE AMOUNT", "RATE AMOUNT");
+                        DataMuntonGrid.Columns.Add("RATE", "RATE");
+                        DataMuntonGrid.Columns.Add("LOGRO", "LOGRO");
+                        DataMuntonGrid.Columns.Add("FEE", "FEE");
+                        DataMuntonGrid.Columns.Add("PLASADA", "PLASADA");
+                        DataMuntonGrid.Columns.Add("RATE EARNINGS", "RATE EARNINGS");
+                        DataMuntonGrid.Columns.Add("WINNERS EARNING", "WINNERS EARNING");
+
+                        // Add rows to the DataGridView for default data
+                        foreach (Dictionary<string, string> data in dataList)
+                        {
+                            // Skip the summary data
+                            if (!data.ContainsKey("FIGHT"))
+                                continue;
+
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.CreateCells(DataMuntonGrid);
+
+                            // Set cell values for each column
+                            row.Cells[0].Value = data["FIGHT"];
+                            row.Cells[1].Value = data["MERON"];
+                            row.Cells[2].Value = data["WALA"];
+                            row.Cells[3].Value = data["BET (M)"];
+                            row.Cells[4].Value = data["BET (W)"];
+                            row.Cells[5].Value = data["INITIAL BET DIFF"];
+                            row.Cells[6].Value = data["PAREHAS"];
+                            row.Cells[7].Value = data["PAGO"];
+                            row.Cells[8].Value = data["WINNER"];
+                            row.Cells[9].Value = data["RATE AMOUNT"];
+                            row.Cells[10].Value = data["RATE"];
+                            row.Cells[11].Value = data["LOGRO"];
+                            row.Cells[12].Value = data["FEE"];
+                            row.Cells[13].Value = data["PLASADA"];
+                            row.Cells[14].Value = data["RATE EARNINGS"];
+                            row.Cells[15].Value = data["WINNERS EARNING"];
+
+                            DataMuntonGrid.Rows.Add(row);
+                        }
                     }
                 }
                 else
@@ -367,13 +400,6 @@ namespace FightingFeather
 
         private void DataMuntonGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Check if the cell value is 0, 0.00, or empty
-            if (e.Value != null && (e.Value.ToString() == "0" || e.Value.ToString() == "0.00" || string.IsNullOrEmpty(e.Value.ToString())))
-            {
-                // Replace the value with "-"
-                e.Value = "-";
-                e.FormattingApplied = true; // Set FormattingApplied to true to indicate that the formatting has been applied
-            }
 
             // Check if the cell value is a string and not empty
             if (e.Value != null && e.Value.GetType() == typeof(string) && !string.IsNullOrEmpty(e.Value.ToString()))
@@ -383,6 +409,43 @@ namespace FightingFeather
                 e.FormattingApplied = true; // Set FormattingApplied to true to indicate that the formatting has been applied
             }
 
+            // Check if the cell value is 0, 0.00, empty, or null
+            if (e.Value == null || e.Value.ToString() == "0" || e.Value.ToString() == "0.00" || string.IsNullOrEmpty(e.Value.ToString()))
+            {
+                // Replace the value with "-"
+                e.Value = "-";
+                e.FormattingApplied = true; // Set FormattingApplied to true to indicate that the formatting has been applied
+            }
+
+            // Check if the cell belongs to the "RATE" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "RATE" && e.RowIndex >= 0)
+            {
+                // Get the value of the cell
+                string rate = DataMuntonGrid.Rows[e.RowIndex].Cells["RATE"].Value?.ToString();
+
+                // Check if the rate is "None"
+                if (rate == "None")
+                {
+                    // Set the cell value to "-"
+                    e.Value = "-";
+                    e.FormattingApplied = true; // Indicate that the formatting is applied
+                }
+            }
+
+            // Check if the cell belongs to the "RATE" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "RATE" && e.RowIndex >= 0)
+            {
+                // Get the value of the cell
+                string rate = DataMuntonGrid.Rows[e.RowIndex].Cells["RATE"].Value?.ToString();
+
+                // Check if the rate is "None"
+                if (rate == "None")
+                {
+                    // Set the cell value to "-"
+                    e.Value = "-";
+                    e.FormattingApplied = true; // Indicate that the formatting is applied
+                }
+            }
 
             // Set text color for "INITIAL BET DIFF" column
             if (DataMuntonGrid.Columns[e.ColumnIndex].Name == "INITIAL BET DIFF")
@@ -521,12 +584,6 @@ namespace FightingFeather
                 e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
-            // Check if the current cell being painted is the header cell of the "WINNERS EARNING" column
-            if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "WINNER" && e.RowIndex == -1)
-            {
-                // Center-align the header text
-                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
 
             if (e.ColumnIndex >= 0 && DataMuntonGrid.Columns[e.ColumnIndex].Name == "RATE AMOUNT" && e.RowIndex == -1)
             {
@@ -534,6 +591,11 @@ namespace FightingFeather
                 e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
+        }
+
+        private void comboBox_Filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Reload();
         }
     }
 }

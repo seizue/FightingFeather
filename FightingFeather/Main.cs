@@ -1627,12 +1627,13 @@ namespace FightingFeather
                 row.Height = 28;
             }
 
-            // Check if the cell value is 0 and if it's not a header cell
-            if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
+
+            // Check if the cell value is 0, 0.00, empty, or null
+            if (e.RowIndex != GridPlasada_Entries.Rows.Count - 1 && (e.Value == null || e.Value.ToString() == "0" || e.Value.ToString() == "0.00" || string.IsNullOrEmpty(e.Value.ToString())))
             {
-                // Replace the cell value with "-"
+                // Replace the value with "-"
                 e.Value = "-";
-                e.FormattingApplied = true; // Indicate that the formatting is applied
+                e.FormattingApplied = true; // Set FormattingApplied to true to indicate that the formatting has been applied
             }
 
             if (e.Value != null && e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -1648,15 +1649,6 @@ namespace FightingFeather
                     e.FormattingApplied = true; // Indicate that the formatting is applied
                 }
             }
-
-            // Check if the cell value is 0 and if it's not a header cell
-            if (e.Value != null && e.Value.ToString() == "0" && e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Replace the cell value with "-"
-                e.Value = "-";
-                e.FormattingApplied = true; // Indicate that the formatting is applied
-            }
-
 
             // Check if the cell belongs to the "RATE" column and if it's not a header cell
             if (e.ColumnIndex >= 0 && GridPlasada_Entries.Columns[e.ColumnIndex].Name == "RATE" && e.RowIndex >= 0)

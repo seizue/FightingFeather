@@ -207,11 +207,28 @@ namespace FightingFeather
 
         private void GridPlasada_Earnings_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.Value != null && e.Value.ToString() == "0")
+            // Check if the cell value is 0, 0.00, empty, or null
+            if (e.Value == null || e.Value.ToString() == "0" || e.Value.ToString() == "0.00" || string.IsNullOrEmpty(e.Value.ToString()))
             {
+                // Replace the value with "-"
                 e.Value = "-";
+                e.FormattingApplied = true; // Set FormattingApplied to true to indicate that the formatting has been applied
             }
 
+            // Check if the cell belongs to the "RATE" column and if it's not a header cell
+            if (e.ColumnIndex >= 0 && GridPlasada_Earnings.Columns[e.ColumnIndex].Name == "RATE" && e.RowIndex >= 0)
+            {
+                // Get the value of the cell
+                string rate = GridPlasada_Earnings.Rows[e.RowIndex].Cells["RATE"].Value?.ToString();
+
+                // Check if the rate is "None"
+                if (rate == "None")
+                {
+                    // Set the cell value to "-"
+                    e.Value = "-";
+                    e.FormattingApplied = true; // Indicate that the formatting is applied
+                }
+            }
 
             // Check if the cell belongs to the "PAREHAS" column and if it's not a header cell
             if (e.ColumnIndex >= 0 && GridPlasada_Earnings.Columns[e.ColumnIndex].Name == "PAREHAS" && e.RowIndex >= 0)

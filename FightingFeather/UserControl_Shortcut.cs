@@ -54,7 +54,7 @@ namespace FightingFeather
         {
             // Populate the ComboBox with options
             comboBox_Winner.Items.AddRange(new object[] { "M", "W", "Cancel", "Draw" });
-            comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "N/A" });
+            comboBox_Rate.Items.AddRange(new object[] { "8/10", "3/4", "7/10", "None" });
         }
 
         private void CalculateBetDifference(object sender, EventArgs e)

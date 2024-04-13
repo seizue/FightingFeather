@@ -1308,6 +1308,10 @@ namespace FightingFeather
             panel_Indicator.Size = new Size(65, 4);
             metroScrollBar1.Visible = false;
 
+            button_New.Enabled = false;
+            button_Update.Enabled = false;
+            button_Delete.Enabled = false;
+
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
         }
@@ -1334,6 +1338,10 @@ namespace FightingFeather
             RefreshGrid();
             RefreshCalculationDatagrid();
 
+            button_New.Enabled = true;
+            button_Update.Enabled = true;
+            button_Delete.Enabled = true;
+
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
 
@@ -1355,6 +1363,10 @@ namespace FightingFeather
             panel_Indicator.Location = new Point(430, 105);
             panel_Indicator.Size = new Size(94, 4);
             metroScrollBar1.Visible = false;
+
+            button_New.Enabled = false;
+            button_Update.Enabled = false;
+            button_Delete.Enabled = false;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1413,6 +1425,10 @@ namespace FightingFeather
             label_CashBreakDown.ForeColor = defaultColor;
             label_Ernings.ForeColor = defaultColor;
 
+            button_New.Enabled = true;
+            button_Update.Enabled = true;
+            button_Delete.Enabled = true;
+
             RefreshGrid();
             RefreshCalculationDatagrid();
 
@@ -1452,6 +1468,10 @@ namespace FightingFeather
             button_Summa.ForeColor = defaultColor;
             button_Inventory.ForeColor= defaultColor;
             button_Shortcut.ForeColor= defaultColor;
+
+            button_New.Enabled = true;
+            button_Update.Enabled = true;
+            button_Delete.Enabled = true;
 
             RefreshGrid();
             RefreshCalculationDatagrid();

@@ -850,24 +850,60 @@ namespace FightingFeather
                 // Check if the form was closed with OK result
                 if (result == DialogResult.OK)
                 {
-                    // Execute the action if the user clicked "Continue" in ReminderForm
+                    // Check if all active cells in the "FIGHT" column have corresponding non-null/non-empty values in the "WINNER" column
+                    if (AllWinnersSpecified())
+                    {
+                        // Execute the action if all winners are specified
+                        ExecutePlasadaCreation();
+
+                        // Clear the DataGridView
+                        GridPlasada_Entries.Rows.Clear();
+                        DeleteAllRowsFromPlasadaTable();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please ensure that all fights have a winner specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                // If Reminder is enabled, directly execute the action
+                // Check if all active cells in the "FIGHT" column have corresponding non-null/non-empty values in the "WINNER" column
+                if (AllWinnersSpecified())
+                {
+                    // Execute the action if all winners are specified
                     ExecutePlasadaCreation();
 
                     // Clear the DataGridView
                     GridPlasada_Entries.Rows.Clear();
                     DeleteAllRowsFromPlasadaTable();
                 }
-            }
-            else
-            {
-                // If Reminder is enabled, directly execute the action
-                ExecutePlasadaCreation();
-
-                // Clear the DataGridView
-                GridPlasada_Entries.Rows.Clear();
-                DeleteAllRowsFromPlasadaTable();
+                else
+                {
+                    MessageBox.Show("Please ensure that all fights have a winner specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
+        private bool AllWinnersSpecified()
+        {
+            // Iterate through all active cells in the "FIGHT" column and ensure that each has a corresponding winner specified
+            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
+            {
+                if (!row.IsNewRow) // Exclude new row
+                {
+                    // Check if the "WINNER" column cell is empty or null
+                    if (string.IsNullOrEmpty(row.Cells["WINNER"].Value?.ToString()))
+                    {
+                        return false; // Return false if any winner is missing
+                    }
+                }
+            }
+
+            return true; // Return true if all winners are specified
+        }
+
 
 
         private void ExecutePlasadaCreation()

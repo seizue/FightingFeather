@@ -534,6 +534,15 @@ namespace FightingFeather
             }
 
         }
+
+        private void button_Gate_Click(object sender, EventArgs e)
+        {
+            // Enable editing for the textBox_Gate
+            textBox_Gate.ReadOnly = false;
+            gateIndicator.Visible = true;
+            textBox_Gate.Focus();
+
+        }
     }
 }
 

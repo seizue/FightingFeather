@@ -311,11 +311,13 @@ namespace FightingFeather
                     // Populate the textBox_CITYTAX with a constant value of 300
                     textBox_CITYTAX.Text = "300";
 
-                    // Populate the label_RATE with the value from the "RATE" column 
-                    label_RATE.Text = selectedRow.Cells["RATE"].Value?.ToString() ?? "-";
+                    // Populate the label_RATE with the value from the "RATE" column
+                    string rate = selectedRow.Cells["RATE"].Value?.ToString() ?? "-";
+                    label_RATE.Text = rate == "0" ? "-" : rate;
 
                     // Populate the textBox_RATE_EARN with the value from the "RATE EARNINGS" column
-                    textBox_RATE_EARN.Text = selectedRow.Cells["RATE_EARNINGS"].Value?.ToString() ?? "-";
+                    string rateEarnings = selectedRow.Cells["RATE_EARNINGS"].Value?.ToString() ?? "-";
+                    textBox_RATE_EARN.Text = rateEarnings == "0" ? "-" : rateEarnings;
 
                     // Assign the value from the "WINNERS_EARN" column directly to textBox_TOTAL
                     textBox_TOTAL.Text = selectedRow.Cells["WINNERS_EARN"].Value?.ToString() ?? "-";

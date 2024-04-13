@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_PlasadaEER = new MetroFramework.Controls.MetroPanel();
-            this.GridPlasada_Earnings = new MetroFramework.Controls.MetroGrid();
-            this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOGRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FEE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelBG = new MetroFramework.Controls.MetroPanel();
             this.Panel_PrintReceipt = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -83,11 +73,21 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
+            this.GridPlasada_Earnings = new MetroFramework.Controls.MetroGrid();
+            this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOGRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FEE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_PLASADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RATE_EARNINGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WINNERS_EARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_PlasadaEER.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).BeginInit();
             this.PanelBG.SuspendLayout();
             this.Panel_PrintReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_PlasadaEER
@@ -112,146 +112,6 @@
             this.Panel_PlasadaEER.VerticalScrollbarBarColor = true;
             this.Panel_PlasadaEER.VerticalScrollbarHighlightOnWheel = false;
             this.Panel_PlasadaEER.VerticalScrollbarSize = 10;
-            // 
-            // GridPlasada_Earnings
-            // 
-            this.GridPlasada_Earnings.AllowUserToAddRows = false;
-            this.GridPlasada_Earnings.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Earnings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridPlasada_Earnings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridPlasada_Earnings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridPlasada_Earnings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.GridPlasada_Earnings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridPlasada_Earnings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridPlasada_Earnings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Earnings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridPlasada_Earnings.ColumnHeadersHeight = 48;
-            this.GridPlasada_Earnings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FIGHT,
-            this.WINNER,
-            this.BET,
-            this.LOGRO,
-            this.FEE,
-            this.TOTAL_PLASADA,
-            this.RATE,
-            this.RATE_EARNINGS,
-            this.WINNERS_EARN});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Earnings.DefaultCellStyle = dataGridViewCellStyle5;
-            this.GridPlasada_Earnings.EnableHeadersVisualStyles = false;
-            this.GridPlasada_Earnings.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GridPlasada_Earnings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.GridPlasada_Earnings.Location = new System.Drawing.Point(0, 1);
-            this.GridPlasada_Earnings.MultiSelect = false;
-            this.GridPlasada_Earnings.Name = "GridPlasada_Earnings";
-            this.GridPlasada_Earnings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Earnings.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.GridPlasada_Earnings.RowHeadersVisible = false;
-            this.GridPlasada_Earnings.RowHeadersWidth = 43;
-            this.GridPlasada_Earnings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.GridPlasada_Earnings.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.GridPlasada_Earnings.RowTemplate.Height = 23;
-            this.GridPlasada_Earnings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Earnings.Size = new System.Drawing.Size(758, 517);
-            this.GridPlasada_Earnings.TabIndex = 239;
-            this.GridPlasada_Earnings.UseCustomBackColor = true;
-            this.GridPlasada_Earnings.UseCustomForeColor = true;
-            this.GridPlasada_Earnings.UseStyleColors = true;
-            // 
-            // FIGHT
-            // 
-            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FIGHT.FillWeight = 91.15936F;
-            this.FIGHT.Frozen = true;
-            this.FIGHT.HeaderText = "FIGHT";
-            this.FIGHT.Name = "FIGHT";
-            this.FIGHT.Width = 76;
-            // 
-            // WINNER
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WINNER.DefaultCellStyle = dataGridViewCellStyle3;
-            this.WINNER.FillWeight = 91.15936F;
-            this.WINNER.HeaderText = "WINNER";
-            this.WINNER.Name = "WINNER";
-            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // BET
-            // 
-            this.BET.DividerWidth = 3;
-            this.BET.HeaderText = "BET";
-            this.BET.Name = "BET";
-            // 
-            // LOGRO
-            // 
-            this.LOGRO.FillWeight = 91.15936F;
-            this.LOGRO.HeaderText = "LOGRO";
-            this.LOGRO.Name = "LOGRO";
-            // 
-            // FEE
-            // 
-            this.FEE.FillWeight = 91.15936F;
-            this.FEE.HeaderText = "FEE";
-            this.FEE.Name = "FEE";
-            // 
-            // TOTAL_PLASADA
-            // 
-            this.TOTAL_PLASADA.FillWeight = 91.15936F;
-            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
-            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
-            // 
-            // RATE
-            // 
-            this.RATE.HeaderText = "RATE";
-            this.RATE.Name = "RATE";
-            // 
-            // RATE_EARNINGS
-            // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle4;
-            this.RATE_EARNINGS.FillWeight = 63.81155F;
-            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
-            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
-            // 
-            // WINNERS_EARN
-            // 
-            this.WINNERS_EARN.FillWeight = 70F;
-            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
-            this.WINNERS_EARN.Name = "WINNERS_EARN";
             // 
             // PanelBG
             // 
@@ -347,7 +207,7 @@
             this.textBox_TOTAL.Name = "textBox_TOTAL";
             this.textBox_TOTAL.Size = new System.Drawing.Size(50, 17);
             this.textBox_TOTAL.TabIndex = 304;
-            this.textBox_TOTAL.Text = "TEST";
+            this.textBox_TOTAL.Text = "-";
             this.textBox_TOTAL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
@@ -380,7 +240,7 @@
             this.textBox_SUBTOTAL2.Name = "textBox_SUBTOTAL2";
             this.textBox_SUBTOTAL2.Size = new System.Drawing.Size(50, 17);
             this.textBox_SUBTOTAL2.TabIndex = 305;
-            this.textBox_SUBTOTAL2.Text = "TEST";
+            this.textBox_SUBTOTAL2.Text = "-";
             this.textBox_SUBTOTAL2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
@@ -416,7 +276,7 @@
             this.textBox_SUBTOTAL1.Name = "textBox_SUBTOTAL1";
             this.textBox_SUBTOTAL1.Size = new System.Drawing.Size(50, 17);
             this.textBox_SUBTOTAL1.TabIndex = 317;
-            this.textBox_SUBTOTAL1.Text = "TEST";
+            this.textBox_SUBTOTAL1.Text = "-";
             this.textBox_SUBTOTAL1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel2
@@ -503,7 +363,7 @@
             this.textBox_RATE_EARN.Name = "textBox_RATE_EARN";
             this.textBox_RATE_EARN.Size = new System.Drawing.Size(50, 17);
             this.textBox_RATE_EARN.TabIndex = 307;
-            this.textBox_RATE_EARN.Text = "TEST";
+            this.textBox_RATE_EARN.Text = "-";
             this.textBox_RATE_EARN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel7
@@ -524,7 +384,7 @@
             this.textBox_CITYTAX.Name = "textBox_CITYTAX";
             this.textBox_CITYTAX.Size = new System.Drawing.Size(50, 17);
             this.textBox_CITYTAX.TabIndex = 303;
-            this.textBox_CITYTAX.Text = "TEST";
+            this.textBox_CITYTAX.Text = "-";
             this.textBox_CITYTAX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel5
@@ -545,7 +405,7 @@
             this.textBox_FEE.Name = "textBox_FEE";
             this.textBox_FEE.Size = new System.Drawing.Size(50, 17);
             this.textBox_FEE.TabIndex = 301;
-            this.textBox_FEE.Text = "TEST";
+            this.textBox_FEE.Text = "-";
             this.textBox_FEE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox_BETPA
@@ -558,7 +418,7 @@
             this.textBox_BETPA.Name = "textBox_BETPA";
             this.textBox_BETPA.Size = new System.Drawing.Size(50, 17);
             this.textBox_BETPA.TabIndex = 300;
-            this.textBox_BETPA.Text = "TEST";
+            this.textBox_BETPA.Text = "-";
             this.textBox_BETPA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox_NAME
@@ -571,7 +431,7 @@
             this.textBox_NAME.Name = "textBox_NAME";
             this.textBox_NAME.Size = new System.Drawing.Size(50, 17);
             this.textBox_NAME.TabIndex = 299;
-            this.textBox_NAME.Text = "TEST";
+            this.textBox_NAME.Text = "-";
             this.textBox_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox_FIGHT
@@ -584,7 +444,7 @@
             this.textBox_FIGHT.Name = "textBox_FIGHT";
             this.textBox_FIGHT.Size = new System.Drawing.Size(50, 17);
             this.textBox_FIGHT.TabIndex = 298;
-            this.textBox_FIGHT.Text = "TEST";
+            this.textBox_FIGHT.Text = "-";
             this.textBox_FIGHT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -729,6 +589,146 @@
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel7.VerticalScrollbarSize = 10;
             // 
+            // GridPlasada_Earnings
+            // 
+            this.GridPlasada_Earnings.AllowUserToAddRows = false;
+            this.GridPlasada_Earnings.AllowUserToResizeRows = false;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Earnings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.GridPlasada_Earnings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridPlasada_Earnings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridPlasada_Earnings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.GridPlasada_Earnings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridPlasada_Earnings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.GridPlasada_Earnings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Earnings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.GridPlasada_Earnings.ColumnHeadersHeight = 48;
+            this.GridPlasada_Earnings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FIGHT,
+            this.WINNER,
+            this.BET,
+            this.LOGRO,
+            this.FEE,
+            this.TOTAL_PLASADA,
+            this.RATE,
+            this.RATE_EARNINGS,
+            this.WINNERS_EARN});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Earnings.DefaultCellStyle = dataGridViewCellStyle12;
+            this.GridPlasada_Earnings.EnableHeadersVisualStyles = false;
+            this.GridPlasada_Earnings.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GridPlasada_Earnings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            this.GridPlasada_Earnings.Location = new System.Drawing.Point(0, 1);
+            this.GridPlasada_Earnings.MultiSelect = false;
+            this.GridPlasada_Earnings.Name = "GridPlasada_Earnings";
+            this.GridPlasada_Earnings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Earnings.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.GridPlasada_Earnings.RowHeadersVisible = false;
+            this.GridPlasada_Earnings.RowHeadersWidth = 43;
+            this.GridPlasada_Earnings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
+            this.GridPlasada_Earnings.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            this.GridPlasada_Earnings.RowTemplate.Height = 23;
+            this.GridPlasada_Earnings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridPlasada_Earnings.Size = new System.Drawing.Size(758, 517);
+            this.GridPlasada_Earnings.TabIndex = 239;
+            this.GridPlasada_Earnings.UseCustomBackColor = true;
+            this.GridPlasada_Earnings.UseCustomForeColor = true;
+            this.GridPlasada_Earnings.UseStyleColors = true;
+            // 
+            // FIGHT
+            // 
+            this.FIGHT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FIGHT.FillWeight = 91.15936F;
+            this.FIGHT.Frozen = true;
+            this.FIGHT.HeaderText = "FIGHT";
+            this.FIGHT.Name = "FIGHT";
+            this.FIGHT.Width = 76;
+            // 
+            // WINNER
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WINNER.DefaultCellStyle = dataGridViewCellStyle10;
+            this.WINNER.FillWeight = 91.15936F;
+            this.WINNER.HeaderText = "WINNER";
+            this.WINNER.Name = "WINNER";
+            this.WINNER.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // BET
+            // 
+            this.BET.DividerWidth = 3;
+            this.BET.HeaderText = "BET";
+            this.BET.Name = "BET";
+            // 
+            // LOGRO
+            // 
+            this.LOGRO.FillWeight = 91.15936F;
+            this.LOGRO.HeaderText = "LOGRO";
+            this.LOGRO.Name = "LOGRO";
+            // 
+            // FEE
+            // 
+            this.FEE.FillWeight = 91.15936F;
+            this.FEE.HeaderText = "FEE";
+            this.FEE.Name = "FEE";
+            // 
+            // TOTAL_PLASADA
+            // 
+            this.TOTAL_PLASADA.FillWeight = 91.15936F;
+            this.TOTAL_PLASADA.HeaderText = "TOTAL PLASADA";
+            this.TOTAL_PLASADA.Name = "TOTAL_PLASADA";
+            // 
+            // RATE
+            // 
+            this.RATE.HeaderText = "RATE";
+            this.RATE.Name = "RATE";
+            // 
+            // RATE_EARNINGS
+            // 
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.RATE_EARNINGS.DefaultCellStyle = dataGridViewCellStyle11;
+            this.RATE_EARNINGS.FillWeight = 63.81155F;
+            this.RATE_EARNINGS.HeaderText = "RATE EARNINGS";
+            this.RATE_EARNINGS.Name = "RATE_EARNINGS";
+            // 
+            // WINNERS_EARN
+            // 
+            this.WINNERS_EARN.FillWeight = 70F;
+            this.WINNERS_EARN.HeaderText = "WINNERS EARNING";
+            this.WINNERS_EARN.Name = "WINNERS_EARN";
+            // 
             // UserControl_Earnings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,11 +737,11 @@
             this.Name = "UserControl_Earnings";
             this.Size = new System.Drawing.Size(1063, 523);
             this.Panel_PlasadaEER.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).EndInit();
             this.PanelBG.ResumeLayout(false);
             this.Panel_PrintReceipt.ResumeLayout(false);
             this.Panel_PrintReceipt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Earnings)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -34,7 +34,7 @@ namespace FightingFeather
         {
             try
             {
-                // Define the connection string for SQLite
+                // Define the connection string for SQLitea
                 string connectionString = "Data Source=munton_summa.db;Version=3;";
 
                 // Define the query to retrieve data from the database

@@ -24,13 +24,6 @@ namespace FightingFeather
 
             ReloadData();
 
-            // Subscribe to the CellFormatting event
-            GridPlasada_Earnings.CellFormatting += GridPlasada_Earnings_CellFormatting;
-            GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
-            GridPlasada_Earnings.SelectionChanged += GridPlasada_Earnings_SelectionChanged;
-
-         
-
             foreach (DataGridViewRow row in GridPlasada_Earnings.Rows)
             {
                 row.Height = 30;
@@ -43,6 +36,11 @@ namespace FightingFeather
             GridPlasada_Earnings.Rows.Clear(); // Clear existing rows
 
             LoadJsonData(); // Reload data
+
+                            // Subscribe to the CellFormatting event
+            GridPlasada_Earnings.CellFormatting += GridPlasada_Earnings_CellFormatting;
+            GridPlasada_Earnings.CellPainting += GridPlasada_Earnings_CellPainting;
+            GridPlasada_Earnings.SelectionChanged += GridPlasada_Earnings_SelectionChanged;
 
             foreach (DataGridViewRow row in GridPlasada_Earnings.Rows) // Change back the custom cell height
             {
@@ -286,75 +284,71 @@ namespace FightingFeather
                 DataGridViewRow selectedRow = GridPlasada_Earnings.SelectedRows[0];
 
                 // Populate the textBox_FIGHT with the value from the "FIGHT" column
-                textBox_FIGHT.Text = selectedRow.Cells["FIGHT"].Value.ToString();
+                textBox_FIGHT.Text = selectedRow.Cells["FIGHT"].Value?.ToString() ?? "-";
 
                 // Populate the textBox_NAME with the value from the "WINNER" column
-                textBox_NAME.Text = selectedRow.Cells["WINNER"].Value.ToString();
+                textBox_NAME.Text = selectedRow.Cells["WINNER"].Value?.ToString() ?? "-";
 
-                // Populate the textBox_BETPA with the value from the "BET" column
-                textBox_BETPA.Text = selectedRow.Cells["BET"].Value.ToString();
-
-                // Populate the textBox_FEE with the value from the "FEE" column
-                textBox_FEE.Text = selectedRow.Cells["FEE"].Value.ToString();
-
-                // Populate the textBox_CITYTAX with a constant value of 300
-                textBox_CITYTAX.Text = "300";
-
-                // Populate the label_RATE with the value from the "RATE" column 
-                label_RATE.Text = selectedRow.Cells["RATE"].Value.ToString();
-
-                // Populate the textBox_RATE_EARN with the value from the "RATE_EARNINGS" column
-                object rateEarningsValue = selectedRow.Cells["RATE_EARNINGS"].Value;
-                if (rateEarningsValue != null)
+                // Retrieve the values from the selected row cells directly from DataGridView
+                // instead of from TextBoxes
+                if (decimal.TryParse(selectedRow.Cells["BET"].Value?.ToString(), out decimal bet) &&
+                    decimal.TryParse(selectedRow.Cells["FEE"].Value?.ToString(), out decimal fee))
                 {
-                    string rateEarningsText = rateEarningsValue.ToString();
-                    if (rateEarningsText != "0")
-                    {
-                        textBox_RATE_EARN.Text = rateEarningsText;
-                    }
-                    else
-                    {
-                        textBox_RATE_EARN.Text = "-";
-                    }
-                    // Now, we store the actual value without any conversion or representation
-                    if (decimal.TryParse(rateEarningsText, out decimal rateEarnValue))
-                    {
-                        // Continue with calculations using rateEarnValue
-                        // Parse bet and fee from the selected row cells
-                        if (decimal.TryParse(selectedRow.Cells["BET"].Value?.ToString(), out decimal bet) &&
-                            decimal.TryParse(selectedRow.Cells["FEE"].Value?.ToString(), out decimal fee))
-                        {
-                            // Calculate subtotal1 by subtracting the fee from the bet
-                            decimal subtotal1 = bet - fee;
-                            textBox_SUBTOTAL1.Text = subtotal1.ToString();
+                    // Calculate subtotal1 by subtracting the fee from the bet
+                    decimal subtotal1 = bet - fee;
+                    textBox_SUBTOTAL1.Text = subtotal1.ToString();
 
-                            // Calculate subtotal2 by subtracting 300 from subtotal1
-                            decimal defaultTax = 300;
-                            decimal subtotal2 = subtotal1 - defaultTax;
-                            textBox_SUBTOTAL2.Text = subtotal2.ToString();
+                    // Calculate subtotal2 by subtracting 300 from subtotal1
+                    decimal subtotal2 = subtotal1 - 300;
+                    textBox_SUBTOTAL2.Text = subtotal2.ToString();
 
-                            // Calculate subtotal3 by adding rateEarnValue to it
-                            decimal total = subtotal2 + rateEarnValue;
-                            textBox_TOTAL.Text = total.ToString();
-                        }
-                        else
-                        {
-                            textBox_TOTAL.Text = "-"; // Or any appropriate default value
-                        }
-                    }
-                    else
-                    {
-                        textBox_TOTAL.Text = "-"; // Or any appropriate default value
-                    }
+                    // Populate the textBox_BETPA with the value from the "BET" column
+                    textBox_BETPA.Text = bet.ToString();
+
+                    // Populate the textBox_FEE with the value from the "FEE" column
+                    textBox_FEE.Text = fee.ToString();
+
+                    // Populate the textBox_CITYTAX with a constant value of 300
+                    textBox_CITYTAX.Text = "300";
+
+                    // Populate the label_RATE with the value from the "RATE" column 
+                    label_RATE.Text = selectedRow.Cells["RATE"].Value?.ToString() ?? "-";
+
+                    // Populate the textBox_RATE_EARN with the value from the "RATE EARNINGS" column
+                    textBox_RATE_EARN.Text = selectedRow.Cells["RATE_EARNINGS"].Value?.ToString() ?? "-";
+
+                    // Assign the value from the "WINNERS_EARN" column directly to textBox_TOTAL
+                    textBox_TOTAL.Text = selectedRow.Cells["WINNERS_EARN"].Value?.ToString() ?? "-";
                 }
                 else
                 {
-                    textBox_TOTAL.Text = "-"; // Or any appropriate default value
+                    // Clear all textboxes if parsing fails
+                    ClearTextBoxes();
                 }
-
             }
-
+            else
+            {
+                // Clear all textboxes if no row is selected
+                ClearTextBoxes();
+            }
         }
+
+        private void ClearTextBoxes()
+        {
+            textBox_FIGHT.Text = "-";
+            textBox_NAME.Text = "-";
+            textBox_BETPA.Text = "-";
+            textBox_FEE.Text = "-";
+            textBox_SUBTOTAL1.Text = "-";
+            textBox_SUBTOTAL2.Text = "-";
+            textBox_TOTAL.Text = "-";
+            textBox_RATE_EARN.Text = "-";
+            textBox_CITYTAX.Text = "-";
+            label_RATE.Text = "-";
+        }
+
+
+
 
         private void metroTile_PrintReceipt_Click(object sender, EventArgs e)
         {

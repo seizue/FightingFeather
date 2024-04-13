@@ -12,7 +12,7 @@ namespace FightingFeather.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_MERON {
             get {
                 return ((bool)(this["ColumnVisibility_MERON"]));
@@ -37,7 +37,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_BET_M {
             get {
                 return ((bool)(this["ColumnVisibility_BET_M"]));
@@ -49,7 +49,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_WALA {
             get {
                 return ((bool)(this["ColumnVisibility_WALA"]));
@@ -61,7 +61,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_BET_W {
             get {
                 return ((bool)(this["ColumnVisibility_BET_W"]));
@@ -73,7 +73,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_INITIAL_BET_DIF {
             get {
                 return ((bool)(this["ColumnVisibility_INITIAL_BET_DIF"]));
@@ -85,7 +85,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_PAREHAS {
             get {
                 return ((bool)(this["ColumnVisibility_PAREHAS"]));
@@ -109,7 +109,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_PAGO {
             get {
                 return ((bool)(this["ColumnVisibility_PAGO"]));
@@ -121,7 +121,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_WINNER {
             get {
                 return ((bool)(this["ColumnVisibility_WINNER"]));
@@ -133,7 +133,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_RATE {
             get {
                 return ((bool)(this["ColumnVisibility_RATE"]));
@@ -181,7 +181,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_RATE_AMOUNT {
             get {
                 return ((bool)(this["ColumnVisibility_RATE_AMOUNT"]));
@@ -193,7 +193,7 @@ namespace FightingFeather.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ColumnVisibility_WINNERS_EARN {
             get {
                 return ((bool)(this["ColumnVisibility_WINNERS_EARN"]));

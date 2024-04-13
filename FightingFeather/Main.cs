@@ -836,6 +836,7 @@ namespace FightingFeather
             }
         }
 
+
         private void button_CreateNewPlasada_Click(object sender, EventArgs e)
         {
             // Check if the Reminder toggle is off
@@ -862,13 +863,12 @@ namespace FightingFeather
                     }
                     else
                     {
-                        MessageBox.Show("Please ensure that all fights have a winner specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please ensure that all fights have a winner specified!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                // If Reminder is enabled, directly execute the action
                 // Check if all active cells in the "FIGHT" column have corresponding non-null/non-empty values in the "WINNER" column
                 if (AllWinnersSpecified())
                 {
@@ -881,10 +881,11 @@ namespace FightingFeather
                 }
                 else
                 {
-                    MessageBox.Show("Please ensure that all fights have a winner specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please ensure that all fights have a winner specified!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         private bool AllWinnersSpecified()
         {

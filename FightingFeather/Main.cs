@@ -155,12 +155,12 @@ namespace FightingFeather
                     PAREHAS INTEGER,
                     PAGO INTEGER,
                     WINNER TEXT,
-                    [RATE AMOUNT] INTEGER,
-                    RATE TEXT,
+                    RATE AMOUNT REAL,
+                    RATE REAL,
                     LOGRO INTEGER,
                     FEE REAL,
                     [TOTAL PLASADA] INTEGER,
-                    [RATE EARNINGS] INTEGER,
+                    RATE EARNINGS REAL,
                     [WINNERS EARN] INTEGER
                 );";
 
@@ -275,10 +275,10 @@ namespace FightingFeather
             int initialBetDiff = Convert.IsDBNull(reader["INITIAL BET DIFF"]) ? 0 : Convert.ToInt32(reader["INITIAL BET DIFF"]);
             int pago = Convert.IsDBNull(reader["PAGO"]) ? 0 : Convert.ToInt32(reader["PAGO"]);
             int walaBet = Convert.IsDBNull(reader["BET (W)"]) ? 0 : Convert.ToInt32(reader["BET (W)"]);
-            int rateAmount = Convert.IsDBNull(reader["RATE AMOUNT"]) ? 0 : Convert.ToInt32(reader["RATE AMOUNT"]);
-            int rateResult = Convert.IsDBNull(reader["RATE EARNINGS"]) ? 0 : Convert.ToInt32(reader["RATE EARNINGS"]);
+            int? rateAmount = reader["RATE AMOUNT"] == DBNull.Value ? 0 : (int?)Convert.ToInt32(reader["RATE AMOUNT"]);
+            int? rateResult = reader["RATE EARNINGS"] == DBNull.Value ? 0 : (int?)Convert.ToInt32(reader["RATE EARNINGS"]);
+            string rate = reader["RATE"] == DBNull.Value ? "0" : reader["RATE"].ToString(); // Handle null values for RATE column
             string winner = Convert.IsDBNull(reader["WINNER"]) ? string.Empty : reader["WINNER"].ToString();
-
 
             // Call CalculateFee to get the fee value
             decimal fee = CalculateFee(Convert.ToDecimal(reader["BET (M)"]), Convert.ToDecimal(reader["BET (W)"]), reader["WINNER"].ToString(), pago);
@@ -287,7 +287,7 @@ namespace FightingFeather
             decimal totalPlasada = fee != 0 ? fee + 300 : 0;
 
             // Calculate LOGRO
-            int logro = initialBetDiff - (pago + rateAmount);
+            int logro = initialBetDiff - (pago + (rateAmount ?? 0));
 
             // Update the LOGRO column in the database
             string updateLogroQuery = "UPDATE PLASADA SET LOGRO = @Logro WHERE FIGHT = @FightId";
@@ -307,7 +307,7 @@ namespace FightingFeather
 
             if (winner == "M")
             {
-                winnersEarning = parehas - totalPlasada + rateResult;
+                winnersEarning = parehas - totalPlasada + (rateResult ?? 0);
             }
             else if (winner == "W")
             {
@@ -324,21 +324,33 @@ namespace FightingFeather
             }
 
             // Save calculated values back to the database
-            string updateValuesQuery = "UPDATE PLASADA SET FEE = @Fee, [TOTAL PLASADA] = @TotalPlasada WHERE FIGHT = @FightId";
+            string updateValuesQuery = "UPDATE PLASADA SET FEE = @Fee, [TOTAL PLASADA] = @TotalPlasada, [RATE AMOUNT] = @RateAmount, [RATE EARNINGS] = @RateEarnings, RATE = @Rate WHERE FIGHT = @FightId";
             using (var updateValuesCommand = new SQLiteCommand(updateValuesQuery, connection))
             {
                 updateValuesCommand.Parameters.AddWithValue("@Fee", fee);
                 updateValuesCommand.Parameters.AddWithValue("@TotalPlasada", totalPlasada);
+                updateValuesCommand.Parameters.AddWithValue("@RateAmount", rateAmount ?? 0);
+                updateValuesCommand.Parameters.AddWithValue("@RateEarnings", rateResult ?? 0);
+                updateValuesCommand.Parameters.AddWithValue("@Rate", rate); // Update RATE column
                 updateValuesCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
                 updateValuesCommand.ExecuteNonQuery();
+            }
+
+            // Save calculated values back to the database
+            string updateWinnersEarningQuery = "UPDATE PLASADA SET [WINNERS EARN] = @WinnersEarning WHERE FIGHT = @FightId";
+            using (var updateWinnersEarningCommand = new SQLiteCommand(updateWinnersEarningQuery, connection))
+            {
+                updateWinnersEarningCommand.Parameters.AddWithValue("@WinnersEarning", winnersEarning);
+                updateWinnersEarningCommand.Parameters.AddWithValue("@FightId", reader["FIGHT"]);
+                updateWinnersEarningCommand.ExecuteNonQuery();
             }
 
             DataGridViewRow row = new DataGridViewRow();
             row.CreateCells(GridPlasada_Entries,
                 reader["FIGHT"], reader["MERON"], reader["WALA"], reader["BET (M)"], reader["BET (W)"],
                 reader["INITIAL BET DIFF"], reader["PAREHAS"], pago, reader["WINNER"],
-                reader["RATE AMOUNT"], reader["RATE"], logro, fee,
-                totalPlasada, reader["RATE EARNINGS"], winnersEarning);
+                rateAmount ?? 0, rate, logro, fee,
+                totalPlasada, rateResult ?? 0, winnersEarning);
             GridPlasada_Entries.Rows.Add(row);
         }
 
@@ -573,22 +585,22 @@ namespace FightingFeather
                         {
                             // Create the temporary table if it doesn't exist
                             string createTempTableQuery = @"CREATE TABLE Temp_PLASADA (
-                        FIGHT INTEGER PRIMARY KEY,
-                        MERON TEXT,
-                        WALA TEXT,
-                        [BET (M)] INTEGER,                   
-                        [BET (W)] INTEGER,
-                        [INITIAL BET DIFF] INTEGER,
-                        PAREHAS INTEGER,
-                        PAGO INTEGER,
-                        WINNER TEXT,
-                        [RATE AMOUNT] INTEGER,
-                        RATE TEXT,
-                        LOGRO INTEGER,
-                        FEE REAL,
-                        [TOTAL PLASADA] INTEGER,
-                        [RATE EARNINGS] INTEGER,
-                        [WINNERS EARN] INTEGER
+                       FIGHT INTEGER PRIMARY KEY,
+                    MERON TEXT,            
+                    WALA TEXT,
+                    [BET (M)] INTEGER,
+                    [BET (W)] INTEGER,
+                    [INITIAL BET DIFF] INTEGER,
+                    PAREHAS INTEGER,
+                    PAGO INTEGER,
+                    WINNER TEXT,
+                    RATE AMOUNT REAL,
+                    RATE REAL,
+                    LOGRO INTEGER,
+                    FEE REAL,
+                    [TOTAL PLASADA] INTEGER,
+                    RATE EARNINGS REAL,
+                    [WINNERS EARN] INTEGER
                     )";
 
                             using (var createCommand = new SQLiteCommand(createTempTableQuery, connection))
@@ -923,12 +935,12 @@ namespace FightingFeather
             ""PAREHAS"" INTEGER,
             ""PAGO"" INTEGER,
             ""WINNER"" TEXT,
-            ""RATE AMOUNT"" INTEGER,
-            ""RATE"" TEXT,
+            ""RATE AMOUNT"" REAL,
+            ""RATE"" REAL,
             ""LOGRO"" INTEGER,
             ""FEE"" REAL,
             ""TOTAL PLASADA"" INTEGER,
-            ""RATE EARNINGS"" INTEGER,
+            ""RATE EARNINGS"" REAL,
             ""WINNERS EARN"" INTEGER,
             ""DATE"" INTEGER,
             ""TotalFights"" INTEGER,

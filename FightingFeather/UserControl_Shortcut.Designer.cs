@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel26 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel27 = new MetroFramework.Controls.MetroPanel();
@@ -75,9 +75,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
-            this.metroTile_ClaimMeron = new MetroFramework.Controls.MetroTile();
-            this.metroTile_PrintMunton = new MetroFramework.Controls.MetroTile();
-            this.metroTile_ClaimWala = new MetroFramework.Controls.MetroTile();
             this.metroPanel16 = new MetroFramework.Controls.MetroPanel();
             this.GridPlasada_Shortcut = new MetroFramework.Controls.MetroGrid();
             this.FIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +110,8 @@
             this.button_Inspection = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
+            this.metroTile_ClaimWala = new MetroFramework.Controls.MetroTile();
+            this.metroTile_ClaimMeron = new MetroFramework.Controls.MetroTile();
             this.metroPanel14.SuspendLayout();
             this.metroPanel26.SuspendLayout();
             this.metroPanel27.SuspendLayout();
@@ -788,67 +787,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             this.metroPanel12.Controls.Add(this.metroTile_ClaimMeron);
-            this.metroPanel12.Controls.Add(this.metroTile_PrintMunton);
             this.metroPanel12.Controls.Add(this.metroTile_ClaimWala);
             this.metroPanel12.Controls.Add(this.metroPanel16);
             this.metroPanel12.HorizontalScrollbarBarColor = true;
             this.metroPanel12.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel12.HorizontalScrollbarSize = 10;
-            this.metroPanel12.Location = new System.Drawing.Point(2, 4);
+            this.metroPanel12.Location = new System.Drawing.Point(3, 4);
             this.metroPanel12.Name = "metroPanel12";
-            this.metroPanel12.Size = new System.Drawing.Size(460, 516);
+            this.metroPanel12.Size = new System.Drawing.Size(461, 516);
             this.metroPanel12.TabIndex = 227;
             this.metroPanel12.UseCustomBackColor = true;
             this.metroPanel12.UseStyleColors = true;
             this.metroPanel12.VerticalScrollbarBarColor = true;
             this.metroPanel12.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel12.VerticalScrollbarSize = 10;
-            // 
-            // metroTile_ClaimMeron
-            // 
-            this.metroTile_ClaimMeron.ActiveControl = null;
-            this.metroTile_ClaimMeron.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroTile_ClaimMeron.Location = new System.Drawing.Point(5, 288);
-            this.metroTile_ClaimMeron.Name = "metroTile_ClaimMeron";
-            this.metroTile_ClaimMeron.Size = new System.Drawing.Size(277, 110);
-            this.metroTile_ClaimMeron.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroTile_ClaimMeron.TabIndex = 16;
-            this.metroTile_ClaimMeron.Text = "PRINT CLAIM STAB (MERON)";
-            this.metroTile_ClaimMeron.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.metroTile_ClaimMeron.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile_ClaimMeron.UseSelectable = true;
-            this.metroTile_ClaimMeron.Click += new System.EventHandler(this.metroTile_ClaimMeron_Click);
-            // 
-            // metroTile_PrintMunton
-            // 
-            this.metroTile_PrintMunton.ActiveControl = null;
-            this.metroTile_PrintMunton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroTile_PrintMunton.Location = new System.Drawing.Point(285, 289);
-            this.metroTile_PrintMunton.Name = "metroTile_PrintMunton";
-            this.metroTile_PrintMunton.Size = new System.Drawing.Size(169, 222);
-            this.metroTile_PrintMunton.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroTile_PrintMunton.TabIndex = 18;
-            this.metroTile_PrintMunton.Text = "PRINT MUNTON";
-            this.metroTile_PrintMunton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.metroTile_PrintMunton.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile_PrintMunton.UseSelectable = true;
-            this.metroTile_PrintMunton.Click += new System.EventHandler(this.metroTile_PrintMunton_Click);
-            // 
-            // metroTile_ClaimWala
-            // 
-            this.metroTile_ClaimWala.ActiveControl = null;
-            this.metroTile_ClaimWala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroTile_ClaimWala.Location = new System.Drawing.Point(5, 401);
-            this.metroTile_ClaimWala.Name = "metroTile_ClaimWala";
-            this.metroTile_ClaimWala.Size = new System.Drawing.Size(277, 110);
-            this.metroTile_ClaimWala.Style = MetroFramework.MetroColorStyle.Brown;
-            this.metroTile_ClaimWala.TabIndex = 17;
-            this.metroTile_ClaimWala.Text = "PRINT CLAIM STAB (WALA)";
-            this.metroTile_ClaimWala.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.metroTile_ClaimWala.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile_ClaimWala.UseSelectable = true;
-            this.metroTile_ClaimWala.Click += new System.EventHandler(this.metroTile_ClaimWala_Click);
             // 
             // metroPanel16
             // 
@@ -864,7 +816,7 @@
             this.metroPanel16.HorizontalScrollbarSize = 10;
             this.metroPanel16.Location = new System.Drawing.Point(2, 3);
             this.metroPanel16.Name = "metroPanel16";
-            this.metroPanel16.Size = new System.Drawing.Size(455, 282);
+            this.metroPanel16.Size = new System.Drawing.Size(456, 282);
             this.metroPanel16.TabIndex = 231;
             this.metroPanel16.UseCustomBackColor = true;
             this.metroPanel16.UseStyleColors = true;
@@ -876,13 +828,13 @@
             // 
             this.GridPlasada_Shortcut.AllowUserToAddRows = false;
             this.GridPlasada_Shortcut.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.GridPlasada_Shortcut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.GridPlasada_Shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -891,14 +843,14 @@
             this.GridPlasada_Shortcut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlasada_Shortcut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlasada_Shortcut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 7.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Shortcut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 7.75F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Shortcut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.GridPlasada_Shortcut.ColumnHeadersHeight = 36;
             this.GridPlasada_Shortcut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridPlasada_Shortcut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -918,39 +870,39 @@
             this.TOTAL_PLASADA,
             this.RATE_EARNINGS,
             this.WINNERS_EARN});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 8F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlasada_Shortcut.DefaultCellStyle = dataGridViewCellStyle18;
             this.GridPlasada_Shortcut.EnableHeadersVisualStyles = false;
             this.GridPlasada_Shortcut.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlasada_Shortcut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.GridPlasada_Shortcut.Location = new System.Drawing.Point(2, 43);
+            this.GridPlasada_Shortcut.Location = new System.Drawing.Point(-2, 43);
             this.GridPlasada_Shortcut.MultiSelect = false;
             this.GridPlasada_Shortcut.Name = "GridPlasada_Shortcut";
             this.GridPlasada_Shortcut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlasada_Shortcut.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlasada_Shortcut.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.GridPlasada_Shortcut.RowHeadersVisible = false;
             this.GridPlasada_Shortcut.RowHeadersWidth = 43;
             this.GridPlasada_Shortcut.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
-            this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9F);
+            this.GridPlasada_Shortcut.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.GridPlasada_Shortcut.RowTemplate.Height = 23;
             this.GridPlasada_Shortcut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPlasada_Shortcut.Size = new System.Drawing.Size(465, 236);
+            this.GridPlasada_Shortcut.Size = new System.Drawing.Size(470, 236);
             this.GridPlasada_Shortcut.TabIndex = 243;
             this.GridPlasada_Shortcut.UseCustomBackColor = true;
             this.GridPlasada_Shortcut.UseCustomForeColor = true;
@@ -1055,7 +1007,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(455, 1);
+            this.panel2.Size = new System.Drawing.Size(456, 1);
             this.panel2.TabIndex = 3;
             // 
             // panel1
@@ -1068,7 +1020,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 40);
+            this.panel1.Size = new System.Drawing.Size(456, 40);
             this.panel1.TabIndex = 2;
             // 
             // button_PreviewOtherInfo
@@ -1082,12 +1034,12 @@
             this.button_PreviewOtherInfo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_PreviewOtherInfo.ForeColor = System.Drawing.Color.Silver;
             this.button_PreviewOtherInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_PreviewOtherInfo.Location = new System.Drawing.Point(247, 7);
+            this.button_PreviewOtherInfo.Location = new System.Drawing.Point(248, 7);
             this.button_PreviewOtherInfo.Name = "button_PreviewOtherInfo";
             this.button_PreviewOtherInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_PreviewOtherInfo.Size = new System.Drawing.Size(165, 25);
             this.button_PreviewOtherInfo.TabIndex = 15;
-            this.button_PreviewOtherInfo.Text = "OTHER INFO...";
+            this.button_PreviewOtherInfo.Text = "MORE ...";
             this.button_PreviewOtherInfo.UseVisualStyleBackColor = false;
             this.button_PreviewOtherInfo.Click += new System.EventHandler(this.button_PreviewOtherInfo_Click);
             // 
@@ -1118,7 +1070,7 @@
             this.metroPanel10.HorizontalScrollbarBarColor = true;
             this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel10.HorizontalScrollbarSize = 10;
-            this.metroPanel10.Location = new System.Drawing.Point(226, 3);
+            this.metroPanel10.Location = new System.Drawing.Point(227, 3);
             this.metroPanel10.Name = "metroPanel10";
             this.metroPanel10.Size = new System.Drawing.Size(1, 35);
             this.metroPanel10.TabIndex = 327;
@@ -1132,10 +1084,10 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::FightingFeather.Properties.Resources.information_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(424, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(433, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(16, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 226;
             this.pictureBox1.TabStop = false;
             // 
@@ -1323,6 +1275,38 @@
             this.button_Update.UseVisualStyleBackColor = false;
             this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
+            // metroTile_ClaimWala
+            // 
+            this.metroTile_ClaimWala.ActiveControl = null;
+            this.metroTile_ClaimWala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroTile_ClaimWala.Location = new System.Drawing.Point(2, 402);
+            this.metroTile_ClaimWala.Name = "metroTile_ClaimWala";
+            this.metroTile_ClaimWala.Size = new System.Drawing.Size(459, 110);
+            this.metroTile_ClaimWala.Style = MetroFramework.MetroColorStyle.Brown;
+            this.metroTile_ClaimWala.TabIndex = 17;
+            this.metroTile_ClaimWala.Text = "PRINT CLAIM STAB (WALA)";
+            this.metroTile_ClaimWala.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.metroTile_ClaimWala.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_ClaimWala.UseSelectable = true;
+            this.metroTile_ClaimWala.Click += new System.EventHandler(this.metroTile_ClaimWala_Click);
+            // 
+            // metroTile_ClaimMeron
+            // 
+            this.metroTile_ClaimMeron.ActiveControl = null;
+            this.metroTile_ClaimMeron.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroTile_ClaimMeron.Location = new System.Drawing.Point(2, 289);
+            this.metroTile_ClaimMeron.Name = "metroTile_ClaimMeron";
+            this.metroTile_ClaimMeron.Size = new System.Drawing.Size(459, 110);
+            this.metroTile_ClaimMeron.Style = MetroFramework.MetroColorStyle.Teal;
+            this.metroTile_ClaimMeron.TabIndex = 16;
+            this.metroTile_ClaimMeron.Text = "PRINT CLAIM STAB (MERON)";
+            this.metroTile_ClaimMeron.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.metroTile_ClaimMeron.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_ClaimMeron.UseSelectable = true;
+            this.metroTile_ClaimMeron.Click += new System.EventHandler(this.metroTile_ClaimMeron_Click);
+            // 
             // UserControl_Shortcut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1368,7 +1352,6 @@
             this.metroPanel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridPlasada_Shortcut)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -1412,9 +1395,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel12;
         private MetroFramework.Controls.MetroPanel metroPanel16;
         private System.Windows.Forms.Button button_Enter;
-        private MetroFramework.Controls.MetroTile metroTile_ClaimWala;
-        private MetroFramework.Controls.MetroTile metroTile_ClaimMeron;
-        private MetroFramework.Controls.MetroTile metroTile_PrintMunton;
         private MetroFramework.Controls.MetroGrid GridPlasada_Shortcut;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
@@ -1458,5 +1438,7 @@
         private System.Windows.Forms.Button button_PreviewEntry;
         private MetroFramework.Controls.MetroPanel metroPanel10;
         private System.Windows.Forms.Button button_PreviewOtherInfo;
+        private MetroFramework.Controls.MetroTile metroTile_ClaimMeron;
+        private MetroFramework.Controls.MetroTile metroTile_ClaimWala;
     }
 }

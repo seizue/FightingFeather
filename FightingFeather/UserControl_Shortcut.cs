@@ -768,31 +768,6 @@ namespace FightingFeather
             }
         }
 
-        private void metroTile_PrintMunton_Click(object sender, EventArgs e)
-        {
-            // Get the selected row
-            DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
-
-            // Get the values from the selected row, handling possible null values
-            string fight = selectedRow.Cells["FIGHT"].Value?.ToString() ?? "-";
-            string meron = selectedRow.Cells["MERON"].Value?.ToString() ?? "-";
-            string betM = selectedRow.Cells["BET_M"].Value?.ToString() ?? "-";
-            string wala = selectedRow.Cells["WALA"].Value?.ToString() ?? "-";
-            string betW = selectedRow.Cells["BET_W"].Value?.ToString() ?? "-";
-            string betDiff = selectedRow.Cells["INITIAL_BET_DIF"].Value?.ToString();
-            betDiff = string.IsNullOrEmpty(betDiff) || betDiff == "0" ? "-" : betDiff;
-            string parehas = selectedRow.Cells["PAREHAS"].Value?.ToString() ?? "-";
-            string pago = selectedRow.Cells["PAGO"].Value?.ToString() ?? "-";
-            string rate = selectedRow.Cells["RATE"].Value?.ToString() ?? "-";
-            string rateAmount = selectedRow.Cells["RATE_AMOUNT"].Value?.ToString() ?? "-";
-
-            // Create an instance of MuntonPrintForm and pass the values
-            MuntonPrintForm muntonPrintForm = new MuntonPrintForm(fight, meron, betM, wala, betW, betDiff, parehas, pago, rate, rateAmount);
-            muntonPrintForm.ShowDialog();
-        }
-
-
-
         private void metroTile_ClaimMeron_Click(object sender, EventArgs e)
         {
             // Get the selected row
@@ -823,5 +798,9 @@ namespace FightingFeather
             claimWala.ShowDialog();
         }
 
+        private void metroTile_PrintMunton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

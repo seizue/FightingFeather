@@ -83,7 +83,7 @@ namespace FightingFeather
             ToolTip toolTip1 = new ToolTip();
 
             // Set the tooltip text for the button
-            toolTip1.SetToolTip(button_Receipt, "Print Munton Receipt");
+            toolTip1.SetToolTip(button_PrintMunton, "Print Munton Receipt");
             toolTip1.SetToolTip(button_New, "Add New Entry");
             toolTip1.SetToolTip(button_Update, "Update Entry");
             toolTip1.SetToolTip(button_Delete, "Delete Entry");
@@ -1360,6 +1360,7 @@ namespace FightingFeather
             button_New.Enabled = false;
             button_Update.Enabled = false;
             button_Delete.Enabled = false;
+            button_PrintMunton.Enabled = false;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1390,6 +1391,7 @@ namespace FightingFeather
             button_New.Enabled = true;
             button_Update.Enabled = true;
             button_Delete.Enabled = true;
+            button_PrintMunton.Enabled = true;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1416,6 +1418,7 @@ namespace FightingFeather
             button_New.Enabled = false;
             button_Update.Enabled = false;
             button_Delete.Enabled = false;
+            button_PrintMunton.Enabled = false;
 
             userControl_Earnings1.ReloadData();
             userControl_CashBreakDown1.ReloadData();
@@ -1477,6 +1480,7 @@ namespace FightingFeather
             button_New.Enabled = true;
             button_Update.Enabled = true;
             button_Delete.Enabled = true;
+            button_PrintMunton.Enabled = true;
 
             RefreshGrid();
             RefreshCalculationDatagrid();
@@ -1521,6 +1525,7 @@ namespace FightingFeather
             button_New.Enabled = true;
             button_Update.Enabled = true;
             button_Delete.Enabled = true;
+            button_PrintMunton.Enabled = true;
 
             RefreshGrid();
             RefreshCalculationDatagrid();
@@ -2025,6 +2030,34 @@ namespace FightingFeather
         {
             UpdateScrollBarVisibility();
 
+        }
+
+        private void button_PrintMunton_Click(object sender, EventArgs e)
+        {
+            // Get the selected row
+            DataGridViewRow selectedRow = GridPlasada_Entries.SelectedRows[0];
+
+            // Get the values from the selected row, handling possible null values
+            string fight = selectedRow.Cells["FIGHT"].Value?.ToString() ?? "-";
+            string meron = selectedRow.Cells["MERON"].Value?.ToString() ?? "-";
+            string betM = selectedRow.Cells["BET_M"].Value?.ToString() ?? "-";
+            string wala = selectedRow.Cells["WALA"].Value?.ToString() ?? "-";
+            string betW = selectedRow.Cells["BET_W"].Value?.ToString() ?? "-";
+            string betDiff = selectedRow.Cells["INITIAL_BET_DIF"].Value?.ToString();
+            betDiff = string.IsNullOrEmpty(betDiff) || betDiff == "0" ? "-" : betDiff;
+            string parehas = selectedRow.Cells["PAREHAS"].Value?.ToString() ?? "-";
+            string pago = selectedRow.Cells["PAGO"].Value?.ToString();
+            pago = string.IsNullOrEmpty(pago) || pago == "0" ? "-" : pago;
+            string rate = selectedRow.Cells["RATE"].Value?.ToString();
+            rate = string.IsNullOrEmpty(rate) || rate == "0" ? "-" : rate;
+            string rateAmount = selectedRow.Cells["RATE_AMOUNT"].Value?.ToString();
+            rateAmount = string.IsNullOrEmpty(rateAmount) || rateAmount == "0" ? "-" : rateAmount;
+            string plasada = selectedRow.Cells["TOTAL_PLASADA"].Value?.ToString();
+            plasada = string.IsNullOrEmpty(plasada) || plasada == "0" ? "-" : plasada;
+
+            // Create an instance of MuntonPrintForm and pass the values
+            MuntonPrintForm muntonPrintForm = new MuntonPrintForm(fight, meron, betM, wala, betW, betDiff, parehas, pago, rate, rateAmount, plasada);
+            muntonPrintForm.ShowDialog();
         }
     }
 }

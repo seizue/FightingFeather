@@ -16,7 +16,7 @@ namespace FightingFeather
 
         private PrintDocument pd = new PrintDocument();
         private PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-        public MuntonPrintForm(string fight, string meron, string betM, string wala, string betW, string betDiff, string parehas, string pago, string rate, string rateAmount)
+        public MuntonPrintForm(string fight, string meron, string betM, string wala, string betW, string betDiff, string parehas, string pago, string rate, string rateAmount, string plasada)
         {
             InitializeComponent();
 
@@ -31,7 +31,7 @@ namespace FightingFeather
             labelPago.Text = pago;
             labelRate.Text = rate;
             labelrateAmount.Text = rateAmount;
-           
+            labelPlasada.Text = plasada;
         }
 
         public void button_Print_Click(object sender, EventArgs e)

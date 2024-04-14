@@ -1685,10 +1685,6 @@ namespace FightingFeather
             {
                 // Prevent the key from being processed further
                 e.SuppressKeyPress = true;
-
-                // Show the MuntonPrintForm
-                MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
-                muntonPrintForm.ShowDialog();
             }
         }
 

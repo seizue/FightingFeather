@@ -230,7 +230,10 @@ namespace FightingFeather
                         DataGridViewTextBoxCell cell7 = new DataGridViewTextBoxCell();
                         cell7.Value = obj["PAREHAS"];
                         row.Cells.Add(cell7);
-               
+
+                        DataGridViewTextBoxCell cell8 = new DataGridViewTextBoxCell();
+                        cell8.Value = obj["PAGO"];
+                        row.Cells.Add(cell8);
 
                         // Add the row to the DataGridView
                         GridPlasada_Shortcut.Rows.Add(row);
@@ -590,12 +593,6 @@ namespace FightingFeather
             }
         }
 
-        private void metroTile_PrintMunton_Click(object sender, EventArgs e)
-        {
-            MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
-            muntonPrintForm.ShowDialog();
-        }
-
         private void button_PreviewEntry_Click(object sender, EventArgs e)
         {
             GridPlasada_Shortcut.Rows.Clear();
@@ -609,8 +606,9 @@ namespace FightingFeather
             GridPlasada_Shortcut.Columns["BET_W"].Visible = true;
 
             GridPlasada_Shortcut.Columns["INITIAL_BET_DIF"].Visible = false;
+            GridPlasada_Shortcut.Columns["PAGO"].Visible = false;
             GridPlasada_Shortcut.Columns["PAREHAS"].Visible = false;
-
+           
         }
 
         private void button_PreviewOtherInfo_Click(object sender, EventArgs e)
@@ -626,6 +624,7 @@ namespace FightingFeather
             GridPlasada_Shortcut.Columns["BET_W"].Visible = false;
 
             GridPlasada_Shortcut.Columns["INITIAL_BET_DIF"].Visible = true;
+            GridPlasada_Shortcut.Columns["PAGO"].Visible = true;
             GridPlasada_Shortcut.Columns["PAREHAS"].Visible = true;
         
         }
@@ -768,6 +767,31 @@ namespace FightingFeather
                 }
             }
         }
+
+        private void metroTile_PrintMunton_Click(object sender, EventArgs e)
+        {
+            // Get the selected row
+            DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
+
+            // Get the values from the selected row, handling possible null values
+            string fight = selectedRow.Cells["FIGHT"].Value?.ToString() ?? "-";
+            string meron = selectedRow.Cells["MERON"].Value?.ToString() ?? "-";
+            string betM = selectedRow.Cells["BET_M"].Value?.ToString() ?? "-";
+            string wala = selectedRow.Cells["WALA"].Value?.ToString() ?? "-";
+            string betW = selectedRow.Cells["BET_W"].Value?.ToString() ?? "-";
+            string betDiff = selectedRow.Cells["INITIAL_BET_DIF"].Value?.ToString();
+            betDiff = string.IsNullOrEmpty(betDiff) || betDiff == "0" ? "-" : betDiff;
+            string parehas = selectedRow.Cells["PAREHAS"].Value?.ToString() ?? "-";
+            string pago = selectedRow.Cells["PAGO"].Value?.ToString() ?? "-";
+            string rate = selectedRow.Cells["RATE"].Value?.ToString() ?? "-";
+            string rateAmount = selectedRow.Cells["RATE_AMOUNT"].Value?.ToString() ?? "-";
+
+            // Create an instance of MuntonPrintForm and pass the values
+            MuntonPrintForm muntonPrintForm = new MuntonPrintForm(fight, meron, betM, wala, betW, betDiff, parehas, pago, rate, rateAmount);
+            muntonPrintForm.ShowDialog();
+        }
+
+
 
         private void metroTile_ClaimMeron_Click(object sender, EventArgs e)
         {

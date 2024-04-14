@@ -21,7 +21,7 @@ namespace FightingFeather
             InitializeComponent();
         }
 
-        private void button_Print_Click(object sender, EventArgs e)
+        public void button_Print_Click(object sender, EventArgs e)
         {
             PrintPreview();
         }

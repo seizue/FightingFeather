@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_SaveUpdate = new System.Windows.Forms.Button();
+            this.button_PrintReceipt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.panel_Receipt = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelWalaName = new System.Windows.Forms.Label();
+            this.labelWalaBet = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelFight = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
@@ -51,28 +51,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
             this.panel1.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
+            this.panel_Receipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_SaveUpdate
+            // button_PrintReceipt
             // 
-            this.button_SaveUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_SaveUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button_SaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_SaveUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Peru;
-            this.button_SaveUpdate.FlatAppearance.BorderSize = 2;
-            this.button_SaveUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SaveUpdate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SaveUpdate.ForeColor = System.Drawing.Color.MintCream;
-            this.button_SaveUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_SaveUpdate.Location = new System.Drawing.Point(23, 234);
-            this.button_SaveUpdate.Name = "button_SaveUpdate";
-            this.button_SaveUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_SaveUpdate.Size = new System.Drawing.Size(279, 29);
-            this.button_SaveUpdate.TabIndex = 382;
-            this.button_SaveUpdate.Text = "PRINT ";
-            this.button_SaveUpdate.UseVisualStyleBackColor = false;
+            this.button_PrintReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_PrintReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_PrintReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_PrintReceipt.FlatAppearance.BorderColor = System.Drawing.Color.Peru;
+            this.button_PrintReceipt.FlatAppearance.BorderSize = 2;
+            this.button_PrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PrintReceipt.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PrintReceipt.ForeColor = System.Drawing.Color.MintCream;
+            this.button_PrintReceipt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_PrintReceipt.Location = new System.Drawing.Point(23, 234);
+            this.button_PrintReceipt.Name = "button_PrintReceipt";
+            this.button_PrintReceipt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_PrintReceipt.Size = new System.Drawing.Size(279, 29);
+            this.button_PrintReceipt.TabIndex = 382;
+            this.button_PrintReceipt.Text = "PRINT ";
+            this.button_PrintReceipt.UseVisualStyleBackColor = false;
+            this.button_PrintReceipt.Click += new System.EventHandler(this.button_PrintReceipt_Click);
             // 
             // label5
             // 
@@ -87,43 +88,43 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.metroPanel1);
+            this.panel1.Controls.Add(this.panel_Receipt);
             this.panel1.Location = new System.Drawing.Point(23, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(279, 144);
             this.panel1.TabIndex = 380;
             // 
-            // metroPanel1
+            // panel_Receipt
             // 
-            this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.metroPanel1.Controls.Add(this.metroPanel9);
-            this.metroPanel1.Controls.Add(this.label4);
-            this.metroPanel1.Controls.Add(this.label7);
-            this.metroPanel1.Controls.Add(this.metroPanel8);
-            this.metroPanel1.Controls.Add(this.label2);
-            this.metroPanel1.Controls.Add(this.label3);
-            this.metroPanel1.Controls.Add(this.label1);
-            this.metroPanel1.Controls.Add(this.label10);
-            this.metroPanel1.Controls.Add(this.label9);
-            this.metroPanel1.Controls.Add(this.pictureBox1);
-            this.metroPanel1.Controls.Add(this.metroPanel7);
-            this.metroPanel1.Controls.Add(this.metroPanel6);
-            this.metroPanel1.Controls.Add(this.metroPanel5);
-            this.metroPanel1.Controls.Add(this.metroPanel4);
-            this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.Controls.Add(this.metroPanel2);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(279, 144);
-            this.metroPanel1.TabIndex = 358;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.panel_Receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.panel_Receipt.Controls.Add(this.metroPanel9);
+            this.panel_Receipt.Controls.Add(this.label4);
+            this.panel_Receipt.Controls.Add(this.label7);
+            this.panel_Receipt.Controls.Add(this.metroPanel8);
+            this.panel_Receipt.Controls.Add(this.labelWalaName);
+            this.panel_Receipt.Controls.Add(this.labelWalaBet);
+            this.panel_Receipt.Controls.Add(this.label1);
+            this.panel_Receipt.Controls.Add(this.labelFight);
+            this.panel_Receipt.Controls.Add(this.label9);
+            this.panel_Receipt.Controls.Add(this.pictureBox1);
+            this.panel_Receipt.Controls.Add(this.metroPanel7);
+            this.panel_Receipt.Controls.Add(this.metroPanel6);
+            this.panel_Receipt.Controls.Add(this.metroPanel5);
+            this.panel_Receipt.Controls.Add(this.metroPanel4);
+            this.panel_Receipt.Controls.Add(this.metroPanel3);
+            this.panel_Receipt.Controls.Add(this.metroPanel2);
+            this.panel_Receipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Receipt.HorizontalScrollbarBarColor = true;
+            this.panel_Receipt.HorizontalScrollbarHighlightOnWheel = false;
+            this.panel_Receipt.HorizontalScrollbarSize = 10;
+            this.panel_Receipt.Location = new System.Drawing.Point(0, 0);
+            this.panel_Receipt.Name = "panel_Receipt";
+            this.panel_Receipt.Size = new System.Drawing.Size(279, 144);
+            this.panel_Receipt.TabIndex = 358;
+            this.panel_Receipt.UseCustomBackColor = true;
+            this.panel_Receipt.VerticalScrollbarBarColor = true;
+            this.panel_Receipt.VerticalScrollbarHighlightOnWheel = false;
+            this.panel_Receipt.VerticalScrollbarSize = 10;
             // 
             // metroPanel9
             // 
@@ -183,29 +184,29 @@
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
             // 
-            // label2
+            // labelWalaName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 15F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(100, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 24);
-            this.label2.TabIndex = 375;
-            this.label2.Text = "RUBEN";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelWalaName.AutoSize = true;
+            this.labelWalaName.Font = new System.Drawing.Font("Calibri", 15F);
+            this.labelWalaName.ForeColor = System.Drawing.Color.Black;
+            this.labelWalaName.Location = new System.Drawing.Point(100, 72);
+            this.labelWalaName.Name = "labelWalaName";
+            this.labelWalaName.Size = new System.Drawing.Size(68, 24);
+            this.labelWalaName.TabIndex = 375;
+            this.labelWalaName.Text = "RUBEN";
+            this.labelWalaName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // labelWalaBet
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 16F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(100, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 27);
-            this.label3.TabIndex = 374;
-            this.label3.Text = "5000";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelWalaBet.AutoSize = true;
+            this.labelWalaBet.Font = new System.Drawing.Font("Calibri", 16F);
+            this.labelWalaBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelWalaBet.Location = new System.Drawing.Point(100, 109);
+            this.labelWalaBet.Name = "labelWalaBet";
+            this.labelWalaBet.Size = new System.Drawing.Size(56, 27);
+            this.labelWalaBet.TabIndex = 374;
+            this.labelWalaBet.Text = "5000";
+            this.labelWalaBet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -218,17 +219,17 @@
             this.label1.TabIndex = 372;
             this.label1.Text = "CLAIM \r\nSTAB";
             // 
-            // label10
+            // labelFight
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 21F);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(217, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 35);
-            this.label10.TabIndex = 371;
-            this.label10.Text = "48";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelFight.AutoSize = true;
+            this.labelFight.Font = new System.Drawing.Font("Calibri", 21F);
+            this.labelFight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelFight.Location = new System.Drawing.Point(217, 24);
+            this.labelFight.Name = "labelFight";
+            this.labelFight.Size = new System.Drawing.Size(43, 35);
+            this.labelFight.TabIndex = 371;
+            this.labelFight.Text = "48";
+            this.labelFight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -396,7 +397,7 @@
             this.ClientSize = new System.Drawing.Size(325, 317);
             this.Controls.Add(this.metroPanel10);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button_SaveUpdate);
+            this.Controls.Add(this.button_PrintReceipt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -404,8 +405,8 @@
             this.Name = "ClaimStabWalaForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.panel1.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.panel_Receipt.ResumeLayout(false);
+            this.panel_Receipt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -414,18 +415,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_SaveUpdate;
+        private System.Windows.Forms.Button button_PrintReceipt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel panel_Receipt;
         private MetroFramework.Controls.MetroPanel metroPanel9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private MetroFramework.Controls.MetroPanel metroPanel8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelWalaName;
+        private System.Windows.Forms.Label labelWalaBet;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelFight;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroPanel metroPanel7;

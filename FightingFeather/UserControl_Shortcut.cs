@@ -590,18 +590,6 @@ namespace FightingFeather
             }
         }
 
-        private void metroTile_ClaimMeron_Click(object sender, EventArgs e)
-        {
-            ClaimStabMeronForm claimMeron = new ClaimStabMeronForm();
-            claimMeron.ShowDialog();
-        }
-
-        private void metroTile_ClaimWala_Click(object sender, EventArgs e)
-        {
-            ClaimStabWalaForm claimWala = new ClaimStabWalaForm();
-            claimWala.ShowDialog();
-        }
-
         private void metroTile_PrintMunton_Click(object sender, EventArgs e)
         {
             MuntonPrintForm muntonPrintForm = new MuntonPrintForm();
@@ -780,6 +768,36 @@ namespace FightingFeather
                 }
             }
         }
-    }
 
+        private void metroTile_ClaimMeron_Click(object sender, EventArgs e)
+        {
+            // Get the selected row
+            DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
+
+            // Get the values from the selected row
+            string fight = selectedRow.Cells["FIGHT"].Value.ToString();
+            string meron = selectedRow.Cells["MERON"].Value.ToString();
+            string betM = selectedRow.Cells["BET_M"].Value.ToString();
+
+            // Create an instance of ClaimStabMeronForm and pass the values
+            ClaimStabMeronForm claimMeron = new ClaimStabMeronForm(fight, meron, betM);
+            claimMeron.ShowDialog();
+        }
+
+        private void metroTile_ClaimWala_Click(object sender, EventArgs e)
+        {
+            // Get the selected row
+            DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
+
+            // Get the values from the selected row
+            string fight = selectedRow.Cells["FIGHT"].Value.ToString();
+            string wala = selectedRow.Cells["WALA"].Value.ToString();
+            string betW = selectedRow.Cells["BET_W"].Value.ToString();
+
+            // Create an instance of ClaimStabWalaForm and pass the values
+            ClaimStabWalaForm claimWala = new ClaimStabWalaForm(fight, wala, betW);
+            claimWala.ShowDialog();
+        }
+
+    }
 }

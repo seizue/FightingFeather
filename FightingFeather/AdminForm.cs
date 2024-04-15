@@ -713,181 +713,6 @@ namespace FightingFeather
             }
         }
 
-
-        private void Grid_RegisterUsers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // Check if the current cell belongs to the Password column and its value is not null
-            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "PASSWORD" && e.Value != null)
-            {
-                // Replace the actual password value with asterisks
-                e.Value = new string('*', e.Value.ToString().Length);
-            }
-
-            // Check if the current cell belongs to the column "NAME"
-            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "NAME")
-            {
-                // Apply the padding to the header cell of the "NAME" column
-                Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderCell.Style.Padding = new Padding(10, 4, 0, 4);
-            }
-
-            // Check if the current cell belongs to the "STATUS" column
-            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "STATUS")
-            {
-                // Check the cell value and set the forecolor accordingly
-                if (e.Value != null && e.Value.ToString() == "ACTIVE")
-                {
-                    e.CellStyle.ForeColor = Color.SeaGreen;
-                }
-                else if (e.Value != null && e.Value.ToString() == "SUSPENDED")
-                {
-                    e.CellStyle.ForeColor = Color.Salmon;
-                }
-            }
-        }
-
-        private void Grid_RegisterUsers_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "NAME")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "USERNAME")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "PASSWORD")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText == "STATUS")
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-
-                // Define the custom color for the divider
-                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
-
-                // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
-                {
-                    // Calculate the position of the divider line
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-
-                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
-            }
-        }
-
-        private void textBox_SecKey_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Check if the Enter key is pressed
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Prevent the key from being processed by the textbox
-                e.SuppressKeyPress = true;
-
-                button_SecKey.Focus();
-                button_SecKey_Click(sender, e);         
-            }
-            else
-            {
-                // If the action fails, refocus on the textBox_SecKey
-                textBox_SecKey.Focus();
-            }
-        }
-
-        private void button_SecKey_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Check if the Enter key is pressed
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Prevent the key from being processed by the textbox
-                e.SuppressKeyPress = true;
-
-                // Set focus to the next textbox 
-                textBox_NewPass.Focus();
-            }
-        }
-
-        private void textBox_NewPass_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Check if the Enter key is pressed
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Prevent the key from being processed by the textbox
-                e.SuppressKeyPress = true;
-
-                // Set focus to the next textbox 
-                textBox_ConfirmPass.Focus();
-            }
-        }
-
-        private void textBox_ConfirmPass_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Prevent the key from being processed by the textbox
-                e.SuppressKeyPress = true;
-
-                button_SaveNewPassword.Focus();
-                button_SaveNewPassword_Click(sender, e);
-            }
-        }
-
         private void button_License_Click(object sender, EventArgs e)
         {
             panelAdmin.Visible = true;
@@ -1144,6 +969,66 @@ namespace FightingFeather
             }
         }
 
+
+        private void Grid_RegisterUsers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the current cell belongs to the Password column and its value is not null
+            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "PASSWORD" && e.Value != null)
+            {
+                // Replace the actual password value with asterisks
+                e.Value = new string('*', e.Value.ToString().Length);
+            }
+
+            // Check if the current cell belongs to the column "NAME"
+            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "NAME")
+            {
+                // Apply the padding to the header cell of the "NAME" column
+                Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderCell.Style.Padding = new Padding(10, 4, 0, 4);
+            }
+
+            // Check if the current cell belongs to the "STATUS" column
+            if (Grid_RegisterUsers.Columns[e.ColumnIndex].Name == "STATUS")
+            {
+                // Check the cell value and set the forecolor accordingly
+                if (e.Value != null && e.Value.ToString() == "ACTIVE")
+                {
+                    e.CellStyle.ForeColor = Color.SeaGreen;
+                }
+                else if (e.Value != null && e.Value.ToString() == "SUSPENDED")
+                {
+                    e.CellStyle.ForeColor = Color.Salmon;
+                }
+            }
+        }
+
+        private void Grid_RegisterUsers_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            // Define the columns for which you want to draw the divider line
+            string[] columnsToDrawDivider = { "NAME", "USERNAME", "PASSWORD", "STATUS" };
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && columnsToDrawDivider.Contains(Grid_RegisterUsers.Columns[e.ColumnIndex].HeaderText))
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+        }
+
+
         private void GridLicense_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == GridLicense.Columns["LStatus"].Index)
@@ -1206,5 +1091,60 @@ namespace FightingFeather
             }
         }
 
+        private void textBox_SecKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                button_SecKey.Focus();
+                button_SecKey_Click(sender, e);
+            }
+            else
+            {
+                // If the action fails, refocus on the textBox_SecKey
+                textBox_SecKey.Focus();
+            }
+        }
+
+        private void button_SecKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_NewPass.Focus();
+            }
+        }
+
+        private void textBox_NewPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                // Set focus to the next textbox 
+                textBox_ConfirmPass.Focus();
+            }
+        }
+
+        private void textBox_ConfirmPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevent the key from being processed by the textbox
+                e.SuppressKeyPress = true;
+
+                button_SaveNewPassword.Focus();
+                button_SaveNewPassword_Click(sender, e);
+            }
+        }
     }
 }

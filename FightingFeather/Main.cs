@@ -24,8 +24,7 @@ namespace FightingFeather
         private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
         private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
 
-        private SQLiteConnection connection;
-     
+        private SQLiteConnection connection;   
         private string connectionString = "Data Source = munton_posted.db;Version=3;";
         private int currentTableNumber = 0;
 
@@ -89,12 +88,6 @@ namespace FightingFeather
             toolTip1.SetToolTip(button_Delete, "Delete Entry");
             toolTip1.SetToolTip(raDateTimePicker1, "Select Date");
             toolTip1.SetToolTip(button_CreateNewPlasada, "Save Munton");
-
-            // Custom cell height row
-            foreach (DataGridViewRow row in GridPlasada_Entries.Rows)
-            {
-                row.Height = 30;
-            }
 
             summa = new UserControl_Summa();
             settingsForm = new SettingsForm();
@@ -1703,7 +1696,6 @@ namespace FightingFeather
             this.ShadowType = MetroFormShadowType.None;
         }
 
-
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
@@ -1984,7 +1976,6 @@ namespace FightingFeather
                 }
             }
         }
-
 
         private void FFCustomScroll()
         {

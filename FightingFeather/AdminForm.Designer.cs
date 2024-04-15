@@ -113,27 +113,27 @@
             this.button_AddNewUser = new System.Windows.Forms.Button();
             this.panelAdmin = new System.Windows.Forms.Panel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.metroGridLicense = new MetroFramework.Controls.MetroGrid();
             this.LDaysLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_Search = new System.Windows.Forms.Button();
+            this.button_Generate = new System.Windows.Forms.Button();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button_ClearLM = new System.Windows.Forms.Button();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox_MeronName = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_LKey = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_LCode = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_LStatus = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.textBox_Days = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_LType = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
@@ -147,7 +147,7 @@
             this.panel_AdvanceSettings.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGridLicense)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -1226,18 +1226,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAdmin.Controls.Add(this.metroPanel11);
-            this.panelAdmin.Controls.Add(this.metroGrid1);
-            this.panelAdmin.Controls.Add(this.button_Search);
+            this.panelAdmin.Controls.Add(this.metroGridLicense);
+            this.panelAdmin.Controls.Add(this.button_Generate);
             this.panelAdmin.Controls.Add(this.metroPanel12);
-            this.panelAdmin.Controls.Add(this.button5);
+            this.panelAdmin.Controls.Add(this.button_ClearLM);
             this.panelAdmin.Controls.Add(this.metroPanel13);
-            this.panelAdmin.Controls.Add(this.maskedTextBox1);
-            this.panelAdmin.Controls.Add(this.textBox_MeronName);
+            this.panelAdmin.Controls.Add(this.textBox_LKey);
+            this.panelAdmin.Controls.Add(this.textBox_LCode);
             this.panelAdmin.Controls.Add(this.label19);
             this.panelAdmin.Controls.Add(this.panel3);
             this.panelAdmin.Controls.Add(this.label18);
             this.panelAdmin.Controls.Add(this.label16);
-            this.panelAdmin.Controls.Add(this.metroTextBox3);
+            this.panelAdmin.Controls.Add(this.textBox_Days);
             this.panelAdmin.Controls.Add(this.panel2);
             this.panelAdmin.Controls.Add(this.raDateTimePicker2);
             this.panelAdmin.Controls.Add(this.label14);
@@ -1269,24 +1269,24 @@
             this.metroPanel11.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel11.VerticalScrollbarSize = 10;
             // 
-            // metroGrid1
+            // metroGridLicense
             // 
-            this.metroGrid1.AllowUserToAddRows = false;
-            this.metroGrid1.AllowUserToResizeRows = false;
+            this.metroGridLicense.AllowUserToAddRows = false;
+            this.metroGridLicense.AllowUserToResizeRows = false;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.metroGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.metroGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.metroGridLicense.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.metroGridLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.metroGridLicense.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.metroGridLicense.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.metroGridLicense.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.metroGridLicense.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGridLicense.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 7.75F, System.Drawing.FontStyle.Bold);
@@ -1294,9 +1294,9 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(85)))), ((int)(((byte)(109)))));
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.metroGrid1.ColumnHeadersHeight = 35;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.metroGridLicense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.metroGridLicense.ColumnHeadersHeight = 35;
+            this.metroGridLicense.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LDaysLeft,
             this.LKey,
             this.LCode,
@@ -1310,14 +1310,14 @@
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(235)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle18;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(6, 354);
-            this.metroGrid1.MultiSelect = false;
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.metroGridLicense.DefaultCellStyle = dataGridViewCellStyle18;
+            this.metroGridLicense.EnableHeadersVisualStyles = false;
+            this.metroGridLicense.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGridLicense.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGridLicense.Location = new System.Drawing.Point(6, 354);
+            this.metroGridLicense.MultiSelect = false;
+            this.metroGridLicense.Name = "metroGridLicense";
+            this.metroGridLicense.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1325,19 +1325,19 @@
             dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.metroGrid1.RowHeadersWidth = 20;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.metroGridLicense.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.metroGridLicense.RowHeadersWidth = 20;
+            this.metroGridLicense.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle20.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 9.75F);
-            this.metroGrid1.RowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.metroGrid1.RowTemplate.Height = 23;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1039, 237);
-            this.metroGrid1.TabIndex = 437;
-            this.metroGrid1.UseCustomBackColor = true;
-            this.metroGrid1.UseCustomForeColor = true;
-            this.metroGrid1.UseStyleColors = true;
+            this.metroGridLicense.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.metroGridLicense.RowTemplate.Height = 23;
+            this.metroGridLicense.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.metroGridLicense.Size = new System.Drawing.Size(1039, 237);
+            this.metroGridLicense.TabIndex = 437;
+            this.metroGridLicense.UseCustomBackColor = true;
+            this.metroGridLicense.UseCustomForeColor = true;
+            this.metroGridLicense.UseStyleColors = true;
             // 
             // LDaysLeft
             // 
@@ -1393,23 +1393,23 @@
             this.LCreated.HeaderText = "CREATED";
             this.LCreated.Name = "LCreated";
             // 
-            // button_Search
+            // button_Generate
             // 
-            this.button_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_Search.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
-            this.button_Search.FlatAppearance.BorderSize = 2;
-            this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Search.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button_Search.ForeColor = System.Drawing.Color.MintCream;
-            this.button_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Search.Location = new System.Drawing.Point(442, 279);
-            this.button_Search.Name = "button_Search";
-            this.button_Search.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_Search.Size = new System.Drawing.Size(267, 29);
-            this.button_Search.TabIndex = 436;
-            this.button_Search.Text = "GENERATE";
-            this.button_Search.UseVisualStyleBackColor = false;
+            this.button_Generate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.button_Generate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Generate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(195)))), ((int)(((byte)(237)))));
+            this.button_Generate.FlatAppearance.BorderSize = 2;
+            this.button_Generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Generate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_Generate.ForeColor = System.Drawing.Color.MintCream;
+            this.button_Generate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Generate.Location = new System.Drawing.Point(442, 279);
+            this.button_Generate.Name = "button_Generate";
+            this.button_Generate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_Generate.Size = new System.Drawing.Size(267, 29);
+            this.button_Generate.TabIndex = 436;
+            this.button_Generate.Text = "GENERATE";
+            this.button_Generate.UseVisualStyleBackColor = false;
             // 
             // metroPanel12
             // 
@@ -1428,23 +1428,23 @@
             this.metroPanel12.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel12.VerticalScrollbarSize = 10;
             // 
-            // button5
+            // button_ClearLM
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(740, 279);
-            this.button5.Name = "button5";
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button5.Size = new System.Drawing.Size(267, 29);
-            this.button5.TabIndex = 430;
-            this.button5.Text = "CLEAR";
-            this.button5.UseVisualStyleBackColor = false;
+            this.button_ClearLM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            this.button_ClearLM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_ClearLM.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button_ClearLM.FlatAppearance.BorderSize = 2;
+            this.button_ClearLM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ClearLM.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.button_ClearLM.ForeColor = System.Drawing.Color.DimGray;
+            this.button_ClearLM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_ClearLM.Location = new System.Drawing.Point(740, 279);
+            this.button_ClearLM.Name = "button_ClearLM";
+            this.button_ClearLM.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_ClearLM.Size = new System.Drawing.Size(267, 29);
+            this.button_ClearLM.TabIndex = 430;
+            this.button_ClearLM.Text = "CLEAR";
+            this.button_ClearLM.UseVisualStyleBackColor = false;
             // 
             // metroPanel13
             // 
@@ -1465,25 +1465,25 @@
             this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel13.VerticalScrollbarSize = 10;
             // 
-            // maskedTextBox1
+            // textBox_LKey
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.maskedTextBox1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(6, 184);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(369, 23);
-            this.maskedTextBox1.TabIndex = 427;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_LKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_LKey.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_LKey.Location = new System.Drawing.Point(6, 184);
+            this.textBox_LKey.Name = "textBox_LKey";
+            this.textBox_LKey.Size = new System.Drawing.Size(369, 23);
+            this.textBox_LKey.TabIndex = 427;
+            this.textBox_LKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_MeronName
+            // textBox_LCode
             // 
-            this.textBox_MeronName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.textBox_MeronName.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
-            this.textBox_MeronName.Location = new System.Drawing.Point(6, 103);
-            this.textBox_MeronName.Name = "textBox_MeronName";
-            this.textBox_MeronName.Size = new System.Drawing.Size(369, 23);
-            this.textBox_MeronName.TabIndex = 426;
-            this.textBox_MeronName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_LCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.textBox_LCode.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F);
+            this.textBox_LCode.Location = new System.Drawing.Point(6, 103);
+            this.textBox_LCode.Name = "textBox_LCode";
+            this.textBox_LCode.Size = new System.Drawing.Size(369, 23);
+            this.textBox_LCode.TabIndex = 426;
+            this.textBox_LCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
@@ -1499,23 +1499,23 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.comboBox_LStatus);
             this.panel3.Location = new System.Drawing.Point(445, 181);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(209, 28);
             this.panel3.TabIndex = 424;
             // 
-            // comboBox2
+            // comboBox_LStatus
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 23);
-            this.comboBox2.TabIndex = 264;
-            this.comboBox2.Text = "ACTIVATED";
+            this.comboBox_LStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.comboBox_LStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_LStatus.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_LStatus.FormattingEnabled = true;
+            this.comboBox_LStatus.Location = new System.Drawing.Point(3, 2);
+            this.comboBox_LStatus.Name = "comboBox_LStatus";
+            this.comboBox_LStatus.Size = new System.Drawing.Size(203, 23);
+            this.comboBox_LStatus.TabIndex = 264;
+            this.comboBox_LStatus.Text = "ACTIVATED";
             // 
             // label18
             // 
@@ -1539,58 +1539,58 @@
             this.label16.TabIndex = 422;
             this.label16.Text = "EXPERIENCE DAYS";
             // 
-            // metroTextBox3
+            // textBox_Days
             // 
             // 
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(343, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(6, 281);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.ShowButton = true;
-            this.metroTextBox3.ShowClearButton = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(369, 27);
-            this.metroTextBox3.TabIndex = 421;
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Calibri", 9.55F);
+            this.textBox_Days.CustomButton.Image = null;
+            this.textBox_Days.CustomButton.Location = new System.Drawing.Point(343, 1);
+            this.textBox_Days.CustomButton.Name = "";
+            this.textBox_Days.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.textBox_Days.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBox_Days.CustomButton.TabIndex = 1;
+            this.textBox_Days.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBox_Days.CustomButton.UseSelectable = true;
+            this.textBox_Days.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textBox_Days.Lines = new string[0];
+            this.textBox_Days.Location = new System.Drawing.Point(6, 281);
+            this.textBox_Days.MaxLength = 32767;
+            this.textBox_Days.Name = "textBox_Days";
+            this.textBox_Days.PasswordChar = '\0';
+            this.textBox_Days.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox_Days.SelectedText = "";
+            this.textBox_Days.SelectionLength = 0;
+            this.textBox_Days.SelectionStart = 0;
+            this.textBox_Days.ShortcutsEnabled = true;
+            this.textBox_Days.ShowButton = true;
+            this.textBox_Days.ShowClearButton = true;
+            this.textBox_Days.Size = new System.Drawing.Size(369, 27);
+            this.textBox_Days.TabIndex = 421;
+            this.textBox_Days.UseSelectable = true;
+            this.textBox_Days.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox_Days.WaterMarkFont = new System.Drawing.Font("Calibri", 9.55F);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBox_LType);
             this.panel2.Location = new System.Drawing.Point(442, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(209, 28);
             this.panel2.TabIndex = 420;
             // 
-            // comboBox1
+            // comboBox_LType
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 23);
-            this.comboBox1.TabIndex = 264;
-            this.comboBox1.Text = "FULL";
+            this.comboBox_LType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
+            this.comboBox_LType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_LType.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_LType.FormattingEnabled = true;
+            this.comboBox_LType.Location = new System.Drawing.Point(3, 2);
+            this.comboBox_LType.Name = "comboBox_LType";
+            this.comboBox_LType.Size = new System.Drawing.Size(203, 23);
+            this.comboBox_LType.TabIndex = 264;
+            this.comboBox_LType.Text = "FULL";
             // 
             // label14
             // 
@@ -1737,7 +1737,7 @@
             this.panel4.ResumeLayout(false);
             this.panelAdmin.ResumeLayout(false);
             this.panelAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGridLicense)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1817,19 +1817,19 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox textBox_Days;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_LType;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_LStatus;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox textBox_MeronName;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.MaskedTextBox textBox_LKey;
+        private System.Windows.Forms.MaskedTextBox textBox_LCode;
+        private System.Windows.Forms.Button button_ClearLM;
         private MetroFramework.Controls.MetroPanel metroPanel13;
-        private System.Windows.Forms.Button button_Search;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private System.Windows.Forms.Button button_Generate;
+        private MetroFramework.Controls.MetroGrid metroGridLicense;
         private MetroFramework.Controls.MetroPanel metroPanel12;
         private MetroFramework.Controls.MetroPanel metroPanel11;
         private System.Windows.Forms.DataGridViewTextBoxColumn LDaysLeft;

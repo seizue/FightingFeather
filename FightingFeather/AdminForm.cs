@@ -857,6 +857,20 @@ namespace FightingFeather
             }
         }
 
-    
+        private void button_License_Click(object sender, EventArgs e)
+        {
+            panelAdmin.Visible = true;
+            button_License.ForeColor = Color.FromArgb(193, 84, 55);
+            button_Access.ForeColor = Color.FromArgb(0, 0, 42);
+        }
+
+        private void button_Access_Click(object sender, EventArgs e)
+        {
+            panelAdmin.Visible = false;
+            panel_AdvanceSettings.Visible = false;
+
+            button_Access.ForeColor = Color.FromArgb(193, 84, 55);
+            button_License.ForeColor = Color.FromArgb(0, 0, 42);
+        }
     }
 }

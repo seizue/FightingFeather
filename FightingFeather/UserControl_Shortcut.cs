@@ -770,37 +770,68 @@ namespace FightingFeather
 
         private void metroTile_ClaimMeron_Click(object sender, EventArgs e)
         {
-            // Get the selected row
-            DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
+            // Check if any row is selected
+            if (GridPlasada_Shortcut.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
 
-            // Get the values from the selected row
-            string fight = selectedRow.Cells["FIGHT"].Value.ToString();
-            string meron = selectedRow.Cells["MERON"].Value.ToString();
-            string betM = selectedRow.Cells["BET_M"].Value.ToString();
+                // Get the values from the selected row if it's not empty
+                string fight = selectedRow.Cells["FIGHT"].Value?.ToString();
+                string meron = selectedRow.Cells["MERON"].Value?.ToString();
+                string betM = selectedRow.Cells["BET_M"].Value?.ToString();
 
-            // Create an instance of ClaimStabMeronForm and pass the values
-            ClaimStabMeronForm claimMeron = new ClaimStabMeronForm(fight, meron, betM);
-            claimMeron.ShowDialog();
+                // Create an instance of ClaimStabMeronForm and pass the values if they are not null or empty
+                if (!string.IsNullOrEmpty(fight) && !string.IsNullOrEmpty(meron) && !string.IsNullOrEmpty(betM))
+                {
+                    ClaimStabMeronForm claimMeron = new ClaimStabMeronForm(fight, meron, betM);
+                    claimMeron.ShowDialog();
+                }
+                else
+                {
+                    // If any of the values is null or empty, display a message or take appropriate action
+                    MessageBox.Show("Some values are missing or empty. Cannot proceed.");
+                }
+            }
+            else
+            {
+                // If no row is selected, display a message or take appropriate action
+                MessageBox.Show("No row is selected.");
+            }
         }
 
         private void metroTile_ClaimWala_Click(object sender, EventArgs e)
         {
-            // Get the selected row
-            DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
+            // Check if any row is selected
+            if (GridPlasada_Shortcut.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = GridPlasada_Shortcut.SelectedRows[0];
 
-            // Get the values from the selected row
-            string fight = selectedRow.Cells["FIGHT"].Value.ToString();
-            string wala = selectedRow.Cells["WALA"].Value.ToString();
-            string betW = selectedRow.Cells["BET_W"].Value.ToString();
+                // Get the values from the selected row if it's not empty
+                string fight = selectedRow.Cells["FIGHT"].Value?.ToString();
+                string wala = selectedRow.Cells["WALA"].Value?.ToString();
+                string betW = selectedRow.Cells["BET_W"].Value?.ToString();
 
-            // Create an instance of ClaimStabWalaForm and pass the values
-            ClaimStabWalaForm claimWala = new ClaimStabWalaForm(fight, wala, betW);
-            claimWala.ShowDialog();
+                // Create an instance of ClaimStabWalaForm and pass the values if they are not null or empty
+                if (!string.IsNullOrEmpty(fight) && !string.IsNullOrEmpty(wala) && !string.IsNullOrEmpty(betW))
+                {
+                    ClaimStabWalaForm claimWala = new ClaimStabWalaForm(fight, wala, betW);
+                    claimWala.ShowDialog();
+                }
+                else
+                {
+                    // If any of the values is null or empty, display a message or take appropriate action
+                    MessageBox.Show("Some values are missing or empty. Cannot proceed.");
+                }
+            }
+            else
+            {
+                // If no row is selected, display a message or take appropriate action
+                MessageBox.Show("No row is selected.");
+            }
         }
 
-        private void metroTile_PrintMunton_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

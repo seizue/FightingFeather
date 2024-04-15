@@ -860,6 +860,7 @@ namespace FightingFeather
         private void button_License_Click(object sender, EventArgs e)
         {
             panelAdmin.Visible = true;
+            panel_BGAddNewUser.Visible = false;
             button_License.ForeColor = Color.FromArgb(193, 84, 55);
             button_Access.ForeColor = Color.FromArgb(0, 0, 42);
         }
@@ -868,9 +869,14 @@ namespace FightingFeather
         {
             panelAdmin.Visible = false;
             panel_AdvanceSettings.Visible = false;
-
+            panel_BGAddNewUser.Visible = false;
             button_Access.ForeColor = Color.FromArgb(193, 84, 55);
             button_License.ForeColor = Color.FromArgb(0, 0, 42);
+
+            label_RegisterUsers.ForeColor = Color.FromArgb(193, 84, 55);
+            label_AdminSettings.ForeColor = Color.FromArgb(64, 64, 64);
+            panel_Indicator.Location = new Point(260, 66);
+            panel_Indicator.Size = new Size(65, 4);
         }
     }
 }

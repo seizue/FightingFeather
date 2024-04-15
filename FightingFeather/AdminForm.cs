@@ -32,8 +32,10 @@ namespace FightingFeather
             sqliteConnection = new SQLiteConnection("Data Source=FFKey.db;Version=3;");
             sqliteConnection.Open();
 
+            CreateFLMTable();
             LoadDataToGrid();
             AdjustColumnWidths();
+            LoadDataFromSQLiteToDataGridView();
 
             // Set raDateTimePicker1 to show the current date
             raDateTimePicker1.Value = DateTime.Today;
@@ -46,9 +48,31 @@ namespace FightingFeather
             // Subscribe to the CellFormatting event
             Grid_RegisterUsers.CellFormatting += Grid_RegisterUsers_CellFormatting;
 
+            // Attach GridLicense_CellFormatting method to the CellFormatting event
+            GridLicense.CellFormatting += GridLicense_CellFormatting;
+
             //Subscribe to the CellPainting event
             Grid_RegisterUsers.CellPainting += Grid_RegisterUsers_CellPainting;
 
+        }
+
+        private void CreateFLMTable()
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(sqliteConnection))
+            {
+                cmd.CommandText = @"CREATE TABLE IF NOT EXISTS FLM (
+                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            ExperienceDays INTEGER,
+                            ExpirationDate DATE,
+                            LicenseCode TEXT,
+                            LicenseKey TEXT,
+                            LicenseType TEXT,
+                            LicenseStatus TEXT,
+                            CreatedDate DATE
+                        )";
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
 
@@ -731,7 +755,7 @@ namespace FightingFeather
                 Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
 
                 // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
                 {
                     // Calculate the position of the divider line
                     int x = e.CellBounds.Right - 1;
@@ -752,7 +776,7 @@ namespace FightingFeather
                 Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
 
                 // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
                 {
                     // Calculate the position of the divider line
                     int x = e.CellBounds.Right - 1;
@@ -773,7 +797,7 @@ namespace FightingFeather
                 Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
 
                 // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
                 {
                     // Calculate the position of the divider line
                     int x = e.CellBounds.Right - 1;
@@ -794,7 +818,7 @@ namespace FightingFeather
                 Color dividerColor = Color.FromArgb(236, 237, 240); // Change this to your desired color
 
                 // Draw the divider line
-                using (Pen dividerPen = new Pen(dividerColor, 3)) // Set the width of the divider
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
                 {
                     // Calculate the position of the divider line
                     int x = e.CellBounds.Right - 1;
@@ -985,15 +1009,15 @@ namespace FightingFeather
             DateTime expirationDate = DateTime.Today.AddDays(days);
 
             // Calculate the days left until expiration
-            int daysLeft = (int)(expirationDate.Date - DateTime.Today.Date).TotalDays;
+            int experienceDays = (int)(expirationDate.Date - DateTime.Today.Date).TotalDays;
 
             // Determine the status based on the days left
             string status = "";
-            if (daysLeft <= 0)
+            if (experienceDays <= 0)
             {
                 status = "EXPIRED";
             }
-            else if (daysLeft <= 5)
+            else if (experienceDays <= 5)
             {
                 status = "NEAR EXPIRY";
             }
@@ -1004,15 +1028,183 @@ namespace FightingFeather
 
             // Adding a new row with generated details
             gridLicense.Rows.Add(
-                daysLeft,                               // LDaysLeft column (days left until expiration)
-                expirationDate.ToString("yyyy-MM-dd"), // LExpirationDate column (expiration date)
-                licenseCode,                          // LCode column (license code)
+                experienceDays,                           // LDaysLeft column (days left until expiration)
+                expirationDate.ToString("yyyy-MM-dd"),   // LExpirationDate column (expiration date)
+                licenseCode,                            // LCode column (license code)
                 licenseKey,                            // LKey column (license key)
-                comboBox_LType.Text,                 // License type (TRIAL or FULL)    
+                comboBox_LType.Text,                  // License type (TRIAL or FULL)    
                 status,                              // License status (ACTIVATED, EXPIRED, NEAR EXPIRY)
                 DateTime.Now.ToString("yyyy-MM-dd") // LCreated column (current date)
-              
+
             );
+
+            // Insert the generated details into the SQLite database
+            InsertDataIntoFLM(experienceDays, expirationDate, licenseCode, licenseKey, comboBox_LType.Text, status);
         }
+
+        private void InsertDataIntoFLM(int experienceDays, DateTime expirationDate, string licenseCode, string licenseKey, string licenseType, string licenseStatus)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(sqliteConnection))
+            {
+                cmd.CommandText = @"INSERT INTO FLM (ExperienceDays, ExpirationDate, LicenseCode, LicenseKey, LicenseType, LicenseStatus, CreatedDate) 
+                            VALUES (@ExperienceDays, @ExpirationDate, @LicenseCode, @LicenseKey, @LicenseType, @LicenseStatus, @CreatedDate)";
+                cmd.Parameters.AddWithValue("@ExperienceDays", experienceDays);
+                cmd.Parameters.AddWithValue("@ExpirationDate", expirationDate);
+                cmd.Parameters.AddWithValue("@LicenseCode", licenseCode);
+                cmd.Parameters.AddWithValue("@LicenseKey", licenseKey);
+                cmd.Parameters.AddWithValue("@LicenseType", licenseType);
+                cmd.Parameters.AddWithValue("@LicenseStatus", licenseStatus);
+                cmd.Parameters.AddWithValue("@CreatedDate", DateTime.Today); // Use DateTime.Today to get only the date portion
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void LoadDataFromSQLiteToDataGridView()
+        {
+            // Clear existing rows in the DataGridView
+            GridLicense.Rows.Clear();
+
+            // Check if the FLM table exists
+            bool flmTableExists = CheckIfFLMTableExists();
+
+            if (flmTableExists)
+            {
+                // Connect to the SQLite database
+                using (SQLiteCommand cmd = new SQLiteCommand(sqliteConnection))
+                {
+                    // Define the SQL query to retrieve data from the FLM table
+                    cmd.CommandText = "SELECT * FROM FLM";
+
+                    // Execute the query
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        // Read the results and populate the DataGridView
+                        while (reader.Read())
+                        {
+                            int experienceDays = reader.GetInt32(reader.GetOrdinal("ExperienceDays"));
+                            DateTime expirationDate = reader.GetDateTime(reader.GetOrdinal("ExpirationDate"));
+                            string licenseCode = reader.GetString(reader.GetOrdinal("LicenseCode"));
+                            string licenseKey = reader.GetString(reader.GetOrdinal("LicenseKey"));
+                            string licenseType = reader.GetString(reader.GetOrdinal("LicenseType"));
+                            string licenseStatus = reader.GetString(reader.GetOrdinal("LicenseStatus"));
+                            DateTime createdDate = reader.GetDateTime(reader.GetOrdinal("CreatedDate"));
+
+                            // Determine the status based on the days left
+                            string status = "";
+                            if (expirationDate.Date < DateTime.Today)
+                            {
+                                status = "EXPIRED";
+                            }
+                            else if (expirationDate.Date <= DateTime.Today.AddDays(5))
+                            {
+                                status = "NEAR EXPIRY";
+                            }
+                            else
+                            {
+                                status = "ACTIVATED";
+                            }
+
+                            // Add the data to the DataGridView
+                            GridLicense.Rows.Add(
+                                experienceDays,
+                                expirationDate.ToString("yyyy-MM-dd"),
+                                licenseCode,
+                                licenseKey,
+                                licenseType,
+                                status,
+                                createdDate.ToString("yyyy-MM-dd")
+                            );
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // If the FLM table does not exist, show the DataGridView with empty rows
+                // Add empty rows to the DataGridView
+                const int numberOfEmptyRows = 10; // You can adjust the number of empty rows as needed
+                for (int i = 0; i < numberOfEmptyRows; i++)
+                {
+                    GridLicense.Rows.Add();
+                }
+            }
+
+            // Ensure the DataGridView is visible
+            GridLicense.Visible = true;
+        }
+
+        private bool CheckIfFLMTableExists()
+        {
+            // Check if the FLM table exists in the database
+            using (SQLiteCommand cmd = new SQLiteCommand("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='FLM'", sqliteConnection))
+            {
+                long count = (long)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        private void GridLicense_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == GridLicense.Columns["LStatus"].Index)
+            {
+                string status = e.Value.ToString();
+
+                // Set cell color based on status
+                switch (status)
+                {
+                    case "EXPIRED":
+                        e.CellStyle.ForeColor = Color.Salmon;
+                        break;
+                    case "NEAR EXPIRY":
+                        e.CellStyle.ForeColor = Color.DarkGoldenrod;
+                        break;
+                    case "ACTIVATED":
+                        e.CellStyle.ForeColor = Color.SeaGreen;
+                        break;
+                    default:
+                        // If the status doesn't match any case, keep the default color
+                        break;
+                }
+            }
+
+            if (GridLicense.Columns[e.ColumnIndex].Name == "LICENSE CODE")
+            {
+                // Set the padding for the header cell
+                GridLicense.Columns[e.ColumnIndex].HeaderCell.Style.Padding = new Padding(10, 4, 0, 4);
+                // Ensure the column width accommodates the padding
+                GridLicense.Columns[e.ColumnIndex].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            }
+
+        }
+
+        private void GridLicense_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            // Define the columns for which you want to draw the divider line
+            string[] columnsToDrawDivider = { "EXPERIENCE DAYS", "LICENSE CODE", "LICENSE KEY", "LICENSE TYPE", "STATUS" };
+
+            // Check if the current cell is in one of the specified columns
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && columnsToDrawDivider.Contains(GridLicense.Columns[e.ColumnIndex].HeaderText))
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+
+                // Define the custom color for the divider
+                Color dividerColor = Color.FromArgb(236, 237, 240); 
+
+                // Draw the divider line
+                using (Pen dividerPen = new Pen(dividerColor, 1)) // Set the width of the divider
+                {
+                    // Calculate the position of the divider line
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+
+                    e.Graphics.DrawLine(dividerPen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
+        }
+
     }
 }

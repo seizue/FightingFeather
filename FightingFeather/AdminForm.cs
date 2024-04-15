@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework.Controls;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FightingFeather
 {
     public partial class AdminForm : MetroFramework.Forms.MetroForm
@@ -20,21 +22,26 @@ namespace FightingFeather
         private string databaseName = "FFkey.db";
         private string connectionString;
 
-        private string securityKey = "1727";
+        private string securityKey = "8885341727";
 
         public AdminForm()
         {
             InitializeComponent();
             connectionString = $"Data Source={databaseName};Version=3;";
 
-            // Set raDateTimePicker1 to show the current date
-            raDateTimePicker1.Value = DateTime.Today;
-
             sqliteConnection = new SQLiteConnection("Data Source=FFKey.db;Version=3;");
             sqliteConnection.Open();
 
+            LoadDataToGrid();
+            AdjustColumnWidths();
+
+            // Set raDateTimePicker1 to show the current date
+            raDateTimePicker1.Value = DateTime.Today;
+            raDateTimePicker2.Value = DateTime.Today;
+
             // Populate the ComboBox with options
             comboBox_Status.Items.AddRange(new object[] { "N/A", "ACTIVE", "SUSPENDED" });
+            comboBox_LType.Items.AddRange(new object[] { "FULL", "TRIAL" });   
 
             // Subscribe to the CellFormatting event
             Grid_RegisterUsers.CellFormatting += Grid_RegisterUsers_CellFormatting;
@@ -877,6 +884,135 @@ namespace FightingFeather
             label_AdminSettings.ForeColor = Color.FromArgb(64, 64, 64);
             panel_Indicator.Location = new Point(260, 66);
             panel_Indicator.Size = new Size(65, 4);
+        }
+
+        private void AdjustColumnWidths()
+        {
+            // Accessing the DataGridView
+            MetroGrid gridLicense = GridLicense;
+
+            // Adjusting the width of the LCode column
+            gridLicense.Columns["LCode"].Width = 200; // Adjust the width as needed
+
+            // Adjusting the width of the LKey column
+            gridLicense.Columns["LKey"].Width = 200; // Adjust the width as needed
+        }
+
+        private void comboBox_LType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Accessing the DataGridView
+            MetroGrid gridLicense = GridLicense;
+
+            // Updating the License Type column in the DataGridView
+            foreach (DataGridViewRow row in gridLicense.Rows)
+            {
+                row.Cells["LType"].Value = comboBox_LType.Text;
+            }
+        }
+
+        private void comboBox_LStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Accessing the DataGridView
+            MetroGrid gridLicense = GridLicense;
+
+            // Updating the License Status column in the DataGridView
+            foreach (DataGridViewRow row in gridLicense.Rows)
+            {
+                row.Cells["LStatus"].Value = comboBox_LStatus.Text;
+            }
+        }
+
+
+        // Method to generate a random string of given length
+        private string GenerateRandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        // Method to insert dashes every 5 characters in a string
+        private string InsertDashes(string str)
+        {
+            return string.Join("-", Enumerable.Range(0, str.Length / 5)
+                .Select(i => str.Substring(i * 5, 5)));
+        }
+
+        private void button_Generate_Click(object sender, EventArgs e)
+        {
+            // Generate random license code
+            string licenseCode = GenerateRandomString(25);
+            // Insert dashes every 5 characters
+            licenseCode = InsertDashes(licenseCode);
+
+            // Generate random license key
+            string licenseKey = GenerateRandomString(25);
+            // Insert dashes every 5 characters
+            licenseKey = InsertDashes(licenseKey);
+
+            // Ensure license code and key are different
+            while (licenseCode == licenseKey)
+            {
+                licenseKey = GenerateRandomString(25);
+                licenseKey = InsertDashes(licenseKey);
+            }
+
+            // Get the number of days from textBox_Days
+            if (int.TryParse(textBox_Days.Text, out int days))
+            {
+                // Display generated code, key, and expiration date in text boxes
+                textBox_LCode.Text = licenseCode;
+                textBox_LKey.Text = licenseKey;
+
+                // Add the generated details to the DataGridView
+                AddRowToDataGridView(days, licenseKey, licenseCode);
+            }
+            else
+            {
+                // Handle invalid input for number of days
+                MessageBox.Show("Please enter a valid number of days.");
+            }
+        }
+
+
+        private void AddRowToDataGridView(int days, string licenseKey, string licenseCode)
+        {
+            // Accessing the DataGridView
+            MetroGrid gridLicense = GridLicense;
+
+            // Calculate the expiration date based on the number of days from textBox_Days
+            DateTime expirationDate = DateTime.Today.AddDays(days);
+
+            // Calculate the days left until expiration
+            int daysLeft = (int)(expirationDate.Date - DateTime.Today.Date).TotalDays;
+
+            // Determine the status based on the days left
+            string status = "";
+            if (daysLeft <= 0)
+            {
+                status = "EXPIRED";
+            }
+            else if (daysLeft <= 5)
+            {
+                status = "NEAR EXPIRY";
+            }
+            else
+            {
+                status = "ACTIVATED";
+            }
+
+            // Adding a new row with generated details
+            gridLicense.Rows.Add(
+                daysLeft,                               // LDaysLeft column (days left until expiration)
+                expirationDate.ToString("yyyy-MM-dd"), // LExpirationDate column (expiration date)
+                licenseCode,                          // LCode column (license code)
+                licenseKey,                            // LKey column (license key)
+                comboBox_LType.Text,                 // License type (TRIAL or FULL)    
+                status,                              // License status (ACTIVATED, EXPIRED, NEAR EXPIRY)
+                DateTime.Now.ToString("yyyy-MM-dd") // LCreated column (current date)
+              
+            );
         }
     }
 }

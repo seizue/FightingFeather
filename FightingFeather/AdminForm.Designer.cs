@@ -43,13 +43,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_License = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -93,6 +93,7 @@
             this.button_CloseRegForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label_Dis = new System.Windows.Forms.Label();
+            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.button_SaveNewUser = new System.Windows.Forms.Button();
             this.button_ClearFields = new System.Windows.Forms.Button();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -114,6 +115,8 @@
             this.button_CheckPass = new System.Windows.Forms.Button();
             this.button_AddNewUser = new System.Windows.Forms.Button();
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
+            this.buttonRemoveLicense = new System.Windows.Forms.Button();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.GridLicense = new MetroFramework.Controls.MetroGrid();
             this.button_Generate = new System.Windows.Forms.Button();
@@ -129,22 +132,19 @@
             this.textBox_Days = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox_LType = new System.Windows.Forms.ComboBox();
+            this.raDateTimePicker2 = new FightingFeather.RaDateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
-            this.raDateTimePicker2 = new FightingFeather.RaDateTimePicker();
-            this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
-            this.LDaysLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LExpiry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LExpiry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LDaysLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -936,6 +936,23 @@
             this.label_Dis.TabIndex = 394;
             this.label_Dis.Text = "REGISTRATION FORM\r\n";
             // 
+            // raDateTimePicker1
+            // 
+            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker1.BorderSize = 0;
+            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker1.Location = new System.Drawing.Point(450, 39);
+            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker1.Name = "raDateTimePicker1";
+            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
+            this.raDateTimePicker1.TabIndex = 393;
+            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            // 
             // button_SaveNewUser
             // 
             this.button_SaveNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1231,7 +1248,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAdmin.Controls.Add(this.metroPanel15);
-            this.panelAdmin.Controls.Add(this.button1);
+            this.panelAdmin.Controls.Add(this.buttonRemoveLicense);
             this.panelAdmin.Controls.Add(this.metroPanel11);
             this.panelAdmin.Controls.Add(this.GridLicense);
             this.panelAdmin.Controls.Add(this.button_Generate);
@@ -1255,6 +1272,44 @@
             this.panelAdmin.Size = new System.Drawing.Size(1051, 622);
             this.panelAdmin.TabIndex = 398;
             this.panelAdmin.Visible = false;
+            // 
+            // metroPanel15
+            // 
+            this.metroPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel15.HorizontalScrollbarBarColor = true;
+            this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel15.HorizontalScrollbarSize = 10;
+            this.metroPanel15.Location = new System.Drawing.Point(6, 250);
+            this.metroPanel15.Name = "metroPanel15";
+            this.metroPanel15.Size = new System.Drawing.Size(1039, 1);
+            this.metroPanel15.TabIndex = 440;
+            this.metroPanel15.UseCustomBackColor = true;
+            this.metroPanel15.UseStyleColors = true;
+            this.metroPanel15.VerticalScrollbarBarColor = true;
+            this.metroPanel15.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel15.VerticalScrollbarSize = 10;
+            // 
+            // buttonRemoveLicense
+            // 
+            this.buttonRemoveLicense.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonRemoveLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonRemoveLicense.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.buttonRemoveLicense.FlatAppearance.BorderSize = 2;
+            this.buttonRemoveLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRemoveLicense.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.buttonRemoveLicense.ForeColor = System.Drawing.Color.MintCream;
+            this.buttonRemoveLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRemoveLicense.Location = new System.Drawing.Point(483, 302);
+            this.buttonRemoveLicense.Name = "buttonRemoveLicense";
+            this.buttonRemoveLicense.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.buttonRemoveLicense.Size = new System.Drawing.Size(212, 29);
+            this.buttonRemoveLicense.TabIndex = 439;
+            this.buttonRemoveLicense.Text = "REMOVE";
+            this.buttonRemoveLicense.UseVisualStyleBackColor = false;
+            this.buttonRemoveLicense.Click += new System.EventHandler(this.buttonRemoveLicense_Click);
             // 
             // metroPanel11
             // 
@@ -1530,6 +1585,22 @@
             this.comboBox_LType.TabIndex = 264;
             this.comboBox_LType.Text = "FULL";
             // 
+            // raDateTimePicker2
+            // 
+            this.raDateTimePicker2.BorderColor = System.Drawing.Color.Black;
+            this.raDateTimePicker2.BorderSize = 0;
+            this.raDateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.raDateTimePicker2.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.raDateTimePicker2.FillColor = System.Drawing.Color.White;
+            this.raDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raDateTimePicker2.Location = new System.Drawing.Point(740, 95);
+            this.raDateTimePicker2.MinimumSize = new System.Drawing.Size(4, 35);
+            this.raDateTimePicker2.Name = "raDateTimePicker2";
+            this.raDateTimePicker2.Size = new System.Drawing.Size(228, 35);
+            this.raDateTimePicker2.TabIndex = 419;
+            this.raDateTimePicker2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.raDateTimePicker2.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -1601,92 +1672,41 @@
             this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel14.VerticalScrollbarSize = 10;
             // 
-            // raDateTimePicker2
+            // LCreated
             // 
-            this.raDateTimePicker2.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker2.BorderSize = 0;
-            this.raDateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker2.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.raDateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker2.Location = new System.Drawing.Point(740, 95);
-            this.raDateTimePicker2.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker2.Name = "raDateTimePicker2";
-            this.raDateTimePicker2.Size = new System.Drawing.Size(228, 35);
-            this.raDateTimePicker2.TabIndex = 419;
-            this.raDateTimePicker2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker2.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            this.LCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LCreated.DefaultCellStyle = dataGridViewCellStyle19;
+            this.LCreated.HeaderText = "CREATED";
+            this.LCreated.Name = "LCreated";
             // 
-            // raDateTimePicker1
+            // LStatus
             // 
-            this.raDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raDateTimePicker1.BorderColor = System.Drawing.Color.Black;
-            this.raDateTimePicker1.BorderSize = 0;
-            this.raDateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.raDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.raDateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.raDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raDateTimePicker1.Location = new System.Drawing.Point(450, 39);
-            this.raDateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.raDateTimePicker1.Name = "raDateTimePicker1";
-            this.raDateTimePicker1.Size = new System.Drawing.Size(228, 35);
-            this.raDateTimePicker1.TabIndex = 393;
-            this.raDateTimePicker1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
-            this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
+            this.LStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LStatus.DefaultCellStyle = dataGridViewCellStyle18;
+            this.LStatus.HeaderText = "STATUS";
+            this.LStatus.Name = "LStatus";
             // 
-            // button1
+            // LType
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(136)))), ((int)(((byte)(43)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(65)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(483, 302);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(212, 29);
-            this.button1.TabIndex = 439;
-            this.button1.Text = "UPDATE";
-            this.button1.UseVisualStyleBackColor = false;
+            this.LType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LType.DefaultCellStyle = dataGridViewCellStyle17;
+            this.LType.HeaderText = "LICENSE TYPE";
+            this.LType.Name = "LType";
             // 
-            // metroPanel15
+            // LKey
             // 
-            this.metroPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel15.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel15.HorizontalScrollbarBarColor = true;
-            this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel15.HorizontalScrollbarSize = 10;
-            this.metroPanel15.Location = new System.Drawing.Point(6, 250);
-            this.metroPanel15.Name = "metroPanel15";
-            this.metroPanel15.Size = new System.Drawing.Size(1039, 1);
-            this.metroPanel15.TabIndex = 440;
-            this.metroPanel15.UseCustomBackColor = true;
-            this.metroPanel15.UseStyleColors = true;
-            this.metroPanel15.VerticalScrollbarBarColor = true;
-            this.metroPanel15.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel15.VerticalScrollbarSize = 10;
-            // 
-            // LDaysLeft
-            // 
-            this.LDaysLeft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.LDaysLeft.DefaultCellStyle = dataGridViewCellStyle13;
-            this.LDaysLeft.HeaderText = "EXPERIENCE DAYS";
-            this.LDaysLeft.Name = "LDaysLeft";
-            // 
-            // LExpiry
-            // 
-            this.LExpiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LExpiry.DefaultCellStyle = dataGridViewCellStyle14;
-            this.LExpiry.DividerWidth = 3;
-            this.LExpiry.HeaderText = "EXPIRY DATE";
-            this.LExpiry.Name = "LExpiry";
+            this.LKey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LKey.DefaultCellStyle = dataGridViewCellStyle16;
+            this.LKey.FillWeight = 91.15936F;
+            this.LKey.HeaderText = "LICENSE KEY";
+            this.LKey.Name = "LKey";
             // 
             // LCode
             // 
@@ -1698,41 +1718,22 @@
             this.LCode.HeaderText = "LICENSE CODE";
             this.LCode.Name = "LCode";
             // 
-            // LKey
+            // LExpiry
             // 
-            this.LKey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LKey.DefaultCellStyle = dataGridViewCellStyle16;
-            this.LKey.FillWeight = 91.15936F;
-            this.LKey.HeaderText = "LICENSE KEY";
-            this.LKey.Name = "LKey";
+            this.LExpiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LExpiry.DefaultCellStyle = dataGridViewCellStyle14;
+            this.LExpiry.DividerWidth = 3;
+            this.LExpiry.HeaderText = "EXPIRY DATE";
+            this.LExpiry.Name = "LExpiry";
             // 
-            // LType
+            // LDaysLeft
             // 
-            this.LType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LType.DefaultCellStyle = dataGridViewCellStyle17;
-            this.LType.HeaderText = "LICENSE TYPE";
-            this.LType.Name = "LType";
-            // 
-            // LStatus
-            // 
-            this.LStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LStatus.DefaultCellStyle = dataGridViewCellStyle18;
-            this.LStatus.HeaderText = "STATUS";
-            this.LStatus.Name = "LStatus";
-            // 
-            // LCreated
-            // 
-            this.LCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LCreated.DefaultCellStyle = dataGridViewCellStyle19;
-            this.LCreated.HeaderText = "CREATED";
-            this.LCreated.Name = "LCreated";
+            this.LDaysLeft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.LDaysLeft.DefaultCellStyle = dataGridViewCellStyle13;
+            this.LDaysLeft.HeaderText = "EXPERIENCE DAYS";
+            this.LDaysLeft.Name = "LDaysLeft";
             // 
             // AdminForm
             // 
@@ -1871,7 +1872,7 @@
         private MetroFramework.Controls.MetroPanel metroPanel11;
         private RaDateTimePicker raDateTimePicker2;
         private MetroFramework.Controls.MetroPanel metroPanel14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRemoveLicense;
         private MetroFramework.Controls.MetroPanel metroPanel15;
         private System.Windows.Forms.DataGridViewTextBoxColumn LDaysLeft;
         private System.Windows.Forms.DataGridViewTextBoxColumn LExpiry;

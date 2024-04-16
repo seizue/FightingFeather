@@ -43,7 +43,7 @@ namespace FightingFeather
 
             // Populate the ComboBox with options
             comboBox_Status.Items.AddRange(new object[] { "N/A", "ACTIVE", "SUSPENDED" });
-            comboBox_LType.Items.AddRange(new object[] { "FULL", "TRIAL" });   
+            comboBox_LType.Items.AddRange(new object[] { "FULL", "TRIAL", "BUFFER DAYS" });   
 
             // Subscribe to the CellFormatting event
             Grid_RegisterUsers.CellFormatting += Grid_RegisterUsers_CellFormatting;
@@ -969,6 +969,58 @@ namespace FightingFeather
             }
         }
 
+        private void buttonRemoveLicense_Click(object sender, EventArgs e)
+        {
+            // Accessing the DataGridView
+            MetroGrid gridLicense = GridLicense;
+
+            // Check if any cell is selected
+            if (gridLicense.SelectedCells.Count > 0)
+            {
+                // Get the selected cell
+                DataGridViewCell selectedCell = gridLicense.SelectedCells[0];
+
+                // Get the selected row
+                DataGridViewRow selectedRow = gridLicense.Rows[selectedCell.RowIndex];
+
+                // Retrieve the license code and key from the selected row
+                string licenseCode = selectedRow.Cells["LCode"].Value.ToString();
+                string licenseKey = selectedRow.Cells["LKey"].Value.ToString();
+
+                // Connect to the SQLite database
+                using (SQLiteCommand cmd = new SQLiteCommand(sqliteConnection))
+                {
+                    // Define the SQL query to delete the row from the FLM table based on license code and key
+                    cmd.CommandText = "DELETE FROM FLM WHERE LicenseCode = @LicenseCode AND LicenseKey = @LicenseKey";
+                    cmd.Parameters.AddWithValue("@LicenseCode", licenseCode);
+                    cmd.Parameters.AddWithValue("@LicenseKey", licenseKey);
+
+                    // Execute the query
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // Check if any row was deleted
+                    if (rowsAffected > 0)
+                    {
+                        // Remove the selected row from the DataGridView
+                        gridLicense.Rows.Remove(selectedRow);
+
+                        // Inform the user
+                        MessageBox.Show("License removed successfully.");
+                    }
+                    else
+                    {
+                        // If no rows were affected, inform the user that the license was not found
+                        MessageBox.Show("License not found in the database.");
+                    }
+                }
+            }
+            else
+            {
+                // If no cell is selected, inform the user to select a cell first
+                MessageBox.Show("Please select a cell to remove the license.");
+            }
+        }
+
 
         private void Grid_RegisterUsers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -1146,5 +1198,6 @@ namespace FightingFeather
                 button_SaveNewPassword_Click(sender, e);
             }
         }
+
     }
 }

@@ -272,7 +272,7 @@
             // 
             this.labelExpiry.AutoSize = true;
             this.labelExpiry.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExpiry.ForeColor = System.Drawing.Color.Tomato;
+            this.labelExpiry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelExpiry.Location = new System.Drawing.Point(175, 129);
             this.labelExpiry.Name = "labelExpiry";
             this.labelExpiry.Size = new System.Drawing.Size(75, 15);

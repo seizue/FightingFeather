@@ -38,6 +38,8 @@ namespace FightingFeather
         {
             try
             {
+                bool validLicenseFound = false; // Flag to track if a valid license is found
+
                 // Open connection to SQLite database
                 using (sqliteConnection = new SQLiteConnection(connectionString))
                 {
@@ -53,7 +55,7 @@ namespace FightingFeather
                         using (SQLiteDataReader reader = command.ExecuteReader())
                         {
                             // Check if there are rows returned
-                            if (reader.Read())
+                            while (reader.Read())
                             {
                                 // Get the values from the columns
                                 string expirationDateString = reader["ExpirationDate"].ToString();
@@ -65,41 +67,37 @@ namespace FightingFeather
                                 // Parse expiration date from string
                                 DateTime expirationDate = DateTime.Parse(expirationDateString);
 
-                                // Calculate remaining days
-                                TimeSpan remainingTime = expirationDate - DateTime.Now;
-                                int remainingDays = (int)Math.Ceiling(remainingTime.TotalDays);
+                                // Check if the license is still valid
+                                if (expirationDate > DateTime.Now)
+                                {
+                                    // Calculate remaining days
+                                    TimeSpan remainingTime = expirationDate - DateTime.Now;
+                                    int remainingDays = (int)Math.Ceiling(remainingTime.TotalDays);
 
-                                // Update the labels with the retrieved data
-                                labelExpiry.Text = expirationDate.ToShortDateString();
-                                labelStatus.Text = licenseStatus;
-                                labelDaysLeft.Text = $"{remainingDays}";
-                                labelType.Text = licenseType; // Set the license type label
+                                    // Update the labels with the retrieved data
+                                    labelExpiry.Text = expirationDate.ToShortDateString();
+                                    labelStatus.Text = licenseStatus;
+                                    labelDaysLeft.Text = $"{remainingDays}";
+                                    labelType.Text = licenseType; // Set the license type label
 
-                                // Save activation status to settings
-                                Properties.Settings.Default.IsLicenseActivated = true;
-                                Properties.Settings.Default.Save(); // Save the settings
+                                    // Save activation status to settings
+                                    Properties.Settings.Default.IsLicenseActivated = true;
+                                    Properties.Settings.Default.Save(); // Save the settings
 
-                            }
-                            else
-                            {
-                                // Handle case where no rows are returned
-                                labelExpiry.Text = "No data found";
-                                labelStatus.Text = "No data found";
-                                labelDaysLeft.Text = "No data found";
-                                labelType.Text = "No data found"; // Set license type label to no data found
+                                    validLicenseFound = true; // Set flag indicating a valid license is found
 
-                                // Hide Label texts
-                                labelExpiry.Visible = false;
-                                labelStatus.Visible = false;
-                                labelDaysLeft.Visible = false;
-                                labelType.Visible = false; // Hide the label for license type
-
-                                // Set license activation status to false
-                                Properties.Settings.Default.IsLicenseActivated = false;
-                                Properties.Settings.Default.Save(); // Save the settings
+                                    // Exit the loop after loading the first valid license
+                                    break;
+                                }
                             }
                         }
                     }
+                }
+
+                // If no valid license is found, display a message box
+                if (!validLicenseFound)
+                {
+                    MessageBox.Show("License expired."); // Show message box indicating license expiration
                 }
             }
             catch (Exception ex)
@@ -108,6 +106,7 @@ namespace FightingFeather
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         private void UserControl_SettingsLicense_Load(object sender, EventArgs e)
         {

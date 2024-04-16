@@ -32,7 +32,6 @@ namespace FightingFeather
             sqliteConnection = new SQLiteConnection("Data Source=FFKey.db;Version=3;");
             sqliteConnection.Open();
 
-            CreateFLMTable();
             LoadDataToGrid();
             AdjustColumnWidths();
             LoadDataFromSQLiteToDataGridView();
@@ -54,25 +53,6 @@ namespace FightingFeather
             //Subscribe to the CellPainting event
             Grid_RegisterUsers.CellPainting += Grid_RegisterUsers_CellPainting;
 
-        }
-
-        private void CreateFLMTable()
-        {
-            using (SQLiteCommand cmd = new SQLiteCommand(sqliteConnection))
-            {
-                cmd.CommandText = @"CREATE TABLE IF NOT EXISTS FLM (
-                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                            ExperienceDays INTEGER,
-                            ExpirationDate DATE,
-                            LicenseCode TEXT,
-                            LicenseKey TEXT,
-                            LicenseType TEXT,
-                            LicenseStatus TEXT,
-                            CreatedDate DATE
-                        )";
-
-                cmd.ExecuteNonQuery();
-            }
         }
 
 

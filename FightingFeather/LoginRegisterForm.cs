@@ -282,6 +282,7 @@ namespace FightingFeather
 
                 string checkAccountRegisteredTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='AccountRegistered'";
                 string checkAdminTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='Admin'";
+                string checkFLMTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='FLM'";
 
                 SQLiteCommand command1 = new SQLiteCommand(checkAccountRegisteredTableExists, connection);
                 int accountRegisteredTableExists = Convert.ToInt32(command1.ExecuteScalar());
@@ -289,16 +290,19 @@ namespace FightingFeather
                 SQLiteCommand command2 = new SQLiteCommand(checkAdminTableExists, connection);
                 int adminTableExists = Convert.ToInt32(command2.ExecuteScalar());
 
+                SQLiteCommand command3 = new SQLiteCommand(checkFLMTableExists, connection);
+                int flmTableExists = Convert.ToInt32(command3.ExecuteScalar());
+
                 if (accountRegisteredTableExists == 0)
                 {
                     string createAccountRegisteredTable = @"CREATE TABLE AccountRegistered (
-                                                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                    Name TEXT,
-                                                    Username TEXT,
-                                                    Password TEXT,
-                                                    Status TEXT,
-                                                    Date INTEGER
-                                                )";
+                                           ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                           Name TEXT,
+                                           Username TEXT,
+                                           Password TEXT,
+                                           Status TEXT,
+                                           Date INTEGER
+                                       )";
                     SQLiteCommand createCommand1 = new SQLiteCommand(createAccountRegisteredTable, connection);
                     createCommand1.ExecuteNonQuery();
                 }
@@ -307,10 +311,10 @@ namespace FightingFeather
                 {
                     // If Admin table doesn't exist, create it
                     string createAdminTable = @"CREATE TABLE Admin (
-                                ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                                Username TEXT,
-                                Password TEXT
-                            )";
+                       ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                       Username TEXT,
+                       Password TEXT
+                   )";
                     SQLiteCommand createCommand2 = new SQLiteCommand(createAdminTable, connection);
                     createCommand2.ExecuteNonQuery();
                 }
@@ -325,12 +329,29 @@ namespace FightingFeather
                     {
                         // If Admin table exists but is empty, insert new records
                         string insertAdminData = @"
-        INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__');
-        INSERT INTO Admin (Username, Password) VALUES ('master', '888534master17__!&');
-        ";
+                    INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__');
+                    INSERT INTO Admin (Username, Password) VALUES ('master', '888534master17__!&');
+                    ";
                         SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
                         insertCommand.ExecuteNonQuery();
                     }
+                }
+
+                if (flmTableExists == 0)
+                {
+                    // If FLM table doesn't exist, create it
+                    string createFLMTable = @"CREATE TABLE FLM (
+                       ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                       ExperienceDays INTEGER,
+                       ExpirationDate DATE,
+                       LicenseCode TEXT,
+                       LicenseKey TEXT,
+                       LicenseType TEXT,
+                       LicenseStatus TEXT,
+                       CreatedDate DATE
+                   )";
+                    SQLiteCommand createCommand3 = new SQLiteCommand(createFLMTable, connection);
+                    createCommand3.ExecuteNonQuery();
                 }
             }
         }

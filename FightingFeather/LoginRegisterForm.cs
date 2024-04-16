@@ -259,16 +259,6 @@ namespace FightingFeather
           Application.Exit();
         }
 
-        private void LoginRegisterForm_Load(object sender, EventArgs e)
-        {
-            if (!File.Exists(databaseName))
-            {
-                CreateDatabase();
-            }
-            CreateTablesIfNotExist();
-        }
-
-
         private void CreateDatabase()
         {
             SQLiteConnection.CreateFile(databaseName);
@@ -355,6 +345,94 @@ namespace FightingFeather
                 }
             }
         }
+
+        private void LoginRegisterForm_Load(object sender, EventArgs e)
+        {
+            if (!File.Exists(databaseName))
+            {
+                CreateDatabase();
+            }
+            CreateTablesIfNotExist();
+
+            // Check if FLM data exists before inserting
+            if (!FLMDataExists("FREE TRIAL", "FREE TRIAL", DateTime.Now, 15))
+            {
+                // Insert FLM data
+                InsertFLMData("FREE TRIAL", "FREE TRIAL", DateTime.Now, 15);
+            }
+        }
+
+        private void InsertFLMData(string licenseType, string licenseStatus, DateTime createdDate, int experienceDays)
+        {
+            // Define the SQL query to insert data into the FLM table
+            string query = "INSERT INTO FLM (LicenseType, LicenseStatus, CreatedDate, ExperienceDays, ExpirationDate, LicenseCode, LicenseKey) " +
+                           "VALUES (@LicenseType, @LicenseStatus, @CreatedDate, @ExperienceDays, @ExpirationDate, @LicenseCode, @LicenseKey)";
+
+            // Calculate the expiration date based on the created date and experience days
+            DateTime expirationDate = createdDate.AddDays(experienceDays);
+
+            // Define the LicenseCode and LicenseKey
+            string licenseCode = "Fighting-Feather";
+            string licenseKey = "Fighting-Feather";
+
+            // Create a connection to the database
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                // Open the connection
+                connection.Open();
+
+                // Check if the data already exists
+                if (FLMDataExists(licenseType, licenseStatus, createdDate, experienceDays))
+                {
+                    // Data already exists, so return without inserting
+                    return;
+                }
+
+                // Create a command object with the query and connection
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@LicenseType", licenseType);
+                    command.Parameters.AddWithValue("@LicenseStatus", licenseStatus);
+                    command.Parameters.AddWithValue("@CreatedDate", createdDate);
+                    command.Parameters.AddWithValue("@ExperienceDays", experienceDays);
+                    command.Parameters.AddWithValue("@ExpirationDate", expirationDate);
+                    command.Parameters.AddWithValue("@LicenseCode", licenseCode);
+                    command.Parameters.AddWithValue("@LicenseKey", licenseKey);
+
+                    // Execute the command
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private bool FLMDataExists(string licenseType, string licenseStatus, DateTime createdDate, int experienceDays)
+        {
+            // Define the SQL query to check if the data exists
+            string query = "SELECT COUNT(*) FROM FLM WHERE LicenseCode = @LicenseCode AND LicenseKey = @LicenseKey";
+
+            // Create a connection to the database
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                // Open the connection
+                connection.Open();
+
+                // Create a command object with the query and connection
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@LicenseCode", "Fighting-Feather");
+                    command.Parameters.AddWithValue("@LicenseKey", "Fighting-Feather");
+
+                    // Execute the query and get the result
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    // If count > 0, it means the data exists
+                    return count > 0;
+                }
+            }
+        }
+
 
     }
 }

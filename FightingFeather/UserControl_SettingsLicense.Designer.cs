@@ -33,6 +33,8 @@
             this.Panel_Line = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.labelType = new System.Windows.Forms.Label();
+            this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.labelExpiry = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +105,7 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.metroPanel1.Controls.Add(this.label4);
+            this.metroPanel1.Controls.Add(this.labelType);
             this.metroPanel1.Controls.Add(this.metroPanel8);
             this.metroPanel1.Controls.Add(this.labelExpiry);
             this.metroPanel1.Controls.Add(this.label6);
@@ -130,6 +130,34 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.ForeColor = System.Drawing.Color.DimGray;
+            this.labelType.Location = new System.Drawing.Point(484, 129);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(11, 15);
+            this.labelType.TabIndex = 374;
+            this.labelType.Text = "-";
+            // 
+            // metroPanel8
+            // 
+            this.metroPanel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel8.HorizontalScrollbarBarColor = true;
+            this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel8.HorizontalScrollbarSize = 10;
+            this.metroPanel8.Location = new System.Drawing.Point(433, 117);
+            this.metroPanel8.Name = "metroPanel8";
+            this.metroPanel8.Size = new System.Drawing.Size(1, 40);
+            this.metroPanel8.TabIndex = 373;
+            this.metroPanel8.UseCustomBackColor = true;
+            this.metroPanel8.UseStyleColors = true;
+            this.metroPanel8.VerticalScrollbarBarColor = true;
+            this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel8.VerticalScrollbarSize = 10;
             // 
             // labelExpiry
             // 
@@ -307,34 +335,6 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroPanel8
-            // 
-            this.metroPanel8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel8.HorizontalScrollbarBarColor = true;
-            this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel8.HorizontalScrollbarSize = 10;
-            this.metroPanel8.Location = new System.Drawing.Point(433, 117);
-            this.metroPanel8.Name = "metroPanel8";
-            this.metroPanel8.Size = new System.Drawing.Size(1, 40);
-            this.metroPanel8.TabIndex = 373;
-            this.metroPanel8.UseCustomBackColor = true;
-            this.metroPanel8.UseStyleColors = true;
-            this.metroPanel8.VerticalScrollbarBarColor = true;
-            this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel8.VerticalScrollbarSize = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(484, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 15);
-            this.label4.TabIndex = 374;
-            this.label4.Text = "FULL";
-            // 
             // UserControl_SettingsLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +347,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_SettingsLicense";
             this.Size = new System.Drawing.Size(624, 540);
+            this.Load += new System.EventHandler(this.UserControl_SettingsLicense_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -372,7 +373,7 @@
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelExpiry;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelType;
         private MetroFramework.Controls.MetroPanel metroPanel8;
     }
 }

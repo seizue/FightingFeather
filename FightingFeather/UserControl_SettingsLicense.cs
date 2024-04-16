@@ -20,7 +20,7 @@ namespace FightingFeather
         {
             InitializeComponent();
             connectionString = $"Data Source={databaseName};Version=3;";
-            LoadLicense();
+         
 
             // Check if license was previously activated
             if (Properties.Settings.Default.IsLicenseActivated)
@@ -29,10 +29,10 @@ namespace FightingFeather
                 labelExpiry.Visible = true;
                 labelStatus.Visible = true;
                 labelDaysLeft.Visible = true;
-               
+                labelType.Visible = true;
+
             }
         }
-
 
         private void LoadLicense()
         {
@@ -44,7 +44,7 @@ namespace FightingFeather
                     sqliteConnection.Open();
 
                     // Define SQL command to retrieve data from the table
-                    string sql = "SELECT ExpirationDate, LicenseStatus, LicenseCode, LicenseKey FROM FLM";
+                    string sql = "SELECT ExpirationDate, LicenseStatus, LicenseCode, LicenseKey, LicenseType FROM FLM";
 
                     // Create command object
                     using (SQLiteCommand command = new SQLiteCommand(sql, sqliteConnection))
@@ -60,6 +60,7 @@ namespace FightingFeather
                                 string licenseStatus = reader["LicenseStatus"].ToString();
                                 string licenseCode = reader["LicenseCode"].ToString();
                                 string licenseKey = reader["LicenseKey"].ToString();
+                                string licenseType = reader["LicenseType"].ToString(); // Get license type
 
                                 // Parse expiration date from string
                                 DateTime expirationDate = DateTime.Parse(expirationDateString);
@@ -72,6 +73,7 @@ namespace FightingFeather
                                 labelExpiry.Text = expirationDate.ToShortDateString();
                                 labelStatus.Text = licenseStatus;
                                 labelDaysLeft.Text = $"{remainingDays}";
+                                labelType.Text = licenseType; // Set the license type label
 
                                 // Save activation status to settings
                                 Properties.Settings.Default.IsLicenseActivated = true;
@@ -84,11 +86,13 @@ namespace FightingFeather
                                 labelExpiry.Text = "No data found";
                                 labelStatus.Text = "No data found";
                                 labelDaysLeft.Text = "No data found";
+                                labelType.Text = "No data found"; // Set license type label to no data found
 
                                 // Hide Label texts
                                 labelExpiry.Visible = false;
                                 labelStatus.Visible = false;
                                 labelDaysLeft.Visible = false;
+                                labelType.Visible = false; // Hide the label for license type
 
                                 // Set license activation status to false
                                 Properties.Settings.Default.IsLicenseActivated = false;
@@ -105,5 +109,10 @@ namespace FightingFeather
             }
         }
 
+        private void UserControl_SettingsLicense_Load(object sender, EventArgs e)
+        {
+            LoadLicense();
+
+        }
     }
 }

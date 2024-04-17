@@ -139,22 +139,22 @@ namespace FightingFeather
                     // Query to create PLASADA table
                     string createPlasadaTableQuery = @"
                 CREATE TABLE IF NOT EXISTS PLASADA (
-                    FIGHT INTEGER PRIMARY KEY,
-                    MERON TEXT,            
-                    WALA TEXT,
-                    [BET (M)] INTEGER,
-                    [BET (W)] INTEGER,
-                    [INITIAL BET DIFF] INTEGER,
-                    PAREHAS INTEGER,
-                    PAGO INTEGER,
-                    WINNER TEXT,
-                    RATE AMOUNT REAL,
-                    RATE REAL,
-                    LOGRO INTEGER,
-                    FEE REAL,
-                    [TOTAL PLASADA] INTEGER,
-                    RATE EARNINGS REAL,
-                    [WINNERS EARN] INTEGER
+                  FIGHT INTEGER PRIMARY KEY,
+                  MERON TEXT,
+                  WALA TEXT,
+                  [BET (M)] INTEGER,
+                  [BET (W)] INTEGER,
+                  [INITIAL BET DIFF] INTEGER,
+                  PAREHAS INTEGER,
+                  PAGO INTEGER,
+                  WINNER TEXT,
+                  [RATE AMOUNT] REAL,
+                  RATE REAL,
+                  LOGRO INTEGER,
+                  FEE REAL,
+                  [TOTAL PLASADA] INTEGER,
+                  [RATE EARNINGS] REAL, 
+                  [WINNERS EARN] INTEGER
                 );";
 
                     // Execute queries to create tables
@@ -578,22 +578,22 @@ namespace FightingFeather
                         {
                             // Create the temporary table if it doesn't exist
                             string createTempTableQuery = @"CREATE TABLE Temp_PLASADA (
-                       FIGHT INTEGER PRIMARY KEY,
-                    MERON TEXT,            
-                    WALA TEXT,
-                    [BET (M)] INTEGER,
-                    [BET (W)] INTEGER,
-                    [INITIAL BET DIFF] INTEGER,
-                    PAREHAS INTEGER,
-                    PAGO INTEGER,
-                    WINNER TEXT,
-                    RATE AMOUNT REAL,
-                    RATE REAL,
-                    LOGRO INTEGER,
-                    FEE REAL,
-                    [TOTAL PLASADA] INTEGER,
-                    RATE EARNINGS REAL,
-                    [WINNERS EARN] INTEGER
+                     FIGHT INTEGER PRIMARY KEY,
+                  MERON TEXT,
+                  WALA TEXT,
+                  [BET (M)] INTEGER,
+                  [BET (W)] INTEGER,
+                  [INITIAL BET DIFF] INTEGER,
+                  PAREHAS INTEGER,
+                  PAGO INTEGER,
+                  WINNER TEXT,
+                  [RATE AMOUNT] REAL,
+                  RATE REAL,
+                  LOGRO INTEGER,
+                  FEE REAL,
+                  [TOTAL PLASADA] INTEGER,
+                  [RATE EARNINGS] REAL, 
+                  [WINNERS EARN] INTEGER
                     )";
 
                             using (var createCommand = new SQLiteCommand(createTempTableQuery, connection))

@@ -89,6 +89,12 @@ namespace FightingFeather
                                     // Exit the loop after loading the first valid license
                                     break;
                                 }
+                                else
+                                {
+                                    // If the license is expired, update labelStatus and its forecolor
+                                    labelStatus.Text = "Expired";
+                                    labelStatus.ForeColor = Color.Salmon;
+                                }
                             }
                         }
                     }
@@ -104,6 +110,11 @@ namespace FightingFeather
             {
                 // Handle any exceptions
                 MessageBox.Show("Error: " + ex.Message);
+            }
+                // Change forecolor if license is activated
+            if (Properties.Settings.Default.IsLicenseActivated)
+            {
+                labelStatus.ForeColor = Color.MediumSeaGreen;
             }
         }
 

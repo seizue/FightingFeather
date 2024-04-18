@@ -354,10 +354,10 @@ namespace FightingFeather
             CreateTablesIfNotExist();
 
             // Check if FLM data exists before inserting
-            if (!FLMDataExists("FREE TRIAL", "FREE TRIAL", DateTime.Now, 15))
+            if (!FLMDataExists("FREE TRIAL", "FREE TRIAL", DateTime.Now, 30))
             {
                 // Insert FLM data
-                InsertFLMData("FREE TRIAL", "FREE TRIAL", DateTime.Now, 15);
+                InsertFLMData("FREE TRIAL", "FREE TRIAL", DateTime.Now, 30);
             }
         }
 
@@ -466,7 +466,7 @@ namespace FightingFeather
             {
                 // Calculate ExpirationDate based on ExperienceDays
                 DateTime launchDate = DateTime.Today; // Change this to your actual launch date
-                int experienceDays = 15; // Change this to the desired number of experience days
+                int experienceDays = 30; // Change this to the desired number of experience days
                 DateTime expirationDate = launchDate.AddDays(experienceDays);
 
                 // Create new JSON data

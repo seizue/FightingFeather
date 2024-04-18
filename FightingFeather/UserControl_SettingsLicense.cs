@@ -17,8 +17,7 @@ namespace FightingFeather
      
         public UserControl_SettingsLicense()
         {
-            InitializeComponent();
-           
+            InitializeComponent();          
         }
 
         public class LicenseData
@@ -38,6 +37,7 @@ namespace FightingFeather
             [JsonProperty("LicenseType")]
             public string LicenseType { get; set; }
         }
+
         private void LoadLicense()
         {
             try
@@ -52,7 +52,7 @@ namespace FightingFeather
                 // Check if the JSON file exists
                 if (!File.Exists(jsonFilePath))
                 {
-                    MessageBox.Show("FLM.json cannot be found.");
+                   
                     return;
                 }
 

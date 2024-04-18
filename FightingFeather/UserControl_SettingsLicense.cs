@@ -18,7 +18,7 @@ namespace FightingFeather
         public UserControl_SettingsLicense()
         {
             InitializeComponent();
-            LoadLicense();
+           
         }
 
         public class LicenseData
@@ -118,6 +118,10 @@ namespace FightingFeather
             }
         }
 
+        private void UserControl_SettingsLicense_Load(object sender, EventArgs e)
+        {
+            LoadLicense();
+        }
     }
 
 }

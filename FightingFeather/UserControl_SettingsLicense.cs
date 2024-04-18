@@ -51,8 +51,7 @@ namespace FightingFeather
 
                 // Check if the JSON file exists
                 if (!File.Exists(jsonFilePath))
-                {
-                   
+                {                   
                     return;
                 }
 

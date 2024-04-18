@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace FightingFeather
 {
@@ -30,6 +31,7 @@ namespace FightingFeather
                 CreateDatabase();
             }
             CreateTablesIfNotExist();
+            CreateDirectoryFLM();
 
             // Subscribe to the CheckedChanged event of the ShowPasswordCheckBox
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
@@ -204,9 +206,6 @@ namespace FightingFeather
                 textBox_Username.Focus();
             }
         }
-
-
-
 
         private void fogotPass_Link_Click(object sender, EventArgs e)
         {
@@ -433,6 +432,61 @@ namespace FightingFeather
             }
         }
 
+        private void AppendToJsonFile(string filePath, object data)
+        {
+            // Serialize JSON data with indentation for better readability
+            string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+            // Append serialized JSON data to the file followed by a new line
+            using (StreamWriter sw = File.AppendText(filePath))
+            {
+                // Check if the file is empty
+                sw.WriteLine(sw.BaseStream.Length == 0 ? $"[{jsonData}]" : $",{jsonData}");
+            }
+        }
+
+
+        private void CreateDirectoryFLM()
+        {
+            // Get the JSON folder path
+            string jsonFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather", "JSON", "FLM");
+            Console.WriteLine($"JSON File Path: {jsonFolderPath}");
+
+            // Check if the directory exists, if not, create it
+            if (!Directory.Exists(jsonFolderPath))
+            {
+                Directory.CreateDirectory(jsonFolderPath); // Create the directory
+            }
+
+            // Construct the JSON file path
+            string jsonFilePath = Path.Combine(jsonFolderPath, "FLM.json");
+
+            // Check if the JSON file exists
+            if (!File.Exists(jsonFilePath))
+            {
+                // Calculate ExpirationDate based on ExperienceDays
+                DateTime launchDate = DateTime.Today; // Change this to your actual launch date
+                int experienceDays = 15; // Change this to the desired number of experience days
+                DateTime expirationDate = launchDate.AddDays(experienceDays);
+
+                // Create new JSON data
+                var jsonData = new
+                {
+                    ExperienceDays = experienceDays,
+                    ExpirationDate = expirationDate.ToString("yyyy-MM-dd"), // Format the date as yyyy-MM-dd
+                    LicenseCode = "Fighting-Feather",
+                    LicenseKey = "Fighting-Feather",
+                    LicenseType = "FREE TRIAL",
+                    LicenseStatus = "FULL",
+                    CreatedDate = launchDate.ToString("yyyy-MM-dd") // Format the date as yyyy-MM-dd
+                };
+
+                // Append JSON data to the file
+                AppendToJsonFile(jsonFilePath, jsonData);
+
+                Console.WriteLine("FLM.json created and initialized with data.");
+            }
+        }
 
     }
 }

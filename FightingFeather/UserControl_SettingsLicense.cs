@@ -2,127 +2,123 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+using Newtonsoft.Json;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FightingFeather
 {
     public partial class UserControl_SettingsLicense : UserControl
     {
-        private SQLiteConnection sqliteConnection;
-        private string databaseName = "FFkey.db";
-        private string connectionString;
+     
         public UserControl_SettingsLicense()
         {
             InitializeComponent();
-            connectionString = $"Data Source={databaseName};Version=3;";
-         
-
-            // Check if license was previously activated
-            if (Properties.Settings.Default.IsLicenseActivated)
-            {
-                // Show license details and make text boxes read-only
-                labelExpiry.Visible = true;
-                labelStatus.Visible = true;
-                labelDaysLeft.Visible = true;
-                labelType.Visible = true;
-
-            }
+            LoadLicense();
         }
 
+        public class LicenseData
+        {
+            [JsonProperty("ExpirationDate")]
+            public DateTime ExpirationDate { get; set; }
+
+            [JsonProperty("LicenseStatus")]
+            public string LicenseStatus { get; set; }
+
+            [JsonProperty("LicenseCode")]
+            public string LicenseCode { get; set; }
+
+            [JsonProperty("LicenseKey")]
+            public string LicenseKey { get; set; }
+
+            [JsonProperty("LicenseType")]
+            public string LicenseType { get; set; }
+        }
         private void LoadLicense()
         {
             try
             {
-                bool validLicenseFound = false; // Flag to track if a valid license is found
+                // Get the JSON folder path
+                string jsonFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather", "JSON", "FLM");
+                Console.WriteLine($"JSON File Path: {jsonFolderPath}");
 
-                // Open connection to SQLite database
-                using (sqliteConnection = new SQLiteConnection(connectionString))
+                // Construct the JSON file path
+                string jsonFilePath = Path.Combine(jsonFolderPath, "FLM.json");
+
+                // Check if the JSON file exists
+                if (!File.Exists(jsonFilePath))
                 {
-                    sqliteConnection.Open();
-
-                    // Define SQL command to retrieve data from the table
-                    string sql = "SELECT ExpirationDate, LicenseStatus, LicenseCode, LicenseKey, LicenseType FROM FLM";
-
-                    // Create command object
-                    using (SQLiteCommand command = new SQLiteCommand(sql, sqliteConnection))
-                    {
-                        // Execute the command and get the result
-                        using (SQLiteDataReader reader = command.ExecuteReader())
-                        {
-                            // Check if there are rows returned
-                            while (reader.Read())
-                            {
-                                // Get the values from the columns
-                                string expirationDateString = reader["ExpirationDate"].ToString();
-                                string licenseStatus = reader["LicenseStatus"].ToString();
-                                string licenseCode = reader["LicenseCode"].ToString();
-                                string licenseKey = reader["LicenseKey"].ToString();
-                                string licenseType = reader["LicenseType"].ToString(); // Get license type
-
-                                // Parse expiration date from string
-                                DateTime expirationDate = DateTime.Parse(expirationDateString);
-
-                                // Check if the license is still valid
-                                if (expirationDate > DateTime.Now)
-                                {
-                                    // Calculate remaining days
-                                    TimeSpan remainingTime = expirationDate - DateTime.Now;
-                                    int remainingDays = (int)Math.Ceiling(remainingTime.TotalDays);
-
-                                    // Update the labels with the retrieved data
-                                    labelExpiry.Text = expirationDate.ToShortDateString();
-                                    labelStatus.Text = licenseStatus;
-                                    labelDaysLeft.Text = $"{remainingDays}";
-                                    labelType.Text = licenseType; // Set the license type label
-
-                                    // Save activation status to settings
-                                    Properties.Settings.Default.IsLicenseActivated = true;
-                                    Properties.Settings.Default.Save(); // Save the settings
-
-                                    validLicenseFound = true; // Set flag indicating a valid license is found
-
-                                    // Exit the loop after loading the first valid license
-                                    break;
-                                }
-                                else
-                                {
-                                    // If the license is expired, update labelStatus and its forecolor
-                                    labelStatus.Text = "Expired";
-                                    labelStatus.ForeColor = Color.Salmon;
-                                }
-                            }
-                        }
-                    }
+                    MessageBox.Show("FLM.json cannot be found.");
+                    return;
                 }
 
-                // If no valid license is found, display a message box
-                if (!validLicenseFound)
+                // Load JSON data from file
+                string jsonData = File.ReadAllText(jsonFilePath);
+
+                // Deserialize JSON array into a collection of LicenseData objects
+                List<LicenseData> licenseDataList = JsonConvert.DeserializeObject<List<LicenseData>>(jsonData);
+
+                // Find the first non-expired license
+                LicenseData activeLicense = licenseDataList.FirstOrDefault(license => license.ExpirationDate >= DateTime.Now);
+
+                if (activeLicense != null)
                 {
-                    MessageBox.Show("License expired."); // Show message box indicating license expiration
+                    // Calculate the number of days left until expiration
+                    TimeSpan timeUntilExpiration = activeLicense.ExpirationDate - DateTime.Now;
+                    int daysLeft = (int)timeUntilExpiration.TotalDays;
+
+                    // Display the number of days left
+                    labelDaysLeft.Text = $"{daysLeft}";
+
+                    // Display the expiration date
+                    labelExpiry.Text = activeLicense.ExpirationDate.ToString("MMMM dd, yyyy");
+
+                    // Display the license type
+                    labelType.Text = activeLicense.LicenseType;
+
+                    // Update labelStatus based on the number of days left
+                    if (daysLeft > 5)
+                    {
+                        labelStatus.Text = "ACTIVATED";
+                        labelStatus.ForeColor = Color.MediumSeaGreen;
+                    }
+                    else if (daysLeft >= 0)
+                    {
+                        labelStatus.Text = "NEAR EXPIRY";
+                        labelStatus.ForeColor = Color.DarkGoldenrod;
+                    }
+                    else
+                    {
+                        labelStatus.Text = "EXPIRED";
+                        labelStatus.ForeColor = Color.Salmon;
+                    }
+                }
+                else if (licenseDataList.Any())
+                {
+                    // No active license found, display the last expired license
+                    LicenseData lastExpiredLicense = licenseDataList.OrderBy(license => license.ExpirationDate).Last();
+                    labelExpiry.Text = lastExpiredLicense.ExpirationDate.ToString("MMMM dd, yyyy");
+                    labelType.Text = lastExpiredLicense.LicenseType;
+                    labelStatus.Text = "EXPIRED";
+                    labelStatus.ForeColor = Color.Salmon;
+                    labelDaysLeft.Text = "0"; // Assuming the license has expired
+                }
+                else
+                {
+                    MessageBox.Show("No license data found.");
                 }
             }
             catch (Exception ex)
             {
-                // Handle any exceptions
-                MessageBox.Show("Error: " + ex.Message);
-            }
-                // Change forecolor if license is activated
-            if (Properties.Settings.Default.IsLicenseActivated)
-            {
-                labelStatus.ForeColor = Color.MediumSeaGreen;
+                MessageBox.Show($"Error loading license data: {ex.Message}");
             }
         }
 
-
-        private void UserControl_SettingsLicense_Load(object sender, EventArgs e)
-        {
-            LoadLicense();
-
-        }
     }
+
 }
+

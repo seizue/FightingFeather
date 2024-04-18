@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FightingFeather
 {
@@ -20,6 +21,7 @@ namespace FightingFeather
         {
             InitializeComponent();
             // Populate the ComboBox with options
+
             comBox_WindowState.Items.AddRange(new object[] { "Normal", "Maximized" });
 
             metroToggle_Reminder.Checked = Properties.Settings.Default.ReminderEnabled;

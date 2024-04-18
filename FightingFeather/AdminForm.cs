@@ -1,5 +1,6 @@
 ﻿using MetroFramework.Controls;
 using MetroFramework.Forms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -288,6 +289,8 @@ namespace FightingFeather
             {
                 sqliteConnection.Close();
             }
+
+            SaveDataToJson();
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -999,6 +1002,71 @@ namespace FightingFeather
                 // If no cell is selected, inform the user to select a cell first
                 MessageBox.Show("Please select a cell to remove the license.");
             }
+        }
+
+        private void SaveDataToJson()
+        {
+            // Get the JSON folder path
+            string jsonFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather", "JSON", "FLM");
+
+            try
+            {
+                // Check if the JSON directory exists, if not, create it
+                if (!Directory.Exists(jsonFolderPath))
+                {
+                    Directory.CreateDirectory(jsonFolderPath);
+                }
+
+                // Serialize DataGridView data to JSON
+                string jsonFilePath = Path.Combine(jsonFolderPath, "FLM.json");
+                string jsonData = SerializeDataGridViewToJson();
+
+                // Save JSON data to file
+                File.WriteAllText(jsonFilePath, jsonData);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data to JSON: {ex.Message}");
+            }
+        }
+
+        private string SerializeDataGridViewToJson()
+        {
+            List<FLMData> dataList = new List<FLMData>();
+
+            foreach (DataGridViewRow row in GridLicense.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    FLMData data = new FLMData
+                    {
+                        ExperienceDays = Convert.ToInt32(row.Cells["LDaysLeft"].Value),
+                        ExpirationDate = Convert.ToDateTime(row.Cells["LExpiry"].Value),
+                        LicenseCode = row.Cells["LCode"].Value.ToString(),
+                        LicenseKey = row.Cells["LKey"].Value.ToString(),
+                        LicenseType = row.Cells["LType"].Value.ToString(), 
+                        LicenseStatus = row.Cells["LStatus"].Value.ToString(),
+                        CreatedDate = Convert.ToDateTime(row.Cells["LCreated"].Value)
+                    };
+                    dataList.Add(data);
+                }
+            }
+
+            return JsonConvert.SerializeObject(dataList, Formatting.Indented);
+        }
+
+
+        // Define a class to represent FLM data structure
+        public class FLMData
+        {
+            public int ExperienceDays { get; set; }
+            public DateTime ExpirationDate { get; set; }
+            public string LicenseCode { get; set; }
+            public string LicenseKey { get; set; }
+            public string LicenseType { get; set; }
+            public string LicenseStatus { get; set; }
+            public DateTime CreatedDate { get; set; }
         }
 
 

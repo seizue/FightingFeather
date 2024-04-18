@@ -366,7 +366,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_SettingsLicense";
             this.Size = new System.Drawing.Size(624, 540);
-            this.Load += new System.EventHandler(this.UserControl_SettingsLicense_Load);
+        
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -18,8 +18,8 @@ Once the admin form is apppeared, you can now add multiple users that can access
 
 ![Screenshot 2024-04-20 194049](https://github.com/seizue/FightingFeather/assets/25120376/397628cd-59f3-48a1-a2f4-258a7ae315bf)
 
-To change admin password
-* Enter security first. 
+To change admin password. Go to "Advance Settings"
+* Enter security
  ````  
 Security Key:  8885341727
  ```` 

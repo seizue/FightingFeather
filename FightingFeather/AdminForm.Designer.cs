@@ -43,13 +43,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_License = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -119,6 +120,13 @@
             this.buttonRemoveLicense = new System.Windows.Forms.Button();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.GridLicense = new MetroFramework.Controls.MetroGrid();
+            this.LDaysLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LExpiry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Generate = new System.Windows.Forms.Button();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
@@ -138,13 +146,6 @@
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
-            this.LCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LExpiry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LDaysLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_RegisterUsers)).BeginInit();
             this.panel_BGAddNewUser.SuspendLayout();
@@ -1403,6 +1404,69 @@
             this.GridLicense.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridLicense_CellFormatting);
             this.GridLicense.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridLicense_CellPainting);
             // 
+            // LDaysLeft
+            // 
+            this.LDaysLeft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.LDaysLeft.DefaultCellStyle = dataGridViewCellStyle13;
+            this.LDaysLeft.HeaderText = "EXPERIENCE DAYS";
+            this.LDaysLeft.Name = "LDaysLeft";
+            // 
+            // LExpiry
+            // 
+            this.LExpiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LExpiry.DefaultCellStyle = dataGridViewCellStyle14;
+            this.LExpiry.DividerWidth = 3;
+            this.LExpiry.HeaderText = "EXPIRY DATE";
+            this.LExpiry.Name = "LExpiry";
+            // 
+            // LCode
+            // 
+            this.LCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LCode.DefaultCellStyle = dataGridViewCellStyle15;
+            this.LCode.HeaderText = "LICENSE CODE";
+            this.LCode.Name = "LCode";
+            // 
+            // LKey
+            // 
+            this.LKey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LKey.DefaultCellStyle = dataGridViewCellStyle16;
+            this.LKey.FillWeight = 91.15936F;
+            this.LKey.HeaderText = "LICENSE KEY";
+            this.LKey.Name = "LKey";
+            // 
+            // LType
+            // 
+            this.LType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LType.DefaultCellStyle = dataGridViewCellStyle17;
+            this.LType.HeaderText = "LICENSE TYPE";
+            this.LType.Name = "LType";
+            // 
+            // LStatus
+            // 
+            this.LStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LStatus.DefaultCellStyle = dataGridViewCellStyle18;
+            this.LStatus.HeaderText = "STATUS";
+            this.LStatus.Name = "LStatus";
+            // 
+            // LCreated
+            // 
+            this.LCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.LCreated.DefaultCellStyle = dataGridViewCellStyle19;
+            this.LCreated.HeaderText = "CREATED";
+            this.LCreated.Name = "LCreated";
+            // 
             // button_Generate
             // 
             this.button_Generate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
@@ -1672,69 +1736,6 @@
             this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel14.VerticalScrollbarSize = 10;
             // 
-            // LCreated
-            // 
-            this.LCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LCreated.DefaultCellStyle = dataGridViewCellStyle19;
-            this.LCreated.HeaderText = "CREATED";
-            this.LCreated.Name = "LCreated";
-            // 
-            // LStatus
-            // 
-            this.LStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LStatus.DefaultCellStyle = dataGridViewCellStyle18;
-            this.LStatus.HeaderText = "STATUS";
-            this.LStatus.Name = "LStatus";
-            // 
-            // LType
-            // 
-            this.LType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LType.DefaultCellStyle = dataGridViewCellStyle17;
-            this.LType.HeaderText = "LICENSE TYPE";
-            this.LType.Name = "LType";
-            // 
-            // LKey
-            // 
-            this.LKey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LKey.DefaultCellStyle = dataGridViewCellStyle16;
-            this.LKey.FillWeight = 91.15936F;
-            this.LKey.HeaderText = "LICENSE KEY";
-            this.LKey.Name = "LKey";
-            // 
-            // LCode
-            // 
-            this.LCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle15.Format = "N2";
-            dataGridViewCellStyle15.NullValue = null;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LCode.DefaultCellStyle = dataGridViewCellStyle15;
-            this.LCode.HeaderText = "LICENSE CODE";
-            this.LCode.Name = "LCode";
-            // 
-            // LExpiry
-            // 
-            this.LExpiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.LExpiry.DefaultCellStyle = dataGridViewCellStyle14;
-            this.LExpiry.DividerWidth = 3;
-            this.LExpiry.HeaderText = "EXPIRY DATE";
-            this.LExpiry.Name = "LExpiry";
-            // 
-            // LDaysLeft
-            // 
-            this.LDaysLeft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.LDaysLeft.DefaultCellStyle = dataGridViewCellStyle13;
-            this.LDaysLeft.HeaderText = "EXPERIENCE DAYS";
-            this.LDaysLeft.Name = "LDaysLeft";
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1761,6 +1762,7 @@
             this.Controls.Add(this.label_RegisterUsers);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroPanel14);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
             this.Opacity = 0.98D;
             this.Resizable = false;

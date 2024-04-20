@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntryForm));
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
             this.textBox_EnterAmountRate = new System.Windows.Forms.TextBox();
@@ -829,6 +830,7 @@
             this.Controls.Add(this.metroPanel10);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroPanel8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EntryForm";
             this.Style = MetroFramework.MetroColorStyle.Black;

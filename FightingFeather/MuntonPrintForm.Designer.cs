@@ -28,8 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuntonPrintForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Panel_PrintReceipt = new MetroFramework.Controls.MetroPanel();
+            this.labelPlasada = new System.Windows.Forms.TextBox();
+            this.labelrateAmount = new System.Windows.Forms.TextBox();
+            this.labelParehas = new System.Windows.Forms.TextBox();
+            this.labelPago = new System.Windows.Forms.TextBox();
+            this.labelBetDiff = new System.Windows.Forms.TextBox();
+            this.labelBetW = new System.Windows.Forms.TextBox();
+            this.labelFight = new System.Windows.Forms.TextBox();
+            this.labelBetM = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -58,15 +68,6 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.button_Print = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelBetM = new System.Windows.Forms.TextBox();
-            this.labelFight = new System.Windows.Forms.TextBox();
-            this.labelBetW = new System.Windows.Forms.TextBox();
-            this.labelBetDiff = new System.Windows.Forms.TextBox();
-            this.labelPago = new System.Windows.Forms.TextBox();
-            this.labelParehas = new System.Windows.Forms.TextBox();
-            this.labelrateAmount = new System.Windows.Forms.TextBox();
-            this.labelPlasada = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.Panel_PrintReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,6 +128,121 @@
             this.Panel_PrintReceipt.VerticalScrollbarBarColor = true;
             this.Panel_PrintReceipt.VerticalScrollbarHighlightOnWheel = false;
             this.Panel_PrintReceipt.VerticalScrollbarSize = 10;
+            // 
+            // labelPlasada
+            // 
+            this.labelPlasada.BackColor = System.Drawing.Color.White;
+            this.labelPlasada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelPlasada.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelPlasada.ForeColor = System.Drawing.Color.Black;
+            this.labelPlasada.Location = new System.Drawing.Point(223, 427);
+            this.labelPlasada.Name = "labelPlasada";
+            this.labelPlasada.Size = new System.Drawing.Size(103, 18);
+            this.labelPlasada.TabIndex = 402;
+            this.labelPlasada.Text = "-";
+            this.labelPlasada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelrateAmount
+            // 
+            this.labelrateAmount.BackColor = System.Drawing.Color.White;
+            this.labelrateAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelrateAmount.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelrateAmount.ForeColor = System.Drawing.Color.Black;
+            this.labelrateAmount.Location = new System.Drawing.Point(223, 351);
+            this.labelrateAmount.Name = "labelrateAmount";
+            this.labelrateAmount.Size = new System.Drawing.Size(103, 18);
+            this.labelrateAmount.TabIndex = 401;
+            this.labelrateAmount.Text = "-";
+            this.labelrateAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelParehas
+            // 
+            this.labelParehas.BackColor = System.Drawing.Color.White;
+            this.labelParehas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelParehas.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelParehas.ForeColor = System.Drawing.Color.Black;
+            this.labelParehas.Location = new System.Drawing.Point(223, 285);
+            this.labelParehas.Name = "labelParehas";
+            this.labelParehas.Size = new System.Drawing.Size(103, 18);
+            this.labelParehas.TabIndex = 400;
+            this.labelParehas.Text = "-";
+            this.labelParehas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelPago
+            // 
+            this.labelPago.BackColor = System.Drawing.Color.White;
+            this.labelPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelPago.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelPago.ForeColor = System.Drawing.Color.Black;
+            this.labelPago.Location = new System.Drawing.Point(223, 252);
+            this.labelPago.Name = "labelPago";
+            this.labelPago.Size = new System.Drawing.Size(103, 18);
+            this.labelPago.TabIndex = 399;
+            this.labelPago.Text = "-";
+            this.labelPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelBetDiff
+            // 
+            this.labelBetDiff.BackColor = System.Drawing.Color.White;
+            this.labelBetDiff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelBetDiff.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelBetDiff.ForeColor = System.Drawing.Color.Black;
+            this.labelBetDiff.Location = new System.Drawing.Point(223, 218);
+            this.labelBetDiff.Name = "labelBetDiff";
+            this.labelBetDiff.Size = new System.Drawing.Size(103, 18);
+            this.labelBetDiff.TabIndex = 398;
+            this.labelBetDiff.Text = "-";
+            this.labelBetDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelBetW
+            // 
+            this.labelBetW.BackColor = System.Drawing.Color.White;
+            this.labelBetW.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelBetW.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelBetW.ForeColor = System.Drawing.Color.Black;
+            this.labelBetW.Location = new System.Drawing.Point(223, 186);
+            this.labelBetW.Name = "labelBetW";
+            this.labelBetW.Size = new System.Drawing.Size(103, 18);
+            this.labelBetW.TabIndex = 397;
+            this.labelBetW.Text = "-";
+            this.labelBetW.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelFight
+            // 
+            this.labelFight.BackColor = System.Drawing.Color.White;
+            this.labelFight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelFight.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelFight.ForeColor = System.Drawing.Color.Black;
+            this.labelFight.Location = new System.Drawing.Point(223, 85);
+            this.labelFight.Name = "labelFight";
+            this.labelFight.Size = new System.Drawing.Size(103, 18);
+            this.labelFight.TabIndex = 396;
+            this.labelFight.Text = "-";
+            this.labelFight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelBetM
+            // 
+            this.labelBetM.BackColor = System.Drawing.Color.White;
+            this.labelBetM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelBetM.Font = new System.Drawing.Font("Calibri", 11F);
+            this.labelBetM.ForeColor = System.Drawing.Color.Black;
+            this.labelBetM.Location = new System.Drawing.Point(223, 153);
+            this.labelBetM.Name = "labelBetM";
+            this.labelBetM.Size = new System.Drawing.Size(103, 18);
+            this.labelBetM.TabIndex = 395;
+            this.labelBetM.Text = "-";
+            this.labelBetM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(29, 252);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 18);
+            this.label4.TabIndex = 393;
+            this.label4.Text = "PAGO";
             // 
             // label19
             // 
@@ -430,121 +546,6 @@
             this.button_Print.UseVisualStyleBackColor = false;
             this.button_Print.Click += new System.EventHandler(this.button_Print_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(29, 252);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 18);
-            this.label4.TabIndex = 393;
-            this.label4.Text = "PAGO";
-            // 
-            // labelBetM
-            // 
-            this.labelBetM.BackColor = System.Drawing.Color.White;
-            this.labelBetM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelBetM.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelBetM.ForeColor = System.Drawing.Color.Black;
-            this.labelBetM.Location = new System.Drawing.Point(223, 153);
-            this.labelBetM.Name = "labelBetM";
-            this.labelBetM.Size = new System.Drawing.Size(103, 18);
-            this.labelBetM.TabIndex = 395;
-            this.labelBetM.Text = "-";
-            this.labelBetM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelFight
-            // 
-            this.labelFight.BackColor = System.Drawing.Color.White;
-            this.labelFight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelFight.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelFight.ForeColor = System.Drawing.Color.Black;
-            this.labelFight.Location = new System.Drawing.Point(223, 85);
-            this.labelFight.Name = "labelFight";
-            this.labelFight.Size = new System.Drawing.Size(103, 18);
-            this.labelFight.TabIndex = 396;
-            this.labelFight.Text = "-";
-            this.labelFight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelBetW
-            // 
-            this.labelBetW.BackColor = System.Drawing.Color.White;
-            this.labelBetW.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelBetW.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelBetW.ForeColor = System.Drawing.Color.Black;
-            this.labelBetW.Location = new System.Drawing.Point(223, 186);
-            this.labelBetW.Name = "labelBetW";
-            this.labelBetW.Size = new System.Drawing.Size(103, 18);
-            this.labelBetW.TabIndex = 397;
-            this.labelBetW.Text = "-";
-            this.labelBetW.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelBetDiff
-            // 
-            this.labelBetDiff.BackColor = System.Drawing.Color.White;
-            this.labelBetDiff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelBetDiff.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelBetDiff.ForeColor = System.Drawing.Color.Black;
-            this.labelBetDiff.Location = new System.Drawing.Point(223, 218);
-            this.labelBetDiff.Name = "labelBetDiff";
-            this.labelBetDiff.Size = new System.Drawing.Size(103, 18);
-            this.labelBetDiff.TabIndex = 398;
-            this.labelBetDiff.Text = "-";
-            this.labelBetDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelPago
-            // 
-            this.labelPago.BackColor = System.Drawing.Color.White;
-            this.labelPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelPago.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelPago.ForeColor = System.Drawing.Color.Black;
-            this.labelPago.Location = new System.Drawing.Point(223, 252);
-            this.labelPago.Name = "labelPago";
-            this.labelPago.Size = new System.Drawing.Size(103, 18);
-            this.labelPago.TabIndex = 399;
-            this.labelPago.Text = "-";
-            this.labelPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelParehas
-            // 
-            this.labelParehas.BackColor = System.Drawing.Color.White;
-            this.labelParehas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelParehas.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelParehas.ForeColor = System.Drawing.Color.Black;
-            this.labelParehas.Location = new System.Drawing.Point(223, 285);
-            this.labelParehas.Name = "labelParehas";
-            this.labelParehas.Size = new System.Drawing.Size(103, 18);
-            this.labelParehas.TabIndex = 400;
-            this.labelParehas.Text = "-";
-            this.labelParehas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelrateAmount
-            // 
-            this.labelrateAmount.BackColor = System.Drawing.Color.White;
-            this.labelrateAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelrateAmount.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelrateAmount.ForeColor = System.Drawing.Color.Black;
-            this.labelrateAmount.Location = new System.Drawing.Point(223, 351);
-            this.labelrateAmount.Name = "labelrateAmount";
-            this.labelrateAmount.Size = new System.Drawing.Size(103, 18);
-            this.labelrateAmount.TabIndex = 401;
-            this.labelrateAmount.Text = "-";
-            this.labelrateAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelPlasada
-            // 
-            this.labelPlasada.BackColor = System.Drawing.Color.White;
-            this.labelPlasada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelPlasada.Font = new System.Drawing.Font("Calibri", 11F);
-            this.labelPlasada.ForeColor = System.Drawing.Color.Black;
-            this.labelPlasada.Location = new System.Drawing.Point(223, 427);
-            this.labelPlasada.Name = "labelPlasada";
-            this.labelPlasada.Size = new System.Drawing.Size(103, 18);
-            this.labelPlasada.TabIndex = 402;
-            this.labelPlasada.Text = "-";
-            this.labelPlasada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // MuntonPrintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,6 +557,7 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MuntonPrintForm";

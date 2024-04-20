@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
             this.cartesianChart_Gate = new LiveCharts.WinForms.CartesianChart();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel26 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -45,7 +47,6 @@
             this.cartesianChart_Fight = new LiveCharts.WinForms.CartesianChart();
             this.label4 = new System.Windows.Forms.Label();
             this.metroPanel34 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -187,6 +188,24 @@
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
             // 
+            // metroPanel7
+            // 
+            this.metroPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel7.HorizontalScrollbarBarColor = true;
+            this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel7.HorizontalScrollbarSize = 10;
+            this.metroPanel7.Location = new System.Drawing.Point(0, 1);
+            this.metroPanel7.Name = "metroPanel7";
+            this.metroPanel7.Size = new System.Drawing.Size(1, 285);
+            this.metroPanel7.TabIndex = 424;
+            this.metroPanel7.UseCustomBackColor = true;
+            this.metroPanel7.UseStyleColors = true;
+            this.metroPanel7.VerticalScrollbarBarColor = true;
+            this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel7.VerticalScrollbarSize = 10;
+            // 
             // metroPanel6
             // 
             this.metroPanel6.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -327,24 +346,6 @@
             this.metroPanel34.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel34.VerticalScrollbarSize = 10;
             // 
-            // metroPanel7
-            // 
-            this.metroPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel7.HorizontalScrollbarBarColor = true;
-            this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(0, 1);
-            this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(1, 285);
-            this.metroPanel7.TabIndex = 424;
-            this.metroPanel7.UseCustomBackColor = true;
-            this.metroPanel7.UseStyleColors = true;
-            this.metroPanel7.VerticalScrollbarBarColor = true;
-            this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel7.VerticalScrollbarSize = 10;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -386,6 +387,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel14);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DashBoardForm";

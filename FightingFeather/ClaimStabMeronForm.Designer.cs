@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClaimStabMeronForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Receipt = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
@@ -400,6 +401,7 @@
             this.Controls.Add(this.button_PrintReceipt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ClaimStabMeronForm";

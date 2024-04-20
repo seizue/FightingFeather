@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginRegisterForm));
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.label_Login = new System.Windows.Forms.Button();
             this.label_Help = new System.Windows.Forms.Button();
@@ -354,6 +355,7 @@
             this.Controls.Add(this.label_Help);
             this.Controls.Add(this.label_Login);
             this.Controls.Add(this.metroPanel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LoginRegisterForm";
             this.Opacity = 0.97D;

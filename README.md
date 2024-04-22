@@ -13,7 +13,7 @@ password: 888534admin__
  ````  
 
 For registering new users. You need to login as an admin first.
-Press the **sheild button with a gear** ![admin_configuration_36px](https://github.com/seizue/FightingFeather/assets/25120376/c6eb5838-3e89-455b-af9f-6635793ebf46)
+Press the **shield button with a gear** ![admin_configuration_36px](https://github.com/seizue/FightingFeather/assets/25120376/c6eb5838-3e89-455b-af9f-6635793ebf46)
  to appear the admin form.
 Once the admin form apppeared, you can now add multiple users that can access the demo.
 

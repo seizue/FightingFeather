@@ -117,6 +117,16 @@ namespace FightingFeather
             // Show or hide the admin button based on the user type
             button_Admin.Visible = userType == LoginRegisterForm.UserType.Admin;
             AdminDivider.Visible = userType == LoginRegisterForm.UserType.Admin;
+
+            // Show or hide panelExpiredNotice based on user type
+            if (userType == LoginRegisterForm.UserType.Admin)
+            {
+                panelExpiredNotice.Visible = false; // Hide panel notice for admin
+            }
+            else
+            {
+                panelExpiredNotice.Visible = true; 
+            }
         }
 
         public DateTime RaDateTimePickerValue

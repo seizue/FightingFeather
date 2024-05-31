@@ -133,9 +133,9 @@
             this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
             this.panelExpiredNotice = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -1531,17 +1531,6 @@
             this.panelExpiredNotice.Size = new System.Drawing.Size(1246, 654);
             this.panelExpiredNotice.TabIndex = 381;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.feather;
-            this.pictureBox1.Location = new System.Drawing.Point(490, 241);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 95);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1565,6 +1554,17 @@
             this.label4.Size = new System.Drawing.Size(125, 18);
             this.label4.TabIndex = 361;
             this.label4.Text = "LICENSE IS EXPIRED";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.feather;
+            this.pictureBox1.Location = new System.Drawing.Point(490, 241);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 

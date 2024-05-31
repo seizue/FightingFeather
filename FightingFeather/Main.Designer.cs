@@ -132,6 +132,10 @@
             this.userControl_Inventory1 = new FightingFeather.UserControl_Inventory();
             this.userControl_Shortcut1 = new FightingFeather.UserControl_Shortcut();
             this.raDateTimePicker1 = new FightingFeather.RaDateTimePicker();
+            this.panelExpiredNotice = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Panel_MainBG.SuspendLayout();
             this.Panel_PlasadaEER.SuspendLayout();
             this.metroPanel9.SuspendLayout();
@@ -141,6 +145,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelExpiredNotice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_CreateNewPlasada
@@ -1512,11 +1518,60 @@
             this.raDateTimePicker1.Value = new System.DateTime(2024, 3, 25, 0, 0, 0, 0);
             this.raDateTimePicker1.ValueChanged += new System.EventHandler(this.raDateTimePicker1_ValueChanged);
             // 
+            // panelExpiredNotice
+            // 
+            this.panelExpiredNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelExpiredNotice.Controls.Add(this.label2);
+            this.panelExpiredNotice.Controls.Add(this.label4);
+            this.panelExpiredNotice.Controls.Add(this.pictureBox1);
+            this.panelExpiredNotice.Location = new System.Drawing.Point(20, 20);
+            this.panelExpiredNotice.Name = "panelExpiredNotice";
+            this.panelExpiredNotice.Size = new System.Drawing.Size(1246, 654);
+            this.panelExpiredNotice.TabIndex = 381;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = global::FightingFeather.Properties.Resources.feather;
+            this.pictureBox1.Location = new System.Drawing.Point(490, 241);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 10F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(466, 371);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(294, 17);
+            this.label2.TabIndex = 362;
+            this.label2.Text = "Please contact your system administrator to renew";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(552, 342);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 18);
+            this.label4.TabIndex = 361;
+            this.label4.Text = "LICENSE IS EXPIRED";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 679);
+            this.Controls.Add(this.panelExpiredNotice);
             this.Controls.Add(this.userControl_Summa1);
             this.Controls.Add(this.userControl_Inventory1);
             this.Controls.Add(this.userControl_Shortcut1);
@@ -1560,6 +1615,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panelExpiredNotice.ResumeLayout(false);
+            this.panelExpiredNotice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1654,6 +1712,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_PLASADA;
         private System.Windows.Forms.DataGridViewTextBoxColumn RATE_EARNINGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WINNERS_EARN;
+        private System.Windows.Forms.Panel panelExpiredNotice;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

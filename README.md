@@ -9,7 +9,7 @@ Control panel for cockfight using C# and SQLite (Database).
 Login as an admin
  ````  
 Username: admin
-password: 888534admin__  
+password: 888534Admin__  
  ````  
 
 For registering new users. You need to login as an admin first.

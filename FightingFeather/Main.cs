@@ -1796,6 +1796,18 @@ namespace FightingFeather
         private void Main_Load(object sender, EventArgs e)
         {
             this.ShadowType = MetroFormShadowType.None;
+
+            // Replace default maximize behavior with custom logic
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                // Maximize the window without covering the taskbar
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void GridPlasada_Entries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

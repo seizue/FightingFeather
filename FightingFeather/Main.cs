@@ -40,6 +40,9 @@ namespace FightingFeather
         {
             InitializeComponent();
 
+            // Check license expiration during initialization
+            CheckLicenseExpiration();
+
             // Initialize the dataTable object
             dataTable = new DataTable();
 
@@ -112,20 +115,72 @@ namespace FightingFeather
 
         }
 
+        private void CheckLicenseExpiration()
+        {
+            // Define the database path
+            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather");
+            string databasePath = Path.Combine(appDataPath, "FFkey.db");
+
+            // Ensure the database file exists
+            if (!File.Exists(databasePath))
+            {
+                MessageBox.Show("Database file not found. Please ensure the database is created.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Query the FLM table for the ExpirationDate
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={databasePath};Version=3;"))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT ExpirationDate FROM FLM LIMIT 1";
+
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+
+                        if (result != null && DateTime.TryParse(result.ToString(), out DateTime expirationDate))
+                        {
+                            // Compare the ExpirationDate with the current date
+                            if (expirationDate < DateTime.Today)
+                            {
+                                // Show the panelExpiredNotice if the license is expired
+                                panelExpiredNotice.Visible = true;
+                            }
+                            else
+                            {
+                                // Hide the panelExpiredNotice if the license is valid
+                                panelExpiredNotice.Visible = false;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No valid ExpirationDate found in the database.", "License Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while checking the license expiration: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         public void LoginComplete(LoginRegisterForm.UserType userType)
         {
             // Show or hide the admin button based on the user type
             button_Admin.Visible = userType == LoginRegisterForm.UserType.Admin;
             AdminDivider.Visible = userType == LoginRegisterForm.UserType.Admin;
 
-            // Show or hide panelExpiredNotice based on user type
-            if (userType == LoginRegisterForm.UserType.Admin)
+            // Check license expiration for normal users
+            if (userType == LoginRegisterForm.UserType.NormalUser)
             {
-                panelExpiredNotice.Visible = false; // Hide panel notice for admin
+                CheckLicenseExpiration();
             }
             else
             {
-                panelExpiredNotice.Visible = true; 
+                panelExpiredNotice.Visible = false; // Hide panel notice for admin
             }
         }
 

@@ -58,9 +58,9 @@
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(21, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 14);
+            this.label3.Size = new System.Drawing.Size(317, 14);
             this.label3.TabIndex = 354;
-            this.label3.Text = "Enter your activation code and key below!";
+            this.label3.Text = "Contack your System Administrator to extend your license";
             // 
             // label2
             // 

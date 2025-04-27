@@ -709,12 +709,19 @@ namespace FightingFeather
                 // Prevent the key from being processed by the textbox
                 e.SuppressKeyPress = true;
 
-                // Set focus to the next textbox 
-                comboBox_Winner.Focus();
+                // Check if button_Enter is visible
+                if (button_Enter.Visible)
+                {
+                    button_Enter.Focus();
+                    button_Enter_Click(sender, e);
+                }
+                else
+                {
+                    button_SaveUpdate.Focus();
+                    button_SaveUpdate_Click(sender, e);
+                }
+            }
 
-                // Collapse the dropdown list of the ComboBox
-                comboBox_Winner.DroppedDown = true;
-            }         
         }
 
         private void comboBox_Winner_KeyDown(object sender, KeyEventArgs e)
@@ -832,6 +839,13 @@ namespace FightingFeather
             }
         }
 
-
+        private void toggleEnableWinner_CheckedChanged(object sender, EventArgs e)
+        {
+            // Enable or disable controls based on the check state of toggleEnableWinner
+            bool isChecked = toggleEnableWinner.Checked;
+            comboBox_Winner.Enabled = isChecked;
+            comboBox_Rate.Enabled = isChecked;
+            textBox_EnterAmountRate.Enabled = isChecked;
+        }
     }
 }

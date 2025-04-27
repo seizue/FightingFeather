@@ -21,6 +21,13 @@ namespace FightingFeather
         private string connectionString;
         public LoginRegisterForm(Main mainForm)
         {
+            
+            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather");
+            if (!Directory.Exists(appDataPath))
+            {
+                Directory.CreateDirectory(appDataPath);
+            }
+            databaseName = Path.Combine(appDataPath, "FFkey.db");
             connectionString = $"Data Source={databaseName};Version=3;";
             this.mainForm = mainForm;
 
@@ -30,6 +37,8 @@ namespace FightingFeather
             {
                 CreateDatabase();
             }
+
+            // Ensure tables are created after the database is initialized
             CreateTablesIfNotExist();
             CreateDirectoryFLM();
 
@@ -65,8 +74,8 @@ namespace FightingFeather
 
         private bool IsPasswordValid(string username, string password)
         {
-            // Define the connection string for SQLite
-            string connectionString = "Data Source=FFkey.db;Version=3;";
+            // Use the updated connection string pointing to the correct database location
+            Console.WriteLine($"Using connection string: {connectionString}");
 
             // Define the query to check if the username and password match
             string query = "SELECT COUNT(*) FROM AccountRegistered WHERE Username = @Username AND Password = @Password AND Status != 'SUSPENDED'";
@@ -78,6 +87,7 @@ namespace FightingFeather
                 {
                     // Open the connection
                     connection.Open();
+                    Console.WriteLine("Database connection opened for IsPasswordValid.");
 
                     // Create a command to execute the query
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
@@ -90,9 +100,13 @@ namespace FightingFeather
                         int count = Convert.ToInt32(command.ExecuteScalar());
 
                         // If count > 0, it means there is a match and the account is not suspended
-                        // Otherwise, the credentials are invalid or the account is suspended
                         return count > 0;
                     }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in IsPasswordValid: {ex.Message}");
+                    throw;
                 }
                 finally
                 {
@@ -103,22 +117,33 @@ namespace FightingFeather
             }
         }
 
-
         private bool IsAdminPasswordValid(string username, string password)
         {
-            // Define the connection string for SQLite
-            string connectionString = "Data Source=FFkey.db;Version=3;";
+            // Use the updated connection string pointing to the correct database location
+            Console.WriteLine($"Using connection string: {connectionString}");
 
-            // Define the query to check if the username and password match for Admin
+            // Debug query to verify the existence of the Admin table
+            string verifyTableQuery = "SELECT name FROM sqlite_master WHERE type='table' AND name='Admin'";
             string query = "SELECT COUNT(*) FROM Admin WHERE Username = @Username AND Password = @Password";
 
-            // Create a connection to the database
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 try
                 {
                     // Open the connection
                     connection.Open();
+                    Console.WriteLine("Database connection opened for IsAdminPasswordValid.");
+
+                    // Verify the existence of the Admin table
+                    using (SQLiteCommand verifyCommand = new SQLiteCommand(verifyTableQuery, connection))
+                    {
+                        var result = verifyCommand.ExecuteScalar();
+                        if (result == null)
+                        {
+                            Console.WriteLine("Admin table does not exist. Recreating the table.");
+                            CreateTablesIfNotExist();
+                        }
+                    }
 
                     // Create a command to execute the query
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
@@ -130,9 +155,14 @@ namespace FightingFeather
                         // Execute the query and get the result
                         int count = Convert.ToInt32(command.ExecuteScalar());
 
-                        // If count > 0, it means there is a match, otherwise, the credentials are invalid
+                        // If count > 0, it means there is a match
                         return count > 0;
                     }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in IsAdminPasswordValid: {ex.Message}");
+                    throw;
                 }
                 finally
                 {
@@ -260,7 +290,14 @@ namespace FightingFeather
 
         private void CreateDatabase()
         {
+            // Ensure the directory exists before creating the database file
+            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather");
+            if (!Directory.Exists(appDataPath))
+            {
+                Directory.CreateDirectory(appDataPath);
+            }
             SQLiteConnection.CreateFile(databaseName);
+            Console.WriteLine($"Database created at: {databaseName}");
         }
 
         private void CreateTablesIfNotExist()
@@ -268,6 +305,7 @@ namespace FightingFeather
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
+                Console.WriteLine("Database connection opened.");
 
                 string checkAccountRegisteredTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='AccountRegistered'";
                 string checkAdminTableExists = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='Admin'";
@@ -294,6 +332,7 @@ namespace FightingFeather
                                        )";
                     SQLiteCommand createCommand1 = new SQLiteCommand(createAccountRegisteredTable, connection);
                     createCommand1.ExecuteNonQuery();
+                    Console.WriteLine("AccountRegistered table created.");
                 }
 
                 if (adminTableExists == 0)
@@ -306,6 +345,7 @@ namespace FightingFeather
                    )";
                     SQLiteCommand createCommand2 = new SQLiteCommand(createAdminTable, connection);
                     createCommand2.ExecuteNonQuery();
+                    Console.WriteLine("Admin table created.");
                 }
                 else
                 {
@@ -319,10 +359,10 @@ namespace FightingFeather
                         // If Admin table exists but is empty, insert new records
                         string insertAdminData = @"
                     INSERT INTO Admin (Username, Password) VALUES ('admin', '888534Admin__');
-                    INSERT INTO Admin (Username, Password) VALUES ('master', '888534master17__!&');
                     ";
                         SQLiteCommand insertCommand = new SQLiteCommand(insertAdminData, connection);
                         insertCommand.ExecuteNonQuery();
+                        Console.WriteLine("Admin table initialized with default data.");
                     }
                 }
 
@@ -341,6 +381,7 @@ namespace FightingFeather
                    )";
                     SQLiteCommand createCommand3 = new SQLiteCommand(createFLMTable, connection);
                     createCommand3.ExecuteNonQuery();
+                    Console.WriteLine("FLM table created.");
                 }
             }
         }

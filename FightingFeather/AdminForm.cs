@@ -28,9 +28,26 @@ namespace FightingFeather
         public AdminForm()
         {
             InitializeComponent();
+
+            // Update database path to AppData\Roaming\Fighting Feather
+            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fighting Feather");
+            if (!Directory.Exists(appDataPath))
+            {
+                Directory.CreateDirectory(appDataPath);
+            }
+            databaseName = Path.Combine(appDataPath, "FFkey.db");
             connectionString = $"Data Source={databaseName};Version=3;";
 
-            sqliteConnection = new SQLiteConnection("Data Source=FFKey.db;Version=3;");
+            // Initialize SQLite connection with the updated connection string
+            sqliteConnection = new SQLiteConnection(connectionString);
+
+            // Check if the database file exists before opening the connection
+            if (!File.Exists(databaseName))
+            {
+                MessageBox.Show($"Database file not found at {databaseName}. Please ensure the database is created.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             sqliteConnection.Open();
 
             LoadDataToGrid();
@@ -51,11 +68,9 @@ namespace FightingFeather
             // Attach GridLicense_CellFormatting method to the CellFormatting event
             GridLicense.CellFormatting += GridLicense_CellFormatting;
 
-            //Subscribe to the CellPainting event
+            // Subscribe to the CellPainting event
             Grid_RegisterUsers.CellPainting += Grid_RegisterUsers_CellPainting;
-
         }
-
 
         private void label_RegisterUsers_Click(object sender, EventArgs e)
         {
@@ -301,6 +316,12 @@ namespace FightingFeather
 
         private void LoadDataToGrid()
         {
+            // Ensure the database connection is open
+            if (sqliteConnection.State != ConnectionState.Open)
+            {
+                sqliteConnection.Open();
+            }
+
             string query = "SELECT ID, Name, Username, Password, Status, Date FROM AccountRegistered";
 
             using (SQLiteCommand cmd = new SQLiteCommand(query, sqliteConnection))
@@ -309,7 +330,7 @@ namespace FightingFeather
                 {
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-
+                    
                     // Clear existing data
                     Grid_RegisterUsers.Rows.Clear();
 

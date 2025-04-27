@@ -393,6 +393,7 @@
             this.Name = "DashBoardForm";
             this.Opacity = 0.98D;
             this.Resizable = false;
+            this.Load += new System.EventHandler(this.DashBoardForm_Load);
             this.metroPanel14.ResumeLayout(false);
             this.metroPanel26.ResumeLayout(false);
             this.metroPanel5.ResumeLayout(false);

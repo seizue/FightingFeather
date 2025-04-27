@@ -1766,7 +1766,6 @@
             this.Name = "AdminForm";
             this.Opacity = 0.98D;
             this.Resizable = false;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.panel1.ResumeLayout(false);

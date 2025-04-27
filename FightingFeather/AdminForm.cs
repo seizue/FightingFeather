@@ -311,7 +311,17 @@ namespace FightingFeather
         private void AdminForm_Load(object sender, EventArgs e)
         {
             this.ShadowType = MetroFormShadowType.None;
-           
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                // Maximize the window without covering the taskbar
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void LoadDataToGrid()

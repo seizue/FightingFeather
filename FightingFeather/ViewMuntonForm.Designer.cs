@@ -388,7 +388,7 @@
             this.Controls.Add(this.metroPanel11);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewMuntonForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ViewMuntonForm_Load);
             this.metroPanel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataMuntonGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

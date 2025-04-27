@@ -137,6 +137,17 @@ namespace FightingFeather
         private void InspectionForm_Load(object sender, EventArgs e)
         {
             GridPlasada_Inspection.CellFormatting += GridPlasada_Inspection_CellFormatting;
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                // Maximize the window without covering the taskbar
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void ApplyFilter(string filter)

@@ -323,7 +323,19 @@ namespace FightingFeather
             }
         }
 
-
+        private void DashBoardForm_Load(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                // Maximize the window without covering the taskbar
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }
 

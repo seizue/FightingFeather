@@ -1,5 +1,14 @@
 [
   {
+    "Date": "2025-04-27",
+    "totalFights": "1",
+    "totalDraws": "0",
+    "totalCancels": "0",
+    "totalFee": "495.00",
+    "totalCityTax": "300",
+    "OverAllTotalPlasada": "795.00"
+  },
+  {
     "FIGHT": 1,
     "MERON": "JK",
     "WALA": "LD",
